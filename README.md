@@ -24,8 +24,9 @@ Alignment Based Reference View
 - E5 - Signalling Exchange
 - E6 - Energy Exchange (Railway)
 - E7 - Geotechnics Exchange
-- E8 - Drainage Exchange
-- E9 - Maritime Elements Exchange
+- E8 - Telecommunications Exchange
+- E9 - Drainage Exchange
+- E10 - Maritime Elements Exchange
 
 
 ## FAQ
