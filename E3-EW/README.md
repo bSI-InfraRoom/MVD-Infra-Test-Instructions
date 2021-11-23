@@ -1,7 +1,7 @@
-# Alignment Reference Exchange
+# Earthworks Exchange
 
-**Coding** - E1   
-**Abreviation** - AR
+**Coding** - E3   
+**Abreviation** - EW
 
 ## Summary
 TBC
