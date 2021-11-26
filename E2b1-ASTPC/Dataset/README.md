@@ -49,9 +49,9 @@ The meaning of the columns in the spreadsheet for the Horizontal Alignment is ex
 
 #### Data snippet
 
-![alt text](Dataset/Horizontal%20alignment%20image.png)
+![alt text](./Horizontal%20alignment%20image.png)
 
-![alt text](Dataset/Horizontal%20alignment%20table.png)
+![alt text](./Horizontal%20alignment%20table.png)
 
 ---
 
@@ -82,9 +82,9 @@ The meaning of the columns in the spreadsheet for the Vertical Alignment is expl
 
 #### Data snippet
 
-![alt text](Dataset/UT_AWC_4_Vertical%20alignment%20image.png)
+![alt text](./Vertical%20alignment%20image.png)
 
-![alt text](Dataset/UT_AWC_4_Vertical%20alignment%20table.png)
+![alt text](./Vertical%20alignment%20table.png)
 
 ___
 
@@ -105,7 +105,7 @@ The meaning of the columns in the spreadsheet for the Cant Alignment is explaine
 5. **Transition**: the type of transition curve that, in the horizontal alignment, stays between that station point and the next one
 6. **Applied cant**: in a cross-section plane, orthogonal to the track axis, it is the difference in height (h<sub>t</sub> in the picture below) between two points, of the track plane, that have a conventional distance between them of 1500 mm. The cant is always applied to the external rail (the furthest rail from the center or the curve). Cant measure is positive because the external rail of a track is always higher than the internal rail.
 
-![alt text](Dataset/Cant-CantAngle.png)
+![alt text](./Cant-CantAngle.png)
 
 **NOTE**:
 - In Italy, only straight line is used for cant segment
@@ -117,9 +117,9 @@ The meaning of the columns in the spreadsheet for the Cant Alignment is explaine
 
 #### Data snippet
 
-![alt text](Dataset/Cant%20alignment%20image.jpg)
+![alt text](./Cant%20alignment%20image.jpg)
 
-![alt text](Dataset/Cant%20alignment%20table.png)
+![alt text](./Cant%20alignment%20table.png)
 
 
 
