@@ -144,7 +144,7 @@ The Test case requires the following additional checks related to Model Geometry
 ---
 
 ## Model Dataset
-This test case utilises the dataset collected [here](./E2b1-ASTPC/Dataset) and summarised in the table below. Form more details on each item see [Dataset description](./E2b1-ASTPC/Dataset/Dataset-description.md).
+This test case utilises the dataset collected [here](./E2b1-ASTPC/Dataset) and summarised in the table below. Form more details on each item see [Dataset description](./E2b1-ASTPC/Dataset/Dataset_description.md).
 
 
 1. [dwg]
@@ -163,7 +163,7 @@ This test case utilises the dataset collected [here](./E2b1-ASTPC/Dataset) and s
 |    | *filename + link* | LandXML        | Alignment LandXML file, not including cant  |
 |    | *filename + link* | dwg            | Alignment dwg file, not including cant  |
 |    | *filename + link* | figure (png)  | Schematic layout of the test case railway line |
-|    | [Line layout](./E2b1-ASTPC/Dataset/LIne-layout.jpg) | diagram (jpg)  | Diagram describing the main objects and relationships to be used for the test case |
+|    | [Line layout](./E2b1-ASTPC/Dataset/Line_layout.jpg) | diagram (jpg)  | Diagram describing the main objects and relationships to be used for the test case |
 |    | *filename + link* | drawing (pdf)  | Cross section example |
 |    | *filename + link* | drawing (dwg)  | Cross section example |
 
@@ -209,7 +209,7 @@ For the **Railway alignment (with cant)** capability, the test is considered pas
 |        | Required precision for **distances**                             | "minimum 4 decimal places (0,0001)"         |                            |
 |        | Required precision for **angles** and **slope**                  | "minimum 6 decimal places (0,000001)"       |                            |
 
-</details>
+
 
 <details><summary> Alignment 1 </summary><blockquote>
 
@@ -255,6 +255,6 @@ For the **Railway alignment (with cant)** capability, the test is considered pas
 
 </details>
 
-
+</details>
 
 ...
