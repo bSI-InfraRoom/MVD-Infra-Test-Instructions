@@ -173,10 +173,12 @@ This test case utilises the dataset collected in the Dataset folder and summaris
 |    | *filename + link* | csv            | Alignment parameters for cant segments  |
 |    | *filename + link* | LandXML        | Alignment LandXML file, not including cant  |
 |    | *filename + link* | dwg            | Alignment dwg file, not including cant  |
-|    | *filename + link* | figure (png)  | Schematic layout of the test case railway line |
-|    | [Line_layout](Dataset/Line_layout.jpg) | diagram (jpg)  | Diagram describing the main objects and relationships to be used for the test case |
+|    | [Line_layout](Dataset/Line_layout.jpg) | figure (jpg)  | Schematic layout of the test case railway line |
+|    | [Main objects and relationships](Dataset/E2b1-ASTPC_Main%20objects%20and%20relationships.png) | diagram (png)  | Diagram describing the main objects and relationships to be used for the test case |
 |    | *filename + link* | drawing (pdf)  | Cross section example |
 |    | *filename + link* | drawing (dwg)  | Cross section example |
+
+
 
 </details>
 
