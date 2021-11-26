@@ -91,7 +91,7 @@ The Test instruction addresses the import and export of the following IFC Entiti
 
 </details>
 
-<details open><summary>Concept Templates</summary> 
+<details><summary>Concept Templates</summary> 
 
   - Object Assignment
      - Group Assignment
