@@ -227,7 +227,10 @@ For the **Railway alignment (with cant)** capability, the test is considered pas
 |        | Required precision for **distances**                             | "minimum 4 decimal places (0,0001)"         |                            |
 |        | Required precision for **angles** and **slope**                  | "minimum 6 decimal places (0,000001)"       |                            |
 
+NOTES:
+-	The *RailHeadDistance* (blue line in the figure below) is a normalized value used to compute the angle of cant. RFI uses 1500 mm for a track gauge of 1435 mm
 
+![alt text](Dataset/CantFromLowerRail.png)
 
 <details><summary> Alignment 1 </summary>
 
