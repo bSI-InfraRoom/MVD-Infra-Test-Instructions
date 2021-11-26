@@ -144,7 +144,7 @@ The Test case requires the following additional checks related to Model Geometry
 ---
 
 ## Model Dataset
-This test case utilises the dataset collected [here](./E2b1-ASTPC/Dataset) and summarised in the table below. Form more details on each item see [Dataset description](./E2b1-ASTPC/Dataset/Dataset_description.md).
+This test case utilises the dataset collected [here](./E2b1-ASTPC/Dataset) and summarised in the table below. Form more details on each item see [Dataset description](Dataset/Dataset_description.md).
 
 
 1. [dwg]
