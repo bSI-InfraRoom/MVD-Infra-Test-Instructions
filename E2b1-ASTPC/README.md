@@ -7,6 +7,8 @@
 
 ## Summary (intent)
 
+<details><summary>click to expand</summary> 
+
 This test case uses some elements of the railway track domain to test the following capabilities:
 - Object grouping
 - Object classification via external reference (i.e., bSDD)
@@ -17,7 +19,6 @@ This test case uses some elements of the railway track domain to test the follow
 - Railway alignment (with cant)
 - Linear placement along alignment
 - Properties of objects
-
 
 The business context for the test is provided by a 2km portion of railway line, including: 2 alignments, track substructure and superstructure, and related products.  
 
@@ -32,9 +33,14 @@ The business context for the test is provided by a 2km portion of railway line, 
 1. Model properties of objects/object types
 1. Assign objects to project breakdown
 
+</details>
+
 ---
 
 ## Itemised Roots
+
+<details><summary>click to expand</summary> 
+
 The Test instruction addresses the import and export of the following IFC Entities & Concept Templates:
 
 <details><summary>IFC Entities</summary> 
@@ -118,16 +124,25 @@ The Test instruction addresses the import and export of the following IFC Entiti
      - Project Units
 </details>
 
+</details>
+
 ---
 
 ## Variations
+
+<details><summary>click to expand</summary>
+
 The Following occurrence variations need to be checked and certified in relation to the targeted entities and concept templates:
 
 - Entity_01 - *description of variation*
 - Entity_02 - *description of variation*
 
+</details>
 
 ## Usages
+
+<details><summary>click to expand</summary> 
+
 The following itemised restrictions and constraints shall be placed on IFC Entities & Concept Templates:
 
 :construction: under construction :construction:
@@ -141,19 +156,15 @@ The Test case requires the following additional checks related to Model Geometry
 - *Tangential continuity of alignemnt segments. Tolerance of ... millimetres*
 - ... (to be continued)
 
+</details>
+
 ---
 
 ## Model Dataset
-This test case utilises the dataset collected [here](E2b1-ASTPC/Dataset) and summarised in the table below. Form more details on each item see [Dataset description](Dataset/Dataset_description.md).
 
+<details><summary>click to expand</summary> 
 
-1. [dwg]
-1. Picture of ...[png]
-1. ....
-1.  [png]
-
-*This is a later step that involved the detailed documentation of the certification dataset (model)*
-
+This test case utilises the dataset collected in the Dataset folder and summarised in the table below. Form more details on each item see [Dataset description](Dataset/Dataset_description.md).
 
 | ID | Filename             | Type (format)  | Description                               |
 |----|----------------------|----------------|-------------------------------------------|
@@ -163,13 +174,18 @@ This test case utilises the dataset collected [here](E2b1-ASTPC/Dataset) and sum
 |    | *filename + link* | LandXML        | Alignment LandXML file, not including cant  |
 |    | *filename + link* | dwg            | Alignment dwg file, not including cant  |
 |    | *filename + link* | figure (png)  | Schematic layout of the test case railway line |
-|    | [Line layout](Dataset/Line_layout.jpg) | diagram (jpg)  | Diagram describing the main objects and relationships to be used for the test case |
+|    | [Line_layout](Dataset/Line_layout.jpg) | diagram (jpg)  | Diagram describing the main objects and relationships to be used for the test case |
 |    | *filename + link* | drawing (pdf)  | Cross section example |
 |    | *filename + link* | drawing (dwg)  | Cross section example |
+
+</details>
 
 ---
 
 ## Expected Results
+
+<details><summary>click to expand</summary> 
+
 Considering the aim of this test, the expected results are:
 
 :construction: under construction :construction:
@@ -177,10 +193,14 @@ Considering the aim of this test, the expected results are:
 1. N. 1 IFC file containing the information as requested
 2. Screen-shot of ...
 
+</details>
+
 ---
 
 ## Validation criteria
-<ins>For this test case to be considered passed **all** validation criteria listed in this section shall be satisfied, with no exception.</ins>
+:warning: <ins>For this test case to be considered passed **all** validation criteria listed in this section shall be satisfied, with no exception.</ins> :warning:
+
+<details open><summary>click to expand</summary> 
 
 :construction: under construction :construction:
 
@@ -191,7 +211,7 @@ Considering the aim of this test, the expected results are:
 
 </details>
 
-<details open><summary>Alignment</summary> 
+<details><summary>Railway alignment (with cant)</summary> 
 
 For the **Railway alignment (with cant)** capability, the test is considered passed if **all** the following validation criteria are satisfied.
 
@@ -211,7 +231,7 @@ For the **Railway alignment (with cant)** capability, the test is considered pas
 
 
 
-<details><summary> Alignment 1 </summary><blockquote>
+<details><summary> Alignment 1 </summary>
 
 | ID | CRITERIA                                                           | VALUE          |
 |----|--------------------------------------------------------------------|----------------|
@@ -233,7 +253,7 @@ For the **Railway alignment (with cant)** capability, the test is considered pas
 
 </details>
 
-<details><summary> Alignment 2 </summary><blockquote>
+<details><summary> Alignment 2 </summary>
 
 | ID | CRITERIA                                                           | VALUE          |
 |----|--------------------------------------------------------------------|----------------|
@@ -257,4 +277,68 @@ For the **Railway alignment (with cant)** capability, the test is considered pas
 
 </details>
 
-...
+<details><summary>Object grouping</summary>
+
+| **ID** | **CRITERIA**                            | **VALUE** / **COMMENT**               |
+|--------|-----------------------------------------|---------------------------------------|
+|        | ABC                                     | 0                                     |
+
+</details>
+
+<details><summary>Object decomposition (assemblies)</summary>
+
+| **ID** | **CRITERIA**                            | **VALUE** / **COMMENT**               |
+|--------|-----------------------------------------|---------------------------------------|
+|        | ABC                                     | 0                                     |
+
+</details>
+
+<details><summary>Object classification via external reference (i.e., bSDD)</summary>
+
+| **ID** | **CRITERIA**                            | **VALUE** / **COMMENT**               |
+|--------|-----------------------------------------|---------------------------------------|
+|        | ABC                                     | 0                                     |
+
+</details>
+
+<details><summary>Project Global Positioning</summary>
+
+| **ID** | **CRITERIA**                            | **VALUE** / **COMMENT**               |
+|--------|-----------------------------------------|---------------------------------------|
+|        | ABC                                     | 0                                     |
+
+</details>
+
+<details><summary>Railway spatial structure</summary>
+
+| **ID** | **CRITERIA**                            | **VALUE** / **COMMENT**               |
+|--------|-----------------------------------------|---------------------------------------|
+|        | ABC                                     | 0                                     |
+
+</details>
+
+<details><summary>Railway spatial structure</summary>
+
+| **ID** | **CRITERIA**                            | **VALUE** / **COMMENT**               |
+|--------|-----------------------------------------|---------------------------------------|
+|        | ABC                                     | 0                                     |
+
+</details>
+
+<details><summary>Linear placement along alignment</summary>
+
+| **ID** | **CRITERIA**                            | **VALUE** / **COMMENT**               |
+|--------|-----------------------------------------|---------------------------------------|
+|        | ABC                                     | 0                                     |
+
+</details>
+
+<details><summary>Properties of objects</summary>
+
+| **ID** | **CRITERIA**                            | **VALUE** / **COMMENT**               |
+|--------|-----------------------------------------|---------------------------------------|
+|        | ABC                                     | 0                                     |
+
+</details>
+
+</details>
