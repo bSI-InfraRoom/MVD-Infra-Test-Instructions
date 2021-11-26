@@ -200,8 +200,6 @@ Considering the aim of this test, the expected results are:
 ## Validation criteria
 :warning: <ins>For this test case to be considered passed **all** validation criteria listed in this section shall be satisfied, with no exception.</ins> :warning:
 
-<details open><summary>click to expand</summary> 
-
 :construction: under construction :construction:
 
 <details><summary>General</summary>
@@ -341,4 +339,3 @@ For the **Railway alignment (with cant)** capability, the test is considered pas
 
 </details>
 
-</details>
