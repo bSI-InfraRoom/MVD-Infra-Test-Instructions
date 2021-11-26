@@ -164,7 +164,7 @@ The Test case requires the following additional checks related to Model Geometry
 
 <details><summary>click to expand</summary> 
 
-This test case utilises the dataset collected in the Dataset folder and summarised in the table below. Form more details on each item see [Dataset description](Dataset/Dataset_description.md).
+This test case utilises the dataset collected in the Dataset folder and summarised in the table below. Form more details on each item see [Dataset description](Dataset/README.md).
 
 | ID | Filename             | Type (format)  | Description                               |
 |----|----------------------|----------------|-------------------------------------------|
