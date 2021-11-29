@@ -177,7 +177,7 @@ This test case utilises the dataset collected in the Dataset folder and summaris
 |    | [Main objects and relationships](Dataset/E2b1-ASTPC_Main%20objects%20and%20relationships.png) | diagram (png)  | Diagram describing the main objects and relationships to be used for the test case |
 |    | *filename + link* | drawing (pdf)  | Cross section example |
 |    | *filename + link* | drawing (dwg)  | Cross section example |
-
+|    | *filename + link* | drawing (PDF)  | Turnout drawing to be used as example |
 
 
 </details>
@@ -200,7 +200,7 @@ Considering the aim of this test, the expected results are:
 ---
 
 ## Validation criteria
-:warning: <ins>For this test case to be considered passed **all** validation criteria listed in this section shall be satisfied, with no exception.</ins> :warning:
+:warning: <ins>For this test case to be considered passed **all capabilities** listed in this section shall be verified, with no exception.</ins> :warning:
 
 :construction: under construction :construction:
 
@@ -280,19 +280,79 @@ NOTES:
 
 </details>
 
-<details><summary>Object grouping</summary>
+<details open><summary>Object grouping</summary>
 
-| **ID** | **CRITERIA**                            | **VALUE** / **COMMENT**               |
-|--------|-----------------------------------------|---------------------------------------|
-|        | ABC                                     | 0                                     |
+For the **Object grouping** capability, the test is considered passed if **all** the following validation criteria are satisfied.
+
+The validation procedure must verify that a group of the requested type is grouping (via `IfcRelAssignsToGroup`) exactly a given number of objects of the requested type, no more and no less.
+
+- **Concept Template**: Group Assignment
+- **Usage** (if existing): NA
+
+| Group    | Group Type                          | Minimum | Maximum | Object             | Object Type          |
+|----------|-------------------------------------|---------|---------|--------------------|----------------------|
+| IfcGroup | Binari di corsa (Contenitore)       | 1       | 1       | IfcFacilityPart    | TRACKSTRUCTURE       |
+| IfcGroup | Deviatoi/Intersezioni (Contenitore) | 1       | 1       | IfcActuator        | Manovra deviatoio    |
+| IfcGroup | Deviatoi/Intersezioni (Contenitore) | 1       | 1       | IfcElementAssembly | TURNOUTPANEL         |
+| IfcGroup | Massicciata (Contenitore)           | 2       | 2       | IfcCourse          | BALLASTBED           |
+| IfcGroup | Rotaie (Contenitore)                | 3       | 3       | IfcGroup           | Segmento di rotaia   |
+| IfcGroup | Segmento di rotaia                  | 2       | 2       | IfcRail            | RAIL                 |
+| IfcGroup | Traverse (Contenitore)              | 3       | 3       | IfcGroup           | Segmento di traverse |
+| IfcGroup | Segmento di traverse                | 1       |         | IfcTrackElement    | SLEEPER              |
+
+NOTE:
+- for typing of groups refer to the Validation criteria of the **Object typing** capability
+- when **Minimum** and **Maximum** have the same value, it means exactly. Example: Minimum=Maximum=2, means that the group must group exactly 2 objects of the requested type.
+- when **Maximum** is empty, it means unlimited. Example: Minimum=1; Maximum=empty, means that the group must group 1 or more elements of the requested type.
 
 </details>
 
-<details><summary>Object decomposition (assemblies)</summary>
+<details open><summary>Object typing</summary>
 
-| **ID** | **CRITERIA**                            | **VALUE** / **COMMENT**               |
-|--------|-----------------------------------------|---------------------------------------|
-|        | ABC                                     | 0                                     |
+For the **Object typing** capability, the test is considered passed if **all** the following validation criteria are satisfied.
+
+The validation procedure must verify that an IFC entity type with the given Name is typing (via `IfcRelDefinesByType`) exactly a given number of objects of the requested Name, no more and no less.
+
+- **Concept Template**: Object Typing
+- **Usage** (if existing): NA
+
+| Entity Type     | Entity Type Name                    | Minimum | Maximum | IfcObject       | IfcObject Name                      |
+|-----------------|-------------------------------------|---------|---------|-----------------|-------------------------------------|
+| IfcTypeObject   | Binari di corsa (Contenitore)       | 1       | 1       | IfcGroup        | Binari di corsa di Foligno          |
+| IfcTypeObject   | Deviatoi/Intersezioni (Contenitore) | 1       | 1       | IfcGroup        | Deviatoi                            |
+| IfcTypeObject   | Massicciata (Contenitore)           | 1       | 1       | IfcGroup        | Massicciata                         |
+| IfcTypeObject   | Rotaie (Contenitore)                | 1       | 1       | IfcGroup        | Rotaie                              |
+| IfcTypeObject   | Traverse (Contenitore)              | 1       | 1       | IfcGroup        | Traverse                            |
+| IfcActuatorType | Manovra deviatoio                   | 1       | 1       | IfcActuator     | Cassa di manovra CM04               |
+| IfcCourseType   | Segmento di massicciata             | 1       | 1       | IfcCourse       | Segmento di massicciata M01         |
+| IfcCourseType   | Segmento di massicciata             | 1       | 1       | IfcCourse       | Segmento di massicciata M02         |
+| IfcTypeObject   | Segmento di rotaia                  | 1       | 1       | IfcGroup        | Segmento di rotaia R01              |
+| IfcTypeObject   | Segmento di rotaia                  | 1       | 1       | IfcGroup        | Segmento di rotaia R02              |
+| IfcTypeObject   | Segmento di rotaia                  | 1       | 1       | IfcGroup        | Segmento di rotaia R03              |
+| IfcTypeObject   | Segmento di traverse                | 1       | 1       | IfcGroup        | Segmento di traverse T01            |
+| IfcTypeObject   | Segmento di traverse                | 1       | 1       | IfcGroup        | Segmento di traverse T02            |
+| IfcTypeObject   | Segmento di traverse                | 1       | 1       | IfcGroup        | Segmento di traverse T03            |
+| IfcTypeObject   | Binari di corsa                     | 1       | 1       | IfcFacilityPart | Binario IV dispari - Orte Falconara |
+
+NOTE:
+- when **Minimum** and **Maximum** have the same value, it means exactly. Example: Minimum=Maximum=1, means that the entity type must type exactly 1 object with that Name.
+
+</details>
+
+<details open><summary>Object decomposition (assemblies)</summary>
+
+:construction: under construction :construction:
+
+- **Concept Template**: Element Decomposition
+- **Usage** (if existing): NA
+
+| Assembly           | Assembly Type | Minimum | Maximum | Element         | Element Type |
+|--------------------|---------------|---------|---------|-----------------|--------------|
+| IfcElementAssembly | TURNOUTPANEL  | 1       | 1       | IfcFastener     | WELD         |
+| IfcElementAssembly | TURNOUTPANEL  | 1       | 1       | IfcTrackElement | FROG         |
+| IfcElementAssembly | TURNOUTPANEL  | 1       | 10      | IfcRail         | RAIL         |
+| IfcElementAssembly | TURNOUTPANEL  | 1       | 2       | IfcRail         | CHECKRAIL    |
+| IfcElementAssembly | TURNOUTPANEL  | 52      | 52      | IfcTrackElement | SLEEPER      |
 
 </details>
 
@@ -312,19 +372,52 @@ NOTES:
 
 </details>
 
-<details><summary>Railway spatial structure</summary>
+<details open><summary>Railway spatial structure</summary>
 
-| **ID** | **CRITERIA**                            | **VALUE** / **COMMENT**               |
-|--------|-----------------------------------------|---------------------------------------|
-|        | ABC                                     | 0                                     |
+:construction: under construction :construction:
+
+- **Concept Template**: Spatial Decomposition
+- **Usage** (if existing): NA
+
+| Parent Element | Parent Element Type | Minimum | Maximum | Child Element   | Child Element Type |
+|----------------|---------------------|---------|---------|-----------------|--------------------|
+| IfcSite        |                     | 1       | 1       | IfcRailway      | Località           |
+| IfcRailway     | Località            | 1       | 1       | IfcFacilityPart | TRACKSTRUCTURE     |
 
 </details>
 
-<details><summary>Railway spatial structure</summary>
+<details open><summary>Spatial containment</summary>
 
-| **ID** | **CRITERIA**                            | **VALUE** / **COMMENT**               |
-|--------|-----------------------------------------|---------------------------------------|
-|        | ABC                                     | 0                                     |
+:construction: under construction :construction:
+
+- **Concept Template**: Spatial Containment
+- **Usage** (if existing): NA
+
+| Spatial Element | Spatial Element Type | Minimum | Maximum | Element            | Element Type      |
+|-----------------|----------------------|---------|---------|--------------------|-------------------|
+| IfcFacilityPart | TRACKSTRUCTURE       | 1       | 1       | IfcActuator        | Manovra deviatoio |
+| IfcFacilityPart | TRACKSTRUCTURE       | 1       | 1       | IfcElementAssembly | TURNOUTPANEL      |
+| IfcFacilityPart | TRACKSTRUCTURE       | 2       | 2       | IfcCourse          | BALLASTBED        |
+| IfcFacilityPart | TRACKSTRUCTURE       | 6       | 6       | IfcRail            | RAIL              |
+| IfcFacilityPart | TRACKSTRUCTURE       | 1       | TBD     | IfcTrackElement    | SLEEPER           |
+| IfcSite         |                      | 2       | 2       | IfcAlignment       |                   |
+
+</details>
+
+<details open><summary>Spatial reference</summary>
+
+:construction: under construction :construction:
+
+- **Concept Template**: :warning: Spatial Service Connectivity (or better *Group Spatial Connectivity*, not yet present in documentation) :warning:
+- **Usage** (if existing): NA
+
+| Spatial Element | Spatial Element Type | Minimum | Maximum | Product or Group | Product Type or Group Type          |
+|-----------------|----------------------|---------|---------|------------------|-------------------------------------|
+| IfcRailway      | Località             | 1       | 1       | IfcGroup         | Binari di corsa (Contenitore)       |
+| IfcFacilityPart | TRACKSTRUCTURE       | 1       | 1       | IfcGroup         | Deviatoi/Intersezioni (Contenitore) |
+| IfcFacilityPart | TRACKSTRUCTURE       | 1       | 1       | IfcGroup         | Massicciata (Contenitore)           |
+| IfcFacilityPart | TRACKSTRUCTURE       | 1       | 1       | IfcGroup         | Rotaie (Contenitore)                |
+| IfcFacilityPart | TRACKSTRUCTURE       | 1       | 1       | IfcGroup         | Traverse (Contenitore)              |
 
 </details>
 
@@ -336,11 +429,25 @@ NOTES:
 
 </details>
 
-<details><summary>Properties of objects</summary>
+<details open><summary>Properties of objects and object types</summary>
 
-| **ID** | **CRITERIA**                            | **VALUE** / **COMMENT**               |
-|--------|-----------------------------------------|---------------------------------------|
-|        | ABC                                     | 0                                     |
+:construction: under construction :construction:
+
+- **Concept Template**: Property Sets for Objects, Property Sets for Types
+- **Usage** (if existing): NA
+
+| Entity          | Entity Type          | PropertySet Name | Property Name           | Property Value Type | List Of Values                                       | IfcSimpleProperty subtype  |
+|-----------------|----------------------|------------------|-------------------------|---------------------|------------------------------------------------------|----------------------------|
+| IfcFacilityPart | TRACKSTRUCTURE       | RFI_S16000       | Binario                 | IFCLABEL            | Pari, Dispari, Unico                                 | IfcPropertyEnumeratedValue |
+| IfcFacilityPart | TRACKSTRUCTURE       | RFI_S16000       | Codice binario SAS      | IFCLABEL            |                                                      | IfcPropertySingleValue     |
+| IfcFacilityPart | TRACKSTRUCTURE       | RFI_S16000       | n. deviatoi elettrici   | IFCINTEGER          |                                                      | IfcPropertySingleValue     |
+| IfcFacilityPart | TRACKSTRUCTURE       | RFI_S16000       | Profilo manutentivo L94 | IFCLABEL            | <=40 t/g, >100 t/g, 40< t/g <=100 | IfcPropertyEnumeratedValue |
+| IfcFacilityPart | TRACKSTRUCTURE       | RFI_S16000       | Binario elettrificato   | IFCLOGICAL          |                                                      | IfcPropertySingleValue     |
+| IfcTrackElement | SLEEPER              | ???              |                         |                     |                                                      |                            |
+| IfcGroup        | Segmento di traverse | ???              |                         |                     |                                                      |                            |
+
+
+
 
 </details>
 
