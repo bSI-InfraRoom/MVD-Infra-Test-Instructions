@@ -280,7 +280,7 @@ NOTES:
 
 </details>
 
-<details open><summary>Object grouping</summary>
+<details><summary>Object grouping</summary>
 
 For the **Object grouping** capability, the test is considered passed if **all** the following validation criteria are satisfied.
 
@@ -307,7 +307,7 @@ NOTE:
 
 </details>
 
-<details open><summary>Object typing</summary>
+<details><summary>Object typing</summary>
 
 For the **Object typing** capability, the test is considered passed if **all** the following validation criteria are satisfied.
 
@@ -339,7 +339,7 @@ NOTE:
 
 </details>
 
-<details open><summary>Object decomposition (assemblies)</summary>
+<details><summary>Object decomposition (assemblies)</summary>
 
 :construction: under construction :construction:
 
@@ -372,7 +372,7 @@ NOTE:
 
 </details>
 
-<details open><summary>Railway spatial structure</summary>
+<details><summary>Railway spatial structure</summary>
 
 :construction: under construction :construction:
 
@@ -386,7 +386,7 @@ NOTE:
 
 </details>
 
-<details open><summary>Spatial containment</summary>
+<details><summary>Spatial containment</summary>
 
 :construction: under construction :construction:
 
@@ -404,7 +404,7 @@ NOTE:
 
 </details>
 
-<details open><summary>Spatial reference</summary>
+<details><summary>Spatial reference</summary>
 
 :construction: under construction :construction:
 
@@ -429,7 +429,7 @@ NOTE:
 
 </details>
 
-<details open><summary>Properties of objects and object types</summary>
+<details><summary>Properties of objects and object types</summary>
 
 :construction: under construction :construction:
 
