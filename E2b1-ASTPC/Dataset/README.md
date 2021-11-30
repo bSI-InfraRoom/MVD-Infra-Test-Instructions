@@ -142,7 +142,7 @@ The meaning of the columns in the spreadsheet for the Cant Alignment is explaine
 <details><summary>expand/collapse</summary>
 The picture captures main objects and relationships to be present in the IFC file
 
-![alt text](./E2b1-ASTPC_Main%20objects%20and%20relationships.png)
+![alt text](./ObjectsOverview.png)
 
 The table lists the direct attributes of the above mentioned objects
 
