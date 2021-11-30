@@ -162,22 +162,22 @@ The Test case requires the following additional checks related to Model Geometry
 
 ## Model Dataset
 
-<details><summary>click to expand</summary> 
+<details open><summary>click to expand</summary> 
 
 This test case utilises the dataset collected in the Dataset folder and summarised in the table below. Form more details on each item see [Dataset description](Dataset/README.md).
 
-| ID | Filename             | Type (format)  | Description                               |
-|----|----------------------|----------------|-------------------------------------------|
-|    | *filename + link* | csv            | Alignment parameters for horizontal segments  |
-|    | *filename + link* | csv            | Alignment parameters for vertical segments  |
-|    | *filename + link* | csv            | Alignment parameters for cant segments  |
-|    | *filename + link* | LandXML        | Alignment LandXML file, not including cant  |
-|    | *filename + link* | dwg            | Alignment dwg file, not including cant  |
-|    | [Line_layout](Dataset/Line_layout.jpg) | figure (jpg)  | Schematic layout of the test case railway line |
-|    | [Main objects and relationships](Dataset/E2b1-ASTPC_Main%20objects%20and%20relationships.png) | diagram (png)  | Diagram describing the main objects and relationships to be used for the test case |
-|    | *filename + link* | drawing (pdf)  | Cross section example |
-|    | *filename + link* | drawing (dwg)  | Cross section example |
-|    | *filename + link* | drawing (PDF)  | Turnout drawing to be used as example |
+| ID | Filename                                                        | Type (format)  | Description                               |
+|----|-----------------------------------------------------------------|----------------|-------------------------------------------|
+|    | *filename + link*                                               | csv            | Alignment parameters for horizontal segments |
+|    | *filename + link*                                               | csv            | Alignment parameters for vertical segments) |
+|    | *filename + link*                                               | csv            | Alignment parameters for cant segments |
+|    | *filename + link*                                               | LandXML        | Alignment LandXML file, not including cant  |
+|    | *filename + link*                                               | dwg            | Alignment dwg file, not including cant  |
+|    | [Line_layout](./Line_layout.jpg)                                | figure (jpg)   | Schematic layout of the test case railway line |
+|    | [Objects overview](./ObjectsOverview.png)         | diagram (png)  | Objects overview: a diagram + table describing the main to be used for the test case |
+|    | *filename + link*                                               | drawing (pdf)  | Cross section example |
+|    | *filename + link*                                               | drawing (dwg)  | Cross section example |
+|    | *filename + link*                                               | drawing (PDF)  | Turnout drawing to be used as example |
 
 
 </details>
