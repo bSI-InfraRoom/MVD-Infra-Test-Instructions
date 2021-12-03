@@ -7,24 +7,47 @@
 
 ## Dataset
 
-| ID | Filename                                                        | Type (format)  | Description                               |
-|----|-----------------------------------------------------------------|----------------|-------------------------------------------|
-|    | *filename + link*                                               | csv            | [Alignment parameters for horizontal segments](#Alignment-parameters-for-horizontal-segments) |
-|    | *filename + link*                                               | csv            | [Alignment parameters for vertical segments](#Alignment-parameters-for-vertical-segments) |
-|    | *filename + link*                                               | csv            | [Alignment parameters for cant segments](#Alignment-parameters-for-cant-segments) |
-|    | *filename + link*                                               | LandXML        | Alignment LandXML file, not including cant  |
-|    | *filename + link*                                               | dwg            | Alignment dwg file, not including cant  |
-|    | [Line_layout](./Line_layout.jpg)                                | figure (jpg)   | Schematic layout of the test case railway line |
-|    | [Objects overview](./ObjectsOverview.png)         | diagram (png)  | [Objects overview](#Objects-overview): a diagram + table describing the main to be used for the test case |
-|    | *filename + link*                                               | drawing (pdf)  | Cross section example |
-|    | *filename + link*                                               | drawing (dwg)  | Cross section example |
-|    | *filename + link*                                               | drawing (PDF)  | Turnout drawing to be used as example |
+| Filename                                               | Description                                                                                               |
+|--------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| [Line_layout](./Line_layout.jpg)                       | Schematic [line layout](#Line-layout) of the test case                                                    |
+| [TrackCrossSection](./TrackCrossSection.png)           | [Track cross section](#Track-cross-section) to be used as example                                         |
+| [SleeperPlacement](./SleeperPlacement.png)             | Information on how to [position sleepers](#Sleeper-placement) along the alignment                         |
+| *under production*                                     | [Alignment parameters for horizontal segments](#Alignment-parameters-for-horizontal-segments)             |
+| *under production*                                     | [Alignment parameters for vertical segments](#Alignment-parameters-for-vertical-segments)                 |
+| *under production*                                     | [Alignment parameters for cant segments](#Alignment-parameters-for-cant-segments)                         |
+| *under production*                                     | Alignment LandXML file, not including cant                                                                |
+| *under production*                                     | Alignment dwg file, not including cant                                                                    |
+| [ObjectsOverview](./ObjectsOverview.png)               | [Objects overview](#Objects-overview): a diagram + table describing the main to be used for the test case |
+| [FS60UNI_R.250_TG.0.092](./FS60UNI_R.250_TG.0.092.svg) | [Turnout drawing](#Turnout-example) to be used as example. **The objective of the test IS NOT to reproduced it** |
+| [SimplifiedTurnout](./SimplifiedTurnout.png)           | [Simplified turnout](#Simplified-trnout) scheme. **The objective of the test IS NOT to reproduced the turnout**                 |
+
 
 ---
+## Line layout
 
+Short description:
+
+Snippet:
+<img src="./Line_layout.jpg">
+
+---
+## Track cross section
+
+Short description:
+
+Snippet:
+<img src="./TrackCrossSection.png">
+
+---
+## Sleeper placement
+
+Short description:
+
+Snippet:
+<img src="./SleeperPlacement.png">
+
+---
 ## Alignment parameters for horizontal segments
-
-<details><summary>expand/collapse</summary>
 
 The meaning of the columns in the spreadsheet for the Horizontal Alignment is explained below (from left to right). **Please note** that *Spiral* is equal to *Clothoid* in the Point Type:
 
@@ -63,11 +86,9 @@ The meaning of the columns in the spreadsheet for the Horizontal Alignment is ex
 
 ![alt text](./Horizontal%20alignment%20table.png)
 
-</details>
-
+---
 ## Alignment parameters for vertical segments
 
-<details><summary>expand/collapse</summary>
 The meaning of the columns in the spreadsheet for the Vertical Alignment is explained below (from left to right):
 
 1. **Element type**:
@@ -98,11 +119,9 @@ The meaning of the columns in the spreadsheet for the Vertical Alignment is expl
 
 ![alt text](./Vertical%20alignment%20table.png)
 
-</details>
-
+---
 ## Alignment parameters for cant segments
 
-<details><summary>expand/collapse</summary>
 The meaning of the columns in the spreadsheet for the Cant Alignment is explained below (from left to right). **Please note** that *Spiral* is equal to *Clothoid* in the Point Type:
 
 1. **Type**: is the type of point
@@ -135,11 +154,9 @@ The meaning of the columns in the spreadsheet for the Cant Alignment is explaine
 
 ![alt text](./Cant%20alignment%20table.png)
 
-</details>
-
+---
 ## Objects overview
 
-<details><summary>expand/collapse</summary>
 The picture captures main objects and relationships to be present in the IFC file
 
 ![alt text](./ObjectsOverview.png)
@@ -196,4 +213,20 @@ The table lists the direct attributes of the above mentioned objects
 | IfcAlignmentHorizontal | Horizontal 2                        | $                          | $          | na                    | na              |                       |
 | IfcAlignmentVertical   | Vertical 2                          | $                          | $          | na                    | na              |                       |
 
-</details>
+---
+## Turnout example
+
+Short description:
+
+Snippet:
+<img src="./FS60UNI_R.250_TG.0.092.svg">
+
+---
+## Simplified turnout
+
+Short description:
+
+Snippet:
+<img src="./SimplifiedTurnout.png"> 
+
+---

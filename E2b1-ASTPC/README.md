@@ -7,8 +7,6 @@
 
 ## Summary (intent)
 
-<details><summary>click to expand</summary> 
-
 This test case uses some elements of the railway track domain to test the following capabilities:
 - Object grouping
 - Object classification via external reference (i.e., bSDD)
@@ -27,19 +25,15 @@ The business context for the test is provided by a 2km portion of railway line, 
 1. Model project breakdown structure (spatial structure)
 1. Model alignment(s)
 1. Geo-reference model
-1. Model track objects type and objects (ballast, rails, sleepers, etc.)
+1. Model track object types and objects (course, ballast, rails, sleepers, etc.)
 1. Group objects, assemble objects
 1. Classify objects
 1. Model properties of objects/object types
 1. Assign objects to project breakdown
 
-</details>
-
 ---
 
 ## Itemised Roots
-
-<details><summary>click to expand</summary> 
 
 The Test instruction addresses the import and export of the following IFC Entities & Concept Templates:
 
@@ -124,8 +118,6 @@ The Test instruction addresses the import and export of the following IFC Entiti
      - Project Units
 </details>
 
-</details>
-
 ---
 
 ## Variations
@@ -162,31 +154,25 @@ The Test case requires the following additional checks related to Model Geometry
 
 ## Model Dataset
 
-<details open><summary>click to expand</summary> 
-
 This test case utilises the dataset collected in the Dataset folder and summarised in the table below. Form more details on each item see [Dataset description](Dataset/README.md).
 
-| ID | Filename                                                        | Type (format)  | Description                               |
-|----|-----------------------------------------------------------------|----------------|-------------------------------------------|
-|    | *filename + link*                                               | csv            | Alignment parameters for horizontal segments |
-|    | *filename + link*                                               | csv            | Alignment parameters for vertical segments |
-|    | *filename + link*                                               | csv            | Alignment parameters for cant segments |
-|    | *filename + link*                                               | LandXML        | Alignment LandXML file, not including cant  |
-|    | *filename + link*                                               | dwg            | Alignment dwg file, not including cant  |
-|    | [Line_layout](Dataset/Line_layout.jpg)                                | figure (jpg)   | Schematic layout of the test case railway line |
-|    | [Objects overview](Dataset/ObjectsOverview.png)         | diagram (png)  | Objects overview: a diagram + table describing the main to be used for the test case |
-|    | *filename + link*                                               | drawing (pdf)  | Cross section example |
-|    | *filename + link*                                               | drawing (dwg)  | Cross section example |
-|    | *filename + link*                                               | drawing (PDF)  | Turnout drawing to be used as example |
-
-
-</details>
+| Filename                                           | Type (format)  | Description                               |
+|----------------------------------------------------|----------------|-------------------------------------------|
+| [Line_layout](Dataset/Line_layout.jpg)             | figure (jpg)   | Schematic line layout of the test case |
+| [TrackCrossSection](Dataset/TrackCrossSection.png) | drawing (png)  | Track cross section to be used as example |
+| [SleeperPlacement](Dataset/SleeperPlacement.png)   | figure (png)   | Information on how to position sleepers along the alignment |
+| *under production*                                 | csv            | Alignment parameters for horizontal segments |
+| *under production*                                 | csv            | Alignment parameters for vertical segments |
+| *under production*                                 | csv            | Alignment parameters for cant segments |
+| *under production*                                 | LandXML        | Alignment LandXML file, not including cant  |
+| *under production*                                 | dwg            | Alignment dwg file, not including cant  |
+| [ObjectsOverview](Dataset/ObjectsOverview.png)     | diagram (png)  | Objects overview: a diagram + table describing the main to be used for the test case |
+| [FS60UNI_R.250_TG.0.092](Dataset/FS60UNI_R.250_TG.0.092.svg)    | drawing (svg)  | Turnout drawing to be used as example. **The objective of the test IS NOT to reproduced it** 
+| [SimplifiedTurnout](Dataset/SimplifiedTurnout.png) | figure (png)   | Simplified turnout scheme. **The objective of the test IS NOT to reproduced the turnout** |
 
 ---
 
 ## Expected Results
-
-<details><summary>click to expand</summary> 
 
 Considering the aim of this test, the expected results are:
 
@@ -194,8 +180,6 @@ Considering the aim of this test, the expected results are:
 
 1. N. 1 IFC file containing the information as requested
 2. Screen-shot of ...
-
-</details>
 
 ---
 
@@ -358,7 +342,7 @@ NOTE:
 
 </details>
 
-<details open><summary>Object classification via external reference (i.e., bSDD)</summary>
+<details><summary>Object classification via external reference (i.e., bSDD)</summary>
 :construction: under construction :construction:
 
 - **Concept Template**: Classification Association
