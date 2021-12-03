@@ -377,6 +377,7 @@ These are classified using `IfcClassification`, `IfcClassificationReference`, an
 <ins>Below is an example of the attributes' values, plus a mapping of these attributes to the bSDD data model.</ins>
 
 `IfcClassification`
+
 | Example instance             | Source           | Edition       | EditionDate | Name       | Description | Location                                                      | ReferenceTokens |
 |------------------------------|------------------|---------------|-------------|------------|-------------|---------------------------------------------------------------|-----------------|
 | #45 = IFCCLASSIFICATION      | 'buildingSMART'    | '4.3rc4'        | $           | 'IFC'        | $           | http://identifier.buildingsmart.org/uri/buildingsmart/ifc-4.3 | $               |
@@ -384,6 +385,7 @@ These are classified using `IfcClassification`, `IfcClassificationReference`, an
 | **Mapping with bSDD data model** | *OrganizationCode* | *DomainVersion* | *ReleaseDate* | *DomainName* | NA          | *DomainNamespaceUri*                                            | NA              |
 
 `IfcClassificationReference`
+
 | Example instance                 | Location                                                                                   | Identification         | Name                    | ReferencedSource                 | Description                                                                                                        | Sort          |
 |----------------------------------|--------------------------------------------------------------------------------------------|------------------------|-------------------------|----------------------------------|--------------------------------------------------------------------------------------------------------------------|---------------|
 | #46 = IFCCLASSIFICATIONREFERENCE | http://identifier.buildingsmart.org/uri/buildingsmart/ifc-4.3/class/ifctrackelementsleeper | 'ifctrackelementsleeper' | 'IfcTrackElement.SLEEPER' | #45                              | $ | $             |
@@ -391,6 +393,7 @@ These are classified using `IfcClassification`, `IfcClassificationReference`, an
 | **Mapping with bSDD data model**     | *DomainNamespaceUri/class/code*                                                              | *Code*                   | *Name*                    | NA                               | *Definition*                                                                                                         | NA            |
 
 `IfcRelAssociatesClassification`
+
 | Example instance                     | GlobalId               | OwnerHistory    | Name                        | Description | RelatedObjects      | RelatingClassification  |
 |--------------------------------------|------------------------|-----------------|-----------------------------|-------------|---------------------|-------------------------|
 | #47 = IFCRELASSOCIATESCLASSIFICATION | '0OLroQf6D0tfjW0rwFRKeK' | #10             | 'Classification Relationship' | $           | (#21,#22)           | #46                     |
