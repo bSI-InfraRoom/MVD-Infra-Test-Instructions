@@ -169,12 +169,12 @@ This test case utilises the dataset collected in the Dataset folder and summaris
 | ID | Filename                                                        | Type (format)  | Description                               |
 |----|-----------------------------------------------------------------|----------------|-------------------------------------------|
 |    | *filename + link*                                               | csv            | Alignment parameters for horizontal segments |
-|    | *filename + link*                                               | csv            | Alignment parameters for vertical segments) |
+|    | *filename + link*                                               | csv            | Alignment parameters for vertical segments |
 |    | *filename + link*                                               | csv            | Alignment parameters for cant segments |
 |    | *filename + link*                                               | LandXML        | Alignment LandXML file, not including cant  |
 |    | *filename + link*                                               | dwg            | Alignment dwg file, not including cant  |
-|    | [Line_layout](./Line_layout.jpg)                                | figure (jpg)   | Schematic layout of the test case railway line |
-|    | [Objects overview](./ObjectsOverview.png)         | diagram (png)  | Objects overview: a diagram + table describing the main to be used for the test case |
+|    | [Line_layout](Dataset/Line_layout.jpg)                                | figure (jpg)   | Schematic layout of the test case railway line |
+|    | [Objects overview](Dataset/ObjectsOverview.png)         | diagram (png)  | Objects overview: a diagram + table describing the main to be used for the test case |
 |    | *filename + link*                                               | drawing (pdf)  | Cross section example |
 |    | *filename + link*                                               | drawing (dwg)  | Cross section example |
 |    | *filename + link*                                               | drawing (PDF)  | Turnout drawing to be used as example |
@@ -205,6 +205,8 @@ Considering the aim of this test, the expected results are:
 :construction: under construction :construction:
 
 <details><summary>General</summary>
+
+:construction: under construction :construction:
 
 - All the concept templates must be correctly used
 - At least 1 instance of each entity listed in [Itemised Roots](#Itemised-Roots) is present in the file
@@ -356,11 +358,44 @@ NOTE:
 
 </details>
 
-<details><summary>Object classification via external reference (i.e., bSDD)</summary>
+<details open><summary>Object classification via external reference (i.e., bSDD)</summary>
+:construction: under construction :construction:
 
-| **ID** | **CRITERIA**                            | **VALUE** / **COMMENT**               |
-|--------|-----------------------------------------|---------------------------------------|
-|        | ABC                                     | 0                                     |
+- **Concept Template**: Classification Association
+- **Usage** (if existing): NA
+
+All the sleepers (IfcTrackElement.SLEEPER) must be classified using the correspondent classification inside the bSDD (buildingSMART Data Dictionary). The example below shows how the classification is expected to be done.
+
+Given two sleepers
+
+> `#21 = IFCTRACKELEMENT('0$kRFU7b50rP3_$BI9iljk', #1, 'Sleeper Z20#0001', 'Sleeper', $, #368035, #368038, $, .SLEEPER.);`
+>
+> `#22 = IFCTRACKELEMENT('00sqkYXHv4OfDNJGKpHKi$', #1, 'Sleeper Z20#0002', 'Sleeper', $, #368052, #368055, $, .SLEEPER.);`
+
+These are classified using `IfcClassification`, `IfcClassificationReference`, and `IfcRelAssociatesClassification`.
+
+<ins>Below is an example of the attributes' values, plus a mapping of these attributes to the bSDD data model.</ins>
+
+`IfcClassification`
+| Example instance             | Source           | Edition       | EditionDate | Name       | Description | Location                                                      | ReferenceTokens |
+|------------------------------|------------------|---------------|-------------|------------|-------------|---------------------------------------------------------------|-----------------|
+| #45 = IFCCLASSIFICATION      | 'buildingSMART'    | '4.3rc4'        | $           | 'IFC'        | $           | http://identifier.buildingsmart.org/uri/buildingsmart/ifc-4.3 | $               |
+|                              | IFCLABEL         | IFCLABEL      | IFCDATE     | IFCLABEL   | IFCTEXT     | IFCURIREFERENCE                                               | IFCIDENTIFIER   |
+| **Mapping with bSDD data model** | *OrganizationCode* | *DomainVersion* | *ReleaseDate* | *DomainName* | NA          | *DomainNamespaceUri*                                            | NA              |
+
+`IfcClassificationReference`
+| Example instance                 | Location                                                                                   | Identification         | Name                    | ReferencedSource                 | Description                                                                                                        | Sort          |
+|----------------------------------|--------------------------------------------------------------------------------------------|------------------------|-------------------------|----------------------------------|--------------------------------------------------------------------------------------------------------------------|---------------|
+| #46 = IFCCLASSIFICATIONREFERENCE | http://identifier.buildingsmart.org/uri/buildingsmart/ifc-4.3/class/ifctrackelementsleeper | 'ifctrackelementsleeper' | 'IfcTrackElement.SLEEPER' | #45                              | 'A sleeper is a track element that supports running rails, guard rails and check rails at right angles to its axis.' | $             |
+|                                  | IFCURIREFERENCE                                                                            | IFCIDENTIFIER          | IFCLABEL                | IFCCLASSIFICATIONREFERENCESELECT | IFCTEXT                                                                                                            | IFCIDENTIFIER |
+| **Mapping with bSDD data model**     | *DomainNamespaceUri/class/code*                                                              | *Code*                   | *Name*                    | NA                               | *Definition*                                                                                                         | NA            |
+
+`IfcRelAssociatesClassification`
+| Example instance                     | GlobalId               | OwnerHistory    | Name                        | Description | RelatedObjects      | RelatingClassification  |
+|--------------------------------------|------------------------|-----------------|-----------------------------|-------------|---------------------|-------------------------|
+| #47 = IFCRELASSOCIATESCLASSIFICATION | '0OLroQf6D0tfjW0rwFRKeK' | #10             | 'Classification Relationship' | $           | (#21,#22)           | #46                     |
+|                                      | IFCGLOBALLYUNIQUEID    | IFCOWNERHISTORY | IFCLABEL                    | IFCTEXT     | IFCDEFINITIONSELECT | IFCCLASSIFICATIONSELECT |
+
 
 </details>
 
