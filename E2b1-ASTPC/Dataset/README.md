@@ -30,7 +30,43 @@ The line for the test is made of two alignments:
 2. Alignment 2: Diverted route (blue dashed in the figure below)
 
 Snippet:
-<img src="./LineLayout.svg">
+<img src="./LineLayout.svg" height="600"/>
+
+The **Alignment 1: Primary route** is made of the following **9 segments**:
+
+| # | Type of segment | From (pk) | To (pk)  | Segment length |
+|---|-----------------|-----------|----------|----------------|
+| 1 | LINE            | 0.0000    | 234.7194 | 234.7194       |
+| 2 | CLOTHOID        | 234.7194  | 274.7194 | 40.0000        |
+| 3 | CIRCULARARC     | 274.7194  | 468.1839 | 193.4645       |
+| 4 | CLOTHOID        | 468.1839  | 508.1839 | 40.0000        |
+| 5 | LINE            | 508.1839  | 547.1654 | 38.9815        |
+| 6 | CLOTHOID        | 547.1654  | 587.1654 | 40.0000        |
+| 7 | CIRCULARARC     | 587.1654  | 696.5971 | 109.4317       |
+| 8 | CLOTHOID        | 696.5971  | 736.5971 | 40.0000        |
+| 9 | LINE            | 736.5971  | 876.3682 | 139.7711       |
+
+The **Alignment 2: Diverted route** is made of the following **11 segments**:
+
+| #  | Type of segment | From (pk) | To (pk)  | Segment length |
+|----|-----------------|-----------|----------|----------------|
+| 1  | CIRCULARARC     | 0.0000    | 22.9021  | 22.9021        |
+| 2  | LINE            | 22.9021   | 30.8376  | 7.9355         |
+| 3  | LINE            | 30.8376   | 99.1345  | 68.2969        |
+| 4  | CLOTHOID        | 99.1345   | 139.1345 | 40.0000        |
+| 5  | CIRCULARARC     | 139.1345  | 424.3769 | 285.2424       |
+| 6  | CLOTHOID        | 424.3769  | 464.3769 | 40.0000        |
+| 7  | LINE            | 464.3769  | 501.2857 | 36.9088        |
+| 8  | CLOTHOID        | 501.2857  | 540.9846 | 39.6989        |
+| 9  | CIRCULARARC     | 540.9846  | 648.4760 | 107.4914       |
+| 10 | CLOTHOID        | 648.4760  | 688.1749 | 39.6989        |
+| 11 | LINE            | 688.1749  | 828.0965 | 139.9216       |
+
+All parameters of the segments, for both alignments, are detailed below in:
+
+- [Alignment parameters for horizontal segments](#Alignment-parameters-for-horizontal-segments)
+- [Alignment parameters for vertical segments](#Alignment-parameters-for-vertical-segments)
+- [Alignment parameters for cant segments](#Alignment-parameters-for-cant-segments)
 
 ---
 ## Track cross section
