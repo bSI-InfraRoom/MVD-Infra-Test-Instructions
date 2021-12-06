@@ -34,17 +34,20 @@ Snippet:
 
 The **Alignment 1: Primary route** is made of the following **9 segments**:
 
-| # | Type of segment | From (pk) | To (pk)  | Segment length |
-|---|-----------------|-----------|----------|----------------|
-| 1 | LINE            | 0.0000    | 234.7194 | 234.7194       |
-| 2 | CLOTHOID        | 234.7194  | 274.7194 | 40.0000        |
-| 3 | CIRCULARARC     | 274.7194  | 468.1839 | 193.4645       |
-| 4 | CLOTHOID        | 468.1839  | 508.1839 | 40.0000        |
-| 5 | LINE            | 508.1839  | 547.1654 | 38.9815        |
-| 6 | CLOTHOID        | 547.1654  | 587.1654 | 40.0000        |
-| 7 | CIRCULARARC     | 587.1654  | 696.5971 | 109.4317       |
-| 8 | CLOTHOID        | 696.5971  | 736.5971 | 40.0000        |
-| 9 | LINE            | 736.5971  | 876.3682 | 139.7711       |
+<div align="center">
+
+    | # | Type of segment | From (pk) | To (pk)  | Segment length |
+    |---|-----------------|-----------|----------|----------------|
+    | 1 | LINE            | 0.0000    | 234.7194 | 234.7194       |
+    | 2 | CLOTHOID        | 234.7194  | 274.7194 | 40.0000        |
+    | 3 | CIRCULARARC     | 274.7194  | 468.1839 | 193.4645       |
+    | 4 | CLOTHOID        | 468.1839  | 508.1839 | 40.0000        |
+    | 5 | LINE            | 508.1839  | 547.1654 | 38.9815        |
+    | 6 | CLOTHOID        | 547.1654  | 587.1654 | 40.0000        |
+    | 7 | CIRCULARARC     | 587.1654  | 696.5971 | 109.4317       |
+    | 8 | CLOTHOID        | 696.5971  | 736.5971 | 40.0000        |
+    | 9 | LINE            | 736.5971  | 876.3682 | 139.7711       |
+</div>
 
 The **Alignment 2: Diverted route** is made of the following **11 segments**:
 
