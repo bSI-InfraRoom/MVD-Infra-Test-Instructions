@@ -59,6 +59,15 @@ The horizontal layout of the alignment is described using a CSV file. The column
 - All the coordinates are defined using the UTM Coordinate System
 - The *Radius Of Curvature* is considered positive when the curve is to the right, and negative when it is to the left
 
+**IMPORTANT**:
+
+When using IFC to exchange information, the file must respect IFC convention [marked as ii) in the figure below].
+This implies a right-hand cartesian coordinate systems; and angles are measured from x-axis, counter clock-wise.
+
+<p align="center">
+    <img src="SurveyToIFCangleConvention.png" height="500"/>
+</p>
+
 #### Data snippet
 ![alt text](./Horizontal%20alignment%20image.png)
 
