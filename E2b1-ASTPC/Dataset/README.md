@@ -99,7 +99,9 @@ The cant layout of the alignment is described using a CSV file. The column heade
 - All distances are in meters
 - Applied cant: in a cross-section plane, orthogonal to the track axis, it is the difference in height (h<sub>t</sub> in the picture below) between two points, of the track plane, that have a conventional distance between them of 1500 mm. The cant is always applied to the external rail (the furthest rail from the center or the curve). Cant measure is positive because the external rail of a track is always higher than the internal rail.
 
-![alt text](./Cant-CantAngle.png)
+<p align="center">
+    <img src="./Cant-CantAngle.png" height="200"/>
+</p>
 
 #### Data snippet
 
