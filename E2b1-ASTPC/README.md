@@ -147,10 +147,6 @@ The following itemised restrictions and constraints shall be placed on IFC Entit
 
 The Test case requires the following additional checks related to Model Geometry:
 
-- *Correspondence between the business-logic and the geometry parts for all segments*
-- *Tangential continuity of alignemnt segments. Tolerance of ... millimetres*
-- ... (to be continued)
-
 </details>
 
 ---
@@ -202,13 +198,15 @@ Considering the aim of this test, the expected results are:
 
 <details><summary>Railway alignment (with cant)</summary> 
 
-For the **Railway alignment (with cant)** capability, the test is considered passed if **all** the following validation criteria are satisfied.
+- **Concept Template**: Alignment Decomposition
+- **Usage** (if existing): NA
+> **Acceptance criteria**: For the **Railway alignment (with cant)** capability, the test is considered passed if **all** the following validation criteria are satisfied.
 
 | **ID** | **CRITERIA**                                                     | **VALUE**                                   | **COMMENT**                |
 |--------|------------------------------------------------------------------|---------------------------------------------|----------------------------|
 |        | Alignments contained in file                                     | 2                                           |                            |
-|        | Component for Alignment 1                                        | H+V+C                                       |                            |
-|        | Component for Alignment 2                                        | H+V                                         |                            |
+|        | Component for Alignment 1: Primary route                         | H+V+C                                       |                            |
+|        | Component for Alignment 2: Diverted route                        | H+V+C                                       |                            |
 |        | The horizontal (H) layout is made only by these type of segments | "straight line, circular arc, clothoid"     |                            |
 |        | The vertical (V) layout is made only by these type of segments   | "straight line, circular arc"               |                            |
 |        | The cant (C) layout is made only by these type of segments       | "constant straight line, linear transition" |                            |
@@ -217,53 +215,56 @@ For the **Railway alignment (with cant)** capability, the test is considered pas
 |        | Unit of measure all angles                                       | **radian** (π)                              | As provided in the dataset |
 |        | Required precision for **distances**                             | "minimum 4 decimal places (0,0001)"         |                            |
 |        | Required precision for **angles** and **slope**                  | "minimum 6 decimal places (0,000001)"       |                            |
+|        | Semantic description of segments corresponds to their geometry   | NA                                          | RDF tools can do this      |
+|        | Tangential continuity of all segments is verified, tolerance = 0, 00000001 |                                   | RDF tools can do this      |
 
-NOTES:
+
+NOTE:
 -	The *RailHeadDistance* (blue line in the figure below) is a normalized value used to compute the angle of cant. RFI uses 1500 mm for a track gauge of 1435 mm
 
 ![alt text](Dataset/CantFromLowerRail.png)
 
-<details><summary> Alignment 1 </summary>
+<details><summary> Alignment 1: Primary route </summary>
 
-| ID | CRITERIA                                                           | VALUE          |
-|----|--------------------------------------------------------------------|----------------|
-|    | Starting point Horizontal  - Mileage (pk)                          | 0+510.011      |
-|    | Starting point Horizontal  - DistAlong                             | 0.000          |
-|    | Starting point Horizontal  - X                                     | 451,296.6992   |
-|    | Starting point Horizontal  - Y                                     | 4,538,798.8214 |
-|    | Starting point Vertical  - Mileage                                 | 0+510.011      |
-|    | Starting point Vertical  - Z                                       | 36.76035       |
-|    | Ending point Horizontal  - Mileage (pk)                            | 47+271.7631    |
-|    | Ending point Horizontal  - DistAlong                               | 46,761.7521    |
-|    | Ending point Horizontal  - X                                       | 479,666.2177   |
-|    | Ending point Horizontal  - Y                                       | 4,554,675.8253 |
-|    | Ending point Vertical  - Mileage                                   | 47+271.7631    |
-|    | Ending point Vertical  - Z                                         | 121.0179       |
-|    | Total 2D length of alignment (horizontal projection)               | 46,761.7521    |
-|    | Total 3D length of alignment                                       | 46,765.4520    |
-|    | Height difference between start and end point of alignment 3D curve | -84.2575       |
+| CRITERIA                                                            | VALUE        |
+|---------------------------------------------------------------------|--------------|
+| Starting point Horizontal - Mileage (pk)                            | 0+000        |
+| Starting point Horizontal - DistAlong                               | 0.0000       |
+| Starting point Horizontal - X                                       | 452413.9199  |
+| Starting point Horizontal - Y                                       | 4539456.4011 |
+| Starting point Vertical - Mileage                                   | 0+000        |
+| Starting point Vertical - Z                                         | 5.0000       |
+| Ending point Horizontal - Mileage (pk)                              | 0+876.3682   |
+| Ending point Horizontal - DistAlong                                 | 876.3682     |
+| Ending point Horizontal - X                                         | 453202.5241  |
+| Ending point Horizontal - Y                                         | 4539831.9287 |
+| Ending point Vertical - Mileage                                     | 0+876.3682   |
+| Ending point Vertical - Z                                           | 2.0000       |
+| Total 2D length of alignment (horizontal projection)                | 876.3682     |
+| Total 3D length of alignment                                        | 876.3819     |
+| Height difference between start and end point of alignment 3D curve | -3.0000      |
 
 </details>
 
-<details><summary> Alignment 2 </summary>
+<details><summary> Alignment 2: Diverted route </summary>
 
-| ID | CRITERIA                                                           | VALUE          |
-|----|--------------------------------------------------------------------|----------------|
-|    | Starting point Horizontal  - Mileage (pk)                          | 0+510.011      |
-|    | Starting point Horizontal  - DistAlong                             | 0.000          |
-|    | Starting point Horizontal  - X                                     | 451,296.6992   |
-|    | Starting point Horizontal  - Y                                     | 4,538,798.8214 |
-|    | Starting point Vertical  - Mileage                                 | 0+510.011      |
-|    | Starting point Vertical  - Z                                       | 36.76035       |
-|    | Ending point Horizontal  - Mileage (pk)                            | 47+271.7631    |
-|    | Ending point Horizontal  - DistAlong                               | 46,761.7521    |
-|    | Ending point Horizontal  - X                                       | 479,666.2177   |
-|    | Ending point Horizontal  - Y                                       | 4,554,675.8253 |
-|    | Ending point Vertical  - Mileage                                   | 47+271.7631    |
-|    | Ending point Vertical  - Z                                         | 121.0179       |
-|    | Total 2D length of alignment (horizontal projection)               | 46,761.7521    |
-|    | Total 3D length of alignment                                       | 46,765.4520    |
-|    | Height difference between start and end point of alignment 3D curve | -84.2575       |
+| CRITERIA                                                            | VALUE        |
+|---------------------------------------------------------------------|--------------|
+| Starting point Horizontal - Mileage (pk)                            | 0+000        |
+| Starting point Horizontal - DistAlong                               | 0.0000       |
+| Starting point Horizontal - X                                       | 452460.8898  |
+| Starting point Horizontal - Y                                       | 4539473.5425 |
+| Starting point Vertical - Mileage                                   | 0+000        |
+| Starting point Vertical - Z                                         | 5.0000       |
+| Ending point Horizontal - Mileage (pk)                              | 0+828.0965   |
+| Ending point Horizontal - DistAlong                                 | 828.0965     |
+| Ending point Horizontal - X                                         | 453208.8311  |
+| Ending point Horizontal - Y                                         | 4539818.3191 |
+| Ending point Vertical - Mileage                                     | 0+828.0965   |
+| Ending point Vertical - Z                                           | 2.0000       |
+| Total 2D length of alignment (horizontal projection)                | 828.0965     |
+| Total 3D length of alignment                                        | 828.1099     |
+| Height difference between start and end point of alignment 3D curve | -3.0000      |
 
 </details>
 
@@ -271,12 +272,11 @@ NOTES:
 
 <details><summary>Object grouping</summary>
 
-For the **Object grouping** capability, the test is considered passed if **all** the following validation criteria are satisfied.
-
-The validation procedure must verify that a group of the requested type is grouping (via `IfcRelAssignsToGroup`) exactly a given number of objects of the requested type, no more and no less.
-
 - **Concept Template**: Group Assignment
 - **Usage** (if existing): NA
+> **Acceptance criteria**: For the **Object grouping** capability, the test is considered passed if **all** the following validation criteria are satisfied.
+>
+> The validation procedure must verify that a group of the requested type is grouping (via `IfcRelAssignsToGroup`) exactly a given number of objects of the requested type, no more and no less.
 
 | Group    | Group Type                          | Minimum | Maximum | Object             | Object Type          |
 |----------|-------------------------------------|---------|---------|--------------------|----------------------|
@@ -298,12 +298,11 @@ NOTE:
 
 <details><summary>Object typing</summary>
 
-For the **Object typing** capability, the test is considered passed if **all** the following validation criteria are satisfied.
-
-The validation procedure must verify that an IFC entity type with the given Name is typing (via `IfcRelDefinesByType`) exactly a given number of objects of the requested Name, no more and no less.
-
 - **Concept Template**: Object Typing
 - **Usage** (if existing): NA
+> **Acceptance criteria**: For the **Object typing** capability, the test is considered passed if **all** the following validation criteria are satisfied.
+>
+> The validation procedure must verify that an IFC entity type with the given Name is typing (via `IfcRelDefinesByType`) exactly a given number of objects of the requested Name, no more and no less.
 
 | Entity Type     | Entity Type Name                    | Minimum | Maximum | IfcObject       | IfcObject Name                      |
 |-----------------|-------------------------------------|---------|---------|-----------------|-------------------------------------|
@@ -330,12 +329,11 @@ NOTE:
 
 <details><summary>Object decomposition (assemblies)</summary>
 
-For the **Object decomposition** capability, the test is considered passed if **all** the following validation criteria are satisfied.
-
-The validation procedure must verify that an assembly of the requested type aggregates (via `IfcRelAggregates`) exactly a given number of elements of the requested type, no more and no less.
-
 - **Concept Template**: Element Decomposition
 - **Usage** (if existing): NA
+> **Acceptance criteria**: For the **Object decomposition** capability, the test is considered passed if **all** the following validation criteria are satisfied.
+>
+> The validation procedure must verify that an assembly of the requested type aggregates (via `IfcRelAggregates`) exactly a given number of elements of the requested type, no more and no less.
 
 | Assembly           | Assembly Type | Minimum | Maximum | Element         | Element Type |
 |--------------------|---------------|---------|---------|-----------------|--------------|
@@ -352,12 +350,12 @@ NOTE:
 </details>
 
 <details><summary>Object classification via external reference (i.e., bSDD)</summary>
-:construction: under construction :construction:
 
 - **Concept Template**: Classification Association
 - **Usage** (if existing): NA
-
-All the sleepers (IfcTrackElement.SLEEPER) must be classified using the correspondent classification inside the bSDD (buildingSMART Data Dictionary). The example below shows how the classification is expected to be done.
+> **Acceptance criteria**: For the **Object classification via external reference** capability, the test is considered passed if **all** the following validation criteria are satisfied.
+>
+> The validation procedure must verify that all the sleepers (IfcTrackElement.SLEEPER) are to be classified using the correspondent classification inside the bSDD (buildingSMART Data Dictionary). The example below shows how the classification is expected to be done.
 
 Given two sleepers
 
@@ -397,18 +395,52 @@ These are classified using `IfcClassification`, `IfcClassificationReference`, an
 
 <details><summary>Project Global Positioning</summary>
 
-| **ID** | **CRITERIA**                            | **VALUE** / **COMMENT**               |
-|--------|-----------------------------------------|---------------------------------------|
-|        | ABC                                     | 0                                     |
+- **Concept Template**: Project Global Positioning
+- **Usage** (if existing): NA
+> **Acceptance criteria**: For the **Project Global Positioning** capability, the test is considered passed if **all** the following validation criteria are satisfied.
+>
+> The validation procedure must verify that:
+> - `IfcMapConversion` entity is used to transform the local engineering coordinate system, often called world coordinate system (WCS), into the coordinate reference system of the underlying map.
+> - `IfcProjectedCRS` entity is used for representing the coordinate reference system of the map to which the map translation of the local engineering coordinate system of the engineering project relates.
+> Below are the expected values for the two entities.
+> 
+
+`IfcMapConversion`
+
+| #  | Attribute        | Value / Instructions                        |
+|----|------------------|---------------------------------------------|
+| 1  | SourceCRS        | Points to IfcGeometricRepresentationContext |
+| 2  | TargetCRS        | Points to IfcProjectedCRS (see below)       |
+| 3  | Eastings         | 0                                           |
+| 4  | Northings        | 0                                           |
+| 5  | OrthogonalHeight | 0                                           |
+| 6  | XAxisAbscissa    | 1                                           |
+| 7  | XAxisOrdinate    | 0                                           |
+| 8  | Scale            | 1                                           |
+| 9  | ScaleY           | 1                                           |
+| 10 | ScaleZ           | 1                                           |
+
+`IfcProjectedCRS`
+
+| # | Attribute     | Value / Instructions                        |
+|---|---------------|---------------------------------------------|
+| 1 | Name          | 'EPSG:3065'                                 |
+| 2 | Description   | 'Istituto Geografico Militare 1995 (IGM95)' |
+| 3 | GeodeticDatum | 'EPSG:3065'                                 |
+| 4 | VerticalDatum |  $                                          |
+| 5 | MapProjection | 'UTM'                                       |
+| 6 | MapZone       | '33N'                                       |
+| 7 | MapUnit       | $                                           |
 
 </details>
 
-<details><summary>Railway spatial structure</summary>
-
-:construction: under construction :construction:
+<details><summary>Spatial decomposition</summary>
 
 - **Concept Template**: Spatial Decomposition
 - **Usage** (if existing): NA
+> **Acceptance criteria**: For the **Spatial decomposition** capability, the test is considered passed if **all** the following validation criteria are satisfied.
+>
+> The validation procedure must verify that a Parent Element of the requested type aggregates (via `IfcRelAggregates`) exactly a given number of Child Elements of the requested type, no more and no less.
 
 | Parent Element | Parent Element Type | Minimum | Maximum | Child Element   | Child Element Type |
 |----------------|---------------------|---------|---------|-----------------|--------------------|
@@ -419,10 +451,11 @@ These are classified using `IfcClassification`, `IfcClassificationReference`, an
 
 <details><summary>Spatial containment</summary>
 
-:construction: under construction :construction:
-
 - **Concept Template**: Spatial Containment
 - **Usage** (if existing): NA
+> **Acceptance criteria**: For the **Spatial containment** capability, the test is considered passed if **all** the following validation criteria are satisfied.
+>
+> The validation procedure must verify that a Spatial Element of the requested type contains (via `IfcRelContainedInSpatialStructure`) exactly a given number of Elements of the requested type, no more and no less.
 
 | Spatial Element | Spatial Element Type | Minimum | Maximum | Element            | Element Type      |
 |-----------------|----------------------|---------|---------|--------------------|-------------------|
@@ -437,10 +470,11 @@ These are classified using `IfcClassification`, `IfcClassificationReference`, an
 
 <details><summary>Spatial reference</summary>
 
-:construction: under construction :construction:
-
 - **Concept Template**: :warning: Spatial Service Connectivity (or better *Group Spatial Connectivity*, not yet present in documentation) :warning:
 - **Usage** (if existing): NA
+> **Acceptance criteria**: For the **Spatial reference** capability, the test is considered passed if **all** the following validation criteria are satisfied.
+>
+> The validation procedure must verify that a Spatial Element of the requested type references (via `IfcRelReferencedInSpatialStructure`) exactly a given number of Products or Groups of the requested type, no more and no less.
 
 | Spatial Element | Spatial Element Type | Minimum | Maximum | Product or Group | Product Type or Group Type          |
 |-----------------|----------------------|---------|---------|------------------|-------------------------------------|
@@ -454,9 +488,7 @@ These are classified using `IfcClassification`, `IfcClassificationReference`, an
 
 <details><summary>Linear placement along alignment</summary>
 
-| **ID** | **CRITERIA**                            | **VALUE** / **COMMENT**               |
-|--------|-----------------------------------------|---------------------------------------|
-|        | ABC                                     | 0                                     |
+:construction: under construction :construction:
 
 </details>
 
@@ -466,6 +498,9 @@ These are classified using `IfcClassification`, `IfcClassificationReference`, an
 
 - **Concept Template**: Property Sets for Objects, Property Sets for Types
 - **Usage** (if existing): NA
+> **Acceptance criteria**: For the **Properties of objects and object types** capability, the test is considered passed if **all** the following validation criteria are satisfied.
+>
+> The validation procedure must verify that ...
 
 | Entity          | Entity Type          | PropertySet Name | Property Name           | Property Value Type | List Of Values                                       | IfcSimpleProperty subtype  |
 |-----------------|----------------------|------------------|-------------------------|---------------------|------------------------------------------------------|----------------------------|
