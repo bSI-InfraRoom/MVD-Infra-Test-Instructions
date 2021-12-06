@@ -80,7 +80,9 @@ All parameters of the segments, for both alignments, are detailed below in:
 Short description:
 
 Snippet:
-<img src="./TrackCrossSection.png">
+<p align="center">
+    <img src="./TrackCrossSection.png" width="800">
+</p>
 
 ---
 ## Sleeper placement
@@ -88,7 +90,9 @@ Snippet:
 Short description:
 
 Snippet:
-<img src="./SleeperPlacement.png">
+<p align="center">
+    <img src="./SleeperPlacement.png" height="600">
+</p>
 
 ---
 ## Alignment parameters for horizontal segments
