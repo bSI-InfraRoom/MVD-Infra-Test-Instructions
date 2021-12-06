@@ -241,7 +241,7 @@ NOTES:
 |    | Ending point Vertical  - Z                                         | 121.0179       |
 |    | Total 2D length of alignment (horizontal projection)               | 46,761.7521    |
 |    | Total 3D length of alignment                                       | 46,765.4520    |
-|    | Hight difference between start and end point of alignment 3D curve | -84.2575       |
+|    | Height difference between start and end point of alignment 3D curve | -84.2575       |
 
 </details>
 
@@ -263,7 +263,7 @@ NOTES:
 |    | Ending point Vertical  - Z                                         | 121.0179       |
 |    | Total 2D length of alignment (horizontal projection)               | 46,761.7521    |
 |    | Total 3D length of alignment                                       | 46,765.4520    |
-|    | Hight difference between start and end point of alignment 3D curve | -84.2575       |
+|    | Height difference between start and end point of alignment 3D curve | -84.2575       |
 
 </details>
 
@@ -330,7 +330,9 @@ NOTE:
 
 <details><summary>Object decomposition (assemblies)</summary>
 
-:construction: under construction :construction:
+For the **Object decomposition** capability, the test is considered passed if **all** the following validation criteria are satisfied.
+
+The validation procedure must verify that an assembly of the requested type aggregates (via `IfcRelAggregates`) exactly a given number of elements of the requested type, no more and no less.
 
 - **Concept Template**: Element Decomposition
 - **Usage** (if existing): NA
@@ -342,6 +344,10 @@ NOTE:
 | IfcElementAssembly | TURNOUTPANEL  | 1       | 10      | IfcRail         | RAIL         |
 | IfcElementAssembly | TURNOUTPANEL  | 1       | 2       | IfcRail         | CHECKRAIL    |
 | IfcElementAssembly | TURNOUTPANEL  | 52      | 52      | IfcTrackElement | SLEEPER      |
+
+NOTE:
+- when **Minimum** and **Maximum** have the same value, it means exactly. Example: Minimum=Maximum=2, means that the assembly must aggregates exactly 2 elements of the requested type.
+- when **Maximum** is empty, it means unlimited. Example: Minimum=1; Maximum=empty, means that the assembly must aggregate 1 or more elements of the requested type.
 
 </details>
 
