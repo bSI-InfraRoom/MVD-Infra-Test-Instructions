@@ -1,5 +1,8 @@
 # Test instructions
 
+[![See GH Pages publication for this test](https://img.shields.io/badge/GitHub%20Pages-Test%20Case%20documentation-blue)](https://evandroalfieri.github.io/MVD-Infra-Test-Instructions/E2b1-ASTPC/)
+
+
 
 |       Test Case title     | Code | Abbreviation | Author | Data Owner |
 |:-------------------------:|:----:|:------------:|:------:| :---------:|
