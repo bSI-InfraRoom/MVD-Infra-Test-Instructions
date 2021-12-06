@@ -25,14 +25,14 @@
 ---
 ## Line layout
 
-The line for the test is made of two alignments:
+The line for the test is made of two alignments (*IfcAlignment*):
 1. Alignment 1: Primary route (red in the figure below)
 2. Alignment 2: Diverted route (blue dashed in the figure below)
 
 Snippet:
 <img src="./LineLayout.svg" height="600"/>
 
-The **Alignment 1: Primary route** is made of the following **9 segments**:
+The **Primary route** (*IfcAlignment* named *Alignment 1*) is made of the following **9 horizontal segments**:
 
 <div align="center">
 
@@ -49,7 +49,7 @@ The **Alignment 1: Primary route** is made of the following **9 segments**:
 | 9 | LINE            | 736.5971  | 876.3682 | 139.7711       |
 </div>
 
-The **Alignment 2: Diverted route** is made of the following **11 segments**:
+The **Diverted route** (*IfcAlignment* named *Alignment 2*) is made of the following **11 horizontal segments**:
 
 <div align="center">
 
