@@ -159,19 +159,19 @@ The Test case requires the following additional checks related to Model Geometry
 
 This test case utilises the dataset collected in the Dataset folder and summarised in the table below. Form more details on each item see [Dataset description](Dataset/README.md).
 
-| Filename                                           | Type (format)  | Description                               |
-|----------------------------------------------------|----------------|-------------------------------------------|
-| [Line_layout](Dataset/Line_layout.jpg)             | figure (jpg)   | Schematic line layout of the test case |
-| [TrackCrossSection](Dataset/TrackCrossSection.png) | drawing (png)  | Track cross section to be used as example |
-| [SleeperPlacement](Dataset/SleeperPlacement.png)   | figure (png)   | Information on how to position sleepers along the alignment |
-| *under production*                                 | csv            | Alignment parameters for horizontal segments |
-| *under production*                                 | csv            | Alignment parameters for vertical segments |
-| *under production*                                 | csv            | Alignment parameters for cant segments |
-| *under production*                                 | LandXML        | Alignment LandXML file, not including cant  |
-| *under production*                                 | dwg            | Alignment dwg file, not including cant  |
-| [ObjectsOverview](Dataset/ObjectsOverview.png)     | diagram (png)  | Objects overview: a diagram + table describing the main to be used for the test case |
-| [FS60UNI_R.250_TG.0.092](Dataset/FS60UNI_R.250_TG.0.092.svg)    | drawing (svg)  | Turnout drawing to be used as example. **The objective of the test IS NOT to reproduced it** 
-| [SimplifiedTurnout](Dataset/SimplifiedTurnout.png) | figure (png)   | Simplified turnout scheme. **The objective of the test IS NOT to reproduced the turnout** |
+| Filename                | Type (format)  | Description                               |
+|-------------------------|----------------|-------------------------------------------|
+| Line_layout             | figure (jpg)   | Schematic line layout of the test case |
+| TrackCrossSection       | drawing (png)  | Track cross section to be used as example |
+| SleeperPlacement        | figure (png)   | Information on how to position sleepers along the alignment |
+| *under production*      | csv            | Alignment parameters for horizontal segments |
+| *under production*      | csv            | Alignment parameters for vertical segments |
+| *under production*      | csv            | Alignment parameters for cant segments |
+| *under production*      | LandXML        | Alignment LandXML file, not including cant  |
+| *under production*      | dwg            | Alignment dwg file, not including cant  |
+| ObjectsOverview         | diagram (png)  | Objects overview: a diagram + table describing the main to be used for the test case |
+| FS60UNI_R.250_TG.0.092  | drawing (svg)  | Turnout drawing to be used as example. **The objective of the test IS NOT to reproduced the turnout** 
+| SimplifiedTurnout       | figure (png)   | Simplified turnout scheme. **The objective of the test IS NOT to reproduced the turnout** |
 
 ---
 
@@ -389,7 +389,7 @@ These are classified using `IfcClassification`, `IfcClassificationReference`, an
 
 | Example instance                     | GlobalId               | OwnerHistory    | Name                        | Description | RelatedObjects      | RelatingClassification  |
 |--------------------------------------|------------------------|-----------------|-----------------------------|-------------|---------------------|-------------------------|
-| #47 = IFCRELASSOCIATESCLASSIFICATION | '0OLroQf6D0tfjW0rwFRKeK' | #10             | 'Classification Relationship' | $           | (#21,#22)           | #46                     |
+| #47 = IFCRELASSOCIATESCLASSIFICATION | `0OLroQf6D0tfjW0rwFRKeK` | #10             | 'Classification Relationship' | $           | (#21,#22)           | #46                     |
 |                                      | IFCGLOBALLYUNIQUEID    | IFCOWNERHISTORY | IFCLABEL                    | IFCTEXT     | IFCDEFINITIONSELECT | IFCCLASSIFICATIONSELECT |
 
 
