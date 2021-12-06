@@ -77,6 +77,8 @@ All parameters of the segments, for both alignments, are detailed below in:
 ---
 ## Track cross section
 
+:construction: under construction :construction:
+
 Short description:
 
 Snippet:
@@ -86,6 +88,8 @@ Snippet:
 
 ---
 ## Sleeper placement
+
+:construction: under construction :construction:
 
 Short description:
 
