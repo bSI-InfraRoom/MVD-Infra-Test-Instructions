@@ -2,15 +2,13 @@
 
 [![See GH Pages publication for this test](https://img.shields.io/badge/GitHub%20Pages-Test%20Case%20documentation-blue)](https://evandroalfieri.github.io/MVD-Infra-Test-Instructions/E2b1-ASTPC/)
 
-
-
-|       Test Case title     | Code | Abbreviation | Author | Data Owner |
-|:-------------------------:|:----:|:------------:|:------:| :---------:|
-|  Aggregate structures + Track. Pavement and Course (ballast) + Cant | E2b1 | ASTPC | Evandro Alfieri | RFI |
+| Documentation Code   | Title                                                              | Exchange Code | Test Code | Author          | Data Owner | Version | Date       |
+|----------------------|--------------------------------------------------------------------|---------------|-----------| ----------------|------------|---------|------------|
+| IFC4.3AbRV_E2b_ASTPC | Aggregate structures + Track. Pavement and Course (ballast) + Cant | E2b           | ASTPC     | Evandro Alfieri | RFI        | 1.0     | DD.MM.YYYY |
 
 ## Summary (intent)
 
-This test case uses some elements of the railway track domain to test the following capabilities:
+This test case uses the elements of the railway track domain listed [below](#Itemised-Roots) to certify the following capabilities:
 - Object grouping
 - Object classification via external reference (i.e., bSDD)
 - Object typing
@@ -21,9 +19,13 @@ This test case uses some elements of the railway track domain to test the follow
 - Linear placement along alignment
 - Properties of objects
 
-The business context for the test is provided by a 2km portion of railway line, including: 2 alignments, track substructure and superstructure, and related products.  
+The business context for the test is provided by a 800 m portion of railway line, including: 2 alignments, track substructure and superstructure, and related products.
 
-### Test instructions (**high-level**, <ins>**not necessarily in this order**</ins>)
+The [Expected Results](#Expected-Results) section lists the material that will be used to assess the fulfilment of capabilities.
+
+:warning: <ins> This is a test-driven process: refer to the **Validation Criteria** to understand what is required by the test</ins> :warning: 
+
+### High-level test instructions (<ins>**not necessarily in this order**</ins>)
 
 1. Model project breakdown structure (spatial structure)
 1. Model alignment(s)
@@ -48,20 +50,11 @@ The Test instruction addresses the import and export of the following IFC Entiti
   - IfcFacilityPart
   - IfcGroup
   - IfcElementAssembly
-  - IfcActuator
+  - IfcActuator / IfcActuatorType
   - IfcRail
   - IfcTrackElement
   - IfcFastener
-  - IfcCourse
-
-  - IfcRelAggregates
-  - IfcRelAssignsToGroup
-  - IfcRelContainedInSpatialStructure
-  - IfcRelReferencedInSpatialStructure
-  - IfcRelDefinesByType
-  - IfcRelDefinesByProperty
-  - IfcRelNests
-
+  - IfcCourse / IfcCourseType
   - IfcAlignemnt
   - IfcAlignmentHorizontal
   - IfcAlignmentVertical
@@ -70,21 +63,9 @@ The Test instruction addresses the import and export of the following IFC Entiti
   - IfcAlignmentHorizontalSegment
   - IfcAlignmentVerticalSegment
   - IfcAlignmentCantSegment
-
-  - IfcContext
-  - IfcRelAssociatesClassification
   - IfcClassification
   - IfcClassificationReference
-
   - IfcTypeObject
-  - IfcActuatorType
-  - IfcCourseType
-
-  - IfcPropertySet
-  - IfcPropertySingleValue
-  - IfcPropertyEnumeratedValue
-
-  - ... (to be continued)
 
 </details>
 
@@ -153,7 +134,7 @@ The Test case requires the following additional checks related to Model Geometry
 
 ## Model Dataset
 
-This test case utilises the dataset collected in the Dataset folder and summarised in the table below. Form more details on each item see [Dataset description](Dataset/README.md).
+This test case utilises the dataset collected in the Dataset folder and summarised in the table below. <ins> Form more details on each item see [Dataset description](Dataset/README.md).</ins>
 
 | Filename                | Type (format)  | Description                               |
 |-------------------------|----------------|-------------------------------------------|
@@ -173,12 +154,13 @@ This test case utilises the dataset collected in the Dataset folder and summaris
 
 ## Expected Results
 
-Considering the aim of this test, the expected results are:
+For certification of capabilities the only source will be:
 
-:construction: under construction :construction:
+- n. 1 IFC file containing the information as requested. The file shall be named using the following syntax: `MVDCode`_`ExchangeCode`_`TestCode`_`SoftwareVendor`.`ifc` (Example: `IFC4.3AbRV_E2b_ASTPC_AmazingSoft.ifc`)
 
-1. N. 1 IFC file containing the information as requested
-2. Screen-shot of ...
+Considering the aim of this test, other **optional** results, not subject to the bSI certification process, yet usefull to illustrate test results are:
+- Screen-shot of ...
+- CSV export of ...
 
 ---
 
@@ -194,6 +176,15 @@ Considering the aim of this test, the expected results are:
 - All the concept templates must be correctly used
 - At least 1 instance of each entity listed in [Itemised Roots](#Itemised-Roots) is present in the file
 
+Other global settings:
+
+| **ID**  | **CRITERIA**                                                     | **VALUE**                                   | **COMMENT**                |
+|---------|------------------------------------------------------------------|---------------------------------------------|----------------------------|
+| GENE_01 | Unit of measure for all distances                                | **meter** (m)                               | As provided in the dataset |
+| GENE_02 | Unit of measure all angles                                       | **radian** (π)                              | As provided in the dataset |
+| GENE_03 | Required precision for **distances**                             | "minimum 4 decimal places (0,0001)"         |                            |
+| GENE_04 | Required precision for **angles** and **slope**                  | "minimum 6 decimal places (0,000001)"       |                            |
+
 </details>
 
 <details><summary>Railway alignment (with cant)</summary> 
@@ -202,69 +193,65 @@ Considering the aim of this test, the expected results are:
 - **Usage** (if existing): NA
 > **Acceptance criteria**: For the **Railway alignment (with cant)** capability, the test is considered passed if **all** the following validation criteria are satisfied.
 
-| **ID** | **CRITERIA**                                                     | **VALUE**                                   | **COMMENT**                |
-|--------|------------------------------------------------------------------|---------------------------------------------|----------------------------|
-|        | Alignments contained in file                                     | 2                                           |                            |
-|        | Component for Alignment 1: Primary route                         | H+V+C                                       |                            |
-|        | Component for Alignment 2: Diverted route                        | H+V+C                                       |                            |
-|        | The horizontal (H) layout is made only by these type of segments | "straight line, circular arc, clothoid"     |                            |
-|        | The vertical (V) layout is made only by these type of segments   | "straight line, circular arc"               |                            |
-|        | The cant (C) layout is made only by these type of segments       | "constant straight line, linear transition" |                            |
-|        | Value of the *RailHeadDistance* along the entire alignment       | 1500 mm                                     | See notes below for detail |
-|        | Unit of measure for all distances                                | **meter** (m)                               | As provided in the dataset |
-|        | Unit of measure all angles                                       | **radian** (π)                              | As provided in the dataset |
-|        | Required precision for **distances**                             | "minimum 4 decimal places (0,0001)"         |                            |
-|        | Required precision for **angles** and **slope**                  | "minimum 6 decimal places (0,000001)"       |                            |
-|        | Semantic description of segments corresponds to their geometry   | NA                                          | RDF tools can do this      |
-|        | Tangential continuity of all segments is verified, tolerance = 0, 00000001 |                                   | RDF tools can do this      |
+| **ID**  | **CRITERIA**                                                     | **VALUE**                                   | **COMMENT**                |
+|---------|------------------------------------------------------------------|---------------------------------------------|----------------------------|
+| ALIG_01 | Alignments contained in file                                     | 2                                           |                            |
+| ALIG_02 | Component for Alignment 1: Primary route                         | 1 horizontal, 1 vertical, 1 cant            |                            |
+| ALIG_03 | Component for Alignment 2: Diverted route                        | 1 horizontal, 1 vertical, 1 cant            |                            |
+| ALIG_04 | The horizontal (H) layout is made only by these type of segments | straight line, circular arc, clothoid       |                            |
+| ALIG_05 | The vertical (V) layout is made only by these type of segments   | straight line, circular arc                 |                            |
+| ALIG_06 | The cant (C) layout is made only by these type of segments       | constant straight line, linear transition   |                            |
+| ALIG_07 | Value of the *RailHeadDistance* along the entire alignment       | 1500 mm                                     | See notes below for detail |
+| ALIG_08 | Semantic description of segments corresponds to their geometry   | NA                                          | RDF tools can do this      |
+| ALIG_09 | Tangential continuity of all segments is verified, tolerance = 0, 00000001 |                                   | RDF tools can do this      |
 
 
 NOTE:
 -	The *RailHeadDistance* (blue line in the figure below) is a normalized value used to compute the angle of cant. RFI uses 1500 mm for a track gauge of 1435 mm
 
-![alt text](Dataset/CantFromLowerRail.png)
+   <img src="Dataset/CantFromLowerRail.png" height="300"/>
 
 <details><summary> Alignment 1: Primary route </summary>
 
-| CRITERIA                                                            | VALUE        |
-|---------------------------------------------------------------------|--------------|
-| Starting point Horizontal - Mileage (pk)                            | 0+000        |
-| Starting point Horizontal - DistAlong                               | 0.0000       |
-| Starting point Horizontal - X                                       | 452413.9199  |
-| Starting point Horizontal - Y                                       | 4539456.4011 |
-| Starting point Vertical - Mileage                                   | 0+000        |
-| Starting point Vertical - Z                                         | 5.0000       |
-| Ending point Horizontal - Mileage (pk)                              | 0+876.3682   |
-| Ending point Horizontal - DistAlong                                 | 876.3682     |
-| Ending point Horizontal - X                                         | 453202.5241  |
-| Ending point Horizontal - Y                                         | 4539831.9287 |
-| Ending point Vertical - Mileage                                     | 0+876.3682   |
-| Ending point Vertical - Z                                           | 2.0000       |
-| Total 2D length of alignment (horizontal projection)                | 876.3682     |
-| Total 3D length of alignment                                        | 876.3819     |
-| Height difference between start and end point of alignment 3D curve | -3.0000      |
+| ID      | CRITERIA                                                            | VALUE        |
+|---------|---------------------------------------------------------------------|--------------|
+| ALIG_10 | Horizontal Starting point Mileage (pk)                              | 0+000        |
+| ALIG_11 | Horizontal Starting point DistAlong                                 | 0.0000       |
+| ALIG_12 | Horizontal Starting point X                                         | 452413.9199  |
+| ALIG_13 | Horizontal Starting point Y                                         | 4539456.4011 |
+| ALIG_14 | Vertical Starting point Mileage                                     | 0+000        |
+| ALIG_15 | Vertical Starting point Z                                           | 5.0000       |
+| ALIG_16 | Horizontal Ending point Mileage (pk)                                | 0+876.3682   |
+| ALIG_17 | Horizontal Ending point DistAlong                                   | 876.3682     |
+| ALIG_18 | Horizontal Ending point X                                           | 453202.5241  |
+| ALIG_19 | Horizontal Ending point Y                                           | 4539831.9287 |
+| ALIG_20 | Vertical Ending point Mileage                                       | 0+876.3682   |
+| ALIG_21 | Vertical Ending point Z                                             | 2.0000       |
+| ALIG_22 | Total 2D length of alignment (horizontal projection)                | 876.3682     |
+| ALIG_23 | Total 3D length of alignment                                        | 876.3819     |
+| ALIG_24 | Height difference between start and end point of alignment 3D curve | -3.0000      |
 
 </details>
 
 <details><summary> Alignment 2: Diverted route </summary>
 
-| CRITERIA                                                            | VALUE        |
-|---------------------------------------------------------------------|--------------|
-| Starting point Horizontal - Mileage (pk)                            | 0+000        |
-| Starting point Horizontal - DistAlong                               | 0.0000       |
-| Starting point Horizontal - X                                       | 452460.8898  |
-| Starting point Horizontal - Y                                       | 4539473.5425 |
-| Starting point Vertical - Mileage                                   | 0+000        |
-| Starting point Vertical - Z                                         | 5.0000       |
-| Ending point Horizontal - Mileage (pk)                              | 0+828.0965   |
-| Ending point Horizontal - DistAlong                                 | 828.0965     |
-| Ending point Horizontal - X                                         | 453208.8311  |
-| Ending point Horizontal - Y                                         | 4539818.3191 |
-| Ending point Vertical - Mileage                                     | 0+828.0965   |
-| Ending point Vertical - Z                                           | 2.0000       |
-| Total 2D length of alignment (horizontal projection)                | 828.0965     |
-| Total 3D length of alignment                                        | 828.1099     |
-| Height difference between start and end point of alignment 3D curve | -3.0000      |
+| ID      | CRITERIA                                                            | VALUE        |
+|---------|---------------------------------------------------------------------|--------------|
+| ALIG_10 | Horizontal Starting point Mileage (pk)                              | 0+000        |
+| ALIG_11 | Horizontal Starting point DistAlong                                 | 0.0000       |
+| ALIG_12 | Horizontal Starting point X                                         | 452460.8898  |
+| ALIG_13 | Horizontal Starting point Y                                         | 4539473.5425 |
+| ALIG_14 | Vertical Starting point Mileage                                     | 0+000        |
+| ALIG_15 | Vertical Starting point Z                                           | 5.0000       |
+| ALIG_16 | Horizontal Ending point Mileage (pk)                                | 0+828.0965   |
+| ALIG_17 | Horizontal Ending point DistAlong                                   | 828.0965     |
+| ALIG_18 | Horizontal Ending point X                                           | 453208.8311  |
+| ALIG_19 | Horizontal Ending point Y                                           | 4539818.3191 |
+| ALIG_20 | Vertical Ending point Mileage                                       | 0+828.0965   |
+| ALIG_21 | Vertical Ending point Z                                             | 2.0000       |
+| ALIG_22 | Total 2D length of alignment (horizontal projection)                | 828.0965     |
+| ALIG_23 | Total 3D length of alignment                                        | 828.1099     |
+| ALIG_24 | Height difference between start and end point of alignment 3D curve | -3.0000      |
 
 </details>
 
@@ -486,9 +473,16 @@ These are classified using `IfcClassification`, `IfcClassificationReference`, an
 
 </details>
 
-<details><summary>Linear placement along alignment</summary>
+<details><summary>Linear placement long alignment</summary>
 
 :construction: under construction :construction:
+
+- **Concept Template**: Product Linear Placement, Product Local Placement
+- **Usage** (if existing): NA
+> **Acceptance criteria**: For the **Linear placement long alignment** capability, the test is considered passed if **all** the following validation criteria are satisfied.
+>
+> The validation procedure must verify that ...
+
 
 </details>
 
