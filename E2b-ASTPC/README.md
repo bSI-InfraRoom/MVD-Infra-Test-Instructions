@@ -1,6 +1,6 @@
 # Test instructions
 
-[![See GH Pages publication for this test](https://img.shields.io/badge/GitHub%20Pages-Test%20Case%20documentation-blue)](https://evandroalfieri.github.io/MVD-Infra-Test-Instructions/E2b1-ASTPC/)
+[![See GH Pages publication for this test](https://img.shields.io/badge/GitHub%20Pages-Test%20Case%20documentation-blue)](https://evandroalfieri.github.io/MVD-Infra-Test-Instructions/E2b-ASTPC/)
 
 | Documentation Code   | Title                                                              | Exchange Code | Test Code | Author          | Data Owner | Version | Date       |
 |----------------------|--------------------------------------------------------------------|---------------|-----------| ----------------|------------|---------|------------|
