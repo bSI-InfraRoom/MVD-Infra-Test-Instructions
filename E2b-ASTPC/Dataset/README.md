@@ -232,55 +232,43 @@ The picture captures main objects and relationships to be present in the IFC fil
 
 The table lists the direct attributes of the above mentioned objects
 
-| Entity                 | Name                                | Description                | ObjectType | PredefinedType        | CompositionType | NOTE                  |
-|------------------------|-------------------------------------|----------------------------|------------|-----------------------|-----------------|-----------------------|
-| IfcSite                | Sito                                | $                          | $          | $                     | na              |                       |
-| IfcRailway             | Foligno                             | LO1336                     | Località   | USERDEFINED           | ELEMENT         |                       |
-| IfcTypeObject          | Binari di corsa (Contenitore)       | $                          | $          | $                     | na              |                       |
-| IfcGroup               | Binari di corsa di Foligno          | LO1336-BC                  | $          | $                     | na              | isTypedBy             |
-| IfcFacilityPart        | Binario IV dispari - Orte Falconara | LO1336-BC-BC01             | $          | TRACKSTRUCTURE        | na              |                       |
-| IfcTypeObject          | Deviatoi/Intersezioni (Contenitore) | $                          | $          | $                     | na              |                       |
-| IfcGroup               | Deviatoi                            | LO1336-BC-BC01-DEV         | $          | $                     | na              | isTypedBy             |
-| IfcTypeObject          | Rotaie (Contenitore)                | $                          | $          | $                     | na              |                       |
-| IfcGroup               | Rotaie                              | LO1336-BC-BC01-ROT         | $          | $                     | na              | isTypedBy             |
-| IfcTypeObject          | Massicciata (Contenitore)           | $                          | $          | $                     | na              |                       |
-| IfcGroup               | Massicciata                         | LO1336-BC-BC01-MAS         | $          | $                     | na              | isTypedBy             |
-| IfcTypeObject          | Traverse (Contenitore)              | $                          | $          | $                     | na              |                       |
-| IfcGroup               | Traverse                            | LO1336-BC-BC01-TRA         | $          | $                     | na              | isTypedBy             |
-| IfcActuatorType        | Manovra deviatoio                   | $                          | $          | $                     | na              |                       |
-| IfcActuator            | Cassa di manovra CM04               | LO1336-BC-BC01-DEV-D02-MD1 | $          | $                     | na              | isTypedBy             |
-| IfcElementAssembly     | DEVIAT.EL. 7A + 9                   | LO1336-BC-BC01-DEV-D02     | $          | TURNOUTPANEL          | na              |                       |
-| IfcRail                | Telaio                              | $                          | $          | RAIL                  | na              |                       |
-| IfcRail                | Controrotaie                        | $                          | $          | CHECKRAIL             | na              |                       |
-| IfcFastener            | Giunti                              | $                          | $          | WELD                  | na              |                       |
-| IfcTrackElement        | Cuore                               | $                          | $          | FROG                  | na              |                       |
-| IfcTrackElement        | Traverse e attacchi                 | $                          | $          | SLEEPER               | na              |                       |
-| IfcCourseType          | Segmento di massicciata             | $                          | $          | $                     | na              |                       |
-| IfcCourse              | Segmento di massicciata M01         | LO1336-BC-BC01-MAS-M01     | $          | BALLASTBED            | na              | isTypedBy             |
-| IfcCourse              | Segmento di massicciata M02         | LO1336-BC-BC01-MAS-M02     | $          | BALLASTBED            | na              | isTypedBy             |
-| IfcTypeObject          | Segmento di rotaia                  | $                          | $          | $                     | na              |                       |
-| IfcGroup               | Segmento di rotaia R01              | LO1336-BC-BC01-ROT-R01     | $          | $                     | na              | isTypedBy             |
-| IfcRail                | Rotaia 01 DX                        | $                          | $          | RAIL                  | na              |                       |
-| IfcRail                | Rotaia 01 SX                        | $                          | $          | RAIL                  | na              |                       |
-| IfcGroup               | Segmento di rotaia R02              | LO1336-BC-BC01-ROT-R02     | $          | $                     | na              | isTypedBy             |
-| IfcRail                | Rotaia 02 DX                        | $                          | $          | RAIL                  | na              |                       |
-| IfcRail                | Rotaia 02 SX                        | $                          | $          | RAIL                  | na              |                       |
-| IfcGroup               | Segmento di rotaia R03              | LO1336-BC-BC01-ROT-R03     | $          | $                     | na              | isTypedBy             |
-| IfcRail                | Rotaia 03 DX                        | $                          | $          | RAIL                  | na              |                       |
-| IfcRail                | Rotaia 03 SX                        | $                          | $          | RAIL                  | na              |                       |
-| IfcTypeObject          | Segmento di traverse                | $                          | $          | $                     | na              |                       |
-| IfcGroup               | Segmento di traverse T01            | LO1336-BC-BC01-TRA-T01     | $          | $                     | na              | isTypedBy             |
-| IfcGroup               | Segmento di traverse T02            | LO1336-BC-BC01-TRA-T02     | $          | $                     | na              | isTypedBy             |
-| IfcGroup               | Segmento di traverse T03            | LO1336-BC-BC01-TRA-T03     | $          | $                     | na              | isTypedBy             |
-| IfcTrackElement        | Traversa NNNN                       | $                          | $          | SLEEPER               | na              | NNNN indicates number |
-| _____________________  | _____________________               | _____________________      | _______    | _____________________ | na              | _____________________ |
-| IfcAlignment           | Alignment 1_Primary route           | $                          | $          | $                     | na              |                       |
-| IfcAlignment           | Alignment 2_Diverted route          | $                          | $          | $                     | na              |                       |
-| IfcAlignmentHorizontal | Horizontal 1                        | $                          | $          | na                    | na              |                       |
-| IfcAlignmentVertical   | Vertical 1                          | $                          | $          | na                    | na              |                       |
-| IfcAlignmentCant       | Cant 1                              | $                          | $          | na                    | na              |                       |
-| IfcAlignmentHorizontal | Horizontal 2                        | $                          | $          | na                    | na              |                       |
-| IfcAlignmentVertical   | Vertical 2                          | $                          | $          | na                    | na              |                       |
+| Entity             | Name                         | Description                         | ObjectType              | PredefinedType | NOTE                                              |
+|--------------------|------------------------------|-------------------------------------|-------------------------|----------------|---------------------------------------------------|
+| IfcSite            | Sito                         | $                                   | $                       | $              |                                                   |
+| IfcRailway         | LO1336                       | Foligno                             | Località                | USERDEFINED    | CompositionType = ELEMENT                         |
+| IfcFacilityPart    | LO1336-BC-BC01               | Binario IV dispari - Orte Falconara | $                       | TRACKSTRUCTURE |                                                   |
+| IfcFacilityPart    | LO1336-BC-BC02               | Binario V dispari - Orte Falconara  | $                       | TRACKSTRUCTURE |                                                   |
+| IfcAlignment       | Alignment 1_Primary route    | $                                   | Railway track alignment | USERDEFINED    |                                                   |
+| IfcAlignment       | Alignment 2_Diverted route   | $                                   | Railway track alignment | USERDEFINED    |                                                   |
+| IfcActuatorType    | Manovra deviatoio            | $                                   | $                       | $              |                                                   |
+| IfcActuator        | Cassa di manovra CM04        | LO1336-BC-BC01-DEV-D02-MD1          | $                       | $              | isTypedBy                                         |
+| IfcElementAssembly | DEVIAT.EL. 7A + 9            | LO1336-BC-BC01-DEV-D02              | $                       | TURNOUTPANEL   |                                                   |
+| IfcRail            | Telaio                       | $                                   | $                       | RAIL           |                                                   |
+| IfcRail            | Controrotaie                 | $                                   | $                       | CHECKRAIL      |                                                   |
+| IfcFastener        | Giunti                       | $                                   | $                       | WELD           |                                                   |
+| IfcTrackElement    | Cuore                        | $                                   | $                       | FROG           |                                                   |
+| IfcTrackElement    | Traverse e attacchi          | $                                   | $                       | SLEEPER        |                                                   |
+| IfcCourseType      | Segmento di massicciata      | $                                   | $                       | $              |                                                   |
+| IfcCourse          | Segmento di massicciata BC01 | LO1336-BC-BC01-MAS-M01              | $                       | BALLASTBED     | isTypedBy                                         |
+| IfcCourse          | Segmento di massicciata BC02 | LO1336-BC-BC02-MAS-M01              | $                       | BALLASTBED     | isTypedBy                                         |
+| IfcRail            | Rotaia 01 DX                 | $                                   | $                       | RAIL           |                                                   |
+| IfcRail            | Rotaia 01 SX                 | $                                   | $                       | RAIL           |                                                   |
+| IfcRail            | Rotaia 02 DX                 | $                                   | $                       | RAIL           |                                                   |
+| IfcRail            | Rotaia 02 SX                 | $                                   | $                       | RAIL           |                                                   |
+| IfcTrackElement    | Traversa NNNN                | $                                   | $                       | SLEEPER        | NNNN indicates progressive number of each sleeper |
+| IfcGroup           | LO1336-BC                    | Binari di corsa di Foligno          | $                       | $              |                                                   |
+| IfcGroup           | LO1336-BC-BC01-DEV           | Deviatoi                            | $                       | $              |                                                   |
+| IfcGroup           | LO1336-BC-BC01-ROT           | Rotaie                              | $                       | $              |                                                   |
+| IfcGroup           | LO1336-BC-BC01-MAS           | Massicciata                         | $                       | $              |                                                   |
+| IfcGroup           | LO1336-BC-BC01-TRA           | Traverse                            | $                       | $              |                                                   |
+| IfcGroup           | LO1336-BC-BC02-ROT           | Rotaie                              | $                       | $              |                                                   |
+| IfcGroup           | LO1336-BC-BC02-MAS           | Massicciata                         | $                       | $              |                                                   |
+| IfcGroup           | LO1336-BC-BC02-TRA           | Traverse                            | $                       | $              |                                                   |
+| IfcGroup           | LO1336-BC-BC01-ROT-R01       | Segmento di rotaia                  | $                       | $              |                                                   |
+| IfcGroup           | LO1336-BC-BC02-ROT-R02       | Segmento di rotaia                  | $                       | $              |                                                   |
+| IfcGroup           | LO1336-BC-BC01-TRA-T01       | Segmento di traverse                | $                       | $              |                                                   |
+| IfcGroup           | LO1336-BC-BC02-TRA-T02       | Segmento di traverse                | $                       | $              |                                                   |
+
 
 ---
 ## Turnout example
