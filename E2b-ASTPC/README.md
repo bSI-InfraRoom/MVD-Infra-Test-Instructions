@@ -9,15 +9,19 @@
 ## Summary (intent)
 
 This test case uses the elements of the railway track domain listed [below](#Itemised-Roots) to certify the following capabilities:
-- Object grouping
-- Object classification via external reference (i.e., bSDD)
-- Object typing
-- Object decomposition (assemblies)
-- Project Global Positioning
-- Railway spatial structure
-- Railway alignment (with cant)
-- Linear placement along alignment
-- Properties of objects
+
+- Step 1: 
+   - Railway alignment (with cant)
+- Step 2:
+   - Local placement & Linear placement along alignment
+   - Railway spatial structure
+   - Object decomposition (assemblies)
+   - (?) Object typing
+   - Project Global Positioning
+- Step 3:
+  - Object grouping
+  - Object classification via external reference (i.e., bSDD)
+  - Properties of objects
 
 The business context for the test is provided by a 800 m portion of railway line, including: 2 alignments, track substructure and superstructure, and related products.
 
@@ -25,16 +29,22 @@ The [Expected Results](#Expected-Results) section lists the material that will b
 
 :warning: <ins> This is a test-driven process: refer to the **Validation Criteria** to understand what is required by the test</ins> :warning: 
 
-### High-level test instructions (<ins>**not necessarily in this order**</ins>)
+### High-level test instructions
 
-1. Model project breakdown structure (spatial structure)
-1. Model alignment(s)
-1. Geo-reference model
-1. Model track object types and objects (course, ballast, rails, sleepers, etc.)
-1. Group objects, assemble objects
-1. Classify objects
-1. Model properties of objects/object types
-1. Assign objects to project breakdown
+Step 1:
+   1. Model alignment(s)
+
+Step 2:
+   1. Model project breakdown structure (spatial structure)
+   1. Model track object types and objects (course, ballast, rails, sleepers, etc.)
+   1. Assemble objects
+   1. Assign objects to project breakdown
+   1. Geo-reference model
+
+Step 3:
+   1. Group objects
+   1. Classify objects
+   1. Model properties of objects/object types
 
 ---
 
@@ -187,6 +197,10 @@ Other global settings:
 
 </details>
 
+---
+
+### Step 1: Alignment with cant
+
 <details><summary>Railway alignment (with cant)</summary> 
 
 - **Concept Template**: Alignment Decomposition
@@ -257,6 +271,124 @@ NOTE:
 
 </details>
 
+---
+
+### Step 2: Placement, spatial structure and object decomposition, (TBD) global positioning
+
+<details><summary>Spatial decomposition</summary>
+
+- **Concept Template**: Spatial Decomposition
+- **Usage** (if existing): NA
+> **Acceptance criteria**: For the **Spatial decomposition** capability, the test is considered passed if **all** the following validation criteria are satisfied.
+>
+> The validation procedure must verify that a Parent Element of the requested type aggregates (via `IfcRelAggregates`) exactly a given number of Child Elements of the requested type, no more and no less.
+
+| Parent Element | Parent Element Type | Minimum | Maximum | Child Element   | Child Element Type |
+|----------------|---------------------|---------|---------|-----------------|--------------------|
+| IfcSite        |                     | 1       | 1       | IfcRailway      | Località           |
+| IfcRailway     | Località            | 1       | 1       | IfcFacilityPart | TRACKSTRUCTURE     |
+
+</details>
+
+<details><summary>Spatial containment</summary>
+
+- **Concept Template**: Spatial Containment
+- **Usage** (if existing): NA
+> **Acceptance criteria**: For the **Spatial containment** capability, the test is considered passed if **all** the following validation criteria are satisfied.
+>
+> The validation procedure must verify that a Spatial Element of the requested type contains (via `IfcRelContainedInSpatialStructure`) exactly a given number of Elements of the requested type, no more and no less.
+
+| Spatial Element | Spatial Element Type | Minimum | Maximum | Element            | Element Type      |
+|-----------------|----------------------|---------|---------|--------------------|-------------------|
+| IfcFacilityPart | TRACKSTRUCTURE       | 1       | 1       | IfcActuator        | Manovra deviatoio |
+| IfcFacilityPart | TRACKSTRUCTURE       | 1       | 1       | IfcElementAssembly | TURNOUTPANEL      |
+| IfcFacilityPart | TRACKSTRUCTURE       | 2       | 2       | IfcCourse          | BALLASTBED        |
+| IfcFacilityPart | TRACKSTRUCTURE       | 6       | 6       | IfcRail            | RAIL              |
+| IfcFacilityPart | TRACKSTRUCTURE       | 1       | TBD     | IfcTrackElement    | SLEEPER           |
+| IfcSite         |                      | 2       | 2       | IfcAlignment       |                   |
+
+</details>
+
+<details><summary>Object decomposition (assemblies)</summary>
+
+- **Concept Template**: Element Decomposition
+- **Usage** (if existing): NA
+> **Acceptance criteria**: For the **Object decomposition** capability, the test is considered passed if **all** the following validation criteria are satisfied.
+>
+> The validation procedure must verify that an assembly of the requested type aggregates (via `IfcRelAggregates`) exactly a given number of elements of the requested type, no more and no less.
+
+| Assembly           | Assembly Type | Minimum | Maximum | Element         | Element Type |
+|--------------------|---------------|---------|---------|-----------------|--------------|
+| IfcElementAssembly | TURNOUTPANEL  | 1       | 1       | IfcFastener     | WELD         |
+| IfcElementAssembly | TURNOUTPANEL  | 1       | 1       | IfcTrackElement | FROG         |
+| IfcElementAssembly | TURNOUTPANEL  | 1       | 10      | IfcRail         | RAIL         |
+| IfcElementAssembly | TURNOUTPANEL  | 1       | 2       | IfcRail         | CHECKRAIL    |
+| IfcElementAssembly | TURNOUTPANEL  | 52      | 52      | IfcTrackElement | SLEEPER      |
+
+NOTE:
+- when **Minimum** and **Maximum** have the same value, it means exactly. Example: Minimum=Maximum=2, means that the assembly must aggregates exactly 2 elements of the requested type.
+- when **Maximum** is empty, it means unlimited. Example: Minimum=1; Maximum=empty, means that the assembly must aggregate 1 or more elements of the requested type.
+
+</details>
+
+<details><summary>Local placement & Linear placement long alignment</summary>
+
+:construction: under construction :construction:
+
+- **Concept Template**: Product Linear Placement, Product Local Placement
+- **Usage** (if existing): NA
+> **Acceptance criteria**: For the **Linear placement long alignment** capability, the test is considered passed if **all** the following validation criteria are satisfied.
+>
+> The validation procedure must verify that ...
+
+
+</details>
+
+<details><summary>Project Global Positioning</summary>
+
+- **Concept Template**: Project Global Positioning
+- **Usage** (if existing): NA
+> **Acceptance criteria**: For the **Project Global Positioning** capability, the test is considered passed if **all** the following validation criteria are satisfied.
+>
+> The validation procedure must verify that:
+> - `IfcMapConversion` entity is used to transform the local engineering coordinate system, often called world coordinate system (WCS), into the coordinate reference system of the underlying map.
+> - `IfcProjectedCRS` entity is used for representing the coordinate reference system of the map to which the map translation of the local engineering coordinate system of the engineering project relates.
+> Below are the expected values for the two entities.
+> 
+
+`IfcMapConversion`
+
+| #  | Attribute        | Value / Instructions                        |
+|----|------------------|---------------------------------------------|
+| 1  | SourceCRS        | Points to IfcGeometricRepresentationContext |
+| 2  | TargetCRS        | Points to IfcProjectedCRS (see below)       |
+| 3  | Eastings         | 0                                           |
+| 4  | Northings        | 0                                           |
+| 5  | OrthogonalHeight | 0                                           |
+| 6  | XAxisAbscissa    | 1                                           |
+| 7  | XAxisOrdinate    | 0                                           |
+| 8  | Scale            | 1                                           |
+| 9  | ScaleY           | 1                                           |
+| 10 | ScaleZ           | 1                                           |
+
+`IfcProjectedCRS`
+
+| # | Attribute     | Value / Instructions                        |
+|---|---------------|---------------------------------------------|
+| 1 | Name          | 'EPSG:3065'                                 |
+| 2 | Description   | 'Istituto Geografico Militare 1995 (IGM95)' |
+| 3 | GeodeticDatum | 'EPSG:3065'                                 |
+| 4 | VerticalDatum |  $                                          |
+| 5 | MapProjection | 'UTM'                                       |
+| 6 | MapZone       | '33N'                                       |
+| 7 | MapUnit       | $                                           |
+
+</details>
+
+---
+
+### Step 3: Grouping, classification, properties, typing
+
 <details><summary>Object grouping</summary>
 
 - **Concept Template**: Group Assignment
@@ -314,28 +446,6 @@ NOTE:
 
 </details>
 
-<details><summary>Object decomposition (assemblies)</summary>
-
-- **Concept Template**: Element Decomposition
-- **Usage** (if existing): NA
-> **Acceptance criteria**: For the **Object decomposition** capability, the test is considered passed if **all** the following validation criteria are satisfied.
->
-> The validation procedure must verify that an assembly of the requested type aggregates (via `IfcRelAggregates`) exactly a given number of elements of the requested type, no more and no less.
-
-| Assembly           | Assembly Type | Minimum | Maximum | Element         | Element Type |
-|--------------------|---------------|---------|---------|-----------------|--------------|
-| IfcElementAssembly | TURNOUTPANEL  | 1       | 1       | IfcFastener     | WELD         |
-| IfcElementAssembly | TURNOUTPANEL  | 1       | 1       | IfcTrackElement | FROG         |
-| IfcElementAssembly | TURNOUTPANEL  | 1       | 10      | IfcRail         | RAIL         |
-| IfcElementAssembly | TURNOUTPANEL  | 1       | 2       | IfcRail         | CHECKRAIL    |
-| IfcElementAssembly | TURNOUTPANEL  | 52      | 52      | IfcTrackElement | SLEEPER      |
-
-NOTE:
-- when **Minimum** and **Maximum** have the same value, it means exactly. Example: Minimum=Maximum=2, means that the assembly must aggregates exactly 2 elements of the requested type.
-- when **Maximum** is empty, it means unlimited. Example: Minimum=1; Maximum=empty, means that the assembly must aggregate 1 or more elements of the requested type.
-
-</details>
-
 <details><summary>Object classification via external reference (i.e., bSDD)</summary>
 
 - **Concept Template**: Classification Association
@@ -380,81 +490,6 @@ These are classified using `IfcClassification`, `IfcClassificationReference`, an
 
 </details>
 
-<details><summary>Project Global Positioning</summary>
-
-- **Concept Template**: Project Global Positioning
-- **Usage** (if existing): NA
-> **Acceptance criteria**: For the **Project Global Positioning** capability, the test is considered passed if **all** the following validation criteria are satisfied.
->
-> The validation procedure must verify that:
-> - `IfcMapConversion` entity is used to transform the local engineering coordinate system, often called world coordinate system (WCS), into the coordinate reference system of the underlying map.
-> - `IfcProjectedCRS` entity is used for representing the coordinate reference system of the map to which the map translation of the local engineering coordinate system of the engineering project relates.
-> Below are the expected values for the two entities.
-> 
-
-`IfcMapConversion`
-
-| #  | Attribute        | Value / Instructions                        |
-|----|------------------|---------------------------------------------|
-| 1  | SourceCRS        | Points to IfcGeometricRepresentationContext |
-| 2  | TargetCRS        | Points to IfcProjectedCRS (see below)       |
-| 3  | Eastings         | 0                                           |
-| 4  | Northings        | 0                                           |
-| 5  | OrthogonalHeight | 0                                           |
-| 6  | XAxisAbscissa    | 1                                           |
-| 7  | XAxisOrdinate    | 0                                           |
-| 8  | Scale            | 1                                           |
-| 9  | ScaleY           | 1                                           |
-| 10 | ScaleZ           | 1                                           |
-
-`IfcProjectedCRS`
-
-| # | Attribute     | Value / Instructions                        |
-|---|---------------|---------------------------------------------|
-| 1 | Name          | 'EPSG:3065'                                 |
-| 2 | Description   | 'Istituto Geografico Militare 1995 (IGM95)' |
-| 3 | GeodeticDatum | 'EPSG:3065'                                 |
-| 4 | VerticalDatum |  $                                          |
-| 5 | MapProjection | 'UTM'                                       |
-| 6 | MapZone       | '33N'                                       |
-| 7 | MapUnit       | $                                           |
-
-</details>
-
-<details><summary>Spatial decomposition</summary>
-
-- **Concept Template**: Spatial Decomposition
-- **Usage** (if existing): NA
-> **Acceptance criteria**: For the **Spatial decomposition** capability, the test is considered passed if **all** the following validation criteria are satisfied.
->
-> The validation procedure must verify that a Parent Element of the requested type aggregates (via `IfcRelAggregates`) exactly a given number of Child Elements of the requested type, no more and no less.
-
-| Parent Element | Parent Element Type | Minimum | Maximum | Child Element   | Child Element Type |
-|----------------|---------------------|---------|---------|-----------------|--------------------|
-| IfcSite        |                     | 1       | 1       | IfcRailway      | Località           |
-| IfcRailway     | Località            | 1       | 1       | IfcFacilityPart | TRACKSTRUCTURE     |
-
-</details>
-
-<details><summary>Spatial containment</summary>
-
-- **Concept Template**: Spatial Containment
-- **Usage** (if existing): NA
-> **Acceptance criteria**: For the **Spatial containment** capability, the test is considered passed if **all** the following validation criteria are satisfied.
->
-> The validation procedure must verify that a Spatial Element of the requested type contains (via `IfcRelContainedInSpatialStructure`) exactly a given number of Elements of the requested type, no more and no less.
-
-| Spatial Element | Spatial Element Type | Minimum | Maximum | Element            | Element Type      |
-|-----------------|----------------------|---------|---------|--------------------|-------------------|
-| IfcFacilityPart | TRACKSTRUCTURE       | 1       | 1       | IfcActuator        | Manovra deviatoio |
-| IfcFacilityPart | TRACKSTRUCTURE       | 1       | 1       | IfcElementAssembly | TURNOUTPANEL      |
-| IfcFacilityPart | TRACKSTRUCTURE       | 2       | 2       | IfcCourse          | BALLASTBED        |
-| IfcFacilityPart | TRACKSTRUCTURE       | 6       | 6       | IfcRail            | RAIL              |
-| IfcFacilityPart | TRACKSTRUCTURE       | 1       | TBD     | IfcTrackElement    | SLEEPER           |
-| IfcSite         |                      | 2       | 2       | IfcAlignment       |                   |
-
-</details>
-
 <details><summary>Spatial reference</summary>
 
 - **Concept Template**: :warning: Spatial Service Connectivity (or better *Group Spatial Connectivity*, not yet present in documentation) :warning:
@@ -470,19 +505,6 @@ These are classified using `IfcClassification`, `IfcClassificationReference`, an
 | IfcFacilityPart | TRACKSTRUCTURE       | 1       | 1       | IfcGroup         | Massicciata (Contenitore)           |
 | IfcFacilityPart | TRACKSTRUCTURE       | 1       | 1       | IfcGroup         | Rotaie (Contenitore)                |
 | IfcFacilityPart | TRACKSTRUCTURE       | 1       | 1       | IfcGroup         | Traverse (Contenitore)              |
-
-</details>
-
-<details><summary>Linear placement long alignment</summary>
-
-:construction: under construction :construction:
-
-- **Concept Template**: Product Linear Placement, Product Local Placement
-- **Usage** (if existing): NA
-> **Acceptance criteria**: For the **Linear placement long alignment** capability, the test is considered passed if **all** the following validation criteria are satisfied.
->
-> The validation procedure must verify that ...
-
 
 </details>
 
