@@ -11,9 +11,9 @@
 | [Line_layout](./Line_layout.jpg)                       | Schematic [line layout](#Line-layout) of the test case                                                    |
 | [TrackCrossSection](./TrackCrossSection.png)           | [Track cross section](#Track-cross-section) to be used as example                                         |
 | [SleeperPlacement](./SleeperPlacement.png)             | Information on how to [position sleepers](#Sleeper-placement) along the alignment                         |
-| *under production*                                     | [Alignment parameters for horizontal segments](#Alignment-parameters-for-horizontal-segments)             |
-| *under production*                                     | [Alignment parameters for vertical segments](#Alignment-parameters-for-vertical-segments)                 |
-| *under production*                                     | [Alignment parameters for cant segments](#Alignment-parameters-for-cant-segments)                         |
+| [Alignment1_horizontal](./Alignment1_horizontal.csv) ; [Alignment2_horizontal](./Alignment2_horizontal.csv) | [Alignment parameters for horizontal segments](#Alignment-parameters-for-horizontal-segments)             |
+| [Alignment1_vertical](./Alignment1_vertical.csv) ; [Alignment2_vertical](./Alignment2_vertical.csv)         | [Alignment parameters for vertical segments](#Alignment-parameters-for-vertical-segments)                 |
+| [Alignment1_cant](./Alignment1_cant.csv) ; [Alignment2_cant](./Alignment2_cant.csv)                         | [Alignment parameters for cant segments](#Alignment-parameters-for-cant-segments)                         |
 | *under production*                                     | Alignment LandXML file, not including cant                                                                |
 | *under production*                                     | Alignment dwg file, not including cant                                                                    |
 | [ObjectsOverview](./ObjectsOverview.png)               | [Objects overview](#Objects-overview): a diagram + table describing the main to be used for the test case |
@@ -25,13 +25,13 @@
 ## Line layout
 
 The line for the test is made of two alignments (*IfcAlignment*):
-1. Alignment 1: Primary route (red in the figure below)
-2. Alignment 2: Diverted route (blue dashed in the figure below)
+1. Alignment 1_Primary route (red in the figure below)
+2. Alignment 2_Diverted route (blue dashed in the figure below)
 
 Snippet:
 <img src="./LineLayout.svg" height="600"/>
 
-The **Primary route** (*IfcAlignment* named *Alignment 1*) is made of the following **9 horizontal segments**:
+The **Primary route** (*IfcAlignment* named *Alignment 1_Primary route*) is made of the following **9 horizontal segments**:
 
 <div align="center">
 
@@ -48,7 +48,7 @@ The **Primary route** (*IfcAlignment* named *Alignment 1*) is made of the follow
 | 9 | LINE            | 736.5971  | 876.3682 | 139.7711       |
 </div>
 
-The **Diverted route** (*IfcAlignment* named *Alignment 2*) is made of the following **11 horizontal segments**:
+The **Diverted route** (*IfcAlignment* named *Alignment 2_Diverted route*) is made of the following **11 horizontal segments**:
 
 <div align="center">
 
@@ -102,7 +102,7 @@ Snippet:
 
 The horizontal layout of the alignment (both for Alignment 1 and Alignment 2) is described using a CSV file. The column headers match the IFC attributes for `IfcAlignmentHorizontalSegment`. Refers to the standard's documentation for their description.
 
-#### Alignment 1: Primary route
+#### Alignment 1_Primary route
 
 | ID | PredefinedType | Start Point X | Start Point Y | Start Direction | Start Radius Of Curvature | End Radius Of Curvature | Segment Length |
 |----|----------------|---------------|---------------|-----------------|---------------------------|-------------------------|----------------|
@@ -116,7 +116,7 @@ The horizontal layout of the alignment (both for Alignment 1 and Alignment 2) is
 | 8  | CLOTHOID       | 453039.5298   | 4539756.1000  | 0.329863598     | 1000                      | 0                       | 40.000000      |
 | 9  | LINE           | 453075.7086   | 4539773.1600  | 0.307641368     | 0                         | 0                       | 139.771059     |
 
-#### Alignment 2: Diverted route
+#### Alignment 2_Diverted route
 
 | ID | PredefinedType | Start Point X | Start Point Y | Start Direction | Start Radius Of Curvature | End Radius Of Curvature | Segment Length |
 |----|----------------|---------------|---------------|-----------------|---------------------------|-------------------------|----------------|
@@ -152,7 +152,7 @@ This implies a right-hand cartesian coordinate systems; and angles are measured 
 
 The vertical layout of the alignment (both for Alignment 1 and Alignment 2) is described using a CSV file. The column headers match the IFC attributes for `IfcAlignmentVerticalSegment`. Refers to the standard's documentation for their description.
 
-#### Alignment 1: Primary route
+#### Alignment 1_Primary route
 
 | ID | PredefinedType   | Start Dist Along | Horizontal Length | Start Height | Start Gradient | End Gradient | RadiusOfCurvature |
 |----|------------------|------------------|-------------------|--------------|----------------|--------------|-------------------|
@@ -162,7 +162,7 @@ The vertical layout of the alignment (both for Alignment 1 and Alignment 2) is d
 | 4  | CIRCULARARC      | 625.0019         | 49.9975           | 2.25         | -0.01          | 0            | -5000             |
 | 5  | CONSTANTGRADIENT | 674.9994         | 201.3688          | 2            | 0              | 0            |                   |
 
-#### Alignment 2: Diverted route
+#### Alignment 2_Diverted route
 
 | ID | PredefinedType   | Start Dist Along | Horizontal Length | Start Height | Start Gradient | End Gradient | RadiusOfCurvature |
 |----|------------------|------------------|-------------------|--------------|----------------|--------------|-------------------|
@@ -182,7 +182,7 @@ The vertical layout of the alignment (both for Alignment 1 and Alignment 2) is d
 
 The cant layout of the alignment (both for Alignment 1 and Alignment 2) is described using a CSV file. The column headers match the IFC attributes for `IfcAlignmentCantSegment`. Refers to the standard's documentation for their description.
 
-#### Alignment 1: Primary route
+#### Alignment 1_Primary route
 
 | ID | PredefinedType   | Start Dist Along | Horizontal Length | Start Cant left | End Cant left | Start Cant right | End Cant right |
 |----|------------------|------------------|-------------------|-----------------|---------------|------------------|----------------|
@@ -197,7 +197,7 @@ The cant layout of the alignment (both for Alignment 1 and Alignment 2) is descr
 | 9  | CONSTANTCANT     | 736.5971         | 139.7711          | 0               | 0             | 0                | 0              |
 | 10 | CONSTANTCANT     | 876.3682         | -876.3682         | 0               | 0             | 0                | 0              |
 
-#### Alignment 2: Diverted route
+#### Alignment 2_Diverted route
 
 | ID | PredefinedType   | Start Dist Along | Horizontal Length | Start Cant left | End Cant left | Start Cant right | End Cant right |
 |----|------------------|------------------|-------------------|-----------------|---------------|------------------|----------------|
@@ -274,8 +274,8 @@ The table lists the direct attributes of the above mentioned objects
 | IfcGroup               | Segmento di traverse T03            | LO1336-BC-BC01-TRA-T03     | $          | $                     | na              | isTypedBy             |
 | IfcTrackElement        | Traversa NNNN                       | $                          | $          | SLEEPER               | na              | NNNN indicates number |
 | _____________________  | _____________________               | _____________________      | _______    | _____________________ | na              | _____________________ |
-| IfcAlignment           | Alignment 1                         | $                          | $          | $                     | na              |                       |
-| IfcAlignment           | Alignment 2                         | $                          | $          | $                     | na              |                       |
+| IfcAlignment           | Alignment 1_Primary route           | $                          | $          | $                     | na              |                       |
+| IfcAlignment           | Alignment 2_Diverted route          | $                          | $          | $                     | na              |                       |
 | IfcAlignmentHorizontal | Horizontal 1                        | $                          | $          | na                    | na              |                       |
 | IfcAlignmentVertical   | Vertical 1                          | $                          | $          | na                    | na              |                       |
 | IfcAlignmentCant       | Cant 1                              | $                          | $          | na                    | na              |                       |

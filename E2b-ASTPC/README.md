@@ -50,7 +50,7 @@ Coherently to the above steps, also the production of the IFC file subject to te
 
 The [Expected Results](#Expected-Results) section lists the material that will be used to assess the fulfilment of capabilities.
 
-:warning: <ins> This is a test-driven process: refer to the **Validation Criteria** to understand what is required by the test</ins> :warning: 
+:warning: <ins> This is a test-driven process: refer to the [Validation Criteria](#Validation-Criteria) to understand what is required by the test</ins> :warning: 
 
 ---
 
@@ -163,9 +163,9 @@ This test case utilises the dataset collected in the Dataset folder and summaris
 | Line_layout             | figure (jpg)   | Schematic line layout of the test case |
 | TrackCrossSection       | drawing (png)  | Track cross section to be used as example |
 | SleeperPlacement        | figure (png)   | Information on how to position sleepers along the alignment |
-| *under production*      | csv            | Alignment parameters for horizontal segments |
-| *under production*      | csv            | Alignment parameters for vertical segments |
-| *under production*      | csv            | Alignment parameters for cant segments |
+| Alignment1_horizontal ; Alignment2_horizontal | csv            | Alignment parameters for horizontal segments |
+| Alignment1_vertical ; Alignment2_vertical     | csv            | Alignment parameters for vertical segments |
+| Alignment1_cant ; Alignment2_cant     | csv            | Alignment parameters for cant segments |
 | *under production*      | LandXML        | Alignment LandXML file, not including cant  |
 | *under production*      | dwg            | Alignment dwg file, not including cant  |
 | ObjectsOverview         | diagram (png)  | Objects overview: a diagram + table describing the main to be used for the test case |
@@ -222,8 +222,8 @@ Other global settings:
 | **ID**  | **CRITERIA**                                                     | **VALUE**                                   | **COMMENT**                |
 |---------|------------------------------------------------------------------|---------------------------------------------|----------------------------|
 | ALIG_01 | Alignments contained in file                                     | 2                                           |                            |
-| ALIG_02 | Component for Alignment 1: Primary route                         | 1 horizontal, 1 vertical, 1 cant            |                            |
-| ALIG_03 | Component for Alignment 2: Diverted route                        | 1 horizontal, 1 vertical, 1 cant            |                            |
+| ALIG_02 | Component for Alignment 1_Primary route                          | 1 horizontal, 1 vertical, 1 cant            |                            |
+| ALIG_03 | Component for Alignment 2_Diverted route                         | 1 horizontal, 1 vertical, 1 cant            |                            |
 | ALIG_04 | The horizontal (H) layout is made only by these type of segments | straight line, circular arc, clothoid       |                            |
 | ALIG_05 | The vertical (V) layout is made only by these type of segments   | straight line, circular arc                 |                            |
 | ALIG_06 | The cant (C) layout is made only by these type of segments       | constant straight line, linear transition   |                            |
@@ -237,7 +237,7 @@ NOTE:
 
    <img src="Dataset/CantFromLowerRail.png" height="300"/>
 
-<details><summary> Alignment 1: Primary route </summary>
+<details><summary> Alignment 1_Primary route </summary>
 
 | ID      | CRITERIA                                                            | VALUE        |
 |---------|---------------------------------------------------------------------|--------------|
@@ -259,7 +259,7 @@ NOTE:
 
 </details>
 
-<details><summary> Alignment 2: Diverted route </summary>
+<details><summary> Alignment 2_Diverted route </summary>
 
 | ID      | CRITERIA                                                            | VALUE        |
 |---------|---------------------------------------------------------------------|--------------|
