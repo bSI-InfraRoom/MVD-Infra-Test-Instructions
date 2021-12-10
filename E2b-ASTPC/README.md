@@ -88,11 +88,11 @@ The Test instruction addresses the import and export of the following IFC Entiti
   - Object Attributes
      - Object Predefined Type
   - Object Composition
-     - Alignment Decomposition
+     - Alignment Layout
      - Element Decomposition
      - Spatial Decomposition
   - Object Connectivity
-     - Spatial Service Connectivity (or better *Group Spatial Connectivity*, not yet present in documentation)
+     - Group Spatial Connectivity
      - Spatial Containment
   - Object definition
      - Object Typing
@@ -203,7 +203,7 @@ Other global settings:
 
 <details><summary>Railway alignment (with cant)</summary> 
 
-- **Concept Template**: Alignment Decomposition
+- **Concept Template**: Alignment Layout
 - **Usage** (if existing): NA
 > **Acceptance criteria**: For the **Railway alignment (with cant)** capability, the test is considered passed if **all** the following validation criteria are satisfied.
 
@@ -331,7 +331,7 @@ NOTE:
 
 </details>
 
-<details><summary>Local placement & Linear placement long alignment</summary>
+<details><summary>Local placement & Linear placement along alignment</summary>
 
 :construction: under construction :construction:
 
@@ -492,7 +492,7 @@ These are classified using `IfcClassification`, `IfcClassificationReference`, an
 
 <details><summary>Spatial reference</summary>
 
-- **Concept Template**: :warning: Spatial Service Connectivity (or better *Group Spatial Connectivity*, not yet present in documentation) :warning:
+- **Concept Template**: Group Spatial Connectivity
 - **Usage** (if existing): NA
 > **Acceptance criteria**: For the **Spatial reference** capability, the test is considered passed if **all** the following validation criteria are satisfied.
 >
