@@ -6,19 +6,28 @@
 
 ## Dataset
 
-| Filename                                               | Description                                                                                               |
-|--------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
-| [Line_layout](./Line_layout.jpg)                       | Schematic [line layout](#Line-layout) of the test case                                                    |
-| [TrackCrossSection](./TrackCrossSection.png)           | [Track cross section](#Track-cross-section) to be used as example                                         |
-| [SleeperPlacement](./SleeperPlacement.png)             | Information on how to [position sleepers](#Sleeper-placement) along the alignment                         |
-| [Alignment1_horizontal](./Alignment1_horizontal.csv) ; [Alignment2_horizontal](./Alignment2_horizontal.csv) | [Alignment parameters for horizontal segments](#Alignment-parameters-for-horizontal-segments)             |
-| [Alignment1_vertical](./Alignment1_vertical.csv) ; [Alignment2_vertical](./Alignment2_vertical.csv)         | [Alignment parameters for vertical segments](#Alignment-parameters-for-vertical-segments)                 |
-| [Alignment1_cant](./Alignment1_cant.csv) ; [Alignment2_cant](./Alignment2_cant.csv)                         | [Alignment parameters for cant segments](#Alignment-parameters-for-cant-segments)                         |
-| *under production*                                     | Alignment LandXML file, not including cant                                                                |
-| *under production*                                     | Alignment dwg file, not including cant                                                                    |
-| [ObjectsOverview](./ObjectsOverview.png)               | [Objects overview](#Objects-overview): a diagram + table describing the main to be used for the test case |
+Similarly to the test instruction and validation criteria, also the dataset description is gradually provided to support the different steps:
+
+### For Step 1:
+
+| Filename                                                                                                    | Description                                                                                                      |
+|-------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| [Line_layout](./Line_layout.jpg)                                                                            | Schematic [line layout](#Line-layout) of the test case                                                           |
+| [Alignment1_horizontal](./Alignment1_horizontal.csv) ; [Alignment2_horizontal](./Alignment2_horizontal.csv) | [Alignment parameters for horizontal segments](#Alignment-parameters-for-horizontal-segments)                    |
+| [Alignment1_vertical](./Alignment1_vertical.csv) ; [Alignment2_vertical](./Alignment2_vertical.csv)         | [Alignment parameters for vertical segments](#Alignment-parameters-for-vertical-segments)                        |
+| [Alignment1_cant](./Alignment1_cant.csv) ; [Alignment2_cant](./Alignment2_cant.csv)                         | [Alignment parameters for cant segments](#Alignment-parameters-for-cant-segments)                                |
+| *under production*                                                                                          | Alignment LandXML file, not including cant                                                                       |
+| *under production*                                                                                          | Alignment dwg file, not including cant                                                                           |
+
+### For Steps 2 and 3:
+
+| Filename                                               | Description                                                                                                      |
+|--------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| [ObjectsOverview](./ObjectsOverview.png)               | [Objects overview](#Objects-overview): a diagram + table describing the main to be used for the test case        |
+| [TrackCrossSection](./TrackCrossSection.png)           | [Track cross section](#Track-cross-section) to be used as example                                                |
+| [SleeperPlacement](./SleeperPlacement.png)             | Information on how to [position sleepers](#Sleeper-placement) along the alignment                                |
 | [FS60UNI_R.250_TG.0.092](./FS60UNI_R.250_TG.0.092.svg) | [Turnout drawing](#Turnout-example) to be used as example. **The objective of the test IS NOT to reproduced it** |
-| [SimplifiedTurnout](./SimplifiedTurnout.png)           | [Simplified turnout](#Simplified-trnout) scheme. **The objective of the test IS NOT to reproduced the turnout**                 |
+| [SimplifiedTurnout](./SimplifiedTurnout.png)           | [Simplified turnout](#Simplified-trnout) scheme. **The objective of the test IS NOT to reproduced the turnout**  |
 
 
 ---
