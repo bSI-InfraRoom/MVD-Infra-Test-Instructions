@@ -10,7 +10,9 @@
 
 This test case uses one unique dataset to progressively asses multiple IFC 4.3 capabilities. **export**
 
-The dataset is represented by a short portion of railway line (800 m), including: 2 alignments, and the elements of the railway track domain listed [below](#Itemised-Roots).
+The dataset is represented by a short portion of railway line (800 m), including: 2 alignments, and the elements of the railway track domain listed in the *Itemised Roots* paragraph [below](#Itemised-Roots).
+
+<img src="Dataset/LineLayout.svg" height="400"/>
 
 Starting from this dataset, the following capabilities will be tested in 3 steps:
 
@@ -36,7 +38,7 @@ Coherently to the above steps, also the production of the IFC file subject to te
 
 - Step 2:
    1. Model project breakdown structure (spatial structure)
-   1. Model track object types and objects (course, ballast, rails, sleepers, etc.)
+   1. Model and position track object (course, ballast, rails, sleepers, etc.) and related types
    1. Assemble objects
    1. Assign objects to project breakdown
    1. Geo-reference model
@@ -45,7 +47,6 @@ Coherently to the above steps, also the production of the IFC file subject to te
    1. Group objects
    1. Classify objects
    1. Model properties of objects/object types
-
 
 The [Expected Results](#Expected-Results) section lists the material that will be used to assess the fulfilment of capabilities.
 
