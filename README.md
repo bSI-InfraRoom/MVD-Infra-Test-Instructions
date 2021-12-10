@@ -11,24 +11,27 @@ Develop the test Case/Instruction.
     - For a brief summary of `git` process, see [here](https://github.com/tumcms/Open-Infra-Platform/blob/development/Documentation/markdown/GitProcess.md). There are also a lot of online tutorials available.
 
 ## Structure
-The Repository is divided into a set of Information Exchanges numbered Ex . each exchange has a number of test cases within it to fulfil and test the needed functionality of each exchange definition. Current identified Exchanges are as follows.
- 
-Alignment Based Reference View
-- E1 - Alignment Reference Exchange
-  - E1a - Alignment Reference Super Elevation Exchange (Infra)
-  - E1b - Alignment Reference Cant Exchange (Rail)
-- E2 -Aggregate Structures Exchange
-   - E2a - Infra
-   - E2b - Railway Track Exchange
-     - [E2b1 - Aggregate structures + Track. Pavement and Course (ballast) + Cant](./E2b1-ASTPC)
-- E3 - Earthworks Exchange
-- E4 - Bridge Structural Exchange
-- E5 - Signalling Exchange
-- E6 - Energy Exchange (Railway)
-- E7 - Geotechnics Exchange
-- E8 - Telecommunications Exchange
-- E9 - Drainage Exchange
-- E10 - Maritime Elements Exchange
+The Repository is divided into a set of Information Exchanges numbered `Ex`. Each exchange has a number of test cases within it to fulfil and test the needed functionality of each exchange definition. Current identified Exchanges are as follows.
+
+| MVD Code        | MVD Name                       | Included Exchanges |
+|-----------------|--------------------------------|--------------------|
+| **IFC4.3 AbRV** | Alignment Based Reference View | 12                 |
+
+| ExchangeCode | Exchange Name                                          | Available Test Cases                         |
+|--------------|--------------------------------------------------------|----------------------------------------------|
+| E1a          | Alignment Reference Exchange - Super Elevation (Infra) | [ARSE]()                                     |
+| E1b          | Alignment Reference Exchange - Cant (Rail)             |                                              |
+| E2a          | Aggregate Structures Exchange - Infra                  |                                              |
+| E2b          | Aggregate Structures Exchange - Railway Track          | [ASTPC](./E2b1-ASTPC); [TestCode](link)      |
+| E3           | Earthworks Exchange                                    |                                              |
+| E4           | Bridge Structural Exchange                             |                                              |
+| E5           | Signalling Exchange                                    |                                              |
+| E6           | Energy Exchange (Railway)                              |                                              |
+| E7           | Geotechnics Exchange                                   |                                              |
+| E8           | Telecommunications Exchange                            |                                              |
+| E9           | Drainage Exchange                                      |                                              |
+| E10          | Maritime Elements Exchange                             |                                              |
+
 
 
 ## FAQ
