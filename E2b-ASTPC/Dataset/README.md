@@ -83,30 +83,6 @@ All parameters of the segments, for both alignments, are detailed below in:
 - [Alignment parameters for cant segments](#Alignment-parameters-for-cant-segments)
 
 ---
-## Track cross section
-
-:construction: under construction :construction:
-
-Short description:
-
-Snippet:
-<p align="center">
-    <img src="./TrackCrossSection.png" width="800">
-</p>
-
----
-## Sleeper placement
-
-:construction: under construction :construction:
-
-Short description:
-
-Snippet:
-<p align="center">
-    <img src="./SleeperPlacement.png" height="600">
-</p>
-
----
 ## Alignment parameters for horizontal segments
 
 The horizontal layout of the alignment (both for Alignment 1 and Alignment 2) is described using a CSV file. The column headers match the IFC attributes for `IfcAlignmentHorizontalSegment`. Refers to the standard's documentation for their description.
@@ -278,8 +254,31 @@ The table lists the direct attributes of the above mentioned objects
 | IfcGroup           | LO1336-BC-BC01-TRA-T01       | Segmento di traverse                | $                       | $              |                                                   |
 | IfcGroup           | LO1336-BC-BC02-TRA-T02       | Segmento di traverse                | $                       | $              |                                                   |
 
+---
+## Track cross section
+
+:construction: under construction :construction:
+
+Short description:
+
+Snippet:
+<p align="center">
+    <img src="./TrackCrossSection.png" width="800">
+</p>
 
 ---
+## Sleeper placement
+
+:construction: under construction :construction:
+
+Short description:
+
+Snippet:
+<p align="center">
+    <img src="./SleeperPlacement.png" height="600">
+</p>
+
+
 ## Turnout example
 
 Short description:
