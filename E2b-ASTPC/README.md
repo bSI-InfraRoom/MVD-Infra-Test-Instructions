@@ -8,7 +8,11 @@
 
 ## Summary (intent)
 
-This test case uses the elements of the railway track domain listed [below](#Itemised-Roots) to certify the following capabilities:
+This test case uses one unique dataset to progressively asses multiple IFC 4.3 capabilities. **export**
+
+The dataset is represented by a short portion of railway line (800 m), including: 2 alignments, and the elements of the railway track domain listed [below](#Itemised-Roots).
+
+Starting from this dataset, the following capabilities will be tested in 3 steps:
 
 - Step 1: 
    - Railway alignment (with cant)
@@ -23,28 +27,29 @@ This test case uses the elements of the railway track domain listed [below](#Ite
   - Object classification via external reference (i.e., bSDD)
   - Properties of objects
 
-The business context for the test is provided by a 800 m portion of railway line, including: 2 alignments, track substructure and superstructure, and related products.
+**High-level test instructions**
 
-The [Expected Results](#Expected-Results) section lists the material that will be used to assess the fulfilment of capabilities.
+Coherently to the above steps, also the production of the IFC file subject to test can be broken down into three moments:
 
-:warning: <ins> This is a test-driven process: refer to the **Validation Criteria** to understand what is required by the test</ins> :warning: 
-
-### High-level test instructions
-
-Step 1:
+- Step 1:
    1. Model alignment(s)
 
-Step 2:
+- Step 2:
    1. Model project breakdown structure (spatial structure)
    1. Model track object types and objects (course, ballast, rails, sleepers, etc.)
    1. Assemble objects
    1. Assign objects to project breakdown
    1. Geo-reference model
 
-Step 3:
+- Step 3:
    1. Group objects
    1. Classify objects
    1. Model properties of objects/object types
+
+
+The [Expected Results](#Expected-Results) section lists the material that will be used to assess the fulfilment of capabilities.
+
+:warning: <ins> This is a test-driven process: refer to the **Validation Criteria** to understand what is required by the test</ins> :warning: 
 
 ---
 
@@ -52,64 +57,70 @@ Step 3:
 
 The Test instruction addresses the import and export of the following IFC Entities & Concept Templates:
 
-<details><summary>IFC Entities</summary> 
+<details><summary>IFC Entities</summary>
 
-  - IfcProject
-  - IfcSite
-  - IfcRailway
-  - IfcFacilityPart
-  - IfcGroup
-  - IfcElementAssembly
-  - IfcActuator / IfcActuatorType
-  - IfcRail
-  - IfcTrackElement
-  - IfcFastener
-  - IfcCourse / IfcCourseType
-  - IfcAlignemnt
-  - IfcAlignmentHorizontal
-  - IfcAlignmentVertical
-  - IfcAlignmentCant
-  - IfcAlignmentSegment
-  - IfcAlignmentHorizontalSegment
-  - IfcAlignmentVerticalSegment
-  - IfcAlignmentCantSegment
-  - IfcClassification
-  - IfcClassificationReference
-  - IfcTypeObject
+**NOTE**: These entities represent a test-specific subset of the wider AbRV_E2b exchange, hence of the overall AbRV MVD. <ins>**By no means the scope of the test shall be used to define the scope of the exchange, nor of the MVD**</ins>
+
+- Model setup:
+   1. IfcProject
+   1. IfcSite
+   1. IfcRailway
+   1. IfcFacilityPart
+- Alignment:
+   1. IfcAlignment
+   1. IfcAlignmentHorizontal
+   1. IfcAlignmentVertical
+   1. IfcAlignmentCant
+   1. IfcAlignmentSegment
+   1. IfcAlignmentHorizontalSegment
+   1. IfcAlignmentVerticalSegment
+   1. IfcAlignmentCantSegment
+- Track domain physical products:
+   1. IfcRail
+   1. IfcTrackElement
+   1. IfcFastener
+   1. IfcActuator / IfcActuatorType
+   1. IfcCourse / IfcCourseType
+   1. IfcElementAssembly
+- Other test-specific entities:
+   1. IfcGroup
+   1. IfcClassification
+   1. IfcClassificationReference
+
 
 </details>
 
 <details><summary>Concept Templates</summary> 
 
-  - Object Assignment
-     - Group Assignment
-  - Object Association
-     - Classification Association
-  - Object Attributes
-     - Object Predefined Type
-  - Object Composition
-     - Alignment Layout
-     - Element Decomposition
-     - Spatial Decomposition
-  - Object Connectivity
-     - Group Spatial Connectivity
-     - Spatial Containment
-  - Object definition
-     - Object Typing
-     - Property Sets for Objects
-     - Property Sets for Types
-  - Product Shape
-     - `I need help here`
-     - Product Geometric Representation
-     - Alignment Geometry
-     - Alignment Geometry Gradient
-     - ... (to be continued)
-  - Project Context
-     - Project Classification Information
-     - Project Declaration
-     - Project Global Positioning
-     - Project Representation Context
-     - Project Units
+- Object Assignment
+   - Group Assignment
+- Object Association
+   - Classification Association
+- Object Attributes
+   - Object Predefined Type
+- Object Composition
+   - Alignment Layout
+   - Element Decomposition
+   - Spatial Decomposition
+- Object Connectivity
+   - Group Spatial Connectivity
+   - Spatial Containment
+- Object definition
+   - Object Typing
+   - Property Sets for Objects
+   - Property Sets for Types
+- Product Shape
+   - `I need help here`
+   - Product Geometric Representation
+   - Alignment Geometry
+   - Alignment Geometry Gradient
+   - ... (to be continued)
+- Project Context
+   - Project Classification Information
+   - Project Declaration
+   - Project Global Positioning
+   - Project Representation Context
+   - Project Units
 </details>
 
 ---
