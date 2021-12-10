@@ -19,10 +19,10 @@ The Repository is divided into a set of Information Exchanges numbered `Ex`. Eac
 
 | ExchangeCode | Exchange Name                                          | Available Test Cases                         |
 |--------------|--------------------------------------------------------|----------------------------------------------|
-| E1a          | Alignment Reference Exchange - Super Elevation (Infra) | [ASTPC](./E2b1-ASTPC);[ARSE]()               |
-| E1b          | Alignment Reference Exchange - Cant (Rail)             |                                              |
+| E1a          | Alignment Reference Exchange - Super Elevation (Infra) | [ARSE](./E1b-ARSE)                           |
+| E1b          | Alignment Reference Exchange - Cant (Rail)             | [ASTPC](./E2b1-ASTPC)                        |
 | E2a          | Aggregate Structures Exchange - Infra                  |                                              |
-| E2b          | Aggregate Structures Exchange - Railway Track          | [ASTPC](./E2b1-ASTPC); [TestCode](link)      |
+| E2b          | Aggregate Structures Exchange - Railway Track          | [ASTPC](./E2b1-ASTPC)                        |
 | E3           | Earthworks Exchange                                    |                                              |
 | E4           | Bridge Structural Exchange                             |                                              |
 | E5           | Signalling Exchange                                    |                                              |
