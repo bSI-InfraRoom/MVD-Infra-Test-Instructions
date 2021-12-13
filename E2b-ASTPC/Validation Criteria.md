@@ -188,6 +188,22 @@ ALIG_07 - Note
 >
 > The validation procedure must verify that an assembly of the requested type aggregates (via `IfcRelAggregates`) exactly a given number of elements of the requested type, no more and no less.
 
+| ID       | CRITERIA                                           | VALUE                                          |
+|----------|----------------------------------------------------|------------------------------------------------|
+| ASSE_001 | Mandatory components are present in the assemblies | See below the table for further specification  |
+
+ASSE_001: Mandatory components are present in the assemblies
+> - Given a set of assemblies taken from the [Test Case Assembly Table](#Test-Case-Assembly-Table)
+> - When the Assembly, and optionally the Assembly Type, exists
+> - Then the Assembly must aggregate at least a number within [Minimum..Maximum] of the requested Element
+>
+> NOTE:
+> - when **Minimum** and **Maximum** have the same value, it means exactly. Example: Minimum=Maximum=2, means that the assembly must aggregates exactly 2 elements of the requested type.
+> - when **Maximum** is empty, it means unlimited. Example: Minimum=1; Maximum=empty, means that the assembly must aggregate 1 or more elements of the requested type.
+    
+
+### Test Case Assembly Table
+
 | Assembly           | Assembly Type | Minimum | Maximum | Element         | Element Type |
 |--------------------|---------------|---------|---------|-----------------|--------------|
 | IfcElementAssembly | TURNOUTPANEL  | 1       | 1       | IfcFastener     | WELD         |
@@ -196,9 +212,7 @@ ALIG_07 - Note
 | IfcElementAssembly | TURNOUTPANEL  | 1       | 2       | IfcRail         | CHECKRAIL    |
 | IfcElementAssembly | TURNOUTPANEL  | 52      | 52      | IfcTrackElement | SLEEPER      |
 
-NOTE:
-- when **Minimum** and **Maximum** have the same value, it means exactly. Example: Minimum=Maximum=2, means that the assembly must aggregates exactly 2 elements of the requested type.
-- when **Maximum** is empty, it means unlimited. Example: Minimum=1; Maximum=empty, means that the assembly must aggregate 1 or more elements of the requested type.
+
 
 </details>
 
@@ -268,6 +282,28 @@ NOTE:
 >
 > The validation procedure must verify that a group of the requested type is grouping (via `IfcRelAssignsToGroup`) exactly a given number of objects of the requested type, no more and no less.
 
+(See below the table for further specification of each criteria)
+| ID       | CRITERIA                                    | VALUE                                                                                                                                                           |
+|----------|---------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| GROU_001 | Mandatory objects are present in the groups | See below the table for further specification                                                                                                                   |
+| GROU_101 | Circular reference is not allowed           | Circular reference is not allowed, neither direct (if A includes B, B cannot includes A), nor indirect (if A includes B and B includes C, C cannot includes A)  |
+| GROU_102 | Only direct inclusion is allowed            | Example: if A includes B and B includes C, A cannot includes C)                                                                                                 |
+| GROU_103 | Same-level grouping is not allowed          | If two or more Group are part of the same Group, they cannot include each others. Example: if A groups B and C, B cannot group C and vice versa)                |
+| GROU_104 | Group rooting                               | All Groups that do not have a parent Group must be linked to the IfcProject with an IfcRelDeclares relationship, as per Project Declaration template            |
+
+GROU_001: Mandatory objects are present in the groups
+> - Given a set of groups taken from the [Test Case Group Table](#Test-Case-Group-Table)
+> - When the Group, and optionally the Group Type, exists
+> - Then the Group must group at least a number within [Minimum..Maximum] of the requested Object
+>
+> NOTE:
+> - for typing of groups refer to the Validation criteria of the **Object typing** capability
+> - when **Minimum** and **Maximum** have the same value, it means exactly. Example: Minimum=Maximum=2, means that the group must group exactly 2 objects of the requested type.
+> - when **Maximum** is empty, it means unlimited. Example: Minimum=1; Maximum=empty, means that the group must group 1 or more elements of the requested type.
+    
+
+### Test Case Group Table
+
 | Group    | Group Type                          | Minimum | Maximum | Object             | Object Type          |
 |----------|-------------------------------------|---------|---------|--------------------|----------------------|
 | IfcGroup | Binari di corsa (Contenitore)       | 1       | 1       | IfcFacilityPart    | TRACKSTRUCTURE       |
@@ -278,11 +314,6 @@ NOTE:
 | IfcGroup | Segmento di rotaia                  | 2       | 2       | IfcRail            | RAIL                 |
 | IfcGroup | Traverse (Contenitore)              | 3       | 3       | IfcGroup           | Segmento di traverse |
 | IfcGroup | Segmento di traverse                | 1       |         | IfcTrackElement    | SLEEPER              |
-
-NOTE:
-- for typing of groups refer to the Validation criteria of the **Object typing** capability
-- when **Minimum** and **Maximum** have the same value, it means exactly. Example: Minimum=Maximum=2, means that the group must group exactly 2 objects of the requested type.
-- when **Maximum** is empty, it means unlimited. Example: Minimum=1; Maximum=empty, means that the group must group 1 or more elements of the requested type.
 
 </details>
 
