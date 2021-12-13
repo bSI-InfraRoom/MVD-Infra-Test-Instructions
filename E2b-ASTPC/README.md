@@ -543,7 +543,7 @@ These are classified using `IfcClassification`, `IfcClassificationReference`, an
 
 </details>
 
-<details open><summary>Standard & Custom properties for objects and object types</summary>
+<details><summary>Standard & Custom properties for objects and object types</summary>
 
 :construction: under construction :construction:
 
