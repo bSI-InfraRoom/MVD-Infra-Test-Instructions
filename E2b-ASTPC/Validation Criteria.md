@@ -72,7 +72,7 @@ GENE_005: All requested entities are present in the IFC model
 | ALIG_06 | The cant (C) layout is made only by these type of segments       | constant straight line, linear transition   |                            |
 | ALIG_07 | Value of the *RailHeadDistance* along the entire alignment       | 1500 mm                                     | See notes below for detail |
 | ALIG_08 | Semantic description of segments corresponds to their geometry   | NA                                          | RDF tools can do this      |
-| ALIG_09 | Tangential continuity of all segments is verified, tolerance = 0, 00000001 |                                   | RDF tools can do this      |
+| ALIG_09 | Tangential continuity of all segments is verified, tolerance = 0,00000001 |                                    | RDF tools can do this      |
 
 
 ALIG_00: Alignment layout structure
