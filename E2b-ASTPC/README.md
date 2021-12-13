@@ -255,10 +255,11 @@ ALIG_00: Alignment layout structure
 > 1. Each `IfcAlignmentVerticalSegment` must be nested only by 1 `IfcAlignmentVertical` 
 > 1. Each `IfcAlignmentCantSegment` must be nested only by 1 `IfcAlignmentCant` 
 
-NOTE:
--	The *RailHeadDistance* (blue line in the figure below) is a normalized value used to compute the angle of cant. RFI uses 1500 mm for a track gauge of 1435 mm
+ALIG_07 - Note
 
-   <img src="Dataset/CantFromLowerRail.png" height="300"/>
+> The *RailHeadDistance* (blue line in the figure below) is a normalized value used to compute the angle of cant. RFI uses 1500 mm for a track gauge of 1435 mm
+>
+>   <img src="Dataset/CantFromLowerRail.png" height="300"/>
 
 <details><summary> Alignment 1_Primary route </summary>
 
