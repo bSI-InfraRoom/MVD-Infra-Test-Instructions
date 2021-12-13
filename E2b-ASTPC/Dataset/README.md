@@ -217,6 +217,8 @@ The picture captures main objects and relationships to be present in the IFC fil
 
 The table lists the direct attributes of the above mentioned objects
 
+### Test Case Entities Table
+
 | Entity             | Name                         | Description                         | ObjectType              | PredefinedType | NOTE                                              |
 |--------------------|------------------------------|-------------------------------------|-------------------------|----------------|---------------------------------------------------|
 | IfcSite            | Sito                         | $                                   | $                       | $              |                                                   |

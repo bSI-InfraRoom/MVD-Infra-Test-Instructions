@@ -200,12 +200,19 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 Other global settings:
 
-| **ID**  | **CRITERIA**                                                     | **VALUE**                                   | **COMMENT**                |
-|---------|------------------------------------------------------------------|---------------------------------------------|----------------------------|
-| GENE_01 | Unit of measure for all distances                                | **meter** (m)                               | As provided in the dataset |
-| GENE_02 | Unit of measure all angles                                       | **radian** (π)                              | As provided in the dataset |
-| GENE_03 | Required precision for **distances**                             | "minimum 4 decimal places (0,0001)"         |                            |
-| GENE_04 | Required precision for **angles** and **slope**                  | "minimum 6 decimal places (0,000001)"       |                            |
+| **ID**  | **CRITERIA**                                                     | **VALUE**                               | **COMMENT**                |
+|---------|------------------------------------------------------------------|-----------------------------------------|----------------------------|
+| GENE_01 | Unit of measure for all distances                                | **meter** (m)                           | As provided in the dataset |
+| GENE_02 | Unit of measure all angles                                       | **radian** (π)                          | As provided in the dataset |
+| GENE_03 | Required precision for **distances**                             | "minimum 4 decimal places (0,0001)"     |                            |
+| GENE_04 | Required precision for **angles** and **slope**                  | "minimum 6 decimal places (0,000001)"   |                            |
+| GENE_05 | All requested entities are present in the IFC model              | See below the table for further specification |                             |
+
+
+GENE_005: All requested entities are present in the IFC model
+> - Given the [Test Case Entities Table](Dataset/README.md#Test-Case-Entities-Table)
+> - Then all IfcEntity, with their requested attributes, exist in file
+
 
 </details>
 
@@ -221,6 +228,7 @@ Other global settings:
 
 | **ID**  | **CRITERIA**                                                     | **VALUE**                                   | **COMMENT**                |
 |---------|------------------------------------------------------------------|---------------------------------------------|----------------------------|
+| ALIG_00 | Alignment layout structure                                       | See below the table for further specification |                            |
 | ALIG_01 | Alignments contained in file                                     | 2                                           |                            |
 | ALIG_02 | Component for Alignment 1_Primary route                          | 1 horizontal, 1 vertical, 1 cant            |                            |
 | ALIG_03 | Component for Alignment 2_Diverted route                         | 1 horizontal, 1 vertical, 1 cant            |                            |
@@ -231,6 +239,21 @@ Other global settings:
 | ALIG_08 | Semantic description of segments corresponds to their geometry   | NA                                          | RDF tools can do this      |
 | ALIG_09 | Tangential continuity of all segments is verified, tolerance = 0, 00000001 |                                   | RDF tools can do this      |
 
+
+ALIG_00: Alignment layout structure
+> 1. Each `IfcAlignment` must nest exactly 1 `IfcAlignmentHorizontal`
+> 1. Each `IfcAlignment` must nest at most 1 `IfcAlignmentVertical`
+> 1. Each `IfcAlignment` must nest at most 1 `IfcAlignmentCant`
+> 1. Each `IfcAlignmentHorizontal` must be nested only by 1 `IfcAlignment`
+> 1. Each `IfcAlignmentVertical` must be nested only by 1 `IfcAlignment`
+> 1. Each `IfcAlignmentCant` must be nested only by 1 `IfcAlignment`
+> 1. Each `IfcAlignment` must nest only `IfcAlignmentHorizontal`, or `IfcAlignmentVertical`, or `IfcAlignmentCant`
+> 1. Each `IfcAlignmentHorizontal` must nest only `IfcAlignmentHorizontalSegment`
+> 1. Each `IfcAlignmentVertical` must nest only `IfcAlignmentVerticalSegment`
+> 1. Each `IfcAlignmentCant` must nest only `IfcAlignmentCantSegment`
+> 1. Each `IfcAlignmentHorizontalSegment` must be nested only by 1 `IfcAlignmentHorizontal` 
+> 1. Each `IfcAlignmentVerticalSegment` must be nested only by 1 `IfcAlignmentVertical` 
+> 1. Each `IfcAlignmentCantSegment` must be nested only by 1 `IfcAlignmentCant` 
 
 NOTE:
 -	The *RailHeadDistance* (blue line in the figure below) is a normalized value used to compute the angle of cant. RFI uses 1500 mm for a track gauge of 1435 mm
@@ -520,28 +543,73 @@ These are classified using `IfcClassification`, `IfcClassificationReference`, an
 
 </details>
 
-<details><summary>Properties of objects and object types</summary>
+<details open><summary>Standard & Custom properties for objects and object types</summary>
 
 :construction: under construction :construction:
 
 - **Concept Template**: Property Sets for Objects, Property Sets for Types
 - **Usage** (if existing): NA
-> **Acceptance criteria**: For the **Properties of objects and object types** capability, the test is considered passed if **all** the following validation criteria are satisfied.
+> **Acceptance criteria**: For the **Standard properties for objects and object types** capability, the test is considered passed if **all** the following validation criteria are satisfied.
 >
-> The validation procedure must verify that ...
+> The validation procedure must verify that both standard and custom property sets requested by the test case (including relative properties and values) are present in the IFC file.
 
-| Entity          | Entity Type          | PropertySet Name | Property Name           | Property Value Type | List Of Values                                       | IfcSimpleProperty subtype  |
-|-----------------|----------------------|------------------|-------------------------|---------------------|------------------------------------------------------|----------------------------|
-| IfcFacilityPart | TRACKSTRUCTURE       | RFI_S16000       | Binario                 | IFCLABEL            | Pari, Dispari, Unico                                 | IfcPropertyEnumeratedValue |
-| IfcFacilityPart | TRACKSTRUCTURE       | RFI_S16000       | Codice binario SAS      | IFCLABEL            |                                                      | IfcPropertySingleValue     |
-| IfcFacilityPart | TRACKSTRUCTURE       | RFI_S16000       | n. deviatoi elettrici   | IFCINTEGER          |                                                      | IfcPropertySingleValue     |
-| IfcFacilityPart | TRACKSTRUCTURE       | RFI_S16000       | Profilo manutentivo L94 | IFCLABEL            | <=40 t/g, >100 t/g, 40< t/g <=100 | IfcPropertyEnumeratedValue |
-| IfcFacilityPart | TRACKSTRUCTURE       | RFI_S16000       | Binario elettrificato   | IFCLOGICAL          |                                                      | IfcPropertySingleValue     |
-| IfcTrackElement | SLEEPER              | ???              |                         |                     |                                                      |                            |
-| IfcGroup        | Segmento di traverse | ???              |                         |                     |                                                      |                            |
+(See below the table for further specification of each criteria)
+| ID       | CRITERIA                                                 |
+|----------|----------------------------------------------------------|
+| PSET_002 | The model does not contain unrequested property sets     |
+| PNAM_002 | The property set does not contain unrequested properties |
+| PTEX_001 | Property values belong to a list of values               |
+| PVAL_001 | Property values are not null and not empty               |
+| PVAL_002 | Requested property value types are found                 |
 
+PSET_002: The model does not contain unrequested property sets
+> - Given a set of properties taken from the [Test Case Properties Table](#Test-Case-Properties-Table)
+> - When the IfcEntity, and optionally the Type, exists
+> - Then the IfcEntity is associated at most to the property set with the PropertySet Name
 
+PNAM_002: The property set does not contain unrequested properties
+> - Given a set of properties taken from the [Test Case Properties Table](#Test-Case-Properties-Table)
+> - When the IfcEntity, and optionally the Type, exists
+> - And the IfcEntity is associated to a property set with the PropertySet Name
+> - Then the property set has at most the properties with the Property Name
 
+PTEX_001: Property values belong to a list of values
+> - Given a set of properties taken from the [Test Case Properties Table](#Test-Case-Properties-Table)
+> - When the IfcEntity, and optionally the Type, exists
+> - And the IfcEntity is associated to a property set with the PropertySet Name
+> - And the property set has a property with the Property Name
+> - Then the property value is part of the List Of Values
+
+PVAL_001: Property values are not null and not empty
+> - Given a set of properties taken from the [Test Case Properties Table](#Test-Case-Properties-Table)
+> - When the IfcEntity, and optionally the Type, exists
+> - And the IfcEntity is associated to a property set with the PropertySet Name
+> - And the property set has a property with the Property Name
+> - Then the property value is not null
+> - And the property value is not empty
+
+PVAL_002: Requested property value types are found
+> - Given a set of properties taken from the [Test Case Properties Table](#Test-Case-Properties-Table)
+> - When the IfcEntity, and optionally the Type, exists
+> - And the IfcEntity is associated to a property set with the PropertySet Name
+> - And the property set has a property with the Property Name
+> - And the property value is not null
+> - Then the property type is equal to the Property Value Type
+
+### Test Case Properties Table
+
+:construction: under construction :construction:
+
+| Entity          | Entity Type             | PropertySet Name | Property Name           | Property Value Type | List Of Values                                       | IfcSimpleProperty subtype  |
+|-----------------|-------------------------|------------------|-------------------------|---------------------|------------------------------------------------------|----------------------------|
+| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000       | Binario                 | IFCLABEL            | Pari, Dispari, Unico                                 | IfcPropertyEnumeratedValue |
+| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000       | Codice binario SAS      | IFCLABEL            |                                                      | IfcPropertySingleValue     |
+| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000       | n. deviatoi elettrici   | IFCINTEGER          |                                                      | IfcPropertySingleValue     |
+| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000       | Profilo manutentivo L94 | IFCLABEL            | <=40 t/g, >100 t/g, 40< t/g <=100 | IfcPropertyEnumeratedValue |
+| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000       | Binario elettrificato   | IFCLOGICAL          |                                                      | IfcPropertySingleValue     |
+| IfcTrackElement | SLEEPER                 | ???              |                         |                     |                                                      |                            |
+| IfcCourse       | Segmento di massicciata | PSet_CourseCommon| ???                     |                     |                                                      |                            |
+| IfcCourse       | Segmento di massicciata | PSet_CourseCommon| ???                     |                     |                                                      |                            |
 
 </details>
 
