@@ -167,7 +167,6 @@ This test case utilises the dataset collected in the Dataset folder and summaris
 | Alignment1_vertical ; Alignment2_vertical     | csv            | Alignment parameters for vertical segments |
 | Alignment1_cant ; Alignment2_cant     | csv            | Alignment parameters for cant segments |
 | *under production*      | LandXML        | Alignment LandXML file, not including cant  |
-| *under production*      | dwg            | Alignment dwg file, not including cant  |
 | ObjectsOverview         | diagram (png)  | Objects overview: a diagram + table describing the main elements of the test |
 | FS60UNI_R.250_TG.0.092  | drawing (svg)  | Turnout drawing to be used as example |
 | SimplifiedTurnout       | figure (png)   | Simplified turnout scheme |
