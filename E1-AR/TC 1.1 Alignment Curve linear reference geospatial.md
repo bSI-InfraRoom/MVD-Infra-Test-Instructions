@@ -46,6 +46,11 @@ The Test instruction addresses the import and export of the following IFC Entiti
     - *IfcSite*
     - *IfcShapeRepresentation*
 - Concept Templates
+    - *Alignment Layout*
+    - *Alignmnent Geomtry*
+    - *Alignmnet Geometry Gradient*
+    - *Project Global Positioning*
+    - *Spatial Containment*
 
 ## Variations
 The Following occurence variations need to be checked and certified in relation to the targetted entities and concept templates:
