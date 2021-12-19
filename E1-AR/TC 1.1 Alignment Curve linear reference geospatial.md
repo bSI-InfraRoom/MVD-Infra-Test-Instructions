@@ -4,6 +4,20 @@
 
 *Optional: if your data comes from a specific Storyline or unit test of the IFC Infrastructure Deployment Project or IFC Rail Project, please include a link to the originating documentation here. so additional background information can be created.*
 
+With these instructions the baseline alignment exchange will be established between various domains. This includes basic alignment geometry featuring the common layout:
+- horizontal
+- vertical
+
+The valid geometry segment types for horizontal are the following:
+- Arc
+- Clothoid
+- Cubic (? has to be covered somewhere)
+- Linear
+
+The valid geometry segment types for vertical:
+- Arc
+- Linear
+- Parabolic (?does Road use it?)
 
 ## Itemised Roots
 The Test instruction addresses the import and export of the following IFC Entities & Concept Templates:
