@@ -23,6 +23,28 @@ The valid geometry segment types for vertical:
 The Test instruction addresses the import and export of the following IFC Entities & Concept Templates:
 
 - IFC Entities
+    - *IfcAlignment*
+    - *IfcAlignmnetHorizontal*
+    - *IfcAlignmentVertical*
+    - *IfcAlignmentSegment*
+    - *IfcAlignmentHorizontalSegment*
+    - *IfcAlignmentVerticalSegment*
+    - *IfcAxis2PlacementLinear*
+    - *IfcCircle*
+    - *IfcClothoid*
+    - *IfcCompositeCurve*
+    - *IfcLine*
+    - *IfcCurveSegment*
+    - *IfcGeometricRepresentationContext*
+    - *IfcGeometricRepresentationSubContext*
+    - *IfcGradientCurve*
+    - *IfcMapConversion*
+    - *IfcPolyline*
+    - *IfcProject*
+    - *IfcProjectedCRS*
+    - *IfcProductDefinitionShape*
+    - *IfcSite*
+    - *IfcShapeRepresentation*
 - Concept Templates
 
 ## Variations
