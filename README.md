@@ -2,6 +2,10 @@
 
 This repository is to submit, review & store Test Cases & Instructions defined for IFC4.3 Alignment Based Reference View Certification, and is developed as part of the IFC Infrastructure MVD Project.
 
+| MVD Code        | IFC Version | MVD Name                      | Exchanges |
+|-----------------|-------------|-------------------------------|-----------|
+| **IFC4x3_AbRV** | IFC4.3      |Alignment Based Reference View | 13        |
+
 ## Contribute
 - Use the [template](./docs/test-instruction-template.md) and follow the [instructions](./docs/instructions.md).
     - An example is provided [here](./E2.1-Earthworks-Fill-01).
@@ -13,20 +17,22 @@ Develop the test Case/Instruction.
 ## Structure
 The Repository is divided into a set of Information Exchanges numbered Ex . each exchange has a number of test cases within it to forfil and test the needed functionality of each exchange definition. Current identified Exchanges are as follows.
  
-Alignment Based Reference View
-- E1 - Alignment Reference Exchange
-  - E1a - Alignment Reference Cant Exchange
-  - E1b - Alignment Reference Super Elevation Exchange
-- E2 -Aggregate Structures Exchange
-   - E2a - Railway Track Exchange
-- E3 - Earthworks Exchange
-- E4 - Bridge Structural Exchange
-- E5 - Signalling Exchange
-- E6 - Energy Exchange (Railway)
-- E7 - Geotechnics Exchange
-- E8 - Telecommunications Exchange
-- E9 - Drainage Exchange
-- E10 - Maritime Elements Exchange
+
+| Ex Code | Exchange Name                               | Cases & Info       |
+|---------|---------------------------------------------|--------------------|
+| E1      | Alignment Reference Exchange                | [ALRF](./E1-ALRF)  |
+| E1a     | Alignment Reference Superelevation Exchange | [ARSE](./E1a-ARSE) |
+| E1b     | Alignment Reference Cant Exchange           | [ALRC](./E1a-ARCT) |
+| E2      | Aggregate Structures Exchange               | [AGST](./E2-AGST)  |
+| E2a     | Track Aggregate Structures Exchange         | [TRAS](./E2a-TRAS) |
+| E3      | Earthworks Exchange                         | [EWKS](./E3-EWKS)  |
+| E4      | Bridge Structural Exchange                  | [BRST](./E4-BRST)  |
+| E5      | Signalling Exchange                         | [SIGN](./E5-SIGN)  |
+| E6      | Energy Exchange (Railway)                   | [ENGY](./E6-ENGY)  |
+| E7      | Geotechnics Exchange                        | [GEOT](./E7-GEOT)  |
+| E8      | Telecommunications Exchange                 | [TECO](./E8-TECO)  |
+| E9      | Drainage Exchange                           | [DNGE](./E9-DNGE)  |
+| E10     | Maritime Elements Exchange                  | [MTME](./E10-MTME) |
 
 
 ## FAQ
