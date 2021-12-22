@@ -30,16 +30,3 @@ Some tests are just referenced (hence reused entirely) from other Exchanges.
 | [**IFC4x3_AbRV-E2a-CLAS**](./CLAS) | Classify objects         |        | TWAL, TKST, TNTP       |
 | [**IFC4x3_AbRV-E2a-PROP**](./PROP) | Add properties           |        | TWAL, TKST, TNTP, OJGR |
 | [**IFC4x3_AbRV-E2a-LCSS**](./LCSS) | Level crossing structure |        | another alignment test?|
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
