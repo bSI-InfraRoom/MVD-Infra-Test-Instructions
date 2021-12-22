@@ -2,7 +2,7 @@
 
 | Documentation Code   | Title                                                              | Exchange Code | Test Code | Author          | Data Owner | Version | Date       |
 |----------------------|--------------------------------------------------------------------|---------------|-----------| ----------------|------------|---------|------------|
-| IFC4.3AbRV_E2b_ASTPC | Aggregate structures + Track. Pavement and Course (ballast) + Cant | E2b           | ASTPC     | Evandro Alfieri | RFI        | 1.0     | DD.MM.YYYY |
+| IFC4.3AbRV_E2a_ASERT | Aggregate structures + Track. Pavement and Course (ballast) + Cant | E2a           | ASERT     | Evandro Alfieri | RFI        | 1.0     | DD.MM.YYYY |
 
 ## Dataset
 

@@ -17,20 +17,20 @@ The Repository is divided into a set of Information Exchanges numbered `Ex`. Eac
 |-----------------|--------------------------------|--------------------|
 | **IFC4.3 AbRV** | Alignment Based Reference View | 12                 |
 
-| ExchangeCode | Exchange Name                                          | Available Test Cases                         |
-|--------------|--------------------------------------------------------|----------------------------------------------|
-| E1a          | Alignment Reference Exchange - Super Elevation (Infra) | [ARSE](./E1b-ARSE)                           |
-| E1b          | Alignment Reference Exchange - Cant (Rail)             | [ASTPC](./E2b1-ASTPC)                        |
-| E2a          | Aggregate Structures Exchange - Infra                  |                                              |
-| E2b          | Aggregate Structures Exchange - Railway Track          | [ASTPC](./E2b1-ASTPC)                        |
-| E3           | Earthworks Exchange                                    |                                              |
-| E4           | Bridge Structural Exchange                             |                                              |
-| E5           | Signalling Exchange                                    |                                              |
-| E6           | Energy Exchange (Railway)                              |                                              |
-| E7           | Geotechnics Exchange                                   |                                              |
-| E8           | Telecommunications Exchange                            |                                              |
-| E9           | Drainage Exchange                                      |                                              |
-| E10          | Maritime Elements Exchange                             |                                              |
+| Exchange Code | Exchange Name                                          | Test Cases part of the Exchange              |
+|---------------|--------------------------------------------------------|----------------------------------------------|
+| E1a           | Alignment Reference Exchange - Super Elevation (Infra) |                                              |
+| E1b           | Alignment Reference Exchange - Cant (Rail)             |                                              |
+| E2            | Aggregate Structures Exchange                          |                                              |
+| E2a           | Aggregate Structures Exchange - Railway Track          | GP, AL, TS, TA, GR, CL, PR                   |
+| E3            | Earthworks Exchange                                    |                                              |
+| E4            | Bridge Structural Exchange                             |                                              |
+| E5            | Signalling Exchange                                    |                                              |
+| E6            | Energy Exchange (Railway)                              |                                              |
+| E7            | Geotechnics Exchange                                   |                                              |
+| E8            | Telecommunications Exchange                            |                                              |
+| E9            | Drainage Exchange                                      |                                              |
+| E10           | Maritime Elements Exchange                             |                                              |
 
 
 

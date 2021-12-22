@@ -1,30 +1,30 @@
 # Test instructions
 
-[![See GH Pages publication for this test](https://img.shields.io/badge/GitHub%20Pages-Test%20Case%20documentation-blue)](https://evandroalfieri.github.io/MVD-Infra-Test-Instructions/E2b-ASTPC/)
+[![See GH Pages publication for this test](https://img.shields.io/badge/GitHub%20Pages-Test%20Case%20documentation-blue)](https://evandroalfieri.github.io/MVD-Infra-Test-Instructions/E2a-ASERT/)
 
-| Documentation Code   | Title                                                              | Exchange Code | Test Code | Author          | Data Owner | Version | Date       |
-|----------------------|--------------------------------------------------------------------|---------------|-----------| ----------------|------------|---------|------------|
-| IFC4.3AbRV_E2b_ASTPC | Aggregate structures + Track. Pavement and Course (ballast) + Cant | E2b           | ASTPC     | Evandro Alfieri | RFI        | 1.0     | DD.MM.YYYY |
+| Documentation Code   | Title                                         | Exchange Code | Test Code | Author          | Data Owner | Version | Date       |
+|----------------------|-----------------------------------------------|---------------|-----------| ----------------|------------|---------|------------|
+| IFC4.3AbRV_E2a_ASERT | Aggregate Structures Exchange - Railway Track | E2a - ASERT   | XXXXX     | Evandro Alfieri | RFI        | 1.0     | DD.MM.YYYY |
 
 ## Summary (intent)
 
-This test case uses one unique dataset to progressively asses multiple IFC 4.3 capabilities. **export**
+This test case uses one unique dataset to progressively asses multiple IFC 4.3 capabilities.
 
 The dataset is represented by a short portion of railway line (800 m), including: 2 alignments, and the elements of the railway track domain listed in the *Itemised Roots* paragraph [below](#Itemised-Roots).
 
 <img src="Dataset/LineLayout.svg" height="400"/>
 
-Starting from this dataset, the following capabilities will be tested in 3 steps:
+Starting from this dataset, the following tests can be derived (Capabilities) [ Exchanges]:
 
-- Step 1: 
+- TEST 1: railway alignment 
    - Railway alignment (with cant)
-- Step 2:
+- TEST 2: 
    - Local placement & Linear placement along alignment
    - Railway spatial structure
    - Object decomposition (assemblies)
    - (?) Object typing
    - Project Global Positioning
-- Step 3:
+- TEST 3:
   - Object grouping
   - Object classification via external reference (i.e., bSDD)
   - Properties of objects
@@ -60,7 +60,7 @@ The Test instruction addresses the import and export of the following IFC Entiti
 
 <details><summary>IFC Entities</summary>
 
-**NOTE**: These entities represent a test-specific subset of the wider AbRV_E2b exchange, hence of the overall AbRV MVD. <ins>**By no means the scope of the test shall be used to define the scope of the exchange, nor of the MVD**</ins>
+**NOTE**: These entities represent a test-specific subset of the wider AbRV_E2a exchange, hence of the overall AbRV MVD. <ins>**By no means the scope of the test shall be used to define the scope of the exchange, nor of the MVD**</ins>
 
 - Model setup:
    1. IfcProject
@@ -126,34 +126,6 @@ The Test instruction addresses the import and export of the following IFC Entiti
 
 ---
 
-## Variations
-
-<details><summary>click to expand</summary>
-
-The Following occurrence variations need to be checked and certified in relation to the targeted entities and concept templates:
-
-- Entity_01 - *description of variation*
-- Entity_02 - *description of variation*
-
-</details>
-
-## Usages
-
-<details><summary>click to expand</summary> 
-
-The following itemised restrictions and constraints shall be placed on IFC Entities & Concept Templates:
-
-:construction: under construction :construction:
-
-- IfcSomething
-    - *Constraint*
-
-The Test case requires the following additional checks related to Model Geometry:
-
-</details>
-
----
-
 ## Model Dataset
 
 This test case utilises the dataset collected in the Dataset folder and summarised in the table below. <ins> Form more details on each item see [Dataset description](Dataset/README.md).</ins>
@@ -177,7 +149,7 @@ This test case utilises the dataset collected in the Dataset folder and summaris
 
 For certification of capabilities the only source will be:
 
-- n. 1 IFC file containing the information as requested. The file shall be named using the following syntax: `MVDCode`_`ExchangeCode`_`TestCode`_`SoftwareVendor`.`ifc` (Example: `IFC4.3AbRV_E2b_ASTPC_AmazingSoft.ifc`)
+- n. 1 IFC file containing the information as requested. The file shall be named using the following syntax: `MVDCode`_`ExchangeCode`_`TestCode`_`SoftwareVendor`.`ifc` (Example: `IFC4.3AbRV_E2a_ASERT_AmazingSoft.ifc`)
 
 Considering the aim of this test, other **optional** results, not subject to the bSI certification process, yet usefull to illustrate test results are:
 - Screen-shot of ...
@@ -189,3 +161,88 @@ Considering the aim of this test, other **optional** results, not subject to the
 :warning: <ins>For this test case to be considered passed **all capabilities** listed in [Validation Criteria](./Validation%20Criteria.md) shall be verified, with no exception.</ins> :warning:
 
 
+<table>
+    <tr>
+        <td>Test Code</td>
+        <td>Test Title</td>
+        <td>Capabilities</td>
+        <td>Affected Exchange</td>
+        <td>Dataset description</td>
+        <td>Validation Criteria</td>
+        <td>Test Dependencies</td>
+        <td>Notes</td>
+    </tr>
+    <tr>
+        <td rowspan="2">RAC</td>
+        <td rowspan="2">Railway alignment with cant</td>
+        <td>Railway alignment (with cant)</td>
+        <td rowspan="2">E1; E1b</td>
+        <td rowspan="2">link</td>
+        <td rowspan="2">link</td>
+        <td rowspan="2">none</td>
+        <td rowspan="2"></td>
+    </tr>
+    <tr>
+        <td>Project Global Positioning</td>
+    </tr>
+    <tr>
+        <td rowspan="5">TKS</td>
+        <td rowspan="5">Track structure</td>
+        <td>Local placement & Linear placement along alignment</td>
+        <td rowspan="5">E1; E1b; E2a; (E2); E3 ?</td>
+        <td rowspan="5"></td>
+        <td rowspan="5"></td>
+        <td rowspan="5">RAC</td>
+        <td rowspan="5">Reference RAC, Uses only Alignment 1, uses IfcCourseType</td>
+    </tr>
+    <tr>
+        <td>Railway Spatial decomposition</td>
+    </tr>
+    <tr>
+        <td>Railway Spatial containment</td>
+    </tr>
+    <tr>
+        <td>Object decomposition (assemblies)</td>
+    </tr>
+    <tr>
+        <td>(?) Object typing</td>
+    </tr>
+    <tr>
+        <td rowspan="4">TOA</td>
+        <td rowspan="4">Turnout panel assembly</td>
+        <td>Local placement & Linear placement along alignment</td>
+        <td rowspan="4">E1; E1b; E2a</td>
+        <td rowspan="4"></td>
+        <td rowspan="4"></td>
+        <td rowspan="4">RAC</td>
+        <td rowspan="4"></td>
+    </tr>
+    <tr>
+        <td>Railway Spatial decomposition</td>
+    </tr>
+    <tr>
+        <td>Railway Spatial containment</td>
+    </tr>
+    <tr>
+        <td>Object decomposition (assemblies)</td>
+    </tr>
+    <tr>
+        <td rowspan="4">SEM</td>
+        <td rowspan="4">Enrich semantics of objects</td>
+        <td>Object grouping</td>
+        <td rowspan="4">E2a</td>
+        <td rowspan="4"></td>
+        <td rowspan="4"></td>
+        <td rowspan="4">RAC, TKS, TOA</td>
+        <td rowspan="4"></td>
+    </tr>
+    <tr>
+        <td>Object classification via external reference (i.e., bSDD)</td>
+    </tr>
+    <tr>
+        <td>Spatial reference</td>
+    </tr>
+    <tr>
+        <td>Standard & Custom properties for objects and object types</td>
+    </tr>
+</table>

@@ -2,7 +2,7 @@
 
 | Documentation Code   | Title                                                              | Exchange Code | Test Code | Author          | Data Owner | Version | Date       |
 |----------------------|--------------------------------------------------------------------|---------------|-----------| ----------------|------------|---------|------------|
-| IFC4.3AbRV_E2b_ASTPC | Aggregate structures + Track. Pavement and Course (ballast) + Cant | E2b           | ASTPC     | Evandro Alfieri | RFI        | 1.0     | DD.MM.YYYY |
+| IFC4.3AbRV_E2a_ASERT | Aggregate structures + Track. Pavement and Course (ballast) + Cant | E2a           | ASERT     | Evandro Alfieri | RFI        | 1.0     | DD.MM.YYYY |
 
 :warning: <ins>For this test case to be considered passed **all capabilities** listed in this section shall be verified, with no exception.</ins> :warning:
 
@@ -474,7 +474,7 @@ PVAL_002: Requested property value types are found
 | IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000       | n. deviatoi elettrici   | IFCINTEGER          |                                                      | IfcPropertySingleValue     |
 | IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000       | Profilo manutentivo L94 | IFCLABEL            | <=40 t/g, >100 t/g, 40< t/g <=100 | IfcPropertyEnumeratedValue |
 | IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000       | Binario elettrificato   | IFCLOGICAL          |                                                      | IfcPropertySingleValue     |
-| IfcTrackElement | SLEEPER                 | Pset_SleeperCommon| ???                     |                     |                                                      |                            |
+| IfcTrackElement | SLEEPER                 | PSet_SleeperCommon| ???                     |                     |                                                      |                            |
 | IfcCourse       | Segmento di massicciata | PSet_CourseCommon| ???                     |                     |                                                      |                            |
 | IfcCourse       | Segmento di massicciata | PSet_CourseCommon| ???                     |                     |                                                      |                            |
 
