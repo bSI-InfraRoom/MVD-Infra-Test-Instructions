@@ -17,21 +17,22 @@ The Repository is divided according to the Exchanges (E) that form the IFC4.3 Ab
 |-----------------|--------------------------------|--------------------|
 | **IFC4.3 AbRV** | Alignment Based Reference View | 13                 |
 
-| Ex Code | Exchange Name                               |
-|---------|---------------------------------------------|
-| E1      | Alignment Reference Exchange                |
-| E1a     | Alignment Reference Superelevation Exchange |
-| E1b     | Alignment Reference Cant Exchange           |
-| E2      | Aggregate Structures Exchange               |
-| E2a     | Track Aggregate Structures Exchange         |
-| E3      | Earthworks Exchange                         |
-| E4      | Bridge Structural Exchange                  |
-| E5      | Signalling Exchange                         |
-| E6      | Energy Exchange (Railway)                   |
-| E7      | Geotechnics Exchange                        |
-| E8      | Telecommunications Exchange                 |
-| E9      | Drainage Exchange                           |
-| E10     | Maritime Elements Exchange                  |
+| Ex Code | Exchange Name                               | Abbreviations      |
+|---------|---------------------------------------------|--------------------|
+| E1      | Alignment Reference Exchange                | [ALRF](./E1-ALRF)  |
+| E1a     | Alignment Reference Superelevation Exchange | [ARSE](./E1a-ARSE) |
+| E1b     | Alignment Reference Cant Exchange           | [ALRC](./E1a-ARCT) |
+| E2      | Aggregate Structures Exchange               | [AGST](./E2-AGST)  |
+| E2a     | Track Aggregate Structures Exchange         | [TRAS](./E2a-TRAS) |
+| E3      | Earthworks Exchange                         | [EWKS](./E3-EWKS)  |
+| E4      | Bridge Structural Exchange                  | [BRST](./E4-BRST)  |
+| E5      | Signalling Exchange                         | [SIGN](./E5-SIGN)  |
+| E6      | Energy Exchange (Railway)                   | [ENGY](./E6-ENGY)  |
+| E7      | Geotechnics Exchange                        | [GEOT](./E7-GEOT)  |
+| E8      | Telecommunications Exchange                 | [TECO](./E8-TECO)  |
+| E9      | Drainage Exchange                           | [DNGE](./E9-DNGE)  |
+| E10     | Maritime Elements Exchange                  | [MTME](./E10-MTME) |
+
 
 ## FAQ
 

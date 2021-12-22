@@ -1,8 +1,8 @@
 # Test instructions
 
-| Documentation Code   | Title                                         | Exchange Code | Test Code | Author          | Data Owner | Version | Date       |
-|----------------------|-----------------------------------------------|---------------|-----------| ----------------|------------|---------|------------|
-| IFC4.3AbRV_E2a_ASERT | Aggregate Structures Exchange - Railway Track | E2a - ASERT   | XXXXX     | Evandro Alfieri | RFI        | 1.0     | DD.MM.YYYY |
+| Documentation Code   | Test Title                    | Exchange Code | Test Code | Author          | Data Owner | Version | Date       |
+|----------------------|-------------------------------|---------------|-----------| ----------------|------------|---------|------------|
+| IFC4.3AbRV_E2a_GLOB  | Global Positioning            | E2a (TRAS)    | GLOB      | Evandro Alfieri | RFI        | 1.0     | DD.MM.YYYY |
 
 ## Summary (intent)
 
