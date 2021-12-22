@@ -11,7 +11,7 @@
 
 *Optional: if your data comes from a specific Storylines or unit tests of the IFC Infrastructure Deployment Project or IFC Rail Project, please include a link to the originating documentation here. so additional background information can be created or referenced by the implementing vendor.*
 
-This test case addresses the import and export of *&&&&* entities within the *&&&* use case...
+This test case addresses the import and export of *&&&&* entities within the *&&&* use case for the exchange of *&&&* information...
 
 ...
 
@@ -47,6 +47,8 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
 ## Test Case Imports
 Test instructions are defined with a modular approach to reduce repetition of validation criteria and test content, and improve vendors ability to solve issues and bugs. therefore this test instruction *imports/reuses* the following Test instructions and entities with the relevent associated validation criteria.
 
+:construction: under construction :construction:
+
 <details><summary>Imports & Reuses</summary>
 
 | TI Code                                  | Test Instruction Title    | Comments                     |
@@ -79,6 +81,8 @@ The Test case requires the following additional checks related to Model Geometry
 ## Expected Results
 
 For certification of capabilities the only source will be:
+
+:construction: under construction :construction:
 
 - n. 1 IFC file containing the information as requested. The file shall be named using the following syntax: `MVDCode`-`ExchangeCode`-`TestCode`-`SoftwareVendor`.`ifc` (Example: `IFC4.3_AbRV-E2b-ASTPC-AmazingSoft.ifc`)
 
