@@ -11,28 +11,27 @@ Develop the test Case/Instruction.
     - For a brief summary of `git` process, see [here](https://github.com/tumcms/Open-Infra-Platform/blob/development/Documentation/markdown/GitProcess.md). There are also a lot of online tutorials available.
 
 ## Structure
-The Repository is divided into a set of Information Exchanges numbered `Ex`. Each exchange has a number of test cases within it to fulfil and test the needed functionality of each exchange definition. Current identified Exchanges are as follows.
+The Repository is divided according to the Exchanges (E) that form the IFC4.3 AbRV MVD. Each exchange has a number of test cases within it to fulfil and test the needed functionality of each exchange definition. Current identified Exchanges are as follows.
 
 | MVD Code        | MVD Name                       | Included Exchanges |
 |-----------------|--------------------------------|--------------------|
-| **IFC4.3 AbRV** | Alignment Based Reference View | 12                 |
+| **IFC4.3 AbRV** | Alignment Based Reference View | 13                 |
 
-| Exchange Code | Exchange Name                                          | Test Cases part of the Exchange              |
-|---------------|--------------------------------------------------------|----------------------------------------------|
-| E1a           | Alignment Reference Exchange - Super Elevation (Infra) |                                              |
-| E1b           | Alignment Reference Exchange - Cant (Rail)             |                                              |
-| E2            | Aggregate Structures Exchange                          |                                              |
-| E2a           | Aggregate Structures Exchange - Railway Track          | GP, AL, TS, TA, GR, CL, PR                   |
-| E3            | Earthworks Exchange                                    |                                              |
-| E4            | Bridge Structural Exchange                             |                                              |
-| E5            | Signalling Exchange                                    |                                              |
-| E6            | Energy Exchange (Railway)                              |                                              |
-| E7            | Geotechnics Exchange                                   |                                              |
-| E8            | Telecommunications Exchange                            |                                              |
-| E9            | Drainage Exchange                                      |                                              |
-| E10           | Maritime Elements Exchange                             |                                              |
-
-
+| Ex Code | Exchange Name                               |
+|---------|---------------------------------------------|
+| E1      | Alignment Reference Exchange                |
+| E1a     | Alignment Reference Superelevation Exchange |
+| E1b     | Alignment Reference Cant Exchange           |
+| E2      | Aggregate Structures Exchange               |
+| E2a     | Track Aggregate Structures Exchange         |
+| E3      | Earthworks Exchange                         |
+| E4      | Bridge Structural Exchange                  |
+| E5      | Signalling Exchange                         |
+| E6      | Energy Exchange (Railway)                   |
+| E7      | Geotechnics Exchange                        |
+| E8      | Telecommunications Exchange                 |
+| E9      | Drainage Exchange                           |
+| E10     | Maritime Elements Exchange                  |
 
 ## FAQ
 
