@@ -24,7 +24,7 @@ The Repository is divided into a set of Information Exchanges numbered Ex . each
 | E1a     | Alignment Reference Superelevation Exchange | [ARSE](./E1a-ARSE) |
 | E1b     | Alignment Reference Cant Exchange           | [ALRC](./E1a-ARCT) |
 | E2      | Aggregate Structures Exchange               | [AGST](./E2-AGST)  |
-| E2a     | Track Aggregate Structures Exchange         | [TRAS](./E2a-TRAS) |
+| E2a     | Track Structures Exchange                   | [TRAS](./E2a-TRST) |
 | E3      | Earthworks Exchange                         | [EWKS](./E3-EWKS)  |
 | E4      | Bridge Structural Exchange                  | [BRST](./E4-BRST)  |
 | E5      | Signalling Exchange                         | [SIGN](./E5-SIGN)  |

@@ -10,7 +10,11 @@ Exchange Lead: @larswik
 
 TBC
 
+...The Alignment Reference Super Elevation Exchange is an extension *superset* of the Alignment Reference Exchange ([IFC4x3_AbRV-E1](../E1-ALRF))...
+
 ### Scope
+
+The Alignment Reference Super Elevation Exchange is an extension *superset* of the Alignment Reference Exchange ([IFC4x3_AbRV-E1](../E1-ALRF)). Therefore the scope of this exchange includes the scope and tests outlined by the Alignment Reference Exchange.
 
 TBC
 
