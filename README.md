@@ -14,11 +14,11 @@ This repository is to submit, review & store Test Cases & Instructions defined f
 
 ## Contributing
 
-See [the contributing guide](docs/CONTRIBUTING.md) for detailed instructions on how to start contributing to the MVD and certification development.
+See [the contributing guide](docs/CONTRIBUTING) for detailed instructions on how to start contributing to the MVD and certification development.
 
-Issues can be open to highlight bugs in documentation or datasets or provide proposals for new exchanges or test cases to cover different secenarios just select the most appropriate [issue template](issues/new/choose).
+Issues can be open to highlight bugs in documentation or datasets or provide proposals for new exchanges or test cases to cover different secenarios just select the most appropriate [issue template](https://github.com/bSI-InfraRoom/MVD-Infra-Test-Instructions/issues/new/choose).
 
-Contributions to content are made through the Fork & Pull Request work flow. Details guidance can be found in our [contributing guide](docs/CONTRIBUTING.md).
+Contributions to content are made through the Fork & Pull Request work flow. Details guidance can be found in our [contributing guide](docs/CONTRIBUTING).
 
 ## Structure
 The Repository is divided into a set of Information Exchanges numbered Ex . each exchange has a number of test cases within it to forfil and test the needed functionality of each exchange definition. Current identified Exchanges are as follows.
