@@ -2,7 +2,7 @@
 name: Documenation Bug report
 about: Create a report to help us improve documentation
 title: '[Bug Docs]: '
-labels: bug
+labels: bug, documentation
 assignees: ''
 
 ---

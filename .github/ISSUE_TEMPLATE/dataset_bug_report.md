@@ -2,7 +2,7 @@
 name: dataset bug report
 about: Create a report to help us correct or improve test case datasets
 title: '[Bug Dataset]: '
-labels: bug
+labels: bug, dataset
 assignees: ''
 
 ---

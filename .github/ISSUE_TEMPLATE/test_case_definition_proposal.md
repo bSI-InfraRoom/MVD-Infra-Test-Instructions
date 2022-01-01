@@ -2,7 +2,7 @@
 name: Test Case Definition Proposal
 about: submit proposal or need for a new test case.
 title: '[Test Case]: '
-labels: exchange
+labels: test case
 assignees: ''
 
 ---
