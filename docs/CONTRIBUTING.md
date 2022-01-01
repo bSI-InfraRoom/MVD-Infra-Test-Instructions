@@ -1,7 +1,7 @@
 # Contributing Guide
 This guide will provide an overview of the procedures and workflow used to collaborate on the content being developed within this projects. It will provide an overview of the repository structure, provide instructions on opening issues, forking the repository, creating content and pull requests and explain the templates we are using to standardise the content being developed.
 
-Use the table of contents icon <img src="./assets/images/table-of-contents.png" width="25" height="25" /> on the top left corner of this documents to get to a specific section of this guide quickly.
+Use the table of contents icon <img src="../assets/images/table-of-contents.png" width="25" height="25" /> on the top left corner of this documents to get to a specific section of this guide quickly.
 
 ## Getting Started
 This repository contains the working content for the documentation and certification of the draft Alignment based Reference View (Model View Definition) or AbRV for the reference exchange of infrastructure information.
