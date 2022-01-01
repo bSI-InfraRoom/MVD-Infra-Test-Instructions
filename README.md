@@ -4,6 +4,7 @@
 ![GitHub forks](https://img.shields.io/github/forks/bSI-InfraRoom/MVD-Infra-Test-Instructions?style=plastic)
 ![GitHub issues](https://img.shields.io/github/issues/bSI-InfraRoom/MVD-Infra-Test-Instructions?style=plastic)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/bSI-InfraRoom/MVD-Infra-Test-Instructions?style=plastic)
+[![See GH Pages publication](https://img.shields.io/badge/GitHub%20Pages-Documentation-blue)](https://bsi-infraroom.github.io/MVD-Infra-Test-Instructions/)
 
 This repository is to submit, review & store Test Cases & Instructions defined for IFC4.3 Alignment Based Reference View Certification, and is developed as part of the IFC Infrastructure MVD Project.
 
