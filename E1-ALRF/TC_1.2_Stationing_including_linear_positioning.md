@@ -4,20 +4,13 @@
 
 *Optional: if your data comes from a specific Storyline or unit test of the IFC Infrastructure Deployment Project or IFC Rail Project, please include a link to the originating documentation here. so additional background information can be created.*
 
-With these instructions the baseline alignment exchange will be established between various domains. This includes basic alignment geometry featuring the common layout:
+With these instructions the baseline stationing and linear positioning exchange will be established between various domains. This includes basic alignment featuring the common layout described in TC1.1:
 - horizontal
 - vertical
 
-The valid geometry segment types for horizontal are the following:
-- Arc
-- Clothoid
-- Cubic (? has to be covered somewhere)
-- Linear
+and the stationing and relative positioning concepts where physical elements can be placed relative to positioning elements. In order to accomplish a semantic description of a station, property sets will be used on referents.
 
-The valid geometry segment types for vertical:
-- Arc
-- Linear
-- Parabolic (?does Road use it?)
+A typical alignment also features reference markers as embedded elements for relative positioning along known locations along the alignment.
 
 ## Itemised Roots
 The Test instruction addresses the import and export of the following IFC Entities & Concept Templates:
@@ -35,10 +28,10 @@ The Test instruction addresses the import and export of the following IFC Entiti
     - *IfcCircle*
     - *IfcClothoid*
     - *IfcCompositeCurve*
+    - *IfcCurveSegment*
     - *IfcLine*
     - *IfcLinearPlacement*
     - *IfcLocalPlacement*
-    - *IfcCurveSegment*
     - *IfcGeometricRepresentationContext*
     - *IfcGeometricRepresentationSubContext*
     - *IfcGradientCurve*
@@ -47,6 +40,8 @@ The Test instruction addresses the import and export of the following IFC Entiti
     - *IfcProject*
     - *IfcProjectedCRS*
     - *IfcProductDefinitionShape*
+    - *IfcReferent*
+    - *IfcRelPositions*
     - *IfcSite*
     - *IfcShapeRepresentation*
 - Concept Templates
