@@ -1,19 +1,3 @@
-## Summary
-
-*Include a short description of the test case.*
-
-*Optional: if your data comes from a specific Storyline or unit test of the IFC Infrastructure Deployment Project or IFC Rail Project, please include a link to the originating documentation here. so additional background information can be created.*
-
-## Itemised Roots
-The Test instruction addresses the import and export of the following IFC Entities & Concept Templates:
-
-- IFC Entities
-    - *IfcEntity*
-
-
-- Concept Templates
-    - *CT*
-
 ## Variations
 The Following occurence variations need to be checked and certified in relation to the targetted entities and concept templates:
 
@@ -21,16 +5,7 @@ The Following occurence variations need to be checked and certified in relation 
 - Entity_02 - *decription of variation*
 
 
-## Usages
-The following itemised restrictions and constraints shall be placed on IFC Entities & Concept Templates:
 
-- IfcSomething
-    - *Constraint*
-
-
-The Test case requires the following additional checks related to Model Geometry:
-
-- *Constraint*
 
 
 ## Model Dataset
