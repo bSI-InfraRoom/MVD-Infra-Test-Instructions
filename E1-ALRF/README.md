@@ -19,4 +19,4 @@ TBC
 |TI Code| Test Instruction Title|
 |-----------------------------------|-------------------------------------------|
 |[**IFC4x3_AbRV-E1-ALIG**](./ALIG) | Alignment Curves|
-|[**IFC4x3_AbRV-E1-ALLP**](./TC_1.2_Stationing_including_linear_positioning.md)| Alignment Linear Positioning & Stationing|
+|[**IFC4x3_AbRV-E1-ALLP**](./ALLP) | Alignment Linear Positioning & Stationing|
