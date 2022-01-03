@@ -16,7 +16,7 @@ TBC
 
 ## Test Instructions
 
-| TI Code                           | Test Instruction Title                    |
+|TI Code| Test Instruction Title|
 |-----------------------------------|-------------------------------------------|
-| [**IFC4x3_AbRV-E1-ALIG**](./ALIG) | Alignment Curves                          |
 | [**IFC4x3_AbRV-E1-ALLP**](./ALLP) | Alignment Linear Positioning & Stationing |
+|[**IFC4x3_AbRV-E1-ALIG**](./TC_1.1_Alignment_Curve_linear_reference_geospatial.md)| Alignment Curves|
