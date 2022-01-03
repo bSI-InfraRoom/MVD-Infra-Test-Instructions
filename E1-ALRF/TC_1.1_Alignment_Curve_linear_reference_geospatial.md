@@ -35,10 +35,10 @@ The Test instruction addresses the import and export of the following IFC Entiti
     - *IfcCircle*
     - *IfcClothoid*
     - *IfcCompositeCurve*
+    - *IfcCurveSegment*
     - *IfcLine*
     - *IfcLinearPlacement*
     - *IfcLocalPlacement*
-    - *IfcCurveSegment*
     - *IfcGeometricRepresentationContext*
     - *IfcGeometricRepresentationSubContext*
     - *IfcGradientCurve*
