@@ -12,7 +12,7 @@ TBC
 
 The [Expected Results](#Expected-Results) section lists the material that will be used to assess the fulfilment of capabilities.
 
-:zap: <ins> This is a test-driven process: refer to the [Validation Criteria](./Validation%20Criteria.md) to understand what is required by the test</ins> :zap:
+:zap: This is a test-driven process: refer to the [Validation Criteria](#Validation-Criteria) to understand what is required by the test :zap:
 
 
 
