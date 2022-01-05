@@ -1,6 +1,6 @@
 # Earthworks Exchange
 
-| Exchange Code       | Abbreviation | Exchange Name       | Test Cases |
+| Exhange Code       | Abbreviation | Exchange Name       | Test Cases |
 |--------------------|--------------|---------------------|------------|
 | **IFC4x3_AbRV-E3** | EWKS         | Earthworks Exchange | 4          |
 
