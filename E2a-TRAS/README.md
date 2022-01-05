@@ -21,7 +21,8 @@ Some tests are just referenced (hence reused entirely) from other Exchanges.
 
 | TI Code                            | Test Instruction Title                 | Reused | Dependencies            |
 |------------------------------------|----------------------------------------|:------:|-------------------------|
-| [**IFC4x3_AbRV-E??-GLOB**](./GLOB) | (RFI) Global Positioning RFI dataset   | ?      | none                    |
+| [**IFC4x3_AbRV-E??-PJSU**](./PJSU) | Project Setup (general)                | ?      | none                    |
+| [**IFC4x3_AbRV-E??-GLOB**](./GLOB) | (RFI) Global Positioning RFI dataset   | ?      | PJSU                    |
 | [**IFC4x3_AbRV-E1b-TWAL**](./TWAL) | (RFI) Two alignments with cant         | X      | GLOB                    |
 | [**IFC4x3_AbRV-E1-ALLP**](./ALLP)  | (RFI) Mileage for two alignments       | X      | TWAL                    |
 | [**IFC4x3_AbRV-E2a-TKST**](./TKST) | (RFI) Track structure for single track |        | TWAL                    |
