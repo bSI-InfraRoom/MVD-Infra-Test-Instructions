@@ -5,7 +5,7 @@
 | IFC4.3AbRV_E2a_GLOB | (RFI) Global Positioning RFI dataset | E2a (TRAS)    | GLOB      | Evandro Alfieri | RFI        | 1.0     | DD.MM.YYYY |
 
 
-## Summary (intent)
+## Summary (Intent)
 
 TBC
 ...
@@ -14,7 +14,8 @@ The [Expected Results](#Expected-Results) section lists the material that will b
 
 :zap: <ins> This is a test-driven process: refer to the [Validation Criteria](./Validation%20Criteria.md) to understand what is required by the test</ins> :zap:
 
----
+
+
 
 ## Itemised Roots
 
@@ -22,7 +23,7 @@ The Test instruction addresses the import and export of the following IFC Entiti
 
 <details><summary>IFC Entities</summary>
 
-**NOTE**: These entities represent a test-specific subset of the wider AbRV_E2a exchange, hence of the overall AbRV MVD. <ins>**By no means the scope of the test shall be used to define the scope of the exchange, nor of the MVD**</ins>
+These entities represent a test-specific subset of the wider AbRV_E2a exchange and the overall AbRV MVD. **The scope of the test shall not be used as a definitive scope of the exchange, or of the MVD**
 
 - Model setup:
    1. IfcProject
@@ -33,23 +34,28 @@ The Test instruction addresses the import and export of the following IFC Entiti
 
 <details><summary>Concept Templates</summary> 
 
+These concept templates represent a test-specific subset of the wider AbRV_Ex exchange and the overall AbRV MVD, that must be correctly exported to meet the validation criteria. **The scope of the test shall not be used as a definitive scope of the exchange, or of the MVD**
+
 - Project Context
    - Project Global Positioning
    - Project Representation Context
    - Project Units
 </details>
 
----
+
+
 
 ## Model Dataset
+> I liked the dataset section referring to the dataset folder
 
-This test case utilises the dataset collected in the Dataset folder and summarised in the table below. <ins> Form more details on each item see [Dataset description](Dataset/README.md).</ins>
+This test case utilises the dataset collected in the Dataset folder and summarised in the table below. **Form more details on each item see [Dataset description](Dataset/README.md).**
 
 | Filename                | Type (format)  | Description                            |
 |-------------------------|----------------|----------------------------------------|
 | GeographicData          | figure (jpg)   | Geographic data relevant for the test  |
 
----
+
+
 
 ## Expected Results
 
@@ -61,9 +67,12 @@ Considering the aim of this test, other **optional** results, not subject to the
 - Screen-shot of ...
 - CSV export of ...
 
----
 
-## Usages, Constraints & Logic
+
+
+## Usages, Constraints & Logic 
+> Might be overlaps with validation criteria sometimes
+
 The following itemised restrictions and constraints shall be placed on IFC Entities & Concept Templates:
 
 :construction: under construction :construction:
@@ -82,217 +91,64 @@ The Test case requires the following additional checks related to Model Geometry
 
 - *Constraint*
 
----
+</details>
+
+
+
+
+## Test Case Imports
+
+> Shouldn't be enough to list the tests that are preconditions to this very one test? And that all validation criteria of predecessors shall be verified **again** for this test?
+> Important: the optimisation is provided by the fact that validation criteria will not be re-written, but just referenced. This doesn't mean that the referenced criteria won't be validated again with the new file (the one related to this test). Quite the opposite.
+
+Test instructions are defined with a modular approach to reduce repetition of validation criteria and test content, and improve vendors ability to solve issues and bugs. therefore this test instruction *imports/reuses* the following Test instructions and entities with the relevant associated validation criteria.
+
+:construction: under construction :construction:
+
+<details><summary>Imports & Reuses</summary>
+
+| TI Code                                  | Test Instruction Title    | Comments                     |
+|------------------------------------------|---------------------------|------------------------------|
+| [IFC4.3AbRV_E0_MSTP](../../E0-SCFD/MSTP) | Model Setup & Positioning | PROJ-01 imported along with RCTX-01 and associated configuration and history data |
+
+</details>
+
+
+
 
 ## Validation criteria
-:warning: <ins>For this test case to be considered passed **all capabilities** listed in this section shall be verified, with no exception.</ins> :warning:
+:zap: For this test case to be considered passed **all capabilities** listed in this section shall be verified, with no exception. :zap:
 
----
+### General & Imports
 
-<details><summary>General</summary>
+<details><summary>Click to expand</summary>
 
-:construction: under construction :construction:
+- All the concept templates must be correctly implemented as presented in the validation criteria
+- At least 1 instance of each entity listed in [Itemised Roots](#Itemised-Roots) is present in the file.
 
-- All the concept templates must be correctly used
-- At least 1 instance of each entity listed in [Itemised Roots](#Itemised-Roots) is present in the file
+#### Imports
+> This can be removed if we already say in the Test Import section that all the validation criteria of the dependent tests shall apply here too.
 
-Other global settings:
+| **TI Code**        | **Criteria Codes** | **COMMENT**                                        |
+|--------------------|--------------------|----------------------------------------------------|
+| IFC4.3AbRV_E0_MSTP | ALL CRITERIA       | As outlined in the dataset [Imported Entities Table](Dataset/README.md#Imported-Entities-Table) |
 
-| **ID**  | **CRITERIA**                                                     | **VALUE**                               | **COMMENT**                |
-|---------|------------------------------------------------------------------|-----------------------------------------|----------------------------|
-| GENE_01 | Unit of measure for all distances                                | **meter** (m)                           | As provided in the dataset |
-| GENE_02 | Unit of measure all angles                                       | **radian** (π)                          | As provided in the dataset |
-| GENE_03 | Required precision for **distances**                             | "minimum 4 decimal places (0,0001)"     |                            |
-| GENE_04 | Required precision for **angles** and **slope**                  | "minimum 6 decimal places (0,000001)"   |                            |
-| GENE_05 | All requested entities are present in the IFC model              | See below the table for further specification |                             |
+#### General
+> These 4 rules shall be part of a Project Setup test case that is just referenced by this GLOb test.
 
 
-GENE_005: All requested entities are present in the IFC model
-> - Given the [Test Case Entities Table](Dataset/README.md#Test-Case-Entities-Table)
-> - Then all IfcEntity, with their requested attributes, exist in file
-
-
-</details>
-
----
-
-### Step 1: Alignment with cant
-
-<details><summary>Railway alignment (with cant)</summary> 
-
-- **Concept Template**: Alignment Layout
-- **Usage** (if existing): NA
-> **Acceptance criteria**: For the **Railway alignment (with cant)** capability, the test is considered passed if **all** the following validation criteria are satisfied.
-
-| **ID**  | **CRITERIA**                                                     | **VALUE**                                   | **COMMENT**                |
-|---------|------------------------------------------------------------------|---------------------------------------------|----------------------------|
-| ALIG_00 | Alignment layout structure                                       | See below the table for further specification |                            |
-| ALIG_01 | Alignments contained in file                                     | 2                                           |                            |
-| ALIG_02 | Component for Alignment 1_Primary route                          | 1 horizontal, 1 vertical, 1 cant            |                            |
-| ALIG_03 | Component for Alignment 2_Diverted route                         | 1 horizontal, 1 vertical, 1 cant            |                            |
-| ALIG_04 | The horizontal (H) layout is made only by these type of segments | straight line, circular arc, clothoid       |                            |
-| ALIG_05 | The vertical (V) layout is made only by these type of segments   | straight line, circular arc                 |                            |
-| ALIG_06 | The cant (C) layout is made only by these type of segments       | constant straight line, linear transition   |                            |
-| ALIG_07 | Value of the *RailHeadDistance* along the entire alignment       | 1500 mm                                     | See notes below for detail |
-| ALIG_08 | Semantic description of segments corresponds to their geometry   | NA                                          | RDF tools can do this      |
-| ALIG_09 | Tangential continuity of all segments is verified, tolerance = 0,00000001 |                                    | RDF tools can do this      |
-
-
-ALIG_00: Alignment layout structure
-> 1. Each `IfcAlignment` must nest exactly 1 `IfcAlignmentHorizontal`
-> 1. Each `IfcAlignment` must nest at most 1 `IfcAlignmentVertical`
-> 1. Each `IfcAlignment` must nest at most 1 `IfcAlignmentCant`
-> 1. Each `IfcAlignmentHorizontal` must be nested only by 1 `IfcAlignment`
-> 1. Each `IfcAlignmentVertical` must be nested only by 1 `IfcAlignment`
-> 1. Each `IfcAlignmentCant` must be nested only by 1 `IfcAlignment`
-> 1. Each `IfcAlignment` must nest only `IfcAlignmentHorizontal`, or `IfcAlignmentVertical`, or `IfcAlignmentCant`
-> 1. Each `IfcAlignmentHorizontal` must nest only `IfcAlignmentHorizontalSegment`
-> 1. Each `IfcAlignmentVertical` must nest only `IfcAlignmentVerticalSegment`
-> 1. Each `IfcAlignmentCant` must nest only `IfcAlignmentCantSegment`
-> 1. Each `IfcAlignmentHorizontalSegment` must be nested only by 1 `IfcAlignmentHorizontal` 
-> 1. Each `IfcAlignmentVerticalSegment` must be nested only by 1 `IfcAlignmentVertical` 
-> 1. Each `IfcAlignmentCantSegment` must be nested only by 1 `IfcAlignmentCant` 
-
-ALIG_07 - Note
-
-> The *RailHeadDistance* (blue line in the figure below) is a normalized value used to compute the angle of cant. RFI uses 1500 mm for a track gauge of 1435 mm
->
->   <img src="Dataset/CantFromLowerRail.png" height="300"/>
-
-<details><summary> Alignment 1_Primary route </summary>
-
-| ID      | CRITERIA                                                            | VALUE        |
-|---------|---------------------------------------------------------------------|--------------|
-| ALIG_10 | Horizontal Starting point Mileage (pk)                              | 0+000        |
-| ALIG_11 | Horizontal Starting point DistAlong                                 | 0.0000       |
-| ALIG_12 | Horizontal Starting point X                                         | 452413.9199  |
-| ALIG_13 | Horizontal Starting point Y                                         | 4539456.4011 |
-| ALIG_14 | Vertical Starting point Mileage                                     | 0+000        |
-| ALIG_15 | Vertical Starting point Z                                           | 5.0000       |
-| ALIG_16 | Horizontal Ending point Mileage (pk)                                | 0+876.3682   |
-| ALIG_17 | Horizontal Ending point DistAlong                                   | 876.3682     |
-| ALIG_18 | Horizontal Ending point X                                           | 453202.5241  |
-| ALIG_19 | Horizontal Ending point Y                                           | 4539831.9287 |
-| ALIG_20 | Vertical Ending point Mileage                                       | 0+876.3682   |
-| ALIG_21 | Vertical Ending point Z                                             | 2.0000       |
-| ALIG_22 | Total 2D length of alignment (horizontal projection)                | 876.3682     |
-| ALIG_23 | Total 3D length of alignment                                        | 876.3819     |
-| ALIG_24 | Height difference between start and end point of alignment 3D curve | -3.0000      |
+| **ID**  | **CRITERIA**                                     | **VALUE**                             | **COMMENT**                                     |
+|---------|--------------------------------------------------|---------------------------------------|-------------------------------------------------|
+| DIST_01 | Unit of measure for all distances                | **meter** (m)                         | This shall be part of a Project Setup test case |
+| ANGL_01 | Unit of measure all angles                       | **radian** (π)                        | This shall be part of a Project Setup test case |
+| DIST_02 | Required precision for **distances**             | "minimum 4 decimal places (0,0001)"   | This shall be part of a Project Setup test case |
+| ANGL_02 | Required precision for **angles** and **slope**  | "minimum 6 decimal places (0,000001)" | This shall be part of a Project Setup test case |
 
 </details>
 
-<details><summary> Alignment 2_Diverted route </summary>
+### Project Global Positioning
 
-| ID      | CRITERIA                                                            | VALUE        |
-|---------|---------------------------------------------------------------------|--------------|
-| ALIG_10 | Horizontal Starting point Mileage (pk)                              | 0+000        |
-| ALIG_11 | Horizontal Starting point DistAlong                                 | 0.0000       |
-| ALIG_12 | Horizontal Starting point X                                         | 452460.8898  |
-| ALIG_13 | Horizontal Starting point Y                                         | 4539473.5425 |
-| ALIG_14 | Vertical Starting point Mileage                                     | 0+000        |
-| ALIG_15 | Vertical Starting point Z                                           | 5.0000       |
-| ALIG_16 | Horizontal Ending point Mileage (pk)                                | 0+828.0965   |
-| ALIG_17 | Horizontal Ending point DistAlong                                   | 828.0965     |
-| ALIG_18 | Horizontal Ending point X                                           | 453208.8311  |
-| ALIG_19 | Horizontal Ending point Y                                           | 4539818.3191 |
-| ALIG_20 | Vertical Ending point Mileage                                       | 0+828.0965   |
-| ALIG_21 | Vertical Ending point Z                                             | 2.0000       |
-| ALIG_22 | Total 2D length of alignment (horizontal projection)                | 828.0965     |
-| ALIG_23 | Total 3D length of alignment                                        | 828.1099     |
-| ALIG_24 | Height difference between start and end point of alignment 3D curve | -3.0000      |
-
-</details>
-
-</details>
-
----
-
-### Step 2: Placement, spatial structure and object decomposition, (TBD) global positioning
-
-<details><summary>Spatial decomposition</summary>
-
-- **Concept Template**: Spatial Decomposition
-- **Usage** (if existing): NA
-> **Acceptance criteria**: For the **Spatial decomposition** capability, the test is considered passed if **all** the following validation criteria are satisfied.
->
-> The validation procedure must verify that a Parent Element of the requested type aggregates (via `IfcRelAggregates`) exactly a given number of Child Elements of the requested type, no more and no less.
-
-| Parent Element | Parent Element Type | Minimum | Maximum | Child Element   | Child Element Type |
-|----------------|---------------------|---------|---------|-----------------|--------------------|
-| IfcSite        |                     | 1       | 1       | IfcRailway      | Località           |
-| IfcRailway     | Località            | 1       | 1       | IfcFacilityPart | TRACKSTRUCTURE     |
-
-</details>
-
-<details><summary>Spatial containment</summary>
-
-- **Concept Template**: Spatial Containment
-- **Usage** (if existing): NA
-> **Acceptance criteria**: For the **Spatial containment** capability, the test is considered passed if **all** the following validation criteria are satisfied.
->
-> The validation procedure must verify that a Spatial Element of the requested type contains (via `IfcRelContainedInSpatialStructure`) exactly a given number of Elements of the requested type, no more and no less.
-
-| Spatial Element | Spatial Element Type | Minimum | Maximum | Element            | Element Type      |
-|-----------------|----------------------|---------|---------|--------------------|-------------------|
-| IfcFacilityPart | TRACKSTRUCTURE       | 1       | 1       | IfcActuator        | Manovra deviatoio |
-| IfcFacilityPart | TRACKSTRUCTURE       | 1       | 1       | IfcElementAssembly | TURNOUTPANEL      |
-| IfcFacilityPart | TRACKSTRUCTURE       | 2       | 2       | IfcCourse          | BALLASTBED        |
-| IfcFacilityPart | TRACKSTRUCTURE       | 6       | 6       | IfcRail            | RAIL              |
-| IfcFacilityPart | TRACKSTRUCTURE       | 1       | TBD     | IfcTrackElement    | SLEEPER           |
-| IfcSite         |                      | 2       | 2       | IfcAlignment       |                   |
-
-</details>
-
-<details><summary>Object decomposition (assemblies)</summary>
-
-- **Concept Template**: Element Decomposition
-- **Usage** (if existing): NA
-> **Acceptance criteria**: For the **Object decomposition** capability, the test is considered passed if **all** the following validation criteria are satisfied.
->
-> The validation procedure must verify that an assembly of the requested type aggregates (via `IfcRelAggregates`) exactly a given number of elements of the requested type, no more and no less.
-
-| ID       | CRITERIA                                           | VALUE                                          |
-|----------|----------------------------------------------------|------------------------------------------------|
-| ASSE_001 | Mandatory components are present in the assemblies | See below the table for further specification  |
-
-ASSE_001: Mandatory components are present in the assemblies
-> - Given a set of assemblies taken from the [Test Case Assembly Table](#Test-Case-Assembly-Table)
-> - When the Assembly, and optionally the Assembly Type, exists
-> - Then the Assembly must aggregate at least a number within [Minimum..Maximum] of the requested Element
->
-> NOTE:
-> - when **Minimum** and **Maximum** have the same value, it means exactly. Example: Minimum=Maximum=2, means that the assembly must aggregates exactly 2 elements of the requested type.
-> - when **Maximum** is empty, it means unlimited. Example: Minimum=1; Maximum=empty, means that the assembly must aggregate 1 or more elements of the requested type.
-    
-
-### Test Case Assembly Table
-
-| Assembly           | Assembly Type | Minimum | Maximum | Element         | Element Type |
-|--------------------|---------------|---------|---------|-----------------|--------------|
-| IfcElementAssembly | TURNOUTPANEL  | 1       | 1       | IfcFastener     | WELD         |
-| IfcElementAssembly | TURNOUTPANEL  | 1       | 1       | IfcTrackElement | FROG         |
-| IfcElementAssembly | TURNOUTPANEL  | 1       | 10      | IfcRail         | RAIL         |
-| IfcElementAssembly | TURNOUTPANEL  | 1       | 2       | IfcRail         | CHECKRAIL    |
-| IfcElementAssembly | TURNOUTPANEL  | 52      | 52      | IfcTrackElement | SLEEPER      |
-
-
-
-</details>
-
-<details><summary>Local placement & Linear placement along alignment</summary>
-
-:construction: under construction :construction:
-
-- **Concept Template**: Product Linear Placement, Product Local Placement
-- **Usage** (if existing): NA
-> **Acceptance criteria**: For the **Linear placement long alignment** capability, the test is considered passed if **all** the following validation criteria are satisfied.
->
-> The validation procedure must verify that ...
-
-
-</details>
-
-<details><summary>Project Global Positioning</summary>
+<details><summary>Click to expand</summary>
 
 - **Concept Template**: Project Global Positioning
 - **Usage** (if existing): NA
@@ -301,8 +157,11 @@ ASSE_001: Mandatory components are present in the assemblies
 > The validation procedure must verify that:
 > - `IfcMapConversion` entity is used to transform the local engineering coordinate system, often called world coordinate system (WCS), into the coordinate reference system of the underlying map.
 > - `IfcProjectedCRS` entity is used for representing the coordinate reference system of the map to which the map translation of the local engineering coordinate system of the engineering project relates.
-> Below are the expected values for the two entities.
-> 
+
+
+| **ID**  | **CRITERIA**                                      | **VALUE** | **COMMENT** |
+|---------|---------------------------------------------------|-----------|-------------|
+| ENAT_01 | Requested entities (and attributes) exist in file | See below |             |
 
 `IfcMapConversion`
 
@@ -332,214 +191,3 @@ ASSE_001: Mandatory components are present in the assemblies
 | 7 | MapUnit       | $                                           |
 
 </details>
-
----
-
-### Step 3: Grouping, classification, properties, typing
-
-<details><summary>Object grouping</summary>
-
-- **Concept Template**: Group Assignment
-- **Usage** (if existing): NA
-> **Acceptance criteria**: For the **Object grouping** capability, the test is considered passed if **all** the following validation criteria are satisfied.
->
-> The validation procedure must verify that a group of the requested type is grouping (via `IfcRelAssignsToGroup`) exactly a given number of objects of the requested type, no more and no less.
-
-(See below the table for further specification of each criteria)
-| ID       | CRITERIA                                    | VALUE                                                                                                                                                           |
-|----------|---------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| GROU_001 | Mandatory objects are present in the groups | See below the table for further specification                                                                                                                   |
-| GROU_101 | Circular reference is not allowed           | Circular reference is not allowed, neither direct (if A includes B, B cannot includes A), nor indirect (if A includes B and B includes C, C cannot includes A)  |
-| GROU_102 | Only direct inclusion is allowed            | Example: if A includes B and B includes C, A cannot includes C)                                                                                                 |
-| GROU_103 | Same-level grouping is not allowed          | If two or more Group are part of the same Group, they cannot include each others. Example: if A groups B and C, B cannot group C and vice versa)                |
-| GROU_104 | Group rooting                               | All Groups that do not have a parent Group must be linked to the IfcProject with an IfcRelDeclares relationship, as per Project Declaration template            |
-
-GROU_001: Mandatory objects are present in the groups
-> - Given a set of groups taken from the [Test Case Group Table](#Test-Case-Group-Table)
-> - When the Group, and optionally the Group Type, exists
-> - Then the Group must group at least a number within [Minimum..Maximum] of the requested Object
->
-> NOTE:
-> - for typing of groups refer to the Validation criteria of the **Object typing** capability
-> - when **Minimum** and **Maximum** have the same value, it means exactly. Example: Minimum=Maximum=2, means that the group must group exactly 2 objects of the requested type.
-> - when **Maximum** is empty, it means unlimited. Example: Minimum=1; Maximum=empty, means that the group must group 1 or more elements of the requested type.
-    
-
-### Test Case Group Table
-
-| Group    | Group Type                          | Minimum | Maximum | Object             | Object Type          |
-|----------|-------------------------------------|---------|---------|--------------------|----------------------|
-| IfcGroup | Binari di corsa (Contenitore)       | 1       | 1       | IfcFacilityPart    | TRACKSTRUCTURE       |
-| IfcGroup | Deviatoi/Intersezioni (Contenitore) | 1       | 1       | IfcActuator        | Manovra deviatoio    |
-| IfcGroup | Deviatoi/Intersezioni (Contenitore) | 1       | 1       | IfcElementAssembly | TURNOUTPANEL         |
-| IfcGroup | Massicciata (Contenitore)           | 2       | 2       | IfcCourse          | BALLASTBED           |
-| IfcGroup | Rotaie (Contenitore)                | 3       | 3       | IfcGroup           | Segmento di rotaia   |
-| IfcGroup | Segmento di rotaia                  | 2       | 2       | IfcRail            | RAIL                 |
-| IfcGroup | Traverse (Contenitore)              | 3       | 3       | IfcGroup           | Segmento di traverse |
-| IfcGroup | Segmento di traverse                | 1       |         | IfcTrackElement    | SLEEPER              |
-
-</details>
-
-<details><summary>Object typing</summary>
-
-- **Concept Template**: Object Typing
-- **Usage** (if existing): NA
-> **Acceptance criteria**: For the **Object typing** capability, the test is considered passed if **all** the following validation criteria are satisfied.
->
-> The validation procedure must verify that an IFC entity type with the given Name is typing (via `IfcRelDefinesByType`) exactly a given number of objects of the requested Name, no more and no less.
-
-| Entity Type     | Entity Type Name                    | Minimum | Maximum | IfcObject       | IfcObject Name                      |
-|-----------------|-------------------------------------|---------|---------|-----------------|-------------------------------------|
-| IfcTypeObject   | Binari di corsa (Contenitore)       | 1       | 1       | IfcGroup        | Binari di corsa di Foligno          |
-| IfcTypeObject   | Deviatoi/Intersezioni (Contenitore) | 1       | 1       | IfcGroup        | Deviatoi                            |
-| IfcTypeObject   | Massicciata (Contenitore)           | 1       | 1       | IfcGroup        | Massicciata                         |
-| IfcTypeObject   | Rotaie (Contenitore)                | 1       | 1       | IfcGroup        | Rotaie                              |
-| IfcTypeObject   | Traverse (Contenitore)              | 1       | 1       | IfcGroup        | Traverse                            |
-| IfcActuatorType | Manovra deviatoio                   | 1       | 1       | IfcActuator     | Cassa di manovra CM04               |
-| IfcCourseType   | Segmento di massicciata             | 1       | 1       | IfcCourse       | Segmento di massicciata M01         |
-| IfcCourseType   | Segmento di massicciata             | 1       | 1       | IfcCourse       | Segmento di massicciata M02         |
-| IfcTypeObject   | Segmento di rotaia                  | 1       | 1       | IfcGroup        | Segmento di rotaia R01              |
-| IfcTypeObject   | Segmento di rotaia                  | 1       | 1       | IfcGroup        | Segmento di rotaia R02              |
-| IfcTypeObject   | Segmento di rotaia                  | 1       | 1       | IfcGroup        | Segmento di rotaia R03              |
-| IfcTypeObject   | Segmento di traverse                | 1       | 1       | IfcGroup        | Segmento di traverse T01            |
-| IfcTypeObject   | Segmento di traverse                | 1       | 1       | IfcGroup        | Segmento di traverse T02            |
-| IfcTypeObject   | Segmento di traverse                | 1       | 1       | IfcGroup        | Segmento di traverse T03            |
-| IfcTypeObject   | Binari di corsa                     | 1       | 1       | IfcFacilityPart | Binario IV dispari - Orte Falconara |
-
-NOTE:
-- when **Minimum** and **Maximum** have the same value, it means exactly. Example: Minimum=Maximum=1, means that the entity type must type exactly 1 object with that Name.
-
-</details>
-
-<details><summary>Object classification via external reference (i.e., bSDD)</summary>
-
-- **Concept Template**: Classification Association
-- **Usage** (if existing): NA
-> **Acceptance criteria**: For the **Object classification via external reference** capability, the test is considered passed if **all** the following validation criteria are satisfied.
->
-> The validation procedure must verify that all the sleepers (IfcTrackElement.SLEEPER) are to be classified using the correspondent classification inside the bSDD (buildingSMART Data Dictionary). The example below shows how the classification is expected to be done.
-
-Given two sleepers
-
-> `#21 = IFCTRACKELEMENT('0$kRFU7b50rP3_$BI9iljk', #1, 'Sleeper Z20#0001', 'Sleeper', $, #368035, #368038, $, .SLEEPER.);`
->
-> `#22 = IFCTRACKELEMENT('00sqkYXHv4OfDNJGKpHKi$', #1, 'Sleeper Z20#0002', 'Sleeper', $, #368052, #368055, $, .SLEEPER.);`
-
-These are classified using `IfcClassification`, `IfcClassificationReference`, and `IfcRelAssociatesClassification`.
-
-<ins>Below is an example of the attributes' values, plus a mapping of these attributes to the bSDD data model.</ins>
-
-`IfcClassification`
-
-| Example instance             | Source           | Edition       | EditionDate | Name       | Description | Location                                                      | ReferenceTokens |
-|------------------------------|------------------|---------------|-------------|------------|-------------|---------------------------------------------------------------|-----------------|
-| #45 = IFCCLASSIFICATION      | 'buildingSMART'    | '4.3rc4'        | $           | 'IFC'        | $           | http://identifier.buildingsmart.org/uri/buildingsmart/ifc-4.3 | $               |
-|                              | IFCLABEL         | IFCLABEL      | IFCDATE     | IFCLABEL   | IFCTEXT     | IFCURIREFERENCE                                               | IFCIDENTIFIER   |
-| **Mapping with bSDD data model** | *OrganizationCode* | *DomainVersion* | *ReleaseDate* | *DomainName* | NA          | *DomainNamespaceUri*                                            | NA              |
-
-`IfcClassificationReference`
-
-| Example instance                 | Location                                                                                   | Identification         | Name                    | ReferencedSource                 | Description                                                                                                        | Sort          |
-|----------------------------------|--------------------------------------------------------------------------------------------|------------------------|-------------------------|----------------------------------|--------------------------------------------------------------------------------------------------------------------|---------------|
-| #46 = IFCCLASSIFICATIONREFERENCE | http://identifier.buildingsmart.org/uri/buildingsmart/ifc-4.3/class/ifctrackelementsleeper | 'ifctrackelementsleeper' | 'IfcTrackElement.SLEEPER' | #45                              | $ | $             |
-|                                  | IFCURIREFERENCE                                                                            | IFCIDENTIFIER          | IFCLABEL                | IFCCLASSIFICATIONREFERENCESELECT | IFCTEXT                                                                                                            | IFCIDENTIFIER |
-| **Mapping with bSDD data model**     | *DomainNamespaceUri/class/code*                                                              | *Code*                   | *Name*                    | NA                               | *Definition*                                                                                                         | NA            |
-
-`IfcRelAssociatesClassification`
-
-| Example instance                     | GlobalId               | OwnerHistory    | Name                        | Description | RelatedObjects      | RelatingClassification  |
-|--------------------------------------|------------------------|-----------------|-----------------------------|-------------|---------------------|-------------------------|
-| #47 = IFCRELASSOCIATESCLASSIFICATION | `0OLroQf6D0tfjW0rwFRKeK` | #10             | 'Classification Relationship' | $           | (#21,#22)           | #46                     |
-|                                      | IFCGLOBALLYUNIQUEID    | IFCOWNERHISTORY | IFCLABEL                    | IFCTEXT     | IFCDEFINITIONSELECT | IFCCLASSIFICATIONSELECT |
-
-
-</details>
-
-<details><summary>Spatial reference</summary>
-
-- **Concept Template**: Group Spatial Connectivity
-- **Usage** (if existing): NA
-> **Acceptance criteria**: For the **Spatial reference** capability, the test is considered passed if **all** the following validation criteria are satisfied.
->
-> The validation procedure must verify that a Spatial Element of the requested type references (via `IfcRelReferencedInSpatialStructure`) exactly a given number of Products or Groups of the requested type, no more and no less.
-
-| Spatial Element | Spatial Element Type | Minimum | Maximum | Product or Group | Product Type or Group Type          |
-|-----------------|----------------------|---------|---------|------------------|-------------------------------------|
-| IfcRailway      | Località             | 1       | 1       | IfcGroup         | Binari di corsa (Contenitore)       |
-| IfcFacilityPart | TRACKSTRUCTURE       | 1       | 1       | IfcGroup         | Deviatoi/Intersezioni (Contenitore) |
-| IfcFacilityPart | TRACKSTRUCTURE       | 1       | 1       | IfcGroup         | Massicciata (Contenitore)           |
-| IfcFacilityPart | TRACKSTRUCTURE       | 1       | 1       | IfcGroup         | Rotaie (Contenitore)                |
-| IfcFacilityPart | TRACKSTRUCTURE       | 1       | 1       | IfcGroup         | Traverse (Contenitore)              |
-
-</details>
-
-<details><summary>Standard & Custom properties for objects and object types</summary>
-
-:construction: under construction :construction:
-
-- **Concept Template**: Property Sets for Objects, Property Sets for Types
-- **Usage** (if existing): NA
-> **Acceptance criteria**: For the **Standard properties for objects and object types** capability, the test is considered passed if **all** the following validation criteria are satisfied.
->
-> The validation procedure must verify that both standard and custom property sets requested by the test case (including relative properties and values) are present in the IFC file.
-
-(See below the table for further specification of each criteria)
-| ID       | CRITERIA                                                 |
-|----------|----------------------------------------------------------|
-| PSET_002 | The model does not contain unrequested property sets     |
-| PNAM_002 | The property set does not contain unrequested properties |
-| PTEX_001 | Property values belong to a list of values               |
-| PVAL_001 | Property values are not null and not empty               |
-| PVAL_002 | Requested property value types are found                 |
-
-PSET_002: The model does not contain unrequested property sets
-> - Given a set of properties taken from the [Test Case Properties Table](#Test-Case-Properties-Table)
-> - When the IfcEntity, and optionally the Type, exists
-> - Then the IfcEntity is associated at most to the property set with the PropertySet Name
-
-PNAM_002: The property set does not contain unrequested properties
-> - Given a set of properties taken from the [Test Case Properties Table](#Test-Case-Properties-Table)
-> - When the IfcEntity, and optionally the Type, exists
-> - And the IfcEntity is associated to a property set with the PropertySet Name
-> - Then the property set has at most the properties with the Property Name
-
-PTEX_001: Property values belong to a list of values
-> - Given a set of properties taken from the [Test Case Properties Table](#Test-Case-Properties-Table)
-> - When the IfcEntity, and optionally the Type, exists
-> - And the IfcEntity is associated to a property set with the PropertySet Name
-> - And the property set has a property with the Property Name
-> - Then the property value is part of the List Of Values
-
-PVAL_001: Property values are not null and not empty
-> - Given a set of properties taken from the [Test Case Properties Table](#Test-Case-Properties-Table)
-> - When the IfcEntity, and optionally the Type, exists
-> - And the IfcEntity is associated to a property set with the PropertySet Name
-> - And the property set has a property with the Property Name
-> - Then the property value is not null
-> - And the property value is not empty
-
-PVAL_002: Requested property value types are found
-> - Given a set of properties taken from the [Test Case Properties Table](#Test-Case-Properties-Table)
-> - When the IfcEntity, and optionally the Type, exists
-> - And the IfcEntity is associated to a property set with the PropertySet Name
-> - And the property set has a property with the Property Name
-> - And the property value is not null
-> - Then the property type is equal to the Property Value Type
-
-### Test Case Properties Table
-
-:construction: under construction :construction:
-
-| Entity          | Entity Type             | PropertySet Name | Property Name           | Property Value Type | List Of Values                                       | IfcSimpleProperty subtype  |
-|-----------------|-------------------------|------------------|-------------------------|---------------------|------------------------------------------------------|----------------------------|
-| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000       | Binario                 | IFCLABEL            | Pari, Dispari, Unico                                 | IfcPropertyEnumeratedValue |
-| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000       | Codice binario SAS      | IFCLABEL            |                                                      | IfcPropertySingleValue     |
-| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000       | n. deviatoi elettrici   | IFCINTEGER          |                                                      | IfcPropertySingleValue     |
-| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000       | Profilo manutentivo L94 | IFCLABEL            | <=40 t/g, >100 t/g, 40< t/g <=100 | IfcPropertyEnumeratedValue |
-| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000       | Binario elettrificato   | IFCLOGICAL          |                                                      | IfcPropertySingleValue     |
-| IfcTrackElement | SLEEPER                 | PSet_SleeperCommon| ???                     |                     |                                                      |                            |
-| IfcCourse       | Segmento di massicciata | PSet_CourseCommon| ???                     |                     |                                                      |                            |
-| IfcCourse       | Segmento di massicciata | PSet_CourseCommon| ???                     |                     |                                                      |                            |
-
-</details>
-
