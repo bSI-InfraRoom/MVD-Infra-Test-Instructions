@@ -4,13 +4,17 @@
 |---------------------|--------------|-------------------------------------|------------|
 | **IFC4x3_AbRV-E2a** | TRAS         | Track Aggregate Structures Exchange | 9          |
 
-Exchange Lead: TBD
+Exchange Lead: @AlexBrad1eyCT
 
 ## Summary
 
 TBC
 
+...The Track Structures Exchange is an extension *superset* of the Aggregate Structures Exchange ([IFC4x3_AbRV-E2a](../E2-AGST))...
+
 ### Scope
+
+The Track Structures Exchange is an extension *superset* of the Aggregate Structures Exchange ([IFC4x3_AbRV-E2a](../E2-AGST)). Therefore the scope of this exchange includes the scope and tests outlined by the Aggregate Structures Exchange.
 
 TBC
 
