@@ -12,6 +12,7 @@ This repository is to submit, review & store Test Cases & Instructions defined f
 |-----------------|-------------|-------------------------------|-----------|
 | **IFC4x3_AbRV** | IFC4.3      |Alignment Based Reference View | 13        |
 
+
 ## Contributing
 
 See [the contributing guide](https://github.com/bSI-InfraRoom/MVD-Infra-Test-Instructions/blob/develop/docs/CONTRIBUTING.md) for detailed instructions on how to start contributing to the MVD and certification development.
@@ -21,7 +22,7 @@ Issues can be open to highlight bugs in documentation or datasets or provide pro
 Contributions to content are made through the Fork & Pull Request work flow. Details guidance can be found in our [contributing guide](https://github.com/bSI-InfraRoom/MVD-Infra-Test-Instructions/blob/develop/docs/CONTRIBUTING.md).
 
 ## Structure
-The Repository is divided into a set of Information Exchanges numbered Ex . each exchange has a number of test cases within it to forfil and test the needed functionality of each exchange definition. Current identified Exchanges are as follows.
+The Repository is divided into a set of Information Exchanges numbered Ex . each exchange has a number of test cases within it to furfil and test the needed functionality of each exchange definition. Current identified Exchanges are as follows.
  
 
 | Ex Code | Exchange Name                               | Cases & Info       |
