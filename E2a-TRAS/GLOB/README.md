@@ -99,7 +99,7 @@ The Test case requires the following additional checks related to Model Geometry
 ## Test Case Imports
 
 > Shouldn't be enough to list the tests that are preconditions to this very one test? And that all validation criteria of predecessors shall be verified **again** for this test?
-> Important: the optimisation is provided by the fact that validation criteria will not be re-written, but just referenced. This doesn't mean that the referenced criteria won't be validated again with the new file (the one related to this test). Quite the opposite.
+> Important: the optimisation is provided by the fact that validation criteria will not be re-written, but just referenced. This doesn't mean that the referenced criteria won't be validated again with the new file (the one related to this test). Quite the opposite: regression tests are essential.
 
 Test instructions are defined with a modular approach to reduce repetition of validation criteria and test content, and improve vendors ability to solve issues and bugs. therefore this test instruction *imports/reuses* the following Test instructions and entities with the relevant associated validation criteria.
 
