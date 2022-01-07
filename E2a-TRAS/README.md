@@ -28,8 +28,9 @@ Some tests are just referenced (hence reused entirely) from other Exchanges.
 | [**IFC4x3_AbRV-E??-PJSU**](./PJSU) | Project Setup (general)                | ?      | none                    |
 | [**IFC4x3_AbRV-E??-GLOB**](./GLOB) | (RFI) Global Positioning RFI dataset   | ?      | PJSU                    |
 | [**IFC4x3_AbRV-E1b-TWAL**](./TWAL) | (RFI) Two alignments with cant         | X      | GLOB                    |
+| [**IFC4x3_AbRV-E1-TAWC**](./TWAL)  | (RFI) Two alignments without cant      | X      | GLOB                    |
 | [**IFC4x3_AbRV-E1-ALLP**](./ALLP)  | (RFI) Mileage for two alignments       | X      | TWAL                    |
-| [**IFC4x3_AbRV-E2a-TKST**](./TKST) | (RFI) Track structure for single track |        | TWAL                    |
+| [**IFC4x3_AbRV-E2a-TKST**](./TKST) | (RFI) Track structure for single track |        | TAWC                    |
 | [**IFC4x3_AbRV-E2a-TNTP**](./TNTP) | (RFI) Turnout panel between two tracks |        | TWAL                    |
 | [**IFC4x3_AbRV-E2a-OJGR**](./OJGR) | (RFI) Group objects                    |        | TWAL, TKST, TNTP        |
 | [**IFC4x3_AbRV-E2a-CLAS**](./CLAS) | (RFI) Classify objects                 |        | TWAL, TKST, TNTP        |
