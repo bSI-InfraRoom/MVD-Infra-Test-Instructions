@@ -9,7 +9,8 @@
 
 *Include a short description of the test case. This description should include a summary of the capabilities and data representations being tested by the defined data set.*
 
-With these instructions the infrastructure (e.g. Road) alignment exchange will be established.This includes basic alignment geometry featuring the common layout:
+With these instructions the infrastructure (e.g. Road) alignment exchange is established.
+This includes basic alignment geometry featuring the common layout:
 
 - horizontal
 - vertical
