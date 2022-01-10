@@ -25,7 +25,7 @@ The valid geometry segment types for horizontal are the following:
 The valid geometry segment types for vertical:
 
 - Linear
-- Arc 
+- Circular Arc 
 - Parabolic Arc
 - *Check if there are cases with transition curves (don't think that there are)*
 
