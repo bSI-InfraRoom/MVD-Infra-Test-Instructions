@@ -1,5 +1,5 @@
 ## Variations
-The Following occurence variations need to be checked and certified in relation to the targetted entities and concept templates:
+The Following occurrence variations need to be checked and certified in relation to the targeted entities and concept templates:
 
 - Entity_01 - *decription of variation*
 - Entity_02 - *decription of variation*
