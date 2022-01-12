@@ -2,7 +2,7 @@
 
 | Documentation Code  | Test Title                           | Exchange Code | Test Code | Author          | Data Owner | Version | Date       |
 |---------------------|--------------------------------------|---------------|-----------|-----------------|------------|---------|------------|
-| IFC4.3AbRV_E2a_GLOB | (RFI) Global Positioning RFI dataset | E2a (TRAS)    | GLOB      | Evandro Alfieri | RFI        | 1.0     | DD.MM.YYYY |
+| IFC4.3AbRV_E2a_GL01 | (RFI) Global Positioning RFI dataset | E2a (TRAS)    | GL01      | Evandro Alfieri | RFI        | 1.0     | DD.MM.YYYY |
 
 
 ## Summary (Intent)
@@ -46,7 +46,6 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
 
 
 ## Model Dataset
-> I liked the dataset section referring to the dataset folder
 
 This test case utilises the dataset collected in the Dataset folder and summarised in the table below. **Form more details on each item see [Dataset description](Dataset/README.md).**
 
@@ -57,21 +56,22 @@ This test case utilises the dataset collected in the Dataset folder and summaris
 
 
 
-## Expected Results
+## Test Case Imports
 
-For certification of capabilities the only source will be:
+All validation criteria (and usages) of predecessors' tests shall be **verified for this test too** (regression test principle). Prerequisites for the present test case are listed below.
 
-- n. 1 IFC file containing the information as requested. The file shall be named using the following syntax: `MVDCode`_`ExchangeCode`_`TestCode`_`SoftwareVendor`.`ifc` (Example: `IFC4.3AbRV_E2a_GLOB_AmazingSoft.ifc`)
+<details><summary>Imports & Reuses</summary>
 
-Considering the aim of this test, other **optional** results, not subject to the bSI certification process, yet usefull to illustrate test results are:
-- Screen-shot of ...
-- CSV export of ...
+| TI Code                                  | Test Instruction Title    | Comments                     |
+|------------------------------------------|---------------------------|------------------------------|
+| [IFC4.3AbRV_E0_MSTP](../../E0-SCFD/MSTP) | Model Setup & Positioning |                              |
+
+</details>
 
 
 
 
 ## Usages, Constraints & Logic 
-> Might be overlaps with validation criteria sometimes
 
 The following itemised restrictions and constraints shall be placed on IFC Entities & Concept Templates:
 
@@ -96,22 +96,15 @@ The Test case requires the following additional checks related to Model Geometry
 
 
 
-## Test Case Imports
+## Expected Results
 
-> Shouldn't be enough to list the tests that are preconditions to this very one test? And that all validation criteria of predecessors shall be verified **again** for this test?
-> Important: the optimisation is provided by the fact that validation criteria will not be re-written, but just referenced. This doesn't mean that the referenced criteria won't be validated again with the new file (the one related to this test). Quite the opposite: regression tests are essential.
+For certification of capabilities the only source will be:
 
-Test instructions are defined with a modular approach to reduce repetition of validation criteria and test content, and improve vendors ability to solve issues and bugs. therefore this test instruction *imports/reuses* the following Test instructions and entities with the relevant associated validation criteria.
+- n. 1 IFC file containing the information as requested. The file shall be named using the following syntax: `MVDCode`_`ExchangeCode`_`TestCode`_`SoftwareVendor`.`ifc` (Example: `IFC4.3AbRV_E2a_GL01_AmazingSoft.ifc`)
 
-:construction: under construction :construction:
-
-<details><summary>Imports & Reuses</summary>
-
-| TI Code                                  | Test Instruction Title    | Comments                     |
-|------------------------------------------|---------------------------|------------------------------|
-| [IFC4.3AbRV_E0_MSTP](../../E0-SCFD/MSTP) | Model Setup & Positioning | PROJ-01 imported along with RCTX-01 and associated configuration and history data |
-
-</details>
+Considering the aim of this test, other **optional** results, not subject to the bSI certification process, yet usefull to illustrate test results are:
+- Screen-shot of ...
+- CSV export of ...
 
 
 
@@ -150,8 +143,6 @@ Test instructions are defined with a modular approach to reduce repetition of va
 
 <details><summary>Click to expand</summary>
 
-- **Concept Template**: Project Global Positioning
-- **Usage** (if existing): NA
 > **Acceptance criteria**: For the **Project Global Positioning** capability, the test is considered passed if **all** the following validation criteria are satisfied.
 >
 > The validation procedure must verify that:
