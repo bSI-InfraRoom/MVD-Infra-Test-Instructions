@@ -2,7 +2,7 @@
 
 | Documentation Code   | Title                                          | Exchange Code | Test Code | Author          | Data Owner | Version | Date       |
 |----------------------|------------------------------------------------|---------------|-----------| ----------------|------------|---------|------------|
-| IFC4.3AbRV_Ex_XXXX   | Test Instruction Template                      | E1-ALRF            | ALIG      | Sergej Muhic    | Let's see        | 1.0     | DD.MM.YYYY |
+| IFC4.3AbRV_E1-ALRF_ALIG   | Test Instruction Template                      | E1-ALRF            | ALIG      | Sergej Muhic    | Let's see        | 1.0     | DD.MM.YYYY |
 
 
 ## Summary
