@@ -105,8 +105,16 @@ The following itemised restrictions and constraints shall be placed on IFC Entit
 
 The following itemised Usages, Constraints & Logic are normative entries within the AbRV MVD and MUST be satisfied to meet the defined validation criteria
 
-- IfcSomething
-    - *Constraint*
+- IfcCompositeCurve
+    - Segments of type:
+        - IfcCurveSegment
+- IfcCurveSegment
+    - ParentCurve of type:
+        - IfcLine
+        - IfcPolyline
+        - IfcCircle
+        - IfcClothoid
+        - IfcPolyonomialCurve
 
 </details>
 
