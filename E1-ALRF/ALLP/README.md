@@ -90,6 +90,7 @@ Test instructions are defined with a modular approach to reduce repetition of va
 | TI Code                                  | Test Instruction Title    | Comments                     |
 |------------------------------------------|---------------------------|------------------------------|
 | [IFC4.3AbRV_E0_MSTP](../../E0-SCFD/MSTP) | Model Setup & Positioning | PROJ-01 imported along with RCTX-01 and associated configuration and history data |
+| [IFC4.3AbRV_E1_ALRF](../../E1-ALRF/ALIG) | Alignment Curves | Valid alignment geometry |
 
 </details>
 
