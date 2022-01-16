@@ -96,12 +96,6 @@ Test instructions are defined with a modular approach to reduce repetition of va
 
 </details>
 
-## Variations
-The Following occurence variations need to be checked and certified in relation to the targetted entities and concept templates:
-
-- Entity_01 - *decription of variation*
-- Entity_02 - *decription of variation*
-
 ## Usages, Constraints & Logic
 The following itemised restrictions and constraints shall be placed on IFC Entities & Concept Templates:
 
