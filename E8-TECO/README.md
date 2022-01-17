@@ -1,6 +1,6 @@
 # Telecommunications Exchange
 
-| Exhange Code       | Abbreviation | Exchange Name               | Test Cases |
+| Exchange Code      | Abbreviation | Exchange Name               | Test Cases |
 |--------------------|--------------|-----------------------------|------------|
 | **IFC4x3_AbRV-E7** | TECO         | Telecommunications Exchange | XX         |
 

@@ -1,10 +1,10 @@
-# Maritime Exchange
+# Template Exchange
 
 | Exchange Code       | Abbreviation | Exchange Name               | Test Cases |
 |---------------------|--------------|-----------------------------|------------|
-| **IFC4x3_AbRV-E10** | TECO         | Maritime Elements Exchange  | XX         |
+| **IFC4x3_AbRV-En**  | XXXX         | Template Exchange           | XX         |
 
-Exchange Lead: @AlexBrad1eyCT
+Exchange Lead: @XXX
 
 ## Summary
 
@@ -18,5 +18,5 @@ TBC
 
 | TI Code                            | Test Instruction Title             |
 |------------------------------------|------------------------------------|
-| [**IFC4x3_AbRV-E10-XXXX**](./XXXX) | Maritime Elements Instruction      |
+| [**IFC4x3_AbRV-E10-XXXX**](./XXXX) | Test Instruction                   |
   

@@ -12,16 +12,16 @@ assignees: ''
 
 ### **Bug Type**
 
-- [ ] Syntax - invalid ifc syntax or encoding
+- [ ] Syntax - invalid Ifc syntax or encoding
 - [ ] Usage & Logic - content not representative or invalid against purpose
-- [ ] Validiation Criteria - does not satisfy defined criteria
+- [ ] Validation Criteria - does not satisfy defined criteria
 - [ ] Coverage - does not provide adequate coverage of variations
 
 **Test Case Code**: [MVD_Ex_XXXX](url)
 
 
 ### **Expected content/behaviour**
-*A clear and concise description of what the expected behavour or content is.*
+*A clear and concise description of what the expected behaviour or content is.*
 
 ***Screenshots**
 If applicable, add screenshots to help explain your problem.*

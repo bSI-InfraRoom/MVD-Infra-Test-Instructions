@@ -1,6 +1,6 @@
 # Energy Exchange (Railway)
 
-| Exhange Code       | Abbreviation | Exchange Name             | Test Cases |
+| Exchange Code      | Abbreviation | Exchange Name             | Test Cases |
 |--------------------|--------------|---------------------------|------------|
 | **IFC4x3_AbRV-E6** | ENGY         | Energy Exchange (Railway) | XX         |
 
