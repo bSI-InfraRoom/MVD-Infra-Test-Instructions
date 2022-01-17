@@ -73,8 +73,8 @@ These entities represent a test-specific subset of the wider AbRV_Ex exchange an
 
 These concept templates represent a test-specific subset of the wider AbRV_Ex exchange and the overall AbRV MVD, that must be correctly exported to meet the validation criteria. **The scope of the test shall not be used as a definitive scope of the exchange, or of the entire MVD.**
     - *Alignment Layout*
-    - *Alignmnent Geomtry*
-    - *Alignmnet Geometry Gradient*
+    - *Alignment Geometry*
+    - *Alignment Geometry Gradient*
     - *Project Global Positioning*
     - *Spatial Containment*
 
