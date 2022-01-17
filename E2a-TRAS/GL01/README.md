@@ -7,12 +7,13 @@
 
 ## Summary (Intent)
 
-TBC
-...
+This test case addresses the **export** of the required IFC entities for the exchange of **global positioning** information.
 
-The [Expected Results](#Expected-Results) section lists the material that will be used to assess the fulfilment of capabilities.
+- Refer to [Test Case Imports](#Test-Case-Imports) to know the prerequisites for the present test.
 
-:zap: This is a test-driven process: refer to the [Validation Criteria](#Validation-Criteria) to understand what is required by the test :zap:
+- The [Expected Results](#Expected-Results) section lists the material that will be used to assess the fulfilment of capabilities.
+
+- :zap: This is a test-driven process: refer to the [Validation Criteria](#Validation-Criteria) to understand what is required by the test :zap:
 
 
 
@@ -60,38 +61,16 @@ This test case utilises the dataset collected in the Dataset folder and summaris
 
 All validation criteria (and usages) of predecessors' tests shall be **verified for this test too** (regression test principle). Prerequisites for the present test case are listed below.
 
-<details><summary>Imports & Reuses</summary>
-
-| TI Code                                  | Test Instruction Title    | Comments                     |
-|------------------------------------------|---------------------------|------------------------------|
-| [IFC4.3AbRV_E0_MSTP](../../E0-SCFD/MSTP) | Model Setup & Positioning |                              |
-
-</details>
+| TI Code                        | Test Instruction Title | Comments                     |
+|--------------------------------|------------------------|------------------------------|
+| [IFC4x3_AbRV-E2a-PJ01](./PJ01) | Project Setup          | none                         |
 
 
 
 
 ## Usages, Constraints & Logic 
 
-The following itemised restrictions and constraints shall be placed on IFC Entities & Concept Templates:
-
-:construction: under construction :construction:
-
-<details><summary>Semantic Usages, Constraints & Logic</summary>
-
-The following itemised Usages, Constraints & Logic are normative entries within the AbRV MVD and MUST be satisfied to meet the defined validation criteria
-
-- IfcSomething
-    - *Constraint*
-
-</details>
-
-<details><summary>Model Geometry</summary>
-The Test case requires the following additional checks related to Model Geometry:
-
-- *Constraint*
-
-</details>
+Other than the logic embedded by the IFC Entities & Concept Templates required for this test, **no additional constraints are applied**
 
 
 
@@ -102,46 +81,20 @@ For certification of capabilities the only source will be:
 
 - n. 1 IFC file containing the information as requested. The file shall be named using the following syntax: `MVDCode`_`ExchangeCode`_`TestCode`_`SoftwareVendor`.`ifc` (Example: `IFC4.3AbRV_E2a_GL01_AmazingSoft.ifc`)
 
-Considering the aim of this test, other **optional** results, not subject to the bSI certification process, yet usefull to illustrate test results are:
-- Screen-shot of ...
-- CSV export of ...
-
 
 
 
 ## Validation criteria
-:zap: For this test case to be considered passed **all capabilities** listed in this section shall be verified, with no exception. :zap:
+:zap: For this test case to be considered passed **all capabilities listed in this section**, and **the ones of pre-required tests** shall be verified, with no exception. :zap:
 
-### General & Imports
-
-<details><summary>Click to expand</summary>
+### General
 
 - All the concept templates must be correctly implemented as presented in the validation criteria
-- At least 1 instance of each entity listed in [Itemised Roots](#Itemised-Roots) is present in the file.
+- At least 1 instance of each entity listed in [Itemised Roots](#Itemised-Roots) is present in the file
+- All validation criteria of the pre-required tests shall apply here too
 
-#### Imports
-> This can be removed if we already say in the Test Import section that all the validation criteria of the dependent tests shall apply here too.
-
-| **TI Code**        | **Criteria Codes** | **COMMENT**                                        |
-|--------------------|--------------------|----------------------------------------------------|
-| IFC4.3AbRV_E0_MSTP | ALL CRITERIA       | As outlined in the dataset [Imported Entities Table](Dataset/README.md#Imported-Entities-Table) |
-
-#### General
-> These 4 rules shall be part of a Project Setup test case that is just referenced by this GLOb test.
-
-
-| **ID**  | **CRITERIA**                                     | **VALUE**                             | **COMMENT**                                     |
-|---------|--------------------------------------------------|---------------------------------------|-------------------------------------------------|
-| DIST_01 | Unit of measure for all distances                | **meter** (m)                         | This shall be part of a Project Setup test case |
-| ANGL_01 | Unit of measure all angles                       | **radian** (π)                        | This shall be part of a Project Setup test case |
-| DIST_02 | Required precision for **distances**             | "minimum 4 decimal places (0,0001)"   | This shall be part of a Project Setup test case |
-| ANGL_02 | Required precision for **angles** and **slope**  | "minimum 6 decimal places (0,000001)" | This shall be part of a Project Setup test case |
-
-</details>
 
 ### Project Global Positioning
-
-<details><summary>Click to expand</summary>
 
 > **Acceptance criteria**: For the **Project Global Positioning** capability, the test is considered passed if **all** the following validation criteria are satisfied.
 >
@@ -153,6 +106,8 @@ Considering the aim of this test, other **optional** results, not subject to the
 | **ID**  | **CRITERIA**                                      | **VALUE** | **COMMENT** |
 |---------|---------------------------------------------------|-----------|-------------|
 | ENAT_01 | Requested entities (and attributes) exist in file | See below |             |
+
+<details><summary>Entities and attributes</summary>
 
 `IfcMapConversion`
 
