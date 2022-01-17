@@ -1,5 +1,5 @@
 ## Variations
-The Following occurence variations need to be checked and certified in relation to the targetted entities and concept templates:
+The following occurrence variations need to be checked and certified in relation to the targeted entities and concept templates:
 
 - Entity_01 - *decription of variation*
 - Entity_02 - *decription of variation*
@@ -11,7 +11,7 @@ The Following occurence variations need to be checked and certified in relation 
 ## Model Dataset
 This test case utilises the attached dataset documented by the following drawings and data schedule. 
 
-*This is a later step tha involved the detailed documentation of the certification dataset (model)*
+*This is a later step that involved the detailed documentation of the certification dataset (model)*
 
 
 ## Drawings (Visualisations)
