@@ -1,6 +1,6 @@
 # Track Structures Exchange
 
-| Exhange Code        | Abbreviation | Exchange Name             | Test Cases |
+| Exchange Code       | Abbreviation | Exchange Name             | Test Cases |
 |---------------------|--------------|---------------------------|------------|
 | **IFC4x3_AbRV-E2a** | AGST         | Track Structures Exchange | 1          |
 
