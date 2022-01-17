@@ -94,11 +94,10 @@ For certification of capabilities the only source will be:
 - All validation criteria of the pre-required tests shall apply here too
 
 
-### Project Global Positioning
+### Global Positioning
 
-> **Acceptance criteria**: For the **Project Global Positioning** capability, the test is considered passed if **all** the following validation criteria are satisfied.
->
-> The validation procedure must verify that:
+> **Acceptance criteria**
+ For the **Global Positioning** capability, the validation procedure must verify that:
 > - `IfcMapConversion` entity is used to transform the local engineering coordinate system, often called world coordinate system (WCS), into the coordinate reference system of the underlying map.
 > - `IfcProjectedCRS` entity is used for representing the coordinate reference system of the map to which the map translation of the local engineering coordinate system of the engineering project relates.
 
