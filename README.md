@@ -17,12 +17,12 @@ This repository is to submit, review & store Test Cases & Instructions defined f
 
 See [the contributing guide](https://github.com/bSI-InfraRoom/MVD-Infra-Test-Instructions/blob/develop/docs/CONTRIBUTING.md) for detailed instructions on how to start contributing to the MVD and certification development.
 
-Issues can be open to highlight bugs in documentation or datasets or provide proposals for new exchanges or test cases to cover different secenarios just select the most appropriate [issue template](https://github.com/bSI-InfraRoom/MVD-Infra-Test-Instructions/issues/new/choose).
+Issues can be open to highlight bugs in documentation or datasets or provide proposals for new exchanges or test cases to cover different scenarios just select the most appropriate [issue template](https://github.com/bSI-InfraRoom/MVD-Infra-Test-Instructions/issues/new/choose).
 
 Contributions to content are made through the Fork & Pull Request work flow. Details guidance can be found in our [contributing guide](https://github.com/bSI-InfraRoom/MVD-Infra-Test-Instructions/blob/develop/docs/CONTRIBUTING.md).
 
 ## Structure
-The Repository is divided into a set of Information Exchanges numbered Ex . each exchange has a number of test cases within it to furfil and test the needed functionality of each exchange definition. Current identified Exchanges are as follows.
+The Repository is divided into a set of Information Exchanges numbered Ex . each exchange has a number of test cases within it to fulfil and test the needed functionality of each exchange definition. Current identified Exchanges are as follows.
  
 
 | Ex Code | Exchange Name                               | Cases & Info       |
@@ -31,7 +31,7 @@ The Repository is divided into a set of Information Exchanges numbered Ex . each
 | E1a     | Alignment Reference Superelevation Exchange | [ARSE](./E1a-ARSE) |
 | E1b     | Alignment Reference Cant Exchange           | [ALRC](./E1a-ARCT) |
 | E2      | Aggregate Structures Exchange               | [AGST](./E2-AGST)  |
-| E2a     | Track Structures Exchange                   | [TRAS](./E2a-TRST) |
+| E2a     | Track Structures Exchange                   | [TRAS](./E2a-TRAS) |
 | E3      | Earthworks Exchange                         | [EWKS](./E3-EWKS)  |
 | E4      | Bridge Structural Exchange                  | [BRST](./E4-BRST)  |
 | E5      | Signalling Exchange                         | [SIGN](./E5-SIGN)  |
