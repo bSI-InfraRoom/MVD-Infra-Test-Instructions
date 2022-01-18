@@ -67,7 +67,7 @@ Other than the logic embedded by the IFC Entities & Concept Templates required f
 
 For certification of capabilities the only source will be:
 
-- n. 1 IFC file containing the information as requested. The file shall be named using the following syntax: `MVDCode`_`ExchangeCode`_`TestCode`_`SoftwareVendor`.`ifc` (Example: `IFC4.3AbRV_E2a_GL01_AmazingSoft.ifc`)
+- n. 1 IFC file containing the information as requested. The file shall be named using the following syntax: `MVDCode`_`ExchangeCode`_`TestCode`_`SoftwareVendor`.`ifc` (Example: `IFC4.3AbRV_E2a_PJ01_AmazingSoft.ifc`)
 
 
 
