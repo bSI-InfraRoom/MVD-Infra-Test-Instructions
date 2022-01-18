@@ -27,7 +27,6 @@ The Test instruction addresses the import and export of the following IFC Entiti
 These entities represent a test-specific subset of the wider AbRV_E2a exchange and the overall AbRV MVD. **The scope of the test shall not be used as a definitive scope of the exchange, or of the MVD**
 
 - Model setup:
-   1. IfcProject
    1. IfcSite
    1. IfcMapConversion
    1. IfcProjectedCRS
@@ -39,8 +38,6 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
 
 - Project Context
    - Project Global Positioning
-   - Project Representation Context
-   - Project Units
 </details>
 
 
@@ -48,7 +45,7 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
 
 ## Model Dataset
 
-This test case utilises the dataset collected in the Dataset folder and summarised in the table below. **Form more details on each item see [Dataset description](Dataset/README.md).**
+This test case utilises the dataset collected in the Dataset folder and summarised in the table below. **For more details on each item see [Dataset description](Dataset/README.md).**
 
 | Filename                | Type (format)  | Description                            |
 |-------------------------|----------------|----------------------------------------|
@@ -110,18 +107,18 @@ For certification of capabilities the only source will be:
 
 `IfcMapConversion`
 
-| #  | Attribute        | Value / Instructions                        |
-|----|------------------|---------------------------------------------|
-| 1  | SourceCRS        | Points to IfcGeometricRepresentationContext |
-| 2  | TargetCRS        | Points to IfcProjectedCRS (see below)       |
-| 3  | Eastings         | 0                                           |
-| 4  | Northings        | 0                                           |
-| 5  | OrthogonalHeight | 0                                           |
-| 6  | XAxisAbscissa    | 1                                           |
-| 7  | XAxisOrdinate    | 0                                           |
-| 8  | Scale            | 1                                           |
-| 9  | ScaleY           | 1                                           |
-| 10 | ScaleZ           | 1                                           |
+| #  | Attribute        | Value / Instructions                          |
+|----|------------------|-----------------------------------------------|
+| 1  | SourceCRS        | Points to `IfcGeometricRepresentationContext` |
+| 2  | TargetCRS        | Points to `IfcProjectedCRS` (see below)       |
+| 3  | Eastings         | 0                                             |
+| 4  | Northings        | 0                                             |
+| 5  | OrthogonalHeight | 0                                             |
+| 6  | XAxisAbscissa    | 1                                             |
+| 7  | XAxisOrdinate    | 0                                             |
+| 8  | Scale            | 1                                             |
+| 9  | ScaleY           | 1                                             |
+| 10 | ScaleZ           | 1                                             |
 
 `IfcProjectedCRS`
 
