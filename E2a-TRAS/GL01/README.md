@@ -67,7 +67,7 @@ All validation criteria (and usages) of predecessors' tests shall be **verified 
 
 ## Usages, Constraints & Logic 
 
-Other than the logic embedded by the IFC Entities & Concept Templates required for this test, **no additional constraints are applied**
+Other than the logic embedded by the IFC Entities & Concept Templates required for this test, **and** the constraints captured in the *Usages, Constraints & Logic* section of of precondition tests, **no additional constraints are applied**
 
 
 
@@ -97,6 +97,8 @@ For certification of capabilities the only source will be:
  For the **Global Positioning** capability, the validation procedure must verify that:
 > - `IfcMapConversion` entity is used to transform the local engineering coordinate system, often called world coordinate system (WCS), into the coordinate reference system of the underlying map.
 > - `IfcProjectedCRS` entity is used for representing the coordinate reference system of the map to which the map translation of the local engineering coordinate system of the engineering project relates.
+>
+> If present, all criteria listed in [Usages, Constraints & Logic](#Usages,-Constraints-&-Logic), and in the same section of precondition tests, shall be verified too.
 
 
 | **ID**  | **CRITERIA**                                      | **VALUE** | **COMMENT** |
@@ -133,3 +135,14 @@ For certification of capabilities the only source will be:
 | 7 | MapUnit       | $                                           |
 
 </details>
+
+RULE: Origin of IfcSite: same as GeometricRepresentationContext (0., 0., 0.) ???
+
+IfcSite is the top-most element in the spatial structure
+```
+#32 = IFCSITE('27H$neCQf1NwtmczxBInPR', #6, $, $, $, #33, $, $, .ELEMENT., $, $, $, $, $);
+#33 = IFCLOCALPLACEMENT($, #34);
+#34 = IFCAXIS2PLACEMENT3D(#5, #4, #2);
+#35 = IFCRELAGGREGATES('3Hu7f6BmT14B_XS9yS78Jr', #6, $, $, #16, (#32));
+#16 = IFCPROJECT('2DAvEupIz0HQr73cMaawtY', #6, 'GeoRef_1', 'Test adapted from ProVI', $, $, $, (#28), #17);
+```

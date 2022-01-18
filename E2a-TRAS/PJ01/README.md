@@ -58,7 +58,7 @@ This test case has **no prerequisites**. All validation criteria to be verified 
 
 ## Usages, Constraints & Logic 
 
-Other than the logic embedded by the IFC Entities & Concept Templates required for this test, **no additional constraints are applied**
+Other than the logic embedded by the IFC Entities & Concept Templates required for this test, **and** the constraints captured in the *Usages, Constraints & Logic* section of of precondition tests, **no additional constraints are applied**
 
 
 
@@ -88,6 +88,8 @@ For certification of capabilities the only source will be:
 > - `IfcProject` entity is the top most element in the project structure. It represents the bare minimum of an IFC file exchange with no content, only boilerplate code.
 > - `IfcUnitAssignment` entity is used to define the global units for measures and values, when the units are not otherwise defined. For the specific units required by this test refer to the table below.
 > - `IfcGeometricRepresentationContext` entity is used to define the is the global context of the geometry.
+>
+> If present, all criteria listed in [Usages, Constraints & Logic](#Usages,-Constraints-&-Logic), and in the same section of precondition tests, shall be verified too.
 
 
 | **ID**  | **CRITERIA**                                      | **VALUE**                           | **COMMENT**                           |
