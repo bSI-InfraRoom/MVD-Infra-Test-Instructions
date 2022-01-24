@@ -41,9 +41,8 @@ The Test instruction addresses the import and export of the following IFC Entiti
 These entities represent a test-specific subset of the wider AbRV_E2a exchange and the overall AbRV MVD. **The scope of the test shall not be used as a definitive scope of the exchange, or of the MVD**
 
 - Model setup:
-   1. IfcSite???
+   1. IfcSite
    1. IfcRailway
-   1. IfcFacilityPart
 - Alignment:
    1. IfcAlignment
    1. IfcAlignmentHorizontal
@@ -58,6 +57,9 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
    - Project Global Positioning
 - Object Composition
    - Alignment Layout
+   - Spatial Decomposition
+- Object Connectivity
+   - Spatial Containment
 </details>
 
 
@@ -91,7 +93,7 @@ All validation criteria (and usages) of predecessors' tests shall be **verified 
 
 
 ## Usages, Constraints & Logic 
-:construction: under construction, miss spatial structure part :construction:
+:construction: **under construction, need agreement on SITE_01** :construction:
 
 The following itemised restrictions and constraints shall be placed on IFC Entities & Concept Templates:
 
@@ -102,6 +104,8 @@ The following itemised Usages, Constraints & Logic are normative entries within 
 | **ID**  | **CRITERIA**                           | **VALUE**                           | **COMMENT** |
 |---------|----------------------------------------|-------------------------------------|-------------|
 | ALIG_00 | Alignment layout structure is verified | See below for further specification |             |
+| SITE_00 | Alignment shall always be contained in a Site | na |             |
+| SITE_01 | A dataset can have more than one IfcSite. In this case, the alignment ??? | na |             |
 
 
 ALIG_00: Alignment layout structure is verified
@@ -162,6 +166,50 @@ For certification of capabilities the only source will be:
 - At least 1 instance of each entity listed in [Itemised Roots](#Itemised-Roots) is present in the file
 - All validation criteria of the pre-required tests shall apply here too
 
+| **ID**  | **CRITERIA**                                      | **VALUE** | **COMMENT** |
+|---------|---------------------------------------------------|-----------|-------------|
+| ENAT_01 | Requested entities (and attributes) exist in file | See below |             |
+
+<details><summary>Entities and attributes</summary>
+
+`IfcAlignment` (Alignment 1_Primary route)
+
+| Attribute      | Value                     |
+|----------------|---------------------------|
+| Name           | Alignment 1_Primary route |
+| Description    | $                         |
+| ObjectType     | Railway track alignment   |
+| PredefinedType | USERDEFINED               |
+
+`IfcAlignment` (Alignment 2_Diverted route)
+
+| Attribute      | Value                      |
+|----------------|----------------------------|
+| Name           | Alignment 2_Diverted route |
+| Description    | $                          |
+| ObjectType     | Railway track alignment    |
+| PredefinedType | USERDEFINED                |
+
+`IfcSite`
+
+| Attribute      | Value                                                   |
+|----------------|---------------------------------------------------------|
+| Name           | Sito                                                    |
+| Description    | 'One of the many sites that can be present in the file' |
+| ObjectType     | $                                                       |
+| PredefinedType | $                                                       |
+
+`IfcRailway`
+
+| Attribute       | Value       |
+|-----------------|-------------|
+| Name            | LO1336      |
+| Description     | Foligno     |
+| ObjectType      | Località    |
+| PredefinedType  | USERDEFINED |
+| CompositionType | ELEMENT     |
+
+</details>
 
 ### Railway alignment (without cant)
 
@@ -226,3 +274,21 @@ For certification of capabilities the only source will be:
 | ALIG_24 | Height difference between start and end point of alignment 3D curve | -3.0000      |
 
 </details>
+
+### Spatial decomposition
+
+> **Acceptance criteria**: For the **Spatial decomposition** capability, the validation procedure must verify that a Parent Element of the requested type aggregates (via `IfcRelAggregates`) exactly a given number of Child Elements of the requested type, no more and no less.
+
+| Parent Element | Parent Element Type | Minimum | Maximum | Child Element   | Child Element Type |
+|----------------|---------------------|---------|---------|-----------------|--------------------|
+| IfcProject     |                     | 1       | 1       | IfcSite         |                    |
+| IfcSite        |                     | 1       | 1       | IfcRailway      | Località           |
+
+
+### Spatial containment
+
+> **Acceptance criteria**: For the **Spatial containment** capability, the validation procedure must verify that a Spatial Element of the requested type contains (via `IfcRelContainedInSpatialStructure`) exactly a given number of Elements of the requested type, no more and no less.
+
+| Spatial Element | Spatial Element Type | Minimum | Maximum | Element            | Element Type            |
+|-----------------|----------------------|---------|---------|--------------------|-------------------------|
+| IfcSite         |                      | 2       | 2       | IfcAlignment       | Railway track alignment |

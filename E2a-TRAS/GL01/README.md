@@ -135,14 +135,3 @@ For certification of capabilities the only source will be:
 | 7 | MapUnit       | $                                           |
 
 </details>
-
-RULE: Origin of IfcSite: same as GeometricRepresentationContext (0., 0., 0.) ???
-
-IfcSite is the top-most element in the spatial structure
-```
-#32 = IFCSITE('27H$neCQf1NwtmczxBInPR', #6, $, $, $, #33, $, $, .ELEMENT., $, $, $, $, $);
-#33 = IFCLOCALPLACEMENT($, #34);
-#34 = IFCAXIS2PLACEMENT3D(#5, #4, #2);
-#35 = IFCRELAGGREGATES('3Hu7f6BmT14B_XS9yS78Jr', #6, $, $, #16, (#32));
-#16 = IFCPROJECT('2DAvEupIz0HQr73cMaawtY', #6, 'GeoRef_1', 'Test adapted from ProVI', $, $, $, (#28), #17);
-```
