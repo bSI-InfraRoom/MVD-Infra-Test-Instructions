@@ -9,6 +9,9 @@
 
 This test case addresses the **export** of the required IFC entities for the exchange of **railway alignment without cant** information.
 
+Snippet:
+<img src="./Dataset/LineLayout.svg" width="500"/>
+
 | Info                         |                                           |
 |------------------------------|-------------------------------------------|
 | Number of alignment(s)       | 2                                         |
