@@ -1,6 +1,6 @@
 # Alignment Reference Exchange
 
-| Exhange Code       | Abbreviation | Exchange Name                | Test Cases |
+| Exchange Code      | Abbreviation | Exchange Name                | Test Cases |
 |--------------------|--------------|------------------------------|------------|
 | **IFC4x3_AbRV-E1** | ALRF         | Alignment Reference Exchange | 2          |
 
