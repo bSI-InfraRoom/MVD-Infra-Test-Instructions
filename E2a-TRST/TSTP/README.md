@@ -1,8 +1,8 @@
-# Test Instruction Template
+# Test Instruction
 
 | Documentation Code   | Title                                          | Exchange Code | Test Code | Author          | Data Owner | Version | Date       |
 |----------------------|------------------------------------------------|---------------|-----------| ----------------|------------|---------|------------|
-| IFC4.3AbRV_Ex_XXXX   | Test Instruction Template                      | Ex            | XXXX      | Alex Bradley    | RFI        | 1.0     | DD.MM.YYYY |
+| IFC4.3AbRV_E2a_TSTP   | Track Structures Turnout Panel                      | Ex2a-TRST            | TSTP      | Chi Zhang    | RFI        | 1.0     | 09.02.2022 |
 
 
 ## Summary (Intent)
@@ -11,9 +11,14 @@
 
 *Optional: if your data comes from a specific Storylines or unit tests of the IFC Infrastructure Deployment Project or IFC Rail Project, please include a link to the originating documentation here. so additional background information can be created or referenced by the implementing vendor.*
 
-This test case addresses the import and export of *&&&&* entities within the *&&&* use case for the exchange of *&&&* information...
+This test instruction is defined for IFC4.3AbRV_E2a_TSTP Track Structures Turnout Panel.
 
-...
+It covers following subjects:
+- A basic project structure setup including units, context and global positioning
+- Two alignments for a section of railway, including the horizontal and vertical layouts
+- A track turnout panel linearly placed based on one alignment
+- Breakdown structure of a track turnout panel (simplified) with relative placement between elements and assembly
+- Swept area solid geometry of rail elements in the turnout panel
 
 The [Expected Results](#Expected-Results) section lists the material that will be used to assess the fulfilment of capabilities.
 
@@ -30,8 +35,21 @@ The Test instruction addresses the import and export of the following IFC Entiti
 
 These entities represent a test-specific subset of the wider AbRV_Ex exchange and the overall AbRV MVD. **The scope of the test shall not be used as a definitive scope of the exchange, or of the entire MVD.**
 
-- *Optional Grouping*
-  - *IfcEntity*
+- Inherited from imported tests:
+  - *IfcProject*
+  - *IfcSite*
+  - *IfcRailway*
+  - *IfcAlignment*
+  - *IfcAlignmentHorizontal*
+  - *IfcAlignmentVertical*
+  - *IfcAlignmentSegment*
+
+- For this test instruction:
+  - *IfcRailwayPart*
+  - *IfcElementAssembly*
+  - *IfcTrackElement*
+  - *IfcRail*
+
 
 </details>
 
@@ -39,8 +57,33 @@ These entities represent a test-specific subset of the wider AbRV_Ex exchange an
 
 These concept templates represent a test-specific subset of the wider AbRV_Ex exchange and the overall AbRV MVD, that must be correctly exported to meet the validation criteria. **The scope of the test shall not be used as a definitive scope of the exchange, or of the entire MVD.**
 
-- *Optional Grouping*
-  - *CT*
+- Inherited from imported tests:
+  - *Project Units*
+  - *Project Representation Context*
+  - *Project Global Positioning*
+  - *Spatial Decomposition*
+  - *Spatial Composition*
+  - *Alignment Layout*
+  - *Alignment Geometry Cant*
+  - *Spatial Container*
+  - *Product Local Placement*
+  - *Object User Identity*
+  - *Revision Control*
+  - *Software Identity*
+  - *Axis Geometry*
+  
+- For this test instruction:
+  - *Product Linear Placement*
+  - *Object Predefined Type*
+  - *Element Composition*
+  - *Element Decomposition*
+  - *Product Relative Positioning*
+  - *Product Span Positioning*
+  - *Spatial Containment*
+  - *Body AdvancedSwept Directrix Geometry*
+  - *Body Tessallated Geometry*
+  - *Object Typing*
+  - *Type Body Tessellated Geometry*
 
 </details>
 
@@ -53,7 +96,7 @@ Test instructions are defined with a modular approach to reduce repetition of va
 
 | TI Code                                  | Test Instruction Title    | Comments                     |
 |------------------------------------------|---------------------------|------------------------------|
-| [IFC4.3AbRV_E0_MSTP](../../E0-SCFD/MSTP) | Model Setup & Positioning | PROJ-01 imported along with RCTX-01 and associated configuration and history data |
+| [IFC4.3AbRV_E1b_ALCT2](../../E1b-ARCT/ALCT2) | Alignment Railway Cant 2  | As outlined in the dataset Imported Entities Table |
 
 </details>
 
@@ -66,8 +109,12 @@ The following itemised restrictions and constraints shall be placed on IFC Entit
 
 The following itemised Usages, Constraints & Logic are normative entries within the AbRV MVD and MUST be satisfied to meet the defined validation criteria
 
-- IfcSomething
-    - *Constraint*
+- IfcElementAssembly
+    - *There exists 1 IfcElementAssembly with PredefinedType set to TRACKTURNOUTPANEL*
+	- *Each IfcElementAssembly/TRACKTURNOUTPANEL shall have a linear placement relative to the alignment*
+	- *Each IfcElementAssembly/TRACKTURNOUTPANEL is spatially contained in an IfcRailwayPart/TRACKSUPERSTRUCTURE*
+	- *Each IfcElementAssembly/TRACKTURNOUTPANEL shall have a product span placement*
+
 
 </details>
 
