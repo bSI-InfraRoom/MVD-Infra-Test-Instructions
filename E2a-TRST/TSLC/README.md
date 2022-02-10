@@ -42,7 +42,7 @@ These entities represent a test-specific subset of the wider AbRV_Ex exchange an
   - *IfcCourse*
   - *IfcRail*
   - *IfcTrackElement*
-  - *IfcMember
+  - *IfcMember*
   - *IfcDoor*
   - *IfcFooting*
   - *IfcSensor*
