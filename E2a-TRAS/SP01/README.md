@@ -254,15 +254,19 @@ NOTE: 0000 indicates the progressive number of each sleeper (i.e., Traversa 0001
 >
 > If present, all criteria listed in [Usages, Constraints & Logic](#Usages,-Constraints-&-Logic), and in the same section of precondition tests, shall be verified too.
 
-| Entity Type     | Entity Type Name                    | Minimum | Maximum | IfcObject       | IfcObject Name                      |
-|-----------------|-------------------------------------|---------|---------|-----------------|-------------------------------------|
-| IfcCourseType   | Segmento di massicciata             | 1       | 1       | IfcCourse       | Segmento di massicciata M01         |
-| IfcCourseType   | Segmento di massicciata             | 1       | 1       | IfcCourse       | Segmento di massicciata M02         |
+| Entity Type   | Entity Type Name        | Minimum | Maximum | IfcObject | IfcObject Name              |
+|---------------|-------------------------|---------|---------|-----------|-----------------------------|
+| IfcCourseType | Segmento di massicciata | 1       |         | IfcCourse | Segmento di massicciata M01 |
+| IfcCourseType | Segmento di massicciata | 1       |         | IfcCourse | Segmento di massicciata M02 |
+| IfcRailType   | Rotaia 60E1             | 1       |         | IfcRail   | Rotaia BC01 DX              |
+| IfcRailType   | Rotaia 60E1             | 1       |         | IfcRail   | Rotaia BC01 SX              |
+| IfcRailType   | Rotaia 60E1             | 1       |         | IfcRail   | Rotaia BC02 DX              |
+| IfcRailType   | Rotaia 60E1             | 1       |         | IfcRail   | Rotaia BC02 SX              |
 
 
 NOTE:
 - when **Minimum** and **Maximum** have the same value, it means exactly. Example: Minimum=Maximum=1, means that the entity type must type exactly 1 object with that Name.
-
+- when **Maximum is empty**, it means **unlimited**. Example: Minimum=1; Maximum=empty, means that the Entity Type must type 1 or more Object of the requested name.
 
 ### Spatial decomposition
 
