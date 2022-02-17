@@ -68,7 +68,6 @@ All parameters of the segments, for both alignments, are detailed below in:
 
 - [Alignment parameters for horizontal segments](#Alignment-parameters-for-horizontal-segments)
 - [Alignment parameters for vertical segments](#Alignment-parameters-for-vertical-segments)
-- [Alignment parameters for cant segments](#Alignment-parameters-for-cant-segments)
 
 
 
