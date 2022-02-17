@@ -155,8 +155,8 @@ Considering the aim of this test, other **optional** results, not subject to the
 | ------- | ------------------------------------------------------------ | ---------------------------------------------- | ----------- |
 | ALIG_01 | Alignments contained in file                                 | 1                                              |             |
 | ALIG_02 | Components for Alignment                                     | 1 horizontal, 1 vertical                       |             |
-| ALIG_03 | The horizontal (H) layout matches exactly the layout specified in the [Dataset description](./Dataset/Readme.md) | See [Dataset description](./Dataset/Readme.md) |             |
-| ALIG_04 | The vertical (V) layout matches exactly the layout specified in the [Dataset description](./Dataset/Readme.md) | See [Dataset description](./Dataset/Readme.md) |             |
+| ALIG_03 | The horizontal (H) layout matches exactly the layout specified in the [Dataset description](./Dataset/README.md) | See [Dataset description](./Dataset/README.md) |             |
+| ALIG_04 | The vertical (V) layout matches exactly the layout specified in the [Dataset description](./Dataset/README.md) | See [Dataset description](./Dataset/README.md) |             |
 
 </details>
 ### Spatial containment
