@@ -1,6 +1,6 @@
 # Alignment Reference Super Elevation Exchange
 
-| Exhange Code        | Abbreviation | Exchange Name                                | Test Cases |
+| Exchange Code       | Abbreviation | Exchange Name                                | Test Cases |
 |---------------------|--------------|----------------------------------------------|------------|
 | **IFC4x3_AbRV-E1a** | ARSE         | Alignment Reference Super Elevation Exchange | 2          |
 
@@ -30,3 +30,4 @@ TBC
 | [**IFC4x3_AbRV-E1a-ALIN06**](./ALIN06) | Alignment layout: See ALIN03<br/>Geometry: IfcCompositeCurve, IfcGradientCurve |
 | [**IFC4x3_AbRV-E1a-ALSE01**](./ALSE01) | Alignment Superelevation<br />Alignment: See ALIN06          |
 | [**IFC4x3_AbRV-E1a-ALSE02**](./ALSE02) | Alignment Superelevation plus Width<br />Alignment: See ALIN06 |
+

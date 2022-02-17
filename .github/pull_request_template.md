@@ -1,9 +1,9 @@
 ## Summary
 
-*Outline of the content and tasks addressed by this pull request, dont forget to link the relevent issue(s)*
+*Outline of the content and tasks addressed by this pull request, don't forget to link the relevant issue(s)*
 
 ## Purpose
-Please mark the relevent tasks that this pull request creates or updates:
+Please mark the relevant tasks that this pull request creates or updates:
 
 ### Exchanges
 
