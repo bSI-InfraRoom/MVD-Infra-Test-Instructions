@@ -1,5 +1,5 @@
 ---
-name: Documenation Bug report
+name: Documentation Bug report
 about: Create a report to help us improve documentation
 title: '[Bug Docs]: '
 labels: bug, documentation
@@ -16,8 +16,8 @@ assignees: ''
 
 - [ ] Exchange documentation
 - [ ] Test case documentation
-- [ ] Test case principles or valdiation criteria
-- [ ] Test case datasets documentaiton
+- [ ] Test case principles or validation criteria
+- [ ] Test case datasets documentation
 
 **Reference Code**: [MVD_Ex_XXXX](url)
 

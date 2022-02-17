@@ -1,6 +1,6 @@
 # Aggregate Structures Exchange
 
-| Exhange Code       | Abbreviation | Exchange Name                 | Test Cases |
+| Exchange Code      | Abbreviation | Exchange Name                 | Test Cases |
 |--------------------|--------------|-------------------------------|------------|
 | **IFC4x3_AbRV-E2** | AGST         | Aggregate Structures Exchange | 5          |
 
