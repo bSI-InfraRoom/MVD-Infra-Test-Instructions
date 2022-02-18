@@ -59,7 +59,7 @@ All validation criteria (and usages) of predecessors' tests shall be **verified 
 
 | TI Code                       | Test Instruction Title                 | Comments |
 |-------------------------------|----------------------------------------|----------|
-| [IFC4.3AbRV_E2a_SP01](./SP01) | (RFI) Track structure for single track |          |
+| [IFC4.3AbRV_E2a_SP01](./SP01) | (RFI) Track super-structure for single track |          |
 
 
 
