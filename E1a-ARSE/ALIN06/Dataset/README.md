@@ -1,45 +1,75 @@
 ## Variations
 The Following occurrence variations need to be checked and certified in relation to the targeted entities and concept templates:
 
-- Entity_01 - *decription of variation*
-- Entity_02 - *decription of variation*
-
-***=>What other elements occur for roads?***
-
-
+- IfcAlignmentHorizontalSegment - *The test shall include linear and circular arc segments*
+- IfcAlignmentVerticalSegment - *The test shall include linear and circular arc segments*
+- Alignment Decomposition:
+  - The horizontal alignment shall be decomposed with element sequences containing lines and both clockwise and counter-clockwise turns
+  - The vertical alignment shall be decomposed with element sequences containing linear and circular arc segments including both clockwise and counter-clockwise turns
 
 ## Model Dataset
-This test case utilises the attached dataset documented by the following drawings and data schedule. 
 
-"Synopsis":
+- - This test case utilises the following dataset:
+    - One alignment layout including geometric representation
+    - The alignment is composed of one horizontal alignment layout and one vertical alignment layout
+    - The horizontal layout contains lines and circular arcs
+  
+    - The vertical layout contains lines and circular arcs
+    
+  
 
-- IfcAlignment => IfcPolyline (Axis,Curve3D)?
-  - IfcAlignmentHorizontal => IfcCompositeCurve (Axis,Curve2D)
-    - Line
-    - Clothoid (to left)
-    - Circular arc (left)
-    - Clothoid (to straight)
-    - Line
-    - Clothoid (to right)
-    - Circular arc (right)
-    - Clothoid  (to straight)
-    - Line
-  - IfcAlignmentVertical => IfcGradientCurve (Axis,Curve3D)
-    - Line (up)
-    - Parabolic arc/Circular arc  
-    - Line (down)
-    - Parabolic arc/Circular arc
-    - Line (up)
+The following tables lists the entities that shall be present in the dataset in addition to the imported entities for model setup :
 
-*This is a later step tha involved the detailed documentation of the certification dataset (model)*
+Alignment:
 
+| Name | Type                   | ObjectPlacement   | Representation                                               |
+| ---- | ---------------------- | ----------------- | ------------------------------------------------------------ |
+| A1   | IfcAlignment           | IfcLocalPlacement | IfcGradientCurve<br />RepresentationIdentifier="Axis"<br />RepresentationType="Curve3D" |
+| AH1  | IfcAlignmentHorizontal | IfcLocalPlacement | IfcCompositeCurve<br />RepresentationIdentifier="Axis"<br />RepresentationType="Curve2D" |
+| AV1  | IfcAlignmentVertical   | IfcLocalPlacement | IfcGradientCurve<br />RepresentationIdentifier="Axis"<br />RepresentationType="Curve3D" |
+
+Horizontal segments nested into AH1 in the following order:
+
+| Name | Type                          | StartPointX | StartPointY | StartDirection | StartRadius | EndRadius | Length     | Type_1      |
+| ---- | ----------------------------- | ----------- | ----------- | -------------- | ----------- | --------- | ---------- | ----------- |
+| H1   | IfcAlignmentHorizontalSegment | 24525276,87 | 6876935,549 | 0,001724622    | 0           | 0         | 229,405681 | LINE        |
+| H2   | IfcAlignmentHorizontalSegment | 24525506,27 | 6876935,945 | 0,00172463     | -110        | -110      | 15,594208  | CIRCULARARC |
+| H3   | IfcAlignmentHorizontalSegment | 24525521,82 | 6876934,868 | 6,143144395    | 0           | 0         | 91,725737  | LINE        |
+| H4   | IfcAlignmentHorizontalSegment | 24525612,64 | 6876922,065 | 6,143144399    | -110        | -110      | 120,80482  | CIRCULARARC |
+| H5   | IfcAlignmentHorizontalSegment | 24525701,26 | 6876849,05  | 5,044918731    | 0           | 0         | 25,538554  | LINE        |
+| H6   | IfcAlignmentHorizontalSegment | 24525709,6  | 6876824,91  | 5,044918761    | 110         | 110       | 49,633636  | CIRCULARARC |
+| H7   | IfcAlignmentHorizontalSegment | 24525735,66 | 6876783,165 | 5,49613363     | 0           | 0         | 83,739856  | LINE        |
+
+Vertical segments nested into AV1 in the following order:
+
+| Name | Type                        | StartDistAlong | HorizontalLength | StartHeight | StartGradient | EndGradient  | Radius | Type_1           |
+| ---- | --------------------------- | -------------- | ---------------- | ----------- | ------------- | ------------ | ------ | ---------------- |
+| V1   | IfcAlignmentVerticalSegment | 135,557        | 10,84246946      | 125,687614  | 0,03416131    | 0,03416131   | 0      | CONSTANTGRADIENT |
+| V2   | IfcAlignmentVerticalSegment | 146,3994695    | 18,11228261      | 126,058007  | 0,03416131    | 0,03416131   | -1300  | CIRCULARARC      |
+| V3   | IfcAlignmentVerticalSegment | 164,5117521    | 40,83305808      | 126,5504044 | 0,020212997   | 0,020212997  | 0      | CONSTANTGRADIENT |
+| V4   | IfcAlignmentVerticalSegment | 205,3448102    | 39,03368133      | 127,3757629 | 0,020212997   | 0,020212997  | -1300  | CIRCULARARC      |
+| V5   | IfcAlignmentVerticalSegment | 244,3784915    | 50,17607352      | 127,5786042 | -0,009817512  | -0,009817512 | 0      | CONSTANTGRADIENT |
+| V6   | IfcAlignmentVerticalSegment | 294,554565     | 11,522986        | 127,086     | 0             | 0            | 0      | CONSTANTGRADIENT |
+| V7   | IfcAlignmentVerticalSegment | 306,077551     | 192,5126892      | 127,086     | -0,003529811  | -0,003529811 | 0      | CONSTANTGRADIENT |
+| V8   | IfcAlignmentVerticalSegment | 498,5902402    | 15,27528964      | 126,4064666 | -0,003529811  | -0,003529811 | -5000  | CIRCULARARC      |
+| V9   | IfcAlignmentVerticalSegment | 513,8655298    | 78,35926585      | 126,3292136 | -0,006584989  | -0,006584989 | 0      | CONSTANTGRADIENT |
+| V10  | IfcAlignmentVerticalSegment | 592,2247957    | 10,41034226      | 125,8132186 | -0,006584989  | -0,006584989 | 1300   | CIRCULARARC      |
+| V11  | IfcAlignmentVerticalSegment | 602,6351379    | 13,80735508      | 125,7863506 | 0,00142311    | 0,00142311   | 0      | CONSTANTGRADIENT |
 
 ## Drawings (Visualisations)
+
 The following Drawings and visualisations describe the test case dataset to be modelled and certified.
+
+| Filename            | Description                                  |
+| ------------------- | -------------------------------------------- |
+| Insert map here     | Planar view of the horizontal alignment      |
+| Insert profile here | Long section (profile) view of the alignment |
 
 
 ## Supporting files
 
-| Filename                          | Description                               |
-|-----------------------------------|-------------------------------------------|
-| *filename*                        | *short description*                       |
+| Filename                                                     | Description                                   |
+| ------------------------------------------------------------ | --------------------------------------------- |
+| [HorizontalAlignmentParameters](./HorizontalAlignmentParameters.csv) | Parameters for the horizontal segments as csv |
+| [VerticalAlignmentParameters](./VerticalAlignmentParameters.csv) | Parameters for the vertical segments as csv   |
+| [LandXML](./TOI-M14334-0000A.xml)                            | LandXML-file representing the alignment       |
