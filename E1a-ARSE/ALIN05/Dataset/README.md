@@ -87,8 +87,8 @@ The following Drawings and visualisations describe the test case dataset to be m
 
 | Filename                           | Description                                  |
 | ---------------------------------- | -------------------------------------------- |
-| Insert map here                    | Planar (map) view of the test case           |
-| Insert profile (long section) here | Long section (profile) view of the test case |
+| [Horizontal](./Horizontal.PNG)     | Planar view of the horizontal alignment      |
+| [Vertical](./T616AAC0_profile.pdf) | Long section (profile) view of the alignment |
 
 
 ## Supporting files

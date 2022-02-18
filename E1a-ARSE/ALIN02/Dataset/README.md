@@ -84,10 +84,10 @@ Vertical segments nested into AV1 in the following order:
 
 The following Drawings and visualisations describe the test case dataset to be modelled and certified.
 
-| Filename                                     | Description                                  |
-| -------------------------------------------- | -------------------------------------------- |
-| [Testi_ml_map](./Testi_ml_map.pdf)           | Planar (map) view of the test case           |
-| [Testi_ml_profiles](./Testi_ml_profiles.pdf) | Long section (profile) view of the test case |
+| Filename                           | Description                                  |
+| ---------------------------------- | -------------------------------------------- |
+| [Horizontal](./Horizontal.PNG)     | Planar view of the horizontal alignment      |
+| [Vertical](./T616AAC0_profile.pdf) | Long section (profile) view of the alignment |
 
 
 ## Supporting files
