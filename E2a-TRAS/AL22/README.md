@@ -71,7 +71,7 @@ This test case utilises the dataset collected in the Dataset folder and summaris
 
 | Filename              | Type (format) | Description                                                        |
 |-----------------------|---------------|--------------------------------------------------------------------|
-| Line_layout           | figure (jpg)  | Schematic line layout of the test case                             |
+| LineLayout            | figure (svg)  | Schematic line layout of the test case                             |
 | Alignment1_horizontal | csv           | Alignment parameters for horizontal segments of the Primary Route  |
 | Alignment2_horizontal | csv           | Alignment parameters for horizontal segments of the Diverted Route |
 | Alignment1_vertical   | csv           | Alignment parameters for vertical segments of the Primary Route    |
