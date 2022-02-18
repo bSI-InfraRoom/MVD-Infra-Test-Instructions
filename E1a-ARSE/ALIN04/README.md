@@ -53,7 +53,7 @@ These entities represent a test-specific subset of the wider AbRV_Ex exchange an
   - IfcCurveSegment
   - IfcLine
   - IfcClothoid
-  - IfcCurve
+  - IfcCircle
 
 
 </details>
