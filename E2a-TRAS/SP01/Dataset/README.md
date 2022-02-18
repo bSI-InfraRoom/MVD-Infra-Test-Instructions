@@ -47,11 +47,20 @@ NOTE:
 ### Straight and curved parts
 The sub-structure part (red) is not influenced by cant. So, it is expected to have the same representation both in straight parts and in curves. The super-structure (green), has a different behaviour for ballast and sleeper in curve, compared to straight parts.
 
-As depicted in the image below, and as stated in the [Applied cant](#Applied-cant) section, the inner rail is the lower rail. This stays fix, while the outer rail rotates (goes up). In all this, the ballast **shall always maintain the 4/3 ratio for its slope**, as shown below.  
+As depicted in the image below, and as stated in the [Applied cant](#Applied-cant) section, the inner rail is the lower rail. This stays fix, while the outer rail rotates (goes up).  
 
 <img src="./TrackCrossSection.png" height="500"/>
 
 
+The detail below shows how the ballast bed profile changes in curve. Note how:
+- Maximum cant allowed (in Italy) is 160 mm
+- The highest point of ballast on the side of each rail (red dot) is **always**, even in the straight part:
+  - 1050 mm outer the inner edge of the rail head profile
+  - 100 mm above the bottom edge of the rail profile
+- And from that, the ballast always maintains the 4/3 ratio for its slope 
+
+
+<img src="./BallastbedSectionDetail2.png" height="200"/>
 
 
 ## Sleeper placement
@@ -75,6 +84,10 @@ The image below capture some details about the placement of sleepers.
 The image below shows the profile section of the international UIC 60 rail profile. This has to be considered just a reference, as **the success of the test is independent from the rail profile used**. For the sake fo test, any simplified profile is equally accepted. 
 
 <img src="./RailProfile60UIC.jpg" height="500"/>
+
+**IMPORTANT**: the rail profile shall be defined once, and then the track is created making two offset of the same profile - as to create two instances for the two rails. 
+
+Eventually, if a software vendor decide to go for the real situation (see picture above for sleeper placement), where the rails are slightly tilted inward. Then the rail profile, other than being offset twice, is also rotated.
 
 
 

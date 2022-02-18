@@ -54,9 +54,8 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
 - Object definition
    - Object Typing
 - Product Shape
-   - `I need help here`
    - Product Geometric Representation
-   - ...
+   - Body SectionedSolidHorizontal
 - Object Composition
    - Spatial Decomposition
 - Object Connectivity
@@ -91,7 +90,7 @@ All validation criteria (and usages) of predecessors' tests shall be **verified 
 
 | TI Code                        | Test Instruction Title               | Comments |
 |--------------------------------|--------------------------------------|----------|
-| [IFC4x3_AbRV-E1-AL22](./AL22)  | (RFI) Two alignments without cant    | **For the test to be passed, the track sub-structure shall be modelled ONLY for the Primary Route (i.e., Alignment 1_Primary route)** |
+| [IFC4.3AbRV_E1b_AL23](./AL23)  | (RFI) Two alignments with cant       | **For the test to be passed, the track sub-structure shall be modelled ONLY for the Primary Route (i.e., Alignment 1_Primary route)** |
 | [IFC4.3AbRV_E2a_SB01](./SB01)  | (RFI) Track sub-structure for single track |  |
 
 
@@ -104,7 +103,7 @@ The following itemised restrictions and constraints shall be placed on IFC Entit
 
 <details><summary>Semantic Usages, Constraints & Logic</summary>
 
-Other than the logic embedded by the IFC Entities & Concept Templates required for this test, **and** the constraints captured in the *Usages, Constraints & Logic* section of of precondition tests, **no additional constraints are applied** 
+- On Body SectionedSolidHorizontal ...
 
 </details>
 
@@ -169,15 +168,6 @@ For certification of capabilities the only source will be:
 | ObjectType     | $                            |
 | PredefinedType | BALLASTBED                   |
 
-`IfcCourse` (BC02)
-
-| Attribute      | Value                        |
-|----------------|------------------------------|
-| Name           | LO1336-BC-BC02-MAS-M01       |
-| Description    | Segmento di massicciata M02  |
-| ObjectType     | $                            |
-| PredefinedType | BALLASTBED                   |
-
 NOTE: all IfcCourse entities are to be typed by the IfcCourseType entity below (via `IfcRelDefinesByType`). This is important because in a following test properties will be associated to the type, and are expected to be inherited by the IfcCourse occurrences.
 
 `IfcCourseType`
@@ -202,24 +192,6 @@ NOTE: all IfcCourse entities are to be typed by the IfcCourseType entity below (
 | Attribute      | Value          |
 |----------------|----------------|
 | Name           | Rotaia BC01 SX |
-| Description    | $              |
-| ObjectType     | $              |
-| PredefinedType | RAIL           |
-
-`IfcRail` (BC02, DX)
-
-| Attribute      | Value          |
-|----------------|----------------|
-| Name           | Rotaia BC02 DX |
-| Description    | $              |
-| ObjectType     | $              |
-| PredefinedType | RAIL           |
-
-`IfcRail` (BC02, SX)
-
-| Attribute      | Value          |
-|----------------|----------------|
-| Name           | Rotaia BC02 SX |
 | Description    | $              |
 | ObjectType     | $              |
 | PredefinedType | RAIL           |
@@ -257,12 +229,8 @@ NOTE: 0000 indicates the progressive number of each sleeper (i.e., Traversa 0001
 | Entity Type   | Entity Type Name        | Minimum | Maximum | IfcObject | IfcObject Name              |
 |---------------|-------------------------|---------|---------|-----------|-----------------------------|
 | IfcCourseType | Segmento di massicciata | 1       |         | IfcCourse | Segmento di massicciata M01 |
-| IfcCourseType | Segmento di massicciata | 1       |         | IfcCourse | Segmento di massicciata M02 |
 | IfcRailType   | Rotaia 60E1             | 1       |         | IfcRail   | Rotaia BC01 DX              |
 | IfcRailType   | Rotaia 60E1             | 1       |         | IfcRail   | Rotaia BC01 SX              |
-| IfcRailType   | Rotaia 60E1             | 1       |         | IfcRail   | Rotaia BC02 DX              |
-| IfcRailType   | Rotaia 60E1             | 1       |         | IfcRail   | Rotaia BC02 SX              |
-
 
 NOTE:
 - when **Minimum** and **Maximum** have the same value, it means exactly. Example: Minimum=Maximum=1, means that the entity type must type exactly 1 object with that Name.
@@ -298,6 +266,7 @@ NOTE:
 | Object         | Object Type | Material definition | Material name |
 |----------------|-------------|---------------------|---------------|
 | IfcCourseType  | BALLASTBED  | IfcMaterial         | Gravel        |
-| IfcRailType    | RAIL        | IfcMaterialProfile  | 60E1          | 
+| IfcRail        | RAIL        | IfcMaterialProfile  | 60E1          | 
+| IfcTrackElement| SLEEPER     | IfcMaterial         | Concrete      | 
 
 
