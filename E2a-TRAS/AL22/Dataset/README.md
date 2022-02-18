@@ -30,6 +30,7 @@ Snippet:
 
 The **Primary route** (*IfcAlignment* named *Alignment 1_Primary route*) is made of the following **9 horizontal segments**:
 
+NOTE: units in the table below are in meters (m)
 <div align="center">
 
 | # | Type of segment | From (pk) | To (pk)  | Segment length |
@@ -47,6 +48,7 @@ The **Primary route** (*IfcAlignment* named *Alignment 1_Primary route*) is made
 
 The **Diverted route** (*IfcAlignment* named *Alignment 2_Diverted route*) is made of the following **11 horizontal segments**:
 
+NOTE: units in the table below are in meters (m)
 <div align="center">
 
 | #  | Type of segment | From (pk) | To (pk)  | Segment length |
@@ -94,7 +96,7 @@ The horizontal layout of the alignment (both for Alignment 1 and Alignment 2) is
 
 | ID | PredefinedType | Start Point X | Start Point Y | Start Direction | Start Radius Of Curvature | End Radius Of Curvature | Segment Length |
 |----|----------------|---------------|---------------|-----------------|---------------------------|-------------------------|----------------|
-| 1  | CIRCULARARC    | 452460.8898   | 4539473.5430  | 0.214271681     | 0                         | 249.538                 | 22.902068      |
+| 1  | CIRCULARARC    | 452460.8898   | 4539473.5430  | 0.214271681     | 249.538                         | 249.538                 | 22.902068      |
 | 2  | LINE           | 452482.7338   | 4539480.3960  | 0.112296264     | 0                         | 0                       | 7.935500       |
 | 3  | LINE           | 452490.4064   | 4539482.4220  | 0.112296264     | 0                         | 0                       | 68.296941      |
 | 4  | CLOTHOID       | 452556.4403   | 4539499.8580  | 0.112296264     | 0                         | -1000                   | 40.000000      |
@@ -132,7 +134,7 @@ The vertical layout of the alignment (both for Alignment 1 and Alignment 2) is d
 
 | ID | PredefinedType   | Start Dist Along | Horizontal Length | Start Height | Start Gradient | End Gradient | RadiusOfCurvature |
 |----|------------------|------------------|-------------------|--------------|----------------|--------------|-------------------|
-| 1  | CONSTANTGRADIENT |                  |                   | 5            |                |              |                   |
+| 1  | CONSTANTGRADIENT | 0                | 0                 | 5            | 0              | 0            |                   |
 | 2  | CIRCULARARC      | 325.0006         | 49.9975           | 5            | 0              | -0.01        | 5000              |
 | 3  | CONSTANTGRADIENT | 374.9981         | 250.0038          | 4.75         | -0.01          | -0.01        |                   |
 | 4  | CIRCULARARC      | 625.0019         | 49.9975           | 2.25         | -0.01          | 0            | -5000             |
@@ -142,7 +144,7 @@ The vertical layout of the alignment (both for Alignment 1 and Alignment 2) is d
 
 | ID | PredefinedType   | Start Dist Along | Horizontal Length | Start Height | Start Gradient | End Gradient | RadiusOfCurvature |
 |----|------------------|------------------|-------------------|--------------|----------------|--------------|-------------------|
-| 1  | CONSTANTGRADIENT |                  |                   | 5            |                |              |                   |
+| 1  | CONSTANTGRADIENT | 0                | 0                 | 5            | 0              | 0            |                   |
 | 2  | CIRCULARARC      | 277.0671         | 49.8646           | 5            | 0              | -0.009973    | 5000              |
 | 3  | CONSTANTGRADIENT | 326.9317         | 250.9366          | 4.7513       | -0.009973      | -0.009973    |                   |
 | 4  | CIRCULARARC      | 577.8683         | 49.8646           | 2.2487       | -0.009973      | 0            | -5000             |

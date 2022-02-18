@@ -29,6 +29,9 @@ These entities represent a test-specific subset of the wider AbRV_E2a exchange a
 
 - Model setup:
    1. IfcProject
+   1. IfcSIUnit
+   1. IfcGeometricRepresentationContext
+   1. IfcUnitAssignment
 </details>
 
 <details><summary>Concept Templates</summary> 
@@ -96,7 +99,7 @@ For certification of capabilities the only source will be:
 |---------|---------------------------------------------------|-------------------------------------|---------------------------------------|
 | ENAT_01 | Requested entities (and attributes) exist in file | See below                           |                                       |
 | ORIG_01 | Origin of Coordinate System is set as requested   | (0., 0., 0.)                        |                                       |
-| ORIG_02 | True north is set as requested                    | (0., 1., 0.)                        | Positive Y axis = geographic northing |
+| ORIG_02 | True north is set as requested                    | (0., 1., 0.)                        | Positive Y axis |
 | DIST_01 | Unit of measure for all distances                 | meter                               |                                       |
 | ANGL_01 | Unit of measure all angles                        | radian                              |                                       |
 | DIST_02 | Required precision for **distances**              | minimum 4 decimal places (0,0001)   |                                       |
