@@ -91,8 +91,8 @@ The following Drawings and visualisations describe the test case dataset to be m
 
 ## Supporting files
 
-| Filename                                                     | Description                                              |
-| ------------------------------------------------------------ | -------------------------------------------------------- |
-| [HorizontalAlignmentParameters](./HorizontalAlignmentParameters.csv) | Parameters for the horizontal segments as csv            |
-| [VerticalAlignmentParameters](./VerticalAlignmentParameters.csv) | Parameters for the vertical segments as csv              |
-| [AlignmentParameters](./AlignmentParameters.xlsx)            | Parameters for horizontal and vertical segments as excel |
+| Filename                                                     | Description                                   |
+| ------------------------------------------------------------ | --------------------------------------------- |
+| [HorizontalAlignmentParameters](./HorizontalAlignmentParameters.csv) | Parameters for the horizontal segments as csv |
+| [VerticalAlignmentParameters](./VerticalAlignmentParameters.csv) | Parameters for the vertical segments as csv   |
+| [LandXML](./Testi_101_ml.xml)                                | LandXML-file representing the alignment       |
