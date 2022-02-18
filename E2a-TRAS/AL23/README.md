@@ -8,7 +8,7 @@
 
 ## Summary (Intent)
 
-This test case addresses the **export** of the required IFC entities for the exchange of **railway alignment without cant** information.
+This test case addresses the **export** of the required IFC entities for the exchange of **railway alignment with cant** information.
 
 | Info                         |                                           |
 |------------------------------|-------------------------------------------|
@@ -39,9 +39,8 @@ The Test instruction addresses the import and export of the following IFC Entiti
 These entities represent a test-specific subset of the wider AbRV_E2a exchange and the overall AbRV MVD. **The scope of the test shall not be used as a definitive scope of the exchange, or of the MVD**
 
 - Model setup:
-   1. IfcSite???
+   1. IfcSite
    1. IfcRailway
-   1. IfcFacilityPart
 - Alignment:
    1. IfcAlignment
    1. IfcAlignmentHorizontal
@@ -57,6 +56,7 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
    - Project Global Positioning
 - Object Composition
    - Alignment Layout
+   - Spatial Decomposition
 </details>
 
 
