@@ -128,7 +128,7 @@ For certification of capabilities the only source will be:
 | # | Attribute                | Value / Instructions               |
 |---|--------------------------|------------------------------------|
 | 1 | ContextIdentifier        | $                                  |
-| 2 | ContextType              | 'Model)'                           |
+| 2 | ContextType              | 'Model'                            |
 | 3 | CoordinateSpaceDimension | 3                                  |
 | 4 | Precision                | 1.E-6                              |
 | 5 | WorldCoordinateSystem    | Points to `IfcAxis2Placement3D`    |

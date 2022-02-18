@@ -10,7 +10,7 @@ This test case utilises the following dataset.
 
 | Filename                                             | Description                                                                                                         |
 |------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
-| [Line_layout](./Line_layout.jpg)                     | Schematic [line layout](#Line-layout) of the test case                                                              |
+| [LineLayout](./LineLayout.svg)                       | Schematic [line layout](#Line-layout) of the test case                                                              |
 | [Alignment1_horizontal](./Alignment1_horizontal.csv) | [Alignment parameters for horizontal segments](#Alignment-parameters-for-horizontal-segments) of the Primary Route  |
 | [Alignment2_horizontal](./Alignment2_horizontal.csv) | [Alignment parameters for horizontal segments](#Alignment-parameters-for-horizontal-segments) of the Diverted Route |
 | [Alignment1_vertical](./Alignment1_vertical.csv)     | [Alignment parameters for vertical segments](#Alignment-parameters-for-vertical-segments) of the Primary Route      |
@@ -111,7 +111,7 @@ The horizontal layout of the alignment (both for Alignment 1 and Alignment 2) is
 **NOTE**:
 - All distances are in meters
 - All angles are in radian (see note below)
-- All the coordinates are defined using the UTM Coordinate System
+- All the coordinates are defined using the UTM Coordinate System (EPSG:3065)
 - The *Radius Of Curvature* is considered positive when the curve is to the right, and negative when it is to the left
 
 **IMPORTANT**:
@@ -153,4 +153,4 @@ The vertical layout of the alignment (both for Alignment 1 and Alignment 2) is d
 **NOTE**:
 - All distances are in meters
 - All angles are in gradian
-- The radius (*RadiusOfCurvature*) is considered positive when the curve is convex, and negative when it is concave
+- The radius (*RadiusOfCurvature*) is considered positive when the curve is a *crest*, and negative when it is *valley*

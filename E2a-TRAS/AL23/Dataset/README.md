@@ -33,7 +33,7 @@ The cant layout of the alignment (both for Alignment 1 and Alignment 2) is descr
 | 7  | CONSTANTCANT     | 587.1654         | 109.4317          | 0.06            | 0.06          | 0                | 0              |
 | 8  | LINEARTRANSITION | 696.5971         | 40.0000           | 0.06            | 0             | 0                | 0              |
 | 9  | CONSTANTCANT     | 736.5971         | 139.7711          | 0               | 0             | 0                | 0              |
-| 10 | CONSTANTCANT     | 876.3682         | -876.3682         | 0               | 0             | 0                | 0              |
+| 10 | CONSTANTCANT     | 876.3682         | 876.3682          | 0               | 0             | 0                | 0              |
 
 #### Alignment 2_Diverted route
 
@@ -50,10 +50,10 @@ The cant layout of the alignment (both for Alignment 1 and Alignment 2) is descr
 | 9  | CONSTANTCANT     | 540.9846         | 107.4914          | 0.01            | 0.01          | 0                | 0              |
 | 10 | LINEARTRANSITION | 648.4760         | 39.6989           | 0.01            | 0             | 0                | 0              |
 | 11 | CONSTANTCANT     | 688.1749         | 139.9216          | 0               | 0             | 0                | 0              |
-| 12 | CONSTANTCANT     | 828.0965         | -828.0965         | 0               | 0             | 0                | 0              |
+| 12 | CONSTANTCANT     | 828.0965         | 828.0965          | 0               | 0             | 0                | 0              |
 
 **NOTE**:
-- In Italy, only straight line is used for cant segment
+- In Italy, only linear transitions are used for cant
 - All distances are in meters
 - Applied cant: in a cross-section plane, orthogonal to the track axis, it is the difference in height (h<sub>t</sub> in the picture below) between two points, of the track plane, that have a conventional distance between them of 1500 mm. The cant is always applied to the external rail (the furthest rail from the center or the curve). Cant measure is positive because the external rail of a track is always higher than the internal rail.
 

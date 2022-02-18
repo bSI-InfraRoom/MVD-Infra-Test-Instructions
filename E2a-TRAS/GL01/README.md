@@ -27,7 +27,6 @@ The Test instruction addresses the import and export of the following IFC Entiti
 These entities represent a test-specific subset of the wider AbRV_E2a exchange and the overall AbRV MVD. **The scope of the test shall not be used as a definitive scope of the exchange, or of the MVD**
 
 - Model setup:
-   1. IfcSite
    1. IfcMapConversion
    1. IfcProjectedCRS
 </details>
@@ -128,10 +127,10 @@ For certification of capabilities the only source will be:
 |---|---------------|---------------------------------------------|
 | 1 | Name          | 'EPSG:3065'                                 |
 | 2 | Description   | 'Istituto Geografico Militare 1995 (IGM95)' |
-| 3 | GeodeticDatum | 'EPSG:3065'                                 |
+| 3 | GeodeticDatum | 'EPSG:6670'                                 |
 | 4 | VerticalDatum |  $                                          |
 | 5 | MapProjection | 'UTM'                                       |
 | 6 | MapZone       | '33N'                                       |
-| 7 | MapUnit       | $                                           |
+| 7 | MapUnit       | Meters                                      |
 
 </details>
