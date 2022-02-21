@@ -44,5 +44,5 @@ Some tests are just referenced (hence reused entirely) from other Exchanges.
 > Note for MVD project: all tests except SB01, SP01, and TP01 can be moved to another Exchange **as long as** such "generic" Exchange will be made mandatory for certification. Otherwise, all tests listed above shall be consider part of E2a Exchange.
 
 ### Test dependencies graph
-(temporary)
-<img src="./E2aTestDependencies.jpg" width="1000"/>
+
+<img src="./TrackTestsDependencies.jpg" width="1000"/>
