@@ -1,25 +1,28 @@
 # Test Instruction
 
-| Documentation Code  | Title                            | Exchange Code   | Test Code | Author        | Data Owner | Version | Date       |
-| ------------------- | -------------------------------- | --------------- | --------- | ------------- | ---------- | ------- | ---------- |
-| IFC4.3AbRV_E1a_ALSE | Alignment Superelevation & Width | IFC4x3_AbRV-E1a | ALSE      | Lars WIkström | FTIA?      | 1.0     | 07.01.2022 |
+| Documentation Code    | Title                            | Exchange Code   | Test Code | Author        | Data Owner | Version | Date       |
+| --------------------- | -------------------------------- | --------------- | --------- | ------------- | ---------- | ------- | ---------- |
+| IFC4.3AbRV_E1a_ALSE01 | Alignment Superelevation & Width | IFC4x3_AbRV-E1a | ALSE01    | Lars WIkström | FTIA       | 1.0     | 07.01.2022 |
 
 
 ## Summary (Intent)
 
-This is the test instruction for IFC4x3_AbRV-E1a-ALSE - Alignment Superelevation & Width.
+With these instructions the infrastructure (e.g. Road) alignment exchange is established. This test instruction use the same alignment definition as [ALIN06](../ALIN06).
 
-The test instruction includes:
-
-- A basic project structure setup including units and global positioning
-- An alignment structure for a road including the horizontal and vertical layouts
-- Assignment of superelevation- and width events along the alignment geometry using linear placement marking the locations where these design parameters change and the values of these design parameters
-
-The data comes from, and is a simplified version of, the IFC Infra Unit Test [MCON-2](https://github.com/bSI-InfraRoom/IFC-infra-unit-test/tree/main/MCON-2) which in turn is extracted from the IFC Rail [Level Crossing storyline](https://github.com/IFCRail/IFC-Rail-Unit-Test/tree/master/8_Storylines%20Test%20(SL)/SL08_Level%20Crossing). 
-
-...
+| Info                         |                                       |
+| ---------------------------- | ------------------------------------- |
+| Number of alignment(s)       | 1                                     |
+| Properties of segments       | no                                    |
+| Horizontal layout            | Straight Line, Circular Arc           |
+| Vertical layout              | Straight Line, Circular Arc           |
+| Geometric representation     | IfcCompositeCurve, IfcGradientCurve   |
+| Superelevation               | 11  IfcAnnotation/SUPERELEVATIONEVENT |
+| Width                        | 0                                     |
+| IFC reference file available | Yes                                   |
 
 The [Expected Results](#Expected-Results) section lists the material that will be used to assess the fulfilment of capabilities.
+
+The data comes from, and is a simplified version of, the IFC Infra Unit Test [MCON-2](https://github.com/bSI-InfraRoom/IFC-infra-unit-test/tree/main/MCON-2) which in turn is extracted from the IFC Rail [Level Crossing storyline](https://github.com/IFCRail/IFC-Rail-Unit-Test/tree/master/8_Storylines%20Test%20(SL)/SL08_Level%20Crossing). 
 
 :zap: **This is a test-driven process: refer to the [Validation Criteria](#Validation-Criteria) to understand what is required by the test** :zap:
 
@@ -34,25 +37,35 @@ The Test instruction addresses the import and export of the following IFC Entiti
 
 These entities represent a test-specific subset of the wider AbRV_Ex exchange and the overall AbRV MVD. **The scope of the test shall not be used as a definitive scope of the exchange, or of the entire MVD.**
 
-- Inherited from impported tests:
-  - *IfcProject*
-  - *IfcSite*
-  - *IfcRoad*
-  - *IfcAlignment*
-  - *IfcAlignmentHorizontal*
-  - *IfcAlignmentVertical*
-  - *IfcAlignmentSegment*
-  - *IfcAlignmentHorizontalSegment*
-  - *IfcAlignmentVerticalSegment*
-  - *IfcContext*
+- Inherited from imported tests:
+  - Model setup
+    - *IfcSite*
+    - *IfcRoad*
+    - *IfcRepresentationContext*
+    - *IfcMapConversion*
+    - *IfcProjectedCRS*
+    - *IfcUnitAssignment*
+
+  - Alignment
+    - *IfcAlignment*
+    - *IfcAlignmentHorizontal*
+    - *IfcAlignmentVertical*
+    - *IfcAlignmentSegment*
+    - *IfcAlignmentHorizontalSegment*
+    - *IfcAlignmentVerticalSegment*
+    - *IfcCompositeCurve*
+    - *IfcGradientCurve*
+    - *IfcCurveSegment*
+    - *IfcLine*
+    - *IfcClothoid*
+    - *IfcCircle*
 
 - For this test instruction:
-  - *IfcFacilityPart*
   - *IfcAnnotation*
   - *IfcPropertySet*
   - *IfcPropertySingleValue*
   - *IfcPropertyEnumeratedValue*
-
+  - *IfcLinearPlacement*
 
 </details>
 
@@ -98,24 +111,22 @@ The following itemised restrictions and constraints shall be placed on IFC Entit
 
 <details><summary>Semantic Usages, Constraints & Logic</summary>
 
-The following itemised Usages, Constraints & Logic are normative entries within the AbRV MVD and MUST be satisfied to meet the defined validation criteria
+| **ID** | **CRITERIA**                         | **VALUE**                           | **COMMENT** |
+| ------ | ------------------------------------ | ----------------------------------- | ----------- |
+| SE_00  | Superelevation structure is verified | See below for further specification |             |
 
-- IfcAnnotation/SUPERELEVATIONEVENT
-    - *Each superelevation event shall have a linear placement relative to the alignment curve according to CT Product Linear Placement*
-    - *Each superelevation event shall have one instance of Pset_Superelevation attached according to CT Property Sets for Objects*
-    - *Each instance of Pset_Superelevation shall have values for properties Side, Superelevation and TransitionSuperelevation*
+SE_00: Superelevation structure is verified
 
-- IfcAnnotation/WIDTHEVENT
-    - *Each width event shall have a linear placement relative to the alignment curve according to CT Product Linear Placement**
-    - *Each width event shall have one instance of Pset_Width attached according to CT Property Sets for Objects**
-    - *Each instance of Pset_Superelevation shall have values for properties Side, NominalWidth and TransitionWidth*
+>1. The dataset shall contain 11 superelevation event instances, each represented by an `IfcAnnotation` with `PredefinedType=.SUPERELEVATIONEVENT.`
+>2. Each superelevation event shall have an associated `IfcLinearPlacement` relative to the alignment curve according to CT Product Linear Placement at the specified locations
+>3. Each superelevation event shall have an associated Property set with the name `Pset_Superelevation` according to CT Property sets For Objects
+>4. Each `Pset_Superelevation` shall have properties `Side`, `Superelevation` and `TransitionSuperelevation` set to the specified values.
 
 </details>
 
 <details><summary>Model Geometry</summary>
 The Test case requires the following additional checks related to Model Geometry:
-
-- *Constraint*
+The superelevation events does not need explicit geometric representation.
 
 </details>
 
@@ -128,8 +139,7 @@ For certification of capabilities the only source will be:
 - n. 1 IFC file containing the information as requested. The file shall be named using the following syntax: `MVDCode`-`ExchangeCode`-`TestCode`-`SoftwareVendor`.`ifc` (Example: `IFC4.3_AbRV-E2b-ASTPC-AmazingSoft.ifc`)
 
 Considering the aim of this test, other **optional** results, not subject to the bSI certification process, yet usefull to illustrate test results are:
-- Screen-shot of ...
-- CSV export of ...
+- Screen-shot of a planar view and a "long section" showing the superelevation changes
 
 ---
 
@@ -147,9 +157,10 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 
 #### Imports
-| **TI Code**        | **Criteria Codes** | *COMMENT**                                         |
-|--------------------|--------------------|----------------------------------------------------|
-| IFC4.3AbRV_E0_MSTP | ALL CRITERIA       | As outlined in the dataset [Imported Entities Table](Dataset/README.md#Imported-Entities-Table) |
+| **TI Code**           | **Criteria Codes** | *COMMENT**                                                   |
+| --------------------- | ------------------ | ------------------------------------------------------------ |
+| IFC4.3AbRV_E0_MSTP    | ALL CRITERIA       | As outlined in the dataset [Imported Entities Table](Dataset/README.md#Imported-Entities-Table) |
+| IFC4.3AbRV_E1a_ALIN06 | ALL CRITERIA       | As outlined in the ALIN06 test instruction                   |
 
 
 #### General
@@ -159,13 +170,17 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 </details>
 
-### Some Concept Group
+### Superelevation event
 
 <details><summary>Click to expand</summary>
-Criteria around the representation of 'Some Concept'
 
-| **ID**  | **CRITERIA**                                        | **VALUE**                                | **COMMENT** |
-|---------|-----------------------------------------------------|------------------------------------------|-------------|
-| XXXX_01 | A Criteria to follow                               | its expected value or outcome            |             |
+| **ID**  | **CRITERIA**                                                 | **VALUE**                                      | **COMMENT** |
+| ------- | ------------------------------------------------------------ | ---------------------------------------------- | ----------- |
+| ALSE_01 | Superelevation events contained in file                      | 11                                             |             |
+| ALSE_02 | Each superelevation event has a linear placement at the specified location | See [Dataset description](./Dataset/README.md) |             |
+| ALSE_03 | Each superelevation event has a Pset_Superelevation attached with the correct property values assigned | See [Dataset description](./Dataset/README.md) |             |
+
+Question: Shall the events be nested to the alignment?
 
 </details>
+
