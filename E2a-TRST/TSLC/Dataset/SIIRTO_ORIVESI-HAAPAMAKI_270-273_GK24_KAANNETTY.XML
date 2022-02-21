@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LandXML xsi:schemaLocation="http://www.landxml.org/schema/LandXML-1.1 http://www.landxml.org/schema/LandXML-1.1/LandXML-1.1.xsd" date="2021-02-18" time="10:29:15+02:00" version="1.1" xmlns="http://www.landxml.org/schema/LandXML-1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Units>
+		<Metric areaUnit="squareMeter" linearUnit="meter" volumeUnit="cubicMeter" temperatureUnit="celsius" pressureUnit="mmHG" angularUnit="radians" directionUnit="radians"/>
+	</Units>
+	<CoordinateSystem epsgCode="3878" horizontalDatum="EPGS:3878" verticalDatum="EPGS:3900"/>
+	<Application name="Novapoint" manufacturer="Trimble Solutions Sandvika AS" version="21.05.FP4.e (21.0.27845.6200)" manufacturerURL="www.novapoint.com">
+		<Author createdBy="FIRIIJ"/>
+	</Application>
+	<Project name=""/>
+	<Alignments name="">
+		<Alignment name="ORIVESI-HAAPAMAKI_270-273/066" staStart="0.000000000000000" length="2651.675407982106663">
+			<CoordGeom>
+				<Line staStart="0.000000000000000" length="1091.152466919920244" dir="3.646361015955258">
+					<Start>6878487.611348000355065 24526304.078529000282288</Start>
+					<End>6877532.540303578600287 24525776.392063215374947</End>
+				</Line>
+				<Spiral staStart="1091.152466919920244" constant="348.482" radiusStart="INF" radiusEnd="1518.000000000000000" spiType="clothoid" length="79.999999992410039" rot="ccw" dirStart="3.646361015955257" dirEnd="3.620285039386286">
+					<Start>6877532.540303578600287 24525776.392063215374947</Start>
+					<PI>6877485.856659076176584 24525750.598874799907207</PI>
+					<End>6877462.182441932149231 24525738.321388050913811</End>
+				</Spiral>
+				<Curve staStart="1171.152466912330283" rot="ccw" length="513.309401580559779" radius="1518.000000002895831" chord="510.867309074949844" dirStart="3.620285039386286" dirEnd="3.281587584473318">
+					<Start>6877462.182441932149231 24525738.321388050913811</Start>
+					<Center>6876763.332759859971702 24527085.887016091495752</Center>
+					<End>6876975.564171306788921 24525582.796257685869932</End>
+				</Curve>
+				<Spiral staStart="1684.461868492890062" constant="348.482" radiusStart="1518.000000000000000" radiusEnd="INF" spiType="clothoid" length="79.999999992410039" rot="ccw" dirStart="3.281587584473318" dirEnd="3.255511607809918">
+					<Start>6876975.564171306788921 24525582.796257685869932</Start>
+					<PI>6876949.157671204768121 24525579.067747753113508</PI>
+					<End>6876896.168101351708174 24525573.004982039332390</End>
+				</Spiral>
+				<Line staStart="1764.461868485300101" length="154.948148850604838" dir="3.255511607809918">
+					<Start>6876896.168101351708174 24525573.004982039332390</Start>
+					<End>6876742.224287627264857 24525555.391605071723461</End>
+				</Line>
+				<Spiral staStart="1919.410017335904968" constant="365.705" radiusStart="INF" radiusEnd="1486.000000000000000" spiType="clothoid" length="89.999999991641289" rot="cw" dirStart="3.255511607809918" dirEnd="3.285654048131528">
+					<Start>6876742.224287627264857 24525555.391605071723461</Start>
+					<PI>6876682.610327688045800 24525548.570914279669523</PI>
+					<End>6876652.919107140041888 24525544.259467262774706</End>
+				</Spiral>
+				<Curve staStart="2009.410017327546257" rot="cw" length="235.958272982892368" radius="1486.000000001339458" chord="235.710462376575776" dirStart="3.285654048131528" dirEnd="3.444581778036334">
+					<Start>6876652.919107140041888 24525544.259467262774706</Start>
+					<Center>6876866.460805875249207 24524073.682729072868824</Center>
+					<End>6876423.076296129263937 24525491.993758615106344</End>
+				</Curve>
+				<Spiral staStart="2245.368290310438624" constant="365.705" radiusStart="1486.000000000000000" radiusEnd="INF" spiType="clothoid" length="89.999999991641289" rot="cw" dirStart="3.444581778036334" dirEnd="3.474864416001147">
+					<Start>6876423.076296129263937 24525491.993758615106344</Start>
+					<PI>6876394.440326533280313 24525483.041740961372852</PI>
+					<End>6876337.738979675807059 24525463.412607926875353</End>
+				</Spiral>
+				<Line staStart="2335.368290302079913" length="316.307117680026806" dir="3.474864416001147">
+					<Start>6876337.738979675807059 24525463.412607926875353</Start>
+					<End>6876038.836000000126660 24525359.936999998986721</End>
+				</Line>
+			</CoordGeom>
+			<Profile staStart="0.000408">
+				<ProfAlign name="ORIVESI-HAAPAMAKI_270-273/066">
+					<PVI>0.000407981905027 108.082846000000004</PVI>
+					<CircCurve length="95.012777986834863" radius="10000.000000000000000">293.932437321066743 111.757000366748130</CircCurve>
+					<CircCurve length="183.660028292057376" radius="18000.000000000007276">518.432314982210983 112.430000000005791</CircCurve>
+					<CircCurve length="34.071928672950165" radius="20000.000000000000000">1328.900553980092127 123.129999999993046</CircCurve>
+					<CircCurve length="353.605989589521869" radius="12999.999999999998181">1759.400553716403010 128.079999999996801</CircCurve>
+					<CircCurve length="282.653332334471543" radius="18000.000000000000000">2197.480407980778182 121.200000000002049</CircCurve>
+					<PVI>2651.675407981780609 121.200000000000003</PVI>
+				</ProfAlign>
+			</Profile>
+			<Cant name="ORIVESI-HAAPAMAKI_270-273/066" gauge="1.524000000000000">
+				<CantStation station="0.000000000000000" appliedCant="0.000" speed="130.000" curvature="ccw"/>
+				<CantStation station="1091.152466919762901" appliedCant="0.000" speed="130.000" curvature="ccw" transitionType="clothoid"/>
+				<CantStation station="1171.152466912172940" appliedCant="0.000" cantDeficiency="0.139" speed="130.000" curvature="ccw"/>
+				<CantStation station="1684.461868492732719" appliedCant="0.000" speed="130.000" curvature="ccw" transitionType="clothoid"/>
+				<CantStation station="1764.461868485142759" appliedCant="0.000" speed="130.000" curvature="ccw"/>
+				<CantStation station="1919.410017335578914" appliedCant="0.000" speed="130.000" curvature="cw" transitionType="clothoid"/>
+				<CantStation station="2009.410017327220203" appliedCant="0.000" cantDeficiency="0.142" speed="130.000" curvature="cw"/>
+				<CantStation station="2245.368290310112570" appliedCant="0.000" speed="130.000" curvature="cw" transitionType="clothoid"/>
+				<CantStation station="2335.368290301753859" appliedCant="0.000" speed="130.000" curvature="cw"/>
+				<CantStation station="2651.675407981480475" appliedCant="0.000" speed="130.000" curvature="cw"/>
+			</Cant>
+		</Alignment>
+	</Alignments>
+</LandXML>
