@@ -19,6 +19,7 @@ The following tables lists the entities that shall be present in the dataset in 
 
 | Name | Type                              | DistanceAlong | Superelevation | Side  | TransitionSuperelevation |
 | ---- | --------------------------------- | ------------- | -------------- | ----- | ------------------------ |
+| SE0  | IfcAnnotation/SUPERELEVATIONEVENT | 298,82        | 0,00           | BOTH  |                          |
 | SE1  | IfcAnnotation/SUPERELEVATIONEVENT | 301,82        | 0,00           | BOTH  |                          |
 | SE2  | IfcAnnotation/SUPERELEVATIONEVENT | 331,82        | 0,03           | LEFT  | LINEAR                   |
 | SE3  | IfcAnnotation/SUPERELEVATIONEVENT | 331,82        | -0,03          | RIGHT | LINEAR                   |
@@ -35,7 +36,8 @@ The following tables lists the entities that shall be present in the dataset in 
 
 | Name | Type                     | DistanceAlong | NominalWidth | Side  | TransitionWidth |
 | ---- | ------------------------ | ------------- | ------------ | ----- | --------------- |
-| WE1  | IfcAnnotation/WIDTHEVENT | 301,82        | 3,4          | BOTH  |                 |
+| WE0  | IfcAnnotation/WIDTHEVENT | 298,82        | 3,0          | BOTH  |                 |
+| WE1  | IfcAnnotation/WIDTHEVENT | 301,82        | 3,4          | BOTH  | CONST           |
 | WE2  | IfcAnnotation/WIDTHEVENT | 336,73        | 3,7          | LEFT  | LINEAR          |
 | WE3  | IfcAnnotation/WIDTHEVENT | 336,73        | 3,6          | RIGHT | LINEAR          |
 | WE4  | IfcAnnotation/WIDTHEVENT | 503,00        | 3,7          | LEFT  |                 |

@@ -16,6 +16,7 @@ The following tables lists the entities that shall be present in the dataset in 
 
 | Name | Type                         | DistanceAlong | Superelevation | Side  | TransitionSuperelevation |
 | ---- | ---------------------------- | ------------- | -------------- | ----- | ------------------------ |
+| SE0  | IfcAnnotation/SUPERELEVATION | 298,82        | 0,00           | BOTH  |                          |
 | SE1  | IfcAnnotation/SUPERELEVATION | 301,82        | 0,00           | BOTH  |                          |
 | SE2  | IfcAnnotation/SUPERELEVATION | 331,82        | 0,03           | LEFT  | LINEAR                   |
 | SE3  | IfcAnnotation/SUPERELEVATION | 331,82        | -0,03          | RIGHT | LINEAR                   |

@@ -16,7 +16,7 @@ With these instructions the infrastructure (e.g. Road) alignment exchange is est
 | Horizontal layout            | Straight Line, Circular Arc           |
 | Vertical layout              | Straight Line, Circular Arc           |
 | Geometric representation     | IfcCompositeCurve, IfcGradientCurve   |
-| Superelevation               | 11  IfcAnnotation/SUPERELEVATIONEVENT |
+| Superelevation               | 12  IfcAnnotation/SUPERELEVATIONEVENT |
 | Width                        | 0                                     |
 | IFC reference file available | Yes                                   |
 
@@ -45,7 +45,6 @@ These entities represent a test-specific subset of the wider AbRV_Ex exchange an
     - *IfcMapConversion*
     - *IfcProjectedCRS*
     - *IfcUnitAssignment*
-
   - Alignment
     - *IfcAlignment*
     - *IfcAlignmentHorizontal*
@@ -57,9 +56,7 @@ These entities represent a test-specific subset of the wider AbRV_Ex exchange an
     - *IfcGradientCurve*
     - *IfcCurveSegment*
     - *IfcLine*
-    - *IfcClothoid*
     - *IfcCircle*
-
 - For this test instruction:
   - *IfcAnnotation*
   - *IfcPropertySet*
@@ -100,7 +97,7 @@ Test instructions are defined with a modular approach to reduce repetition of va
 
 | TI Code                                                      | Test Instruction Title          | Comments                                                     |
 | ------------------------------------------------------------ | ------------------------------- | ------------------------------------------------------------ |
-| [**IFC4x3_AbRV-E1a-ALIN**](https://github.com/bSI-InfraRoom/MVD-Infra-Test-Instructions/blob/develop/E1a-ARSE/ALIN) | Alignment Infrastructure Curves | Including all dependencies, i.e. E0_SSRD, E0_SSSI and E0_MSTP |
+| [**IFC4x3_AbRV-E1a-ALIN06**](https://github.com/bSI-InfraRoom/MVD-Infra-Test-Instructions/blob/develop/E1a-ARSE/ALIN06) | Alignment Infrastructure Curves | Including all dependencies, i.e. E0_SSRD, E0_SSSI and E0_MSTP |
 
 </details>
 
@@ -117,7 +114,7 @@ The following itemised restrictions and constraints shall be placed on IFC Entit
 
 SE_00: Superelevation structure is verified
 
->1. The dataset shall contain 11 superelevation event instances, each represented by an `IfcAnnotation` with `PredefinedType=.SUPERELEVATIONEVENT.`
+>1. The dataset shall contain 12 superelevation event instances, each represented by an `IfcAnnotation` with `PredefinedType=.SUPERELEVATIONEVENT.`
 >2. Each superelevation event shall have an associated `IfcLinearPlacement` relative to the alignment curve according to CT Product Linear Placement at the specified locations
 >3. Each superelevation event shall have an associated Property set with the name `Pset_Superelevation` according to CT Property sets For Objects
 >4. Each `Pset_Superelevation` shall have properties `Side`, `Superelevation` and `TransitionSuperelevation` set to the specified values.
@@ -159,8 +156,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 #### Imports
 | **TI Code**           | **Criteria Codes** | *COMMENT**                                                   |
 | --------------------- | ------------------ | ------------------------------------------------------------ |
-| IFC4.3AbRV_E0_MSTP    | ALL CRITERIA       | As outlined in the dataset [Imported Entities Table](Dataset/README.md#Imported-Entities-Table) |
-| IFC4.3AbRV_E1a_ALIN06 | ALL CRITERIA       | As outlined in the ALIN06 test instruction                   |
+| IFC4.3AbRV_E1a_ALIN06 | ALL CRITERIA       | As outlined in the ALIN06 test instruction including its dependencies |
 
 
 #### General
@@ -176,7 +172,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 | **ID**  | **CRITERIA**                                                 | **VALUE**                                      | **COMMENT** |
 | ------- | ------------------------------------------------------------ | ---------------------------------------------- | ----------- |
-| ALSE_01 | Superelevation events contained in file                      | 11                                             |             |
+| ALSE_01 | Superelevation events contained in file                      | 12                                             |             |
 | ALSE_02 | Each superelevation event has a linear placement at the specified location | See [Dataset description](./Dataset/README.md) |             |
 | ALSE_03 | Each superelevation event has a Pset_Superelevation attached with the correct property values assigned | See [Dataset description](./Dataset/README.md) |             |
 
