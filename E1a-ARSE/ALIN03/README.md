@@ -1,37 +1,22 @@
 # Test Instruction
 
-| Documentation Code  | Title                           | Exchange Code | Test Code | Author        | Data Owner | Version | Date       |
-| ------------------- | ------------------------------- | ------------- | --------- | ------------- | ---------- | ------- | ---------- |
-| IFC4.3AbRV_E1a_ALIN | Alignment Infrastructure Curves | E1a           | ALIN      | Lars Wikström | FTIA?      | 1.0     | 07.01.2022 |
+| Documentation Code    | Title                           | Exchange Code | Test Code | Author        | Data Owner | Version | Date       |
+| --------------------- | ------------------------------- | ------------- | --------- | ------------- | ---------- | ------- | ---------- |
+| IFC4.3AbRV_E1a_ALIN03 | Alignment Infrastructure Curves | E1a           | ALIN03    | Lars Wikström | FTIA?      | 1.0     | 07.01.2022 |
 
 
 ## Summary (Intent)
 
-*Include a short description of the test case. This description should include a summary of the capabilities and data representations being tested by the defined data set.*
+With these instructions the infrastructure (e.g. Road) alignment exchange is established. This test instruction use the same alignment definition as [ALIN06](../ALIN05) and adds a geometric definition in the shape of a 3D polyline.
 
-With these instructions the infrastructure (e.g. Road) alignment exchange is established.
-This includes basic alignment geometry featuring the common layout:
-
-- horizontal
-- vertical
-
-The valid geometry segment types for horizontal are the following:
-
-- Arc
-- Clothoid
-- Linear
-- *Check if other transition curves are being used*
-
-The valid geometry segment types for vertical:
-
-- Linear
-- Circular Arc 
-- Parabolic Arc
-- *Check if there are cases with transition curves (don't think that there are)*
-
-...
-
-We could use the alignment geometry from [MCON-2](https://github.com/bSI-InfraRoom/IFC-infra-unit-test/tree/main/MCON-2). However, that would need elaboration (there are no clothoids and no parabolic arcs).
+| Info                         |                             |
+| ---------------------------- | --------------------------- |
+| Number of alignment(s)       | 1                           |
+| Properties of segments       | no                          |
+| Horizontal layout            | Straight Line, Circular Arc |
+| Vertical layout              | Straight Line, Circular Arc |
+| Geometric representation     | IfcPolyline                 |
+| IFC reference file available | Yes                         |
 
 The [Expected Results](#Expected-Results) section lists the material that will be used to assess the fulfilment of capabilities.
 
@@ -45,35 +30,31 @@ The Test instruction addresses the import and export of the following IFC Entiti
 :construction: under construction :construction:
 
 <details><summary>IFC Entities</summary>
-
 These entities represent a test-specific subset of the wider AbRV_Ex exchange and the overall AbRV MVD. **The scope of the test shall not be used as a definitive scope of the exchange, or of the entire MVD.**
 
-- *IfcAlignment*
-- *IfcAlignmentHorizontal*
-- *IfcAlignmentVertical*
-- *IfcAlignmentSegment*
-- *IfcAlignmentHorizontalSegment*
-- *IfcAlignmentVerticalSegment*
-- *IfcAxis2PlacementLinear*
-- *IfcAxis2Placement2D*
-- *IfcAxis2Placement3D*
-- *IfcCircle*
-- *IfcClothoid*
-- *IfcCompositeCurve*
-- *IfcCurveSegment*
-- *IfcLine*
-- *IfcLinearPlacement*
-- *IfcLocalPlacement*
-- *IfcGeometricRepresentationContext*
-- *IfcGeometricRepresentationSubContext*
-- *IfcGradientCurve*
-- *IfcMapConversion*
-- *IfcPolyline*
-- *IfcProject*
-- *IfcProjectedCRS*
-- *IfcProductDefinitionShape*
-- *IfcSite*
-- *IfcShapeRepresentation*
+- Inherited from imported tests
+
+  - Model setup
+    - IfcSite
+    - IfcRoad
+    - IfcRepresentationContext
+    - IfcMapConversion
+    - IfcProjectedCRS
+    - IfcUnitAssignment
+
+- For this test instruction
+
+  - Alignment
+
+    - *IfcAlignment*
+    - *IfcAlignmentHorizontal*
+    - *IfcAlignmentVertical*
+    - *IfcAlignmentSegment*
+    - *IfcAlignmentHorizontalSegment*
+    - *IfcAlignmentVerticalSegment*
+
+    - *IfcPolyline*
+
 
 </details>
 
@@ -81,11 +62,17 @@ These entities represent a test-specific subset of the wider AbRV_Ex exchange an
 
 These concept templates represent a test-specific subset of the wider AbRV_Ex exchange and the overall AbRV MVD, that must be correctly exported to meet the validation criteria. **The scope of the test shall not be used as a definitive scope of the exchange, or of the entire MVD.**
 
-- *Alignment Layout*
-- *Alignment Geometry*
-- *Alignment Geometry Gradient*
-- *Project Global Positioning*
-- *Spatial Containment*
+- Inherited from imported tests:
+  - *Project Units*
+  - *Project Representation Context*
+  - *Project Global Positioning*
+  - *Spatial Decomposition*
+  - *Spatial Composition*
+  - *Spatial Container*
+  - *Project Global Positioning*
+- For this test instruction
+  - *Alignment Decomposition*
+  - *Alignment Geometry*
 
 </details>
 
@@ -108,16 +95,38 @@ The following itemised restrictions and constraints shall be placed on IFC Entit
 :construction: under construction :construction:
 
 <details><summary>Semantic Usages, Constraints & Logic</summary>
-
 The following itemised Usages, Constraints & Logic are normative entries within the AbRV MVD and MUST be satisfied to meet the defined validation criteria
 
-- IfcSomething
-    - *Constraint*
+| **ID**  | **CRITERIA**                                  | **VALUE**                           | **COMMENT** |
+| ------- | --------------------------------------------- | ----------------------------------- | ----------- |
+| ALIG_00 | Alignment layout structure is verified        | See below for further specification |             |
+| SITE_00 | Alignment shall always be contained in a Site | na                                  |             |
+
+ALIG_00: Alignment layout structure is verified
+
+> 1. Each `IfcAlignment` must nest exactly 1 `IfcAlignmentHorizontal`
+> 2. Each `IfcAlignment` must nest at most 1 `IfcAlignmentVertical`
+> 3. Each `IfcAlignmentHorizontal` must be nested only by 1 `IfcAlignment`
+> 4. Each `IfcAlignmentVertical` must be nested only by 1 `IfcAlignment`
+> 5. Each `IfcAlignment` must nest only `IfcAlignmentHorizontal`, or `IfcAlignmentVertical`
+> 6. Each `IfcAlignmentHorizontal` must nest only `IfcAlignmentHorizontalSegment`
+> 7. Each `IfcAlignmentVertical` must nest only `IfcAlignmentVerticalSegment`
+> 8. Each `IfcAlignmentHorizontalSegment` must be nested only by 1 `IfcAlignmentHorizontal`
+> 9. Each `IfcAlignmentVerticalSegment` must be nested only by 1 `IfcAlignmentVertical`
 
 </details>
 
 <details><summary>Model Geometry</summary>
 The Test case requires the following additional checks related to Model Geometry:
+
+| **ID**  | **CRITERIA**                                   | **VALUE**                           | **COMMENT** |
+| ------- | ---------------------------------------------- | ----------------------------------- | ----------- |
+| ALIG_01 | Alignment geometric representation is verified | See below for further specification |             |
+
+
+> 1. Each `IfcAlignment` shall have one Representation with RepresentationIdentifier="Axis" and RepresentationType="Curve3D" referencing 1 `IfcPolyline`
+> 1. Geometric representations shall correspond to the semantic definitions with a tolerance of xxxx.
+
 
 - *Constraint*
 
@@ -163,13 +172,30 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 </details>
 
-### Some Concept Group
+### Road alignment
 
 <details><summary>Click to expand</summary>
-Criteria around the representation of 'Some Concept'
 
-| **ID**  | **CRITERIA**                                        | **VALUE**                                | **COMMENT** |
-|---------|-----------------------------------------------------|------------------------------------------|-------------|
-| XXXX_01 | A Criteria to follow                               | its expected value or outcome            |             |
+
+| **ID**  | **CRITERIA**                                                 | **VALUE**                                      | **COMMENT** |
+| ------- | ------------------------------------------------------------ | ---------------------------------------------- | ----------- |
+| ALIG_01 | Alignments contained in file                                 | 1                                              |             |
+| ALIG_02 | Components for Alignment                                     | 1 horizontal, 1 vertical                       |             |
+| ALIG_03 | The horizontal (H) layout matches exactly the layout specified in the [Dataset description](./Dataset/README.md) | See [Dataset description](./Dataset/README.md) |             |
+| ALIG_04 | The vertical (V) layout matches exactly the layout specified in the [Dataset description](./Dataset/README.md) | See [Dataset description](./Dataset/README.md) |             |
+| ALIG_05 | The IfcAlignment shall have one Representation of type IfcProductShapeRepresentation having one Representation of type IfcShapeRepresentation having RepresentationIdentifier="Axis" and RepresentationType="Curve3D" and having one Item of type IfcPolyline. |                                                |             |
+| ALIG_06 | The IfcPolyline shall match the semantic definitions with a tolerance of xxx |                                                |             |
+
+</details>
+
+### Spatial containment
+
+<details><summary>Click to expand</summary>
+> **Acceptance criteria**: For the **Spatial containment** capability, the validation procedure must verify that a Spatial Element of the requested type contains (via `IfcRelContainedInSpatialStructure`) exactly a given number of Elements of the requested type, no more and no less.
+
+
+| Spatial Element | Spatial Element Type | Minimum | Maximum | Element      | Element Type   |
+| --------------- | -------------------- | ------- | ------- | ------------ | -------------- |
+| IfcSite         |                      | 1       | 1       | IfcAlignment | Road alignment |
 
 </details>

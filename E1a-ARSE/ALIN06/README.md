@@ -7,16 +7,16 @@
 
 ## Summary (Intent)
 
-With these instructions the infrastructure (e.g. Road) alignment exchange is established. This test instruction use the same alignment definition as [ALIN02](../ALIN02) and adds a geometric definition.
+With these instructions the infrastructure (e.g. Road) alignment exchange is established.
 
-| Info                         |                                       |
-| ---------------------------- | ------------------------------------- |
-| Number of alignment(s)       | 1                                     |
-| Properties of segments       | no                                    |
-| Horizontal layout            | Straight Line, Circular Arc, Clothoid |
-| Vertical layout              | Straight Line, Circular Arc           |
-| Geometric representation     | IfcCompositeCurve, IfcGradientCurve   |
-| IFC reference file available | Yes                                   |
+| Info                         |                                     |
+| ---------------------------- | ----------------------------------- |
+| Number of alignment(s)       | 1                                   |
+| Properties of segments       | no                                  |
+| Horizontal layout            | Straight Line, Circular Arc         |
+| Vertical layout              | Straight Line, Circular Arc         |
+| Geometric representation     | IfcCompositeCurve, IfcGradientCurve |
+| IFC reference file available | Yes                                 |
 
 The [Expected Results](#Expected-Results) section lists the material that will be used to assess the fulfilment of capabilities.
 
@@ -40,7 +40,6 @@ These entities represent a test-specific subset of the wider AbRV_Ex exchange an
   - IfcMapConversion
   - IfcProjectedCRS
   - IfcUnitAssignment
-
 - Alignment
   - *IfcAlignment*
   - *IfcAlignmentHorizontal*
@@ -52,7 +51,6 @@ These entities represent a test-specific subset of the wider AbRV_Ex exchange an
   - IfcGradientCurve
   - IfcCurveSegment
   - IfcLine
-  - IfcClothoid
   - IfcCircle
 
 
