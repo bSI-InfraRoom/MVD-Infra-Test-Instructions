@@ -84,7 +84,7 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
 - For this test instruction:
   - *Product Linear Placement*
   - *Property Sets for Objects*
-
+  - Product Relative Positioning
 
 </details>
 
@@ -116,6 +116,7 @@ SE_00: Superelevation structure is verified
 
 >1. The dataset shall contain 12 superelevation event instances, each represented by an `IfcAnnotation` with `PredefinedType=.SUPERELEVATIONEVENT.`
 >2. Each superelevation event shall have an associated `IfcLinearPlacement` relative to the alignment curve according to CT Product Linear Placement at the specified locations
+>2. Each superelevation event shall be positioned relative to the `IfcAlignment` using `IfcRelPositions` according to CT Product Relative Positioning
 >3. Each superelevation event shall have an associated Property set with the name `Pset_Superelevation` according to CT Property sets For Objects
 >4. Each `Pset_Superelevation` shall have properties `Side`, `Superelevation` and `TransitionSuperelevation` set to the specified values.
 
@@ -175,8 +176,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 | ALSE_01 | Superelevation events contained in file                      | 12                                             |             |
 | ALSE_02 | Each superelevation event has a linear placement at the specified location | See [Dataset description](./Dataset/README.md) |             |
 | ALSE_03 | Each superelevation event has a Pset_Superelevation attached with the correct property values assigned | See [Dataset description](./Dataset/README.md) |             |
-
-**Question: Shall the events be nested to the alignment?**
+| ALSE_04 | Each superelevation event is associated to the IfcAlignment using IfcRelPositions relationship |                                                |             |
 
 </details>
 
