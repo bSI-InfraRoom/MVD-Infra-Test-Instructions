@@ -5,7 +5,7 @@ The following occurrence variations need to be checked and certified in relation
 - IfcAlignmentVerticalSegment - *includes CONSTANTGRADIENT and CIRCULARARC*
 - IfcAlignmentCantSegment - *includes CONSTANTCANT and LINEARTRANSITION*
 
-## Entity
+## Entities Table
 
 - IfcProject
 - IfcOwnerHistory
