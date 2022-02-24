@@ -7,7 +7,7 @@
 
 ## Summary (Intent)
 
-With these instructions the infrastructure (e.g. Road) alignment exchange is established. This test instruction use the same alignment definition as [ALIN06](../ALIN05) and adds a geometric definition in the shape of a 3D polyline.
+With these instructions the infrastructure (e.g. Road) alignment exchange is established. This test instruction use the same alignment definition as [ALIN06](../ALIN06) and adds a geometric definition in the shape of a 3D polyline and a 2D polyline.
 
 | Info                         |                             |
 | ---------------------------- | --------------------------- |
@@ -35,12 +35,12 @@ These entities represent a test-specific subset of the wider AbRV_Ex exchange an
 - Inherited from imported tests
 
   - Model setup
-    - IfcSite
-    - IfcRoad
-    - IfcRepresentationContext
-    - IfcMapConversion
-    - IfcProjectedCRS
-    - IfcUnitAssignment
+    - *IfcSite*
+    - *IfcRoad*
+    - *IfcRepresentationContext*
+    - *IfcMapConversion*
+    - *IfcProjectedCRS*
+    - *IfcUnitAssignment*
 
 - For this test instruction
 
@@ -124,8 +124,13 @@ The Test case requires the following additional checks related to Model Geometry
 | ALIG_01 | Alignment geometric representation is verified | See below for further specification |             |
 
 
-> 1. Each `IfcAlignment` shall have one Representation with RepresentationIdentifier="Axis" and RepresentationType="Curve3D" referencing 1 `IfcPolyline`
-> 1. Geometric representations shall correspond to the semantic definitions with a tolerance of xxxx.
+> 1. Each `IfcAlignment` shall have one Representation with RepresentationIdentifier="Axis" and RepresentationType="Curve3D" referencing an `IfcPolyline`. The polyline may be generated as below:
+>    1. Line segments: each as one segment in the polyline. Segment start and end points must match exactly the horizontal layout in the Dataset description. 
+>    1. Curve segments: each as at least two equal length segments in the polyline. Segment start and end points must match exactly the curve start, end and intermediate point(s) according to the horizontal layout in the Dataset description. 
+>    1. The z-value at each point shall match the z value according to the vertical layout in the Dataset description.
+> 1. Each `IfcAlignmentHorizontal` shall have one Representation with RepresentationIdentifier="Axis" and RepresentationType="Curve2D" referencing an `IfcPolyline`. The polyline may be generated as below:
+>    1. Line segments: each as one segment in the polyline. Segment start and end points must match exactly the horizontal layout in the Dataset description.
+>    1. Curve segments: each as at least two equal length segments in the polyline. Segment start and end points must match exactly the curve start, end and intermediate point(s) according to the horizontal layout in the Dataset description.
 
 
 - *Constraint*
@@ -141,8 +146,9 @@ For certification of capabilities the only source will be:
 - n. 1 IFC file containing the information as requested. The file shall be named using the following syntax: `MVDCode`-`ExchangeCode`-`TestCode`-`SoftwareVendor`.`ifc` (Example: `IFC4.3_AbRV-E2b-ASTPC-AmazingSoft.ifc`)
 
 Considering the aim of this test, other **optional** results, not subject to the bSI certification process, yet usefull to illustrate test results are:
-- Screen-shot of ...
-- CSV export of ...
+- Screen-shot of a planar view and a "long section" similar to the provided examples
+- CSV export of the horizontal and vertical alignment segment parameters
+- CSV or e.g. GPX export of the polyline geometries
 
 ---
 
@@ -183,8 +189,8 @@ Considering the aim of this test, other **optional** results, not subject to the
 | ALIG_02 | Components for Alignment                                     | 1 horizontal, 1 vertical                       |             |
 | ALIG_03 | The horizontal (H) layout matches exactly the layout specified in the [Dataset description](./Dataset/README.md) | See [Dataset description](./Dataset/README.md) |             |
 | ALIG_04 | The vertical (V) layout matches exactly the layout specified in the [Dataset description](./Dataset/README.md) | See [Dataset description](./Dataset/README.md) |             |
-| ALIG_05 | The IfcAlignment shall have one Representation of type IfcProductShapeRepresentation having one Representation of type IfcShapeRepresentation having RepresentationIdentifier="Axis" and RepresentationType="Curve3D" and having one Item of type IfcPolyline. |                                                |             |
-| ALIG_06 | The IfcPolyline shall match the semantic definitions with a tolerance of xxx |                                                |             |
+| ALIG_05 | The IfcAlignment shall have one Representation of type IfcProductShapeRepresentation having one Representation of type IfcShapeRepresentation having RepresentationIdentifier="Axis" and RepresentationType="Curve3D" and having one Item of type IfcPolyline.<br />  Line segments: each as one segment in the polyline. Segment start and end points must match exactly the horizontal layout in the Dataset description.  <br />Curve segments: each as at least two equal length segments in the polyline. Segment start and end points must match exactly the curve start, end and intermediate point(s) according to the horizontal layout in the Dataset description.  The z-value at each point shall match the z value according to the vertical layout in the Dataset description. |                                                |             |
+| ALIG_06 | The IfcAlignmentHorizontal shall have one Representation of type IfcProductShapeRepresentation having one Representation of type IfcShapeRepresentation having RepresentationIdentifier="Axis" and RepresentationType="Curve2D" and having one Item of type IfcPolyline.<br />  Line segments: each as one segment in the polyline. Segment start and end points must match exactly the horizontal layout in the Dataset description. <br />Curve segments: each as at least two equal length segments in the polyline. Segment start and end points must match exactly the curve start, end and intermediate point(s) according to the horizontal layout in the Dataset description. |                                                |             |
 
 </details>
 
@@ -199,3 +205,25 @@ Considering the aim of this test, other **optional** results, not subject to the
 | IfcSite         |                      | 1       | 1       | IfcAlignment | Road alignment |
 
 </details>
+
+### Project global positioning
+
+<details><summary>Click to expand</summary>
+> **Acceptance criteria**: For the **Project global positioning** capability, the validation procedure must verify that there is an IfcMapConversion with the given parameters associated with the IfcGeometricRepresentationContext (via `HasCoordinateOperation`). Furthermore, the IfcMapConversion shall have an association with an IfcProjectedCRS (via `HasCoordinateOperation`) with the given parameters.
+
+
+
+| Element          | Attribute        | Value     | Comment |
+| ---------------- | ---------------- | --------- | ------- |
+| IfcMapConversion | Eastings         | 24525000  |         |
+| IfcMapConversion | Northings        | 6876000   |         |
+| IfcMapConversion | OrthogonalHeight | 0         |         |
+| IfcMapConversion | XAxisAbscissa    | 1         |         |
+| IfcMapConversion | XAxisOrdinate    | 0         |         |
+| IfcMapConversion | Scale            | 1         |         |
+| IfcProjectedCRS  | Name             | EPSG:3878 |         |
+| IfcProjectedCRS  | GeodeticDatum    | EPSG:3878 |         |
+| IfcProjectedCRS  | VerticalDatum    | EPSG:3900 |         |
+
+</details>
+

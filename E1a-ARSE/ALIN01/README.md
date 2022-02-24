@@ -35,12 +35,12 @@ These entities represent a test-specific subset of the wider AbRV_Ex exchange an
 
 - Inherited from imported tests
   - Model setup
-    - IfcSite
-    - IfcRoad
-    - IfcRepresentationContext
-    - IfcMapConversion
-    - IfcProjectedCRS
-    - IfcUnitAssignment
+    - *IfcSite*
+    - *IfcRoad*
+    - *IfcRepresentationContext*
+    - *IfcMapConversion*
+    - *IfcProjectedCRS*
+    - *IfcUnitAssignment*
 
 - For this test instruction
   - Alignment
@@ -69,7 +69,7 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
   - *Project Global Positioning*
 - For this test instruction
   - *Alignment Decomposition*
-
+  - *Spatial Containment*
 
 </details>
 
@@ -179,10 +179,13 @@ Considering the aim of this test, other **optional** results, not subject to the
 | --------------- | -------------------- | ------- | ------- | ------------ | -------------- |
 | IfcSite         |                      | 1       | 1       | IfcAlignment | Road alignment |
 
+</details>
+
 ### Project global positioning
 
 <details><summary>Click to expand</summary>
-> **Acceptance criteria**: For the **Spatial containment** capability, the validation procedure must verify that a Spatial Element of the requested type contains (via `IfcRelContainedInSpatialStructure`) exactly a given number of Elements of the requested type, no more and no less.
+> **Acceptance criteria**: For the **Project global positioning** capability, the validation procedure must verify that there is an IfcMapConversion with the given parameters associated with the IfcGeometricRepresentationContext (via `HasCoordinateOperation`). Furthermore, the IfcMapConversion shall have an association with an IfcProjectedCRS (via `HasCoordinateOperation`) with the given parameters.
+
 
 | Element          | Attribute        | Value     | Comment |
 | ---------------- | ---------------- | --------- | ------- |

@@ -32,13 +32,13 @@ Horizontal segments nested into AH1 in the following order:
 
 | Name | Type                          | StartPointX | StartPointY | StartDirection | StartRadius | EndRadius | Length     | Type_1      |
 | ---- | ----------------------------- | ----------- | ----------- | -------------- | ----------- | --------- | ---------- | ----------- |
-| H1   | IfcAlignmentHorizontalSegment | 24525276,87 | 6876935,549 | 0,001724622    | 0           | 0         | 229,405681 | LINE        |
-| H2   | IfcAlignmentHorizontalSegment | 24525506,27 | 6876935,945 | 0,00172463     | -110        | -110      | 15,594208  | CIRCULARARC |
-| H3   | IfcAlignmentHorizontalSegment | 24525521,82 | 6876934,868 | 6,143144395    | 0           | 0         | 91,725737  | LINE        |
-| H4   | IfcAlignmentHorizontalSegment | 24525612,64 | 6876922,065 | 6,143144399    | -110        | -110      | 120,80482  | CIRCULARARC |
-| H5   | IfcAlignmentHorizontalSegment | 24525701,26 | 6876849,05  | 5,044918731    | 0           | 0         | 25,538554  | LINE        |
-| H6   | IfcAlignmentHorizontalSegment | 24525709,6  | 6876824,91  | 5,044918761    | 110         | 110       | 49,633636  | CIRCULARARC |
-| H7   | IfcAlignmentHorizontalSegment | 24525735,66 | 6876783,165 | 5,49613363     | 0           | 0         | 83,739856  | LINE        |
+| H1   | IfcAlignmentHorizontalSegment | 276,867419  | 935,549267  | 0,001724622    | 0           | 0         | 229,405681 | LINE        |
+| H2   | IfcAlignmentHorizontalSegment | 506,272759  | 935,944905  | 0,00172463     | -110        | -110      | 15,594208  | CIRCULARARC |
+| H3   | IfcAlignmentHorizontalSegment | 521,816666  | 934,8682    | 6,143144395    | 0           | 0         | 91,725737  | LINE        |
+| H4   | IfcAlignmentHorizontalSegment | 612,644434  | 922,064789  | 6,143144399    | -110        | -110      | 120,80482  | CIRCULARARC |
+| H5   | IfcAlignmentHorizontalSegment | 701,264387  | 849,049537  | 5,044918731    | 0           | 0         | 25,538554  | LINE        |
+| H6   | IfcAlignmentHorizontalSegment | 709,601071  | 824,909996  | 5,044918761    | 110         | 110       | 49,633636  | CIRCULARARC |
+| H7   | IfcAlignmentHorizontalSegment | 735,66497   | 783,164849  | 5,49613363     | 0           | 0         | 83,739856  | LINE        |
 
 Vertical segments nested into AV1 in the following order:
 

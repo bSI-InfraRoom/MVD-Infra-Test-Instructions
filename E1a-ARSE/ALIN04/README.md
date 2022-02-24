@@ -35,12 +35,12 @@ These entities represent a test-specific subset of the wider AbRV_Ex exchange an
 
 - Inherited from imported tests
   - Model setup
-    - IfcSite
-    - IfcRoad
-    - IfcRepresentationContext
-    - IfcMapConversion
-    - IfcProjectedCRS
-    - IfcUnitAssignment
+    - *IfcSite*
+    - *IfcRoad*
+    - *IfcRepresentationContext*
+    - *IfcMapConversion*
+    - *IfcProjectedCRS*
+    - *IfcUnitAssignment*
 - For this test instruction
   - Alignment
     - *IfcAlignment*
@@ -73,9 +73,7 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
 - For this test instruction
   - *Alignment Decomposition*
   - *Alignment Geometry Gradient*
-  - *Project Global Positioning*
   - *Spatial containment*
-
 
 </details>
 
@@ -131,7 +129,7 @@ The Test case requires the following additional checks related to Model Geometry
 
 > 1. Each `IfcAlignment` shall have one Representation with RepresentationIdentifier="Axis" and RepresentationType="Curve3D" referencing 1 `IfcGradientCurve`
 > 1. Each `IfcAlignmentHorizontal` shall have one Representation with RepresentationIdentifier="Axis" and RepresentationType="Curve2D" referencing 1 `IfcCompositeCurve`
-> 1. Each `IfcAlignmentVertical` shall have one Representation with RepresentationIdentifier="Axis" and RepresentationType="Curve3D" referencing 1 `IfcGradientCurve`
+> 1. Each `IfcAlignmentVertical` shall have one Representation with RepresentationIdentifier="Axis" and RepresentationType="Curve3D" referencing 1 `IfcGradientCurve` (the same instance as is referred from the owning `IfcAlignment` instance). 
 > 1. Geometric representations shall correspond to the semantic definitions.
 
 </details>
@@ -207,7 +205,8 @@ Considering the aim of this test, other **optional** results, not subject to the
 ### Project global positioning
 
 <details><summary>Click to expand</summary>
-> **Acceptance criteria**: For the **Spatial containment** capability, the validation procedure must verify that a Spatial Element of the requested type contains (via `IfcRelContainedInSpatialStructure`) exactly a given number of Elements of the requested type, no more and no less.
+> **Acceptance criteria**: For the **Project global positioning** capability, the validation procedure must verify that there is an IfcMapConversion with the given parameters associated with the IfcGeometricRepresentationContext (via `HasCoordinateOperation`). Furthermore, the IfcMapConversion shall have an association with an IfcProjectedCRS (via `HasCoordinateOperation`) with the given parameters.
+
 
 
 | Element          | Attribute        | Value     | Comment |

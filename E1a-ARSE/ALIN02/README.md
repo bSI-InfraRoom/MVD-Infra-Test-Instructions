@@ -33,21 +33,22 @@ The Test instruction addresses the import and export of the following IFC Entiti
 
 These entities represent a test-specific subset of the wider AbRV_Ex exchange and the overall AbRV MVD. **The scope of the test shall not be used as a definitive scope of the exchange, or of the entire MVD.**
 
-- Model setup
-  - IfcSite
-  - IfcRoad
-  - IfcRepresentationContext
-  - IfcMapConversion
-  - IfcProjectedCRS
-  - IfcUnitAssignment
-
-- Alignment
-  - *IfcAlignment*
-  - *IfcAlignmentHorizontal*
-  - *IfcAlignmentVertical*
-  - *IfcAlignmentSegment*
-  - *IfcAlignmentHorizontalSegment*
-  - *IfcAlignmentVerticalSegment*
+- Inherited from imported tests
+  - Model setup
+    - *IfcSite*
+    - *IfcRoad*
+    - *IfcRepresentationContext*
+    - *IfcMapConversion*
+    - *IfcProjectedCRS*
+    - *IfcUnitAssignment*
+- For this test instruction
+  - Alignment
+    - *IfcAlignment*
+    - *IfcAlignmentHorizontal*
+    - *IfcAlignmentVertical*
+    - *IfcAlignmentSegment*
+    - *IfcAlignmentHorizontalSegment*
+    - *IfcAlignmentVerticalSegment*
 
 
 </details>
@@ -56,9 +57,17 @@ These entities represent a test-specific subset of the wider AbRV_Ex exchange an
 
 These concept templates represent a test-specific subset of the wider AbRV_Ex exchange and the overall AbRV MVD, that must be correctly exported to meet the validation criteria. **The scope of the test shall not be used as a definitive scope of the exchange, or of the entire MVD.**
 
-- *Alignment Decomposition*
-- *Project Global Positioning*
-- *Spatial Containment*
+- Inherited from imported tests:
+  - *Project Units*
+  - *Project Representation Context*
+  - *Project Global Positioning*
+  - *Spatial Decomposition*
+  - *Spatial Composition*
+  - *Spatial Container*
+  - *Project Global Positioning*
+- For this test instruction
+  - *Alignment Decomposition*
+  - *Spatial Containment*
 
 </details>
 
@@ -167,5 +176,26 @@ Considering the aim of this test, other **optional** results, not subject to the
 | Spatial Element | Spatial Element Type | Minimum | Maximum | Element      | Element Type   |
 | --------------- | -------------------- | ------- | ------- | ------------ | -------------- |
 | IfcSite         |                      | 1       | 1       | IfcAlignment | Road alignment |
+
+</details>
+
+### Project global positioning
+
+<details><summary>Click to expand</summary>
+> **Acceptance criteria**: For the **Project global positioning** capability, the validation procedure must verify that there is an IfcMapConversion with the given parameters associated with the IfcGeometricRepresentationContext (via `HasCoordinateOperation`). Furthermore, the IfcMapConversion shall have an association with an IfcProjectedCRS (via `HasCoordinateOperation`) with the given parameters.
+
+
+
+| Element          | Attribute        | Value     | Comment |
+| ---------------- | ---------------- | --------- | ------- |
+| IfcMapConversion | Eastings         | 0         |         |
+| IfcMapConversion | Northings        | 0         |         |
+| IfcMapConversion | OrthogonalHeight | 0         |         |
+| IfcMapConversion | XAxisAbscissa    | 1         |         |
+| IfcMapConversion | XAxisOrdinate    | 0         |         |
+| IfcMapConversion | Scale            | 1         |         |
+| IfcProjectedCRS  | Name             | EPSG:3011 |         |
+| IfcProjectedCRS  | GeodeticDatum    | SWEREF99  |         |
+| IfcProjectedCRS  | VerticalDatum    | EPSG:5615 |         |
 
 </details>
