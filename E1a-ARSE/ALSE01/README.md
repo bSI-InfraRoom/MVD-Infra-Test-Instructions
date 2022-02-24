@@ -176,7 +176,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 | ALSE_02 | Each superelevation event has a linear placement at the specified location | See [Dataset description](./Dataset/README.md) |             |
 | ALSE_03 | Each superelevation event has a Pset_Superelevation attached with the correct property values assigned | See [Dataset description](./Dataset/README.md) |             |
 
-Question: Shall the events be nested to the alignment?
+**Question: Shall the events be nested to the alignment?**
 
 </details>
 

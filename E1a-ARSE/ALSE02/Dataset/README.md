@@ -49,13 +49,15 @@ The following tables lists the entities that shall be present in the dataset in 
 
 The following Drawings and visualisations describe the test case dataset to be modelled and certified.
 
-| Filename                 | Description                                                  |
-| ------------------------ | ------------------------------------------------------------ |
-| Superelevation and Width | ![image-20220221114609144](C:\Users\lars\Documents\Projekt\IFCInfra\MVD-Infra-Test-Instructions\E1a-ARSE\ALSE02\Dataset\Superelevation and Width.png) |
+| Filename                 | Description                                                |
+| ------------------------ | ---------------------------------------------------------- |
+| Superelevation and Width | ![image-20220221114609144](./Superelevation and Width.png) |
 
 
 ## Supporting files
 
-| Filename | Description |
-| -------- | ----------- |
-|          |             |
+| Filename                                                     | Description                                   |
+| ------------------------------------------------------------ | --------------------------------------------- |
+| [HorizontalAlignmentParameters](./HorizontalAlignmentParameters.csv) | Parameters for the horizontal segments as csv |
+| [VerticalAlignmentParameters](./VerticalAlignmentParameters.csv) | Parameters for the vertical segments as csv   |
+| [LandXML](./TOI-M14334-0000A.xml)                            | LandXML-file representing the alignment       |

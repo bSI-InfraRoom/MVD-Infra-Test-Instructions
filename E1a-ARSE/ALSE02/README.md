@@ -186,6 +186,6 @@ Considering the aim of this test, other **optional** results, not subject to the
 | ALSE_05 | Each width event has a linear placement at the specified location | See [Dataset description](./Dataset/README.md) |             |
 | ALSE_06 | Each width event has a Pset_Width attached with the correct property values assigned | See [Dataset description](./Dataset/README.md) |             |
 
-Question: Shall the events be nested to the alignment?
+**Question: Shall the events be nested to the alignment?**
 
 </details>

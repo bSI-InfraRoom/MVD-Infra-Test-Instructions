@@ -14,32 +14,34 @@ The following tables lists the entities that shall be present in the dataset in 
 
 ´Superelevation events:
 
-| Name | Type                         | DistanceAlong | Superelevation | Side  | TransitionSuperelevation |
-| ---- | ---------------------------- | ------------- | -------------- | ----- | ------------------------ |
-| SE0  | IfcAnnotation/SUPERELEVATION | 298,82        | 0,00           | BOTH  |                          |
-| SE1  | IfcAnnotation/SUPERELEVATION | 301,82        | 0,00           | BOTH  |                          |
-| SE2  | IfcAnnotation/SUPERELEVATION | 331,82        | 0,03           | LEFT  | LINEAR                   |
-| SE3  | IfcAnnotation/SUPERELEVATION | 331,82        | -0,03          | RIGHT | LINEAR                   |
-| SE4  | IfcAnnotation/SUPERELEVATION | 443,00        | 0,03           | LEFT  |                          |
-| SE5  | IfcAnnotation/SUPERELEVATION | 443,00        | -0,03          | RIGHT |                          |
-| SE6  | IfcAnnotation/SUPERELEVATION | 503,00        | -0,03          | LEFT  | LINEAR                   |
-| SE7  | IfcAnnotation/SUPERELEVATION | 503,00        | 0,03           | RIGHT | LINEAR                   |
-| SE8  | IfcAnnotation/SUPERELEVATION | 513,00        | -0,03          | LEFT  |                          |
-| SE9  | IfcAnnotation/SUPERELEVATION | 513,00        | 0,03           | RIGHT |                          |
-| SE10 | IfcAnnotation/SUPERELEVATION | 573,00        | -0,03          | LEFT  |                          |
-| SE11 | IfcAnnotation/SUPERELEVATION | 573,00        | -0,03          | RIGHT | LINEAR                   |
+| Name | Type                              | DistanceAlong | Superelevation | Side  | TransitionSuperelevation |
+| ---- | --------------------------------- | ------------- | -------------- | ----- | ------------------------ |
+| SE0  | IfcAnnotation/SUPERELEVATIONEVENT | 298,82        | 0,00           | BOTH  |                          |
+| SE1  | IfcAnnotation/SUPERELEVATIONEVENT | 301,82        | 0,00           | BOTH  |                          |
+| SE2  | IfcAnnotation/SUPERELEVATIONEVENT | 331,82        | 0,03           | LEFT  | LINEAR                   |
+| SE3  | IfcAnnotation/SUPERELEVATIONEVENT | 331,82        | -0,03          | RIGHT | LINEAR                   |
+| SE4  | IfcAnnotation/SUPERELEVATIONEVENT | 443,00        | 0,03           | LEFT  |                          |
+| SE5  | IfcAnnotation/SUPERELEVATIONEVENT | 443,00        | -0,03          | RIGHT |                          |
+| SE6  | IfcAnnotation/SUPERELEVATIONEVENT | 503,00        | -0,03          | LEFT  | LINEAR                   |
+| SE7  | IfcAnnotation/SUPERELEVATIONEVENT | 503,00        | 0,03           | RIGHT | LINEAR                   |
+| SE8  | IfcAnnotation/SUPERELEVATIONEVENT | 513,00        | -0,03          | LEFT  |                          |
+| SE9  | IfcAnnotation/SUPERELEVATIONEVENT | 513,00        | 0,03           | RIGHT |                          |
+| SE10 | IfcAnnotation/SUPERELEVATIONEVENT | 573,00        | -0,03          | LEFT  |                          |
+| SE11 | IfcAnnotation/SUPERELEVATIONEVENT | 573,00        | -0,03          | RIGHT | LINEAR                   |
 
 ## Drawings (Visualisations)
 
 The following Drawings and visualisations describe the test case dataset to be modelled and certified.
 
-| Filename       | Description                                                  |
-| -------------- | ------------------------------------------------------------ |
-| Superelevation | ![](C:\Users\lars\Documents\Projekt\IFCInfra\MVD-Infra-Test-Instructions\E1a-ARSE\ALSE01\Dataset\Superelevation.png) |
+| Filename       | Description               |
+| -------------- | ------------------------- |
+| Superelevation | ![](./Superelevation.png) |
 
 
 ## Supporting files
 
-| Filename | Description |
-| -------- | ----------- |
-|          |             |
+| Filename                                                     | Description                                   |
+| ------------------------------------------------------------ | --------------------------------------------- |
+| [HorizontalAlignmentParameters](./HorizontalAlignmentParameters.csv) | Parameters for the horizontal segments as csv |
+| [VerticalAlignmentParameters](./VerticalAlignmentParameters.csv) | Parameters for the vertical segments as csv   |
+| [LandXML](./TOI-M14334-0000A.xml)                            | LandXML-file representing the alignment       |
