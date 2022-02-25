@@ -23,31 +23,33 @@ This test case utilises the attached dataset documented by the following drawing
 
 #### Horizontal segments nested into AH1 in the following order:
 
-| Name | Type                          | StartPointX | StartPointY | StartDirection | StartRadius | EndRadius | Length     | Type_1      |
-| ---- | ----------------------------- | ----------- | ----------- | -------------- | ----------- | --------- | ---------- | ----------- |
-| H1   | IfcAlignmentHorizontalSegment | 276,867419  | 935,549267  | 0,001724622    | 0           | 0         | 229,405681 | LINE        |
-| H2   | IfcAlignmentHorizontalSegment | 506,272759  | 935,944905  | 0,00172463     | -110        | -110      | 15,594208  | CIRCULARARC |
-| H3   | IfcAlignmentHorizontalSegment | 521,816666  | 934,8682    | 6,143144395    | 0           | 0         | 91,725737  | LINE        |
-| H4   | IfcAlignmentHorizontalSegment | 612,644434  | 922,064789  | 6,143144399    | -110        | -110      | 120,80482  | CIRCULARARC |
-| H5   | IfcAlignmentHorizontalSegment | 701,264387  | 849,049537  | 5,044918731    | 0           | 0         | 25,538554  | LINE        |
-| H6   | IfcAlignmentHorizontalSegment | 709,601071  | 824,909996  | 5,044918761    | 110         | 110       | 49,633636  | CIRCULARARC |
-| H7   | IfcAlignmentHorizontalSegment | 735,66497   | 783,164849  | 5,49613363     | 0           | 0         | 83,739856  | LINE        |
+| Name | Type                          | StartPointX | StartPointY | StartDirection | StartRadius | EndRadius | Length      | Type_1      |
+| ---- | ----------------------------- | ----------- | ----------- | -------------- | ----------- | --------- | ----------- | ----------- |
+| H1   | IfcAlignmentHorizontalSegment | 1304,078529 | 2487,611348 | 4,207620618    | 0           | 0         | 1091,152467 | LINE        |
+| H2   | IfcAlignmentHorizontalSegment | 776,392063  | 1532,540304 | 4,207620618    | 0           | 1518      | 80          | CLOTHOID    |
+| H3   | IfcAlignmentHorizontalSegment | 738,321388  | 1462,182442 | 4,233696595    | 1518        | 1518      | 513,309402  | CIRCULARARC |
+| H4   | IfcAlignmentHorizontalSegment | 582,796258  | 975,564171  | 4,572119564    | 1518        | 0         | 80          | CLOTHOID    |
+| H5   | IfcAlignmentHorizontalSegment | 573,004982  | 896,168101  | 4,598470026    | 0           | 0         | 154,948149  | LINE        |
+| H6   | IfcAlignmentHorizontalSegment | 555,391605  | 742,224288  | 4,598470026    | 0           | -1486     | 90          | CLOTHOID    |
+| H7   | IfcAlignmentHorizontalSegment | 544,259467  | 652,919107  | 4,568327586    | -1486       | -1486     | 235,958273  | CIRCULARARC |
+| H8   | IfcAlignmentHorizontalSegment | 491,993759  | 423,076296  | 4,409399855    | -1486       | 0         | 90          | CLOTHOID    |
+| H9   | IfcAlignmentHorizontalSegment | 463,412608  | 337,73898   | 4,379117218    | 0           | 0         | 316,307118  | LINE        |
 
 #### Vertical segments nested into AV1 in the following order:
 
 | Name | Type                        | StartDistAlong | HorizontalLength | StartHeight | StartGradient | EndGradient  | Radius | Type_1           |
 | ---- | --------------------------- | -------------- | ---------------- | ----------- | ------------- | ------------ | ------ | ---------------- |
-| V1   | IfcAlignmentVerticalSegment | 135,557        | 10,84246946      | 125,687614  | 0,03416131    | 0,03416131   | 0      | CONSTANTGRADIENT |
-| V2   | IfcAlignmentVerticalSegment | 146,3994695    | 18,11228261      | 126,058007  | 0,03416131    | 0,03416131   | -1300  | CIRCULARARC      |
-| V3   | IfcAlignmentVerticalSegment | 164,5117521    | 40,83305808      | 126,5504044 | 0,020212997   | 0,020212997  | 0      | CONSTANTGRADIENT |
-| V4   | IfcAlignmentVerticalSegment | 205,3448102    | 39,03368133      | 127,3757629 | 0,020212997   | 0,020212997  | -1300  | CIRCULARARC      |
-| V5   | IfcAlignmentVerticalSegment | 244,3784915    | 50,17607352      | 127,5786042 | -0,009817512  | -0,009817512 | 0      | CONSTANTGRADIENT |
-| V6   | IfcAlignmentVerticalSegment | 294,554565     | 11,522986        | 127,086     | 0             | 0            | 0      | CONSTANTGRADIENT |
-| V7   | IfcAlignmentVerticalSegment | 306,077551     | 192,5126892      | 127,086     | -0,003529811  | -0,003529811 | 0      | CONSTANTGRADIENT |
-| V8   | IfcAlignmentVerticalSegment | 498,5902402    | 15,27528964      | 126,4064666 | -0,003529811  | -0,003529811 | -5000  | CIRCULARARC      |
-| V9   | IfcAlignmentVerticalSegment | 513,8655298    | 78,35926585      | 126,3292136 | -0,006584989  | -0,006584989 | 0      | CONSTANTGRADIENT |
-| V10  | IfcAlignmentVerticalSegment | 592,2247957    | 10,41034226      | 125,8132186 | -0,006584989  | -0,006584989 | 1300   | CIRCULARARC      |
-| V11  | IfcAlignmentVerticalSegment | 602,6351379    | 13,80735508      | 125,7863506 | 0,00142311    | 0,00142311   | 0      | CONSTANTGRADIENT |
+| V1   | IfcAlignmentVerticalSegment | 0,000407982    | 246,4273892      | 108,082846  | 0,012500014   | 0,012500014  | 0      | CONSTANTGRADIENT |
+| V2   | IfcAlignmentVerticalSegment | 246,4277972    | 95,01277799      | 111,1631917 | 0,012500014   | 0,012500014  | -10000 | CIRCULARARC      |
+| V3   | IfcAlignmentVerticalSegment | 341,4405752    | 85,15793083      | 111,899419  | 0,002997773   | 0,002997773  | 0      | CONSTANTGRADIENT |
+| V4   | IfcAlignmentVerticalSegment | 426,598506     | 183,6600283      | 112,1547031 | 0,002997773   | 0,002997773  | 18000  | CIRCULARARC      |
+| V5   | IfcAlignmentVerticalSegment | 610,2585343    | 701,6062339      | 113,6423122 | 0,013202245   | 0,013202245  | 0      | CONSTANTGRADIENT |
+| V6   | IfcAlignmentVerticalSegment | 1311,864768    | 34,07192867      | 122,9050894 | 0,013202245   | 0,013202245  | -20000 | CIRCULARARC      |
+| V7   | IfcAlignmentVerticalSegment | 1345,936697    | 236,655805       | 123,325886  | 0,011498258   | 0,011498258  | 0      | CONSTANTGRADIENT |
+| V8   | IfcAlignmentVerticalSegment | 1582,592502    | 353,6059896      | 126,0470154 | 0,011498258   | 0,011498258  | -13000 | CIRCULARARC      |
+| V9   | IfcAlignmentVerticalSegment | 1936,198491    | 119,9639637      | 125,3034062 | -0,015704899  | -0,015704899 | 0      | CONSTANTGRADIENT |
+| V10  | IfcAlignmentVerticalSegment | 2056,162455    | 282,6533323      | 123,4193842 | -0,015704899  | -0,015704899 | 18000  | CIRCULARARC      |
+| V11  | IfcAlignmentVerticalSegment | 2338,815787    | 312,8596206      | 121,2       | 2,38704E-12   | 2,38704E-12  | 0      | CONSTANTGRADIENT |
 
 
 ## Drawings (Visualisations)
