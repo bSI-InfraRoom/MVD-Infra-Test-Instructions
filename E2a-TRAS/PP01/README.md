@@ -9,7 +9,7 @@
 
 ## Summary (Intent)
 
-This test case addresses the **export** of the required IFC entities for the exchange of **objects properties** information. The test includes both property sets belonging to the IFC standard and custom sets; both on types and occurences.
+This test case addresses the **export** of the required IFC entities for the exchange of **objects properties** information. The test includes both property sets belonging to the IFC standard and custom sets; both on types and occurrences.
 
 - Refer to [Test Case Imports](#Test-Case-Imports) to know the prerequisites for the present test.
 
@@ -40,7 +40,7 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
 
 - Object definition
    - Property Sets for Objects
-   - Property Sets for Types ghfhfj
+   - Property Sets for Types
 </details>
 
 
@@ -94,7 +94,7 @@ For certification of capabilities the only source will be:
 
 ### Standard & Custom properties for objects and object types
 
-> **Acceptance criteria**: For the **Standard properties for objects and object types** capability, the validation procedure must verify that both standard and custom property sets requested by the test case (including relative properties and values) are present in the IFC file.
+> **Acceptance criteria**: For the **Properties for objects and object types** capability, the validation procedure must verify that both standard and custom property sets requested by the test case (including relative properties and values) are present in the IFC file.
 
 (See below the table for further specification of each criteria)
 | ID       | CRITERIA                                                 |
@@ -143,19 +143,21 @@ PVAL_002: Requested property value types are found
 
 :construction: under construction :construction:
 
-| Entity          | Entity Type             | PropertySet Name             | Property Name           | Property Value Type         | List Of Values                                                                                                                                                               | Value type                 |
-|-----------------|-------------------------|------------------------------|-------------------------|-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|
-| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Binario                 | IfcLabel                    | Pari, Dispari, Unico                                                                                                                                                         | IfcPropertyEnumeratedValue |
-| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Codice binario SAS      | IfcLabel                    |                                                                                                                                                                              | IfcPropertySingleValue     |
-| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | n. deviatoi elettrici   | IfcInteger                  |                                                                                                                                                                              | IfcPropertySingleValue     |
-| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Profilo manutentivo L94 | IfcLabel                    | <=40 t/g, >100 t/g, 40< t/g <=100                                                                                                                                            | IfcPropertyEnumeratedValue |
-| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Binario elettrificato   | IfcLogical                  |                                                                                                                                                                              | IfcPropertySingleValue     |
-| IfcTrackElement | SLEEPER                 | Pset_TrackElementTypeSleeper | SleeperType             | IfcLabel                    | COMPOSITESLEEPER, CONCRETESLEEPER, INSULATEDSTEELSLEEPER, MONOBLOCKCONCRETESLEEPER, NOTINSULATEDSTEELSLEEPER, NOTKNOWN, OTHER, TWOBLOCKCONCRETESLEEPER, UNSET, WOODENSLEEPER | IfcPropertyEnumeratedValue |
-| IfcTrackElement | SLEEPER                 | Pset_TrackElementTypeSleeper | FasteningType           | IfcLabel                    |                                                                                                                                                                              | IfcPropertySingleValue     |
-| IfcCourse       | Segmento di massicciata | PSet_CourseCommon            | NominalLength           | IfcNonNegativeLengthMeasure |                                                                                                                                                                              | IfcPropertySingleValue     |
-| IfcCourse       | Segmento di massicciata | PSet_CourseCommon            | NominalThickness        | IfcNonNegativeLengthMeasure |                                                                                                                                                                              | IfcPropertySingleValue     |
-| IfcCourse       | Segmento di massicciata | PSet_CourseCommon            | NominalWidth            | IfcNonNegativeLengthMeasure |                                                                                                                                                                              | IfcPropertySingleValue     |
-| IfcCourseType   | Segmento di massicciata | RFI_S22600                   | Tipo massicciata        | IfcLabel                    | Misto, Calcareo, Tenace                                                                                                                                                      | IfcPropertyEnumeratedValue |
+| Entity          | Entity Type             | PropertySet Name             | Property Name                | Property Value Type         | List Of Values                                                                                                                                                               | Value type                 |
+|-----------------|-------------------------|------------------------------|------------------------------|-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|
+| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Binario                      | IfcLabel                    | Pari, Dispari, Unico                                                                                                                                                         | IfcPropertyEnumeratedValue |
+| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Codice binario SAS           | IfcLabel                    |                                                                                                                                                                              | IfcPropertySingleValue     |
+| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | n. deviatoi elettrici        | IfcInteger                  |                                                                                                                                                                              | IfcPropertySingleValue     |
+| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Profilo manutentivo L94      | IfcLabel                    | <=40 t/g, >100 t/g, 40< t/g <=100                                                                                                                                            | IfcPropertyEnumeratedValue |
+| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Binario elettrificato        | IfcLogical                  |                                                                                                                                                                              | IfcPropertySingleValue     |
+| IfcTrackElement | SLEEPER                 | Pset_TrackElementTypeSleeper | SleeperType                  | IfcLabel                    | COMPOSITESLEEPER, CONCRETESLEEPER, INSULATEDSTEELSLEEPER, MONOBLOCKCONCRETESLEEPER, NOTINSULATEDSTEELSLEEPER, NOTKNOWN, OTHER, TWOBLOCKCONCRETESLEEPER, UNSET, WOODENSLEEPER | IfcPropertyEnumeratedValue |
+| IfcTrackElement | SLEEPER                 | Pset_TrackElementTypeSleeper | FasteningType                | IfcLabel                    |                                                                                                                                                                              | IfcPropertySingleValue     |
+| IfcCourse       | Segmento di massicciata | PSet_CourseCommon            | NominalLength                | IfcNonNegativeLengthMeasure |                                                                                                                                                                              | IfcPropertySingleValue     |
+| IfcCourse       | Segmento di massicciata | PSet_CourseCommon            | NominalThickness             | IfcNonNegativeLengthMeasure |                                                                                                                                                                              | IfcPropertySingleValue     |
+| IfcCourse       | Segmento di massicciata | PSet_CourseCommon            | NominalWidth                 | IfcNonNegativeLengthMeasure |                                                                                                                                                                              | IfcPropertySingleValue     |
+| IfcCourseType   | Segmento di massicciata | RFI_S22600                   | Tipo massicciata             | IfcLabel                    | Misto, Calcareo, Tenace                                                                                                                                                      | IfcPropertyEnumeratedValue |
+| IfcGroup        | Segmento di rotaia      | RFI_S22700                   | Galleria                     | IfcLogical                  |                                                                                                                                                                              | IfcPropertySingleValue     |
+| IfcGroup        | Segmento di rotaia      | RFI_S22700                   | Tipo binario di appartenenza | IfcLabel                    | BINARIO CENTRALIZZATO, BINARIO DI CORSA, BINARIO DI FASCIO, BINARIO IMP. SMISTAMENTO AUTOMATICO                                                                              | IfcPropertyEnumeratedValue |
 
 
 </details>
