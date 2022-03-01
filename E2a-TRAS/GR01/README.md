@@ -53,7 +53,11 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
 
 ## Model Dataset
 
-This test case utilises **no particular dataset**. All information required to fulfil the test are captured in these Test Instructions.
+This test case utilises the dataset collected in the Dataset folder and summarised in the table below. **For more details on each item see [Dataset description](Dataset/README.md).**
+
+| Filename              | Description                                                                            |
+|-----------------------|----------------------------------------------------------------------------------------|
+| GroupingOverview.png) | Diagram describing the expected structure regarding grouping and spatial relationships |
 
 
 
