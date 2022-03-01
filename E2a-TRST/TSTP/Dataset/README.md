@@ -18,9 +18,9 @@ All the placement of these elements should be based on the placement of the turn
 It is required to define the explicit and start and end stationing of the turnout panel.
 The detailed structure of placement is specified as follows.
 
-![alt text](Turnout_Element_Placement.png)
-*Placement of track turnout panel*
 ![alt text](Turnout_Placement.png)
+*Placement of track turnout panel*
+![alt text](Turnout_Element_Placement.png)
 *Placement of elements in track turnout panel*
 
 
