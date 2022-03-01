@@ -56,12 +56,19 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
 - Product Shape
    - Product Geometric Representation
    - Body SectionedSolidHorizontal
+   - Body Tessellation Geometry
+- Product Placement
+   - Product Local Placement
+   - Product Linear Placement
 - Object Composition
    - Spatial Decomposition
 - Object Connectivity
    - Spatial Containment
 - Object Association
    - Material Association
+     - Material Single
+     - Material Profile Set
+     - Material Constituent Set
 
 </details>
 
@@ -244,6 +251,10 @@ NOTE:
 |----------------|---------------------|---------|---------|-----------------|--------------------|
 | IfcRailway     | Località            | 2       | 2       | IfcFacilityPart | TRACKSTRUCTURE     |
 
+#### Bullet point example:
+- IfcRailway *(Name: LO1336)*
+  - IfcFacilityPart.TRACKSTRUCTURE *(Name: LO1336-BC-BC01)*
+  - IfcFacilityPart.TRACKSTRUCTURE *(Name: LO1336-BC-BC02)*
 
 ### Spatial containment
 
@@ -257,6 +268,18 @@ NOTE:
 
 NOTE:
 - when **Maximum is empty**, it means **unlimited**. Example: Minimum=1; Maximum=empty, means that the Spatial Element must contain 1 or more elements of the requested type.
+
+
+#### Bullet point example:
+- IfcRailway *(Name: LO1336)*
+  - IfcFacilityPart.TRACKSTRUCTURE *(Name: LO1336-BC-BC01)*
+    - `IfcCourse.BALLASTBED` *(Name: BC01)*
+    - `IfcRail.RAIL` *(Name: Rotaia BC01 SX)*
+    - `IfcRail.RAIL` *(Name: Rotaia BC01 DX)*
+    - `IfcTrackElement.SLEEPER` *(Name: Traversa 0001)*
+    - `IfcTrackElement.SLEEPER` *(Name: Traversa 0002)*
+    - `IfcTrackElement.SLEEPER` *(Name: Traversa 000n)*
+  - IfcFacilityPart.TRACKSTRUCTURE *(Name: LO1336-BC-BC02)*
 
 
 ### Material association
