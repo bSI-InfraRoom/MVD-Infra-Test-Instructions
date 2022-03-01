@@ -218,7 +218,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 | IfcMapConversion | XAxisOrdinate    | 0         |         |
 | IfcMapConversion | Scale            | 1         |         |
 | IfcProjectedCRS  | Name             | EPSG:3878 |         |
-| IfcProjectedCRS  | GeodeticDatum    | EPSG:3878 |         |
+| IfcProjectedCRS  | GeodeticDatum    | EPSG:6258 |         |
 | IfcProjectedCRS  | VerticalDatum    | EPSG:3900 |         |
 
 </details>

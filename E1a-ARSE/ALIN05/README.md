@@ -216,5 +216,5 @@ Considering the aim of this test, other **optional** results, not subject to the
 | IfcMapConversion | XAxisOrdinate    | 0         |         |
 | IfcMapConversion | Scale            | 1         |         |
 | IfcProjectedCRS  | Name             | EPSG:3011 |         |
-| IfcProjectedCRS  | GeodeticDatum    | SWEREF99  |         |
+| IfcProjectedCRS  | GeodeticDatum    | EPSG:6619 |         |
 | IfcProjectedCRS  | VerticalDatum    | EPSG:5615 |         |
