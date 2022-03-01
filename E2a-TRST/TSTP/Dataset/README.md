@@ -19,7 +19,9 @@ It is required to define the explicit and start and end stationing of the turnou
 The detailed structure of placement is specified as follows.
 
 ![alt text](Turnout_Element_Placement.png)
+*Placement of track turnout panel*
 ![alt text](Turnout_Placement.png)
+*Placement of elements in track turnout panel*
 
 
 
@@ -27,7 +29,9 @@ The detailed structure of placement is specified as follows.
 The following Drawings and visualisations describe the test case dataset to be modelled and certified.
 
 ![alt text](trackturnout_schematic.png)
+*alignment of turnout panel*
 ![alt text](trackturnout.png)
+*turnout panel drawing and element types*
 
 
 ## Supporting files
