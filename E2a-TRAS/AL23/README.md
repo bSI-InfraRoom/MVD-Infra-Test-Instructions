@@ -15,7 +15,7 @@ This test case addresses the **export** of the required IFC entities for the exc
 | Number of alignment(s)       | 2                                         |
 | Vertical Measurement         | Lower Rail                                |
 | Properties of segments       | no                                        |
-| Horizontal layout            | Straight Line, Circular Arc, Clothoid     |
+| Horizontal layout            | Line, Circular Arc, Clothoid     |
 | Vertical layout              | Constant Gradient, Circular Arc               |
 | Cant layout                  | Constant Cant, Linear Transition |
 | IFC reference file available | no                                        |
