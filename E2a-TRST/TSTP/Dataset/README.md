@@ -2,10 +2,10 @@
 The following occurrence variations need to be checked and certified in relation to the targeted entities and concept templates:
 
 - IfcRail.RAIL - *requires Body AdvancedSweptSolid Geometry*
-- IfcTrackElement.SLEEPR - *requires Mapped Geometry*
+- IfcTrackElement.SLEEPER - *requires Mapped Geometry*
 - IfcRail.CHECKRAIL - *requies Body Tessallation Geometry*
 - IfcTrackElement.FROG - *requies Body Tessallation Geometry*
-- IfcMechanicalFastner.RAILFASTNING - *requires Mapped Geometry*
+- IfcMechanicalFastner.RAILFASTENING - *requires Mapped Geometry*
 
 ## Model Dataset
 This test case utilises the attached dataset documented by the following drawings and data schedule. 
@@ -15,7 +15,7 @@ This test case utilises the attached dataset documented by the following drawing
 A track turnout panel is modelled as an instance of IfcElementAssembly with Predefined Type TURNOUTPANEL.
 It is decomposed by elements including IfcRail.RAIL, IfcTrackElement.SLEEPER, IfcRail.CHECKRAIL, IfcTrackElement.FROG, IfcMechnicalFastner.RAILFASTNING, IfcMechnicalFastner.RAILJOINT.
 All the placement of these elements should be based on the placement of the turnout panel, and the turnout panel as an assembly is placed based on the alignment.
-It is required to define the explicit and start and end stationing of the turnout panel.
+It is required to exchange start and end stationing of the turnout panel in the IFC file.
 The detailed structure of placement is specified as follows.
 
 ![alt text](Turnout_Placement.png)
