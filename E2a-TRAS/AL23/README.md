@@ -46,6 +46,7 @@ These entities represent a test-specific subset of the wider AbRV_E2a exchange a
    1. IfcAlignmentHorizontal
    1. IfcAlignmentVertical
    1. IfcAlignmentCant
+   1. IfcAlignmentSegment
 </details>
 
 <details><summary>Concept Templates</summary> 
