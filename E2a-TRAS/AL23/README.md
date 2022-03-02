@@ -57,6 +57,7 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
    - Project Global Positioning
 - Object Composition
    - Alignment Layout
+   - Alignment Geometry Cant
    - Spatial Decomposition
 </details>
 
