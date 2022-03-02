@@ -14,7 +14,7 @@ This test instruction covers following subjects:
 - Minimum set of spatial structure 
 - One alignment for railway including horizontal, vertical and cant layouts
 - Alignment segments including linear segments, circular arc segments and clothoid transition segments
-- Alignment design covers the scenaio that vertical alignment is measured from track center line so left and right cant are reciprocal at each point along alignment
+- Alignment design covers the scenario that vertical alignment is measured from track center line so left and right cant are reciprocal at each point along alignment
 - Alignment design covers the scenario of scissor cant
 - Properties for alignment segments
 
@@ -176,7 +176,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 - All the concept templates must be correctly implemented as presented in the validation criteria
 - At least 1 instance of each entity listed in [Itemised Roots](#Itemised-Roots) is present in the file.
-- 1 IfcAlignment instance is expected to be present in the file. The alignment layouts
+- 1 IfcAlignment instance is expected to be present in the file.
 
 
 #### Imports
@@ -190,14 +190,14 @@ Considering the aim of this test, other **optional** results, not subject to the
 |---------|-----------------------------------------------------|-----------------------------------------------|-------------|
 | GENE_01 | All requested entities are present in the IFC model | per [Entities Table](Dataset/README.md#Entities-Table) |    |
 | GENE_02 | The model contains exactly 1 IfcAlignment | per [Entities Table](Dataset/README.md#Entities-Table) |    |
-| GENE_02 | The IfcAlignment nests exactly 1 IfcAlignmentHorizontal, exactly 1 IfcAlignmentVertical and exactly 1 IfcAlignmentCant | per [Entities Table](Dataset/README.md#Entities-Table) |    |
-| GENE_03 | The IfcAlignmentHorizontal nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentHorizontalSegment | per [Entities Table](Dataset/README.md#Entities-Table) |    |
-| GENE_04 | The IfcAlignmentVertical nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentVerticalSegment | per [Entities Table](Dataset/README.md#Entities-Table) |    |
-| GENE_05 | The IfcAlignmentCant nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentCantSegment | per [Entities Table](Dataset/README.md#Entities-Table) |    |
-| GENE_06 | Parameters of alignment segments shall be defined according to the Dataset | per [Entities Table](Dataset/README.md#Entities-Table) |    |
-| GENE_07 | Each IfcAlignment should have geometric representation IfcSegmentedReferenceCurve | per [Entities Table](Dataset/README.md#Entities-Table) |    |
-| GENE_08 | The EndPoint of IfcSegmentedReferenceCurve shall be present in the model to be checked | per [Entities Table](Dataset/README.md#Entities-Table) |    |
-| GENE_09 | The EndPoint of IfcGradientCurve shall be present in the model to be checked | per [Entities Table](Dataset/README.md#Entities-Table) |    |
+| GENE_03 | The IfcAlignment nests exactly 1 IfcAlignmentHorizontal, exactly 1 IfcAlignmentVertical and exactly 1 IfcAlignmentCant | per [Entities Table](Dataset/README.md#Entities-Table) |    |
+| GENE_04 | The IfcAlignmentHorizontal nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentHorizontalSegment | per [Entities Table](Dataset/README.md#Entities-Table) |    |
+| GENE_05 | The IfcAlignmentVertical nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentVerticalSegment | per [Entities Table](Dataset/README.md#Entities-Table) |    |
+| GENE_06 | The IfcAlignmentCant nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentCantSegment | per [Entities Table](Dataset/README.md#Entities-Table) |    |
+| GENE_07 | Parameters of alignment segments shall be defined according to the Dataset | per [Entities Table](Dataset/README.md#Entities-Table) |    |
+| GENE_08 | Each IfcAlignment should have geometric representation IfcSegmentedReferenceCurve | per [Entities Table](Dataset/README.md#Entities-Table) |    |
+| GENE_09 | The EndPoint of IfcSegmentedReferenceCurve shall be present in the model to be checked | per [Entities Table](Dataset/README.md#Entities-Table) |    |
+| GENE_10 | The EndPoint of IfcGradientCurve shall be present in the model to be checked | per [Entities Table](Dataset/README.md#Entities-Table) |    |
 
 </details>
 
