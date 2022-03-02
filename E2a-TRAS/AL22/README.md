@@ -96,14 +96,14 @@ All validation criteria (and usages) of predecessors' tests shall be **verified 
 
 The following itemised restrictions and constraints shall be placed on IFC Entities & Concept Templates:
 
-<details open><summary>Semantic Usages, Constraints & Logic</summary>
+<details><summary>Semantic Usages, Constraints & Logic</summary>
 
 The following itemised Usages, Constraints & Logic are normative entries within the AbRV MVD and MUST be satisfied to meet the defined validation criteria
 
-| **ID**  | **CRITERIA**                                  | **VALUE**                           | **COMMENT** |
-|---------|-----------------------------------------------|-------------------------------------|-------------|
-| ALIG_00 | Alignment layout structure is verified        | See below for further specification |             |
-| SITE_00 | Alignment shall always be contained in a Site | na                                  |             |
+| **ID**  | **CRITERIA**                                        | **VALUE**                           | **COMMENT** |
+|---------|-----------------------------------------------------|-------------------------------------|-------------|
+| ALIG_00 | Alignment layout structure is verified              | See below for further specification |             |
+| SITE_00 | IfcAlignment shall always be contained in a IfcSite | na                                  |             |
 
 
 ALIG_00: Alignment layout structure is verified
