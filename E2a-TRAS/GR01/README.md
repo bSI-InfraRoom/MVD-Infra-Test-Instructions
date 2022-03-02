@@ -88,6 +88,7 @@ The following itemised Usages, Constraints & Logic are normative entries within 
 | GROU_103 | Same-level grouping is not allowed | If two or more Group are part of the same Group, they cannot include each others. Example: if A groups B and C, B cannot group C and vice versa)               |
 | GROU_104 | Group rooting                      | All Groups that do not have a parent Group must be linked to the IfcProject with an IfcRelDeclares relationship, as per Project Declaration template           |
 | GROU_105 | Group typing via ObjectType        | *All group types shall be expressed using the ObjectType (5<sup>th</sup> attribute) of each occurrence of IfcGroup                                             |
+| GROU_106 | Allowed entity types for groups    | IfcGroup must be associated (via `IfcRelAssignsToGroup`) only to IfcProduct or IfcGroup (and subtypes)                                                         |
 
 *: this is the only method to express group typing, due to the fact that: i) IfcGroup misses the PredefinedType attribute; and ii) object typing by instantiation of IfcTypeObject is discouraged from IFC4 onward.
 
