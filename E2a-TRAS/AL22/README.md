@@ -93,19 +93,17 @@ All validation criteria (and usages) of predecessors' tests shall be **verified 
 
 
 ## Usages, Constraints & Logic 
-:construction: **under construction, need agreement on SITE_01** :construction:
 
 The following itemised restrictions and constraints shall be placed on IFC Entities & Concept Templates:
 
-<details><summary>Semantic Usages, Constraints & Logic</summary>
+<details open><summary>Semantic Usages, Constraints & Logic</summary>
 
 The following itemised Usages, Constraints & Logic are normative entries within the AbRV MVD and MUST be satisfied to meet the defined validation criteria
 
-| **ID**  | **CRITERIA**                           | **VALUE**                           | **COMMENT** |
-|---------|----------------------------------------|-------------------------------------|-------------|
-| ALIG_00 | Alignment layout structure is verified | See below for further specification |             |
-| SITE_00 | Alignment shall always be contained in a Site | na |             |
-| SITE_01 | A dataset can have more than one IfcSite. In this case, the alignment ??? | na |             |
+| **ID**  | **CRITERIA**                                  | **VALUE**                           | **COMMENT** |
+|---------|-----------------------------------------------|-------------------------------------|-------------|
+| ALIG_00 | Alignment layout structure is verified        | See below for further specification |             |
+| SITE_00 | Alignment shall always be contained in a Site | na                                  |             |
 
 
 ALIG_00: Alignment layout structure is verified
@@ -116,13 +114,10 @@ ALIG_00: Alignment layout structure is verified
 > 1. Each `IfcAlignmentHorizontal` must be nested only by 1 `IfcAlignment`
 > 1. Each `IfcAlignmentVertical` must be nested only by 1 `IfcAlignment`
 > 1. Each `IfcAlignmentCant` must be nested only by 1 `IfcAlignment`
-> 1. Each `IfcAlignment` must nest only `IfcAlignmentHorizontal`, or `IfcAlignmentVertical`, or `IfcAlignmentCant`
+> 1. Each `IfcAlignment` must nest only the following entities: `IfcAlignmentHorizontal`, `IfcAlignmentVertical`, `IfcAlignmentCant`, `IfcReferent`, `IfcAlignment`
 > 1. Each `IfcAlignmentHorizontal` must nest only `IfcAlignmentHorizontalSegment`
 > 1. Each `IfcAlignmentVertical` must nest only `IfcAlignmentVerticalSegment`
 > 1. Each `IfcAlignmentCant` must nest only `IfcAlignmentCantSegment`
-> 1. Each `IfcAlignmentHorizontalSegment` must be nested only by 1 `IfcAlignmentHorizontal` 
-> 1. Each `IfcAlignmentVerticalSegment` must be nested only by 1 `IfcAlignmentVertical` 
-> 1. Each `IfcAlignmentCantSegment` must be nested only by 1 `IfcAlignmentCant` 
 
 </details>
 
