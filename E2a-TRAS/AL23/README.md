@@ -17,7 +17,7 @@ This test case addresses the **export** of the required IFC entities for the exc
 | Properties of segments       | no                                        |
 | Horizontal layout            | Straight Line, Circular Arc, Clothoid     |
 | Vertical layout              | Straight Line, Circular Arc               |
-| Cant layout                  | Constant Straight Line, Linear Transition |
+| Cant layout                  | Constant Cant, Linear Transition |
 | IFC reference file available | no                                        |
 
 
