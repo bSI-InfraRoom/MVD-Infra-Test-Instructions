@@ -61,6 +61,10 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
    - Spatial Decomposition
 - Object Connectivity
    - Spatial Containment
+- Product Shape
+   - Product Geometric Representation
+       - Alignment Geometry
+          - Alignment Geometry Gradient
 </details>
 
 
@@ -127,7 +131,6 @@ The Test case requires the following additional checks related to Model Geometry
 
 | **ID**  | **CRITERIA**                                                              | **VALUE** | **COMMENT**                |
 |---------|---------------------------------------------------------------------------|-----------|----------------------------|
-| ALIG_07 | Value of the *RailHeadDistance* along the entire alignment                | 1500 mm   | See notes below for detail |
 | ALIG_08 | Semantic description of segments corresponds to their geometry            | NA        | RDF tools can do this      |
 | ALIG_09 | Tangential continuity of all segments is verified, tolerance = 0,00000001 |           | RDF tools can do this      |
 
