@@ -40,15 +40,15 @@ This test case utilises the attached dataset documented by the following drawing
 | Name | Type                        | StartDistAlong | HorizontalLength | StartHeight | StartGradient | EndGradient  | Radius | Type_1           |
 | ---- | --------------------------- | -------------- | ---------------- | ----------- | ------------- | ------------ | ------ | ---------------- |
 | V1   | IfcAlignmentVerticalSegment | 0,000407982    | 246,4273892      | 108,082846  | 0,012500014   | 0,012500014  | 0      | CONSTANTGRADIENT |
-| V2   | IfcAlignmentVerticalSegment | 246,4277972    | 95,01277799      | 111,1631917 | 0,012500014   | 0,012500014  | -10000 | CIRCULARARC      |
+| V2   | IfcAlignmentVerticalSegment | 246,4277972    | 95,01277799      | 111,1631917 | 0,012500014   | 0,002997773  | -10000 | CIRCULARARC      |
 | V3   | IfcAlignmentVerticalSegment | 341,4405752    | 85,15793083      | 111,899419  | 0,002997773   | 0,002997773  | 0      | CONSTANTGRADIENT |
-| V4   | IfcAlignmentVerticalSegment | 426,598506     | 183,6600283      | 112,1547031 | 0,002997773   | 0,002997773  | 18000  | CIRCULARARC      |
+| V4   | IfcAlignmentVerticalSegment | 426,598506     | 183,6600283      | 112,1547031 | 0,002997773   | 0,013202245  | 18000  | CIRCULARARC      |
 | V5   | IfcAlignmentVerticalSegment | 610,2585343    | 701,6062339      | 113,6423122 | 0,013202245   | 0,013202245  | 0      | CONSTANTGRADIENT |
-| V6   | IfcAlignmentVerticalSegment | 1311,864768    | 34,07192867      | 122,9050894 | 0,013202245   | 0,013202245  | -20000 | CIRCULARARC      |
+| V6   | IfcAlignmentVerticalSegment | 1311,864768    | 34,07192867      | 122,9050894 | 0,013202245   | 0,011498258  | -20000 | CIRCULARARC      |
 | V7   | IfcAlignmentVerticalSegment | 1345,936697    | 236,655805       | 123,325886  | 0,011498258   | 0,011498258  | 0      | CONSTANTGRADIENT |
-| V8   | IfcAlignmentVerticalSegment | 1582,592502    | 353,6059896      | 126,0470154 | 0,011498258   | 0,011498258  | -13000 | CIRCULARARC      |
+| V8   | IfcAlignmentVerticalSegment | 1582,592502    | 353,6059896      | 126,0470154 | 0,011498258   | -0,015704899 | -13000 | CIRCULARARC      |
 | V9   | IfcAlignmentVerticalSegment | 1936,198491    | 119,9639637      | 125,3034062 | -0,015704899  | -0,015704899 | 0      | CONSTANTGRADIENT |
-| V10  | IfcAlignmentVerticalSegment | 2056,162455    | 282,6533323      | 123,4193842 | -0,015704899  | -0,015704899 | 18000  | CIRCULARARC      |
+| V10  | IfcAlignmentVerticalSegment | 2056,162455    | 282,6533323      | 123,4193842 | -0,015704899  | -4,51E-15    | 18000  | CIRCULARARC      |
 | V11  | IfcAlignmentVerticalSegment | 2338,815787    | 312,8596206      | 121,2       | 2,38704E-12   | 2,38704E-12  | 0      | CONSTANTGRADIENT |
 
 
