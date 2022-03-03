@@ -15,7 +15,7 @@ This test case utilises the following dataset.
 
 ### Geographic Data
 
-The table below captures the properties or the Geographic Coordinate Reference System and Projected Coordinate Reference System, usefull for the test case mentioned in the header.
+The table below captures the properties of the Geographic Coordinate Reference System and Projected Coordinate Reference System, used in the test case mentioned in the header.
 
 <img src="./GeographicData.png" height="500"/>
 

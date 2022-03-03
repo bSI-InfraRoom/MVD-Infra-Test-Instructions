@@ -153,4 +153,4 @@ The vertical layout of the alignment (both for Alignment 1 and Alignment 2) is d
 **NOTE**:
 - All distances are in meters
 - All angles are in gradian
-- The radius (*RadiusOfCurvature*) is considered positive when the curve is a *crest*, and negative when it is *valley* (opposite to IFC)
+- The radius (*RadiusOfCurvature*) is considered positive when the curve is a *crest*, and negative when it is a *sag* (opposite to IFC).
