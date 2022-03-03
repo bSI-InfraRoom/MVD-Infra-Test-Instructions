@@ -13,13 +13,13 @@ This test case utilises the attached dataset documented by the following drawing
 
 *This is a later step that involved the detailed documentation of the certification dataset (model)*
 
-### Alignment:
+### Track alignment:
 
-| Name | Type                   | ObjectPlacement   | Representation                                               |
-| ---- | ---------------------- | ----------------- | ------------------------------------------------------------ |
-| A1   | IfcAlignment           | IfcLocalPlacement | IfcGradientCurve<br />RepresentationIdentifier="Axis"<br />RepresentationType="Curve3D" |
-| AH1  | IfcAlignmentHorizontal | IfcLocalPlacement | IfcCompositeCurve<br />RepresentationIdentifier="Axis"<br />RepresentationType="Curve2D" |
-| AV1  | IfcAlignmentVertical   | IfcLocalPlacement | IfcGradientCurve<br />RepresentationIdentifier="Axis"<br />RepresentationType="Curve3D" |
+| Name    | Type                   | ObjectPlacement   | Representation                                               |
+| ------- | ---------------------- | ----------------- | ------------------------------------------------------------ |
+| A.a.A1  | IfcAlignment           | IfcLocalPlacement | IfcGradientCurve<br />RepresentationIdentifier="Axis"<br />RepresentationType="Curve3D" |
+| A.a.AH1 | IfcAlignmentHorizontal | IfcLocalPlacement | IfcCompositeCurve<br />RepresentationIdentifier="Axis"<br />RepresentationType="Curve2D" |
+| A.a.AV1 | IfcAlignmentVertical   | IfcLocalPlacement | IfcGradientCurve<br />RepresentationIdentifier="Axis"<br />RepresentationType="Curve3D" |
 
 #### Horizontal segments nested into AH1 in the following order:
 
@@ -51,9 +51,110 @@ This test case utilises the attached dataset documented by the following drawing
 | V10  | IfcAlignmentVerticalSegment | 2056,162455    | 282,6533323      | 123,4193842 | -0,015704899  | -4,51E-15    | 18000  | CIRCULARARC      |
 | V11  | IfcAlignmentVerticalSegment | 2338,815787    | 312,8596206      | 121,2       | 2,38704E-12   | 2,38704E-12  | 0      | CONSTANTGRADIENT |
 
+### Main road alignment:
+
+| Name    | Type                   | ObjectPlacement   | Representation                                               |
+| ------- | ---------------------- | ----------------- | ------------------------------------------------------------ |
+| A.a.A2  | IfcAlignment           | IfcLocalPlacement | IfcGradientCurve<br />RepresentationIdentifier="Axis"<br />RepresentationType="Curve3D" |
+| A.a.AH2 | IfcAlignmentHorizontal | IfcLocalPlacement | IfcCompositeCurve<br />RepresentationIdentifier="Axis"<br />RepresentationType="Curve2D" |
+| A.a.AV2 | IfcAlignmentVertical   | IfcLocalPlacement | IfcGradientCurve<br />RepresentationIdentifier="Axis"<br />RepresentationType="Curve3D" |
+
+#### Horizontal segments nested into AH2 in the following order:
+
+| Name | Type                          | StartPointX | StartPointY | StartDirection | StartRadius | EndRadius | Length     | Type_1      |
+| ---- | ----------------------------- | ----------- | ----------- | -------------- | ----------- | --------- | ---------- | ----------- |
+| H21  | IfcAlignmentHorizontalSegment | 276,867419  | 935,549267  | 0,001724622    | 0           | 0         | 229,405681 | LINE        |
+| H22  | IfcAlignmentHorizontalSegment | 506,272759  | 935,944905  | 0,00172463     | -110        | -110      | 15,594208  | CIRCULARARC |
+| H23  | IfcAlignmentHorizontalSegment | 521,816666  | 934,8682    | 6,143144395    | 0           | 0         | 91,725737  | LINE        |
+| H24  | IfcAlignmentHorizontalSegment | 612,644434  | 922,064789  | 6,143144399    | -110        | -110      | 120,80482  | CIRCULARARC |
+| H25  | IfcAlignmentHorizontalSegment | 701,264387  | 849,049537  | 5,044918731    | 0           | 0         | 25,538554  | LINE        |
+| H26  | IfcAlignmentHorizontalSegment | 709,601071  | 824,909996  | 5,044918761    | 110         | 110       | 49,633636  | CIRCULARARC |
+| H27  | IfcAlignmentHorizontalSegment | 735,66497   | 783,164849  | 5,49613363     | 0           | 0         | 83,739856  | LINE        |
+
+#### Vertical segments nested into AV2 in the following order:
+
+| Name | Type                        | StartDistAlong | HorizontalLength | StartHeight | StartGradient | EndGradient  | Radius | Type_1           |
+| ---- | --------------------------- | -------------- | ---------------- | ----------- | ------------- | ------------ | ------ | ---------------- |
+| V21  | IfcAlignmentVerticalSegment | 135,557        | 10,84246946      | 125,687614  | 0,03416131    | 0,03416131   | 0      | CONSTANTGRADIENT |
+| V22  | IfcAlignmentVerticalSegment | 146,3994695    | 18,11228261      | 126,058007  | 0,03416131    | 0,020212997  | -1300  | CIRCULARARC      |
+| V23  | IfcAlignmentVerticalSegment | 164,5117521    | 40,83305808      | 126,5504044 | 0,020212997   | 0,020212997  | 0      | CONSTANTGRADIENT |
+| V24  | IfcAlignmentVerticalSegment | 205,3448102    | 39,03368133      | 127,3757629 | 0,020212997   | -0,009817512 | -1300  | CIRCULARARC      |
+| V25  | IfcAlignmentVerticalSegment | 244,3784915    | 50,17607352      | 127,5786042 | -0,009817512  | -0,009817512 | 0      | CONSTANTGRADIENT |
+| V26  | IfcAlignmentVerticalSegment | 294,554565     | 11,522986        | 127,086     | 0             | 0            | 0      | CONSTANTGRADIENT |
+| V27  | IfcAlignmentVerticalSegment | 306,077551     | 192,5126892      | 127,086     | -0,003529811  | -0,003529811 | 0      | CONSTANTGRADIENT |
+| V28  | IfcAlignmentVerticalSegment | 498,5902402    | 15,27528964      | 126,4064666 | -0,003529811  | -0,006584989 | -5000  | CIRCULARARC      |
+| V29  | IfcAlignmentVerticalSegment | 513,8655298    | 78,35926585      | 126,3292136 | -0,006584989  | -0,006584989 | 0      | CONSTANTGRADIENT |
+| V210 | IfcAlignmentVerticalSegment | 592,2247957    | 10,41034226      | 125,8132186 | -0,006584989  | 0,00142311   | 1300   | CIRCULARARC      |
+| V211 | IfcAlignmentVerticalSegment | 602,6351379    | 13,80735508      | 125,7863506 | 0,00142311    | 0,00142311   | 0      | CONSTANTGRADIENT |
+
+#### Dataset structure:
+
+The following dataset structure shall be represented :
+
+- A. IfcProject
+  - A.a IfcSite
+    - A.a.A1 Track alignment: IfcAlignment - SIIRTO_ORIVESI-HAAPAMAKI_270-273_GK24_KAANNETTY according to specification above
+      - Representation : IfcGradientCurve
+      - A.a.AH1 IfcAlignmentHorizontal
+        - Representation : IfcCompositeCurve
+      - A.a.AV1 IfcAlignmentVertical
+        - Representation : IfcGradientCurve
+    - A.a.A2 Main road alignment: IfcAlignment - TOI_M14334_0000A according to specification above
+      - Representation : IfcGradientCurve
+      - A.a.AH2 IfcAlignmentHorizontal
+        - Representation : IfcCompositeCurve
+      - A.a.AV2 IfcAlignmentVertical
+        - Representation : IfcGradientCurve
+    - A.a.1 IfcRoad
+      - A.a.1.SA1 IfcElementAssembly/SIGNALASSEMBLY
+        - ObjectPlacement : IfcLinearPlacement()
+        - A.a.1.D1 IfcDoor/BOOM_BARRIER
+        - A.a.1.F1 IfcFooting/PAD_FOOTING
+        - A.a.1.R1 IfcRailing/GUARDRAIL
+        - A.a.1.SA1 IfcElementAssembly/SIGNALASSEMBLY
+          - A.a.1.SA1.P1 IfcMember/POST
+          - A.a.1.SA1.SV1 IfcSignal/VISUAL
+          - A.a.1.SA1.SA1 IfcSignal/AUDIO
+          - A.a.1.SA1.SP1 IfcSign/PICTORAL
+      - A.a.1.1 IfcFacilityPart
+        - PredefinedType*=IfcRoadPartTypeEnum.ROADSEGMENT
+        - UsageType=LONGITUDINAL
+      - A.a.1.2 IfcFacilityPart
+        - PredefinedType*=IfcFacilityPartCommonTypeEnum.LEVELCROSSING
+        - UsageType=LONGITUDINAL
+      - A.a.1.3 IfcFacilityPart
+        - PredefinedType*=IfcRoadPartTypeEnum.ROADSEGMENT
+        - UsageType=LONGITUDINAL
+    - A.a.2 IfcRailway
+      - A.a.2.1 IfcFacilityPart
+        - PredefinedType*=IfcRailwayPartTypeEnum.TRACKSTUCTUREPART
+        - UsageType=LONGITUDINAL
+      - A.a.2.2 IfcFacilityPart
+        - PredefinedType*=IfcFacilityPartCommonTypeEnum.LEVELCROSSING
+        - UsageType=LONGITUDINAL
+        - A.a.2.2.WS1 IfcSensor/WHEELSENSOR
+        - A.a.2.2.WS2 IfcSensor/WHEELSENSOR
+        - A.a.2.2.JB1 IfcJunctionBox/DATA
+        - A.a.2.2.JB2 IfcJunctionBox/DATA
+        - A.a.2.2.SP1 IfcDiscreteAccessory/RAIL_MECHANICAL_EQUIPMENT
+          - ObjectPlacement : IfcLinearPlacement(DistanceAlong)
+        - A.a.2.2.SP2 IfcDiscreteAccessory/RAIL_MECHANICAL_EQUIPMENT
+      - A.a.2.3 IfcFacilityPart
+        - PredefinedType*=IfcRailwayPartTypeEnum.TRACKSTRUCTUREPART
+        - UsageType=LONGITUDINAL
+- IfcRelInterferesElements 
+  - InterferenceType="Crosses"
+  - RelatingElement=#A.a.1.2
+  - RelatedElement=#A.a.2.2
+  - InterferenceGeometry=optional for this unit test
+
+_* the PredefinedType enumeration is selected through "IfcFacilityPartTypeSelect"_.
 
 ## Drawings (Visualisations)
+
 The following Drawings and visualisations describe the test case dataset to be modelled and certified.
+
+![](C:\Users\lars\Documents\Projekt\IFCRail\MVD-Infra-Test-Instructions\E2a-TRST\TSLC\Dataset\Figure 1 - situation.png)
 
 
 ## Supporting files
