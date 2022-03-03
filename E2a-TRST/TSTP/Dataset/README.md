@@ -21,9 +21,9 @@ It is required to exchange start and end stationing of the turnout panel in the 
 The detailed structure of placement is specified as follows.
 
 ![alt text](Turnout_Placement.png)
-*Placement of track turnout panel*
+*Fig. 1 Placement of track turnout panel*
 ![alt text](Turnout_Element_Placement.png)
-*Placement of elements in track turnout panel*
+*Fig. 2 Placement of elements in track turnout panel*
 
 It is required to define Product Type Geometry for IfcTrackElement.SLEEPER, IfcMechnicalFastener.RAILFASTENING and IfcMechnicalFastener.RAILJOINT.
 The geometry of IfcMechnicalFastener.RAILFASTENING and IfcMechnicalFastener.RAILJOINT as boxes that are placed according to the drawing.
@@ -33,15 +33,16 @@ The geometry of IfcTrackElement.SLEEPER can be simplified and placed according t
 
 ## Drawings (Visualisations)
 The following Drawings and visualisations describe the test case dataset to be modelled and certified.
+Elements in the turnout panel should be classifed as shown in Fig. 4. 
 
 ![alt text](trackturnout_schematic.png)
-*Alignment of turnout panel*
+*Fig. 3 Alignment of turnout panel*
 ![alt text](trackturnout.png)
-*Turnout panel drawing and element types*
+*Fig. 4 Turnout panel drawing and element types*
 
 The profile of rail (IfcRail.RAIL) should use the following drawing as reference.
 ![alt text](RailProfile60UIC.jpg)
-*Rail profile*
+*Fig. 5 Rail profile*
 
 ## Supporting files
 
