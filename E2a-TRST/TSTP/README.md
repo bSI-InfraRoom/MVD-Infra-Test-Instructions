@@ -98,7 +98,7 @@ Test instructions are defined with a modular approach to reduce repetition of va
 
 | TI Code                                  | Test Instruction Title    | Comments                     |
 |------------------------------------------|---------------------------|------------------------------|
-| [IFC4.3AbRV_E1b_ALCT2](../../E1b-ARCT/ALCT2) | Alignment Railway Cant 2  | As outlined in the dataset Imported Entities Table |
+| [IFC4.3AbRV_E2a_AL01](../../E2a-TRST/AL01) | Alignment Railway Cant  | As outlined in the dataset Imported Entities Table |
 
 </details>
 
