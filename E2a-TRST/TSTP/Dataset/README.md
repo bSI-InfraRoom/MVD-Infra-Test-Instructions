@@ -2,18 +2,20 @@
 The following occurrence variations need to be checked and certified in relation to the targeted entities and concept templates:
 
 - IfcRail.RAIL - *requires Body AdvancedSweptSolid Geometry*
-- IfcTrackElement.SLEEPER - *requires Mapped Geometry*
+- IfcTrackElement.SLEEPER - *requires Mapped Geometry with Type Body Tessallated Geometry*
 - IfcRail.CHECKRAIL - *requies Body Tessallation Geometry*
+- IfcRail.BLADE - *requires Body Tessallation Geometry*
 - IfcTrackElement.FROG - *requies Body Tessallation Geometry*
-- IfcMechanicalFastner.RAILFASTENING - *requires Mapped Geometry*
+- IfcMechanicalFastener.RAILFASTENING - *requires Mapped Geometry with Type Body Tessallated Geometry*
+- IfcMechanicalFastener.RAILJOINT - *requires Mapped Geometry with Type Body Tessallated Geometry*
 
 ## Model Dataset
 This test case utilises the attached dataset documented by the following drawings and data schedule. 
 
 *This is a later step that involved the detailed documentation of the certification dataset (model)*
 
-A track turnout panel is modelled as an instance of IfcElementAssembly with Predefined Type TURNOUTPANEL.
-It is decomposed by elements including IfcRail.RAIL, IfcTrackElement.SLEEPER, IfcRail.CHECKRAIL, IfcTrackElement.FROG, IfcMechnicalFastner.RAILFASTNING, IfcMechnicalFastner.RAILJOINT.
+A track turnout panel is modelled as an instance of IfcElementAssembly with PredefinedType set to TURNOUTPANEL.
+It is decomposed by elements including IfcRail.RAIL, IfcTrackElement.SLEEPER, IfcRail.CHECKRAIL, IfcRail.BLADE, IfcTrackElement.FROG, IfcMechnicalFastener.RAILFASTENING, IfcMechnicalFastener.RAILJOINT.
 All the placement of these elements should be based on the placement of the turnout panel, and the turnout panel as an assembly is placed based on the alignment.
 It is required to exchange start and end stationing of the turnout panel in the IFC file.
 The detailed structure of placement is specified as follows.
@@ -23,16 +25,23 @@ The detailed structure of placement is specified as follows.
 ![alt text](Turnout_Element_Placement.png)
 *Placement of elements in track turnout panel*
 
+It is required to define Product Type Geometry for IfcTrackElement.SLEEPER, IfcMechnicalFastener.RAILFASTENING and IfcMechnicalFastener.RAILJOINT.
+The geometry of IfcMechnicalFastener.RAILFASTENING and IfcMechnicalFastener.RAILJOINT as boxes that are placed according to the drawing.
+The geometry of IfcTrackElement.SLEEPER can be simplified and placed according to the drawing.
+
 
 
 ## Drawings (Visualisations)
 The following Drawings and visualisations describe the test case dataset to be modelled and certified.
 
 ![alt text](trackturnout_schematic.png)
-*alignment of turnout panel*
+*Alignment of turnout panel*
 ![alt text](trackturnout.png)
-*turnout panel drawing and element types*
+*Turnout panel drawing and element types*
 
+The profile of rail (IfcRail.RAIL) should use the following drawing as reference.
+![alt text](RailProfile60UIC.jpg)
+*Rail profile*
 
 ## Supporting files
 
