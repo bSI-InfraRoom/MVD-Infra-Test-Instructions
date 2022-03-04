@@ -323,9 +323,9 @@ Considering the aim of this test, other **optional** results, not subject to the
 <details><summary>Click to expand</summary>
 > **Acceptance criteria**: For the **Element placement** capability, the validation procedure must verify that an Element of the requested type is placed according to the specified placement with the specified values.
 
-| **ID** | **CRITERIA**                                  | **VALUE**                                      | **COMMENT** |
-| ------ | --------------------------------------------- | ---------------------------------------------- | ----------- |
-| EP_01  | Elements are placed at the specified location | See [Dataset description](./Dataset/README.md) |             |
+| **ID** | **CRITERIA**                                                 | **VALUE**                                      | **COMMENT** |
+| ------ | ------------------------------------------------------------ | ---------------------------------------------- | ----------- |
+| EP_01  | Elements are placed at the specified location using the specified ObjectPlacement | See [Dataset description](./Dataset/README.md) |             |
 
 </details>
 

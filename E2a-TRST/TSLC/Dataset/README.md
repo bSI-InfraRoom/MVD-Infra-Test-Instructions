@@ -107,15 +107,23 @@ The following dataset structure shall be represented :
         - Representation : IfcGradientCurve
     - A.a.1 IfcRoad
       - A.a.1.SA1 IfcElementAssembly/SIGNALASSEMBLY
-        - ObjectPlacement : IfcLinearPlacement()
+        - ObjectPlacement : Linear placement (A.a.A2 (IfcGradientCurve), DistanceAlong=293, No offsets)
         - A.a.1.D1 IfcDoor/BOOM_BARRIER
+          - ObjectPlacement : Local placement
         - A.a.1.F1 IfcFooting/PAD_FOOTING
+          - ObjectPlacement : Local placement
         - A.a.1.R1 IfcRailing/GUARDRAIL
+          - ObjectPlacement : Local placement
         - A.a.1.SA1 IfcElementAssembly/SIGNALASSEMBLY
+          - ObjectPlacement : Local placement
           - A.a.1.SA1.P1 IfcMember/POST
+            - ObjectPlacement : Local placement
           - A.a.1.SA1.SV1 IfcSignal/VISUAL
+            - ObjectPlacement : Local placement
           - A.a.1.SA1.SA1 IfcSignal/AUDIO
+            - ObjectPlacement : Local placement
           - A.a.1.SA1.SP1 IfcSign/PICTORAL
+            - ObjectPlacement : Local placement
       - A.a.1.1 IfcFacilityPart
         - PredefinedType*=IfcRoadPartTypeEnum.ROADSEGMENT
         - UsageType=LONGITUDINAL
@@ -133,12 +141,17 @@ The following dataset structure shall be represented :
         - PredefinedType*=IfcFacilityPartCommonTypeEnum.LEVELCROSSING
         - UsageType=LONGITUDINAL
         - A.a.2.2.WS1 IfcSensor/WHEELSENSOR
+          - ObjectPlacement : Linear placement (A.a.A1 (IfcGradientCurve), DistanceAlong=1746, OffsetLateral=-0.35, OffsetVertical=-0.221)
         - A.a.2.2.WS2 IfcSensor/WHEELSENSOR
+          - ObjectPlacement : Linear placement (A.a.A1 (IfcGradientCurve), DistanceAlong=1715, OffsetLateral=-0.35, OffsetVertical=-0.221)
         - A.a.2.2.JB1 IfcJunctionBox/DATA
+          - ObjectPlacement : Linear placement (A.a.A1 (IfcGradientCurve), DistanceAlong=1746, OffsetLateral=-0.95, OffsetVertical=-0.221)
         - A.a.2.2.JB2 IfcJunctionBox/DATA
+          - ObjectPlacement : Linear placement (A.a.A1 (IfcGradientCurve), DistanceAlong=1715, OffsetLateral=-0.95, OffsetVertical=-0.221)
         - A.a.2.2.SP1 IfcDiscreteAccessory/RAIL_MECHANICAL_EQUIPMENT
-          - ObjectPlacement : IfcLinearPlacement(DistanceAlong)
+          - ObjectPlacement : Linear placement (A.a.A1 (IfcGradientCurve), DistanceAlong=1746, OffsetLateral=0, OffsetVertical=-0.221)
         - A.a.2.2.SP2 IfcDiscreteAccessory/RAIL_MECHANICAL_EQUIPMENT
+          - ObjectPlacement : Linear placement (A.a.A1 (IfcGradientCurve), DistanceAlong=1715, OffsetLateral=0, OffsetVertical=-0.221)
       - A.a.2.3 IfcFacilityPart
         - PredefinedType*=IfcRailwayPartTypeEnum.TRACKSTRUCTUREPART
         - UsageType=LONGITUDINAL
