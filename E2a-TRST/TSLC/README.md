@@ -2,7 +2,7 @@
 
 | Documentation Code   | Title                                          | Exchange Code | Test Code | Author          | Data Owner | Version | Date       |
 |----------------------|------------------------------------------------|---------------|-----------| ----------------|------------|---------|------------|
-| IFC4.3AbRV_E2a_TSLC   | Track Structures Level Crossing               | E2a-TRST      | TSLC      |                 | FTIA      | 1.0     | 24.02.2022 |
+| IFC4.3AbRV_E2a_TSLC   | Track Structures Level Crossing               | E2a-TRST      | TSLC      |                 | FTIA      | 1.0     | 07.03.2022 |
 
 
 ## Summary (Intent)
@@ -47,17 +47,16 @@ These entities represent a test-specific subset of the wider AbRV_Ex exchange an
   - *IfcLine*
   - *IfcCircle*
   - *IfcClothoid*
-- Signal assembly
-  - *IfcMember*
-  - *IfcSignal*
-  - *IfcSign*
 - Boom barrier
+  - Signal assembly
+    - *IfcMember*
+    - *IfcSignal*
+    - *IfcSign*
   - IfcDoor
-
-- Other physical elements
-  - *IfcDoor*
   - *IfcFooting*
   - *IfcRailing*
+  
+- Signaling equipment
   - *IfcSensor* (axle counters)
   - *IfcDiscreteAccessory* (snow plough protection)
   - IfcJunctionBox
@@ -68,21 +67,29 @@ These entities represent a test-specific subset of the wider AbRV_Ex exchange an
 
 These concept templates represent a test-specific subset of the wider AbRV_Ex exchange and the overall AbRV MVD, that must be correctly exported to meet the validation criteria. **The scope of the test shall not be used as a definitive scope of the exchange, or of the entire MVD.**
 
-- *Optional Grouping*
+- *Model setup*
   - *Project Units*
   - *Project Representation Context*
   - *Project Global Positioning*
+- *Spatial structure, spatial interference and spatial containment*
   - *Spatial Composition*
   - *Spatial Decomposition*
   - *Spatial Interference*
   - *Spatial Container*
+- *Alignment*
   - *Alignment Layout*
   - *Alignment Geometry Gradient*
+- *Element composition*
+  - *Element Composition*
+  - *Element Decomposition*
+
+- *Product placement and relative positioning*
   - *Product Linear Placement*
   - *Product Local Placement*
   - *Product Relative Positioning*
-  - *Material Constituent Set*
-  - *Object Typing*
+- *Other (missing in this spec at the moment)*
+  - *(Material Constituent Set)*
+  - *(Object Typing)*
 
 </details>
 
@@ -116,6 +123,7 @@ The following itemised Usages, Constraints & Logic are normative entries within 
 | EC_00   | Element Composition is verified               | See below for further specification |             |
 | EP_00   | Element Placement is verified                 | See below for further specification |             |
 | ERP_00  | Element relative positioning verified         | See below for further specification |             |
+| SI_00   | Spatial interference is verified              | See below for further specification |             |
 
 SE_00: Spatial structure is verified
 
@@ -175,6 +183,10 @@ ERP_00: Element Relative Positioning
 
 > 1. All elements in the dataset having an associated IfcLinearPlacement shall have a relative positioning relationship with the corresponding track alignment according to CT Product Relative Positioning.
 
+SI_00: Spatial Interference
+
+> 1. There shall be one `IfcRelInterferesElements` instance specifying a "Crosses" interference relationship between the different IfcFacilityPart/LEVELCROSSING instances.
+
 </details>
 
 <details><summary>Model Geometry</summary>
@@ -203,8 +215,8 @@ For certification of capabilities the only source will be:
 - n. 1 IFC file containing the information as requested. The file shall be named using the following syntax: `MVDCode`-`ExchangeCode`-`TestCode`-`SoftwareVendor`.`ifc` (Example: `IFC4.3_AbRV-E2b-ASTPC-AmazingSoft.ifc`)
 
 Considering the aim of this test, other **optional** results, not subject to the bSI certification process, yet useful to illustrate test results are:
-- Screen-shot of ...
-- CSV export of ...
+- Screen-shot of the model with all elements clearly visible
+- CSV export of the linear, local and global (map) coordinates for each element
 
 ---
 

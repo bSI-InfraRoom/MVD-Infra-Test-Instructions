@@ -91,77 +91,40 @@ This test case utilises the attached dataset documented by the following drawing
 
 The following dataset structure shall be represented :
 
-- A. IfcProject
-  - A.a IfcSite
-    - A.a.A1 Track alignment: IfcAlignment - SIIRTO_ORIVESI-HAAPAMAKI_270-273_GK24_KAANNETTY according to specification above
-      - Representation : IfcGradientCurve
-      - A.a.AH1 IfcAlignmentHorizontal
-        - Representation : IfcCompositeCurve
-      - A.a.AV1 IfcAlignmentVertical
-        - Representation : IfcGradientCurve
-    - A.a.A2 Main road alignment: IfcAlignment - TOI_M14334_0000A according to specification above
-      - Representation : IfcGradientCurve
-      - A.a.AH2 IfcAlignmentHorizontal
-        - Representation : IfcCompositeCurve
-      - A.a.AV2 IfcAlignmentVertical
-        - Representation : IfcGradientCurve
-    - A.a.1 IfcRoad
-      - A.a.1.SA1 IfcElementAssembly/SIGNALASSEMBLY
-        - ObjectPlacement : Linear placement (A.a.A2 (IfcGradientCurve), DistanceAlong=293, No offsets)
-        - A.a.1.D1 IfcDoor/BOOM_BARRIER
-          - ObjectPlacement : Local placement
-        - A.a.1.F1 IfcFooting/PAD_FOOTING
-          - ObjectPlacement : Local placement
-        - A.a.1.R1 IfcRailing/GUARDRAIL
-          - ObjectPlacement : Local placement
-        - A.a.1.SA1 IfcElementAssembly/SIGNALASSEMBLY
-          - ObjectPlacement : Local placement
-          - A.a.1.SA1.P1 IfcMember/POST
-            - ObjectPlacement : Local placement
-          - A.a.1.SA1.SV1 IfcSignal/VISUAL
-            - ObjectPlacement : Local placement
-          - A.a.1.SA1.SA1 IfcSignal/AUDIO
-            - ObjectPlacement : Local placement
-          - A.a.1.SA1.SP1 IfcSign/PICTORAL
-            - ObjectPlacement : Local placement
-      - A.a.1.1 IfcFacilityPart
-        - PredefinedType*=IfcRoadPartTypeEnum.ROADSEGMENT
-        - UsageType=LONGITUDINAL
-      - A.a.1.2 IfcFacilityPart
-        - PredefinedType*=IfcFacilityPartCommonTypeEnum.LEVELCROSSING
-        - UsageType=LONGITUDINAL
-      - A.a.1.3 IfcFacilityPart
-        - PredefinedType*=IfcRoadPartTypeEnum.ROADSEGMENT
-        - UsageType=LONGITUDINAL
-    - A.a.2 IfcRailway
-      - A.a.2.1 IfcFacilityPart
-        - PredefinedType*=IfcRailwayPartTypeEnum.TRACKSTUCTUREPART
-        - UsageType=LONGITUDINAL
-      - A.a.2.2 IfcFacilityPart
-        - PredefinedType*=IfcFacilityPartCommonTypeEnum.LEVELCROSSING
-        - UsageType=LONGITUDINAL
-        - A.a.2.2.WS1 IfcSensor/WHEELSENSOR
-          - ObjectPlacement : Linear placement (A.a.A1 (IfcGradientCurve), DistanceAlong=1746, OffsetLateral=-0.35, OffsetVertical=-0.221)
-        - A.a.2.2.WS2 IfcSensor/WHEELSENSOR
-          - ObjectPlacement : Linear placement (A.a.A1 (IfcGradientCurve), DistanceAlong=1715, OffsetLateral=-0.35, OffsetVertical=-0.221)
-        - A.a.2.2.JB1 IfcJunctionBox/DATA
-          - ObjectPlacement : Linear placement (A.a.A1 (IfcGradientCurve), DistanceAlong=1746, OffsetLateral=-0.95, OffsetVertical=-0.221)
-        - A.a.2.2.JB2 IfcJunctionBox/DATA
-          - ObjectPlacement : Linear placement (A.a.A1 (IfcGradientCurve), DistanceAlong=1715, OffsetLateral=-0.95, OffsetVertical=-0.221)
-        - A.a.2.2.SP1 IfcDiscreteAccessory/RAIL_MECHANICAL_EQUIPMENT
-          - ObjectPlacement : Linear placement (A.a.A1 (IfcGradientCurve), DistanceAlong=1746, OffsetLateral=0, OffsetVertical=-0.221)
-        - A.a.2.2.SP2 IfcDiscreteAccessory/RAIL_MECHANICAL_EQUIPMENT
-          - ObjectPlacement : Linear placement (A.a.A1 (IfcGradientCurve), DistanceAlong=1715, OffsetLateral=0, OffsetVertical=-0.221)
-      - A.a.2.3 IfcFacilityPart
-        - PredefinedType*=IfcRailwayPartTypeEnum.TRACKSTRUCTUREPART
-        - UsageType=LONGITUDINAL
-- IfcRelInterferesElements 
-  - InterferenceType="Crosses"
-  - RelatingElement=#A.a.1.2
-  - RelatedElement=#A.a.2.2
-  - InterferenceGeometry=optional for this unit test
-
-_* the PredefinedType enumeration is selected through "IfcFacilityPartTypeSelect"_.
+| Name            | Entity                   | Type                      | Container<br />Assembly | Representation                             | Placement                                                    | Comment                                                      |
+| --------------- | ------------------------ | ------------------------- | ----------------------- | ------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| A               | IfcProject               |                           |                         |                                            |                                                              |                                                              |
+| A.a             | IfcSite                  |                           | A                       | Optional                                   | Local placement                                              |                                                              |
+| A.a.A1          | IfcAlignment             |                           | A.a                     | IfcGradientCurve                           | Local placement                                              | SIIRTO_ORIVESI-HAAPAMAKI_270-273_GK24_KAANNETTY according to specification above |
+| A.a.AH1         | IfcAlignmentHorizontal   |                           | A.a.A1                  | IfcCompositeCurve                          | Local placement                                              |                                                              |
+| A.a.AV1         | IfcAlignmentVertical     |                           | A.a.A1                  | IfcGradientCurve                           | Local placement                                              |                                                              |
+| A.a.A2          | IfcAlignment             |                           | A.a                     | IfcGradientCurve                           | Local placement                                              | TOI_M14334_0000A according to specification                  |
+| A.a.AH2         | IfcAlignmentHorizontal   |                           | A.a.A2                  | IfcCompositeCurve                          | Local placement                                              |                                                              |
+| A.a.AV2         | IfcAlignmentVertical     |                           | A.a.A2                  | IfcGradientCurve                           | Local placement                                              |                                                              |
+| A.a.1           | IfcRoad                  |                           | A.a                     | Optional                                   | Local placement                                              |                                                              |
+| A.a.1.SA1       | IfcElementAssembly       | SIGNALASSEMBLY            | A.a.1                   | See<br />TOI_Boom_barrier_system_329100    | Linear placement (A.a.A2.IfcGradientCurve, DistanceAlong=293, No offsets) |                                                              |
+| A.a.1.SA1.D1    | IfcDoor                  | BOOM_BARRIER              | A.a.1.SA1               | See<br />TOI_Boom_barrier_system_329100    | Local placement                                              |                                                              |
+| A.a.1.SA1.F1    | IfcFooting               | PAD_FOOTING               | A.a.1.SA1               | See<br />TOI_Boom_barrier_system_329100    | Local placement                                              |                                                              |
+| A.a.SA1.R1      | IfcRailing               | GUARDRAIL                 | A.a.1.SA1               | See<br />TOI_Boom_barrier_system_329100    | Local placement                                              |                                                              |
+| A.a.SA1.SA2     | IfcElementAssembly       | SIGNALASSEMBLY            | A.a.1.SA1               | See<br />TOI_Boom_barrier_system_329100    | Local placement                                              |                                                              |
+| A.a.SA1.SA2.P1  | IfcPost                  | MEMBER                    | A.a.SA1.SA2             | See<br />TOI_Boom_barrier_system_329100    | Local placement                                              |                                                              |
+| A.a.SA1.SA2.SV1 | IfcSignal                | VISUAL                    | A.a.SA1.SA2             | See<br />TOI_Boom_barrier_system_329100    | Local placement                                              |                                                              |
+| A.a.SA1.SA2.SA1 | IfcSignal                | AUDIO                     | A.a.SA1.SA2             | See<br />TOI_Boom_barrier_system_329100    | Local placement                                              |                                                              |
+| A.a.SA1.SA2.SP1 | IfcSign                  | PICTORAL                  | A.a.SA1.SA2             | See<br />TOI_Boom_barrier_system_329100    | Local placement                                              |                                                              |
+| A.a.1.1         | IfcFacilityPart          | ROADSEGMENT               | A.a.1                   | Optional                                   |                                                              | UsageType=LONGITUDINAL                                       |
+| A.a.1.2         | IfcFacilityPart          | LEVELCROSSING             | A.a.1                   | Optional                                   |                                                              | UsageType=LONGITUDINAL                                       |
+| A.a.1.3         | IfcFacilityPart          | ROADSEGMENT               | A.a.1                   | Optional                                   |                                                              | UsageType=LONGITUDINAL                                       |
+| A.a.2           | IfcRailway               |                           | A.a                     | Optional                                   |                                                              |                                                              |
+| A.a.2.1         | IfcFacilityPart          | TRACKSTRUCTUREPART        | A.a.2                   | Optional                                   |                                                              | UsageType=LONGITUDINAL                                       |
+| A.a.2.2         | IfcFacilityPart          | LEVELCROSSING             | A.a.2                   | Optional                                   |                                                              | UsageType=LONGITUDINAL                                       |
+| A.a.2.3         | IfcFacilityPart          | TRACKSTRUCTUREPART        | A.a.2                   | Optional                                   |                                                              | UsageType=LONGITUDINAL                                       |
+| A.a.2.2.WS1     | IfcSensor                | WHEELSENSOR               | A.a.2.2                 | See<br />TOI_Axle_counter_329161           | Linear placement (A.a.A1.IfcGradientCurve, DistanceAlong=1746, OffsetLateral=-0.35, OffsetVertical=-0.221) |                                                              |
+| A.a.2.2.WS2     | IfcSensor                | WHEELSENSOR               | A.a.2.2                 | See<br />TOI_Axle_counter_329161           | Linear placement (A.a.A1.IfcGradientCurve, DistanceAlong=1715, OffsetLateral=-0.35, OffsetVertical=-0.221) |                                                              |
+| A.a.2.2.JB1     | IfcJunctionBox           | DATA                      | A.a.2.2                 | See<br />TOI_Cable_junction_box_329161     | Linear placement (A.a.A1.IfcGradientCurve, DistanceAlong=1746, OffsetLateral=-0.95, OffsetVertical=-0.221) |                                                              |
+| A.a.2.2.JB2     | IfcJunctionBox           | DATA                      | A.a.2.2                 | See<br />TOI_Cable_junction_box_329161     | Linear placement (A.a.A1.IfcGradientCurve, DistanceAlong=1715, OffsetLateral=-0.95, OffsetVertical=-0.221) |                                                              |
+| A.a.2.2.SP1     | IfcDiscreteAccessory     | RAIL_MECHANICAL_EQUIPMENT | A.a.2.2                 | See<br />TOI_Snow_Plough_Protection_329163 | Linear placement (A.a.A1.IfcGradientCurve, DistanceAlong=1746, OffsetLateral=0, OffsetVertical=-0.221) |                                                              |
+| A.a.2.2.SP2     | IfcDiscreteAccessory     | RAIL_MECHANICAL_EQUIPMENT | A.a.2.2                 | See<br />TOI_Snow_Plough_Protection_329163 | Linear placement (A.a.A1.IfcGradientCurve, DistanceAlong=1715, OffsetLateral=0, OffsetVertical=-0.221) |                                                              |
+| A.a.RIE         | IfcRelInterferesElements |                           |                         | Optional                                   |                                                              | InterferenceType="Crosses" RelatingElement=#A.a.1.2 RelatedElement=#A.a.2.2 |
 
 ## Drawings (Visualisations)
 
@@ -172,6 +135,15 @@ The following Drawings and visualisations describe the test case dataset to be m
 
 ## Supporting files
 
-| Filename                          | Description                               |
-|-----------------------------------|-------------------------------------------|
-| *filename*                        | *short description*                       |
+| Filename                                                     | Description                                 |
+| ------------------------------------------------------------ | ------------------------------------------- |
+| [HorizontalAlignmentParameters](./HorizontalAlignmentParameters.csv) | Parameters for horizontal alignment - track |
+| [VerticalAlignmentParameters](./VerticalAlignmentParameters.csv) | Parameters for vertical alignment - track   |
+| [RoadHorizontalAlignmentParameters](./RoadHorizontalAlignmentParameters.csv) | Parameters for horizontal alignment - road  |
+| [RoadVerticalAlignmentParameters](./RoadVerticalAlignmentParameters.csv) | Parameters for vertical alignment - road    |
+| [LandXML - track](./SIIRTO_ORIVESI-HAAPAMAKI_270-273_GK24_KAANNETTY.XML) | LandXML file track alignment                |
+| [LandXML - road](./TOI_M14334_0000A.XML)                     | LandXML file road alignment                 |
+| [TOI_Axle_counter_329161.dwg](TOI_Axle_counter_329161.dwg)<br />[TOI_Axle_counter_329161.ifc](TOI_Axle_counter_329161.ifc) | dwg and IFC2x3 - axle counters              |
+| [TOI_Boom_barrier_system_329100.dwg](TOI_Boom_barrier_system_329100.dwg)<br />[TOI_Boom_barrier_system_329100.ifc](TOI_Boom_barrier_system_329100.ifc) | dwg and IFC2x3 - Boom barrier assembly      |
+| [TOI_Cable_junction_box_329161.dwg](TOI_Cable_junction_box_329161.dwg)<br />[TOI_Cable_junction_box_329161.ifc](TOI_Cable_junction_box_329161.ifc) | dwg and IFC2x3 - Junction boxes             |
+| [TOI_Snow_Plough_Protection_329163.dwg](TOI_Snow_Plough_Protection_329163.dwg)<br />[TOI_Snow_Plough_Protection_329163.ifc](TOI_Snow_Plough_Protection_329163.ifc) | dwg and IFC2x3 - Snow plough protection     |
