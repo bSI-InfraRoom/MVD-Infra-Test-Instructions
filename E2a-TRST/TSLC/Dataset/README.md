@@ -130,7 +130,7 @@ The following dataset structure shall be represented :
 
 The following Drawings and visualisations describe the test case dataset to be modelled and certified.
 
-![](Figure 1 - situation.png)
+![](https://github.com/IFCRail/MVD-Infra-Test-Instructions/blob/Test_Instruction_Track_Structures_Level_Crossing/E2a-TRST/TSLC/Dataset/Figure%201%20-%20situation.png)
 
 
 ## Supporting files
