@@ -130,7 +130,7 @@ The following dataset structure shall be represented :
 
 The following Drawings and visualisations describe the test case dataset to be modelled and certified.
 
-![](./Figure 1 - situation.png)
+![](Figure 1 - situation.png)
 
 
 ## Supporting files
