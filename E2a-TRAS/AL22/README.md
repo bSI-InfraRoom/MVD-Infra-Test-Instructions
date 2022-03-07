@@ -129,10 +129,10 @@ ALIG_00: Alignment layout structure is verified
 <details><summary>Model Geometry</summary>
 The Test case requires the following additional checks related to Model Geometry:
 
-| **ID**  | **CRITERIA**                                                              | **VALUE** | **COMMENT**                |
-|---------|---------------------------------------------------------------------------|-----------|----------------------------|
-| ALIG_08 | Semantic description of segments corresponds to their geometry            | NA        | RDF tools can do this      |
-| ALIG_09 | Tangential continuity of all segments is verified, tolerance = 0,00000001 |           | RDF tools can do this      |
+| **ID**  | **CRITERIA**                                                                            | **VALUE** | **COMMENT**                |
+|---------|-----------------------------------------------------------------------------------------|-----------|----------------------------|
+| ALIG_08 | Semantic description of segments corresponds to their geometry                          | NA        | RDF tools can do this      |
+| ALIG_09 | Tangential continuity of all segments is verified, epsilon = 1⋅10<sup>-5</sup> (0,00001) |           | RDF tools can do this      |
 
 
 ALIG_07 - Note
@@ -228,6 +228,10 @@ For certification of capabilities the only source will be:
 
 </details>
 
+#### Validation parameters for import test
+The parameters contained in the following sections are meant to verify the **correct import** of the alignment dataset provided in this test, into a receiving application.
+
+**IMPORTANT**: to check most of the parameters below, some `IfcReferent` entities have to be defined. For this, see the test **AL24**
 
 <details open><summary> Alignment 1_Primary route </summary>
 
