@@ -15,9 +15,9 @@ This test case addresses the **export** of the required IFC entities for the exc
 | Number of alignment(s)       | 2                                         |
 | Vertical Measurement         | Lower Rail                                |
 | Properties of segments       | no                                        |
-| Horizontal layout            | Straight Line, Circular Arc, Clothoid     |
-| Vertical layout              | Straight Line, Circular Arc               |
-| Cant layout                  | Constant Straight Line, Linear Transition |
+| Horizontal layout            | Line, Circular Arc, Clothoid     |
+| Vertical layout              | Constant Gradient, Circular Arc               |
+| Cant layout                  | Constant Cant, Linear Transition |
 | IFC reference file available | no                                        |
 
 
@@ -46,6 +46,7 @@ These entities represent a test-specific subset of the wider AbRV_E2a exchange a
    1. IfcAlignmentHorizontal
    1. IfcAlignmentVertical
    1. IfcAlignmentCant
+   1. IfcAlignmentSegment
 </details>
 
 <details><summary>Concept Templates</summary> 
@@ -56,7 +57,12 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
    - Project Global Positioning
 - Object Composition
    - Alignment Layout
+   - Alignment Geometry Cant
    - Spatial Decomposition
+- Product Shape
+   - Product Geometric Representation
+       - Alignment Geometry
+          - Alignment Geometry Cant
 </details>
 
 
