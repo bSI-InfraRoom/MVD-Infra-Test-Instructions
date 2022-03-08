@@ -49,9 +49,13 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
 - Object definition
    - Object Typing
 - Product Shape
-   - `I need help here`
    - Product Geometric Representation
-   - ...
+   - Body SectionedSolidHorizontal
+- Object Connectivity
+   - Spatial Containment
+- Product Placement
+   - Product Local Placement
+   - Product Linear Placement
 </details>
 
 

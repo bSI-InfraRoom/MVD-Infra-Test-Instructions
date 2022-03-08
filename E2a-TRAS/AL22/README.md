@@ -47,6 +47,7 @@ These entities represent a test-specific subset of the wider AbRV_E2a exchange a
    1. IfcAlignment
    1. IfcAlignmentHorizontal
    1. IfcAlignmentVertical
+   1. IfcAlignmentSegment
 </details>
 
 <details><summary>Concept Templates</summary> 
@@ -60,6 +61,10 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
    - Spatial Decomposition
 - Object Connectivity
    - Spatial Containment
+- Product Shape
+   - Product Geometric Representation
+       - Alignment Geometry
+          - Alignment Geometry Gradient
 </details>
 
 
@@ -93,7 +98,6 @@ All validation criteria (and usages) of predecessors' tests shall be **verified 
 
 
 ## Usages, Constraints & Logic 
-:construction: **under construction, need agreement on SITE_01** :construction:
 
 The following itemised restrictions and constraints shall be placed on IFC Entities & Concept Templates:
 
@@ -101,11 +105,10 @@ The following itemised restrictions and constraints shall be placed on IFC Entit
 
 The following itemised Usages, Constraints & Logic are normative entries within the AbRV MVD and MUST be satisfied to meet the defined validation criteria
 
-| **ID**  | **CRITERIA**                           | **VALUE**                           | **COMMENT** |
-|---------|----------------------------------------|-------------------------------------|-------------|
-| ALIG_00 | Alignment layout structure is verified | See below for further specification |             |
-| SITE_00 | Alignment shall always be contained in a Site | na |             |
-| SITE_01 | A dataset can have more than one IfcSite. In this case, the alignment ??? | na |             |
+| **ID**  | **CRITERIA**                                        | **VALUE**                           | **COMMENT** |
+|---------|-----------------------------------------------------|-------------------------------------|-------------|
+| ALIG_00 | Alignment layout structure is verified              | See below for further specification |             |
+| SITE_00 | IfcAlignment shall always be contained in a IfcSite | na                                  |             |
 
 
 ALIG_00: Alignment layout structure is verified
@@ -116,24 +119,20 @@ ALIG_00: Alignment layout structure is verified
 > 1. Each `IfcAlignmentHorizontal` must be nested only by 1 `IfcAlignment`
 > 1. Each `IfcAlignmentVertical` must be nested only by 1 `IfcAlignment`
 > 1. Each `IfcAlignmentCant` must be nested only by 1 `IfcAlignment`
-> 1. Each `IfcAlignment` must nest only `IfcAlignmentHorizontal`, or `IfcAlignmentVertical`, or `IfcAlignmentCant`
+> 1. Each `IfcAlignment` must nest only the following entities: `IfcAlignmentHorizontal`, `IfcAlignmentVertical`, `IfcAlignmentCant`, `IfcReferent`, `IfcAlignment`
 > 1. Each `IfcAlignmentHorizontal` must nest only `IfcAlignmentHorizontalSegment`
 > 1. Each `IfcAlignmentVertical` must nest only `IfcAlignmentVerticalSegment`
 > 1. Each `IfcAlignmentCant` must nest only `IfcAlignmentCantSegment`
-> 1. Each `IfcAlignmentHorizontalSegment` must be nested only by 1 `IfcAlignmentHorizontal` 
-> 1. Each `IfcAlignmentVerticalSegment` must be nested only by 1 `IfcAlignmentVertical` 
-> 1. Each `IfcAlignmentCantSegment` must be nested only by 1 `IfcAlignmentCant` 
 
 </details>
 
 <details><summary>Model Geometry</summary>
 The Test case requires the following additional checks related to Model Geometry:
 
-| **ID**  | **CRITERIA**                                                              | **VALUE** | **COMMENT**                |
-|---------|---------------------------------------------------------------------------|-----------|----------------------------|
-| ALIG_07 | Value of the *RailHeadDistance* along the entire alignment                | 1500 mm   | See notes below for detail |
-| ALIG_08 | Semantic description of segments corresponds to their geometry            | NA        | RDF tools can do this      |
-| ALIG_09 | Tangential continuity of all segments is verified, tolerance = 0,00000001 |           | RDF tools can do this      |
+| **ID**  | **CRITERIA**                                                                            | **VALUE** | **COMMENT**                |
+|---------|-----------------------------------------------------------------------------------------|-----------|----------------------------|
+| ALIG_08 | Semantic description of segments corresponds to their geometry                          | NA        | RDF tools can do this      |
+| ALIG_09 | Tangential continuity of all segments is verified, epsilon = 1⋅10<sup>-5</sup> (0,00001) |           | RDF tools can do this      |
 
 
 ALIG_07 - Note
@@ -229,6 +228,10 @@ For certification of capabilities the only source will be:
 
 </details>
 
+#### Validation parameters for import test
+The parameters contained in the following sections are meant to verify the **correct import** of the alignment dataset provided in this test, into a receiving application.
+
+**IMPORTANT**: to check most of the parameters below, some `IfcReferent` entities have to be defined. For this, see the test **AL24**
 
 <details open><summary> Alignment 1_Primary route </summary>
 
