@@ -125,10 +125,10 @@ For certification of capabilities the only source will be:
 
 | # | Attribute     | Value / Instructions                        |
 |---|---------------|---------------------------------------------|
-| 1 | Name          | 'EPSG:3065'                                 |
+| 1 | Name          | 'EPSG:3065, EPSG:5214'                      |
 | 2 | Description   | 'Istituto Geografico Militare 1995 (IGM95)' |
 | 3 | GeodeticDatum | 'EPSG:6670'                                 |
-| 4 | VerticalDatum |  $                                          |
+| 4 | VerticalDatum | 'EPSG:5214'                                 |
 | 5 | MapProjection | 'UTM'                                       |
 | 6 | MapZone       | '33N'                                       |
 | 7 | MapUnit       | Meters                                      |
