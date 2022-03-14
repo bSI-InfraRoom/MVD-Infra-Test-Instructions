@@ -167,8 +167,6 @@ ALGM_01: Consistency between alignment semantics and geometry is verified
 
 For certification of capabilities the only source will be:
 
-:construction: under construction :construction:
-
 - n. 1 IFC file containing the information as requested. The file shall be named using the following syntax: `MVDCode`-`ExchangeCode`-`TestCode`-`SoftwareVendor`.`ifc` (Example: `IFC4.3_AbRV-E2b-ASTPC-AmazingSoft.ifc`)
 
 Considering the aim of this test, other **optional** results, not subject to the bSI certification process, yet useful to illustrate test results are:
@@ -180,8 +178,6 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 ## Validation criteria
 :zap: For this test case to be considered passed **all capabilities** listed in this section shall be verified, with no exception. :zap:
-
-:construction: under construction :construction:
 
 ### General & Imports
 
@@ -201,26 +197,75 @@ Considering the aim of this test, other **optional** results, not subject to the
 #### General
 | **ID**  | **CRITERIA**                                        | **VALUE**                                     | **COMMENT** |
 |---------|-----------------------------------------------------|-----------------------------------------------|-------------|
-| GENE_01 | All requested entities are present in the IFC model | per [Entities Table](Dataset/README.md#Entities-Table) |    |
-| GENE_02 | The model contains exactly 1 IfcAlignment | per [Entities Table](Dataset/README.md#Entities-Table) |    |
-| GENE_03 | The IfcAlignment nests exactly 1 IfcAlignmentHorizontal, exactly 1 IfcAlignmentVertical and exactly 1 IfcAlignmentCant | per [Entities Table](Dataset/README.md#Entities-Table) |    |
-| GENE_04 | The IfcAlignmentHorizontal nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentHorizontalSegment | per [Entities Table](Dataset/README.md#Entities-Table) |    |
-| GENE_05 | The IfcAlignmentVertical nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentVerticalSegment | per [Entities Table](Dataset/README.md#Entities-Table) |    |
-| GENE_06 | The IfcAlignmentCant nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentCantSegment | per [Entities Table](Dataset/README.md#Entities-Table) |    |
-| GENE_07 | Parameters of alignment segments shall be defined according to the Dataset | per [Entities Table](Dataset/README.md#Entities-Table) |    |
-| GENE_08 | Each IfcAlignment should have geometric representation IfcSegmentedReferenceCurve | per [Entities Table](Dataset/README.md#Entities-Table) |    |
-| GENE_09 | The EndPoint of IfcSegmentedReferenceCurve shall be present in the model to be checked | per [Entities Table](Dataset/README.md#Entities-Table) |    |
-| GENE_10 | The EndPoint of IfcGradientCurve shall be present in the model to be checked | per [Entities Table](Dataset/README.md#Entities-Table) |    |
+| GENE_00 | All requested entities are present in the IFC model | per [Entities Table](Dataset/README.md#Entities-Table) |    |
+| GENE_01 | All rules defined in [Usages, Constraints & Logic](## Usages, Constraints & Logic) are verified |  |    |
+
 
 </details>
 
-### Some Concept Group
+
+### Spatial decomposition
 
 <details><summary>Click to expand</summary>
-Criteria around the representation of 'Some Concept'
+> **Acceptance criteria**: For the **Spatial decomposition** capability, the validation procedure must verify that a Spatial Element of the requested type is decomposed by (via `IfcRelAggregates`) exactly a given number of Spatial Elements of the requested type, no more and no less.
 
-| **ID**  | **CRITERIA**                                        | **VALUE**                                | **COMMENT** |
-|---------|-----------------------------------------------------|------------------------------------------|-------------|
-| XXXX_01 | A Criteria to follow                                | its expected value or outcome             |             |
+
+| **ID**  | **CRITERIA**                                                 | **VALUE**                                      | **COMMENT** |
+| ------- | ------------------------------------------------------------ | ---------------------------------------------- | ----------- |
+| SD_01 | Decomposition of IfcProject                                    | 1 IfcSite                                      |             |
+| SD_02 | Decomposition of IfcSite                                       | 1 IfcRailway                                   |             |
+
+</details>
+
+### Alignment
+
+<details><summary>Click to expand</summary>
+
+
+| **ID**  | **CRITERIA**                                                 | **VALUE**                                      | **COMMENT** |
+| ------- | ------------------------------------------------------------ | ---------------------------------------------- | ----------- |
+| ALIG_01 | Alignments contained in file                                 | 1                                              |             |
+| ALIG_02 | Elements nested in Alignment                                     | exactly 1 horizontal, exactly 1 vertical, and exactly 1 cant                      |             |
+| ALIG_03 | The horizontal layout matches exactly the layout specified in the [Dataset description](./Dataset/README.md) | See [Dataset description](./Dataset/README.md) |             |
+| ALIG_04 | The vertical layout matches exactly the layout specified in the [Dataset description](./Dataset/README.md) | See [Dataset description](./Dataset/README.md) |             |
+| ALIG_05 | The cant layout matches exactly the layout specified in the [Dataset description](./Dataset/README.md) | See [Dataset description](./Dataset/README.md) |             |
+| ALIG_06 | The EndPoint of IfcSegmentedReferenceCurve shall be present in the model to be checked |  |    |
+| ALIG_07 | The EndPoint of IfcGradientCurve shall be present in the model to be checked |  |    |
+| ALIG_08 | The IfcSegmentedReferenceCurve shall have the IfcGradientCurve as BaseCurve |         |             |
+| ALIG_09 | The IfcGradientCurve shall have the IfcCompositeCurve as BaseCurve |         |             |
+
+</details>
+
+### Spatial containment
+
+<details><summary>Click to expand</summary>
+> **Acceptance criteria**: For the **Spatial containment** capability, the validation procedure must verify that a Spatial Element of the requested type contains (via `IfcRelContainedInSpatialStructure`) exactly a given number of Elements of the requested type, no more and no less.
+
+
+| **ID**  | **CRITERIA**                                                 | **VALUE**                                      | **COMMENT** |
+| ------- | ------------------------------------------------------------ | ---------------------------------------------- | ----------- |
+| SC_01 | Spatial containment of IfcAlignment                                | 1  IfcSite                                            |             |
+
+</details>
+
+### Project global positioning
+
+<details><summary>Click to expand</summary>
+> **Acceptance criteria**: For the **Project global positioning** capability, the validation procedure must verify that there is an IfcMapConversion with the given parameters associated with the IfcGeometricRepresentationContext (via `HasCoordinateOperation`). Furthermore, the IfcMapConversion shall have an association with an IfcProjectedCRS (via `HasCoordinateOperation`) with the given parameters.
+
+
+
+
+| Element          | Attribute        | Value     | Comment |
+| ---------------- | ---------------- | --------- | ------- |
+| IfcMapConversion | Eastings         | 24525000  |         |
+| IfcMapConversion | Northings        | 6876000   |         |
+| IfcMapConversion | OrthogonalHeight | 0         |         |
+| IfcMapConversion | XAxisAbscissa    | 1         |         |
+| IfcMapConversion | XAxisOrdinate    | 0         |         |
+| IfcMapConversion | Scale            | 1         |         |
+| IfcProjectedCRS  | Name             | EPSG:3878 |         |
+| IfcProjectedCRS  | GeodeticDatum    | EPSG:6258 |         |
+| IfcProjectedCRS  | VerticalDatum    | EPSG:6150 |         |
 
 </details>
