@@ -27,8 +27,6 @@ The [Expected Results](#Expected-Results) section lists the material that will b
 
 The Test instruction addresses the import and export of the following IFC Entities & Concept Templates:
 
-:construction: under construction :construction:
-
 <details><summary>IFC Entities</summary>
 
 These entities represent a test-specific subset of the wider AbRV_Ex exchange and the overall AbRV MVD. **The scope of the test shall not be used as a definitive scope of the exchange, or of the entire MVD.**
@@ -97,8 +95,6 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
 
 ## Test Case Imports
 Test instructions are defined with a modular approach to reduce repetition of validation criteria and test content, and improve vendors ability to solve issues and bugs. therefore this test instruction *imports/reuses* the following Test instructions and entities with the relevant associated validation criteria.
-
-:construction: under construction :construction:
 
 <details><summary>Imports & Reuses</summary>
 
