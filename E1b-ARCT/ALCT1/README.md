@@ -43,6 +43,10 @@ These entities represent a test-specific subset of the wider AbRV_Ex exchange an
   - *IfcAlignmentCant*
   
 - *Non-Rooted entities*
+  - *IfcMapConversion*
+  - *IfcProjectedCRS*
+  - *IfcUnitAssignment*
+  - *IfcSIUnit*
   - *IfcAlignmentHorizontalSegment*
   - *IfcAlignmentVerticalSegment*
   - *IfcAlignmentCantSegment*
