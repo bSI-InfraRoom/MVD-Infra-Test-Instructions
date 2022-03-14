@@ -148,13 +148,14 @@ The Test case requires the following additional checks related to Model Geometry
 | ALGM_00 | Continuity of alignment is verified    | na                   |             |
 | ALGM_01 | Consistency between alignment semantics and geometry is verified | na |             |
 
+ALGM_00: Continuity of alignment is verified
 > 1. The deviation between the end point of an 'IfcAlignmentHorizontalSegment' and the start point of subsequent 'IfcAlignmentHorizontalSegment' must be smaller than 0.00001m.
 > 1. The deviation between the end point of an 'IfcAlignmentVerticalSegment' and the start point of subsequent 'IfcAlignmentVerticalSegment' must be smaller than 0.00001m.
 > 1. The deviation between the end point of an 'IfcAlignmentCantSegment' and the start point of subsequent 'IfcAlignmentCantSegment' must be smaller than 0.00001m.
 > 1. In case of transition code "CONTSAMEGRADIENT", the deviation between the end direction of an IfcAlignmentHorizontalSegment and the start direction of subsequent IfcAlignmentHorizontalSegment must be smaller than 0.000001 radian.
 > 1. In case of transition code "CONTSAMEGRADIENT", the deviation between the end direction of an IfcAlignmentVerticalSegment and the start direction of subsequent IfcAlignmentVerticalSegment must be smaller than 0.000001 radian.
 
-
+ALGM_01: Consistency between alignment semantics and geometry is verified
 > 1. The geometric representation of alignment horizontal (IfcCompositeCurve segments) should be consistent with the semantic counterpart (list of IfcAlignmentHorizontalSegment).
 > 1. The geometric representation of alignment horizontal (IfcGradientCurve segments) should be consistent with the semantic counterpart (list of IfcAlignmentVerticalSegment).
 > 1. The geometric representation of alignment horizontal (IfcSegmentedReferenceCurve segments) should be consistent with the semantic counterpart (list of IfcAlignmentCantSegment).
