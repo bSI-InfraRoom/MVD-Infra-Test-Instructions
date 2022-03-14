@@ -83,6 +83,8 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
   - *Alignment Layout*
   - *Alignment Geometry Cant*
   - *Property Sets for Objects*
+  - *Object User Identity*
+  - *Software Identity*
   
 - *Partial Templates* 
   - *Arc Segment*
