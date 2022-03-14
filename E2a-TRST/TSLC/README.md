@@ -362,14 +362,14 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 | Element          | Attribute        | Value     | Comment |
 | ---------------- | ---------------- | --------- | ------- |
-| IfcMapConversion | Eastings         | 24525000  |         |
-| IfcMapConversion | Northings        | 6876000   |         |
+| IfcMapConversion | Eastings         | 2723000  |         |
+| IfcMapConversion | Northings        | 1213600   |         |
 | IfcMapConversion | OrthogonalHeight | 0         |         |
 | IfcMapConversion | XAxisAbscissa    | 1         |         |
 | IfcMapConversion | XAxisOrdinate    | 0         |         |
 | IfcMapConversion | Scale            | 1         |         |
-| IfcProjectedCRS  | Name             | EPSG:3878 |         |
-| IfcProjectedCRS  | GeodeticDatum    | EPSG:6258 |         |
+| IfcProjectedCRS  | Name             | EPSG:2056 |         |
+| IfcProjectedCRS  | GeodeticDatum    | EPSG:4150 |         |
 | IfcProjectedCRS  | VerticalDatum    | EPSG:3900 |         |
 
 </details>
