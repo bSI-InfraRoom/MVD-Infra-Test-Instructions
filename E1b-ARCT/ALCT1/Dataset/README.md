@@ -49,7 +49,7 @@ This test case utilises the attached dataset documented by the following drawing
 
 
 #### Horizontal Segments
-| start_point_x (m) | start_point_y (m) | start_direction (rad) | start_radius_of_curvature (m) | end_radius_of_curvature (m) | segment_length (m) | gravity_center_line_height (m) | predefined_type |
+| northing (m) | easting (m) | start_direction (rad) | start_radius_of_curvature (m) | end_radius_of_curvature (m) | segment_length (m) | gravity_center_line_height (m) | predefined_type |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | 1213636.85116 | 2723135.63807 | 3.098579537773168 | 0 | 0 | 18.11881 | None | LINE |
 | 1213618.74911 | 2723136.41718 | 3.0985826793658218 | 30000.0 | 30000.0 | 10.43075 | None | CIRCULARARC |
