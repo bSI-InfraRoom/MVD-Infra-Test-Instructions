@@ -35,13 +35,14 @@ These entities represent a test-specific subset of the wider AbRV_Ex exchange an
 
 - Inherited from imported tests
   - Model setup
-    - *IfcSite*
-    - *IfcRoad*
+    - *IfcProject*
     - *IfcRepresentationContext*
     - *IfcMapConversion*
     - *IfcProjectedCRS*
     - *IfcUnitAssignment*
-
+  - Spatial structure
+    - *IfcSite*
+    - *IfcRoad*
 - For this test instruction
   - Alignment
     - *IfcAlignment*
@@ -50,8 +51,6 @@ These entities represent a test-specific subset of the wider AbRV_Ex exchange an
     - *IfcAlignmentSegment*
     - *IfcAlignmentHorizontalSegment*
     - *IfcAlignmentVerticalSegment*
-
-
 
 </details>
 
