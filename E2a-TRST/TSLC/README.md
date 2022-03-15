@@ -52,14 +52,14 @@ These entities represent a test-specific subset of the wider AbRV_Ex exchange an
     - *IfcMember*
     - *IfcSignal*
     - *IfcSign*
-  - IfcDoor
+  - *IfcDoor*
   - *IfcFooting*
   - *IfcRailing*
   
 - Signaling equipment
   - *IfcSensor* (axle counters)
   - *IfcDiscreteAccessory* (snow plough protection)
-  - IfcJunctionBox
+  - *IfcJunctionBox*
 
 </details>
 
@@ -77,7 +77,7 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
   - *Spatial Interference*
   - *Spatial Container*
 - *Alignment*
-  - *Alignment Layout*
+  - *Alignment Decomposition*
   - *Alignment Geometry Gradient*
 - *Element composition*
   - *Element Composition*
@@ -113,34 +113,17 @@ The following itemised restrictions and constraints shall be placed on IFC Entit
 
 <details><summary>Semantic Usages, Constraints & Logic</summary>
 The following itemised Usages, Constraints & Logic are normative entries within the AbRV MVD and MUST be satisfied to meet the defined validation criteria.
+| ID      | CRITERIA                                                     | Concept template                                             | COMMENT                                                      |
+| ------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| TSLC_01 | All Alignments shall be contained in a Site<br />All Physical Elements shall be directly or indirectly contained in a spatial structure element | Spatial Containment                                          | See [Validation Criteria](#Validation criteria)              |
+| TSLC_02 | Alignment layout structure is verified                       | Alignment Decomposition                                      | See below and [Validation Criteria](#Validation criteria) for further specification |
+| TSLC_03 | Spatial structure is verified                                | Spatial Composition<br />Spatial Decomposition<br />Spatial Interference | See [Validation Criteria](#Validation criteria)              |
+| TSLC_04 | Elements are aggregated as required                          | Element Composition                                          | See [Validation Criteria](#Validation criteria)              |
+| TSLC_05 | Elements are placed as required                              | Product Placement                                            | See [Validation Criteria](#Validation criteria)              |
+| TSLC_06 | Elements placed relative to the alignments use relative positioning as required | Product Relative Positioning                                 | See below and [Validation Criteria](#Validation criteria) for further specification |
+| TSLC_07 | Spatial interference is defined where spatial structure elements interfere | Spatial Interference (is this CT missing?)                   | See below and [Validation Criteria](#Validation criteria) for further specification |
 
-| **ID**  | **CRITERIA**                                  | **VALUE**                           | **COMMENT** |
-| ------- | --------------------------------------------- | ----------------------------------- | ----------- |
-| SE_00   | Spatial structure is verified                 | See below for further specification |             |
-| ALIG_00 | Alignment layout structure is verified        | See below for further specification |             |
-| SITE_00 | Alignment shall always be contained in a Site | na                                  |             |
-| SC_00   | Spatial Containment is verified               | See below for further specification |             |
-| EC_00   | Element Composition is verified               | See below for further specification |             |
-| EP_00   | Element Placement is verified                 | See below for further specification |             |
-| ERP_00  | Element relative positioning verified         | See below for further specification |             |
-| SI_00   | Spatial interference is verified              | See below for further specification |             |
-
-SE_00: Spatial structure is verified
-
->1. The dataset shall contain one *IfcSite* instance
->2. The dataset shall contain one `IfcRailway` instance that is aggregated into the *IfcSite* according to CT Spatial Composition. 
->3. The dataset shall contain one `IfcRoad` instance that is aggregated into the *IfcSite* according to CT Spatial Composition. 
->4. The *IfcRailway* instance shall be decomposed into three *IfcFacilityPart* instances according to CT Spatial Decomposition
->   1. One `IfcFacilityPart` with `PredefinedType=IfcRailwayPartTypeEnum.TRACKSTRUCTURE`
->   2. One `IfcFacilityPart` with `PredefinedType=IfcFacilityPartCommonTypeEnum.LEVELCROSSING`
->   3. One `IfcFacilityPart` with `PredefinedType=IfcRailwayPartTypeEnum.TRACKSTRUCTURE`
->5. The `IfcRoad` instance shall be decomposed into three `IfcFacilityPart` instances according to CT Spatial Decomposition
->   1. One `IfcFacilityPart` with `PredefinedType=IfcRoadPartTypeEnum.ROADSEGMENT`
->   2. One `IfcFacilityPart` with `PredefinedType=IfcFacilityPartCommonTypeEnum.LEVELCROSSING`
->   3. One `IfcFacilityPart` with `PredefinedType=IfcRoadPartTypeEnum.ROADSEGMENT`
->6. The two facility parts representing the level crossing in the road and railway facilities shall be linked as interfering according to CT Spatial Interference
-
-ALIG_00: Alignment layout structure is verified
+TSLC_02: Alignment layout structure is verified
 
 > 1. Each `IfcAlignment` must nest exactly 1 `IfcAlignmentHorizontal`
 > 2. Each `IfcAlignment` must nest at most 1 `IfcAlignmentVertical`
@@ -149,60 +132,22 @@ ALIG_00: Alignment layout structure is verified
 > 5. Each `IfcAlignment` must nest only `IfcAlignmentHorizontal`, or `IfcAlignmentVertical`
 > 6. Each `IfcAlignmentHorizontal` must nest only `IfcAlignmentHorizontalSegment`
 > 7. Each `IfcAlignmentVertical` must nest only `IfcAlignmentVerticalSegment`
-> 8. Each `IfcAlignmentHorizontalSegment` must be nested only by 1 `IfcAlignmentHorizontal`
-> 9. Each `IfcAlignmentVerticalSegment` must be nested only by 1 `IfcAlignmentVertical`
 
-SC_00: Spatial Containment is verified
+TSLC_06: Element Relative Positioning
 
-> 1. The top level signal assembly (`IfcElementAssembly/SIGNALASSEMBLY`) is contained in the `IfcRoad` facility.
-> 2. The axle counters (`IfcSensor/WHEELSENSOR`) is contained in the `LEVELCROSSING` facility part belonging to the `IfcRailway` facility.
-> 3. The junction boxes (`IfcJunctionBox/DATA`) is contained in the `LEVELCROSSING` facility part belonging to the `IfcRailway` facility.
-> 4. The snow plough protection equipment (`IfcDiscreteAccessory/RAIL_MECHANICAL_EQUIPMENT`) is contained in the `LEVELCROSSING` facility part belonging to the `IfcRailway` facility.
+> 1. All elements in the dataset having an associated IfcLinearPlacement and that are not nested into the IfcAlignment shall have a relative positioning relationship with the corresponding IfcAlignment according to CT Product Relative Positioning.
 
-EC_00: Element Composition is verified
+TSLC_07: Spatial Interference
 
-> 1. A second level signal assembly (`IfcElementAssembly/SIGNALASSEMBLY`) is a component of the top level signal assembly.
-> 2. The boom barrier (`IfcDoor/BOOM_BARRIER`) is a component of the top level signal assembly.
-> 3. The footing (`IfcFooting/PAD_FOOTING`) is a component of the top level signal assembly.
-> 4. The railing (`IfcRailing/GUARDRAIL`) is a component of the top level signal assembly.
-> 5. The post  (`IfcMember/POST`)  is a component of the second level signal assembly.
-> 6. The visual signal (`IfcSignal/VISUAL`)  is a component of the second level signal assembly.
-> 7. The audio signal (`IfcSignal/AUDIO`)  is a component of the second level signal assembly.
-> 8. The sign (`IfcSign/PICTORAL`)  is a component of the second level signal assembly.
-
-EP_00: Element Placement is verified
-
-> 1. The track alignment (`IfcAlignment`) shall have an `IfcLocalPlacement` relative to the placement of the `IfcSite`.
-> 2. The top level signal assembly shall have an associated `IfcLinearPlacement` relative to the track alignment curve according to CT Product Linear Placement at the specified location.
-> 3. The components of the top level signal assembly shall have an associated `IfcLocalPlacement` relative to the `IfcLinearPlacement` of the top level signal assembly at the specified locations according to CT Product Local Placement.
-> 4. The axle counters (IfcSensor/WHEELSENSOR) shall have an associated `IfcLinearPlacement` relative to the track alignment curve according to CT Product Linear Placement at the specified location.
-> 5. The snow plough protection (IfcDiscreteAccessory/RAIL_MECHANICAL_EQUIPMENT) shall have an associated `IfcLinearPlacement` relative to the track alignment curve according to CT Product Linear Placement at the specified location.
-> 6. The junction boxes (IfcJunctionBox/DATA) shall have an associated `IfcLinearPlacement` relative to the track alignment curve according to CT Product Linear Placement at the specified location.
-
-ERP_00: Element Relative Positioning
-
-> 1. All elements in the dataset having an associated IfcLinearPlacement shall have a relative positioning relationship with the corresponding track alignment according to CT Product Relative Positioning.
-
-SI_00: Spatial Interference
-
-> 1. There shall be one `IfcRelInterferesElements` instance specifying a "Crosses" interference relationship between the different IfcFacilityPart/LEVELCROSSING instances.
+> 1. Where two spatial structure elements interfere, there shall be one `IfcRelInterferesElements` instance specifying the interference relationship.
 
 </details>
 
 <details><summary>Model Geometry</summary>
 The Test case requires the following additional checks related to Model Geometry:
-
-
-
-| **ID**  | **CRITERIA**                                   | **VALUE**                           | **COMMENT** |
-| ------- | ---------------------------------------------- | ----------------------------------- | ----------- |
-| ALIG_01 | Alignment geometric representation is verified | See below for further specification |             |
-
-
-> 1. Each `IfcAlignment` shall have one Representation with RepresentationIdentifier="Axis" and RepresentationType="Curve3D" referencing 1 `IfcGradientCurve`
-> 1. Each `IfcAlignmentHorizontal` shall have one Representation with RepresentationIdentifier="Axis" and RepresentationType="Curve2D" referencing 1 `IfcCompositeCurve`
-> 1. Each `IfcAlignmentVertical` shall have one Representation with RepresentationIdentifier="Axis" and RepresentationType="Curve3D" referencing 1 `IfcGradientCurve` (the same instance as is referred from the owning `IfcAlignment` instance). 
-> 1. Geometric representations shall correspond to the semantic definitions.
+| ID      | CRITERIA                                       | Concept template            | COMMENT                                         |
+| ------- | ---------------------------------------------- | --------------------------- | ----------------------------------------------- |
+| TSLC_08 | Alignment geometric representation is verified | Alignment Geometry Gradient | See [Validation Criteria](#Validation criteria) |
 
 </details>
 
@@ -250,16 +195,15 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 <details><summary>Click to expand</summary>
 > **Acceptance criteria**: For the **Spatial decomposition** capability, the validation procedure must verify that a Spatial Element of the requested type is decomposed by (via `IfcRelAggregates`) exactly a given number of Spatial Elements of the requested type, no more and no less.
-
-
-| Relating Spatial Element | Relating Spatial Element Type | Minimum | Maximum | Related Spatial element | Related Spatial Element Type                | Usage type   |
-| ------------------------ | ----------------------------- | ------- | ------- | ----------------------- | ------------------------------------------- | ------------ |
-| IfcSite                  |                               | 1       | 1       | IfcRoad                 |                                             |              |
-| IfcSite                  |                               | 1       | 1       | IfcRailway              |                                             |              |
-| IfcRoad                  |                               | 2       | 2       | IfcFacilityPart         | IfcRoadPartTypeEnum.ROADSEGMENT             | LONGITUDINAL |
-| IfcRoad                  |                               | 1       | 1       | IfcFacilityPart         | IfcFacilityPartCommonTypeEnum.LEVELCROSSING | LONGITUDINAL |
-| IfcRailway               |                               | 2       | 2       | IfcFacilityPart         | IfcRailwayPartTypeEnum.TRACKSTRUCTURE       | LONGITUDINAL |
-| IfcRailway               |                               | 2       | 2       | IfcFacilityPart         | IfcFacilityPartCommonTypeEnum.LEVELCROSSING | LONGITUDINAL |
+| ID      | CRITERIA                                                     | VALUE                                                  | COMMENT |
+| ------- | ------------------------------------------------------------ | ------------------------------------------------------ | ------- |
+| SPAT_00 | The file contains exactly 1 IfcSite element                  | per [Entities Table](Dataset/README.md#Entities-Table) |         |
+| SPAT_01 | The IfcSite is composed of exactly 1 IfcRoad element         | per [Entities Table](Dataset/README.md#Entities-Table) |         |
+| SPAT_02 | The IfcSite is composed of exactly 1 IfcRailway element      | per [Entities Table](Dataset/README.md#Entities-Table) |         |
+| SPAT_03 | The IfcRoad is composed of Exactly 2 elements of type IfcFacilityPart/IfcRoadPartTypeEnum(ROADSEGMENT) | per [Entities Table](Dataset/README.md#Entities-Table) |         |
+| SPAT_04 | The IfcRoad is composed of Exactly 1 element of type IfcFacilityPart/IfcFacilityPartCommonTypeEnum(LEVELCROSSING) | per [Entities Table](Dataset/README.md#Entities-Table) |         |
+| SPAT_05 | The IfcRailway is composed of Exactly 2 elements of type IfcFacilityPart/IfcRailwayPartTypeEnum(TRACKSTRUCTURE) | per [Entities Table](Dataset/README.md#Entities-Table) |         |
+| SPAT_06 | The IfcRailway is composed of Exactly 1 element of type IfcFacilityPart/IfcFacilityPartCommonTypeEnum(LEVELCROSSING) | per [Entities Table](Dataset/README.md#Entities-Table) |         |
 
 </details>
 
@@ -267,47 +211,49 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 <details><summary>Click to expand</summary>
 > **Acceptance criteria**: For the **Spatial interference** capability, the validation procedure must verify that a Spatial Element of the requested type interferes with (via `IfcRelInterferesElements`) a Spatial Element of the requested type.
-
-
-| Relating Spatial Element | Relating Spatial Element Type               | Related Spatial element | Related Spatial Element Type                |
-| ------------------------ | ------------------------------------------- | ----------------------- | ------------------------------------------- |
-| IfcFacilityPart          | IfcFacilityPartCommonTypeEnum.LEVELCROSSING | IfcFacilityPart         | IfcFacilityPartCommonTypeEnum.LEVELCROSSING |
+| ID      | CRITERIA                                                     | VALUE                                                  | COMMENT |
+| ------- | ------------------------------------------------------------ | ------------------------------------------------------ | ------- |
+| SPIF_00 | There shall be one IfcRelInterferesElements relationship relating the two IfcFacilityPart instances typed as LEVELCROSSING. The IfcRelInterferesElements.InterferenceType shall have the value 'Crosses'. | per [Entities Table](Dataset/README.md#Entities-Table) |         |
 
 </details>
 
-### Track alignment
+### Alignment layout structure
+
+<details><summary>Click to expand</summary>
+| **ID**  | **CRITERIA**                                                 | **VALUE**                                              | **COMMENT** |
+| ------- | ------------------------------------------------------------ | ------------------------------------------------------ | ----------- |
+| ALIG_01 | The model contains exactly 2 IfcAlignment instances          | per [Entities Table](Dataset/README.md#Entities-Table) |             |
+| ALIG_02 | Each IfcAlignment nests exactly 1 IfcAlignmentHorizontal and exactly 1 IfcAlignmentVertical | per [Entities Table](Dataset/README.md#Entities-Table) |             |
+| ALIG_03 | Each IfcAlignmentHorizontal nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentHorizontalSegment | per [Entities Table](Dataset/README.md#Entities-Table) |             |
+| ALIG_04 | Each IfcAlignmentVertical nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentVerticalSegment | per [Entities Table](Dataset/README.md#Entities-Table) |             |
+| ALIG_05 | Parameters of alignment segments shall be defined according to the dataset description | per [Entities Table](Dataset/README.md#Entities-Table) |             |
+
+</details>
+
+### Alignment Geometry Gradient
 
 <details><summary>Click to expand</summary>
 
-
-| **ID**  | **CRITERIA**                                                 | **VALUE**                                      | **COMMENT** |
-| ------- | ------------------------------------------------------------ | ---------------------------------------------- | ----------- |
-| ALIG_01 | Alignments contained in file                                 | 1                                              |             |
-| ALIG_02 | Components for Alignment                                     | 1 horizontal, 1 vertical                       |             |
-| ALIG_03 | The horizontal (H) layout matches exactly the layout specified in the [Dataset description](./Dataset/README.md) | See [Dataset description](./Dataset/README.md) |             |
-| ALIG_04 | The vertical (V) layout matches exactly the layout specified in the [Dataset description](./Dataset/README.md) | See [Dataset description](./Dataset/README.md) |             |
-| ALIG_05 | The IfcAlignment shall have one Representation of type IfcProductShapeRepresentation having one Representation of type IfcShapeRepresentation having RepresentationIdentifier="Axis" and RepresentationType="Curve3D" and having one Item of type IfcGradientCurve. |                                                |             |
-| ALIG_06 | The IfcAlignmentHorizontal shall have one Representation of type IfcProductShapeRepresentation having one Representation of type IfcShapeRepresentation having RepresentationIdentifier="Axis" and RepresentationType="Curve2D" and having one Item of type IfcCompositeCurve. |                                                |             |
-| ALIG_07 | The IfcAlignmentVertical shall have one Representation of type IfcProductShapeRepresentation having one Representation of type IfcShapeRepresentation having RepresentationIdentifier="Axis" and RepresentationType="Curve3D" and having one Item of type IfcGradientCurve (same instance as referred to by IfcAlignment). |                                                |             |
-| ALIG_06 | The IfcGradientCurve shall have the IfcCompositeCurve as BaseCurve |                                                |             |
-| ALIG_07 | The IfcGradientCurve shall have Segments that exactly match the corresponding vertical segments in the IfcAlignmentVertical and in the same order |                                                |             |
-| ALIG_08 | The IfcCompositeCurve shall have Segments that exactly match the corresponding horizontal segments in the IfcAlignmentHorizontal and in the same order |                                                |             |
-
-</details>
+| **ID**  | **CRITERIA**                                                 | **VALUE**                                              | **COMMENT** |
+| ------- | ------------------------------------------------------------ | ------------------------------------------------------ | ----------- |
+| ALGG_00 | Each IfcAlignment shall have one Representation of type IfcProductShapeRepresentation having one Representation of type IfcShapeRepresentation having RepresentationIdentifier="Axis" and RepresentationType="Curve3D" and having one Item of type IfcGradientCurve. | per [Entities Table](Dataset/README.md#Entities-Table) |             |
+| ALGG_01 | Each IfcAlignmentHorizontal shall have one Representation of type IfcProductShapeRepresentation having one Representation of type IfcShapeRepresentation having RepresentationIdentifier="Axis" and RepresentationType="Curve2D" and having one Item of type IfcCompositeCurve. | per [Entities Table](Dataset/README.md#Entities-Table) |             |
+| ALGG_02 | Each IfcAlignmentVertical shall have one Representation of type IfcProductShapeRepresentation having one Representation of type IfcShapeRepresentation having RepresentationIdentifier="Axis" and RepresentationType="Curve3D" and having one Item of type IfcGradientCurve (same instance as referred to by IfcAlignment). | per [Entities Table](Dataset/README.md#Entities-Table) |             |
+| ALGG_03 | Each IfcGradientCurve shall have the corresponding IfcCompositeCurve as BaseCurve | per [Entities Table](Dataset/README.md#Entities-Table) |             |
+| ALGG_04 | Each IfcGradientCurve shall have Segments that exactly match the corresponding vertical segments in the IfcAlignmentVertical and in the same order | per [Entities Table](Dataset/README.md#Entities-Table) |             |
+| ALGG_05 | Each IfcCompositeCurve shall have Segments that exactly match the corresponding horizontal segments in the IfcAlignmentHorizontal and in the same order | per [Entities Table](Dataset/README.md#Entities-Table) |             |
 
 ### Spatial containment
 
 <details><summary>Click to expand</summary>
 > **Acceptance criteria**: For the **Spatial containment** capability, the validation procedure must verify that a Spatial Element of the requested type contains (via `IfcRelContainedInSpatialStructure`) exactly a given number of Elements of the requested type, no more and no less.
-
-
-| Spatial Element | Spatial Element Type                 | Minimum | Maximum | Element              | Element Type              |
-| --------------- | ------------------------------------ | ------- | ------- | -------------------- | ------------------------- |
-| IfcSite         |                                      | 1       | 1       | IfcAlignment         |                           |
-| IfcRoad         |                                      | 1       | 1       | IfcElementAssembly   | SIGNALASSEMBLY            |
-| IfcFacilityPart | IfcRailwayPartTypeEnum.LEVELCROSSING | 2       | 2       | IfcSensor            | WHEELSENSOR               |
-| IfcFacilityPart | IfcRailwayPartTypeEnum.LEVELCROSSING | 2       | 2       | IfcJunctionBox       | DATA                      |
-| IfcFacilityPart | IfcRailwayPartTypeEnum.LEVELCROSSING | 2       | 2       | IfcDiscreteAccessory | RAIL_MECHANICAL_EQUIPMENT |
+| **ID**  | **CRITERIA**                                                 | **VALUE**                                              | **COMMENT** |
+| ------- | ------------------------------------------------------------ | ------------------------------------------------------ | ----------- |
+| SPAC_00 | The IfcSite contains exactly 2 IfcAlignment instances        | per [Entities Table](Dataset/README.md#Entities-Table) |             |
+| SPAC_01 | The IfcRoad contains exactly one IfcElementAssembly/SIGNALASSEMBLY | per [Entities Table](Dataset/README.md#Entities-Table) |             |
+| SPAC_02 | The IfcFacilityPart/IfcFacilityPartCommonTypeEnum(LEVELCROSSING) that decomposes IfcRail contains exactly 2 IfcSensor/WHEELSENSOR | per [Entities Table](Dataset/README.md#Entities-Table) |             |
+| SPAC_03 | The IfcFacilityPart/IfcFacilityPartCommonTypeEnum(LEVELCROSSING) that decomposes IfcRail contains exactly 2 IfcJunctionBox/DATA | per [Entities Table](Dataset/README.md#Entities-Table) |             |
+| SPAC_04 | The IfcFacilityPart/IfcFacilityPartCommonTypeEnum(LEVELCROSSING) that decomposes IfcRail contains exactly 2 IfcDiscreteAccessory/RAIL_MECHANICAL_EQUIPMENT | per [Entities Table](Dataset/README.md#Entities-Table) |             |
 
 </details>
 
@@ -315,18 +261,16 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 <details><summary>Click to expand</summary>
 > **Acceptance criteria**: For the **Element decomposition** capability, the validation procedure must verify that an Element of the requested type is decomposed by (via `IfcRelAggregates`) exactly a given number of Elements of the requested type, no more and no less.
-
-
-| Spatial Element              | Spatial Element Type | Minimum | Maximum | Element                      | Element Type   |
-| ---------------------------- | -------------------- | ------- | ------- | ---------------------------- | -------------- |
-| IfcElementAssembly (level 1) | SIGNALASSEMBLY       | 1       | 1       | IfcElementAssembly (level 2) | SIGNALASSEMBLY |
-| IfcElementAssembly (level 1) | SIGNALASSEMBLY       | 1       | 1       | IfcDoor                      | BOOM_BARRIER   |
-| IfcElementAssembly (level 1) | SIGNALASSEMBLY       | 1       | 1       | IfcFooting                   | PAD_FOOTING    |
-| IfcElementAssembly (level 1) | SIGNALASSEMBLY       | 1       | 1       | IfcRailing                   | GUARDRAIL      |
-| IfcElementAssembly (level 2) | SIGNALASSEMBLY       | 1       | 1       | IfcMember                    | POST           |
-| IfcElementAssembly (level 2) | SIGNALASSEMBLY       | 1       | 1       | IfcSignal                    | VISUAL         |
-| IfcElementAssembly (level 2) | SIGNALASSEMBLY       | 1       | 1       | IfcSignal                    | AUDIO          |
-| IfcElementAssembly (level 2) | SIGNALASSEMBLY       | 1       | 1       | IfcSign                      | PICTORAL       |
+| **ID**  | **CRITERIA**                                                 | **VALUE**                                              | **COMMENT** |
+| ------- | ------------------------------------------------------------ | ------------------------------------------------------ | ----------- |
+| ELDC_00 | The top level IfcElementAssembly aggregates exactly 1 lower level IfcElementAssembly/SIGNALASSEMBLY | per [Entities Table](Dataset/README.md#Entities-Table) |             |
+| ELDS_01 | The top level IfcElementAssembly aggregates exactly 1 IfcDoor/BOOM_BARRIER | per [Entities Table](Dataset/README.md#Entities-Table) |             |
+| ELDS_02 | The top level IfcElementAssembly aggregates exactly 1 IfcFooting/PAD_FOOTING | per [Entities Table](Dataset/README.md#Entities-Table) |             |
+| ELDS_03 | The top level IfcElementAssembly aggregates exactly 1 IfcRailing/GUARDRAIL | per [Entities Table](Dataset/README.md#Entities-Table) |             |
+| ELDS_04 | The lower level level IfcElementAssembly aggregates exactly 1 IfcMember/POST | per [Entities Table](Dataset/README.md#Entities-Table) |             |
+| ELDS_05 | The lower level level IfcElementAssembly aggregates exactly 1 IfcSignal/VISUAL | per [Entities Table](Dataset/README.md#Entities-Table) |             |
+| ELDS_06 | The lower level level IfcElementAssembly aggregates exactly 1 IfcSignal/AUDIO | per [Entities Table](Dataset/README.md#Entities-Table) |             |
+| ELDS_07 | The lower level level IfcElementAssembly aggregates exactly 1 IfcSign/PICTORAL | per [Entities Table](Dataset/README.md#Entities-Table) |             |
 
 </details>
 
@@ -335,9 +279,9 @@ Considering the aim of this test, other **optional** results, not subject to the
 <details><summary>Click to expand</summary>
 > **Acceptance criteria**: For the **Element placement** capability, the validation procedure must verify that an Element of the requested type is placed according to the specified placement with the specified values.
 
-| **ID** | **CRITERIA**                                                 | **VALUE**                                      | **COMMENT** |
-| ------ | ------------------------------------------------------------ | ---------------------------------------------- | ----------- |
-| EP_01  | Elements are placed at the specified location using the specified ObjectPlacement | See [Dataset description](./Dataset/README.md) |             |
+| **ID**  | **CRITERIA**                                                 | **VALUE**                                              | **COMMENT** |
+| ------- | ------------------------------------------------------------ | ------------------------------------------------------ | ----------- |
+| ELPL_00 | Elements are placed at the specified location using the specified ObjectPlacement | per [Entities Table](Dataset/README.md#Entities-Table) |             |
 
 </details>
 
@@ -346,9 +290,9 @@ Considering the aim of this test, other **optional** results, not subject to the
 <details><summary>Click to expand</summary>
 > **Acceptance criteria**: For the **Element Relative Positioning** capability, the validation procedure must verify that an Element of the requested type has a position relative to the specified positioning element via IfcRelPositions.
 
-| **ID** | **CRITERIA**                                                 | **VALUE**                                      | **COMMENT** |
-| ------ | ------------------------------------------------------------ | ---------------------------------------------- | ----------- |
-| ERP_01 | Each element that is placed linearly using `IfcLinearPlacement` shall have an IfcRelPositions relationship with the corresponding `IfcAlignment` | See [Dataset description](./Dataset/README.md) |             |
+| **ID**  | **CRITERIA**                                                 | **VALUE**                                              | **COMMENT** |
+| ------- | ------------------------------------------------------------ | ------------------------------------------------------ | ----------- |
+| ERPO_01 | Each element that is placed linearly using IfcLinearPlacement shall have an IfcRelPositions relationship with the corresponding IfcAlignment | per [Entities Table](Dataset/README.md#Entities-Table) |             |
 
 </details>
 
@@ -356,20 +300,18 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 <details><summary>Click to expand</summary>
 > **Acceptance criteria**: For the **Project global positioning** capability, the validation procedure must verify that there is an IfcMapConversion with the given parameters associated with the IfcGeometricRepresentationContext (via `HasCoordinateOperation`). Furthermore, the IfcMapConversion shall have an association with an IfcProjectedCRS (via `HasCoordinateOperation`) with the given parameters.
-
-
-
+The parameters below shall be used for Project Global Positioning.
 
 | Element          | Attribute        | Value     | Comment |
 | ---------------- | ---------------- | --------- | ------- |
-| IfcMapConversion | Eastings         | 2723000  |         |
-| IfcMapConversion | Northings        | 1213600   |         |
+| IfcMapConversion | Eastings         | 24525000  |         |
+| IfcMapConversion | Northings        | 6876000   |         |
 | IfcMapConversion | OrthogonalHeight | 0         |         |
 | IfcMapConversion | XAxisAbscissa    | 1         |         |
 | IfcMapConversion | XAxisOrdinate    | 0         |         |
 | IfcMapConversion | Scale            | 1         |         |
-| IfcProjectedCRS  | Name             | EPSG:2056 |         |
-| IfcProjectedCRS  | GeodeticDatum    | EPSG:4150 |         |
+| IfcProjectedCRS  | Name             | EPSG:3878 |         |
+| IfcProjectedCRS  | GeodeticDatum    | EPSG:6258 |         |
 | IfcProjectedCRS  | VerticalDatum    | EPSG:3900 |         |
 
 </details>
