@@ -24,8 +24,8 @@ This test case utilises the following dataset:
 - The vertical layout has the following sequences of elements:
 
   - Line => Circular arc => Line
-  - Line => Circular arc (cw) => Circular arc (ccw) => Line
-  - Line => Circular arc (ccw) => Circular arc (cw) => Line
+  - Line => Circular arc (crest) => Circular arc (sag) => Line
+  - Line => Circular arc (sag) => Circular arc (crest) => Line
 
 The following tables lists the entities that shall be present in the dataset in addition to the imported entities for model setup :
 
