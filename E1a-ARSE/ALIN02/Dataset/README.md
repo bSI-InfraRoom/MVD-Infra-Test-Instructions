@@ -28,11 +28,11 @@ The following tables lists the entities that shall be present in the dataset in 
 
 Alignment:
 
-| Name | Type                   | ObjectPlacement   | Representation |
-| ---- | ---------------------- | ----------------- | -------------- |
-| A1   | IfcAlignment           | IfcLocalPlacement | None           |
-| AH1  | IfcAlignmentHorizontal | IfcLocalPlacement | None           |
-| AV1  | IfcAlignmentVertical   | IfcLocalPlacement | None           |
+| Name | Type                   | ObjectPlacement | Representation |
+| ---- | ---------------------- | --------------- | -------------- |
+| A1   | IfcAlignment           | None            | None           |
+| AH1  | IfcAlignmentHorizontal | None            | None           |
+| AV1  | IfcAlignmentVertical   | None            | None           |
 
 Horizontal segments nested into AH1 in the following order:
 
