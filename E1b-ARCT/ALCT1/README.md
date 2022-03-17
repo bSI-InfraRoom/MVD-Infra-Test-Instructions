@@ -107,8 +107,6 @@ Test instructions are defined with a modular approach to reduce repetition of va
 ## Usages, Constraints & Logic
 The following itemised restrictions and constraints shall be placed on IFC Entities & Concept Templates:
 
-:construction: under construction :construction:
-
 <details><summary>Semantic Usages, Constraints & Logic</summary>
 
 The following itemised Usages, Constraints & Logic are normative entries within the AbRV MVD and MUST be satisfied to meet the defined validation criteria
