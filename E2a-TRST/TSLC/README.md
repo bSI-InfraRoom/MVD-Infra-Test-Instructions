@@ -113,6 +113,7 @@ The following itemised restrictions and constraints shall be placed on IFC Entit
 
 <details><summary>Semantic Usages, Constraints & Logic</summary>
 The following itemised Usages, Constraints & Logic are normative entries within the AbRV MVD and MUST be satisfied to meet the defined validation criteria.
+
 | ID      | CRITERIA                                                     | Concept template                                             | COMMENT                                                      |
 | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | TSLC_01 | All Alignments shall be contained in a Site<br />All Physical Elements shall be directly or indirectly contained in a spatial structure element | Spatial Containment                                          | See [Validation Criteria](#Validation criteria)              |
@@ -145,6 +146,7 @@ TSLC_07: Spatial Interference
 
 <details><summary>Model Geometry</summary>
 The Test case requires the following additional checks related to Model Geometry:
+
 | ID      | CRITERIA                                       | Concept template            | COMMENT                                         |
 | ------- | ---------------------------------------------- | --------------------------- | ----------------------------------------------- |
 | TSLC_08 | Alignment geometric representation is verified | Alignment Geometry Gradient | See [Validation Criteria](#Validation criteria) |
@@ -195,6 +197,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 <details><summary>Click to expand</summary>
 > **Acceptance criteria**: For the **Spatial decomposition** capability, the validation procedure must verify that a Spatial Element of the requested type is decomposed by (via `IfcRelAggregates`) exactly a given number of Spatial Elements of the requested type, no more and no less.
+
 | ID      | CRITERIA                                                     | VALUE                                                  | COMMENT |
 | ------- | ------------------------------------------------------------ | ------------------------------------------------------ | ------- |
 | SPAT_00 | The file contains exactly 1 IfcSite element                  | per [Entities Table](Dataset/README.md#Entities-Table) |         |
@@ -211,6 +214,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 <details><summary>Click to expand</summary>
 > **Acceptance criteria**: For the **Spatial interference** capability, the validation procedure must verify that a Spatial Element of the requested type interferes with (via `IfcRelInterferesElements`) a Spatial Element of the requested type.
+
 | ID      | CRITERIA                                                     | VALUE                                                  | COMMENT |
 | ------- | ------------------------------------------------------------ | ------------------------------------------------------ | ------- |
 | SPIF_00 | There shall be one IfcRelInterferesElements relationship relating the two IfcFacilityPart instances typed as LEVELCROSSING. The IfcRelInterferesElements.InterferenceType shall have the value 'Crosses'. | per [Entities Table](Dataset/README.md#Entities-Table) |         |
@@ -220,6 +224,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 ### Alignment layout structure
 
 <details><summary>Click to expand</summary>
+
 | **ID**  | **CRITERIA**                                                 | **VALUE**                                              | **COMMENT** |
 | ------- | ------------------------------------------------------------ | ------------------------------------------------------ | ----------- |
 | ALIG_01 | The model contains exactly 2 IfcAlignment instances          | per [Entities Table](Dataset/README.md#Entities-Table) |             |
@@ -247,6 +252,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 <details><summary>Click to expand</summary>
 > **Acceptance criteria**: For the **Spatial containment** capability, the validation procedure must verify that a Spatial Element of the requested type contains (via `IfcRelContainedInSpatialStructure`) exactly a given number of Elements of the requested type, no more and no less.
+
 | **ID**  | **CRITERIA**                                                 | **VALUE**                                              | **COMMENT** |
 | ------- | ------------------------------------------------------------ | ------------------------------------------------------ | ----------- |
 | SPAC_00 | The IfcSite contains exactly 2 IfcAlignment instances        | per [Entities Table](Dataset/README.md#Entities-Table) |             |
@@ -261,6 +267,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 <details><summary>Click to expand</summary>
 > **Acceptance criteria**: For the **Element decomposition** capability, the validation procedure must verify that an Element of the requested type is decomposed by (via `IfcRelAggregates`) exactly a given number of Elements of the requested type, no more and no less.
+
 | **ID**  | **CRITERIA**                                                 | **VALUE**                                              | **COMMENT** |
 | ------- | ------------------------------------------------------------ | ------------------------------------------------------ | ----------- |
 | ELDC_00 | The top level IfcElementAssembly aggregates exactly 1 lower level IfcElementAssembly/SIGNALASSEMBLY | per [Entities Table](Dataset/README.md#Entities-Table) |             |
