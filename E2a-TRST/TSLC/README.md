@@ -145,6 +145,7 @@ TSLC_07: Spatial Interference
 </details>
 
 <details><summary>Model Geometry</summary>
+
 The Test case requires the following additional checks related to Model Geometry:
 
 | ID      | CRITERIA                                       | Concept template            | COMMENT                                         |
@@ -196,6 +197,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 ### Spatial decomposition
 
 <details><summary>Click to expand</summary>
+
 > **Acceptance criteria**: For the **Spatial decomposition** capability, the validation procedure must verify that a Spatial Element of the requested type is decomposed by (via `IfcRelAggregates`) exactly a given number of Spatial Elements of the requested type, no more and no less.
 
 | ID      | CRITERIA                                                     | VALUE                                                  | COMMENT |
@@ -213,6 +215,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 ### Spatial Interference
 
 <details><summary>Click to expand</summary>
+
 > **Acceptance criteria**: For the **Spatial interference** capability, the validation procedure must verify that a Spatial Element of the requested type interferes with (via `IfcRelInterferesElements`) a Spatial Element of the requested type.
 
 | ID      | CRITERIA                                                     | VALUE                                                  | COMMENT |
@@ -248,9 +251,12 @@ Considering the aim of this test, other **optional** results, not subject to the
 | ALGG_04 | Each IfcGradientCurve shall have Segments that exactly match the corresponding vertical segments in the IfcAlignmentVertical and in the same order | per [Entities Table](Dataset/README.md#Entities-Table) |             |
 | ALGG_05 | Each IfcCompositeCurve shall have Segments that exactly match the corresponding horizontal segments in the IfcAlignmentHorizontal and in the same order | per [Entities Table](Dataset/README.md#Entities-Table) |             |
 
+</details>
+
 ### Spatial containment
 
 <details><summary>Click to expand</summary>
+
 > **Acceptance criteria**: For the **Spatial containment** capability, the validation procedure must verify that a Spatial Element of the requested type contains (via `IfcRelContainedInSpatialStructure`) exactly a given number of Elements of the requested type, no more and no less.
 
 | **ID**  | **CRITERIA**                                                 | **VALUE**                                              | **COMMENT** |
@@ -266,6 +272,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 ### Element decomposition
 
 <details><summary>Click to expand</summary>
+
 > **Acceptance criteria**: For the **Element decomposition** capability, the validation procedure must verify that an Element of the requested type is decomposed by (via `IfcRelAggregates`) exactly a given number of Elements of the requested type, no more and no less.
 
 | **ID**  | **CRITERIA**                                                 | **VALUE**                                              | **COMMENT** |
@@ -284,6 +291,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 ### Element placement
 
 <details><summary>Click to expand</summary>
+
 > **Acceptance criteria**: For the **Element placement** capability, the validation procedure must verify that an Element of the requested type is placed according to the specified placement with the specified values.
 
 | **ID**  | **CRITERIA**                                                 | **VALUE**                                              | **COMMENT** |
@@ -295,6 +303,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 ### Element Relative Positioning
 
 <details><summary>Click to expand</summary>
+
 > **Acceptance criteria**: For the **Element Relative Positioning** capability, the validation procedure must verify that an Element of the requested type has a position relative to the specified positioning element via IfcRelPositions.
 
 | **ID**  | **CRITERIA**                                                 | **VALUE**                                              | **COMMENT** |
@@ -306,6 +315,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 ### Project global positioning
 
 <details><summary>Click to expand</summary>
+
 > **Acceptance criteria**: For the **Project global positioning** capability, the validation procedure must verify that there is an IfcMapConversion with the given parameters associated with the IfcGeometricRepresentationContext (via `HasCoordinateOperation`). Furthermore, the IfcMapConversion shall have an association with an IfcProjectedCRS (via `HasCoordinateOperation`) with the given parameters.
 The parameters below shall be used for Project Global Positioning.
 
