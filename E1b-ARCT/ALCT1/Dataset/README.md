@@ -8,11 +8,6 @@ The following occurrence variations need to be checked and certified in relation
 ## Entities Table
 
 - IfcProject
-- IfcOwnerHistory
-- IfcPersonAndOrganization
-- IfcPerson
-- IfcOrganization
-- IfcApplication
 - IfcDirection
 - IfcCartesianPoint
 - IfcAxis2Placement3D
