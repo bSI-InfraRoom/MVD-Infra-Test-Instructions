@@ -24,6 +24,44 @@ Its objective is to guarantee consistency of criteria, allowing the authors to r
 
 > Agree on template table
 
+> **OPTION 1**: strictly just the attributes of the entity
+
+| **Element**  | **Attribute**  | **Value**                  |
+|--------------|----------------|----------------------------|
+| IfcAlignment | Name           | Alignment 1_Primary route  |
+|              | Description    | This is just an example    |
+|              | ObjectType     | Railway track alignment    |
+|              | PredefinedType | USERDEFINED                |
+| IfcAlignment | Name           | Alignment 2_Diverted route |
+|              | Description    | This is another example    |
+|              | ObjectType     | Railway track alignment    |
+|              | PredefinedType | USERDEFINED                |
+
+> **OPTION 2**: extend with some other info, with the risk of being redundant with other rules (i.e, rule for properties, material, placement, etc.)
+
+| **Element**            | **Attribute**  | **Value**                 | **Notes**                       |
+|------------------------|----------------|---------------------------|---------------------------------|
+| IfcAlignment           | Name           | Alignment 1_Primary route |                                 |
+|                        | Description    | $                         |                                 |
+|                        | ObjectType     | Railway track alignment   |                                 |
+|                        | PredefinedType | USERDEFINED               |                                 |
+|                        | ************** | ************************  | ************************        |
+|                        | Placement      | IfcLocalPlacement         | IfcGradientCurve                |
+|                        |                |                           | RepresentationIdentifier="Axis" |
+|                        |                |                           | RepresentationType="Curve3D"    |
+| IfcAlignmentHorizontal | Name           | AH1                       |                                 |
+|                        | Description    | $                         |                                 |
+|                        | ************** | ************************  | ************************        |
+|                        | Placement      | IfcLocalPlacement         | IfcCompositeCurve               |
+|                        |                |                           | RepresentationIdentifier="Axis" |
+|                        |                |                           | RepresentationType="Curve2D"    |
+| IfcAlignmentVertical   | Name           | AV1                       |                                 |
+|                        | Description    | $                         |                                 |
+|                        | ************** | ************************  | ************************        |
+|                        | Placement      | IfcLocalPlacement         | IfcGradientCurve                |
+|                        |                |                           | RepresentationIdentifier="Axis" |
+|                        |                |                           | RepresentationType="Curve3D"    |
+
 </details>
 
 ## General
