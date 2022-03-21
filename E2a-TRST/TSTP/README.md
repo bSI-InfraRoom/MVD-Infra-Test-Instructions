@@ -177,6 +177,25 @@ Considering the aim of this test, other **optional** results, not subject to the
   - IfcElementAssembly.TURNOUTPANEL
 
 </details>
+
+### Element decomposition
+
+<details><summary>Click to expand</summary>
+Criteria around the representation of 'Some Concept'
+
+| **Element Assembly** | **Assembly Type** | **Minimum** | **Maximum** | **Element**     | **Element Type** |
+|----------------------|--------------------------|-------------|-------------|-----------------|------------------|
+| IfcElementAssembly   | TURNOUTPANEL           | 4           |      6       | IfcRail         | RAIL             |
+| IfcElementAssembly   | TURNOUTPANEL           | 2           |      2       | IfcRail       | CHECKRAIL       |
+| IfcElementAssembly   | TURNOUTPANEL           | 2           |      2       | IfcRail         | BLADE             |
+| IfcElementAssembly   | TURNOUTPANEL           | 52           |     52        | IfcTrackElement | SLEEPER          |
+| IfcElementAssembly   | TURNOUTPANEL           | 1           |      1       | IfcTrackElement | FROG          |
+| IfcElementAssembly   | TURNOUTPANEL           | 2           |      2       | IfcMechanicalFastener | RAILFASTENING         |
+| IfcElementAssembly   | TURNOUTPANEL           | 1           |             | IfcMechanicalFastener | RAILJOINT         |
+| IfcElementAssembly   | TURNOUTPANEL           | 1           |      6       | IfcFASTENER | WELD         |
+
+</details>
+
 ### Placement structure
 	
 <details><summary>Click to expand</summary>
@@ -191,6 +210,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 *Fig. 2 Placement of elements in track turnout panel*
 
 </details>
+
 ### Object nesting
 	
 <details><summary>Click to expand</summary>
@@ -214,22 +234,6 @@ Criteria around the representation of 'Some Concept'
 
 </details>
 
-### Element decomposition
 
-<details><summary>Click to expand</summary>
-Criteria around the representation of 'Some Concept'
-
-| **Element Assembly** | **Assembly Type** | **Minimum** | **Maximum** | **Element**     | **Element Type** |
-|----------------------|--------------------------|-------------|-------------|-----------------|------------------|
-| IfcElementAssembly   | TURNOUTPANEL           | 4           |      6       | IfcRail         | RAIL             |
-| IfcElementAssembly   | TURNOUTPANEL           | 2           |      2       | IfcRail       | CHECKRAIL       |
-| IfcElementAssembly   | TURNOUTPANEL           | 2           |      2       | IfcRail         | BLADE             |
-| IfcElementAssembly   | TURNOUTPANEL           | 52           |     52        | IfcTrackElement | SLEEPER          |
-| IfcElementAssembly   | TURNOUTPANEL           | 1           |      1       | IfcTrackElement | FROG          |
-| IfcElementAssembly   | TURNOUTPANEL           | 2           |      2       | IfcMechanicalFastener | RAILFASTENING         |
-| IfcElementAssembly   | TURNOUTPANEL           | 1           |             | IfcMechanicalFastener | RAILJOINT         |
-| IfcElementAssembly   | TURNOUTPANEL           | 1           |      6       | IfcFASTENER | WELD         |
-
-</details>
 	
 
