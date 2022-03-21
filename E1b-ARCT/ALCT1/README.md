@@ -165,84 +165,44 @@ Considering the aim of this test, other **optional** results, not subject to the
 > **Acceptance criteria**: For the **Spatial decomposition** capability, the validation procedure must verify that a Spatial Element of the requested type is decomposed by (via `IfcRelAggregates`) exactly a given number of Spatial Elements of the requested type, no more and no less.
 
 
-| **ID**  | **CRITERIA**                                                 | **VALUE**                                      | **COMMENT** |
-| ------- | ------------------------------------------------------------ | ---------------------------------------------- | ----------- |
-| SD_01 | Decomposition of IfcProject                                    | 1 IfcSite                                      |             |
-| SD_02 | Decomposition of IfcSite                                       | 1 IfcRailway                                   |             |
+| **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
+|-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
+| SPDE_00     | Decomposition of IfcProject |     1 IfcSite                  | IfcProject                        | Spatial Decomposition                         |
+| SPDE_01     | Decomposition of IfcSite             | 1 IfcRailway | IfcSite                         | Spatial Decomposition                         |
 
 </details>
 
 ### Alignment
 
 <details><summary>Click to expand</summary>
-  
-| **ID**  | **CRITERIA**                           | **Concept Template** | **COMMENT** |
-|---------|----------------------------------------|----------------------|-------------|
-| ALIG_00 | Alignment layout structure is verified | Alignment Layout     |             |
-| ALSC_00 | Alignment shall be contained in a Site | Spatial Containment  |             |
-| ALGR_00 | Alignment elements should have the correct shape representation | Product Geometric Representation |          |
 
-ALIG_00: Alignment layout structure is verified
-> 1. Each `IfcAlignment` must nest exactly 1 `IfcAlignmentHorizontal`
-> 1. Each `IfcAlignment` must nest at most 1 `IfcAlignmentVertical`
-> 1. Each `IfcAlignment` must nest at most 1 `IfcAlignmentCant`  
-> 1. Each `IfcAlignmentHorizontal` must nest only `IfcAlignmentSegment` that has design parameters defined by 'IfcAlignmentHorizontalSegment'
-> 1. Each `IfcAlignmentVertical` must nest only `IfcAlignmentSegment' that has design parameters defined by 'IfcAlignmentVerticalSegment'
-> 1. Each `IfcAlignmentCant` must nest only `IfcAlignmentSegment` that has design parameters defined by 'IfcAlignmentCantSegment'
-
-ALSC_00: Alignment shall be contained in a Site
-> 1. Each 'IfcAlignment' must be contained in 1 'IfcSite'
-  
-ALGR_00: Alignment and nested elements should have the correct shape representation
-> 1. Each 'IfcAlignment' should have a shape representation, with representation identifier set to 'Axis', representation type set to 'Curve3D', and geometric item as 'IfcGradientCurve'
-> 1. Each 'IfcAlignmentSegment' should have a shape representation, with representation identifier set to 'Axis', representation type set to 'Segment', and geometric item as 'IfcCurveSegment'
-> 1. Each 'IfcAlignmentHorizontal' should have a shape representation, with representation identifier set to 'Axis', representation type set to 'Curve2D', and geometric item as 'IfcCompositeCurve'
-> 1. Each 'IfcAlignmentVertical' should have a shape representation, with representation identifier set to 'Axis', representation type set to 'Curve3D', and geometric item as 'IfcGradientCurve'
-> 1. Each 'IfcAlignmentCant' should have a shape representation, with representation identifier set to 'Axis', representation type set to 'Curve3D', and geometric item as 'IfcSegmentedReferenceCurve'
+| **RULE ID** | **CRITERIA**                                             | **VALUE [examples]**                           | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|----------------------------------------------------------|------------------------------------------------|----------------------------|------------------------|
+| SITE_00     | All IfcAlignment shall always be contained in an IfcSite |                                                |                            | Spatial Containment    |
+| ALIG_00     | Alignment layout structure is verified                   | See steps                                      |                            | Alignment Layout       |
+| ALIG_01     | Number of alignments contained in file                   | [1]                                            |                            |                        |
+| ALIG_02     | Parameters of alignment segments are verified            | As per Alignment Table                         |                            |                        |
+| ALIG_03     | Alignment geometric compliance is verified               | As per Alignment geometric compliance document |                            |                        |
+| ALIG_04     | Value of the RailHeadDistance along the entire alignment | [1500 mm]                                      | IfcAlignmentCant           |                        |
+| ALIG_05     | Shape representation of alignment is verified | Items has exactly 1 [IfcGradientCurve]                                   |   IfcAlignment        |   Axis 3D Geometry                  |
+| ALIG_06     | Shape representation of alignment horizontal is verified | Items has exactly 1 [IfcCompositeCurve]                                   |  IfcAlignmentHorizontal        |   Axis 2D Geometry                  |
+  | ALIG_07     | Shape representation of alignment vertical is verified | Items has exactly 1 [IfcGradientCurve]                                   |   IfcAlignmentVertical        |   Axis 3D Geometry                  |
+  | ALIG_08     | Shape representation of alignment cant is verified | Items has exactly 1 [IfcSegmentedReferenceCurve]                                   |   IfcAlignmentCant        |   Axis 3D Geometry                  |
+  | ALIG_09     | Shape representation of alignment segment is verified | Items has exactly 1 [IfcCurveSegment]                                   |   IfcAlignmentSegment        |   Segment Geometry                  |
+<details><summary>ALIG_00 steps</summary>
 
 
-| **ID**  | **CRITERIA**                                                 | **VALUE**                                      | **COMMENT** |
-| ------- | ------------------------------------------------------------ | ---------------------------------------------- | ----------- |
-| ALIG_01 | Alignments contained in file                                 | 1                                              |             |
-| ALIG_02 | Elements nested in Alignment                                     | exactly 1 horizontal, exactly 1 vertical, and exactly 1 cant                      |             |
-| ALIG_03 | The horizontal layout matches exactly the layout specified in the [Dataset description](./Dataset/README.md) | See [Dataset description](./Dataset/README.md) |             |
-| ALIG_04 | The vertical layout matches exactly the layout specified in the [Dataset description](./Dataset/README.md) | See [Dataset description](./Dataset/README.md) |             |
-| ALIG_05 | The cant layout matches exactly the layout specified in the [Dataset description](./Dataset/README.md) | See [Dataset description](./Dataset/README.md) |             |
-| ALIG_06 | The EndPoint of IfcSegmentedReferenceCurve shall be present in the model to be checked |  |    |
-| ALIG_07 | The EndPoint of IfcGradientCurve shall be present in the model to be checked |  |    |
-| ALIG_08 | The IfcSegmentedReferenceCurve shall have the IfcGradientCurve as BaseCurve |         |             |
-| ALIG_09 | The IfcGradientCurve shall have the IfcCompositeCurve as BaseCurve |         |             |
-
-</details>
-
-
-| **ID**  | **CRITERIA**                           | **Concept Template** | **COMMENT** |
-|---------|----------------------------------------|----------------------|-------------|
-| ALGM_00 | Continuity of alignment is verified    | na                   |             |
-| ALGM_01 | Consistency between alignment semantics and geometry is verified | na |             |
-
-ALGM_00: Continuity of alignment is verified
-> 1. The deviation between the end point of an 'IfcAlignmentHorizontalSegment' and the start point of subsequent 'IfcAlignmentHorizontalSegment' must be smaller than 0.00001m.
-> 1. The deviation between the end point of an 'IfcAlignmentVerticalSegment' and the start point of subsequent 'IfcAlignmentVerticalSegment' must be smaller than 0.00001m.
-> 1. The deviation between the end point of an 'IfcAlignmentCantSegment' and the start point of subsequent 'IfcAlignmentCantSegment' must be smaller than 0.00001m.
-> 1. In case of transition code "CONTSAMEGRADIENT", the deviation between the end direction of an IfcAlignmentHorizontalSegment and the start direction of subsequent IfcAlignmentHorizontalSegment must be smaller than 0.000001 radian.
-> 1. In case of transition code "CONTSAMEGRADIENT", the deviation between the end direction of an IfcAlignmentVerticalSegment and the start direction of subsequent IfcAlignmentVerticalSegment must be smaller than 0.000001 radian.
-
-ALGM_01: Consistency between alignment semantics and geometry is verified
-> 1. The geometric representation of alignment horizontal (IfcCompositeCurve segments) should be consistent with the semantic counterpart (list of IfcAlignmentHorizontalSegment).
-> 1. The geometric representation of alignment horizontal (IfcGradientCurve segments) should be consistent with the semantic counterpart (list of IfcAlignmentVerticalSegment).
-> 1. The geometric representation of alignment horizontal (IfcSegmentedReferenceCurve segments) should be consistent with the semantic counterpart (list of IfcAlignmentCantSegment).
-- *Constraint*
-
-### Spatial containment
-
-<details><summary>Click to expand</summary>
-> **Acceptance criteria**: For the **Spatial containment** capability, the validation procedure must verify that a Spatial Element of the requested type contains (via `IfcRelContainedInSpatialStructure`) exactly a given number of Elements of the requested type, no more and no less.
-
-
-| **ID**  | **CRITERIA**                                                 | **VALUE**                                      | **COMMENT** |
-| ------- | ------------------------------------------------------------ | ---------------------------------------------- | ----------- |
-| SC_01 | Spatial containment of IfcAlignment                                | 1  IfcSite                                            |             |
+| **STEP ID** | **STEP**                                                                                                                                           |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| ALIG_00.1   | Each IfcAlignment must nest exactly 1 IfcAlignmentHorizontal                                                                                       |
+| ALIG_00.3   | Each IfcAlignment must nest exactly 1 IfcAlignmentVertical                                                                                         |
+| ALIG_00.5   | Each IfcAlignment must nest exactly 1 IfcAlignmentCant                                                                                             |
+| ALIG_00.6   | Each IfcAlignmentHorizontal must be nested only by 1 IfcAlignment                                                                                  |
+| ALIG_00.7   | Each IfcAlignmentVertical must be nested only by 1 IfcAlignment                                                                                    |
+| ALIG_00.8   | Each IfcAlignmentCant must be nested only by 1 IfcAlignment                                                                                        |
+| ALIG_00.10  | Each IfcAlignmentHorizontal nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentHorizontalSegment         |
+| ALIG_00.11  | Each IfcAlignmentVertical nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentVerticalSegment             |
+| ALIG_00.12  | Each IfcAlignmentCant nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentCantSegment                     |
 
 </details>
 
@@ -251,19 +211,16 @@ ALGM_01: Consistency between alignment semantics and geometry is verified
 <details><summary>Click to expand</summary>
 > **Acceptance criteria**: For the **Project global positioning** capability, the validation procedure must verify that there is an IfcMapConversion with the given parameters associated with the IfcGeometricRepresentationContext (via `HasCoordinateOperation`). Furthermore, the IfcMapConversion shall have an association with an IfcProjectedCRS (via `HasCoordinateOperation`) with the given parameters.
 
-
-
-
 | Element          | Attribute        | Value     | Comment |
 | ---------------- | ---------------- | --------- | ------- |
 | IfcMapConversion | Eastings         | 24525000  |         |
-| IfcMapConversion | Northings        | 6876000   |         |
-| IfcMapConversion | OrthogonalHeight | 0         |         |
-| IfcMapConversion | XAxisAbscissa    | 1         |         |
-| IfcMapConversion | XAxisOrdinate    | 0         |         |
-| IfcMapConversion | Scale            | 1         |         |
+|                  | Northings        | 6876000   |         |
+|                  | OrthogonalHeight | 0         |         |
+|                  | XAxisAbscissa    | 1         |         |
+|                  | XAxisOrdinate    | 0         |         |
+|                  | Scale            | 1         |         |
 | IfcProjectedCRS  | Name             | EPSG:3878 |         |
-| IfcProjectedCRS  | GeodeticDatum    | EPSG:6258 |         |
-| IfcProjectedCRS  | VerticalDatum    | EPSG:6150 |         |
+|                  | GeodeticDatum    | EPSG:6258 |         |
+|                  | VerticalDatum    | EPSG:6150 |         |
 
 </details>
