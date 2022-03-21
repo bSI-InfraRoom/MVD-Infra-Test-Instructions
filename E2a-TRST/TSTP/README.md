@@ -100,6 +100,7 @@ The following itemised restrictions and constraints shall be placed on IFC Entit
 
 The following itemised Usages, Constraints & Logic are normative entries within the AbRV MVD and MUST be satisfied to meet the defined validation criteria
 
+	</details>
 <details><summary>Model Geometry</summary>
 The Test case requires the following additional checks related to Model Geometry:
 
