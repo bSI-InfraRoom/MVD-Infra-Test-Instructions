@@ -83,6 +83,26 @@ NOTE:
 
 </details>
 
+<details><summary>Properties Table template</summary>
+
+| ****Entity****  | ****Entity Type****     | ****PropertySet Name****     | ****Property Name****        | ****Property Value Type**** | ****List Of Values****                                                                             | ****Value type****         |
+|-----------------|-------------------------|------------------------------|------------------------------|-----------------------------|----------------------------------------------------------------------------------------------------|----------------------------|
+| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Binario                      | IfcLabel                    | Pari, Dispari, Unico                                                                               | IfcPropertyEnumeratedValue |
+| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Codice binario SAS           | IfcLabel                    |                                                                                                    | IfcPropertySingleValue     |
+| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | n. deviatoi elettrici        | IfcInteger                  |                                                                                                    | IfcPropertySingleValue     |
+| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Profilo manutentivo L94      | IfcLabel                    | <=40 t/g, >100 t/g, 40< t/g <=100                                                                  | IfcPropertyEnumeratedValue |
+| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Binario elettrificato        | IfcLogical                  |                                                                                                    | IfcPropertySingleValue     |
+| IfcTrackElement | SLEEPER                 | Pset_TrackElementTypeSleeper | SleeperType                  | IfcLabel                    | COMPOSITESLEEPER, CONCRETESLEEPER, MONOBLOCKCONCRETESLEEPER, NOTKNOWN, OTHER, UNSET, WOODENSLEEPER | IfcPropertyEnumeratedValue |
+| IfcTrackElement | SLEEPER                 | Pset_TrackElementTypeSleeper | FasteningType                | IfcLabel                    |                                                                                                    | IfcPropertySingleValue     |
+| IfcCourse       | Segmento di massicciata | PSet_CourseCommon            | NominalLength                | IfcNonNegativeLengthMeasure |                                                                                                    | IfcPropertySingleValue     |
+| IfcCourse       | Segmento di massicciata | PSet_CourseCommon            | NominalThickness             | IfcNonNegativeLengthMeasure |                                                                                                    | IfcPropertySingleValue     |
+| IfcCourse       | Segmento di massicciata | PSet_CourseCommon            | NominalWidth                 | IfcNonNegativeLengthMeasure |                                                                                                    | IfcPropertySingleValue     |
+| IfcCourseType   | Segmento di massicciata | RFI_S22600                   | Tipo massicciata             | IfcLabel                    | Misto, Calcareo, Tenace                                                                            | IfcPropertyEnumeratedValue |
+| IfcGroup        | Segmento di rotaia      | RFI_S22700                   | Galleria                     | IfcLogical                  |                                                                                                    | IfcPropertySingleValue     |
+| IfcGroup        | Segmento di rotaia      | RFI_S22700                   | Tipo binario di appartenenza | IfcLabel                    | BINARIO CENTRALIZZATO, BINARIO DI CORSA, BINARIO DI FASCIO, BINARIO IMP. SMISTAMENTO AUTOMATICO    | IfcPropertyEnumeratedValue |
+
+</details>
+
 ## General
 
 | **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
@@ -170,22 +190,23 @@ NOTE:
 
 ## Object grouping
 
-| RULE ID | CRITERIA                                    | VALUE [examples]                                                                                                                                               | ENTITY (if applicable) | CT (if applicable)  |
-|---------|---------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|---------------------|
-| GROU_00 | Mandatory objects are present in the groups | As per Group Table                                                                                                                                             | na                     | na                  |
-| GROU_01 | Circular reference is not allowed           | Circular reference is not allowed, neither direct (if A includes B, B cannot includes A), nor indirect (if A includes B and B includes C, C cannot includes A) | IfcGroup               | Group Assignment    |
-| GROU_02 | Only direct inclusion is allowed            | Example: if A includes B and B includes C, A cannot includes C)                                                                                                | IfcGroup               | Group Assignment    |
-| GROU_03 | Same-level grouping is not allowed          | If two or more Group are part of the same Group, they cannot include each others. Example: if A groups B and C, B cannot group C and vice versa)               | IfcGroup               | Group Assignment    |
-| GROU_04 | Group rooting                               | All Groups that do not have a parent Group must be linked to the IfcProject with an IfcRelDeclares relationship, as per Project Declaration template           | IfcGroup               | Project Declaration |
-| GROU_05 | Group typing via ObjectType                 | *All group types shall be expressed using the ObjectType (5th attribute) of each occurrence of IfcGroup                                                        | IfcGroup               | na                  |
-| GROU_06 | Allowed entity types for groups             | IfcGroup must be associated (via IfcRelAssignsToGroup) only to IfcProduct or IfcGroup (and subtypes)                                                           | IfcGroup               | Group Assignment    |
+| **RULE ID** | **CRITERIA**                                | **VALUE [examples]**                                                                                                                                           | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|---------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|------------------------|
+| GROU_00     | Mandatory objects are present in the groups | As per Group Table                                                                                                                                             | na                         | na                     |
+| GROU_01     | Circular reference is not allowed           | Circular reference is not allowed, neither direct (if A includes B, B cannot includes A), nor indirect (if A includes B and B includes C, C cannot includes A) | IfcGroup                   | Group Assignment       |
+| GROU_02     | Only direct inclusion is allowed            | Example: if A includes B and B includes C, A cannot includes C)                                                                                                | IfcGroup                   | Group Assignment       |
+| GROU_03     | Same-level grouping is not allowed          | If two or more Group are part of the same Group, they cannot include each others. Example: if A groups B and C, B cannot group C and vice versa)               | IfcGroup                   | Group Assignment       |
+| GROU_04     | Group rooting                               | All Groups that do not have a parent Group must be linked to the IfcProject with an IfcRelDeclares relationship, as per Project Declaration template           | IfcGroup                   | Project Declaration    |
+| GROU_05     | Group typing via ObjectType                 | *All group types shall be expressed using the ObjectType (5th attribute) of each occurrence of IfcGroup                                                        | IfcGroup                   | na                     |
+| GROU_06     | Allowed entity types for groups             | IfcGroup must be associated (via IfcRelAssignsToGroup) only to IfcProduct or IfcGroup (and subtypes)                                                           | IfcGroup                   | Group Assignment       |
 
 *: this is the only method to express group typing, due to the fact that: i) IfcGroup misses the PredefinedType attribute; and ii) object typing by instantiation of IfcTypeObject is discouraged from IFC4 onward.
 
-<details><summary>GROU_00 details</summary>
+> **Acceptance criteria**: For the **GROU_00 rule**, the validation procedure must verify that a group of the requested type is grouping (via `IfcRelAssignsToGroup`) exactly a given number of objects of the requested type, no more and no less.
 
-> **GROU_00: Mandatory objects are present in the groups**:
-> - Given a set of groups taken from the "Group Table"
+<details><summary>GROU_00 details: Mandatory objects are present in the groups</summary>
+
+> - Given a set of groups taken from the [Group Table](#Group-Table)
 > - Then the Group, and optionally the Group Type, exists
 > - And the Group must group at least a number within [Minimum..Maximum] of the requested Object
 
@@ -193,8 +214,64 @@ NOTE:
 
 
 
+
 ## Properties
-:construction: under construction :construction:
+
+| **RULE ID** | **CRITERIA**                                             | **VALUE [examples]**    | **ENTITY (if applicable)** | **CT (if applicable)**                              |
+|-------------|----------------------------------------------------------|-------------------------|----------------------------|-----------------------------------------------------|
+| PSET_01     | The model does not contain unrequested property sets     | As per Properties Table | na                         | Property Sets for Objects & Property Sets for Types |
+| PNAM_01     | The property set does not contain unrequested properties | As per Properties Table | na                         | Property Sets for Objects & Property Sets for Types |
+| PTEX_01     | Property values belong to a list of values               | As per Properties Table | na                         | Property Sets for Objects & Property Sets for Types |
+| PVAL_01     | Property values are not null and not empty               | As per Properties Table | na                         | Property Sets for Objects & Property Sets for Types |
+| PVAL_02     | Requested property value types are found                 | As per Properties Table | na                         | Property Sets for Objects & Property Sets for Types |
+
+> **Acceptance criteria**: For the **Properties for objects and object types** capability, the validation procedure must verify that both standard and custom property sets requested by the test case (including relative properties and values) are present in the IFC file.
+> See below for further specification of each rule.
+
+<details><summary>PSET_01: The model does not contain unrequested property sets</summary>
+
+> - Given a set of properties taken from the [Properties Table](#Properties-Table)
+> - When the IfcEntity, and optionally the Type, exists
+> - Then the IfcEntity is associated at most to the property set with the PropertySet Name
+</details>
+
+<details><summary>PNAM_01: The property set does not contain unrequested properties</summary>
+
+> - Given a set of properties taken from the [Properties Table](#Properties-Table)
+> - When the IfcEntity, and optionally the Type, exists
+> - And the IfcEntity is associated to a property set with the PropertySet Name
+> - Then the property set has at most the properties with the Property Name
+</details>
+
+<details><summary>PTEX_01: Property values belong to a list of values</summary>
+
+> - Given a set of properties taken from the [Properties Table](#Properties-Table)
+> - When the IfcEntity, and optionally the Type, exists
+> - And the IfcEntity is associated to a property set with the PropertySet Name
+> - And the property set has a property with the Property Name
+> - Then the property value is part of the List Of Values
+</details>
+
+<details><summary>PVAL_01: Property values are not null and not empty</summary>
+
+> - Given a set of properties taken from the [Properties Table](#Properties-Table)
+> - When the IfcEntity, and optionally the Type, exists
+> - And the IfcEntity is associated to a property set with the PropertySet Name
+> - And the property set has a property with the Property Name
+> - Then the property value is not null
+> - And the property value is not empty
+</details>
+
+<details><summary>PVAL_02: Requested property value types are found</summary>
+
+> - Given a set of properties taken from the [Properties Table](#Properties-Table)
+> - When the IfcEntity, and optionally the Type, exists
+> - And the IfcEntity is associated to a property set with the PropertySet Name
+> - And the property set has a property with the Property Name
+> - And the property value is not null
+> - Then the property type is equal to the Property Value Type
+</details>
+
 ## Spatial decomposition
 :construction: under construction :construction:
 ## Spatial containment
