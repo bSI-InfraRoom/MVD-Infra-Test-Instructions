@@ -100,7 +100,8 @@ The following itemised restrictions and constraints shall be placed on IFC Entit
 
 The following itemised Usages, Constraints & Logic are normative entries within the AbRV MVD and MUST be satisfied to meet the defined validation criteria
 
-	</details>
+</details>
+
 <details><summary>Model Geometry</summary>
 The Test case requires the following additional checks related to Model Geometry:
 
@@ -189,7 +190,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 ![alt text](Dataset/Turnout_Element_Placement.png)
 *Fig. 2 Placement of elements in track turnout panel*
 
-	</details>
+</details>
 ### Object nesting
 	
 <details><summary>Click to expand</summary>
@@ -198,7 +199,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 |-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
 | OBNE_00     | Each IfcReferent should be nested into the alignment where it is placed linearly |     1 IfcAlignment  | IfcReferent | Object Nesting (to be reversed) |
 
-	</details>
+</details>
 	
 ### Product geometric representation
 
