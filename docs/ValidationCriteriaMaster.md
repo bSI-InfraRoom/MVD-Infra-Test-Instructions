@@ -64,7 +64,7 @@ Its objective is to guarantee consistency of criteria, allowing the authors to r
 
 </details>
 
-<details><summary>Group Table template</summary>
+<details><summary>Groups Table template</summary>
 
 | **Group** | **Group Type**                | **Minimum** | **Maximum** | **Object**         | **Object Type**      | **Notes** |
 |-----------|-------------------------------|-------------|-------------|--------------------|----------------------|-----------|
@@ -100,6 +100,18 @@ NOTE:
 | IfcCourseType   | Segmento di massicciata | RFI_S22600                   | Tipo massicciata             | IfcLabel                    | Misto, Calcareo, Tenace                                                                            | IfcPropertyEnumeratedValue |
 | IfcGroup        | Segmento di rotaia      | RFI_S22700                   | Galleria                     | IfcLogical                  |                                                                                                    | IfcPropertySingleValue     |
 | IfcGroup        | Segmento di rotaia      | RFI_S22700                   | Tipo binario di appartenenza | IfcLabel                    | BINARIO CENTRALIZZATO, BINARIO DI CORSA, BINARIO DI FASCIO, BINARIO IMP. SMISTAMENTO AUTOMATICO    | IfcPropertyEnumeratedValue |
+
+</details>
+
+<details><summary>Groups Spatial Reference Table template</summary>
+
+| **Spatial Element** | **Spatial Element Type** | **Minimum** | **Maximum** | **Product or Group** | **Product Type or Group Type** |
+|---------------------|--------------------------|-------------|-------------|----------------------|--------------------------------|
+| IfcRailway          | Località                 | 1           | 1           | IfcGroup             | Binari di corsa (Contenitore)  |
+| IfcFacilityPart     | TRACKSTRUCTURE           | 1           | 1           | IfcGroup             | Deviatoi                       |
+| IfcFacilityPart     | TRACKSTRUCTURE           | 1           | 1           | IfcGroup             | Massicciata                    |
+| IfcFacilityPart     | TRACKSTRUCTURE           | 1           | 1           | IfcGroup             | Rotaie                         |
+| IfcFacilityPart     | TRACKSTRUCTURE           | 1           | 1           | IfcGroup             | Traverse                       |
 
 </details>
 
@@ -192,7 +204,7 @@ NOTE:
 
 | **RULE ID** | **CRITERIA**                                | **VALUE [examples]**                                                                                                                                           | **ENTITY (if applicable)** | **CT (if applicable)** |
 |-------------|---------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|------------------------|
-| GROU_00     | Mandatory objects are present in the groups | As per Group Table                                                                                                                                             | na                         | na                     |
+| GROU_00     | Mandatory objects are present in the groups | As per Groups Table                                                                                                                                             | na                         | na                     |
 | GROU_01     | Circular reference is not allowed           | Circular reference is not allowed, neither direct (if A includes B, B cannot includes A), nor indirect (if A includes B and B includes C, C cannot includes A) | IfcGroup                   | Group Assignment       |
 | GROU_02     | Only direct inclusion is allowed            | Example: if A includes B and B includes C, A cannot includes C)                                                                                                | IfcGroup                   | Group Assignment       |
 | GROU_03     | Same-level grouping is not allowed          | If two or more Group are part of the same Group, they cannot include each others. Example: if A groups B and C, B cannot group C and vice versa)               | IfcGroup                   | Group Assignment       |
@@ -206,7 +218,7 @@ NOTE:
 
 <details><summary>GROU_00 details: Mandatory objects are present in the groups</summary>
 
-> - Given a set of groups taken from the [Group Table](#Group-Table)
+> - Given a set of groups taken from the [Groups Table](#Groups-Table)
 > - Then the Group, and optionally the Group Type, exists
 > - And the Group must group at least a number within [Minimum..Maximum] of the requested Object
 
@@ -276,7 +288,17 @@ NOTE:
 :construction: under construction :construction:
 ## Spatial containment
 :construction: under construction :construction:
-## Group spatial connectivity
-:construction: under construction :construction:
+
+
+
+
+## Group spatial reference
+
+| **RULE ID** | **CRITERIA**                           | **VALUE [examples]**                  | **ENTITY (if applicable)** | **CT (if applicable)**     |
+|-------------|----------------------------------------|---------------------------------------|----------------------------|----------------------------|
+| SREF_01     | Group spatial referencing as requested | As per Groups Spatial Reference Table | IfcGroup                   | Group Spatial Connectivity |
+
+> **Acceptance criteria**: For the **Group Spatial Connectivity** capability, the validation procedure must verify that a Spatial Element of the requested type references (via `IfcRelReferencedInSpatialStructure`) exactly a given number of Groups of the requested type, no more and no less.
+
 ## Spatial interference
 :construction: under construction :construction:
