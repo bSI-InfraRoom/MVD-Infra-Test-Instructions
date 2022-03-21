@@ -173,7 +173,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 > **Acceptance criteria**: For the **Spatial containment** capability, the validation procedure must verify that a Spatial Element of the requested type contains (via `IfcRelContainedInSpatialStructure`) exactly a given number of Elements of the requested type, no more and no less.
 
-- IfcRailway *(Name: LO1336)*
+- IfcRailway 
   - IfcElementAssembly.TURNOUTPANEL
 
 </details>
@@ -181,7 +181,24 @@ Considering the aim of this test, other **optional** results, not subject to the
 ### Element decomposition
 
 <details><summary>Click to expand</summary>
-Criteria around the representation of 'Some Concept'
+
+| **RULE ID** | **CRITERIA**                    | **VALUE [examples]**             | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|---------------------------------|----------------------------------|----------------------------|------------------------|
+| EDEC_01     | Element decomposition is verified | As per Element Decomposition Table | na                         | Element Decomposition   |
+
+> **Acceptance criteria**: For the **Element decomposition** capability, the validation procedure must verify that an Element (as assembly) of the requested type is decomposed by (via `IfcRelAggregates`) a given number of Elements of the requested type in the range, no more and no less.
+
+- IfcElementAssembly.TURNOUTPANEL 
+  - IfcRail.RAIL
+  - IfcRail.CHECKRAIL
+  - IfcRail.BLADE
+  - IfcTrackElement.SLEEPER
+  - IfcTrackElement.FROG
+  - IfcMechanicalFastener.RAILFASTENING
+  - IfcMechanicalFastner.RAILJOINT
+  - IfcFastener.WELD
+	
+#### Element Decomposition Table
 
 | **Element Assembly** | **Assembly Type** | **Minimum** | **Maximum** | **Element**     | **Element Type** |
 |----------------------|--------------------------|-------------|-------------|-----------------|------------------|
@@ -191,8 +208,8 @@ Criteria around the representation of 'Some Concept'
 | IfcElementAssembly   | TURNOUTPANEL           | 52           |     52        | IfcTrackElement | SLEEPER          |
 | IfcElementAssembly   | TURNOUTPANEL           | 1           |      1       | IfcTrackElement | FROG          |
 | IfcElementAssembly   | TURNOUTPANEL           | 2           |      2       | IfcMechanicalFastener | RAILFASTENING         |
-| IfcElementAssembly   | TURNOUTPANEL           | 1           |             | IfcMechanicalFastener | RAILJOINT         |
-| IfcElementAssembly   | TURNOUTPANEL           | 1           |      6       | IfcFASTENER | WELD         |
+| IfcElementAssembly   | TURNOUTPANEL           | 0           |             | IfcMechanicalFastener | RAILJOINT         |
+| IfcElementAssembly   | TURNOUTPANEL           | 0           |      6       | IfcFASTENER | WELD         |
 
 </details>
 
