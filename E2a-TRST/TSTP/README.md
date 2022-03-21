@@ -100,15 +100,6 @@ The following itemised restrictions and constraints shall be placed on IFC Entit
 
 The following itemised Usages, Constraints & Logic are normative entries within the AbRV MVD and MUST be satisfied to meet the defined validation criteria
 
-- IfcElementAssembly
-    - *There exists 1 IfcElementAssembly with PredefinedType set to TRACKTURNOUTPANEL*
-	- *Each IfcElementAssembly/TRACKTURNOUTPANEL shall have a linear placement relative to the alignment*
-	- *Each IfcElementAssembly/TRACKTURNOUTPANEL is spatially contained in an IfcRailwayPart/TRACKSUPERSTRUCTURE*
-	- *Each IfcElementAssembly/TRACKTURNOUTPANEL shall have a product span placement*
-
-
-</details>
-
 <details><summary>Model Geometry</summary>
 The Test case requires the following additional checks related to Model Geometry:
 
@@ -151,30 +142,61 @@ Considering the aim of this test, other **optional** results, not subject to the
 |-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
 | GENE_00     | All validation criteria of precondition's tests shall be verified |                       | na                         | na                         |
 | GENE_01     | All requested entities (and attributes) exist in file             | As per Entities Table | na                         | na                         |
-| ORIG_01     | Origin of Coordinate System is set as requested                   | [(0., 0., 0.)]        |                            | Project Global Positioning |
-| ORIG_02     | True north is set as requested                                    | [(0., 1., 0.)]        |                            | Project Global Positioning |
-| DIST_01     | Unit of measure for all distances                                 | [meter]               |                            | Project Units              |
-| ANGL_01     | Unit of measure all angles                                        | [radian]              |                            | Project Units              |
-| DIST_02     | Required precision for distances                                  | [0,0001]              | all alignment segments     | na                         |
-| ANGL_02     | Required precision for angles and slope                           | [0,000001]            |                            | na                         |
-
-
-
 </details>
+	
+### Spatial decomposition
+
+| **RULE ID** | **CRITERIA**                      | **VALUE [examples]**               | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|-----------------------------------|------------------------------------|----------------------------|------------------------|
+| SDEC_01     | Spatial decomposition is verified | As per Spatial Decomposition Table | na                         | Spatial Decomposition  |
+
+> **Acceptance criteria**: For the **Spatial decomposition** capability, the validation procedure must verify that a Parent Element of the requested type aggregates (via `IfcRelAggregates`) exactly a given number of Child Elements of the requested type, no more and no less.
+
+
+- IfcProject
+  - IfcSite
+    - IfcRailway
+
+### Spatial containment
+
+| **RULE ID** | **CRITERIA**                    | **VALUE [examples]**             | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|---------------------------------|----------------------------------|----------------------------|------------------------|
+| SCON_01     | Spatial containment is verified | As per Spatial Containment Table | na                         | Spatial Containment    |
+
+> **Acceptance criteria**: For the **Spatial containment** capability, the validation procedure must verify that a Spatial Element of the requested type contains (via `IfcRelContainedInSpatialStructure`) exactly a given number of Elements of the requested type, no more and no less.
+
+- IfcRailway *(Name: LO1336)*
+  - IfcElementAssembly.TURNOUTPANEL
 
 ### Placement structure
 
 | **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
 |-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
-| GENE_00     | All validation criteria of precondition's tests shall be verified |                       | na                         | na                         |
-| GENE_01     | All requested entities (and attributes) exist in file             | As per Entities Table | na                         | na                         |
-| ORIG_01     | Origin of Coordinate System is set as requested                   | [(0., 0., 0.)]        |                            | Project Global Positioning |
-| ORIG_02     | True north is set as requested                                    | [(0., 1., 0.)]        |                            | Project Global Positioning |
-| DIST_01     | Unit of measure for all distances                                 | [meter]               |                            | Project Units              |
-| ANGL_01     | Unit of measure all angles                                        | [radian]              |                            | Project Units              |
-| DIST_02     | Required precision for distances                                  | [0,0001]              | all alignment segments     | na                         |
-| ANGL_02     | Required precision for angles and slope                           | [0,000001]            |                            | na                         |
+| SPCO_00     | ObjectPlacement of the element shall have PlacementRelTo referening the right IfcObjectPlacement |     see Fig. 1 and Fig. 2  | na | Product Placement |
+	
+![alt text](Dataset/Turnout_Placement.png)
+*Fig. 1 Placement of track turnout panel*
+![alt text](Dataset/Turnout_Element_Placement.png)
+*Fig. 2 Placement of elements in track turnout panel*
+	
+### Object nesting
+	
+| **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
+|-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
+| OBNE_00     | Each IfcReferent should be nested into the alignment where it is placed linearly |     1 IfcAlignment  | IfcReferent | Object Nesting (to be reversed) |
 
+### Product geometric representation
+
+<details><summary>Click to expand</summary>
+Criteria around the representation of 'Some Concept'
+
+| **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
+|-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
+| PRGE_00     | Correct representation identifier, type and items for occurrence element |  IfcFixedReferenceSweptAreaSolid  in SELF.Representation.Representations.Items  | IfcRail.RAIL | Body AdvancedSweptSolid Geometry |
+| PRGE_00     | Correct representation identifier, type and items for occurrence element |  | IfcTrackElement.SLEEPER | Mapped Geometry |
+| PRGE_01     | Correct representation identifier, type and items for type element |  | IfcTrackElementType.SLEEPER | Type Body Tessallated Geometry |
+
+</details>
 
 ### Element decomposition
 
@@ -183,10 +205,15 @@ Criteria around the representation of 'Some Concept'
 
 | **Element Assembly** | **Assembly Type** | **Minimum** | **Maximum** | **Element**     | **Element Type** |
 |----------------------|--------------------------|-------------|-------------|-----------------|------------------|
-| IfcElementAssembly   | TURNOUTPANEL           | 1           |             | IfcRail       | CHECKRAIL       |
-| IfcElementAssembly   | TURNOUTPANEL           | 2           |             | IfcRail         | RAIL             |
-| IfcElementAssembly   | TURNOUTPANEL           | 1           |             | IfcTrackElement | SLEEPER          |
-| IfcElementAssembly   | TURNOUTPANEL           | 1           |             | IfcTrackElement | FROG          |
-| IfcElementAssembly   | TURNOUTPANEL           | 1           |             | IfcMechanicalFastener | RAIL_FASTENERING          |
+| IfcElementAssembly   | TURNOUTPANEL           | 4           |      6       | IfcRail         | RAIL             |
+| IfcElementAssembly   | TURNOUTPANEL           | 2           |      2       | IfcRail       | CHECKRAIL       |
+| IfcElementAssembly   | TURNOUTPANEL           | 2           |      2       | IfcRail         | BLADE             |
+| IfcElementAssembly   | TURNOUTPANEL           | 52           |     52        | IfcTrackElement | SLEEPER          |
+| IfcElementAssembly   | TURNOUTPANEL           | 1           |      1       | IfcTrackElement | FROG          |
+| IfcElementAssembly   | TURNOUTPANEL           | 2           |      2       | IfcMechanicalFastener | RAILFASTENING         |
+| IfcElementAssembly   | TURNOUTPANEL           | 1           |             | IfcMechanicalFastener | RAILJOINT         |
+| IfcElementAssembly   | TURNOUTPANEL           | 1           |      6       | IfcFASTENER | WELD         |
 
 </details>
+	
+
