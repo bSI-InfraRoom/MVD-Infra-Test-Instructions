@@ -7,10 +7,6 @@
 
 ## Summary (Intent)
 
-*Include a short description of the test case. This description should include a summary of the capabilities and data representations being tested by the defined data set.*
-
-*Optional: if your data comes from a specific Storylines or unit tests of the IFC Infrastructure Deployment Project or IFC Rail Project, please include a link to the originating documentation here. so additional background information can be created or referenced by the implementing vendor.*
-
 This test instruction is defined for IFC4.3AbRV_E2a_TSTP Track Structures Turnout Panel.
 
 It covers following subjects:
@@ -25,11 +21,8 @@ The [Expected Results](#Expected-Results) section lists the material that will b
 :zap: **This is a test-driven process: refer to the [Validation Criteria](#Validation-Criteria) to understand what is required by the test** :zap:
 
 ## Itemised Roots
-*This section lists the primary entities and concept templates being validated by this test instruction, these are listed to understand the scope of the data entities being addressed. this is the documentation of the data placed within BIMQ*
 
 The Test instruction addresses the import and export of the following IFC Entities & Concept Templates:
-
-:construction: under construction :construction:
 
 <details><summary>IFC Entities</summary>
 
@@ -50,6 +43,7 @@ These entities represent a test-specific subset of the wider AbRV_Ex exchange an
   - *IfcTrackElement*
   - *IfcRail*
   - *IfcMechnicalFastner*
+  - *IfcFastener*
   - *IfcReferent*
 
 
@@ -66,11 +60,10 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
   - *Spatial Decomposition*
   - *Spatial Composition*
   - *Alignment Layout*
-  - *Alignment Geometry Cant*
+  - *Alignment Geometry Gradient*
   - *Spatial Container*
   - *Product Local Placement*
   - *Object User Identity*
-  - *Revision Control*
   - *Software Identity*
   - *Axis Geometry*
   
@@ -92,20 +85,16 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
 ## Test Case Imports
 Test instructions are defined with a modular approach to reduce repetition of validation criteria and test content, and improve vendors ability to solve issues and bugs. therefore this test instruction *imports/reuses* the following Test instructions and entities with the relevant associated validation criteria.
 
-:construction: under construction :construction:
-
 <details><summary>Imports & Reuses</summary>
 
 | TI Code                                  | Test Instruction Title    | Comments                     |
 |------------------------------------------|---------------------------|------------------------------|
-| [IFC4.3AbRV_E2a_AL01](../../E2a-TRST/AL01) | Alignment Railway Cant  | As outlined in the dataset Imported Entities Table |
+| [IFC4.3AbRV_E1_AL22](../../E2a-TRST/AL22) | (RFI) Two alignments without cant       | As outlined in the dataset Imported Entities Table |
 
 </details>
 
 ## Usages, Constraints & Logic
 The following itemised restrictions and constraints shall be placed on IFC Entities & Concept Templates:
-
-:construction: under construction :construction:
 
 <details><summary>Semantic Usages, Constraints & Logic</summary>
 
@@ -131,20 +120,16 @@ The Test case requires the following additional checks related to Model Geometry
 
 For certification of capabilities the only source will be:
 
-:construction: under construction :construction:
-
 - n. 1 IFC file containing the information as requested. The file shall be named using the following syntax: `MVDCode`-`ExchangeCode`-`TestCode`-`SoftwareVendor`.`ifc` (Example: `IFC4.3_AbRV-E2b-ASTPC-AmazingSoft.ifc`)
 
 Considering the aim of this test, other **optional** results, not subject to the bSI certification process, yet useful to illustrate test results are:
-- Screen-shot of ...
-- CSV export of ...
+- Screen-shot of the IFC file visualization
+- Screen-shot of the IFC file structure (spatial decomposition, element decomposition).
 
 ---
 
 ## Validation criteria
 :zap: For this test case to be considered passed **all capabilities** listed in this section shall be verified, with no exception. :zap:
-
-:construction: under construction :construction:
 
 ### General & Imports
 
@@ -157,23 +142,51 @@ Considering the aim of this test, other **optional** results, not subject to the
 #### Imports
 | **TI Code**        | **Criteria Codes** | *COMMENT**                                         |
 |--------------------|--------------------|----------------------------------------------------|
-| IFC4.3AbRV_E0_MSTP | ALL CRITERIA       | As outlined in the dataset [Imported Entities Table](Dataset/README.md#Imported-Entities-Table) |
+| IFC4.3AbRV_E1_AL22 | ALL CRITERIA       | As outlined in the dataset [Imported Entities Table](Dataset/README.md#Imported-Entities-Table) |
 
 
 #### General
-| **ID**  | **CRITERIA**                                        | **VALUE**                                     | **COMMENT** |
-|---------|-----------------------------------------------------|-----------------------------------------------|-------------|
-| GENE_01 | All requested entities are present in the IFC model | per [Entities Table](Dataset/README.md#Entities-Table) |    |
+
+| **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
+|-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
+| GENE_00     | All validation criteria of precondition's tests shall be verified |                       | na                         | na                         |
+| GENE_01     | All requested entities (and attributes) exist in file             | As per Entities Table | na                         | na                         |
+| ORIG_01     | Origin of Coordinate System is set as requested                   | [(0., 0., 0.)]        |                            | Project Global Positioning |
+| ORIG_02     | True north is set as requested                                    | [(0., 1., 0.)]        |                            | Project Global Positioning |
+| DIST_01     | Unit of measure for all distances                                 | [meter]               |                            | Project Units              |
+| ANGL_01     | Unit of measure all angles                                        | [radian]              |                            | Project Units              |
+| DIST_02     | Required precision for distances                                  | [0,0001]              | all alignment segments     | na                         |
+| ANGL_02     | Required precision for angles and slope                           | [0,000001]            |                            | na                         |
+
+
 
 </details>
 
-### Some Concept Group
+### Placement structure
+
+| **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
+|-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
+| GENE_00     | All validation criteria of precondition's tests shall be verified |                       | na                         | na                         |
+| GENE_01     | All requested entities (and attributes) exist in file             | As per Entities Table | na                         | na                         |
+| ORIG_01     | Origin of Coordinate System is set as requested                   | [(0., 0., 0.)]        |                            | Project Global Positioning |
+| ORIG_02     | True north is set as requested                                    | [(0., 1., 0.)]        |                            | Project Global Positioning |
+| DIST_01     | Unit of measure for all distances                                 | [meter]               |                            | Project Units              |
+| ANGL_01     | Unit of measure all angles                                        | [radian]              |                            | Project Units              |
+| DIST_02     | Required precision for distances                                  | [0,0001]              | all alignment segments     | na                         |
+| ANGL_02     | Required precision for angles and slope                           | [0,000001]            |                            | na                         |
+
+
+### Element decomposition
 
 <details><summary>Click to expand</summary>
 Criteria around the representation of 'Some Concept'
 
-| **ID**  | **CRITERIA**                                        | **VALUE**                                | **COMMENT** |
-|---------|-----------------------------------------------------|------------------------------------------|-------------|
-| XXXX_01 | A Criteria to follow                               | its expected value or outcome            |             |
+| **Element Assembly** | **Assembly Type** | **Minimum** | **Maximum** | **Element**     | **Element Type** |
+|----------------------|--------------------------|-------------|-------------|-----------------|------------------|
+| IfcElementAssembly   | TURNOUTPANEL           | 1           |             | IfcRail       | CHECKRAIL       |
+| IfcElementAssembly   | TURNOUTPANEL           | 2           |             | IfcRail         | RAIL             |
+| IfcElementAssembly   | TURNOUTPANEL           | 1           |             | IfcTrackElement | SLEEPER          |
+| IfcElementAssembly   | TURNOUTPANEL           | 1           |             | IfcTrackElement | FROG          |
+| IfcElementAssembly   | TURNOUTPANEL           | 1           |             | IfcMechanicalFastener | RAIL_FASTENERING          |
 
 </details>
