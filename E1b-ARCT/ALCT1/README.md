@@ -161,14 +161,16 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 ### Spatial decomposition
 
-<details><summary>Click to expand</summary>
-> **Acceptance criteria**: For the **Spatial decomposition** capability, the validation procedure must verify that a Spatial Element of the requested type is decomposed by (via `IfcRelAggregates`) exactly a given number of Spatial Elements of the requested type, no more and no less.
+| **RULE ID** | **CRITERIA**                      | **VALUE [examples]**               | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|-----------------------------------|------------------------------------|----------------------------|------------------------|
+| SDEC_01     | Spatial decomposition is verified | As per Spatial Decomposition Table | na                         | Spatial Decomposition  |
 
+> **Acceptance criteria**: For the **Spatial decomposition** capability, the validation procedure must verify that a Parent Element of the requested type aggregates (via `IfcRelAggregates`) exactly a given number of Child Elements of the requested type, no more and no less.
 
-| **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
-|-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
-| SPDE_00     | Decomposition of IfcProject |     1 IfcSite                  | IfcProject                        | Spatial Decomposition                         |
-| SPDE_01     | Decomposition of IfcSite             | 1 IfcRailway | IfcSite                         | Spatial Decomposition                         |
+**Bullet point example**:
+- IfcProject
+  - IfcSite
+    - IfcRailway
 
 </details>
 
