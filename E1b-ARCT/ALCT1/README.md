@@ -150,10 +150,10 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 
 #### General
-| **ID**  | **CRITERIA**                                        | **VALUE**                                     | **COMMENT** |
-|---------|-----------------------------------------------------|-----------------------------------------------|-------------|
-| GENE_00 | All requested entities are present in the IFC model | per [Entities Table](Dataset/README.md#Entities-Table) |    |
-| GENE_01 | All rules defined in [Usages, Constraints & Logic](## Usages, Constraints & Logic) are verified |  |    |
+| **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
+|-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
+| GENE_00     | All validation criteria of precondition's tests shall be verified |                       | na                         | na                         |
+| GENE_01     | All requested entities (and attributes) exist in file             | As per Entities Table | na                         | na                         |
 
 
 </details>
