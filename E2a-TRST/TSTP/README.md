@@ -146,6 +146,8 @@ Considering the aim of this test, other **optional** results, not subject to the
 	
 ### Spatial decomposition
 
+<details><summary>Click to expand</summary>
+
 | **RULE ID** | **CRITERIA**                      | **VALUE [examples]**               | **ENTITY (if applicable)** | **CT (if applicable)** |
 |-------------|-----------------------------------|------------------------------------|----------------------------|------------------------|
 | SDEC_01     | Spatial decomposition is verified | As per Spatial Decomposition Table | na                         | Spatial Decomposition  |
@@ -156,8 +158,12 @@ Considering the aim of this test, other **optional** results, not subject to the
 - IfcProject
   - IfcSite
     - IfcRailway
+	
+</details>
 
 ### Spatial containment
+	
+<details><summary>Click to expand</summary>
 
 | **RULE ID** | **CRITERIA**                    | **VALUE [examples]**             | **ENTITY (if applicable)** | **CT (if applicable)** |
 |-------------|---------------------------------|----------------------------------|----------------------------|------------------------|
@@ -168,7 +174,10 @@ Considering the aim of this test, other **optional** results, not subject to the
 - IfcRailway *(Name: LO1336)*
   - IfcElementAssembly.TURNOUTPANEL
 
+</details>
 ### Placement structure
+	
+<details><summary>Click to expand</summary>
 
 | **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
 |-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
@@ -178,13 +187,18 @@ Considering the aim of this test, other **optional** results, not subject to the
 *Fig. 1 Placement of track turnout panel*
 ![alt text](Dataset/Turnout_Element_Placement.png)
 *Fig. 2 Placement of elements in track turnout panel*
-	
+
+	</details>
 ### Object nesting
+	
+<details><summary>Click to expand</summary>
 	
 | **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
 |-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
 | OBNE_00     | Each IfcReferent should be nested into the alignment where it is placed linearly |     1 IfcAlignment  | IfcReferent | Object Nesting (to be reversed) |
 
+	</details>
+	
 ### Product geometric representation
 
 <details><summary>Click to expand</summary>
