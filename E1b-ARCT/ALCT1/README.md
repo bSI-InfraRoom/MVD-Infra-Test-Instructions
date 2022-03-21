@@ -189,7 +189,7 @@ Considering the aim of this test, other **optional** results, not subject to the
   | ALIG_07     | Shape representation of alignment vertical is verified | Items has exactly 1 [IfcGradientCurve]                                   |   IfcAlignmentVertical        |   Axis 3D Geometry                  |
   | ALIG_08     | Shape representation of alignment cant is verified | Items has exactly 1 [IfcSegmentedReferenceCurve]                                   |   IfcAlignmentCant        |   Axis 3D Geometry                  |
   | ALIG_09     | Shape representation of alignment segment is verified | Items has exactly 1 [IfcCurveSegment]                                   |   IfcAlignmentSegment        |   Segment Geometry                  |
-<details><summary>ALIG_00 steps</summary>
+
 
 
 | **STEP ID** | **STEP**                                                                                                                                           |
