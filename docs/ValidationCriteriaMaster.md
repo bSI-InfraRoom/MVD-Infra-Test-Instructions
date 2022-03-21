@@ -115,6 +115,74 @@ NOTE:
 
 </details>
 
+<details><summary>Spatial Decomposition Table template</summary>
+
+> OPTION 1: Generic, just with types
+
+| **Parent Element** | **Parent Element Type** | **Minimum** | **Maximum** | **Child Element** | **Child Element Type** |
+|--------------------|-------------------------|-------------|-------------|-------------------|------------------------|
+| IfcRailway         | Località                | 2           | 2           | IfcFacilityPart   | TRACKSTRUCTURE         |
+
+> OPTION 2: Specific, with occurrences' names
+
+| **Parent Element** | **Parent Element Type** | **Parent Element Name** | **Minimum** | **Maximum** | **Child Element** | **Child Element Type** | **Parent Element Name** |
+|--------------------|-------------------------|-------------------------|-------------|-------------|-------------------|------------------------|-------------------------|
+| IfcRailway         | Località                | LO1336                  | 1           | 1           | IfcFacilityPart   | TRACKSTRUCTURE         | LO1336-BC01             |
+| IfcRailway         | Località                | LO1336                  | 1           | 1           | IfcFacilityPart   | TRACKSTRUCTURE         | LO1336-BC02             |
+
+**NOTE**:
+- when **Minimum** and **Maximum** have the same value, it means exactly. Example: Minimum=Maximum=1, means that the Parent Element must aggregates exactly 1 Child Element with that Type (and Name).
+
+</details>
+
+<details><summary>Spatial Containment Table template</summary>
+
+> OPTION 1: Generic, just with types
+
+| **Spatial Element** | **Spatial Element Type** | **Minimum** | **Maximum** | **Element**     | **Element Type** |
+|---------------------|--------------------------|-------------|-------------|-----------------|------------------|
+| IfcFacilityPart     | TRACKSTRUCTURE           | 1           |             | IfcCourse       | BALLASTBED       |
+| IfcFacilityPart     | TRACKSTRUCTURE           | 2           |             | IfcRail         | RAIL             |
+| IfcFacilityPart     | TRACKSTRUCTURE           | 1           |             | IfcTrackElement | SLEEPER          |
+
+> OPTION 2: Specific, with occurrences' names
+
+| **Spatial Element** | **Spatial Element Type** | **Spatial Element Name** | **Minimum** | **Maximum** | **Element**     | **Element Type** | **Element Name** |
+|---------------------|--------------------------|--------------------------|-------------|-------------|-----------------|------------------|------------------|
+| IfcFacilityPart     | TRACKSTRUCTURE           | LO1336-BC01              | 1           | 1           | IfcRail         | RAIL             | Left rail        |
+| IfcFacilityPart     | TRACKSTRUCTURE           | LO1336-BC01              | 1           | 1           | IfcRail         | RAIL             | Right rail       |
+| IfcFacilityPart     | TRACKSTRUCTURE           | LO1336-BC01              | 1           |             | IfcCourse       | BALLASTBED       |                  |
+| IfcFacilityPart     | TRACKSTRUCTURE           | LO1336-BC02              | 1           |             | IfcCourse       | BALLASTBED       |                  |
+
+**NOTE**:
+- when **Maximum is empty**, it means **unlimited**. Example: Minimum=1; Maximum=empty, means that the Spatial Element must contain 1 or more elements of the requested type.
+- when **Minimum** and **Maximum** have the same value, it means exactly. Example: Minimum=Maximum=1, means that the Spatial Element must contain exactly 1 Element with that Type (and Name).
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## General
 
 | **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
@@ -285,9 +353,39 @@ NOTE:
 </details>
 
 ## Spatial decomposition
-:construction: under construction :construction:
+
+| **RULE ID** | **CRITERIA**                      | **VALUE [examples]**               | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|-----------------------------------|------------------------------------|----------------------------|------------------------|
+| SDEC_01     | Spatial decomposition is verified | As per Spatial Decomposition Table | na                         | Spatial Decomposition  |
+
+> **Acceptance criteria**: For the **Spatial decomposition** capability, the validation procedure must verify that a Parent Element of the requested type aggregates (via `IfcRelAggregates`) exactly a given number of Child Elements of the requested type, no more and no less.
+
+**Bullet point example**:
+- IfcRailway *(Name: LO1336)*
+  - IfcFacilityPart.TRACKSTRUCTURE *(Name: LO1336-BC-BC01)*
+  - IfcFacilityPart.TRACKSTRUCTURE *(Name: LO1336-BC-BC02)*
+
+
+
+
 ## Spatial containment
-:construction: under construction :construction:
+
+| **RULE ID** | **CRITERIA**                    | **VALUE [examples]**             | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|---------------------------------|----------------------------------|----------------------------|------------------------|
+| SCON_01     | Spatial containment is verified | As per Spatial Containment Table | na                         | Spatial Containment    |
+
+> **Acceptance criteria**: For the **Spatial containment** capability, the validation procedure must verify that a Spatial Element of the requested type contains (via `IfcRelContainedInSpatialStructure`) exactly a given number of Elements of the requested type, no more and no less.
+
+**Bullet point example**:
+- IfcRailway *(Name: LO1336)*
+  - IfcFacilityPart.TRACKSTRUCTURE *(Name: LO1336-BC-BC01)*
+    - `IfcCourse.BALLASTBED` *(Name: BC01)*
+    - `IfcRail.RAIL` *(Name: Rotaia BC01 SX)*
+    - `IfcRail.RAIL` *(Name: Rotaia BC01 DX)*
+    - `IfcTrackElement.SLEEPER` *(Name: Traversa 0001)*
+    - `IfcTrackElement.SLEEPER` *(Name: Traversa 0002)*
+    - `IfcTrackElement.SLEEPER` *(Name: Traversa 000n)*
+  - IfcFacilityPart.TRACKSTRUCTURE *(Name: LO1336-BC-BC02)*
 
 
 
