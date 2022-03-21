@@ -64,32 +64,51 @@ Its objective is to guarantee consistency of criteria, allowing the authors to r
 
 </details>
 
+<details><summary>Group Table template</summary>
+
+| **Group** | **Group Type**                | **Minimum** | **Maximum** | **Object**         | **Object Type**      | **Notes** |
+|-----------|-------------------------------|-------------|-------------|--------------------|----------------------|-----------|
+| IfcGroup  | Binari di corsa (Contenitore) | 2           | 2           | IfcFacilityPart    | TRACKSTRUCTURE       | From AL22 |
+| IfcGroup  | Deviatoi                      | 1           | 1           | IfcElementAssembly | TURNOUTPANEL         | From TP01 |
+| IfcGroup  | Massicciata                   | 1           |             | IfcCourse          | BALLASTBED           | From SP01 |
+| IfcGroup  | Traverse                      | 1           |             | IfcGroup           | Segmento di traverse |           |
+| IfcGroup  | Segmento di traverse          | 1           |             | IfcTrackElement    | SLEEPER              | From SP01 |
+| IfcGroup  | Rotaie                        | 1           | 1           | IfcGroup           | Segmento di rotaia   |           |
+| IfcGroup  | Segmento di rotaia            | 2           | 2           | IfcRail            | RAIL                 | From SP01 |
+
+NOTE:
+- when **Minimum** and **Maximum** have the same value, it means exactly. Example: Minimum=Maximum=1, means that the group must groups exactly 1 object of that type.
+- when **Maximum is empty**, it means **unlimited**. Example: Minimum=1; Maximum=empty, means that the group must group 1 or more object of the requested type.
+- the **Notes** column indicates (when the object to be grouped is coming from a pre-requisite test) which is the mentioned test.
+
+</details>
+
 ## General
 
-| **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **CAPABILITY** | **ENTITY (if applicable)** | **CT (if applicable)**     |
-|-------------|-------------------------------------------------------------------|-----------------------|----------------|----------------------------|----------------------------|
-| GENE_00     | All validation criteria of precondition's tests shall be verified |                       | Preconditions  | na                         | na                         |
-| GENE_01     | All requested entities (and attributes) exist in file             | As per Entities Table | Project Setup  | na                         | na                         |
-| ORIG_01     | Origin of Coordinate System is set as requested                   | [(0., 0., 0.)]        | Project Setup  |                            | Project Global Positioning |
-| ORIG_02     | True north is set as requested                                    | [(0., 1., 0.)]        | Project Setup  |                            | Project Global Positioning |
-| DIST_01     | Unit of measure for all distances                                 | [meter]               | Project Setup  |                            | Project Units              |
-| ANGL_01     | Unit of measure all angles                                        | [radian]              | Project Setup  |                            | Project Units              |
-| DIST_02     | Required precision for distances                                  | [0,0001]              | Project Setup  | all alignment segments     | na                         |
-| ANGL_02     | Required precision for angles and slope                           | [0,000001]            | Project Setup  |                            | na                         |
+| **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
+|-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
+| GENE_00     | All validation criteria of precondition's tests shall be verified |                       | na                         | na                         |
+| GENE_01     | All requested entities (and attributes) exist in file             | As per Entities Table | na                         | na                         |
+| ORIG_01     | Origin of Coordinate System is set as requested                   | [(0., 0., 0.)]        |                            | Project Global Positioning |
+| ORIG_02     | True north is set as requested                                    | [(0., 1., 0.)]        |                            | Project Global Positioning |
+| DIST_01     | Unit of measure for all distances                                 | [meter]               |                            | Project Units              |
+| ANGL_01     | Unit of measure all angles                                        | [radian]              |                            | Project Units              |
+| DIST_02     | Required precision for distances                                  | [0,0001]              | all alignment segments     | na                         |
+| ANGL_02     | Required precision for angles and slope                           | [0,000001]            |                            | na                         |
 
 
 
 
 ## Alignment
 
-| **RULE ID** | **CRITERIA**                                             | **VALUE [examples]**                           | **CAPABILITY** | **ENTITY (if applicable)** | **CT (if applicable)** |
-|-------------|----------------------------------------------------------|------------------------------------------------|----------------|----------------------------|------------------------|
-| SITE_00     | All IfcAlignment shall always be contained in an IfcSite |                                                | Alignment      |                            | Spatial Containment    |
-| ALIG_00     | Alignment layout structure is verified                   | See steps                                      | Alignment      |                            | Alignment Layout       |
-| ALIG_01     | Number of alignments contained in file                   | [2]                                            | Alignment      |                            |                        |
-| ALIG_02     | Parameters of alignment segments are verified            | As per Alignment Table                         | Alignment      |                            |                        |
-| ALIG_03     | Alignment geometric compliance is verified               | As per Alignment geometric compliance document | Alignment      |                            |                        |
-| ALIG_04     | Value of the RailHeadDistance along the entire alignment | [1500 mm]                                      | Alignment      | IfcAlignmentCant           |
+| **RULE ID** | **CRITERIA**                                             | **VALUE [examples]**                           | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|----------------------------------------------------------|------------------------------------------------|----------------------------|------------------------|
+| SITE_00     | All IfcAlignment shall always be contained in an IfcSite |                                                |                            | Spatial Containment    |
+| ALIG_00     | Alignment layout structure is verified                   | See steps                                      |                            | Alignment Layout       |
+| ALIG_01     | Number of alignments contained in file                   | [2]                                            |                            |                        |
+| ALIG_02     | Parameters of alignment segments are verified            | As per Alignment Table                         |                            |                        |
+| ALIG_03     | Alignment geometric compliance is verified               | As per Alignment geometric compliance document |                            |                        |
+| ALIG_04     | Value of the RailHeadDistance along the entire alignment | [1500 mm]                                      | IfcAlignmentCant           |                        |
 
 <details><summary>ALIG_00 steps</summary>
 
@@ -145,8 +164,35 @@ Its objective is to guarantee consistency of criteria, allowing the authors to r
 :construction: under construction :construction:
 ## Assembly (Element decomposition)
 :construction: under construction :construction:
-## Group
-:construction: under construction :construction:
+
+
+
+
+## Object grouping
+
+| RULE ID | CRITERIA                                    | VALUE [examples]                                                                                                                                               | ENTITY (if applicable) | CT (if applicable)  |
+|---------|---------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|---------------------|
+| GROU_00 | Mandatory objects are present in the groups | As per Group Table                                                                                                                                             | na                     | na                  |
+| GROU_01 | Circular reference is not allowed           | Circular reference is not allowed, neither direct (if A includes B, B cannot includes A), nor indirect (if A includes B and B includes C, C cannot includes A) | IfcGroup               | Group Assignment    |
+| GROU_02 | Only direct inclusion is allowed            | Example: if A includes B and B includes C, A cannot includes C)                                                                                                | IfcGroup               | Group Assignment    |
+| GROU_03 | Same-level grouping is not allowed          | If two or more Group are part of the same Group, they cannot include each others. Example: if A groups B and C, B cannot group C and vice versa)               | IfcGroup               | Group Assignment    |
+| GROU_04 | Group rooting                               | All Groups that do not have a parent Group must be linked to the IfcProject with an IfcRelDeclares relationship, as per Project Declaration template           | IfcGroup               | Project Declaration |
+| GROU_05 | Group typing via ObjectType                 | *All group types shall be expressed using the ObjectType (5th attribute) of each occurrence of IfcGroup                                                        | IfcGroup               | na                  |
+| GROU_06 | Allowed entity types for groups             | IfcGroup must be associated (via IfcRelAssignsToGroup) only to IfcProduct or IfcGroup (and subtypes)                                                           | IfcGroup               | Group Assignment    |
+
+*: this is the only method to express group typing, due to the fact that: i) IfcGroup misses the PredefinedType attribute; and ii) object typing by instantiation of IfcTypeObject is discouraged from IFC4 onward.
+
+<details><summary>GROU_00 details</summary>
+
+> **GROU_00: Mandatory objects are present in the groups**:
+> - Given a set of groups taken from the "Group Table"
+> - Then the Group, and optionally the Group Type, exists
+> - And the Group must group at least a number within [Minimum..Maximum] of the requested Object
+
+</details>
+
+
+
 ## Properties
 :construction: under construction :construction:
 ## Spatial decomposition
