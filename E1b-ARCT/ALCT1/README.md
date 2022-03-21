@@ -110,54 +110,11 @@ The following itemised restrictions and constraints shall be placed on IFC Entit
 <details><summary>Semantic Usages, Constraints & Logic</summary>
 
 The following itemised Usages, Constraints & Logic are normative entries within the AbRV MVD and MUST be satisfied to meet the defined validation criteria
-
-| **ID**  | **CRITERIA**                           | **Concept Template** | **COMMENT** |
-|---------|----------------------------------------|----------------------|-------------|
-| ALIG_00 | Alignment layout structure is verified | Alignment Layout     |             |
-| ALSC_00 | Alignment shall be contained in a Site | Spatial Containment  |             |
-| ALGR_00 | Alignment elements should have the correct shape representation | Product Geometric Representation |          |
-
-ALIG_00: Alignment layout structure is verified
-> 1. Each `IfcAlignment` must nest exactly 1 `IfcAlignmentHorizontal`
-> 1. Each `IfcAlignment` must nest at most 1 `IfcAlignmentVertical`
-> 1. Each `IfcAlignment` must nest at most 1 `IfcAlignmentCant`  
-> 1. Each `IfcAlignmentHorizontal` must nest only `IfcAlignmentSegment` that has design parameters defined by 'IfcAlignmentHorizontalSegment'
-> 1. Each `IfcAlignmentVertical` must nest only `IfcAlignmentSegment' that has design parameters defined by 'IfcAlignmentVerticalSegment'
-> 1. Each `IfcAlignmentCant` must nest only `IfcAlignmentSegment` that has design parameters defined by 'IfcAlignmentCantSegment'
-
-ALSC_00: Alignment shall be contained in a Site
-> 1. Each 'IfcAlignment' must be contained in 1 'IfcSite'
-  
-ALGR_00: Alignment and nested elements should have the correct shape representation
-> 1. Each 'IfcAlignment' should have a shape representation, with representation identifier set to 'Axis', representation type set to 'Curve3D', and geometric item as 'IfcGradientCurve'
-> 1. Each 'IfcAlignmentSegment' should have a shape representation, with representation identifier set to 'Axis', representation type set to 'Segment', and geometric item as 'IfcCurveSegment'
-> 1. Each 'IfcAlignmentHorizontal' should have a shape representation, with representation identifier set to 'Axis', representation type set to 'Curve2D', and geometric item as 'IfcCompositeCurve'
-> 1. Each 'IfcAlignmentVertical' should have a shape representation, with representation identifier set to 'Axis', representation type set to 'Curve3D', and geometric item as 'IfcGradientCurve'
-> 1. Each 'IfcAlignmentCant' should have a shape representation, with representation identifier set to 'Axis', representation type set to 'Curve3D', and geometric item as 'IfcSegmentedReferenceCurve'
-
 </details>
 
 <details><summary>Model Geometry</summary>
 The Test case requires the following additional checks related to Model Geometry:
 
-
-| **ID**  | **CRITERIA**                           | **Concept Template** | **COMMENT** |
-|---------|----------------------------------------|----------------------|-------------|
-| ALGM_00 | Continuity of alignment is verified    | na                   |             |
-| ALGM_01 | Consistency between alignment semantics and geometry is verified | na |             |
-
-ALGM_00: Continuity of alignment is verified
-> 1. The deviation between the end point of an 'IfcAlignmentHorizontalSegment' and the start point of subsequent 'IfcAlignmentHorizontalSegment' must be smaller than 0.00001m.
-> 1. The deviation between the end point of an 'IfcAlignmentVerticalSegment' and the start point of subsequent 'IfcAlignmentVerticalSegment' must be smaller than 0.00001m.
-> 1. The deviation between the end point of an 'IfcAlignmentCantSegment' and the start point of subsequent 'IfcAlignmentCantSegment' must be smaller than 0.00001m.
-> 1. In case of transition code "CONTSAMEGRADIENT", the deviation between the end direction of an IfcAlignmentHorizontalSegment and the start direction of subsequent IfcAlignmentHorizontalSegment must be smaller than 0.000001 radian.
-> 1. In case of transition code "CONTSAMEGRADIENT", the deviation between the end direction of an IfcAlignmentVerticalSegment and the start direction of subsequent IfcAlignmentVerticalSegment must be smaller than 0.000001 radian.
-
-ALGM_01: Consistency between alignment semantics and geometry is verified
-> 1. The geometric representation of alignment horizontal (IfcCompositeCurve segments) should be consistent with the semantic counterpart (list of IfcAlignmentHorizontalSegment).
-> 1. The geometric representation of alignment horizontal (IfcGradientCurve segments) should be consistent with the semantic counterpart (list of IfcAlignmentVerticalSegment).
-> 1. The geometric representation of alignment horizontal (IfcSegmentedReferenceCurve segments) should be consistent with the semantic counterpart (list of IfcAlignmentCantSegment).
-- *Constraint*
 
 </details>
 
@@ -218,6 +175,30 @@ Considering the aim of this test, other **optional** results, not subject to the
 ### Alignment
 
 <details><summary>Click to expand</summary>
+  
+| **ID**  | **CRITERIA**                           | **Concept Template** | **COMMENT** |
+|---------|----------------------------------------|----------------------|-------------|
+| ALIG_00 | Alignment layout structure is verified | Alignment Layout     |             |
+| ALSC_00 | Alignment shall be contained in a Site | Spatial Containment  |             |
+| ALGR_00 | Alignment elements should have the correct shape representation | Product Geometric Representation |          |
+
+ALIG_00: Alignment layout structure is verified
+> 1. Each `IfcAlignment` must nest exactly 1 `IfcAlignmentHorizontal`
+> 1. Each `IfcAlignment` must nest at most 1 `IfcAlignmentVertical`
+> 1. Each `IfcAlignment` must nest at most 1 `IfcAlignmentCant`  
+> 1. Each `IfcAlignmentHorizontal` must nest only `IfcAlignmentSegment` that has design parameters defined by 'IfcAlignmentHorizontalSegment'
+> 1. Each `IfcAlignmentVertical` must nest only `IfcAlignmentSegment' that has design parameters defined by 'IfcAlignmentVerticalSegment'
+> 1. Each `IfcAlignmentCant` must nest only `IfcAlignmentSegment` that has design parameters defined by 'IfcAlignmentCantSegment'
+
+ALSC_00: Alignment shall be contained in a Site
+> 1. Each 'IfcAlignment' must be contained in 1 'IfcSite'
+  
+ALGR_00: Alignment and nested elements should have the correct shape representation
+> 1. Each 'IfcAlignment' should have a shape representation, with representation identifier set to 'Axis', representation type set to 'Curve3D', and geometric item as 'IfcGradientCurve'
+> 1. Each 'IfcAlignmentSegment' should have a shape representation, with representation identifier set to 'Axis', representation type set to 'Segment', and geometric item as 'IfcCurveSegment'
+> 1. Each 'IfcAlignmentHorizontal' should have a shape representation, with representation identifier set to 'Axis', representation type set to 'Curve2D', and geometric item as 'IfcCompositeCurve'
+> 1. Each 'IfcAlignmentVertical' should have a shape representation, with representation identifier set to 'Axis', representation type set to 'Curve3D', and geometric item as 'IfcGradientCurve'
+> 1. Each 'IfcAlignmentCant' should have a shape representation, with representation identifier set to 'Axis', representation type set to 'Curve3D', and geometric item as 'IfcSegmentedReferenceCurve'
 
 
 | **ID**  | **CRITERIA**                                                 | **VALUE**                                      | **COMMENT** |
@@ -233,6 +214,25 @@ Considering the aim of this test, other **optional** results, not subject to the
 | ALIG_09 | The IfcGradientCurve shall have the IfcCompositeCurve as BaseCurve |         |             |
 
 </details>
+
+
+| **ID**  | **CRITERIA**                           | **Concept Template** | **COMMENT** |
+|---------|----------------------------------------|----------------------|-------------|
+| ALGM_00 | Continuity of alignment is verified    | na                   |             |
+| ALGM_01 | Consistency between alignment semantics and geometry is verified | na |             |
+
+ALGM_00: Continuity of alignment is verified
+> 1. The deviation between the end point of an 'IfcAlignmentHorizontalSegment' and the start point of subsequent 'IfcAlignmentHorizontalSegment' must be smaller than 0.00001m.
+> 1. The deviation between the end point of an 'IfcAlignmentVerticalSegment' and the start point of subsequent 'IfcAlignmentVerticalSegment' must be smaller than 0.00001m.
+> 1. The deviation between the end point of an 'IfcAlignmentCantSegment' and the start point of subsequent 'IfcAlignmentCantSegment' must be smaller than 0.00001m.
+> 1. In case of transition code "CONTSAMEGRADIENT", the deviation between the end direction of an IfcAlignmentHorizontalSegment and the start direction of subsequent IfcAlignmentHorizontalSegment must be smaller than 0.000001 radian.
+> 1. In case of transition code "CONTSAMEGRADIENT", the deviation between the end direction of an IfcAlignmentVerticalSegment and the start direction of subsequent IfcAlignmentVerticalSegment must be smaller than 0.000001 radian.
+
+ALGM_01: Consistency between alignment semantics and geometry is verified
+> 1. The geometric representation of alignment horizontal (IfcCompositeCurve segments) should be consistent with the semantic counterpart (list of IfcAlignmentHorizontalSegment).
+> 1. The geometric representation of alignment horizontal (IfcGradientCurve segments) should be consistent with the semantic counterpart (list of IfcAlignmentVerticalSegment).
+> 1. The geometric representation of alignment horizontal (IfcSegmentedReferenceCurve segments) should be consistent with the semantic counterpart (list of IfcAlignmentCantSegment).
+- *Constraint*
 
 ### Spatial containment
 
