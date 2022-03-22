@@ -149,7 +149,7 @@ NOTE:
 
 > OPTION 2: Specific, with occurrences' names
 
-| **Parent Element** | **Parent Element Type** | **Parent Element Name** | **Minimum** | **Maximum** | **Child Element** | **Child Element Type** | **Parent Element Name** |
+| **Parent Element** | **Parent Element Type** | **Parent Element Name** | **Minimum** | **Maximum** | **Child Element** | **Child Element Type** | **Child Element Name** |
 |--------------------|-------------------------|-------------------------|-------------|-------------|-------------------|------------------------|-------------------------|
 | IfcRailway         | Località                | LO1336                  | 1           | 1           | IfcFacilityPart   | TRACKSTRUCTURE         | LO1336-BC01             |
 | IfcRailway         | Località                | LO1336                  | 1           | 1           | IfcFacilityPart   | TRACKSTRUCTURE         | LO1336-BC02             |
