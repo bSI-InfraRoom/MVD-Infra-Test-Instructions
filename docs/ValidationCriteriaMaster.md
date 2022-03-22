@@ -15,7 +15,7 @@ Utilities:  [Table converter](https://tableconvert.com/) (e.g., Excel to MD, MD 
 <details><summary>Alignment Table template</summary>
 
 **HORIZONTAL**
-| Entity                        | PredefinedType | Name | Start Point X | Start Point Y | Start Direction | Start Radius Of Curvature | End Radius Of Curvature | Segment Length | Gravity Center Line |
+| Entity                        | PredefinedType | Name | Start Point X | Start Point Y | Start Direction | Start Radius Of Curvature | End Radius Of Curvature | Segment Length | Gravity Center Line Height |
 |-------------------------------|----------------|------|---------------|---------------|-----------------|---------------------------|-------------------------|----------------|---------------------|
 | IfcAlignmentHorizontalSegment | LINE           | H1   | 452413.9199   | 4539456.401   | 0.214271681     | 0                         | 0                       | 234.719412     |                |
 | IfcAlignmentHorizontalSegment | CLOTHOID       | H2   | 452634.415    | 4539536.869   | 0.214271681     | 0                         | -1000                   | 40             |                     |
