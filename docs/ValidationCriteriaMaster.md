@@ -114,7 +114,7 @@ NOTE:
 
 </details>
 
-<details><summary>Groups Spatial Reference Table template</summary>
+<details><summary>Groups Spatial Connectivity Table template</summary>
 
 | **Spatial Element** | **Spatial Element Type** | **MinSize** | **MaxSize** | **Product or Group** | **Product Type or Group Type** |
 |---------------------|--------------------------|-------------|-------------|----------------------|--------------------------------|
@@ -437,11 +437,11 @@ NOTE:
 
 
 
-## Group spatial reference
+## Group Spatial Connectivity
 
-| **RULE ID** | **CRITERIA**                           | **VALUE [examples]**                  | **ENTITY (if applicable)** | **CT (if applicable)**     |
-|-------------|----------------------------------------|---------------------------------------|----------------------------|----------------------------|
-| SREF_01     | Group spatial referencing as requested | As per Groups Spatial Reference Table | IfcGroup                   | Group Spatial Connectivity |
+| **RULE ID** | **CRITERIA**                            | **VALUE [examples]**                     | **ENTITY (if applicable)** | **CT (if applicable)**     |
+|-------------|-----------------------------------------|------------------------------------------|----------------------------|----------------------------|
+| SREF_01     | Spatial reference of groups is verified | As per Groups Spatial Connectivity Table | IfcGroup                   | Group Spatial Connectivity |
 
 > **Acceptance criteria**: For the **Group Spatial Connectivity** capability, the validation procedure must verify that a Spatial Element of the requested type references (via `IfcRelReferencedInSpatialStructure`) exactly a given number of Groups of the requested type, no more and no less.
 
