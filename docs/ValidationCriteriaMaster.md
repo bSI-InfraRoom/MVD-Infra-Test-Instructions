@@ -58,22 +58,23 @@ Utilities:  [Table converter](https://tableconvert.com/) (e.g., Excel to MD, MD 
 |                        | PredefinedType | USERDEFINED               |                                 |
 |                        | ************** | ************************  | ************************        |
 |                        | ObjectPlacement| IfcLocalPlacement         |                                 |
-|                        | Representations|                           | Items=IfcGradientCurve          |
-|                        |                |                           | RepresentationIdentifier="Axis" |
+|                        | Representations|                           | RepresentationIdentifier="Axis" |
 |                        |                |                           | RepresentationType="Curve3D"    |
+|                        |                |                           | Items=IfcGradientCurve          |
 | IfcAlignmentHorizontal | Name           | AH1                       |                                 |
 |                        | Description    | $                         |                                 |
 |                        | ************** | ************************  | ************************        |
-|                        | Placement      | IfcLocalPlacement         | IfcCompositeCurve               |
-|                        |                |                           | RepresentationIdentifier="Axis" |
+|                        | Placement      | IfcLocalPlacement         |                                 |
+|                        | Representations|                           | RepresentationIdentifier="Axis" |
 |                        |                |                           | RepresentationType="Curve2D"    |
+|                        |                |                           | Items=IfcCompositeCurve         |
 | IfcAlignmentVertical   | Name           | AV1                       |                                 |
 |                        | Description    | $                         |                                 |
 |                        | ************** | ************************  | ************************        |
-|                        | Placement      | IfcLocalPlacement         | IfcGradientCurve                |
-|                        |                |                           | RepresentationIdentifier="Axis" |
+|                        | Placement      | IfcLocalPlacement         |                                 |
+|                        | Representations|                           | RepresentationIdentifier="Axis" |
 |                        |                |                           | RepresentationType="Curve3D"    |
-
+|                        |                |                           | Items=IfcGradientCurve          |
 </details>
 
 <details><summary>Groups Table template</summary>
