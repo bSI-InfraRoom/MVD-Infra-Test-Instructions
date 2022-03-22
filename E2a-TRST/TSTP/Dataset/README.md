@@ -26,8 +26,8 @@ The detailed structure of placement is specified as follows.
 *Fig. 2 Placement of elements in track turnout panel*
 
 It is required to define Product Type Geometry for IfcTrackElement.SLEEPER, IfcMechnicalFastener.RAILFASTENING and IfcMechnicalFastener.RAILJOINT.
-The geometry of IfcMechnicalFastener.RAILFASTENING and IfcMechnicalFastener.RAILJOINT as boxes that are placed according to the drawing.
-The geometry of IfcTrackElement.SLEEPER can be simplified and placed according to the drawing in Fig. 6.
+- The geometry of IfcMechnicalFastener.RAILFASTENING and IfcMechnicalFastener.RAILJOINT as boxes that are placed according to the drawing.
+- The geometry of IfcTrackElement.SLEEPER can be simplified and placed according to the drawing in Fig. 6.
 
 
 
