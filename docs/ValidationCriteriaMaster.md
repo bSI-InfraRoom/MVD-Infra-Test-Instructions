@@ -5,10 +5,12 @@ Its objective is to guarantee consistency of criteria, allowing the authors to r
 
 > **ATTENTION**: for some rules a test-specific VALUE might be needed. In this case the tables below just capture an example between []
 
+Utilities:  [Table converter](https://tableconvert.com/) (e.g., Excel to MD, MD to MD)
 
 
-## Utilities
- [Table converter](https://tableconvert.com/) (e.g., Excel to MD, MD to MD)
+
+
+## Table Templates
 
 <details><summary>Alignment Table template</summary>
 
@@ -46,22 +48,7 @@ Its objective is to guarantee consistency of criteria, allowing the authors to r
 
 <details><summary>Entities Table template</summary>
 
-> Agree on template table
-
-> **OPTION 1**: strictly just the attributes of the entity
-
-| **Element**  | **Attribute**  | **Value**                  |
-|--------------|----------------|----------------------------|
-| IfcAlignment | Name           | Alignment 1_Primary route  |
-|              | Description    | This is just an example    |
-|              | ObjectType     | Railway track alignment    |
-|              | PredefinedType | USERDEFINED                |
-| IfcAlignment | Name           | Alignment 2_Diverted route |
-|              | Description    | This is another example    |
-|              | ObjectType     | Railway track alignment    |
-|              | PredefinedType | USERDEFINED                |
-
-> **OPTION 2**: extend with some other info, with the risk of being redundant with other rules (i.e, rule for properties, material, placement, etc.)
+> **HOW TO USE IT**: list first the entities' attributes and their values. Then, if needed, add additional information (e.g., placement, material, etc.). Be careful not to be redundant with other rules (e.g. placement-specific rules, material-specific rules, etc.)
 
 | **Element**            | **Attribute**  | **Value**                 | **Notes**                       |
 |------------------------|----------------|---------------------------|---------------------------------|
@@ -90,7 +77,7 @@ Its objective is to guarantee consistency of criteria, allowing the authors to r
 
 <details><summary>Groups Table template</summary>
 
-| **Group** | **Group Type**                | **Minimum** | **Maximum** | **Object**         | **Object Type**      | **Notes** |
+| **Group** | **Group Type**                | **MinSize** | **MaxSize** | **Object**         | **Object Type**      | **Notes** |
 |-----------|-------------------------------|-------------|-------------|--------------------|----------------------|-----------|
 | IfcGroup  | Binari di corsa (Contenitore) | 2           | 2           | IfcFacilityPart    | TRACKSTRUCTURE       | From AL22 |
 | IfcGroup  | Deviatoi                      | 1           | 1           | IfcElementAssembly | TURNOUTPANEL         | From TP01 |
@@ -101,8 +88,8 @@ Its objective is to guarantee consistency of criteria, allowing the authors to r
 | IfcGroup  | Segmento di rotaia            | 2           | 2           | IfcRail            | RAIL                 | From SP01 |
 
 NOTE:
-- when **Minimum** and **Maximum** have the same value, it means exactly. Example: Minimum=Maximum=1, means that the group must groups exactly 1 object of that type.
-- when **Maximum is empty**, it means **unlimited**. Example: Minimum=1; Maximum=empty, means that the group must group 1 or more object of the requested type.
+- when **MinSize** and **MaxSize** have the same value, it means exactly. Example: MinSize=MaxSize=1, means that the group must groups exactly 1 object of that type.
+- when **MaxSize is empty**, it means **unlimited**. Example: MinSize=1; MaxSize=empty, means that the group must group 1 or more object of the requested type.
 - the **Notes** column indicates (when the object to be grouped is coming from a pre-requisite test) which is the mentioned test.
 
 </details>
@@ -129,7 +116,7 @@ NOTE:
 
 <details><summary>Groups Spatial Reference Table template</summary>
 
-| **Spatial Element** | **Spatial Element Type** | **Minimum** | **Maximum** | **Product or Group** | **Product Type or Group Type** |
+| **Spatial Element** | **Spatial Element Type** | **MinSize** | **MaxSize** | **Product or Group** | **Product Type or Group Type** |
 |---------------------|--------------------------|-------------|-------------|----------------------|--------------------------------|
 | IfcRailway          | Località                 | 1           | 1           | IfcGroup             | Binari di corsa (Contenitore)  |
 | IfcFacilityPart     | TRACKSTRUCTURE           | 1           | 1           | IfcGroup             | Deviatoi                       |
@@ -139,39 +126,39 @@ NOTE:
 
 </details>
 
-<details><summary>Spatial Decomposition Table template</summary>
+<details><summary>Spatial (De)Composition Table template</summary>
 
-> OPTION 1: Generic, just with types
+> OPTION 1: Use this template if you need to check at the type level
 
-| **Parent Element** | **Parent Element Type** | **Minimum** | **Maximum** | **Child Element** | **Child Element Type** |
+| **Parent Element** | **Parent Element Type** | **MinSize** | **MaxSize** | **Child Element** | **Child Element Type** |
 |--------------------|-------------------------|-------------|-------------|-------------------|------------------------|
 | IfcRailway         | Località                | 2           | 2           | IfcFacilityPart   | TRACKSTRUCTURE         |
 
-> OPTION 2: Specific, with occurrences' names
+> OPTION 2: Use this template if you need to check at the occurrence level
 
-| **Parent Element** | **Parent Element Type** | **Parent Element Name** | **Minimum** | **Maximum** | **Child Element** | **Child Element Type** | **Child Element Name** |
-|--------------------|-------------------------|-------------------------|-------------|-------------|-------------------|------------------------|-------------------------|
-| IfcRailway         | Località                | LO1336                  | 1           | 1           | IfcFacilityPart   | TRACKSTRUCTURE         | LO1336-BC01             |
-| IfcRailway         | Località                | LO1336                  | 1           | 1           | IfcFacilityPart   | TRACKSTRUCTURE         | LO1336-BC02             |
+| **Parent Element** | **Parent Element Type** | **Parent Element Name** | **MinSize** | **MaxSize** | **Child Element** | **Child Element Type** | **Child Element Name** |
+|--------------------|-------------------------|-------------------------|-------------|-------------|-------------------|------------------------|------------------------|
+| IfcRailway         | Località                | LO1336                  | 1           | 1           | IfcFacilityPart   | TRACKSTRUCTURE         | LO1336-BC01            |
+| IfcRailway         | Località                | LO1336                  | 1           | 1           | IfcFacilityPart   | TRACKSTRUCTURE         | LO1336-BC02            |
 
 **NOTE**:
-- when **Minimum** and **Maximum** have the same value, it means exactly. Example: Minimum=Maximum=1, means that the Parent Element must aggregates exactly 1 Child Element with that Type (and Name).
+- when **MinSize** and **MaxSize** have the same value, it means exactly. Example: MinSize=MaxSize=1, means that the Parent Element must aggregates exactly 1 Child Element with that Type (and Name).
 
 </details>
 
 <details><summary>Spatial Containment Table template</summary>
 
-> OPTION 1: Generic, just with types
+> OPTION 1: Use this template if you need to check at the type level
 
-| **Spatial Element** | **Spatial Element Type** | **Minimum** | **Maximum** | **Element**     | **Element Type** |
+| **Spatial Element** | **Spatial Element Type** | **MinSize** | **MaxSize** | **Element**     | **Element Type** |
 |---------------------|--------------------------|-------------|-------------|-----------------|------------------|
 | IfcFacilityPart     | TRACKSTRUCTURE           | 1           |             | IfcCourse       | BALLASTBED       |
 | IfcFacilityPart     | TRACKSTRUCTURE           | 2           |             | IfcRail         | RAIL             |
 | IfcFacilityPart     | TRACKSTRUCTURE           | 1           |             | IfcTrackElement | SLEEPER          |
 
-> OPTION 2: Specific, with occurrences' names
+> OPTION 2: Use this template if you need to check at the occurrence level
 
-| **Spatial Element** | **Spatial Element Type** | **Spatial Element Name** | **Minimum** | **Maximum** | **Element**     | **Element Type** | **Element Name** |
+| **Spatial Element** | **Spatial Element Type** | **Spatial Element Name** | **MinSize** | **MaxSize** | **Element**     | **Element Type** | **Element Name** |
 |---------------------|--------------------------|--------------------------|-------------|-------------|-----------------|------------------|------------------|
 | IfcFacilityPart     | TRACKSTRUCTURE           | LO1336-BC01              | 1           | 1           | IfcRail         | RAIL             | Left rail        |
 | IfcFacilityPart     | TRACKSTRUCTURE           | LO1336-BC01              | 1           | 1           | IfcRail         | RAIL             | Right rail       |
@@ -179,10 +166,33 @@ NOTE:
 | IfcFacilityPart     | TRACKSTRUCTURE           | LO1336-BC02              | 1           |             | IfcCourse       | BALLASTBED       |                  |
 
 **NOTE**:
-- when **Maximum is empty**, it means **unlimited**. Example: Minimum=1; Maximum=empty, means that the Spatial Element must contain 1 or more elements of the requested type.
-- when **Minimum** and **Maximum** have the same value, it means exactly. Example: Minimum=Maximum=1, means that the Spatial Element must contain exactly 1 Element with that Type (and Name).
+- when **MaxSize is empty**, it means **unlimited**. Example: MinSize=1; MaxSize=empty, means that the Spatial Element must contain 1 or more elements of the requested type.
+- when **MinSize** and **MaxSize** have the same value, it means exactly. Example: MinSize=MaxSize=1, means that the Spatial Element must contain exactly 1 Element with that Type (and Name).
 
 </details>
+
+<details><summary>Element (De)Composition Table template</summary>
+
+> OPTION 1: Use this template if you need to check at the type level
+
+| **Assembly**       | **Assembly Type** | **MinSize** | **MaxSize** | **Element** | **Element Type** |
+|--------------------|-------------------|-------------|-------------|-------------|------------------|
+| IfcElementAssembly | TURNOUTPANEL      | 2           | 8           | IfcRail     |                  |
+
+
+> OPTION 2: Use this template if you need to check at the occurrence level
+
+| **Assembly Element** | **Assembly Type** | **Assembly Name** | **MinSize** | **MaxSize** | **Element** | **Element Type** | **Element Name** |
+|----------------------|-------------------|-------------------|-------------|-------------|-------------|------------------|------------------|
+| IfcElementAssembly   | TURNOUTPANEL      | DEV FS40          | 2           | 2           | IfcRail     | BLADE            |                  |
+| IfcElementAssembly   | TURNOUTPANEL      | DEV FS60          | 4           | 4           | IfcRail     | BLADE            |                  |
+
+**NOTE**:
+- when **MinSize** and **MaxSize** have the same value, it means exactly. Example: MinSize=MaxSize=1, means that the Assembly must aggregates exactly 1 Element with that Type (and Name).
+
+</details>
+
+
 
 
 
@@ -286,23 +296,36 @@ NOTE:
 :construction: under construction :construction:
 ## Material association
 :construction: under construction :construction:
-## Assembly (Element decomposition)
-:construction: under construction :construction:
+## Element (De)Composition (Assemblies)
+
+| **RULE ID** | **CRITERIA**                                       | **VALUE [examples]**                 | **ENTITY (if applicable)** | **CT (if applicable)**                      |
+|-------------|----------------------------------------------------|--------------------------------------|----------------------------|---------------------------------------------|
+| ASSE_01     | Mandatory components are present in the assemblies | As per Element (De)Composition Table | na                         | Element Composition & Element Decomposition |
+
+> **Acceptance criteria**: For the **ASSE_01 rule**, the validation procedure must verify that an assembly of the requested type (and name) aggregates (via `IfcRelAggregates`) at least a given number of elements of the requested type (and name).
+
+<details><summary>ASSE_01 details: Mandatory components are present in the assemblies</summary>
+
+> - Given a set of assemblies taken from the [Element (De)Composition Table](#Element-(De)Composition)
+> - Then the Assembly, and optionally the Assembly Type, exists
+> - And the Assembly must aggregate at least a number within [MinSize..MaxSize] of the requested Element
+
+</details>
 
 
 
 
 ## Object grouping
 
-| **RULE ID** | **CRITERIA**                                | **VALUE [examples]**                                                                                                                                           | **ENTITY (if applicable)** | **CT (if applicable)** |
-|-------------|---------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|------------------------|
-| GROU_00     | Mandatory objects are present in the groups | As per Groups Table                                                                                                                                             | na                         | na                     |
+| **RULE ID** | **CRITERIA**                                | **VALUE [examples]**                                                                                                                                          | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|------------------------|
+| GROU_00     | Mandatory objects are present in the groups | As per Groups Table                                                                                                                                           | na                         | na                     |
 | GROU_01     | Circular reference is not allowed           | Circular reference is not allowed, neither direct (if A includes B, B cannot includes A), nor indirect (if A includes B and B includes C, C cannot include A) | IfcGroup                   | Group Assignment       |
-| GROU_02     | Only direct inclusion is allowed            | Example: if A includes B and B includes C, A cannot includes C)                                                                                                | IfcGroup                   | Group Assignment       |
-| GROU_03     | Same-level grouping is not allowed          | If two or more Group are part of the same Group, they cannot include each others. Example: if A groups B and C, B cannot group C and vice versa)               | IfcGroup                   | Group Assignment       |
-| GROU_04     | Group rooting                               | All Groups that do not have a parent Group must be linked to the IfcProject with an IfcRelDeclares relationship, as per Project Declaration template           | IfcGroup                   | Project Declaration    |
-| GROU_05     | Group typing via ObjectType                 | *All group types shall be expressed using the ObjectType (5th attribute) of each occurrence of IfcGroup                                                        | IfcGroup                   | na                     |
-| GROU_06     | Allowed entity types for groups             | IfcGroup must be associated (via IfcRelAssignsToGroup) only to IfcProduct or IfcGroup (and subtypes)                                                           | IfcGroup                   | Group Assignment       |
+| GROU_02     | Only direct inclusion is allowed            | Example: if A includes B and B includes C, A cannot includes C)                                                                                               | IfcGroup                   | Group Assignment       |
+| GROU_03     | Same-level grouping is not allowed          | If two or more Group are part of the same Group, they cannot include each others. Example: if A groups B and C, B cannot group C and vice versa)              | IfcGroup                   | Group Assignment       |
+| GROU_04     | Group rooting                               | All Groups that do not have a parent Group must be linked to the IfcProject with an IfcRelDeclares relationship, as per Project Declaration template          | IfcGroup                   | Project Declaration    |
+| GROU_05     | Group typing via ObjectType                 | *All group types shall be expressed using the ObjectType (5th attribute) of each occurrence of IfcGroup                                                       | IfcGroup                   | na                     |
+| GROU_06     | Allowed entity types for groups             | IfcGroup must be associated (via IfcRelAssignsToGroup) only to IfcProduct or IfcGroup (and subtypes)                                                          | IfcGroup                   | Group Assignment       |
 
 *: this is the only method to express group typing, due to the fact that: i) IfcGroup misses the PredefinedType attribute; and ii) object typing by instantiation of IfcTypeObject is discouraged from IFC4 onward.
 
@@ -312,7 +335,7 @@ NOTE:
 
 > - Given a set of groups taken from the [Groups Table](#Groups-Table)
 > - Then the Group, and optionally the Group Type, exists
-> - And the Group must group at least a number within [Minimum..Maximum] of the requested Object
+> - And the Group must group at least a number within [MinSize..MaxSize] of the requested Object
 
 </details>
 
@@ -376,7 +399,7 @@ NOTE:
 > - Then the property type is equal to the Property Value Type
 </details>
 
-## Spatial decomposition
+## Spatial (De)Composition
 
 | **RULE ID** | **CRITERIA**                      | **VALUE [examples]**               | **ENTITY (if applicable)** | **CT (if applicable)** |
 |-------------|-----------------------------------|------------------------------------|----------------------------|------------------------|
