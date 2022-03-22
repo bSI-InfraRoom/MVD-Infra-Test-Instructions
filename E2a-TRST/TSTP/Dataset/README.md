@@ -17,7 +17,7 @@ This test case utilises the attached dataset documented by the following drawing
 A track turnout panel is modelled as an instance of IfcElementAssembly with PredefinedType set to TURNOUTPANEL.
 It is decomposed by elements including IfcRail.RAIL, IfcTrackElement.SLEEPER, IfcRail.CHECKRAIL, IfcRail.BLADE, IfcTrackElement.FROG, IfcMechnicalFastener.RAILFASTENING, IfcMechnicalFastener.RAILJOINT.
 All the placement of these elements should be based on the placement of the turnout panel, and the turnout panel as an assembly is placed based on the alignment.
-It is required to exchange start and end stationing of the turnout panel in the IFC file.
+It is required to exchange start and end stationing of the turnout panel in the IFC file using IfcReferent.
 The detailed structure of placement is specified as follows.
 
 ![alt text](Turnout_Placement.png)
