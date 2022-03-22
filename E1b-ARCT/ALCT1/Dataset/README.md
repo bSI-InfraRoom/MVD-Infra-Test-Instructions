@@ -44,7 +44,9 @@ This test case utilises the attached dataset documented by the following drawing
 
 
 <details><summary>Alignment Table</summary>
+
 #### Horizontal Segments
+
 | Entity                        | PredefinedType | Name | Start Point X (m) | Start Point Y (m) | Start Direction (rad) | Start Radius Of Curvature (m) | End Radius Of Curvature (m) | Segment Length (m) | Gravity Center Line Height (m) |
 |-------------------------------|----------------|------|-------------------|-------------------|-----------------------|-------------------------------|-----------------------------|--------------------|--------------------------------|
 | IfcAlignmentHorizontalSegment | LINE           | H1   | 1213636.851       | 2723135.638       | 3.098579538           | 0                             | 0                           | 18.11881           | $                              |
