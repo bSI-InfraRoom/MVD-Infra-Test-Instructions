@@ -57,7 +57,8 @@ Utilities:  [Table converter](https://tableconvert.com/) (e.g., Excel to MD, MD 
 |                        | ObjectType     | Railway track alignment   |                                 |
 |                        | PredefinedType | USERDEFINED               |                                 |
 |                        | ************** | ************************  | ************************        |
-|                        | Placement      | IfcLocalPlacement         | IfcGradientCurve                |
+|                        | ObjectPlacement| IfcLocalPlacement         |                                 |
+|                        | Representations|                           | Items=IfcGradientCurve          |
 |                        |                |                           | RepresentationIdentifier="Axis" |
 |                        |                |                           | RepresentationType="Curve3D"    |
 | IfcAlignmentHorizontal | Name           | AH1                       |                                 |
