@@ -16,10 +16,10 @@ Utilities:  [Table converter](https://tableconvert.com/) (e.g., Excel to MD, MD 
 
 **HORIZONTAL**
 | Entity                        | PredefinedType | Name | Start Point X | Start Point Y | Start Direction | Start Radius Of Curvature | End Radius Of Curvature | Segment Length | Gravity Center Line Height |
-|-------------------------------|----------------|------|---------------|---------------|-----------------|---------------------------|-------------------------|----------------|---------------------|
-| IfcAlignmentHorizontalSegment | LINE           | H1   | 452413.9199   | 4539456.401   | 0.214271681     | 0                         | 0                       | 234.719412     |                |
-| IfcAlignmentHorizontalSegment | CLOTHOID       | H2   | 452634.415    | 4539536.869   | 0.214271681     | 0                         | -1000                   | 40             |                     |
-| IfcAlignmentHorizontalSegment | CIRCULARARC    | H3   | 452671.898    | 4539550.832   | 0.236493911     | -1000                     | -1000                   | 193.464471     |                |
+|-------------------------------|----------------|------|---------------|---------------|-----------------|---------------------------|-------------------------|----------------|----------------------------|
+| IfcAlignmentHorizontalSegment | LINE           | H1   | 452413.9199   | 4539456.401   | 0.214271681     | 0                         | 0                       | 234.719412     |                            |
+| IfcAlignmentHorizontalSegment | CLOTHOID       | H2   | 452634.415    | 4539536.869   | 0.214271681     | 0                         | -1000                   | 40             |                            |
+| IfcAlignmentHorizontalSegment | CIRCULARARC    | H3   | 452671.898    | 4539550.832   | 0.236493911     | -1000                     | -1000                   | 193.464471     |                            |
 
 **VERTICAL**
 | Entity                      | PredefinedType   | Name | Start Dist Along | Horizontal Length | Start Height | Start Gradient | End Gradient | RadiusOfCurvature |
@@ -50,31 +50,32 @@ Utilities:  [Table converter](https://tableconvert.com/) (e.g., Excel to MD, MD 
 
 > **HOW TO USE IT**: list first the entities' attributes and their values. Then, if needed, add additional information (e.g., placement, material, etc.). Be careful not to be redundant with other rules (e.g. placement-specific rules, material-specific rules, etc.)
 
-| **Element**            | **Attribute**  | **Value**                 | **Notes**                       |
-|------------------------|----------------|---------------------------|---------------------------------|
-| IfcAlignment           | Name           | Alignment 1_Primary route |                                 |
-|                        | Description    | $                         |                                 |
-|                        | ObjectType     | Railway track alignment   |                                 |
-|                        | PredefinedType | USERDEFINED               |                                 |
-|                        | ************** | ************************  | ************************        |
-|                        | ObjectPlacement| IfcLocalPlacement         |                                 |
-|                        | Representations|                           | RepresentationIdentifier="Axis" |
-|                        |                |                           | RepresentationType="Curve3D"    |
-|                        |                |                           | Items=IfcGradientCurve          |
-| IfcAlignmentHorizontal | Name           | AH1                       |                                 |
-|                        | Description    | $                         |                                 |
-|                        | ************** | ************************  | ************************        |
-|                        | Placement      | IfcLocalPlacement         |                                 |
-|                        | Representations|                           | RepresentationIdentifier="Axis" |
-|                        |                |                           | RepresentationType="Curve2D"    |
-|                        |                |                           | Items=IfcCompositeCurve         |
-| IfcAlignmentVertical   | Name           | AV1                       |                                 |
-|                        | Description    | $                         |                                 |
-|                        | ************** | ************************  | ************************        |
-|                        | Placement      | IfcLocalPlacement         |                                 |
-|                        | Representations|                           | RepresentationIdentifier="Axis" |
-|                        |                |                           | RepresentationType="Curve3D"    |
-|                        |                |                           | Items=IfcGradientCurve          |
+| **Element**            | **Attribute**   | **Value**                 | **Notes**                       |
+|------------------------|-----------------|---------------------------|---------------------------------|
+| IfcAlignment           | Name            | Alignment 1_Primary route |                                 |
+|                        | Description     | $                         |                                 |
+|                        | ObjectType      | Railway track alignment   |                                 |
+|                        | PredefinedType  | USERDEFINED               |                                 |
+|                        | **************  | ************************  | ************************        |
+|                        | ObjectPlacement | IfcLocalPlacement         |                                 |
+|                        | Representations |                           | RepresentationIdentifier="Axis" |
+|                        |                 |                           | RepresentationType="Curve3D"    |
+|                        |                 |                           | Items=IfcGradientCurve          |
+| IfcAlignmentHorizontal | Name            | AH1                       |                                 |
+|                        | Description     | $                         |                                 |
+|                        | **************  | ************************  | ************************        |
+|                        | Placement       | IfcLocalPlacement         |                                 |
+|                        | Representations |                           | RepresentationIdentifier="Axis" |
+|                        |                 |                           | RepresentationType="Curve2D"    |
+|                        |                 |                           | Items=IfcCompositeCurve         |
+| IfcAlignmentVertical   | Name            | AV1                       |                                 |
+|                        | Description     | $                         |                                 |
+|                        | **************  | ************************  | ************************        |
+|                        | Placement       | IfcLocalPlacement         |                                 |
+|                        | Representations |                           | RepresentationIdentifier="Axis" |
+|                        |                 |                           | RepresentationType="Curve3D"    |
+|                        |                 |                           | Items=IfcGradientCurve          |
+
 </details>
 
 <details><summary>Groups Table template</summary>
@@ -98,27 +99,29 @@ NOTE:
 
 <details><summary>Properties Table template</summary>
 
-| ****Entity****  | ****Entity Type****     | ****PropertySet Name****     | ****Property Name****        | ****Property Value Type**** | ****List Of Values****                                                                             | ****Value type****         |
-|-----------------|-------------------------|------------------------------|------------------------------|-----------------------------|----------------------------------------------------------------------------------------------------|----------------------------|
-| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Binario                      | IfcLabel                    | Pari, Dispari, Unico                                                                               | IfcPropertyEnumeratedValue |
-| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Codice binario SAS           | IfcLabel                    |                                                                                                    | IfcPropertySingleValue     |
-| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | n. deviatoi elettrici        | IfcInteger                  |                                                                                                    | IfcPropertySingleValue     |
-| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Profilo manutentivo L94      | IfcLabel                    | <=40 t/g, >100 t/g, 40< t/g <=100                                                                  | IfcPropertyEnumeratedValue |
-| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Binario elettrificato        | IfcLogical                  |                                                                                                    | IfcPropertySingleValue     |
-| IfcTrackElement | SLEEPER                 | Pset_TrackElementTypeSleeper | SleeperType                  | IfcLabel                    | COMPOSITESLEEPER, CONCRETESLEEPER, MONOBLOCKCONCRETESLEEPER, NOTKNOWN, OTHER, UNSET, WOODENSLEEPER | IfcPropertyEnumeratedValue |
-| IfcTrackElement | SLEEPER                 | Pset_TrackElementTypeSleeper | FasteningType                | IfcLabel                    |                                                                                                    | IfcPropertySingleValue     |
-| IfcCourse       | Segmento di massicciata | PSet_CourseCommon            | NominalLength                | IfcNonNegativeLengthMeasure |                                                                                                    | IfcPropertySingleValue     |
-| IfcCourse       | Segmento di massicciata | PSet_CourseCommon            | NominalThickness             | IfcNonNegativeLengthMeasure |                                                                                                    | IfcPropertySingleValue     |
-| IfcCourse       | Segmento di massicciata | PSet_CourseCommon            | NominalWidth                 | IfcNonNegativeLengthMeasure |                                                                                                    | IfcPropertySingleValue     |
-| IfcCourseType   | Segmento di massicciata | RFI_S22600                   | Tipo massicciata             | IfcLabel                    | Misto, Calcareo, Tenace                                                                            | IfcPropertyEnumeratedValue |
-| IfcGroup        | Segmento di rotaia      | RFI_S22700                   | Galleria                     | IfcLogical                  |                                                                                                    | IfcPropertySingleValue     |
-| IfcGroup        | Segmento di rotaia      | RFI_S22700                   | Tipo binario di appartenenza | IfcLabel                    | BINARIO CENTRALIZZATO, BINARIO DI CORSA, BINARIO DI FASCIO, BINARIO IMP. SMISTAMENTO AUTOMATICO    | IfcPropertyEnumeratedValue |
+> THE COLUMN "Property Value" IS OPTIONAL. FILL IT IN IF YOUR TEST REQUIRES A SPECIFIC VALUE FOR A GIVEN PROPERTY 
+
+| **Entity**      | **Entity Type**         | **PropertySet Name**         | **Property Name**            | **Property Value Type**     | **List Of Values**                                                                                 | **Value type**             | **Property Value** |
+|-----------------|-------------------------|------------------------------|------------------------------|-----------------------------|----------------------------------------------------------------------------------------------------|----------------------------|--------------------|
+| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Binario                      | IfcLabel                    | Pari, Dispari, Unico                                                                               | IfcPropertyEnumeratedValue | Pari               |
+| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Codice binario SAS           | IfcLabel                    |                                                                                                    | IfcPropertySingleValue     | 2 Ovest            |
+| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | n. deviatoi elettrici        | IfcInteger                  |                                                                                                    | IfcPropertySingleValue     | 1                  |
+| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Profilo manutentivo L94      | IfcLabel                    | <=40 t/g, >100 t/g, 40< t/g <=100                                                                  | IfcPropertyEnumeratedValue | >100 t/g           |
+| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Binario elettrificato        | IfcLogical                  |                                                                                                    | IfcPropertySingleValue     | TRUE               |
+| IfcTrackElement | SLEEPER                 | Pset_TrackElementTypeSleeper | SleeperType                  | IfcLabel                    | COMPOSITESLEEPER, CONCRETESLEEPER, MONOBLOCKCONCRETESLEEPER, NOTKNOWN, OTHER, UNSET, WOODENSLEEPER | IfcPropertyEnumeratedValue | CONCRETESLEEPER    |
+| IfcTrackElement | SLEEPER                 | Pset_TrackElementTypeSleeper | FasteningType                | IfcLabel                    |                                                                                                    | IfcPropertySingleValue     | VS34               |
+| IfcCourse       | Segmento di massicciata | PSet_CourseCommon            | NominalLength                | IfcNonNegativeLengthMeasure |                                                                                                    | IfcPropertySingleValue     | 400.00             |
+| IfcCourse       | Segmento di massicciata | PSet_CourseCommon            | NominalThickness             | IfcNonNegativeLengthMeasure |                                                                                                    | IfcPropertySingleValue     | 0.35               |
+| IfcCourse       | Segmento di massicciata | PSet_CourseCommon            | NominalWidth                 | IfcNonNegativeLengthMeasure |                                                                                                    | IfcPropertySingleValue     | 3.40               |
+| IfcCourseType   | Segmento di massicciata | RFI_S22600                   | Tipo massicciata             | IfcLabel                    | Misto, Calcareo, Tenace                                                                            | IfcPropertyEnumeratedValue | Misto              |
+| IfcGroup        | Segmento di rotaia      | RFI_S22700                   | Galleria                     | IfcLogical                  |                                                                                                    | IfcPropertySingleValue     | FALSE              |
+| IfcGroup        | Segmento di rotaia      | RFI_S22700                   | Tipo binario di appartenenza | IfcLabel                    | BINARIO CENTRALIZZATO, BINARIO DI CORSA, BINARIO DI FASCIO, BINARIO IMP. SMISTAMENTO AUTOMATICO    | IfcPropertyEnumeratedValue | BINARIO DI CORSA   |
 
 </details>
 
 <details><summary>Groups Spatial Connectivity Table template</summary>
 
-| **Spatial Element** | **Spatial Element Type** | **MinSize** | **MaxSize** | **Product or Group** | **Product Type or Group Type** |
+| **Spatial Element** | **Spatial Element Type** | **MinSize** | **MaxSize** | **Group**            | **Group Type**                 |
 |---------------------|--------------------------|-------------|-------------|----------------------|--------------------------------|
 | IfcRailway          | Località                 | 1           | 1           | IfcGroup             | Binari di corsa (Contenitore)  |
 | IfcFacilityPart     | TRACKSTRUCTURE           | 1           | 1           | IfcGroup             | Deviatoi                       |
@@ -126,17 +129,21 @@ NOTE:
 | IfcFacilityPart     | TRACKSTRUCTURE           | 1           | 1           | IfcGroup             | Rotaie                         |
 | IfcFacilityPart     | TRACKSTRUCTURE           | 1           | 1           | IfcGroup             | Traverse                       |
 
+Examples:
+1. A spatial element `IfcRailway`, of type `Località`, must reference exactly 1 `IfcGroup` of type `Binari di corsa (Contenitore)`
+2. A spatial element `IfcFacilityPart`, of type `TRACKSTRUCTURE`, must reference exactly 1 `IfcGroup` of type `Deviatoi`
+
 </details>
 
 <details><summary>Spatial (De)Composition Table template</summary>
 
-> OPTION 1: Use this template if you need to check at the type level
+> OPTION 1: Use this template if you need to check at predefined type or object type level
 
 | **Parent Element** | **Parent Element Type** | **MinSize** | **MaxSize** | **Child Element** | **Child Element Type** |
 |--------------------|-------------------------|-------------|-------------|-------------------|------------------------|
 | IfcRailway         | Località                | 2           | 2           | IfcFacilityPart   | TRACKSTRUCTURE         |
 
-> OPTION 2: Use this template if you need to check at the occurrence level
+> OPTION 2: Use this template if you need to check at the individual instance level
 
 | **Parent Element** | **Parent Element Type** | **Parent Element Name** | **MinSize** | **MaxSize** | **Child Element** | **Child Element Type** | **Child Element Name** |
 |--------------------|-------------------------|-------------------------|-------------|-------------|-------------------|------------------------|------------------------|
@@ -150,7 +157,7 @@ NOTE:
 
 <details><summary>Spatial Containment Table template</summary>
 
-> OPTION 1: Use this template if you need to check at the type level
+> OPTION 1: Use this template if you need to check at predefined type or object type level
 
 | **Spatial Element** | **Spatial Element Type** | **MinSize** | **MaxSize** | **Element**     | **Element Type** |
 |---------------------|--------------------------|-------------|-------------|-----------------|------------------|
@@ -158,7 +165,7 @@ NOTE:
 | IfcFacilityPart     | TRACKSTRUCTURE           | 2           |             | IfcRail         | RAIL             |
 | IfcFacilityPart     | TRACKSTRUCTURE           | 1           |             | IfcTrackElement | SLEEPER          |
 
-> OPTION 2: Use this template if you need to check at the occurrence level
+> OPTION 2: Use this template if you need to check at the individual instance level
 
 | **Spatial Element** | **Spatial Element Type** | **Spatial Element Name** | **MinSize** | **MaxSize** | **Element**     | **Element Type** | **Element Name** |
 |---------------------|--------------------------|--------------------------|-------------|-------------|-----------------|------------------|------------------|
@@ -175,14 +182,14 @@ NOTE:
 
 <details><summary>Element (De)Composition Table template</summary>
 
-> OPTION 1: Use this template if you need to check at the type level
+> OPTION 1: Use this template if you need to check at predefined type or object type level
 
 | **Assembly**       | **Assembly Type** | **MinSize** | **MaxSize** | **Element** | **Element Type** |
 |--------------------|-------------------|-------------|-------------|-------------|------------------|
 | IfcElementAssembly | TURNOUTPANEL      | 2           | 8           | IfcRail     |                  |
 
 
-> OPTION 2: Use this template if you need to check at the occurrence level
+> OPTION 2: Use this template if you need to check at the individual instance level
 
 | **Assembly Element** | **Assembly Type** | **Assembly Name** | **MinSize** | **MaxSize** | **Element** | **Element Type** | **Element Name** |
 |----------------------|-------------------|-------------------|-------------|-------------|-------------|------------------|------------------|
@@ -401,13 +408,25 @@ NOTE:
 > - Then the property type is equal to the Property Value Type
 </details>
 
+
+
+
 ## Spatial (De)Composition
 
-| **RULE ID** | **CRITERIA**                      | **VALUE [examples]**               | **ENTITY (if applicable)** | **CT (if applicable)** |
-|-------------|-----------------------------------|------------------------------------|----------------------------|------------------------|
-| SDEC_01     | Spatial decomposition is verified | As per Spatial Decomposition Table | na                         | Spatial Decomposition  |
+| **RULE ID** | **CRITERIA**                      | **VALUE [examples]**                 | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|-----------------------------------|--------------------------------------|----------------------------|------------------------|
+| SDEC_01     | Spatial decomposition is verified | As per Spatial (De)Composition Table | na                         | Spatial Decomposition  |
 
 > **Acceptance criteria**: For the **Spatial decomposition** capability, the validation procedure must verify that a Parent Element of the requested type aggregates (via `IfcRelAggregates`) exactly a given number of Child Elements of the requested type, no more and no less.
+
+<details><summary>SDEC_01 details: Spatial decomposition is verified</summary>
+
+> - Given a set of elements taken from the [Spatial (De)Composition Table](#Spatial-(De)Composition-Table)
+> - Then the Parent Element, and optionally the Parent Element Type, exists
+> - And the Parent Element must aggregate at least a number within [MinSize..MaxSize] of the requested Child Element
+
+</details>
+___
 
 **Bullet point example**:
 - IfcRailway *(Name: LO1336)*
@@ -424,6 +443,15 @@ NOTE:
 | SCON_01     | Spatial containment is verified | As per Spatial Containment Table | na                         | Spatial Containment    |
 
 > **Acceptance criteria**: For the **Spatial containment** capability, the validation procedure must verify that a Spatial Element of the requested type contains (via `IfcRelContainedInSpatialStructure`) exactly a given number of Elements of the requested type, no more and no less.
+
+<details><summary>SCON_01 details: Spatial containment is verified</summary>
+
+> - Given a set of elements taken from the [Spatial Containment Table](#Spatial-Containment-Table)
+> - Then the Spatial Element, and optionally the Spatial Element Type, exists
+> - And the Spatial Element must contain at least a number within [MinSize..MaxSize] of the requested Element
+
+</details>
+___
 
 **Bullet point example**:
 - IfcRailway *(Name: LO1336)*
@@ -446,6 +474,17 @@ NOTE:
 | SREF_01     | Spatial reference of groups is verified | As per Groups Spatial Connectivity Table | IfcGroup                   | Group Spatial Connectivity |
 
 > **Acceptance criteria**: For the **Group Spatial Connectivity** capability, the validation procedure must verify that a Spatial Element of the requested type references (via `IfcRelReferencedInSpatialStructure`) exactly a given number of Groups of the requested type, no more and no less.
+
+<details><summary>SREF_01 details: Spatial reference of groups is verified</summary>
+
+> - Given a set of elements and groups taken from the [Group Spatial Connectivity Table](#Group-Spatial-Connectivity-Table)
+> - Then the Spatial Element, and optionally the Spatial Element Type, exists
+> - And the Spatial Element must reference at least a number within [MinSize..MaxSize] of the requested Group
+
+</details>
+
+
+
 
 ## Spatial interference
 :construction: under construction :construction:
