@@ -567,7 +567,8 @@ ___
 | **RULE ID** | **CRITERIA**                            | **VALUE [examples]**                     | **ENTITY (if applicable)** | **CT (if applicable)**     |
 |-------------|-----------------------------------------|------------------------------------------|----------------------------|----------------------------|
 | PPLA_01     | Placement of products is verified | As per Product Placement Table |                   | Product Placement subtemplates |
-
+| PPLA_02     | For a product that has ObjectPlacement as IfcLinearPlacement, the CartesianPosition of IfcLinearPlacement shall be available | depends on cases |                   | Product LinearPlacement Placement |
+  
 > **Acceptance criteria**: For the **Product Placement** capability, the validation procedure must verify that a Product of the requested type (and optionally a requested name) has the requested Object Placement, and optionally the Object Placement has PlacementRelTo reference to the Object Placement of Relative Placement Product with requested Relative Placement Product Type and Relative Placement Product Name.
 
 <details><summary>PPLA_01 details:  Placement of products is verified</summary>
