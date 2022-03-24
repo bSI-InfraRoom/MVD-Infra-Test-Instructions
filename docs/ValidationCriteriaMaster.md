@@ -573,7 +573,7 @@ ___
 <details><summary>PPLA_01 details:  Placement of products is verified</summary>
 
 > - Given a set of products taken from the [Product Geometric Representation Table](#Product-Geometric-Representation-Table)
-> - Then the Product with optionally the Product Type and Product Name, exists
+> - Then the Product with Product Type and Product Name, exists
 > - And the Product must have Object Placement, and the Object Placement has PlacementRelTo reference to the ObjectPlacement of Relative Placement Product with requested Relative Placement Product Type and Relative Placement Product Name.
 
 </details>
