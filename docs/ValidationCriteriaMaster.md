@@ -56,25 +56,10 @@ Utilities:  [Table converter](https://tableconvert.com/) (e.g., Excel to MD, MD 
 |                        | Description     | $                         |                                 |
 |                        | ObjectType      | Railway track alignment   |                                 |
 |                        | PredefinedType  | USERDEFINED               |                                 |
-|                        | **************  | ************************  | ************************        |
-|                        | ObjectPlacement | IfcLocalPlacement         |                                 |
-|                        | Representations |                           | RepresentationIdentifier="Axis" |
-|                        |                 |                           | RepresentationType="Curve3D"    |
-|                        |                 |                           | Items=IfcGradientCurve          |
 | IfcAlignmentHorizontal | Name            | AH1                       |                                 |
 |                        | Description     | $                         |                                 |
-|                        | **************  | ************************  | ************************        |
-|                        | Placement       | IfcLocalPlacement         |                                 |
-|                        | Representations |                           | RepresentationIdentifier="Axis" |
-|                        |                 |                           | RepresentationType="Curve2D"    |
-|                        |                 |                           | Items=IfcCompositeCurve         |
 | IfcAlignmentVertical   | Name            | AV1                       |                                 |
 |                        | Description     | $                         |                                 |
-|                        | **************  | ************************  | ************************        |
-|                        | Placement       | IfcLocalPlacement         |                                 |
-|                        | Representations |                           | RepresentationIdentifier="Axis" |
-|                        |                 |                           | RepresentationType="Curve3D"    |
-|                        |                 |                           | Items=IfcGradientCurve          |
 
 </details>
 
@@ -205,20 +190,18 @@ Examples:
 
 > OPTION 1: Use this template if you need to check at predefined type or object type level
 
-| **Product**     | **Product Type** | **MinSize** | **MaxSize** | **Positioning Element** | **Positioning Element Type** |
-|---------------- |------------------|-------------|-------------|-------------------------|------------------------------|
-| IfcRail         | RAIL             | 0           | 2           | IfcReferent             |       STATION                |
+| **Product**     | **Product Type** | **Size** | **Positioning Element** | **Positioning Element Type** |
+|---------------- |------------------|----------|-------------------------|------------------------------|
+| IfcRail         | RAIL             | 2        | IfcReferent             |       STATION                |
 
 
 > OPTION 2: Use this template if you need to check at the individual instance level
 
-| **Product**     | **Product Type** | **Product Name** | **MinSize** | **MaxSize** | **Positioning Element** | **Positioning Element Type** | **Element Name** |
-|-----------------|------------------|------------------|-------------|-------------|-------------------------|------------------------------|------------------|
-| IfcRail         | RAIL             | RAIL-01          | 2           | 2           | IfcReferent             | na                           |   Alignment-1 Primary Route               |
-| IfcTrackElement | SLEEPER          | Sleeper-01       | 1           | 1           | IfcReferent             | STATION                      |   PA+220         |
+| **Product**     | **Product Type** | **Product Name** | **Size** | **Positioning Element** | **Positioning Element Type** | **Element Name** |
+|-----------------|------------------|------------------|----------|-------------------------|------------------------------|------------------|
+| IfcRail         | RAIL             | RAIL-01          | 2        | IfcReferent             | na                           |   Alignment-1 Primary Route               |
+| IfcTrackElement | SLEEPER          | Sleeper-01       | 1        | IfcReferent             | STATION                      |   PA+220         |
 
-**NOTE**:
-- when **MinSize** and **MaxSize** have the same value, it means exactly. Example: MinSize=MaxSize=1, means that the product must be positioned relative to exactly 1 positioning element with that Type (and Name).
 
 </details>
   
@@ -352,7 +335,7 @@ Examples:
 
 > - Given a set of products taken from the [Product Relative Positioning Table](#Product-Relative-Positioning-Table)
 > - Then the Product, and optionally the Product Type, exists
-> - And the Product must be positioned at least a number within [MinSize..MaxSize] of the requested Positioning Element
+> - And the Product must be positioned on exactly [Size] of the requested Positioning Element
 
 </details>
 
