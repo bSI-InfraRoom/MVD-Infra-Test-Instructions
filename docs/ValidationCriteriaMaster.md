@@ -184,7 +184,7 @@ Examples:
 
 > OPTION 1: Use this template if you need to check at predefined type or object type level
 
-| **Assembly**       | **Assembly Type** | **MinSize** | **MaxSize** | **Element** | **Element Type** |
+| **Assembly**       | **Assembly Type** | **MinSize** | **MaxSize** | **Element** | **Element Type** | 
 |--------------------|-------------------|-------------|-------------|-------------|------------------|
 | IfcElementAssembly | TURNOUTPANEL      | 2           | 8           | IfcRail     |                  |
 
@@ -201,6 +201,26 @@ Examples:
 
 </details>
 
+<details><summary>Product Relative Positioning Table template</summary>
+
+> OPTION 1: Use this template if you need to check at predefined type or object type level
+
+| **Product**     | **Product Type** | **MinSize** | **MaxSize** | **Positioning Element** | **Positioning Element Type** |
+|---------------- |------------------|-------------|-------------|-------------------------|------------------------------|
+| IfcRail         | RAIL             | 0           | 2           | IfcReferent             |       STATION                |
+
+
+> OPTION 2: Use this template if you need to check at the individual instance level
+
+| **Product**     | **Product Type** | **Product Name** | **MinSize** | **MaxSize** | **Positioning Element** | **Positioning Element Type** | **Element Name** |
+|-----------------|------------------|------------------|-------------|-------------|-------------------------|------------------------------|------------------|
+| IfcRail         | RAIL             | RAIL-01          | 2           | 2           | IfcAlignment            | na                           |   Alignment-1 Primary Route               |
+| IfcTrackElement | SLEEPER          | Sleeper-01       | 1           | 1           | IfcReferent             | STATION                      |   PA+220         |
+
+**NOTE**:
+- when **MinSize** and **MaxSize** have the same value, it means exactly. Example: MinSize=MaxSize=1, means that the product must be positioned relative to exactly 1 positioning element with that Type (and Name).
+
+</details>
 
 
 
