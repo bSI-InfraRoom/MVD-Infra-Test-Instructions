@@ -239,11 +239,10 @@ Examples:
 
 | **Product**     | **Product Type** | **Product Name**     | **Object Placement** |Relative Placement Product | Relative Placement Product Type | Relative Placement Product Name |
 |-----------------|------------------|----------------------|----------------------|----------------------------|---------------------------------|---------------------------------|
-| IfcReferent     | STATION          | 10+599               | IfcLinearPlacement|    ment              |      na                         | Alignment Primary 1             |
+| IfcReferent     | STATION          | 10+599               | IfcLinearPlacement   |    IfcAlignment            |      na                         | Alignment Primary 1             |
 
 **NOTE**:
-- Column Relative Placement Product, 
-- One shape representation for a product should be documented in one row. If there are multiple representations, they should be documented in multiple rows.
+- Columns **Relative Placement Product**, **Relative Placement Product Type**, **Relative Placement Product Name** are optional. If omitted, it means the Object Placement of the Product has no PlacementRelTo attribute.
 
 </details>
 
