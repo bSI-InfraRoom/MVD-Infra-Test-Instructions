@@ -226,7 +226,26 @@ Examples:
 
 </details>
 
+<details><summary>Product Placement Table template</summary>
 
+> OPTION 1: Use this template if you need to check at predefined type or object type level
+
+| **Product**     | **Product Type** | **Object Placement** | Relative Placement Product | Relative Placement Product Type |
+|-----------------|------------------|----------------------|----------------------------|---------------------------------|
+| IfcAlignment    | na               | IfcLocalPlacement    |  IfcSite                   |      na                         |
+
+
+> OPTION 2: Use this template if you need to check at the individual instance level
+
+| **Product**     | **Product Type** | **Product Name**     | **Object Placement** |Relative Placement Product | Relative Placement Product Type | Relative Placement Product Name |
+|-----------------|------------------|----------------------|----------------------|----------------------------|---------------------------------|---------------------------------|
+| IfcReferent     | STATION          | 10+599               | IfcLinearPlacement|    ment              |      na                         | Alignment Primary 1             |
+
+**NOTE**:
+- Column Relative Placement Product, 
+- One shape representation for a product should be documented in one row. If there are multiple representations, they should be documented in multiple rows.
+
+</details>
 
 
 
