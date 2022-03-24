@@ -334,10 +334,12 @@ Examples:
 > - And the Product must be positioned at least a number within [MinSize..MaxSize] of the requested Positioning Element
 
 </details>
+
 ## Object typing
 :construction: under construction :construction:
 ## Material association
 :construction: under construction :construction:
+
 ## Element (De)Composition (Assemblies)
 
 | **RULE ID** | **CRITERIA**                                       | **VALUE [examples]**                 | **ENTITY (if applicable)** | **CT (if applicable)**                      |
