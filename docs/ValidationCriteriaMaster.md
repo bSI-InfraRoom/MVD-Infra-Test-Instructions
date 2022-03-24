@@ -557,7 +557,23 @@ ___
 <details><summary>PREP_01 details:  Geometric representation of products is verified</summary>
 
 > - Given a set of products taken from the [Product Geometric Representation Table](#Product-Geometric-Representation-Table)
-> - Then the Product, and optionally the Spatial Element Type, exists
+> - Then the Product, and optionally the Product Type, exists
 > - And the Product must have an IfcShapeRepresentation (via IfcProductDefinitionShape) with the requested Representation Identifier, Representation Type and Items.
+
+</details>
+  
+## Product placement
+
+| **RULE ID** | **CRITERIA**                            | **VALUE [examples]**                     | **ENTITY (if applicable)** | **CT (if applicable)**     |
+|-------------|-----------------------------------------|------------------------------------------|----------------------------|----------------------------|
+| PPLA_01     | Placement of products is verified | As per Product Placement Table |                   | Product Placement subtemplates |
+
+> **Acceptance criteria**: For the **Product Placement** capability, the validation procedure must verify that a Product of the requested type (and optionally a requested name) has the requested Object Placement, and optionally the Object Placement has PlacementRelTo reference to the Object Placement of Relative Placement Product with requested Relative Placement Product Type and Relative Placement Product Name.
+
+<details><summary>PPLA_01 details:  Placement of products is verified</summary>
+
+> - Given a set of products taken from the [Product Geometric Representation Table](#Product-Geometric-Representation-Table)
+> - Then the Product with optionally the Product Type and Product Name, exists
+> - And the Product must have Object Placement, and the Object Placement has PlacementRelTo reference to the ObjectPlacement of Relative Placement Product with requested Relative Placement Product Type and Relative Placement Product Name.
 
 </details>
