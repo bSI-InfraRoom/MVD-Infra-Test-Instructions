@@ -221,6 +221,27 @@ Examples:
 - when **MinSize** and **MaxSize** have the same value, it means exactly. Example: MinSize=MaxSize=1, means that the product must be positioned relative to exactly 1 positioning element with that Type (and Name).
 
 </details>
+  
+<details><summary>Product Geometric Representation Table template</summary>
+
+> OPTION 1: Use this template if you need to check at predefined type or object type level
+
+| **Product**     | **Product Type** | **Representation Identifier** | **Representation Type** |**Items**           |
+|-----------------|------------------|-------------------------------|-------------------------|--------------------|
+| IfcAlignment    | na               | Axis                          |       Curve3D           |1 IfcGradientCurve  |
+
+
+> OPTION 2: Use this template if you need to check at the individual instance level
+
+| **Product**     | **Product Type** | **Product Name**   | **Representation Identifier** | **Representation Type** |**Items**           |
+|-----------------|------------------|--------------------|-------------------------------|-------------------------|--------------------|
+| IfcAlignment    | na               | Alignment Primary_1| Axis                          |       Curve3D           |1 IfcGradientCurve  |
+
+**NOTE**:
+- Items should be listed in the cell with their number.
+- One shape representation for a product should be documented in one row. If there are multiple representations, they should be documented in multiple rows.
+
+</details>
 
 
 
