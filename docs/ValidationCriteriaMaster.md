@@ -319,8 +319,21 @@ Examples:
 :construction: under construction :construction:
 ## Referent & Mileage
 :construction: under construction :construction:
-## Element placement & relative positioning
-:construction: under construction :construction:
+## Product relative positioning
+  
+| **RULE ID** | **CRITERIA**                      | **VALUE [examples]**                 | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|-----------------------------------|--------------------------------------|----------------------------|------------------------|
+| PPOS_01     | Product relative positioning is verified | As per Product Relative Positioning Table | na                         | Product Relative Positioning, Product Span Positioning |
+
+> **Acceptance criteria**: For the **Spatial relative positioning** capability, the validation procedure must verify that a Product of the requested type is positioned (via `IfcRelPositions`) exactly a given number of Positioning Elements of the requested type, no more and no less.
+
+<details><summary>PPOS_01 details: Product relative positioning is verified</summary>
+
+> - Given a set of products taken from the [Product Relative Positioning Table](#Product-Relative-Positioning-Table)
+> - Then the Product, and optionally the Product Type, exists
+> - And the Product must be positioned at least a number within [MinSize..MaxSize] of the requested Positioning Element
+
+</details>
 ## Object typing
 :construction: under construction :construction:
 ## Material association
