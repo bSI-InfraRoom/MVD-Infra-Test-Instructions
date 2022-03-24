@@ -214,7 +214,7 @@ Examples:
 
 | **Product**     | **Product Type** | **Product Name** | **MinSize** | **MaxSize** | **Positioning Element** | **Positioning Element Type** | **Element Name** |
 |-----------------|------------------|------------------|-------------|-------------|-------------------------|------------------------------|------------------|
-| IfcRail         | RAIL             | RAIL-01          | 2           | 2           | IfcAlignment            | na                           |   Alignment-1 Primary Route               |
+| IfcRail         | RAIL             | RAIL-01          | 2           | 2           | IfcReferent             | na                           |   Alignment-1 Primary Route               |
 | IfcTrackElement | SLEEPER          | Sleeper-01       | 1           | 1           | IfcReferent             | STATION                      |   PA+220         |
 
 **NOTE**:
