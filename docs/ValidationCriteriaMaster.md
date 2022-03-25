@@ -10,7 +10,8 @@ Utilities:  [Table converter](https://tableconvert.com/) (e.g., Excel to MD, MD 
 
 
 
-## Table Templates
+## TABLE TEMPLATES
+> USE THESE TEMPLATES TO DESCRIBE THE DATASET OF YOUR TEST
 
 <details><summary>Alignment Table template</summary>
 
@@ -202,7 +203,6 @@ Examples:
 | IfcRail         | RAIL             | RAIL-01          | 2        | IfcReferent             | na                           |   Alignment-1 Primary Route               |
 | IfcTrackElement | SLEEPER          | Sleeper-01       | 1        | IfcReferent             | STATION                      |   PA+220         |
 
-
 </details>
   
 <details><summary>Product Geometric Representation Table template</summary>
@@ -246,6 +246,38 @@ Examples:
 
 </details>
 
+<details><summary>Object Types Table template</summary>
+
+| **Entity Type** | **Entity Type Name**    | **MinSize** | **MaxSize** | **IfcObject** | **IfcObject Name**          |
+|-----------------|-------------------------|-------------|-------------|---------------|-----------------------------|
+| IfcCourseType   | Segmento di massicciata | 1           |             | IfcCourse     | Segmento di massicciata M01 |
+| IfcRailType     | Rotaia 60E1             | 1           |             | IfcRail       | Rotaia BC01 DX              |
+| IfcRailType     | Rotaia 60E1             | 1           |             | IfcRail       | Rotaia BC01 SX              |
+
+**NOTE**:
+- when **Minimum** and **Maximum** have the same value, it means exactly. Example: Minimum=Maximum=1, means that the entity type must type exactly 1 object with that Name.
+- when **Maximum is empty**, it means **unlimited**. Example: Minimum=1; Maximum=empty, means that the Entity Type must type 1 or more Object of the requested name.
+
+</details>
+
+<details><summary>Material Association Table template</summary>
+
+| **Object**      | **Object Type** | **Material Definition** | **Material Name** |
+|-----------------|-----------------|-------------------------|-------------------|
+| IfcCourseType   | BALLASTBED      | IfcMaterial             | Gravel            |
+| IfcRail         | RAIL            | IfcMaterialProfile      | 60E1              |
+| IfcTrackElement | SLEEPER         | IfcMaterial             | Concrete          |
+
+</details>
+
+<details><summary>Referents Table template</summary>
+
+| **Referent** | **Referent Type** | **Referent Name** | **Object Placement** | **Relative Placement Product** | **Relative Placement Product Type** | **Relative Placement Product Name** | **DistanceAlong** |
+|--------------|-------------------|-------------------|----------------------|--------------------------------|-------------------------------------|-------------------------------------|-------------------|
+| IfcReferent  | REFERENCEMARKER   | 0+000             | IfcLinearPlacement   | IfcAlignment                   | na                                  | Alignment 1_Primary route           | 0.000             |
+| IfcReferent  | REFERENCEMARKER   | 0+000             | IfcLinearPlacement   | IfcAlignment                   | na                                  | Alignment 2_Diverted route          | 0.000             |
+
+</details>
 
 
 
@@ -263,12 +295,10 @@ Examples:
 
 
 
+## VALIDATION CRITERIA
+> SELECT THE VALIDATION CRITERIA NEEDED FOR YOUR TEST FROM THE LIST BELOW (DIVIDED PER CAPABILITY)
 
-
-
-
-
-## General
+### General
 
 | **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
 |-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
@@ -284,7 +314,7 @@ Examples:
 
 
 
-## Alignment
+### Alignment
 
 | **RULE ID** | **CRITERIA**                                             | **VALUE [examples]**                           | **ENTITY (if applicable)** | **CT (if applicable)** |
 |-------------|----------------------------------------------------------|------------------------------------------------|----------------------------|------------------------|
@@ -317,7 +347,7 @@ Examples:
 
 
 
-## Alignment (import verification)
+### Alignment (import verification)
 
 | **RULE ID** | **CRITERIA**                                                        | **VALUE (all examples)** |
 |-------------|---------------------------------------------------------------------|--------------------------|
@@ -337,11 +367,53 @@ Examples:
 | ALIG_23     | Total 3D length of alignment                                        | 876.3819                 |
 | ALIG_24     | Height difference between start and end point of alignment 3D curve | -3                       |
 
-## Superelevation & Width
+### Superelevation & Width
 :construction: under construction :construction:
-## Referent & Mileage
+
+
+
+
+### Referent & Mileage
 :construction: under construction :construction:
-## Product relative positioning
+
+| **ID**  | **CRITERIA**                                                                        | **VALUE [examples]**   | **ENTITY (if applicable)** | **CT (if applicable)**             |
+|---------|-------------------------------------------------------------------------------------|------------------------|----------------------------|------------------------------------|
+| REFE_00 | There are two nesting relationships for referents and for alignment components      |                        |                            |                                    |
+| REFE_01 | Relating Object and Distance Along for referent nesting are verified                | As per Referents Table | IfcReferent                | Object Nesting (IfcReferent usage) |
+| REFE_02 | Consistency between Stationing property's value and DistanceAlong attribute's value |                        | IfcReferent                | na                                 |
+
+> **Acceptance criteria**: For the **Referent nesting** capability, the validation procedure must verify that **all** the above validation criteria are satisfied.
+
+<details><summary>REFE_00 details: There are two nesting relationships for referents and for alignment components</summary>
+
+> - Given an `IfcAlignment`
+> - When `IfcAlignment` has an `IfcRelNests` relationship
+> - Then the `IfcRelNests` relationship is related either to an `IfcReferent` OR to an `IfcLinearElement`
+
+</details>
+
+<details><summary>REFE_01 details: Relating Object and Distance Along for referent nesting are verified</summary>
+
+> - Given a set of referents taken from the [Referents Table](#Referents-Table)
+> - Then the Referent, with the Referent Type and Name, exists
+> - And the Referent is placed relative to the Placement Product, using the requested Object Placement
+> - And the Referent is placed at the requested DistanceAlong
+
+</details>
+
+<details><summary>REFE_02 details: Consistency between Stationing property's value and DistanceAlong attribute's value</summary>
+
+> - Given an `IfcReferent`
+> - When `IfcReferent` has a property set named `Pset_Stationing`
+> - Then `Pset_Stationing` has a property named `Station`
+> - And the value of the `Station` property is equal to the value of the `DistanceAlong` attribute used to place the `IfcReferent`
+
+</details>
+
+
+
+
+### Product relative positioning
   
 | **RULE ID** | **CRITERIA**                      | **VALUE [examples]**                 | **ENTITY (if applicable)** | **CT (if applicable)** |
 |-------------|-----------------------------------|--------------------------------------|----------------------------|------------------------|
@@ -357,12 +429,48 @@ Examples:
 
 </details>
 
-## Object typing
-:construction: under construction :construction:
-## Material association
-:construction: under construction :construction:
 
-## Element (De)Composition (Assemblies)
+
+
+### Object typing
+
+| **RULE ID** | **CRITERIA**              | **VALUE [examples]**      | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|---------------------------|---------------------------|----------------------------|------------------------|
+| OBTP_01     | Object types are verified | As per Object Types Table | na                         | Object Typing          |
+
+> **Acceptance criteria**: For the **Object typing** capability, the validation procedure must verify that an IFC entity type with the given Name is typing (via `IfcRelDefinesByType`) exactly a given number of objects of the requested Name, no more and no less.
+
+<details><summary>OBTP_01 details: Object types are verified</summary>
+
+> - Given a set of types and objects taken from the [Object Types Table](#Object-Types-Table)
+> - Then the Entity Type, with the Entity Type Name, exists
+> - And the Entity Type must type exactly [MinSize..MaxSize] of the requested Object
+
+</details>
+
+
+
+
+### Material association
+
+| **RULE ID** | **CRITERIA**                     | **VALUE [examples]**              | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|----------------------------------|-----------------------------------|----------------------------|------------------------|
+| MATE_01     | Material association is verified | As per Material Association Table | na                         | Material Association   |
+
+> **Acceptance criteria**: For the **Material association** capability, the validation procedure must verify that an Object of the requested type is associated (via `IfcRelAssociatesMaterial`) to a material definition with the requested name.
+
+<details><summary>MATE_01 details: Material association is verified</summary>
+
+> - Given a set of objects and materials taken from the [Material Association Table](#Material-Association-Table)
+> - Then the Objects, and optionally the Object Type, exists
+> - And the Object must be associated to the requested Material
+
+</details>
+
+
+
+
+### Element (De)Composition (Assemblies)
 
 | **RULE ID** | **CRITERIA**                                       | **VALUE [examples]**                 | **ENTITY (if applicable)** | **CT (if applicable)**                      |
 |-------------|----------------------------------------------------|--------------------------------------|----------------------------|---------------------------------------------|
@@ -381,7 +489,7 @@ Examples:
 
 
 
-## Object grouping
+### Object grouping
 
 | **RULE ID** | **CRITERIA**                                | **VALUE [examples]**                                                                                                                                          | **ENTITY (if applicable)** | **CT (if applicable)** |
 |-------------|---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|------------------------|
@@ -408,7 +516,7 @@ Examples:
 
 
 
-## Properties
+### Properties
 
 | **RULE ID** | **CRITERIA**                                             | **VALUE [examples]**    | **ENTITY (if applicable)** | **CT (if applicable)**                              |
 |-------------|----------------------------------------------------------|-------------------------|----------------------------|-----------------------------------------------------|
@@ -468,7 +576,7 @@ Examples:
 
 
 
-## Spatial (De)Composition
+### Spatial (De)Composition
 
 | **RULE ID** | **CRITERIA**                      | **VALUE [examples]**                 | **ENTITY (if applicable)** | **CT (if applicable)** |
 |-------------|-----------------------------------|--------------------------------------|----------------------------|------------------------|
@@ -493,7 +601,7 @@ ___
 
 
 
-## Spatial containment
+### Spatial containment
 
 | **RULE ID** | **CRITERIA**                    | **VALUE [examples]**             | **ENTITY (if applicable)** | **CT (if applicable)** |
 |-------------|---------------------------------|----------------------------------|----------------------------|------------------------|
@@ -524,7 +632,7 @@ ___
 
 
 
-## Group Spatial Connectivity
+### Group Spatial Connectivity
 
 | **RULE ID** | **CRITERIA**                            | **VALUE [examples]**                     | **ENTITY (if applicable)** | **CT (if applicable)**     |
 |-------------|-----------------------------------------|------------------------------------------|----------------------------|----------------------------|
@@ -543,10 +651,13 @@ ___
 
 
 
-## Spatial interference
+### Spatial interference
 :construction: under construction :construction:
   
-## Product geometric representation
+
+
+
+### Product geometric representation
 
 | **RULE ID** | **CRITERIA**                            | **VALUE [examples]**                     | **ENTITY (if applicable)** | **CT (if applicable)**     |
 |-------------|-----------------------------------------|------------------------------------------|----------------------------|----------------------------|
@@ -561,8 +672,11 @@ ___
 > - And the Product must have an IfcShapeRepresentation (via IfcProductDefinitionShape) with the requested Representation Identifier, Representation Type and Items.
 
 </details>
-  
-## Product placement
+
+
+
+
+### Product placement
 
 | **RULE ID** | **CRITERIA**                            | **VALUE [examples]**                     | **ENTITY (if applicable)** | **CT (if applicable)**     |
 |-------------|-----------------------------------------|------------------------------------------|----------------------------|----------------------------|
