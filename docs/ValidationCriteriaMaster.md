@@ -187,6 +187,14 @@ Examples:
 
 </details>
 
+<details><summary>Spatial Interference Table template</summary>
+
+| **Spatial Element** | **Spatial Element Type** | Spatial Element Name | Related Spatial Element | Related Spatial Element Type | Related Spatial Element Name | InterferenceType |
+| ------------------- | ------------------------ | -------------------- | ----------------------- | ---------------------------- | ---------------------------- | ---------------- |
+| IfcFacilityPart     | LEVELCROSSING            | ROAD_LC              | IfcFacilityPart         | LEVELCROSSING                | RW_LC                        | Crosses          |
+
+</details>
+
 <details><summary>Product Relative Positioning Table template</summary>
 
 > OPTION 1: Use this template if you need to check at predefined type or object type level
@@ -204,7 +212,7 @@ Examples:
 | IfcTrackElement | SLEEPER          | Sleeper-01       | 1        | IfcReferent             | STATION                      |   PA+220         |
 
 </details>
-  
+
 <details><summary>Product Geometric Representation Table template</summary>
 
 > OPTION 1: Use this template if you need to check at predefined type or object type level
@@ -368,7 +376,59 @@ Examples:
 | ALIG_24     | Height difference between start and end point of alignment 3D curve | -3                       |
 
 ### Superelevation & Width
-:construction: under construction :construction:
+| **ID**  | **CRITERIA**                             | **VALUE [examples]**                      | **ENTITY (if applicable)**        | **CT (if applicable)**       |
+| ------- | ---------------------------------------- | ----------------------------------------- | --------------------------------- | ---------------------------- |
+| SEWI_00 | Superelevation representation verified   |                                           | IfcAnnotation/SUPERELEVATIONEVENT |                              |
+| SEWI_01 | Width representation verified            |                                           | IfcAnnotation/WIDTHEVENT          |                              |
+| SEWI_02 | Superelevation linear placement verified | As per Product placement table            |                                   | Product Linear Placement     |
+| SEWI_03 | Width linear placement verified          | As per Product placement table            |                                   |                              |
+| SEWI_04 | Superelevation properties verified       | As per Properties table                   |                                   | Property sets for objects    |
+| SEWI_05 | Width properties verified                | As per Properties table                   |                                   | Property sets for objects    |
+| SEWI_06 | Relative Positioning verified            | As per Product Relative Positioning table |                                   | Product Relative Positioning |
+
+> **Acceptance criteria**: For the **Superelevation & Width** capability, the validation procedure must verify that **all** the above validation criteria are satisfied.
+
+<details><summary>SEWI_02 details: Superelevation event linear placement verified verified</summary>
+
+
+> - Given an `IfcAnnotation/SUPERELEVATIONEVENT`
+> - Then the `IfcAnnotation/SUPERELEVATIONEVENT` has a linear placement that complies with the criteria in the [Product placement](#Product-placement) section and the specification in [Product Placement Table](Product-Placement-Table)
+
+</details>
+
+<details><summary>SEWI_03 details: Width event linear placement verified verified</summary>
+
+
+> - Given an `IfcAnnotation/WIDTHEVENT`
+> - Then the `IfcAnnotation/WIDTHEVENT` has a linear placement that complies with the criteria in the [Product placement](#Product-placement) section and the specification in [Product Placement Table](Product-Placement-Table)
+
+</details>
+
+<details><summary>SEWI_04 details: Superelevation properties verified</summary>
+
+
+> - Given an `IfcAnnotation/SUPERELEVATIONEVENT`
+> - Then `IfcAnnotation/SUPERELEVATIONEVENT` has a property set named `Pset_Superelevation`
+> - And the property assignment for `Pset_Superelevation` complies with the criteria specified in the [Properties](#Properties) section and the specification in the [Properties table](#Properties-table)
+
+</details>
+
+<details><summary>SEWI_05 details: Width properties verified</summary>
+
+
+> - Given an `IfcAnnotation/WIDTHEVENT`
+> - Then `IfcAnnotation/WIDTHEVENT` has a property set named `Pset_Width`
+> - And the property assignment complies with the criteria specified in the [Properties](#Properties) section and the specification in the [Properties table](#Properties-table)
+
+</details>
+
+<details><summary>SEWI_06 details: Relative positioning verified</summary>
+
+
+> - Given an `IfcAnnotation/SUPERELEVATIONEVENT` or an `IfcAnnotation/WIDTHEVENT` having a linear placement relative to an alignment curve  
+> - This instance shall be verified according to the criteria in the [Product Relative Positioning](#Product-relative-positioning) section and the specification in the [Product Relative Positioning table](#Product-Relative-Positioning-table)
+
+</details>
 
 
 
@@ -413,7 +473,7 @@ Examples:
 
 
 ### Product relative positioning
-  
+
 | **RULE ID** | **CRITERIA**                      | **VALUE [examples]**                 | **ENTITY (if applicable)** | **CT (if applicable)** |
 |-------------|-----------------------------------|--------------------------------------|----------------------------|------------------------|
 | PPOS_01     | Product relative positioning is verified | As per Product Relative Positioning Table | na                         | Product Relative Positioning, Product Span Positioning |
@@ -651,9 +711,20 @@ ___
 
 
 ### Spatial interference
-:construction: under construction :construction:
-  
+| **RULE ID** | **CRITERIA**                     | **VALUE [examples]**              | **ENTITY (if applicable)** | **CT (if applicable)** |
+| ----------- | -------------------------------- | --------------------------------- | -------------------------- | ---------------------- |
+| SINT_01     | Spatial interference is verified | As per Spatial Interference Table | IfcSpatialElement          | Spatial Interference   |
 
+> **Acceptance criteria**: For the **Spatial interference** capability, the validation procedure must verify that the specified Spatial Element of the requested type references (via `IfcRelInterferesElements`) exactly the given Spatial Element of the requested type using the requested `InterferenceType`.
+
+<details><summary>SINT_01 details: Spatial interference is verified</summary>
+
+
+> - Given a set of spatial elements taken from the [Spatial Interference Table](#Spatial-Interference-Table)
+> - Then both the Relating Spatial Element, and the Related Spatial Element, exists
+> - And that for each requested spatial interference (that corresponds to a row in [Spatial Interference Table](#Spatial-Interference-Table)) exactly one `IfcRelInterferesElements` instance exists that references the relating and related spatial element according to concept template `Spatial Interference` using the specified `InterferenceType` value.
+
+</details>
 
 
 ### Product geometric representation
@@ -681,7 +752,7 @@ ___
 |-------------|-----------------------------------------|------------------------------------------|----------------------------|----------------------------|
 | PPLA_01     | Placement of products is verified | As per Product Placement Table |                   | Product Placement subtemplates |
 | PPLA_02     | For a product that has ObjectPlacement as IfcLinearPlacement, the CartesianPosition of IfcLinearPlacement shall be available | depends on cases |                   | Product Linear Placement |
-  
+
 > **Acceptance criteria**: For the **Product Placement** capability, the validation procedure must verify that a Product of the requested type (and optionally a requested name) has the requested Object Placement, and optionally the Object Placement has PlacementRelTo reference to the Object Placement of Relative Placement Product with requested Relative Placement Product Type and Relative Placement Product Name.
 
 <details><summary>PPLA_01 details:  Placement of products is verified</summary>
