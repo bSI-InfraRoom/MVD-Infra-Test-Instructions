@@ -374,7 +374,6 @@ Examples:
 
 
 ### Referent & Mileage
-:construction: under construction :construction:
 
 | **ID**  | **CRITERIA**                                                                        | **VALUE [examples]**   | **ENTITY (if applicable)** | **CT (if applicable)**             |
 |---------|-------------------------------------------------------------------------------------|------------------------|----------------------------|------------------------------------|
