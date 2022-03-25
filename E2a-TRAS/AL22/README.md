@@ -97,56 +97,6 @@ All validation criteria (and usages) of predecessors' tests shall be **verified 
 
 
 
-## Usages, Constraints & Logic 
-
-The following itemised restrictions and constraints shall be placed on IFC Entities & Concept Templates:
-
-<details><summary>Semantic Usages, Constraints & Logic</summary>
-
-The following itemised Usages, Constraints & Logic are normative entries within the AbRV MVD and MUST be satisfied to meet the defined validation criteria
-
-| **ID**  | **CRITERIA**                                        | **VALUE**                           | **COMMENT** |
-|---------|-----------------------------------------------------|-------------------------------------|-------------|
-| ALIG_00 | Alignment layout structure is verified              | See below for further specification |             |
-| SITE_00 | IfcAlignment shall always be contained in a IfcSite | na                                  |             |
-
-
-ALIG_00: Alignment layout structure is verified
-
-> 1. Each `IfcAlignment` must nest exactly 1 `IfcAlignmentHorizontal`
-> 1. Each `IfcAlignment` must nest at most 1 `IfcAlignmentVertical`
-> 1. Each `IfcAlignment` must nest at most 1 `IfcAlignmentCant`
-> 1. Each `IfcAlignmentHorizontal` must be nested only by 1 `IfcAlignment`
-> 1. Each `IfcAlignmentVertical` must be nested only by 1 `IfcAlignment`
-> 1. Each `IfcAlignmentCant` must be nested only by 1 `IfcAlignment`
-> 1. Each `IfcAlignment` must nest only the following entities: `IfcAlignmentHorizontal`, `IfcAlignmentVertical`, `IfcAlignmentCant`, `IfcReferent`, `IfcAlignment`
-> 1. Each `IfcAlignmentHorizontal` must nest only `IfcAlignmentHorizontalSegment`
-> 1. Each `IfcAlignmentVertical` must nest only `IfcAlignmentVerticalSegment`
-> 1. Each `IfcAlignmentCant` must nest only `IfcAlignmentCantSegment`
-
-</details>
-
-<details><summary>Model Geometry</summary>
-The Test case requires the following additional checks related to Model Geometry:
-
-| **ID**  | **CRITERIA**                                                                            | **VALUE** | **COMMENT**                |
-|---------|-----------------------------------------------------------------------------------------|-----------|----------------------------|
-| ALIG_08 | Semantic description of segments corresponds to their geometry                          | NA        | RDF tools can do this      |
-| ALIG_09 | Tangential continuity of all segments is verified, epsilon = 1⋅10<sup>-5</sup> (0,00001) |           | RDF tools can do this      |
-
-
-ALIG_07 - Note
-
-> The *RailHeadDistance* (blue line in the figure below) is a normalized value used to compute the angle of cant. RFI uses 1500 mm for a track gauge of 1435 mm
->
->   <img src="Dataset/CantFromLowerRail.png" height="300"/>
-
-</details>
-
-
-
-
-
 ## Expected Results
 
 For certification of capabilities the only source will be:
@@ -161,79 +111,80 @@ For certification of capabilities the only source will be:
 
 ### General
 
-- All the concept templates must be correctly implemented as presented in the validation criteria
-- At least 1 instance of each entity listed in [Itemised Roots](#Itemised-Roots) is present in the file
-- All validation criteria of the pre-required tests shall apply here too
+| **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
+|-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
+| GENE_00     | All validation criteria of precondition's tests shall be verified |                       | na                         | na                         |
+| GENE_01     | All requested entities (and attributes) exist in file             | As per Entities Table | na                         | na                         |
 
-| **ID**  | **CRITERIA**                                      | **VALUE** | **COMMENT** |
-|---------|---------------------------------------------------|-----------|-------------|
-| ENAT_01 | Requested entities (and attributes) exist in file | See below |             |
+#### Entities Table
 
-<details><summary>Entities and attributes</summary>
+| **Element**            | **Attribute**   | **Value**                                               | **Notes** |
+|------------------------|-----------------|---------------------------------------------------------|-----------|
+| IfcAlignment           | Name            | Alignment 1_Primary route                               |           |
+|                        | ObjectType      | Railway track alignment                                 |           |
+|                        | PredefinedType  | USERDEFINED                                             |           |
+| IfcAlignment           | Name            | Alignment 2_Diverted route                              |           |
+|                        | ObjectType      | Railway track alignment                                 |           |
+|                        | PredefinedType  | USERDEFINED                                             |           |
+| IfcAlignmentHorizontal | Name            | AH1                                                     |           |
+| IfcAlignmentVertical   | Name            | AV1                                                     |           |
+| IfcAlignmentHorizontal | Name            | AH2                                                     |           |
+| IfcAlignmentVertical   | Name            | AV2                                                     |           |
+| IfcSite                | Name            | Sito                                                    |           |
+|                        | Description     | 'One of the many sites that can be present in the file' |           |
+| IfcRailway             | Name            | LO1336                                                  |           |
+|                        | Description     | Foligno                                                 |           |
+|                        | ObjectType      | Località                                                |           |
+|                        | PredefinedType  | USERDEFINED                                             |           |
+|                        | CompositionType | ELEMENT                                                 |           |
 
-`IfcAlignment` (Alignment 1_Primary route)
 
-| Attribute      | Value                     |
-|----------------|---------------------------|
-| Name           | Alignment 1_Primary route |
-| Description    | $                         |
-| ObjectType     | Railway track alignment   |
-| PredefinedType | USERDEFINED               |
 
-`IfcAlignment` (Alignment 2_Diverted route)
-
-| Attribute      | Value                      |
-|----------------|----------------------------|
-| Name           | Alignment 2_Diverted route |
-| Description    | $                          |
-| ObjectType     | Railway track alignment    |
-| PredefinedType | USERDEFINED                |
-
-`IfcSite`
-
-| Attribute      | Value                                                   |
-|----------------|---------------------------------------------------------|
-| Name           | Sito                                                    |
-| Description    | 'One of the many sites that can be present in the file' |
-| ObjectType     | $                                                       |
-| PredefinedType | $                                                       |
-
-`IfcRailway`
-
-| Attribute       | Value       |
-|-----------------|-------------|
-| Name            | LO1336      |
-| Description     | Foligno     |
-| ObjectType      | Località    |
-| PredefinedType  | USERDEFINED |
-| CompositionType | ELEMENT     |
-
-</details>
 
 ### Railway alignment (without cant)
 
 > **Acceptance criteria**: For the **Railway alignment (without cant)** capability, the validation procedure must verify that **all** the following validation criteria are satisfied.
->
-> If present, all criteria listed in [Usages, Constraints & Logic](#Usages,-Constraints-&-Logic), and in the same section of precondition tests, shall be verified too.
 
-<details open><summary>Railway alignment (without cant)</summary> 
+| **RULE ID** | **CRITERIA**                                             | **VALUE [examples]**                           | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|----------------------------------------------------------|------------------------------------------------|----------------------------|------------------------|
+| SITE_00     | All IfcAlignment shall always be contained in an IfcSite |                                                |                            | Spatial Containment    |
+| ALIG_00     | Alignment layout structure is verified                   | See steps                                      |                            | Alignment Layout       |
+| ALIG_01     | Number of alignments contained in file                   | [2]                                            |                            |                        |
+| ALIG_02     | Parameters of alignment segments are verified            | As per Alignment Table                         |                            |                        |
+| ALIG_03     | Alignment geometric compliance is verified               | As per Alignment geometric compliance document |                            |                        |
+| ALIG_04     | Value of the RailHeadDistance along the entire alignment | [1500 mm]                                      | IfcAlignmentCant           |                        |
 
-| **ID**  | **CRITERIA**                                                     | **VALUE**                                   | **COMMENT**                |
-|---------|------------------------------------------------------------------|---------------------------------------------|----------------------------|
-| ALIG_01 | Alignments contained in file                                     | 2                                           |                            |
-| ALIG_02 | Component for Alignment 1_Primary route                          | 1 horizontal, 1 vertical                    |                            |
-| ALIG_03 | Component for Alignment 2_Diverted route                         | 1 horizontal, 1 vertical                    |                            |
-| ALIG_04 | The horizontal (H) layout is made only by these type of segments | straight line, circular arc, clothoid       |                            |
-| ALIG_05 | The vertical (V) layout is made only by these type of segments   | straight line, circular arc                 |                            |
+<details><summary>ALIG_00 steps</summary>
+
+| **STEP ID** | **STEP**                                                                                                                                           |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| ALIG_00.1   | Each IfcAlignment must nest exactly 1 IfcAlignmentHorizontal                                                                                       |
+| ALIG_00.2   | Each IfcAlignment must nest at most 1 IfcAlignmentVertical                                                                                         |
+| ALIG_00.3   | Each IfcAlignment must nest exactly 1 IfcAlignmentVertical                                                                                         |
+| ALIG_00.6   | Each IfcAlignmentHorizontal must be nested only by 1 IfcAlignment                                                                                  |
+| ALIG_00.7   | Each IfcAlignmentVertical must be nested only by 1 IfcAlignment                                                                                    |
+| ALIG_00.9   | Each IfcAlignment must nest only the following entities: IfcAlignmentHorizontal, IfcAlignmentVertical, IfcAlignmentCant, IfcReferent, IfcAlignment |
+| ALIG_00.10  | Each IfcAlignmentHorizontal nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentHorizontalSegment         |
+| ALIG_00.11  | Each IfcAlignmentVertical nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentVerticalSegment             |
 
 </details>
 
-#### Validation parameters for import test
+<details><summary>ALIG_04 details</summary>
+
+> The *RailHeadDistance* (blue line in the figure below) is a normalized value used to compute the angle of cant. RFI uses 1500 mm for a track gauge of 1435 mm
+>
+>   <img src="Dataset/CantFromLowerRail.png" height="300"/>
+
+</details>
+
+
+
+### Validation parameters for import test
 The parameters contained in the following sections are meant to verify the **correct import** of the alignment dataset provided in this test, into a receiving application.
 
 **IMPORTANT**: to check most of the parameters below, some `IfcReferent` entities have to be defined. For this, see the test **AL24**
 
-<details open><summary> Alignment 1_Primary route </summary>
+<details><summary> Alignment 1_Primary route </summary>
 
 | ID      | CRITERIA                                                            | VALUE        |
 |---------|---------------------------------------------------------------------|--------------|
@@ -256,7 +207,7 @@ The parameters contained in the following sections are meant to verify the **cor
 </details>
 
 
-<details open><summary> Alignment 2_Diverted route </summary>
+<details><summary> Alignment 2_Diverted route </summary>
 
 | ID      | CRITERIA                                                            | VALUE        |
 |---------|---------------------------------------------------------------------|--------------|
@@ -278,20 +229,63 @@ The parameters contained in the following sections are meant to verify the **cor
 
 </details>
 
-### Spatial decomposition
+### Spatial (De)Composition
+
+
+| **RULE ID** | **CRITERIA**                      | **VALUE [examples]**                 | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|-----------------------------------|--------------------------------------|----------------------------|------------------------|
+| SDEC_01     | Spatial decomposition is verified | As per Spatial (De)Composition Table | na                         | Spatial Decomposition  |
 
 > **Acceptance criteria**: For the **Spatial decomposition** capability, the validation procedure must verify that a Parent Element of the requested type aggregates (via `IfcRelAggregates`) exactly a given number of Child Elements of the requested type, no more and no less.
 
-| Parent Element | Parent Element Type | Minimum | Maximum | Child Element   | Child Element Type |
-|----------------|---------------------|---------|---------|-----------------|--------------------|
-| IfcProject     |                     | 1       | 1       | IfcSite         |                    |
-| IfcSite        |                     | 1       | 1       | IfcRailway      | Località           |
+<details><summary>SDEC_01 details: Spatial decomposition is verified</summary>
+
+> - Given a set of elements taken from the [Spatial (De)Composition Table](#Spatial-(De)Composition-Table)
+> - Then the Parent Element, and optionally the Parent Element Type, exists
+> - And the Parent Element must aggregate at least a number within [MinSize..MaxSize] of the requested Child Element
+
+</details>
+
+#### Spatial (De)Composition Table
+
+| **Parent Element** | **Parent Element Type** | **Parent Element Name** | **MinSize** | **MaxSize** | **Child Element** | **Child Element Type** | **Child Element Name** |
+|--------------------|-------------------------|-------------------------|-------------|-------------|-------------------|------------------------|------------------------|
+| IfcProject         |                         | IFC4.3AbRV Project      | 1           | 1           | IfcSite           |                        | Sito                   |
+| IfcSite            |                         | Sito                    | 1           | 1           | IfcRailway        |                        | LO1336                 |
+
+**Bullet point example**:
+- IfcProject *(Name: IFC4.3AbRV Project)*
+  - IfcSite *(Name: Sito)*
+    - IfcRailway *(Name: LO1336)*
+
 
 
 ### Spatial containment
 
+| **RULE ID** | **CRITERIA**                    | **VALUE [examples]**             | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|---------------------------------|----------------------------------|----------------------------|------------------------|
+| SCON_01     | Spatial containment is verified | As per Spatial Containment Table | na                         | Spatial Containment    |
+
 > **Acceptance criteria**: For the **Spatial containment** capability, the validation procedure must verify that a Spatial Element of the requested type contains (via `IfcRelContainedInSpatialStructure`) exactly a given number of Elements of the requested type, no more and no less.
 
-| Spatial Element | Spatial Element Type | Minimum | Maximum | Element            | Element Type            |
-|-----------------|----------------------|---------|---------|--------------------|-------------------------|
-| IfcSite         |                      | 2       | 2       | IfcAlignment       | Railway track alignment |
+<details><summary>SCON_01 details: Spatial containment is verified</summary>
+
+> - Given a set of elements taken from the [Spatial Containment Table](#Spatial-Containment-Table)
+> - Then the Spatial Element, and optionally the Spatial Element Type, exists
+> - And the Spatial Element must contain at least a number within [MinSize..MaxSize] of the requested Element
+
+</details>
+
+#### Spatial Containment Table
+
+| **Spatial Element** | **Spatial Element Type** | **MinSize** | **MaxSize** | **Element**     | **Element Type**        |
+|---------------------|--------------------------|-------------|-------------|-----------------|-------------------------|
+| IfcSite             |                          | 2           | 2           | IfcAlignment    | Railway track alignment |
+
+**Bullet point example**:
+
+- IfcProject *(Name: IFC4.3AbRV Project)*
+  - IfcSite *(Name: Sito)*
+    - `IfcAlignment` *(Name: Alignment 1_Primary route)*
+    - `IfcAlignment` *(Name: Alignment 2_Diverted route)*
+    - IfcRailway *(Name: LO1336)*
