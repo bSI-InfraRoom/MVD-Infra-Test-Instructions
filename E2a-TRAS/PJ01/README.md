@@ -79,24 +79,6 @@ For certification of capabilities the only source will be:
 | GENE_00     | All validation criteria of precondition's tests shall be verified |                       | na                         | na                         |
 | GENE_01     | All requested entities (and attributes) exist in file             | As per Entities Table | na                         | na                         |
 
-
-### Project Setup
-
-| **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
-|-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
-| ORIG_01     | Origin of Coordinate System is set as requested                   | [(0., 0., 0.)]        |                            | Project Global Positioning |
-| ORIG_02     | True north is set as requested                                    | [(0., 1., 0.)]        |                            | Project Global Positioning |
-| DIST_01     | Unit of measure for all distances                                 | [meter]               |                            | Project Units              |
-| ANGL_01     | Unit of measure all angles                                        | [radian]              |                            | Project Units              |
-| DIST_02     | Required precision for distances                                  | [0,0001]              | all alignment segments     | na                         |
-| ANGL_02     | Required precision for angles and slope                           | [0,000001]            |                            | na                         |
-
-> **Acceptance criteria**
- For the **Project Setup** capability, the validation procedure must verify that:
-> - `IfcProject` entity is the top most element in the project structure. It represents the bare minimum of an IFC file exchange with no content, only boilerplate code.
-> - `IfcUnitAssignment` entity is used to define the global units for measures and values, when the units are not otherwise defined. For the specific units required by this test refer to the table below.
-> - `IfcGeometricRepresentationContext` entity is used to define the is the global context of the geometry.
-
 #### Entities Table
 
 | **Element**                       | **Attribute**            | **Value**            | **Notes**                                                                                                                               |
@@ -114,6 +96,23 @@ For certification of capabilities the only source will be:
 | IfcAxis2Placement3D               | Location                 |                      | Points to `IfcCartesianPoint` (0., 0., 0.)                                                                                              |
 |                                   | Axis                     |                      | Points to Z direction (0., 0., 1.)                                                                                                      |
 |                                   | RefDirection             |                      | Points to X direction (1., 0., 0.)                                                                                                      |
+
+### Project Setup
+
+| **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
+|-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
+| ORIG_01     | Origin of Coordinate System is set as requested                   | [(0., 0., 0.)]        |                            | Project Global Positioning |
+| ORIG_02     | True north is set as requested                                    | [(0., 1., 0.)]        |                            | Project Global Positioning |
+| DIST_01     | Unit of measure for all distances                                 | [meter]               |                            | Project Units              |
+| ANGL_01     | Unit of measure all angles                                        | [radian]              |                            | Project Units              |
+| DIST_02     | Required precision for distances                                  | [0,0001]              | all alignment segments     | na                         |
+| ANGL_02     | Required precision for angles and slope                           | [0,000001]            |                            | na                         |
+
+> **Acceptance criteria**
+ For the **Project Setup** capability, the validation procedure must verify that:
+> - `IfcProject` entity is the top most element in the project structure. It represents the bare minimum of an IFC file exchange with no content, only boilerplate code.
+> - `IfcUnitAssignment` entity is used to define the global units for measures and values, when the units are not otherwise defined. For the specific units required by this test refer to the table below.
+> - `IfcGeometricRepresentationContext` entity is used to define the is the global context of the geometry.
 
 
 Example of SI unit encoding
