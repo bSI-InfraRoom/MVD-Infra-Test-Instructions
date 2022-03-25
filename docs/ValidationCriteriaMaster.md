@@ -312,6 +312,14 @@ Examples:
 |-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
 | GENE_00     | All validation criteria of precondition's tests shall be verified |                       | na                         | na                         |
 | GENE_01     | All requested entities (and attributes) exist in file             | As per Entities Table | na                         | na                         |
+
+
+
+
+### Project Setup
+
+| **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
+|-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
 | ORIG_01     | Origin of Coordinate System is set as requested                   | [(0., 0., 0.)]        |                            | Project Global Positioning |
 | ORIG_02     | True north is set as requested                                    | [(0., 1., 0.)]        |                            | Project Global Positioning |
 | DIST_01     | Unit of measure for all distances                                 | [meter]               |                            | Project Units              |
