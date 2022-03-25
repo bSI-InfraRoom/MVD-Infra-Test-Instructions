@@ -179,6 +179,71 @@ For certification of capabilities the only source will be:
 
 
 
+
+### Spatial (De)Composition
+
+
+| **RULE ID** | **CRITERIA**                      | **VALUE [examples]**                 | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|-----------------------------------|--------------------------------------|----------------------------|------------------------|
+| SDEC_01     | Spatial decomposition is verified | As per Spatial (De)Composition Table | na                         | Spatial Decomposition  |
+
+> **Acceptance criteria**: For the **Spatial decomposition** capability, the validation procedure must verify that a Parent Element of the requested type aggregates (via `IfcRelAggregates`) exactly a given number of Child Elements of the requested type, no more and no less.
+
+<details><summary>SDEC_01 details: Spatial decomposition is verified</summary>
+
+> - Given a set of elements taken from the [Spatial (De)Composition Table](#Spatial-(De)Composition-Table)
+> - Then the Parent Element, and optionally the Parent Element Type, exists
+> - And the Parent Element must aggregate at least a number within [MinSize..MaxSize] of the requested Child Element
+
+</details>
+
+#### Spatial (De)Composition Table
+
+| **Parent Element** | **Parent Element Type** | **Parent Element Name** | **MinSize** | **MaxSize** | **Child Element** | **Child Element Type** | **Child Element Name** |
+|--------------------|-------------------------|-------------------------|-------------|-------------|-------------------|------------------------|------------------------|
+| IfcProject         |                         | IFC4.3AbRV Project      | 1           | 1           | IfcSite           |                        | Sito                   |
+| IfcSite            |                         | Sito                    | 1           | 1           | IfcRailway        |                        | LO1336                 |
+
+**Bullet point example**:
+- IfcProject *(Name: IFC4.3AbRV Project)*
+  - IfcSite *(Name: Sito)*
+    - IfcRailway *(Name: LO1336)*
+
+
+
+### Spatial Containment
+
+| **RULE ID** | **CRITERIA**                    | **VALUE [examples]**             | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|---------------------------------|----------------------------------|----------------------------|------------------------|
+| SCON_01     | Spatial containment is verified | As per Spatial Containment Table | na                         | Spatial Containment    |
+
+> **Acceptance criteria**: For the **Spatial containment** capability, the validation procedure must verify that a Spatial Element of the requested type contains (via `IfcRelContainedInSpatialStructure`) exactly a given number of Elements of the requested type, no more and no less.
+
+<details><summary>SCON_01 details: Spatial containment is verified</summary>
+
+> - Given a set of elements taken from the [Spatial Containment Table](#Spatial-Containment-Table)
+> - Then the Spatial Element, and optionally the Spatial Element Type, exists
+> - And the Spatial Element must contain at least a number within [MinSize..MaxSize] of the requested Element
+
+</details>
+
+#### Spatial Containment Table
+
+| **Spatial Element** | **Spatial Element Type** | **MinSize** | **MaxSize** | **Element**     | **Element Type**        |
+|---------------------|--------------------------|-------------|-------------|-----------------|-------------------------|
+| IfcSite             |                          | 2           | 2           | IfcAlignment    | Railway track alignment |
+
+**Bullet point example**:
+
+- IfcProject *(Name: IFC4.3AbRV Project)*
+  - IfcSite *(Name: Sito)*
+    - `IfcAlignment` *(Name: Alignment 1_Primary route)*
+    - `IfcAlignment` *(Name: Alignment 2_Diverted route)*
+    - IfcRailway *(Name: LO1336)*
+
+
+
+
 ### Validation parameters for import test
 The parameters contained in the following sections are meant to verify the **correct import** of the alignment dataset provided in this test, into a receiving application.
 
@@ -228,64 +293,3 @@ The parameters contained in the following sections are meant to verify the **cor
 | ALIG_24 | Height difference between start and end point of alignment 3D curve | -3.0000      |
 
 </details>
-
-### Spatial (De)Composition
-
-
-| **RULE ID** | **CRITERIA**                      | **VALUE [examples]**                 | **ENTITY (if applicable)** | **CT (if applicable)** |
-|-------------|-----------------------------------|--------------------------------------|----------------------------|------------------------|
-| SDEC_01     | Spatial decomposition is verified | As per Spatial (De)Composition Table | na                         | Spatial Decomposition  |
-
-> **Acceptance criteria**: For the **Spatial decomposition** capability, the validation procedure must verify that a Parent Element of the requested type aggregates (via `IfcRelAggregates`) exactly a given number of Child Elements of the requested type, no more and no less.
-
-<details><summary>SDEC_01 details: Spatial decomposition is verified</summary>
-
-> - Given a set of elements taken from the [Spatial (De)Composition Table](#Spatial-(De)Composition-Table)
-> - Then the Parent Element, and optionally the Parent Element Type, exists
-> - And the Parent Element must aggregate at least a number within [MinSize..MaxSize] of the requested Child Element
-
-</details>
-
-#### Spatial (De)Composition Table
-
-| **Parent Element** | **Parent Element Type** | **Parent Element Name** | **MinSize** | **MaxSize** | **Child Element** | **Child Element Type** | **Child Element Name** |
-|--------------------|-------------------------|-------------------------|-------------|-------------|-------------------|------------------------|------------------------|
-| IfcProject         |                         | IFC4.3AbRV Project      | 1           | 1           | IfcSite           |                        | Sito                   |
-| IfcSite            |                         | Sito                    | 1           | 1           | IfcRailway        |                        | LO1336                 |
-
-**Bullet point example**:
-- IfcProject *(Name: IFC4.3AbRV Project)*
-  - IfcSite *(Name: Sito)*
-    - IfcRailway *(Name: LO1336)*
-
-
-
-### Spatial containment
-
-| **RULE ID** | **CRITERIA**                    | **VALUE [examples]**             | **ENTITY (if applicable)** | **CT (if applicable)** |
-|-------------|---------------------------------|----------------------------------|----------------------------|------------------------|
-| SCON_01     | Spatial containment is verified | As per Spatial Containment Table | na                         | Spatial Containment    |
-
-> **Acceptance criteria**: For the **Spatial containment** capability, the validation procedure must verify that a Spatial Element of the requested type contains (via `IfcRelContainedInSpatialStructure`) exactly a given number of Elements of the requested type, no more and no less.
-
-<details><summary>SCON_01 details: Spatial containment is verified</summary>
-
-> - Given a set of elements taken from the [Spatial Containment Table](#Spatial-Containment-Table)
-> - Then the Spatial Element, and optionally the Spatial Element Type, exists
-> - And the Spatial Element must contain at least a number within [MinSize..MaxSize] of the requested Element
-
-</details>
-
-#### Spatial Containment Table
-
-| **Spatial Element** | **Spatial Element Type** | **MinSize** | **MaxSize** | **Element**     | **Element Type**        |
-|---------------------|--------------------------|-------------|-------------|-----------------|-------------------------|
-| IfcSite             |                          | 2           | 2           | IfcAlignment    | Railway track alignment |
-
-**Bullet point example**:
-
-- IfcProject *(Name: IFC4.3AbRV Project)*
-  - IfcSite *(Name: Sito)*
-    - `IfcAlignment` *(Name: Alignment 1_Primary route)*
-    - `IfcAlignment` *(Name: Alignment 2_Diverted route)*
-    - IfcRailway *(Name: LO1336)*
