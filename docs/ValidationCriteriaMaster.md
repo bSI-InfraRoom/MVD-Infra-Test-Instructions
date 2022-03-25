@@ -439,7 +439,6 @@ Examples:
 |---------|-------------------------------------------------------------------------------------|------------------------|----------------------------|------------------------------------|
 | REFE_00 | There are two nesting relationships for referents and for alignment components      |                        |                            |                                    |
 | REFE_01 | Relating Object and Distance Along for referent nesting are verified                | As per Referents Table | IfcReferent                | Object Nesting (IfcReferent usage) |
-| REFE_02 | Consistency between Stationing property's value and DistanceAlong attribute's value |                        | IfcReferent                | na                                 |
 
 > **Acceptance criteria**: For the **Referent nesting** capability, the validation procedure must verify that **all** the above validation criteria are satisfied.
 
@@ -457,15 +456,6 @@ Examples:
 > - Then the Referent, with the Referent Type and Name, exists
 > - And the Referent is placed relative to the Placement Product, using the requested Object Placement
 > - And the Referent is placed at the requested DistanceAlong
-
-</details>
-
-<details><summary>REFE_02 details: Consistency between Stationing property's value and DistanceAlong attribute's value</summary>
-
-> - Given an `IfcReferent`
-> - When `IfcReferent` has a property set named `Pset_Stationing`
-> - Then `Pset_Stationing` has a property named `Station`
-> - And the value of the `Station` property is equal to the value of the `DistanceAlong` attribute used to place the `IfcReferent`
 
 </details>
 
