@@ -193,7 +193,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 | SITE_00     | All IfcAlignment shall always be contained in an IfcSite |                                                |                            | Spatial Containment    |
 | ALIG_00     | Alignment layout structure is verified                   | See steps                                      |                            | Alignment Layout       |
 | ALIG_01     | Number of alignments contained in file                   | [1]                                            |                            |                        |
-| ALIG_02     | Parameters of alignment segments are verified            | As per Alignment Table                         |                            |                        |
+| ALIG_02     | Parameters of alignment segments are verified            | As per Alignment Table (see **NOTE**)          |                            |                        |
 | ALIG_03     | Alignment geometric compliance is verified               | As per Alignment geometric compliance document |                            |                        |
 | ALIG_04     | Value of the RailHeadDistance along the entire alignment | [1500 mm]                                      | IfcAlignmentCant           |                        |
 | ALIG_05     | Shape representation of alignment is verified | Items has exactly 1 [IfcGradientCurve]                                   |   IfcAlignment        |   Axis 3D Geometry                  |
@@ -215,6 +215,9 @@ Considering the aim of this test, other **optional** results, not subject to the
 | ALIG_00.10  | Each IfcAlignmentHorizontal nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentHorizontalSegment         |
 | ALIG_00.11  | Each IfcAlignmentVertical nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentVerticalSegment             |
 | ALIG_00.12  | Each IfcAlignmentCant nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentCantSegment                     |
+  
+**NOTE**:
+- In Alignment Table, coordinates are defined based on Swiss Grid (EPSG: 3878). In the IFC file, they should be adjusted based on Georeferencing information provided by IfcProjectedCRS and IfcMapConversion (see Entities Table).
 
 </details>
 
