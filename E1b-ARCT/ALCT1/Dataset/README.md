@@ -210,10 +210,15 @@ Alignment_1 has layouts (AH1, AV1, AC1) data as follows:
 The following Drawings and visualisations describe the test case dataset to be modelled and certified.
 
 ![Alignment horizontal layout](RWR-Rail-Phase2_UT_AWC_1_1.jpg)
+
 *Fig. 1 Alignment horizontal layout*
+
 ![Alignment vertical layout](RWR-Rail-Phase2_UT_AWC_1_2.jpg)
+
 *Fig. 2 Alignment vertical layout*
+
 ![Alignment cant layout](RWR-Rail-Phase2_UT_AWC_1_3.jpg)
+
 *Fig. 3 Alignment cant layout*
 ## Supporting files
 
