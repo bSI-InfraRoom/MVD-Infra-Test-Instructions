@@ -5,40 +5,6 @@ The following occurrence variations need to be checked and certified in relation
 - IfcAlignmentVerticalSegment - *includes CONSTANTGRADIENT and CIRCULARARC*
 - IfcAlignmentCantSegment - *includes CONSTANTCANT and LINEARTRANSITION*
 
-## Entities Table
-
-- IfcProject
-- IfcDirection
-- IfcCartesianPoint
-- IfcAxis2Placement3D
-- IfcGeometricRepresentationContext
-- IfcSIUnit
-- IfcUnitAssignment
-- IfcSite
-- IfcLocalPlacement
-- IfcRelAggregates
-- IfcRelContainedInSpatialStructure
-- IfcAlignment
-- IfcAlignmentHorizontal
-- IfcAlignmentVertical
-- IfcAlignmentCant
-- IfcAlignmentSegment
-- IfcAlignmentHorizontalSegment
-- IfcAlignmentVerticalSegment
-- IfcAlignmentCantSegment
-- IfcRelNests
-- IfcCompositeCurve
-- IfcLine
-- IfcCircle
-- IfcClothoid
-- IfcGradientCurve
-- IfcSegmentedReferenceCurve
-- IfcCurveSegment
-- IfcProductDefinitionShape
-- IfcShapeRepresentation
-- IfcVector
-- IfcAxis2Placement2D
-
 ## Model Dataset
 This test case utilises the attached dataset documented by the following drawings and data schedule. 
 
@@ -95,11 +61,49 @@ The complete list of entities that should be instantiated are:
 
 </details>
 
+<details><summary>Spatial (De)Composition Table template</summary>
+
+| **Parent Element** | **Parent Element Type** | **Parent Element Name** | **MinSize** | **MaxSize** | **Child Element** | **Child Element Type** | **Child Element Name** |
+|--------------------|-------------------------|-------------------------|-------------|-------------|-------------------|------------------------|------------------------|
+| IfcProject         |                 | Project_1                  | 1           | 1           | IfcSite   |          | Site_1            |
+| IfcSite         |                 | Site_1                  | 1           | 1           | IfcRailway   |          | Railway_1            |
+
+**NOTE**:
+- when **MinSize** and **MaxSize** have the same value, it means exactly. Example: MinSize=MaxSize=1, means that the Parent Element must aggregates exactly 1 Child Element with that Type (and Name).
+
+</details>
+
+<details><summary>Spatial Containment Table template</summary>
+
+| **Spatial Element** | **Spatial Element Type** | **Spatial Element Name** | **MinSize** | **MaxSize** | **Element**     | **Element Type** | **Element Name** |
+|---------------------|--------------------------|--------------------------|-------------|-------------|-----------------|------------------|------------------|
+| IfcSite     |            | Site_1             | 1           | 1           | IfcAlignment         | Railway track alignment             | Alignment_1        |
+
+**NOTE**:
+- when **MaxSize is empty**, it means **unlimited**. Example: MinSize=1; MaxSize=empty, means that the Spatial Element must contain 1 or more elements of the requested type.
+- when **MinSize** and **MaxSize** have the same value, it means exactly. Example: MinSize=MaxSize=1, means that the Spatial Element must contain exactly 1 Element with that Type (and Name).
+
+</details>
+
+
+
+<details><summary>Product Placement Table template</summary>
+
+| **Product**     | **Product Type** | **Product Name**     | **Object Placement** |Relative Placement Product | Relative Placement Product Type | Relative Placement Product Name |
+|-----------------|------------------|----------------------|----------------------|----------------------------|---------------------------------|---------------------------------|
+| IfcAlignment     | Railway track alignment          | Alignment_1               | IfcLocalPlacement   |    IfcSite            |                              | Site_1             |
+| IfcRailway     |           | Railway_1               | IfcLocalPlacement   |    IfcSite            |                               | Site_1             |
+| IfcSite     |           | Site_1               | IfcLocalPlacement   |                |                              |              |
+**NOTE**:
+- Columns **Relative Placement Product**, **Relative Placement Product Type**, **Relative Placement Product Name** are optional. If omitted, it means the Object Placement of the Product has no PlacementRelTo attribute.
+
+</details>
 
 <details><summary>Alignment Table</summary>
 
-#### Horizontal Segments
-
+Alignment_1 has layouts (AH1, AV1, AC1) data as follows:
+  
+**HORIZONTAL**
 | Entity                        | PredefinedType | Name | Start Point X (m) | Start Point Y (m) | Start Direction (rad) | Start Radius Of Curvature (m) | End Radius Of Curvature (m) | Segment Length (m) | Gravity Center Line Height (m) |
 |-------------------------------|----------------|------|-------------------|-------------------|-----------------------|-------------------------------|-----------------------------|--------------------|--------------------------------|
 | IfcAlignmentHorizontalSegment | LINE           | H1   | 1213636.851       | 2723135.638       | 3.098579538           | 0                             | 0                           | 18.11881           | $                              |
@@ -128,7 +132,7 @@ The complete list of entities that should be instantiated are:
 | IfcAlignmentHorizontalSegment | CLOTHOID       | H24  | 1211507.933       | 2724014.584       | 2.816367914           | 870                           | 0                           | 74                 | $                              |
 | IfcAlignmentHorizontalSegment | LINE           | H25  | 1211437.176       | 2724036.23        | 2.858896596           | 0                             | 0                           | 33.63773           | $                              |
 
-#### Vertical Segments
+**VERTICAL**
 | Entity                      | Predefined Type  | Name | Start Dist Along (m) | Horizontal Length (m) | Start Height (m) | Start Gradient (ratio) | End Gradient (ratio) | Radius Of Curvature (m) |
 |-----------------------------|------------------|------|----------------------|-----------------------|------------------|------------------------|----------------------|-------------------------|
 | IfcAlignmentVerticalSegment | CONSTANTGRADIENT | V1   | 0                    | 61.67186              | 459.1209         | 0.00665013             | 0.00665013           | 0                       |
@@ -152,7 +156,7 @@ The complete list of entities that should be instantiated are:
 | IfcAlignmentVerticalSegment | CONSTANTGRADIENT | V19  | 2384.86938           | 92.80174              | 470.9567         | 0.0029                 | 0.0029               | 0                       |
 | IfcAlignmentVerticalSegment | CIRCULARARC      | V20  | 2477.67111           | 0.3953                | 471.2258         | 0.0029                 | 0.00369              | -500                    |
 
-#### Cant Segments
+**CANT**
 | Entity                  | Predefined Type  | Start Dist Along (m) | Horizontal Length (m) | Start Cant Left(m) | End Cant Left (m) | Start Cant Right (m) | End Cant Right (m) |
 |-------------------------|------------------|----------------------|-----------------------|--------------------|-------------------|----------------------|--------------------|
 | IfcAlignmentCantSegment | CONSTANTCANT     | 0                    | 0.00263               | 0                  | 0                 | 0                    | 0                  |
@@ -182,6 +186,23 @@ The complete list of entities that should be instantiated are:
 
 </details>
 
+<details><summary>Product Geometric Representation Table template</summary>
+
+> OPTION 1: Use this template if you need to check at predefined type or object type level
+
+| **Product**     | **Product Type** | **Representation Identifier** | **Representation Type** |**Items**           |
+|-----------------|------------------|-------------------------------|-------------------------|--------------------|
+| IfcAlignment    | Railway track alignment               | Axis                          |       Curve3D           |1 IfcGradientCurve  |
+| IfcAlignmentHorizontal    |                | Axis                          |       Curve2D           |1 IfcCompositeCurve  |
+| IfcAlignmentVertical    |               | Axis                          |       Curve3D           |1 IfcGradientCurve  |
+| IfcAlignmentCant    |                | Axis                          |       Curve3D           |1 IfcSegmentedReferenceCurve  |
+| IfcAlignmentSegment    |                | Axis                          |       Segment           |1 IfcCurveSegment  |
+  
+**NOTE**:
+- Items should be listed in the cell with their number.
+- One shape representation for a product should be documented in one row. If there are multiple representations, they should be documented in multiple rows.
+
+</details>
 *This is a later step that involved the detailed documentation of the certification dataset (model)*
 
 
