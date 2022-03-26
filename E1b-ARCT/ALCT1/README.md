@@ -271,23 +271,3 @@ ___
 
 </details>
 
-
-
-### Project global positioning
-
-<details><summary>Click to expand</summary>
-> **Acceptance criteria**: For the **Project global positioning** capability, the validation procedure must verify that there is an IfcMapConversion with the given parameters associated with the IfcGeometricRepresentationContext (via `HasCoordinateOperation`). Furthermore, the IfcMapConversion shall have an association with an IfcProjectedCRS (via `HasCoordinateOperation`) with the given parameters.
-
-| Element          | Attribute        | Value     | Comment |
-| ---------------- | ---------------- | --------- | ------- |
-| IfcMapConversion | Eastings         | 24525000  |         |
-|                  | Northings        | 6876000   |         |
-|                  | OrthogonalHeight | 0         |         |
-|                  | XAxisAbscissa    | 1         |         |
-|                  | XAxisOrdinate    | 0         |         |
-|                  | Scale            | 1         |         |
-| IfcProjectedCRS  | Name             | EPSG:3878 |         |
-|                  | GeodeticDatum    | EPSG:6258 |         |
-|                  | VerticalDatum    | EPSG:6150 |         |
-
-</details>
