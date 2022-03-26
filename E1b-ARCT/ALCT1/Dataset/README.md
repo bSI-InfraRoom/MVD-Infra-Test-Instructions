@@ -8,7 +8,7 @@ The following occurrence variations need to be checked and certified in relation
 ## Model Dataset
 This test case utilises the attached dataset documented by the following drawings and data schedule. 
 
-<details><summary>Entities Table template</summary>
+<details><summary>Entities Table</summary>
 
 > **HOW TO USE IT**: list first the entities' attributes and their values. Then, if needed, add additional information (e.g., placement, material, etc.). Be careful not to be redundant with other rules (e.g. placement-specific rules, material-specific rules, etc.)
 
@@ -23,6 +23,15 @@ This test case utilises the attached dataset documented by the following drawing
 | IfcAlignmentHorizontal | Name            | AH1                       |                                 |
 | IfcAlignmentVertical   | Name            | AV1                       |                                 |
 | IfcAlignmentCant       | Name            | AC1                       |                                 |
+| IfcMapConversion       | Eastings        | 24525000                  |                                 |
+|                        | Northings       | 6876000                   |                                 |
+|                        | OrthogonalHeight| 0                         |                                 |
+|                        | XAxisAbscissa   | 1                         |                                 |
+|                        | XAxisOrdinate   | 0                         |                                 |
+|                        | Scale           | 1                         |                                 |
+| IfcProjectedCRS        | Name            | EPSG:3878                 |                                 |
+|                        | GeodeticDatum   | EPSG:6258                 |                                 |
+|                        | VerticalDatum   | EPSG:6150                 |                                 |
 
 **Note**: Unspecified OPTIONAL attributes can be $ (null).
 
@@ -32,6 +41,8 @@ The complete list of entities that should be instantiated are:
 - IfcCartesianPoint
 - IfcAxis2Placement3D
 - IfcGeometricRepresentationContext
+- IfcMapConversion
+- IfcProjectedCRS
 - IfcSIUnit
 - IfcUnitAssignment
 - IfcSite
@@ -61,7 +72,7 @@ The complete list of entities that should be instantiated are:
 
 </details>
 
-<details><summary>Spatial (De)Composition Table template</summary>
+<details><summary>Spatial (De)Composition Table</summary>
 
 | **Parent Element** | **Parent Element Type** | **Parent Element Name** | **MinSize** | **MaxSize** | **Child Element** | **Child Element Type** | **Child Element Name** |
 |--------------------|-------------------------|-------------------------|-------------|-------------|-------------------|------------------------|------------------------|
@@ -73,7 +84,7 @@ The complete list of entities that should be instantiated are:
 
 </details>
 
-<details><summary>Spatial Containment Table template</summary>
+<details><summary>Spatial Containment Table</summary>
 
 | **Spatial Element** | **Spatial Element Type** | **Spatial Element Name** | **MinSize** | **MaxSize** | **Element**     | **Element Type** | **Element Name** |
 |---------------------|--------------------------|--------------------------|-------------|-------------|-----------------|------------------|------------------|
@@ -87,7 +98,7 @@ The complete list of entities that should be instantiated are:
 
 
 
-<details><summary>Product Placement Table template</summary>
+<details><summary>Product Placement Table</summary>
 
 | **Product**     | **Product Type** | **Product Name**     | **Object Placement** |Relative Placement Product | Relative Placement Product Type | Relative Placement Product Name |
 |-----------------|------------------|----------------------|----------------------|----------------------------|---------------------------------|---------------------------------|
@@ -183,10 +194,13 @@ Alignment_1 has layouts (AH1, AV1, AC1) data as follows:
 | IfcAlignmentCantSegment | CONSTANTCANT     | 2187.71067           | 182.71801             | 0.0375             | 0.0375            | -0.0375              | -0.0375            |
 | IfcAlignmentCantSegment | LINEARTRANSITION | 2370.42869           | 74                    | 0.0375             | 0                 | -0.0375              | 0                  |
 | IfcAlignmentCantSegment | CONSTANTCANT     | 2444.42869           | 33.63773              | 0                  | 0                 | 0                    | 0                  |
+  
+**NOTE**:
+- Coordinates are defined based on Swiss Grid (EPSG: 3878). In the IFC file, they should be adjusted based on Georeferencing information provided by IfcProjectedCRS and IfcMapConversion (see Entities Table).
 
 </details>
 
-<details><summary>Product Geometric Representation Table template</summary>
+<details><summary>Product Geometric Representation Table</summary>
 
 > OPTION 1: Use this template if you need to check at predefined type or object type level
 
