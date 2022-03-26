@@ -731,7 +731,7 @@ ___
 |-------------|-----------------------------------------|------------------------------------------|----------------------------|----------------------------|
 | PREP_01     | Geometric representation of products is verified | As per Product Geometric Representation Table |                   | Product Geometric Representation and its subtemplates |
 
-> **Acceptance criteria**: For the **Group Spatial Connectivity** capability, the validation procedure must verify that a Product of the requested type (and optionally a requested name) has an IfcShapeRepresentation with the requested Representation Identifier, Representation Type and Items.
+> **Acceptance criteria**: For the **Group Geometric Representation** capability, the validation procedure must verify that a Product of the requested type (and optionally a requested name) has an IfcShapeRepresentation with the requested Representation Identifier, Representation Type and Items.
 
 <details><summary>PREP_01 details:  Geometric representation of products is verified</summary>
 
