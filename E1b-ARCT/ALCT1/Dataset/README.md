@@ -42,6 +42,59 @@ The following occurrence variations need to be checked and certified in relation
 ## Model Dataset
 This test case utilises the attached dataset documented by the following drawings and data schedule. 
 
+<details><summary>Entities Table template</summary>
+
+> **HOW TO USE IT**: list first the entities' attributes and their values. Then, if needed, add additional information (e.g., placement, material, etc.). Be careful not to be redundant with other rules (e.g. placement-specific rules, material-specific rules, etc.)
+
+| **Element**            | **Attribute**   | **Value**                 | **Notes**                       |
+|------------------------|-----------------|---------------------------|---------------------------------|
+| IfcProject             | Name            | Project_1                 |                                 |
+| IfcSite                | Name            | Site_1                    |                                 |
+| IfcRailway             | Name            | Railway_1                 |                                 |
+| IfcAlignment           | Name            | Alignment_1               |                                 |
+|                        | ObjectType      | Railway track alignment   |                                 |
+|                        | PredefinedType  | USERDEFINED               |                                 |
+| IfcAlignmentHorizontal | Name            | AH1                       |                                 |
+| IfcAlignmentVertical   | Name            | AV1                       |                                 |
+| IfcAlignmentCant       | Name            | AC1                       |                                 |
+
+**Note**: Unspecified OPTIONAL attributes can be $ (null).
+
+The complete list of entities that should be instantiated are:
+- IfcProject
+- IfcDirection
+- IfcCartesianPoint
+- IfcAxis2Placement3D
+- IfcGeometricRepresentationContext
+- IfcSIUnit
+- IfcUnitAssignment
+- IfcSite
+- IfcLocalPlacement
+- IfcRelAggregates
+- IfcRelContainedInSpatialStructure
+- IfcAlignment
+- IfcAlignmentHorizontal
+- IfcAlignmentVertical
+- IfcAlignmentCant
+- IfcAlignmentSegment
+- IfcAlignmentHorizontalSegment
+- IfcAlignmentVerticalSegment
+- IfcAlignmentCantSegment
+- IfcRelNests
+- IfcCompositeCurve
+- IfcLine
+- IfcCircle
+- IfcClothoid
+- IfcGradientCurve
+- IfcSegmentedReferenceCurve
+- IfcCurveSegment
+- IfcProductDefinitionShape
+- IfcShapeRepresentation
+- IfcVector
+- IfcAxis2Placement2D  
+
+</details>
+
 
 <details><summary>Alignment Table</summary>
 
