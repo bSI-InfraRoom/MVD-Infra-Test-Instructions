@@ -14,7 +14,7 @@ This test case utilises the attached dataset documented by the following drawing
 
 | **Element**            | **Attribute**   | **Value**                 | **Notes**                       |
 |------------------------|-----------------|---------------------------|---------------------------------|
-| IfcProject             | Name            | 'IFC4.3AbRV Project'      |                                 |
+| IfcProject             | Name            | 'IFC4.3AbRV Project'      | This is an imported entity      |
 | IfcSite                | Name            | Site_1                    |                                 |
 | IfcRailway             | Name            | Railway_1                 |                                 |
 | IfcAlignment           | Name            | Alignment_1               |                                 |
