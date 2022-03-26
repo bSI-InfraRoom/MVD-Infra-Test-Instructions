@@ -14,7 +14,7 @@ This test case utilises the attached dataset documented by the following drawing
 
 | **Element**            | **Attribute**   | **Value**                 | **Notes**                       |
 |------------------------|-----------------|---------------------------|---------------------------------|
-| IfcProject             | Name            | Project_1                 |                                 |
+| IfcProject             | Name            | 'IFC4.3AbRV Project'      |                                 |
 | IfcSite                | Name            | Site_1                    |                                 |
 | IfcRailway             | Name            | Railway_1                 |                                 |
 | IfcAlignment           | Name            | Alignment_1               |                                 |
@@ -76,7 +76,7 @@ The complete list of entities that should be instantiated are:
 
 | **Parent Element** | **Parent Element Type** | **Parent Element Name** | **MinSize** | **MaxSize** | **Child Element** | **Child Element Type** | **Child Element Name** |
 |--------------------|-------------------------|-------------------------|-------------|-------------|-------------------|------------------------|------------------------|
-| IfcProject         |                 | Project_1                  | 1           | 1           | IfcSite   |          | Site_1            |
+| IfcProject         |                 | IFC4.3AbRV Project                  | 1           | 1           | IfcSite   |          | Site_1            |
 | IfcSite         |                 | Site_1                  | 1           | 1           | IfcRailway   |          | Railway_1            |
 
 **NOTE**:
