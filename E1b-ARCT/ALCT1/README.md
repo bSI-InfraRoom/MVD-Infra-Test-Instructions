@@ -158,6 +158,16 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 </details>
 
+### Project Setup
+
+| **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
+|-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
+| ORIG_01     | Origin of Coordinate System is set as requested                   | [(0., 0., 0.)]        |                            | Project Global Positioning |
+| ORIG_02     | True north is set as requested                                    | [(0., 1., 0.)]        |                            | Project Global Positioning |
+| DIST_01     | Unit of measure for all distances                                 | [meter]               |                            | Project Units              |
+| ANGL_01     | Unit of measure all angles                                        | [radian]              |                            | Project Units              |
+| DIST_02     | Required precision for distances                                  | [0,0001]              | all alignment segments     | na                         |
+| ANGL_02     | Required precision for angles and slope                           | [0,000001]            |                            | na                         |
 
 ### Spatial decomposition
 
@@ -168,9 +178,9 @@ Considering the aim of this test, other **optional** results, not subject to the
 > **Acceptance criteria**: For the **Spatial decomposition** capability, the validation procedure must verify that a Parent Element of the requested type aggregates (via `IfcRelAggregates`) exactly a given number of Child Elements of the requested type, no more and no less.
 
 **Bullet point example**:
-- IfcProject
-  - IfcSite
-    - IfcRailway
+- IfcProject *(Name: Project_1)*
+  - IfcSite *(Name: Site_1)*
+    - IfcRailway *(Name: Railway_1)*
 
 </details>
 
@@ -207,6 +217,61 @@ Considering the aim of this test, other **optional** results, not subject to the
 | ALIG_00.12  | Each IfcAlignmentCant nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentCantSegment                     |
 
 </details>
+
+### Spatial containment
+
+| **RULE ID** | **CRITERIA**                    | **VALUE [examples]**             | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|---------------------------------|----------------------------------|----------------------------|------------------------|
+| SCON_01     | Spatial containment is verified | As per Spatial Containment Table | na                         | Spatial Containment    |
+
+> **Acceptance criteria**: For the **Spatial containment** capability, the validation procedure must verify that a Spatial Element of the requested type contains (via `IfcRelContainedInSpatialStructure`) exactly a given number of Elements of the requested type, no more and no less.
+
+<details><summary>SCON_01 details: Spatial containment is verified</summary>
+
+> - Given a set of elements taken from the [Spatial Containment Table](#Spatial-Containment-Table)
+> - Then the Spatial Element, and optionally the Spatial Element Type, exists
+> - And the Spatial Element must contain at least a number within [MinSize..MaxSize] of the requested Element
+
+</details>
+___
+
+**Bullet point example**:
+- IfcSite *(Name: Site_1)*
+  - IfcAlignment *(Name: Alignment_1)*
+
+### Product geometric representation
+
+| **RULE ID** | **CRITERIA**                            | **VALUE [examples]**                     | **ENTITY (if applicable)** | **CT (if applicable)**     |
+|-------------|-----------------------------------------|------------------------------------------|----------------------------|----------------------------|
+| PREP_01     | Geometric representation of products is verified | As per Product Geometric Representation Table |                   | Product Geometric Representation and its subtemplates |
+
+> **Acceptance criteria**: For the **Group Geometric Representation** capability, the validation procedure must verify that a Product of the requested type (and optionally a requested name) has an IfcShapeRepresentation with the requested Representation Identifier, Representation Type and Items.
+
+<details><summary>PREP_01 details:  Geometric representation of products is verified</summary>
+
+> - Given a set of products taken from the [Product Geometric Representation Table](#Product-Geometric-Representation-Table)
+> - Then the Product, and optionally the Product Type, exists
+> - And the Product must have an IfcShapeRepresentation (via IfcProductDefinitionShape) with the requested Representation Identifier, Representation Type and Items.
+
+</details>
+
+### Product placement
+
+| **RULE ID** | **CRITERIA**                            | **VALUE [examples]**                     | **ENTITY (if applicable)** | **CT (if applicable)**     |
+|-------------|-----------------------------------------|------------------------------------------|----------------------------|----------------------------|
+| PPLA_01     | Placement of products is verified | As per Product Placement Table |                   | Product Placement subtemplates |
+
+> **Acceptance criteria**: For the **Product Placement** capability, the validation procedure must verify that a Product of the requested type (and optionally a requested name) has the requested Object Placement, and optionally the Object Placement has PlacementRelTo reference to the Object Placement of Relative Placement Product with requested Relative Placement Product Type and Relative Placement Product Name.
+
+<details><summary>PPLA_01 details:  Placement of products is verified</summary>
+
+> - Given a set of products taken from the [Product Geometric Representation Table](#Product-Geometric-Representation-Table)
+> - Then the Product with Product Type and Product Name, exists
+> - And the Product must have Object Placement, and the Object Placement has PlacementRelTo reference to the ObjectPlacement of Relative Placement Product with requested Relative Placement Product Type and Relative Placement Product Name.
+
+</details>
+
+
 
 ### Project global positioning
 
