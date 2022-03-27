@@ -146,26 +146,31 @@ Considering the aim of this test, other **optional** results, not subject to the
 | GENE_01     | All requested entities (and attributes) exist in file             | As per Entities Table | na                         | na                         |
 </details>
 	
-### Spatial decomposition
+### Spatial (De)Composition
 
-<details><summary>Click to expand</summary>
-
-| **RULE ID** | **CRITERIA**                      | **VALUE [examples]**               | **ENTITY (if applicable)** | **CT (if applicable)** |
-|-------------|-----------------------------------|------------------------------------|----------------------------|------------------------|
-| SDEC_01     | Spatial decomposition is verified | As per Spatial Decomposition Table | na                         | Spatial Decomposition  |
+| **RULE ID** | **CRITERIA**                      | **VALUE [examples]**                 | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|-----------------------------------|--------------------------------------|----------------------------|------------------------|
+| SDEC_01     | Spatial decomposition is verified | As per Spatial (De)Composition Table | na                         | Spatial Decomposition  |
 
 > **Acceptance criteria**: For the **Spatial decomposition** capability, the validation procedure must verify that a Parent Element of the requested type aggregates (via `IfcRelAggregates`) exactly a given number of Child Elements of the requested type, no more and no less.
+
+<details><summary>SDEC_01 details: Spatial decomposition is verified</summary>
+
+> - Given a set of elements taken from the [Spatial (De)Composition Table](#Spatial-(De)Composition-Table)
+> - Then the Parent Element, and optionally the Parent Element Type, exists
+> - And the Parent Element must aggregate at least a number within [MinSize..MaxSize] of the requested Child Element
+
+</details>
 
 
 - IfcProject
   - IfcSite
     - IfcRailway
+      - IfcFacilityPart.TRACKSTRUCTURE
 	
-</details>
+
 
 ### Spatial containment
-	
-<details><summary>Click to expand</summary>
 
 | **RULE ID** | **CRITERIA**                    | **VALUE [examples]**             | **ENTITY (if applicable)** | **CT (if applicable)** |
 |-------------|---------------------------------|----------------------------------|----------------------------|------------------------|
@@ -173,20 +178,37 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 > **Acceptance criteria**: For the **Spatial containment** capability, the validation procedure must verify that a Spatial Element of the requested type contains (via `IfcRelContainedInSpatialStructure`) exactly a given number of Elements of the requested type, no more and no less.
 
-- IfcRailway 
-  - IfcElementAssembly.TURNOUTPANEL
+<details><summary>SCON_01 details: Spatial containment is verified</summary>
+
+> - Given a set of elements taken from the [Spatial Containment Table](#Spatial-Containment-Table)
+> - Then the Spatial Element, and optionally the Spatial Element Type, exists
+> - And the Spatial Element must contain at least a number within [MinSize..MaxSize] of the requested Element
 
 </details>
 
-### Element decomposition
+- IfcSite
+  - IfcAlignment
+  - IfcRailway 
+    - IfcFacilityPart.TRACKSTRUCTURE
+      - IfcElementAssembly.TURNOUTPANEL
 
-<details><summary>Click to expand</summary>
 
-| **RULE ID** | **CRITERIA**                    | **VALUE [examples]**             | **ENTITY (if applicable)** | **CT (if applicable)** |
-|-------------|---------------------------------|----------------------------------|----------------------------|------------------------|
-| EDEC_01     | Element decomposition is verified | As per Element Decomposition Table | na                         | Element Decomposition   |
 
-> **Acceptance criteria**: For the **Element decomposition** capability, the validation procedure must verify that an Element (as assembly) of the requested type is decomposed by (via `IfcRelAggregates`) a given number of Elements of the requested type in the range, no more and no less.
+### Element (De)Composition (Assemblies)
+
+| **RULE ID** | **CRITERIA**                                       | **VALUE [examples]**                 | **ENTITY (if applicable)** | **CT (if applicable)**                      |
+|-------------|----------------------------------------------------|--------------------------------------|----------------------------|---------------------------------------------|
+| ASSE_01     | Mandatory components are present in the assemblies | As per Element (De)Composition Table | na                         | Element Composition & Element Decomposition |
+
+> **Acceptance criteria**: For the **ASSE_01 rule**, the validation procedure must verify that an assembly of the requested type (and name) aggregates (via `IfcRelAggregates`) at least a given number of elements of the requested type (and name).
+
+<details><summary>ASSE_01 details: Mandatory components are present in the assemblies</summary>
+
+> - Given a set of assemblies taken from the [Element (De)Composition Table](#Element-(De)Composition)
+> - Then the Assembly, and optionally the Assembly Type, exists
+> - And the Assembly must aggregate at least a number within [MinSize..MaxSize] of the requested Element
+
+</details>
 
 - IfcElementAssembly.TURNOUTPANEL 
   - IfcRail.RAIL
@@ -198,56 +220,88 @@ Considering the aim of this test, other **optional** results, not subject to the
   - IfcMechanicalFastner.RAILJOINT
   - IfcFastener.WELD
 	
-#### Element Decomposition Table
 
-| **Element Assembly** | **Assembly Type** | **Minimum** | **Maximum** | **Element**     | **Element Type** |
-|----------------------|--------------------------|-------------|-------------|-----------------|------------------|
-| IfcElementAssembly   | TURNOUTPANEL           | 4           |      6       | IfcRail         | RAIL             |
-| IfcElementAssembly   | TURNOUTPANEL           | 2           |      2       | IfcRail       | CHECKRAIL       |
-| IfcElementAssembly   | TURNOUTPANEL           | 2           |      2       | IfcRail         | BLADE             |
-| IfcElementAssembly   | TURNOUTPANEL           | 52           |     52        | IfcTrackElement | SLEEPER          |
-| IfcElementAssembly   | TURNOUTPANEL           | 1           |      1       | IfcTrackElement | FROG          |
-| IfcElementAssembly   | TURNOUTPANEL           | 2           |      2       | IfcMechanicalFastener | RAILFASTENING         |
-| IfcElementAssembly   | TURNOUTPANEL           | 0           |             | IfcMechanicalFastener | RAILJOINT         |
-| IfcElementAssembly   | TURNOUTPANEL           | 0           |      6       | IfcFASTENER | WELD         |
+
+
+
+### Referent & Mileage
+
+| **ID**  | **CRITERIA**                                                                        | **VALUE [examples]**   | **ENTITY (if applicable)** | **CT (if applicable)**             |
+|---------|-------------------------------------------------------------------------------------|------------------------|----------------------------|------------------------------------|
+| REFE_00 | There are two nesting relationships for referents and for alignment components      |                        |                            |                                    |
+| REFE_01 | Relating Object and Distance Along for referent nesting are verified                | As per Referents Table | IfcReferent                | Object Nesting (IfcReferent usage) |
+| REFE_02     | Each IfcReferent should be nested into the alignment where it is placed linearly |     1 IfcAlignment  | IfcReferent | Object Nesting (to be reversed) |
+
+> **Acceptance criteria**: For the **Referent nesting** capability, the validation procedure must verify that **all** the above validation criteria are satisfied.
+
+<details><summary>REFE_00 details: There are two nesting relationships for referents and for alignment components</summary>
+
+> - Given an `IfcAlignment`
+> - When `IfcAlignment` has an `IfcRelNests` relationship
+> - Then the `IfcRelNests` relationship is related either to an `IfcReferent` OR to an `IfcLinearElement`
 
 </details>
 
-### Placement structure
+<details><summary>REFE_01 details: Relating Object and Distance Along for referent nesting are verified</summary>
+
+> - Given a set of referents taken from the [Referents Table](#Referents-Table)
+> - Then the Referent, with the Referent Type and Name, exists
+> - And the Referent is placed relative to the Placement Product, using the requested Object Placement
+> - And the Referent is placed at the requested DistanceAlong
+
+</details>
+
+### Product placement
 	
 <details><summary>Click to expand</summary>
 
-| **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
-|-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
-| SPCO_00     | ObjectPlacement of the element shall have PlacementRelTo referening the right IfcObjectPlacement |     see Fig. 1 and Fig. 2  | na | Product Placement |
+| **RULE ID** | **CRITERIA**                            | **VALUE [examples]**                     | **ENTITY (if applicable)** | **CT (if applicable)**     |
+|-------------|-----------------------------------------|------------------------------------------|----------------------------|----------------------------|
+| PPLA_01     | Placement of products is verified | As per Product Placement Table |                   | Product Placement subtemplates |
+| PPLA_02     | For a product that has ObjectPlacement as IfcLinearPlacement, the CartesianPosition of IfcLinearPlacement shall be available | depends on cases |                   | Product Linear Placement |
+
+> **Acceptance criteria**: For the **Product Placement** capability, the validation procedure must verify that a Product of the requested type (and optionally a requested name) has the requested Object Placement, and optionally the Object Placement has PlacementRelTo reference to the Object Placement of Relative Placement Product with requested Relative Placement Product Type and Relative Placement Product Name.
+
+<details><summary>PPLA_01 details:  Placement of products is verified</summary>
+
+> - Given a set of products taken from the [Product Geometric Representation Table](#Product-Geometric-Representation-Table)
+> - Then the Product with Product Type and Product Name, exists
+> - And the Product must have Object Placement, and the Object Placement has PlacementRelTo reference to the ObjectPlacement of Relative Placement Product with requested Relative Placement Product Type and Relative Placement Product Name.
+
+</details>
 	
-![alt text](Dataset/Turnout_Placement.png)
-*Fig. 1 Placement of track turnout panel*
-![alt text](Dataset/Turnout_Element_Placement.png)
-*Fig. 2 Placement of elements in track turnout panel*
+
+
+### Product relative positioning
+
+| **RULE ID** | **CRITERIA**                      | **VALUE [examples]**                 | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|-----------------------------------|--------------------------------------|----------------------------|------------------------|
+| PPOS_01     | Product relative positioning is verified | As per Product Relative Positioning Table | na                         | Product Relative Positioning, Product Span Positioning |
+
+> **Acceptance criteria**: For the **Spatial relative positioning** capability, the validation procedure must verify that a Product of the requested type is positioned (via `IfcRelPositions`) exactly a given number of Positioning Elements of the requested type, no more and no less.
+
+<details><summary>PPOS_01 details: Product relative positioning is verified</summary>
+
+> - Given a set of products taken from the [Product Relative Positioning Table](#Product-Relative-Positioning-Table)
+> - Then the Product, and optionally the Product Type, exists
+> - And the Product must be positioned on exactly [Size] of the requested Positioning Element
 
 </details>
 
-### Object nesting
-	
-<details><summary>Click to expand</summary>
-	
-| **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
-|-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
-| OBNE_00     | Each IfcReferent should be nested into the alignment where it is placed linearly |     1 IfcAlignment  | IfcReferent | Object Nesting (to be reversed) |
-
-</details>
 	
 ### Product geometric representation
 
-<details><summary>Click to expand</summary>
-Criteria around the representation of 'Some Concept'
+| **RULE ID** | **CRITERIA**                            | **VALUE [examples]**                     | **ENTITY (if applicable)** | **CT (if applicable)**     |
+|-------------|-----------------------------------------|------------------------------------------|----------------------------|----------------------------|
+| PREP_01     | Geometric representation of products is verified | As per Product Geometric Representation Table |                   | Product Geometric Representation and its subtemplates |
 
-| **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
-|-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
-| PRGE_00     | Correct representation identifier, type and items for occurrence element |  IfcFixedReferenceSweptAreaSolid  in SELF.Representation.Representations.Items  | IfcRail.RAIL | Body AdvancedSweptSolid Geometry |
-| PRGE_00     | Correct representation identifier, type and items for occurrence element |  | IfcTrackElement.SLEEPER | Mapped Geometry |
-| PRGE_01     | Correct representation identifier, type and items for type element |  | IfcTrackElementType.SLEEPER | Type Body Tessallated Geometry |
+> **Acceptance criteria**: For the **Group Geometric Representation** capability, the validation procedure must verify that a Product of the requested type (and optionally a requested name) has an IfcShapeRepresentation with the requested Representation Identifier, Representation Type and Items.
+
+<details><summary>PREP_01 details:  Geometric representation of products is verified</summary>
+
+> - Given a set of products taken from the [Product Geometric Representation Table](#Product-Geometric-Representation-Table)
+> - Then the Product, and optionally the Product Type, exists
+> - And the Product must have an IfcShapeRepresentation (via IfcProductDefinitionShape) with the requested Representation Identifier, Representation Type and Items.
 
 </details>
 
