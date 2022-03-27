@@ -68,7 +68,7 @@ Based on the imported IFC file from Test Case AL22, additional requirements for 
 
 </details>
 
-<details><summary>Product Relative Positioning Table template</summary>
+<details><summary>Product Relative Positioning Table</summary>
 
 
 | **Product**     | **Product Type** | **Size** | **Positioning Element** | **Positioning Element Type** |
@@ -78,7 +78,7 @@ Based on the imported IFC file from Test Case AL22, additional requirements for 
 See Fig. 1
 </details>
 
-<details><summary>Product Geometric Representation Table template</summary>
+<details><summary>Product Geometric Representation Table</summary>
 
 
 | **Product**     | **Product Type** | **Representation Identifier** | **Representation Type** |**Items**           |
@@ -98,7 +98,7 @@ See Fig. 1
 
 </details>
 
-<details><summary>Product Placement Table template</summary>
+<details><summary>Product Placement Table</summary>
 
 
 | **Product**     | **Product Type** | **Object Placement** | Relative Placement Product | Relative Placement Product Type |
@@ -129,7 +129,7 @@ The detailed structure of placement is specified as follows.
 
 </details>
 
-<details><summary>Referents Table template</summary>
+<details><summary>Referents Table</summary>
 
 | **Referent** | **Referent Type** | **Referent Name** | **Object Placement** | **Relative Placement Product** | **Relative Placement Product Type** | **Relative Placement Product Name** | **DistanceAlong** |
 |--------------|-------------------|-------------------|----------------------|--------------------------------|-------------------------------------|-------------------------------------|-------------------|
