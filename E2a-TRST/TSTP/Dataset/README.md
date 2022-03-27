@@ -8,7 +8,8 @@ The following occurrence variations need to be checked and certified in relation
 - IfcTrackElement.FROG - *requies Body Tessallation Geometry*
 - IfcMechanicalFastener.RAILFASTENING - *requires Mapped Geometry with Type Body Tessallated Geometry*
 - IfcMechanicalFastener.RAILJOINT - *requires Mapped Geometry with Type Body Tessallated Geometry*
-- IfcFastener.WELD - *requires Mapped Geometry with Type Body Tessallated Geometry*
+- IfcFastener.WELD - *Only necessary to have ObjectPlacement, not necessary to have Geometry (Representations)*
+
 ## Model Dataset
 This test case utilises the attached dataset documented by the following drawings and data schedule. 
 
@@ -82,12 +83,12 @@ Based on the imported IFC file from Test Case AL22, additional requirements for 
 | **Product**     | **Product Type** | **Representation Identifier** | **Representation Type** |**Items**           |
 |-----------------|------------------|-------------------------------|-------------------------|--------------------|
 | IfcRail    | RAIL               | Body                          |       AdvancedSweptSolid           |1 IfcFixedReferenceSweptAreaSolid  |
-| IfcRail    | BLADE               | Body                          |       AdvancedSweptSolid           |1 IfcFixedReferenceSweptAreaSolid  |
-| IfcRail    | CHECKRAIL               | Body                          |       AdvancedSweptSolid           |1 IfcFixedReferenceSweptAreaSolid  |
-| IfcTrackElement    | FROG               | Body                          |       AdvancedSweptSolid           |1 IfcFixedReferenceSweptAreaSolid  |
-| IfcTrackElement    | SLEEPER               | Body                          |       AdvancedSweptSolid           |1 IfcFixedReferenceSweptAreaSolid  |  
-| IfcMechanicalFastener    | RAILFASTENING               | Body                          |       AdvancedSweptSolid           |1 IfcFixedReferenceSweptAreaSolid  |
-| IfcMechanicalFastener    | RAILJOINT               | Body                          |       AdvancedSweptSolid           |1 IfcFixedReferenceSweptAreaSolid  |
+| IfcRail    | BLADE               | Body                          |       Tessellation           |1 IfcTessellatedFaceSet  |
+| IfcRail    | CHECKRAIL               | Body                          |       Tessellation           |1 IfcTessellatedFaceSet  |
+| IfcTrackElement    | FROG               | Body                          |       Tessellation           |1 IfcTessellatedFaceSet  |
+| IfcTrackElement    | SLEEPER               | Body                          |       MappedRepresentation           |1 IfcMappedItem  |  
+| IfcMechanicalFastener    | RAILFASTENING               | Body                          |       MappedRepresentation           |1 IfcMappedItem  |
+| IfcMechanicalFastener    | RAILJOINT               | Body                          |       MappedRepresentation           |1 IfcMappedItem  |
   
 
 **NOTE**:
@@ -101,10 +102,10 @@ Based on the imported IFC file from Test Case AL22, additional requirements for 
 
 | **Product**     | **Product Type** | **Object Placement** | Relative Placement Product | Relative Placement Product Type |
 |-----------------|------------------|----------------------|----------------------------|---------------------------------|
-| IfcSite    | na               | IfcLocalPlacement    |                     |                               |
-| IfcAlignment    | na               | IfcLocalPlacement    |  IfcSite                   |      na                         |
-| IfcReferent    | na               | IfcLinearPlacement    |  IfcAlignment                   |      na                         |
-| IfcElementAssembly    | TURNOUTPANEL               | IfcLocalPlacement   |  IfcReferent                   |      na                         |
+| IfcSite    |                | IfcLocalPlacement    |                     |                               |
+| IfcAlignment    |                | IfcLocalPlacement    |  IfcSite                   |                              |
+| IfcReferent    | STATION               | IfcLinearPlacement    |  IfcAlignment                   |                               |
+| IfcElementAssembly    | TURNOUTPANEL               | IfcLocalPlacement   |  IfcReferent                   |      STATION                         |
 | IfcRail    | RAIL               | IfcLocalPlacement   |  IfcElementAssembly                   |      TURNOUTPANEL                        |
 | IfcRail    | CHECKRAIL               | IfcLocalPlacement   |  IfcElementAssembly                   |      TURNOUTPANEL                         |
 | IfcRail    | BLADE               | IfcLocalPlacement   |  IfcElementAssembly                   |      TURNOUTPANEL                         |
@@ -127,17 +128,14 @@ The detailed structure of placement is specified as follows.
 
 </details>
 
-<details><summary>Object Types Table template</summary>
+<details><summary>Referents Table template</summary>
 
-| **Entity Type** | **Entity Type Name**    | **MinSize** | **MaxSize** | **IfcObject** | **IfcObject Name**          |
-|-----------------|-------------------------|-------------|-------------|---------------|-----------------------------|
-| IfcCourseType   | Segmento di massicciata | 1           |             | IfcCourse     | Segmento di massicciata M01 |
-| IfcRailType     | Rotaia 60E1             | 1           |             | IfcRail       | Rotaia BC01 DX              |
-| IfcRailType     | Rotaia 60E1             | 1           |             | IfcRail       | Rotaia BC01 SX              |
-
-**NOTE**:
-- when **Minimum** and **Maximum** have the same value, it means exactly. Example: Minimum=Maximum=1, means that the entity type must type exactly 1 object with that Name.
-- when **Maximum is empty**, it means **unlimited**. Example: Minimum=1; Maximum=empty, means that the Entity Type must type 1 or more Object of the requested name.
+| **Referent** | **Referent Type** | **Referent Name** | **Object Placement** | **Relative Placement Product** | **Relative Placement Product Type** | **Relative Placement Product Name** | **DistanceAlong** |
+|--------------|-------------------|-------------------|----------------------|--------------------------------|-------------------------------------|-------------------------------------|-------------------|
+| IfcReferent  | REFERENCEMARKER   | 0+000             | IfcLinearPlacement   | IfcAlignment                   | na                                  | Alignment 1_Primary route           | 0.000             |
+| IfcReferent  | REFERENCEMARKER   | 0+000             | IfcLinearPlacement   | IfcAlignment                   | na                                  | Alignment 2_Diverted route          | 0.000             |
+| IfcReferent  | STATION   | C.G.             | IfcLinearPlacement   | IfcAlignment                   | na                                  | Alignment 1_Primary route route          | to be computed based on the drawing             |
+| IfcReferent  | STATION   |   G.U.1           | IfcLinearPlacement   | IfcAlignment                   | na                                  | Alignment 2_Diverted route          | to be computed based on drawing             |
 
 </details>
 
