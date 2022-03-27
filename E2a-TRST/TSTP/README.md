@@ -253,8 +253,6 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 ### Product placement
 	
-<details><summary>Click to expand</summary>
-
 | **RULE ID** | **CRITERIA**                            | **VALUE [examples]**                     | **ENTITY (if applicable)** | **CT (if applicable)**     |
 |-------------|-----------------------------------------|------------------------------------------|----------------------------|----------------------------|
 | PPLA_01     | Placement of products is verified | As per Product Placement Table |                   | Product Placement subtemplates |
