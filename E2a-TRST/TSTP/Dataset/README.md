@@ -75,7 +75,8 @@ Based on the imported IFC file from Test Case AL22, additional requirements for 
 |---------------- |------------------|----------|-------------------------|------------------------------|
 | IfcElementAssembly        | TURNOUTPANEL             | 2        | IfcReferent             |       STATION                |
 
-
+See Fig. 1
+</details>
 
 <details><summary>Product Geometric Representation Table template</summary>
 
