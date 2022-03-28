@@ -82,24 +82,6 @@ All validation criteria (and usages) of predecessors' tests shall be **verified 
 
 
 
-## Usages, Constraints & Logic 
-:construction: **under construction, miss Model Geometry usages for sweep** :construction:
-
-The following itemised restrictions and constraints shall be placed on IFC Entities & Concept Templates:
-
-<details><summary>Semantic Usages, Constraints & Logic</summary>
-
-Other than the logic embedded by the IFC Entities & Concept Templates required for this test, **and** the constraints captured in the *Usages, Constraints & Logic* section of of precondition tests, **no additional constraints are applied** 
-
-</details>
-
-<details><summary>Model Geometry</summary>
-The Test case requires the following additional checks related to Model Geometry:
-
-- On sweep of IfcCourse: ...
-
-</details>
-
 ## Expected Results
 
 For certification of capabilities the only source will be:
@@ -112,49 +94,20 @@ For certification of capabilities the only source will be:
 
 ### General
 
-- All the concept templates must be correctly implemented as presented in the validation criteria
-- At least 1 instance of each entity listed in [Itemised Roots](#Itemised-Roots) is present in the file
-- All validation criteria of the pre-required tests shall apply here too
+| **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
+|-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
+| GENE_00     | All validation criteria of precondition's tests shall be verified |                       | na                         | na                         |
+| GENE_01     | All requested entities (and attributes) exist in file             | As per Entities Table | na                         | na                         |
 
-| **ID**  | **CRITERIA**                                      | **VALUE** | **COMMENT** |
-|---------|---------------------------------------------------|-----------|-------------|
-| ENAT_01 | Requested entities (and attributes) exist in file | See below |             |
+#### Entities Table
 
-<details><summary>Entities and attributes</summary>
-
-`IfcEarthworksFill`
-
-| Attribute      | Value              |
-|----------------|--------------------|
-| Name           | Corpo del rilevato |
-| Description    | $                  |
-| ObjectType     | $                  |
-| PredefinedType | SUBGRADE           |
-
-
-`IfcCourse` (Junction)
-
-| Attribute      | Value                 |
-|----------------|-----------------------|
-| Name           | Strato di sub-ballast |
-| Description    | $                     |
-| ObjectType     | Junction              |
-| PredefinedType | USERDEFINED           |
-
-
-`IfcCourse` (Foundation)
-
-| Attribute      | Value                     |
-|----------------|---------------------------|
-| Name           | Strato di supercompattato |
-| Description    | $                         |
-| ObjectType     | Foundation                |
-| PredefinedType | USERDEFINED               |
-
-
-</details>
-
-
-
-
-
+| **Element**       | **Attribute**  | **Value**                 | **Notes**                      |
+|-------------------|----------------|---------------------------|--------------------------------|
+| IfcEarthworksFill | Name           | Corpo del rilevato        |                                |
+|                   | PredefinedType | SUBGRADE                  |                                |
+| IfcCourse         | Name           | Strato di sub-ballast     | Junction layer in the figure   |
+|                   | ObjectType     | Junction                  |                                |
+|                   | PredefinedType | USERDEFINED               |                                |
+| IfcCourse         | Name           | Strato di supercompattato | Foundation layer in the figure |
+|                   | ObjectType     | Foundation                |                                |
+|                   | PredefinedType | USERDEFINED               |

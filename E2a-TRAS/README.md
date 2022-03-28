@@ -4,17 +4,17 @@
 |---------------------|--------------|-------------------------------------|------------|
 | **IFC4x3_AbRV-E2a** | TRAS         | Track Aggregate Structures Exchange | 12         |
 
-Exchange Lead: @AlexBrad1eyCT
+Exchange Lead: IFCRail
 
 ## Summary
 
 TBC
 
-...The Track Structures Exchange is an extension *superset* of the Aggregate Structures Exchange ([IFC4x3_AbRV-E2a](../E2-AGST))...
+...The Track Structures Exchange is an extension *superset* of the Aggregate Structures Exchange ([IFC4x3_AbRV-E2](../E2-AGST))...
 
 ### Scope
 
-The Track Structures Exchange is an extension *superset* of the Aggregate Structures Exchange ([IFC4x3_AbRV-E2a](../E2-AGST)). Therefore the scope of this exchange includes the scope and tests outlined by the Aggregate Structures Exchange.
+The Track Structures Exchange is an extension *superset* of the Aggregate Structures Exchange ([IFC4x3_AbRV-E2](../E2-AGST)). Therefore the scope of this exchange includes the scope and tests outlined by the Aggregate Structures Exchange.
 
 TBC
 
@@ -32,7 +32,7 @@ Some tests are just referenced (hence reused entirely) from other Exchanges.
 | [**IFC4x3_AbRV-E1-AL24**](./AL24)  | (RFI) Mileage for two alignments             |        | AL23                    |
 | [**IFC4x3_AbRV-E2a-SB01**](./SB01) | (RFI) Track sub-structure for single track   |        | AL23                    |
 | [**IFC4x3_AbRV-E2a-SP01**](./SP01) | (RFI) Track super-structure for single track |        | AL23                    |
-| [**IFC4x3_AbRV-E2a-TP01**](./TP01) | (RFI) Turnout panel between two tracks       |        | AL23                    |
+| [**IFC4x3_AbRV-E2a-TSTP**](./TSTP) | Track Structures Turnout Panel               |        | AL23                    |
 | [**IFC4x3_AbRV-E2a-GR01**](./GR01) | (RFI) Group objects                          |        | SB01, SP01              |
 | [**IFC4x3_AbRV-E2a-CL01**](./CL01) | (RFI) Classify objects                       |        | SB01, SP01              |
 | [**IFC4x3_AbRV-E2a-PP01**](./PP01) | (RFI) Add properties                         |        | GR01                    |
