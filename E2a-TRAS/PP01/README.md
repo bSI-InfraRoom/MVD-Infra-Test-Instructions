@@ -64,13 +64,6 @@ All validation criteria (and usages) of predecessors' tests shall be **verified 
 
 
 
-## Usages, Constraints & Logic 
-
-Other than the logic embedded by the IFC Entities & Concept Templates required for this test, **and** the constraints captured in the *Usages, Constraints & Logic* section of of precondition tests, **no additional constraints are applied**
-
-
-
-
 ## Expected Results
 
 For certification of capabilities the only source will be:
@@ -85,79 +78,86 @@ For certification of capabilities the only source will be:
 
 ### General
 
-- All the concept templates must be correctly implemented as presented in the validation criteria
-- At least 1 instance of each entity listed in [Itemised Roots](#Itemised-Roots) is present in the file
-- All validation criteria of the pre-required tests shall apply here too
+| **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
+|-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
+| GENE_00     | All validation criteria of precondition's tests shall be verified |                       | na                         | na                         |
 
 
 
 
 ### Standard & Custom properties for objects and object types
 
+| **RULE ID** | **CRITERIA**                                             | **VALUE [examples]**    | **ENTITY (if applicable)** | **CT (if applicable)**                              |
+|-------------|----------------------------------------------------------|-------------------------|----------------------------|-----------------------------------------------------|
+| PSET_01     | The model does not contain unrequested property sets     | As per Properties Table | na                         | Property Sets for Objects & Property Sets for Types |
+| PNAM_01     | The property set does not contain unrequested properties | As per Properties Table | na                         | Property Sets for Objects & Property Sets for Types |
+| PTEX_01     | Property values belong to a list of values               | As per Properties Table | na                         | Property Sets for Objects & Property Sets for Types |
+| PVAL_01     | Property values are not null and not empty               | As per Properties Table | na                         | Property Sets for Objects & Property Sets for Types |
+| PVAL_02     | Requested property value types are found                 | As per Properties Table | na                         | Property Sets for Objects & Property Sets for Types |
+
 > **Acceptance criteria**: For the **Properties for objects and object types** capability, the validation procedure must verify that both standard and custom property sets requested by the test case (including relative properties and values) are present in the IFC file.
+> See below for further specification of each rule.
 
-(See below the table for further specification of each criteria)
-| ID       | CRITERIA                                                 |
-|----------|----------------------------------------------------------|
-| PSET_002 | The model does not contain unrequested property sets     |
-| PNAM_002 | The property set does not contain unrequested properties |
-| PTEX_001 | Property values belong to a list of values               |
-| PVAL_001 | Property values are not null and not empty               |
-| PVAL_002 | Requested property value types are found                 |
+<details><summary>PSET_01: The model does not contain unrequested property sets</summary>
 
-PSET_002: The model does not contain unrequested property sets
-> - Given a set of properties taken from the [Test Case Properties Table](#Test-Case-Properties-Table)
+> - Given a set of properties taken from the [Properties Table](#Properties-Table)
 > - When the IfcEntity, and optionally the Type, exists
 > - Then the IfcEntity is associated at most to the property set with the PropertySet Name
+</details>
 
-PNAM_002: The property set does not contain unrequested properties
-> - Given a set of properties taken from the [Test Case Properties Table](#Test-Case-Properties-Table)
+<details><summary>PNAM_01: The property set does not contain unrequested properties</summary>
+
+> - Given a set of properties taken from the [Properties Table](#Properties-Table)
 > - When the IfcEntity, and optionally the Type, exists
 > - And the IfcEntity is associated to a property set with the PropertySet Name
 > - Then the property set has at most the properties with the Property Name
+</details>
 
-PTEX_001: Property values belong to a list of values
-> - Given a set of properties taken from the [Test Case Properties Table](#Test-Case-Properties-Table)
+<details><summary>PTEX_01: Property values belong to a list of values</summary>
+
+> - Given a set of properties taken from the [Properties Table](#Properties-Table)
 > - When the IfcEntity, and optionally the Type, exists
 > - And the IfcEntity is associated to a property set with the PropertySet Name
 > - And the property set has a property with the Property Name
 > - Then the property value is part of the List Of Values
+</details>
 
-PVAL_001: Property values are not null and not empty
-> - Given a set of properties taken from the [Test Case Properties Table](#Test-Case-Properties-Table)
+<details><summary>PVAL_01: Property values are not null and not empty</summary>
+
+> - Given a set of properties taken from the [Properties Table](#Properties-Table)
 > - When the IfcEntity, and optionally the Type, exists
 > - And the IfcEntity is associated to a property set with the PropertySet Name
 > - And the property set has a property with the Property Name
 > - Then the property value is not null
 > - And the property value is not empty
+</details>
 
-PVAL_002: Requested property value types are found
-> - Given a set of properties taken from the [Test Case Properties Table](#Test-Case-Properties-Table)
+<details><summary>PVAL_02: Requested property value types are found</summary>
+
+> - Given a set of properties taken from the [Properties Table](#Properties-Table)
 > - When the IfcEntity, and optionally the Type, exists
 > - And the IfcEntity is associated to a property set with the PropertySet Name
 > - And the property set has a property with the Property Name
 > - And the property value is not null
 > - Then the property type is equal to the Property Value Type
-
-#### Test Case Properties Table
-
-:construction: under construction :construction:
-
-| Entity          | Entity Type             | PropertySet Name             | Property Name                | Property Value Type         | List Of Values                                                                                                                                                               | Value type                 |
-|-----------------|-------------------------|------------------------------|------------------------------|-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|
-| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Binario                      | IfcLabel                    | Pari, Dispari, Unico                                                                                                                                                         | IfcPropertyEnumeratedValue |
-| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Codice binario SAS           | IfcLabel                    |                                                                                                                                                                              | IfcPropertySingleValue     |
-| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | n. deviatoi elettrici        | IfcInteger                  |                                                                                                                                                                              | IfcPropertySingleValue     |
-| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Profilo manutentivo L94      | IfcLabel                    | <=40 t/g, >100 t/g, 40< t/g <=100                                                                                                                                            | IfcPropertyEnumeratedValue |
-| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Binario elettrificato        | IfcLogical                  |                                                                                                                                                                              | IfcPropertySingleValue     |
-| IfcTrackElement | SLEEPER                 | Pset_TrackElementTypeSleeper | SleeperType                  | IfcLabel                    | COMPOSITESLEEPER, CONCRETESLEEPER, INSULATEDSTEELSLEEPER, MONOBLOCKCONCRETESLEEPER, NOTINSULATEDSTEELSLEEPER, NOTKNOWN, OTHER, TWOBLOCKCONCRETESLEEPER, UNSET, WOODENSLEEPER | IfcPropertyEnumeratedValue |
-| IfcTrackElement | SLEEPER                 | Pset_TrackElementTypeSleeper | FasteningType                | IfcLabel                    |                                                                                                                                                                              | IfcPropertySingleValue     |
-| IfcCourse       | Segmento di massicciata | PSet_CourseCommon            | NominalLength                | IfcNonNegativeLengthMeasure |                                                                                                                                                                              | IfcPropertySingleValue     |
-| IfcCourse       | Segmento di massicciata | PSet_CourseCommon            | NominalThickness             | IfcNonNegativeLengthMeasure |                                                                                                                                                                              | IfcPropertySingleValue     |
-| IfcCourse       | Segmento di massicciata | PSet_CourseCommon            | NominalWidth                 | IfcNonNegativeLengthMeasure |                                                                                                                                                                              | IfcPropertySingleValue     |
-| IfcCourseType   | Segmento di massicciata | RFI_S22600                   | Tipo massicciata             | IfcLabel                    | Misto, Calcareo, Tenace                                                                                                                                                      | IfcPropertyEnumeratedValue |
-| IfcGroup        | Segmento di rotaia      | RFI_S22700                   | Galleria                     | IfcLogical                  |                                                                                                                                                                              | IfcPropertySingleValue     |
-| IfcGroup        | Segmento di rotaia      | RFI_S22700                   | Tipo binario di appartenenza | IfcLabel                    | BINARIO CENTRALIZZATO, BINARIO DI CORSA, BINARIO DI FASCIO, BINARIO IMP. SMISTAMENTO AUTOMATICO                                                                              | IfcPropertyEnumeratedValue |
-
-
 </details>
+
+#### Properties Table
+
+**NOTE**: the correct value of each property is not covered by this test. As long as the value is of the specified data type, and (if the case applies) belonging to the list of enumerated values, then the test shall be considered passed.
+
+| **Entity**      | **Entity Type**         | **PropertySet Name**         | **Property Name**            | **Property Value Type**     | **Enumerated Values**                                                                              | **Value type**             |
+|-----------------|-------------------------|------------------------------|------------------------------|-----------------------------|----------------------------------------------------------------------------------------------------|----------------------------|
+| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Binario                      | IfcLabel                    | Pari, Dispari, Unico                                                                               | IfcPropertyEnumeratedValue |
+| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Codice binario SAS           | IfcLabel                    |                                                                                                    | IfcPropertySingleValue     |
+| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | n. deviatoi elettrici        | IfcInteger                  |                                                                                                    | IfcPropertySingleValue     |
+| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Profilo manutentivo L94      | IfcLabel                    | <=40 t/g, >100 t/g, 40< t/g <=100                                                                  | IfcPropertyEnumeratedValue |
+| IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Binario elettrificato        | IfcLogical                  |                                                                                                    | IfcPropertySingleValue     |
+| IfcTrackElement | SLEEPER                 | Pset_TrackElementTypeSleeper | SleeperType                  | IfcLabel                    | COMPOSITESLEEPER, CONCRETESLEEPER, INSULATEDSTEELSLEEPER, MONOBLOCKCONCRETESLEEPER, NOTINSULATEDSTEELSLEEPER, NOTKNOWN, OTHER, TWOBLOCKCONCRETESLEEPER, UNSET, WOODENSLEEPER | IfcPropertyEnumeratedValue |
+| IfcTrackElement | SLEEPER                 | Pset_TrackElementTypeSleeper | FasteningType                | IfcLabel                    |                                                                                                    | IfcPropertySingleValue     |
+| IfcCourse       | Segmento di massicciata | PSet_CourseCommon            | NominalLength                | IfcNonNegativeLengthMeasure |                                                                                                    | IfcPropertySingleValue     |
+| IfcCourse       | Segmento di massicciata | PSet_CourseCommon            | NominalThickness             | IfcNonNegativeLengthMeasure |                                                                                                    | IfcPropertySingleValue     |
+| IfcCourse       | Segmento di massicciata | PSet_CourseCommon            | NominalWidth                 | IfcNonNegativeLengthMeasure |                                                                                                    | IfcPropertySingleValue     |
+| IfcCourseType   | Segmento di massicciata | RFI_S22600                   | Tipo massicciata             | IfcLabel                    | Misto, Calcareo, Tenace                                                                            | IfcPropertyEnumeratedValue |
+| IfcGroup        | Segmento di rotaia      | RFI_S22700                   | Galleria                     | IfcLogical                  |                                                                                                    | IfcPropertySingleValue     |
+| IfcGroup        | Segmento di rotaia      | RFI_S22700                   | Tipo binario di appartenenza | IfcLabel                    | BINARIO CENTRALIZZATO, BINARIO DI CORSA, BINARIO DI FASCIO, BINARIO IMP. SMISTAMENTO AUTOMATICO    | IfcPropertyEnumeratedValue |
