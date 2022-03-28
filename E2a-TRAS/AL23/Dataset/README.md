@@ -22,35 +22,35 @@ The cant layout of the alignment (both for Alignment 1 and Alignment 2) is descr
 
 #### Alignment 1_Primary route
 
-| ID | PredefinedType   | Start Dist Along | Horizontal Length | Start Cant left | End Cant left | Start Cant right | End Cant right |
-|----|------------------|------------------|-------------------|-----------------|---------------|------------------|----------------|
-| 1  | CONSTANTCANT     | 0.0000           | 234.7194          | 0               | 0             | 0                | 0              |
-| 2  | LINEARTRANSITION | 234.7194         | 40.0000           | 0               | 0             | 0                | 0.06           |
-| 3  | CONSTANTCANT     | 274.7194         | 193.4645          | 0               | 0             | 0.06             | 0.06           |
-| 4  | LINEARTRANSITION | 468.1839         | 40.0000           | 0               | 0             | 0.06             | 0              |
-| 5  | CONSTANTCANT     | 508.1839         | 38.9815           | 0               | 0             | 0                | 0              |
-| 6  | LINEARTRANSITION | 547.1654         | 40.0000           | 0               | 0.06          | 0                | 0              |
-| 7  | CONSTANTCANT     | 587.1654         | 109.4317          | 0.06            | 0.06          | 0                | 0              |
-| 8  | LINEARTRANSITION | 696.5971         | 40.0000           | 0.06            | 0             | 0                | 0              |
-| 9  | CONSTANTCANT     | 736.5971         | 139.7711          | 0               | 0             | 0                | 0              |
-| 10 | CONSTANTCANT     | 876.3682         | 876.3682          | 0               | 0             | 0                | 0              |
+| Entity                  | PredefinedType   | Name | Start Dist Along | Horizontal Length | Start Cant left | End Cant left | Start Cant right | End Cant right |
+|-------------------------|------------------|------|------------------|-------------------|-----------------|---------------|------------------|----------------|
+| IfcAlignmentCantSegment | CONSTANTCANT     | C1   | 0                | 234.7194          | 0               | 0             | 0                | 0              |
+| IfcAlignmentCantSegment | LINEARTRANSITION | C2   | 234.7194         | 40                | 0               | 0             | 0                | 0.06           |
+| IfcAlignmentCantSegment | CONSTANTCANT     | C3   | 274.7194         | 193.4645          | 0               | 0             | 0.06             | 0.06           |
+| IfcAlignmentCantSegment | LINEARTRANSITION | C4   | 468.1839         | 40                | 0               | 0             | 0.06             | 0              |
+| IfcAlignmentCantSegment | CONSTANTCANT     | C5   | 508.1839         | 38.9815           | 0               | 0             | 0                | 0              |
+| IfcAlignmentCantSegment | LINEARTRANSITION | C6   | 547.1654         | 40                | 0               | 0.06          | 0                | 0              |
+| IfcAlignmentCantSegment | CONSTANTCANT     | C7   | 587.1654         | 109.4317          | 0.06            | 0.06          | 0                | 0              |
+| IfcAlignmentCantSegment | LINEARTRANSITION | C8   | 696.5971         | 40                | 0.06            | 0             | 0                | 0              |
+| IfcAlignmentCantSegment | CONSTANTCANT     | C9   | 736.5971         | 139.7711          | 0               | 0             | 0                | 0              |
+| IfcAlignmentCantSegment | CONSTANTCANT     | C10  | 876.3682         | 876.3682          | 0               | 0             | 0                | 0              |
 
 #### Alignment 2_Diverted route
 
-| ID | PredefinedType   | Start Dist Along | Horizontal Length | Start Cant left | End Cant left | Start Cant right | End Cant right |
-|----|------------------|------------------|-------------------|-----------------|---------------|------------------|----------------|
-| 1  | CONSTANTCANT     | 0.0000           | 22.9021           | 0               | 0             | 0                | 0              |
-| 2  | CONSTANTCANT     | 22.9021          | 7.9355            | 0               | 0             | 0                | 0              |
-| 3  | CONSTANTCANT     | 30.8376          | 68.2969           | 0               | 0             | 0                | 0              |
-| 4  | LINEARTRANSITION | 99.1345          | 40.0000           | 0               | 0             | 0                | 0.01           |
-| 5  | CONSTANTCANT     | 139.1345         | 285.2424          | 0               | 0             | 0.01             | 0.01           |
-| 6  | LINEARTRANSITION | 424.3769         | 40.0000           | 0               | 0             | 0.01             | 0              |
-| 7  | CONSTANTCANT     | 464.3769         | 36.9088           | 0               | 0             | 0                | 0              |
-| 8  | LINEARTRANSITION | 501.2857         | 39.6989           | 0               | 0.01          | 0                | 0              |
-| 9  | CONSTANTCANT     | 540.9846         | 107.4914          | 0.01            | 0.01          | 0                | 0              |
-| 10 | LINEARTRANSITION | 648.4760         | 39.6989           | 0.01            | 0             | 0                | 0              |
-| 11 | CONSTANTCANT     | 688.1749         | 139.9216          | 0               | 0             | 0                | 0              |
-| 12 | CONSTANTCANT     | 828.0965         | 828.0965          | 0               | 0             | 0                | 0              |
+| Entity                  | PredefinedType   | Name | Start Dist Along | Horizontal Length | Start Cant left | End Cant left | Start Cant right | End Cant right |
+|-------------------------|------------------|------|------------------|-------------------|-----------------|---------------|------------------|----------------|
+| IfcAlignmentCantSegment | CONSTANTCANT     | C1   | 0                | 22.9021           | 0               | 0             | 0                | 0              |
+| IfcAlignmentCantSegment | CONSTANTCANT     | C2   | 22.9021          | 7.9355            | 0               | 0             | 0                | 0              |
+| IfcAlignmentCantSegment | CONSTANTCANT     | C3   | 30.8376          | 68.2969           | 0               | 0             | 0                | 0              |
+| IfcAlignmentCantSegment | LINEARTRANSITION | C4   | 99.1345          | 40                | 0               | 0             | 0                | 0.01           |
+| IfcAlignmentCantSegment | CONSTANTCANT     | C5   | 139.1345         | 285.2424          | 0               | 0             | 0.01             | 0.01           |
+| IfcAlignmentCantSegment | LINEARTRANSITION | C6   | 424.3769         | 40                | 0               | 0             | 0.01             | 0              |
+| IfcAlignmentCantSegment | CONSTANTCANT     | C7   | 464.3769         | 36.9088           | 0               | 0             | 0                | 0              |
+| IfcAlignmentCantSegment | LINEARTRANSITION | C8   | 501.2857         | 39.6989           | 0               | 0.01          | 0                | 0              |
+| IfcAlignmentCantSegment | CONSTANTCANT     | C9   | 540.9846         | 107.4914          | 0.01            | 0.01          | 0                | 0              |
+| IfcAlignmentCantSegment | LINEARTRANSITION | C10  | 648.476          | 39.6989           | 0.01            | 0             | 0                | 0              |
+| IfcAlignmentCantSegment | CONSTANTCANT     | C11  | 688.1749         | 139.9216          | 0               | 0             | 0                | 0              |
+| IfcAlignmentCantSegment | CONSTANTCANT     | C12  | 828.0965         | 828.0965          | 0               | 0             | 0                | 0              |
 
 **NOTE**:
 - In Italy, only linear transitions are used for cant

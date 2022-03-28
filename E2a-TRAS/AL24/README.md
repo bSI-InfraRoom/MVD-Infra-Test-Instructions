@@ -83,13 +83,6 @@ All validation criteria (and usages) of predecessors' tests shall be **verified 
 
 
 
-## Usages, Constraints & Logic 
-
-Other than the logic embedded by the IFC Entities & Concept Templates required for this test, **and** the constraints captured in the *Usages, Constraints & Logic* section of of precondition tests (**AL22**), **no additional constraints are applied**
-
-
-
-
 ## Expected Results
 
 For certification of capabilities the only source will be:
@@ -104,67 +97,85 @@ For certification of capabilities the only source will be:
 
 ### General
 
-- All the concept templates must be correctly implemented as presented in the validation criteria
-- At least 1 instance of each entity listed in [Itemised Roots](#Itemised-Roots) is present in the file
-- All validation criteria of the pre-required tests shall apply here too
 
-| **ID**  | **CRITERIA**                                      | **VALUE** | **COMMENT** |
-|---------|---------------------------------------------------|-----------|-------------|
-| ENAT_01 | Requested entities (and attributes) exist in file | See below |             |
+| **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
+|-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
+| GENE_00     | All validation criteria of precondition's tests shall be verified |                       | na                         | na                         |
+| GENE_01     | All requested entities (and attributes) exist in file             | As per Entities Table | na                         | na                         |
 
-<details><summary>Entities and attributes</summary>
+#### Entities Table
 
-`IfcReferent` (Alignment 1_Primary route)
+| **Element** | **Attribute**  | **Value**                        | **Notes**                            |
+|-------------|----------------|----------------------------------|--------------------------------------|
+| IfcReferent | Name           | 0+000                            | Nested by Alignment 1_Primary route  |
+|             | Description    | Starting mileage for Alignemnt 1 |                                      |
+|             | PredefinedType | REFERENCEMARKER                  |                                      |
+| IfcReferent | Name           | 0+000                            | Nested by Alignment 2_Diverted route |
+|             | Description    | Starting mileage for Alignemnt 2 |                                      |
+|             | PredefinedType | REFERENCEMARKER                  |                                      |
 
-| Attribute      | Value                            |
-|----------------|----------------------------------|
-| Name           | 0+000                            |
-| Description    | Starting mileage for Alignemnt 1 |
-| PredefinedType | REFERENCEMARKER                  |
-
-
-`IfcReferent` (Alignment 2_Diverted route)
-
-| Attribute      | Value                            |
-|----------------|----------------------------------|
-| Name           | 0+000                            |
-| Description    | Starting mileage for Alignemnt 2 |
-| PredefinedType | REFERENCEMARKER                  |
-
-</details>
 
 ### Railway alignment (without cant)
 
 > **Acceptance criteria**: For the **Railway alignment (without cant)** capability, the validation procedure must verify that **all** the following validation criteria are satisfied.
+
+| **RULE ID** | **CRITERIA**                                             | **VALUE [examples]**                           | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|----------------------------------------------------------|------------------------------------------------|----------------------------|------------------------|
+| SITE_00     | All IfcAlignment shall always be contained in an IfcSite |                                                |                            | Spatial Containment    |
+| ALIG_00     | Alignment layout structure is verified                   | See steps                                      |                            | Alignment Layout       |
+| ALIG_01     | Number of alignments contained in file                   | [2]                                            |                            |                        |
+| ALIG_02     | Parameters of alignment segments are verified            | As per Alignment Table                         |                            |                        |
+| ALIG_03     | Alignment geometric compliance is verified               | As per Alignment geometric compliance document |                            |                        |
+| ALIG_04     | Value of the RailHeadDistance along the entire alignment | [1500 mm]                                      | IfcAlignmentCant           |                        |
+
+<details><summary>ALIG_00 steps</summary>
+
+| **STEP ID** | **STEP**                                                                                                                                           |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| ALIG_00.1   | Each IfcAlignment must nest exactly 1 IfcAlignmentHorizontal                                                                                       |
+| ALIG_00.2   | Each IfcAlignment must nest at most 1 IfcAlignmentVertical                                                                                         |
+| ALIG_00.3   | Each IfcAlignment must nest exactly 1 IfcAlignmentVertical                                                                                         |
+| ALIG_00.6   | Each IfcAlignmentHorizontal must be nested only by 1 IfcAlignment                                                                                  |
+| ALIG_00.7   | Each IfcAlignmentVertical must be nested only by 1 IfcAlignment                                                                                    |
+| ALIG_00.9   | Each IfcAlignment must nest only the following entities: IfcAlignmentHorizontal, IfcAlignmentVertical, IfcAlignmentCant, IfcReferent, IfcAlignment |
+| ALIG_00.10  | Each IfcAlignmentHorizontal nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentHorizontalSegment         |
+| ALIG_00.11  | Each IfcAlignmentVertical nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentVerticalSegment             |
+
+</details>
+
+<details><summary>ALIG_04 details</summary>
+
+> The *RailHeadDistance* (blue line in the figure below) is a normalized value used to compute the angle of cant. RFI uses 1500 mm for a track gauge of 1435 mm
 >
-> If present, all criteria listed in [Usages, Constraints & Logic](#Usages,-Constraints-&-Logic), and in the same section of precondition tests, shall be verified too.
-
-<details open><summary>Railway alignment (without cant)</summary> 
-
-| **ID**  | **CRITERIA**                                                     | **VALUE**                                   | **COMMENT**                |
-|---------|------------------------------------------------------------------|---------------------------------------------|----------------------------|
-| ALIG_01 | Alignments contained in file                                     | 2                                           |                            |
-| ALIG_02 | Component for Alignment 1_Primary route                          | 1 horizontal, 1 vertical                    |                            |
-| ALIG_03 | Component for Alignment 2_Diverted route                         | 1 horizontal, 1 vertical                    |                            |
-| ALIG_04 | The horizontal (H) layout is made only by these type of segments | straight line, circular arc, clothoid       |                            |
-| ALIG_05 | The vertical (V) layout is made only by these type of segments   | straight line, circular arc                 |                            |
+>   <img src="Dataset/CantFromLowerRail.png" height="300"/>
 
 </details>
 
 ### Referent nesting
 
-> **Acceptance criteria**: For the **Referent nesting** capability, the validation procedure must verify that **all** the following validation criteria are satisfied.
->
-> If present, all criteria listed in [Usages, Constraints & Logic](#Usages,-Constraints-&-Logic), and in the same section of precondition tests, shall be verified too.
+| **ID**  | **CRITERIA**                                                                        | **VALUE [examples]**   | **ENTITY (if applicable)** | **CT (if applicable)**             |
+|---------|-------------------------------------------------------------------------------------|------------------------|----------------------------|------------------------------------|
+| REFE_00 | There are two nesting relationships for referents and for alignment components      |                        |                            |                                    |
+| REFE_01 | Relating Object and Distance Along for referent nesting are verified                | As per Referents Table | IfcReferent                | Object Nesting (IfcReferent usage) |
 
+> **Acceptance criteria**: For the **Referent nesting** capability, the validation procedure must verify that **all** the above validation criteria are satisfied.
 
-| **ID**  | **CRITERIA**                                                    | **COMMENT**                                                              |
-|---------|-----------------------------------------------------------------|--------------------------------------------------------------------------|
-| REFE_01 | Each alignment nests exactly 1 `IfcReferent`                    |                                                                          |
-| REFE_02 | One referent is placed at the starting point of Alignment 1     | DistanceAlong = 0.000                                                    |
-| REFE_03 | One referent is placed at the starting point of Alignment 2     | DistanceAlong = 0.000                                                    |
-| REFE_04 | Each `IfcAlignment` has exactly two `IfcRelNests` relationships | One for Horizontal and Vertical components; another one for the referent |
+<details><summary>REFE_00 details: There are two nesting relationships for referents and for alignment components</summary>
 
+> - Given an `IfcAlignment`
+> - When `IfcAlignment` has an `IfcRelNests` relationship
+> - Then the `IfcRelNests` relationship is related either to an `IfcReferent` OR to an `IfcLinearElement`
+
+</details>
+
+<details><summary>REFE_01 details: Relating Object and Distance Along for referent nesting are verified</summary>
+
+> - Given a set of referents taken from the [Referents Table](#Referents-Table)
+> - Then the Referent, with the Referent Type and Name, exists
+> - And the Referent is placed relative to the Placement Product, using the requested Object Placement
+> - And the Referent is placed at the requested DistanceAlong
+
+</details>
 
 Snippet:
 
@@ -172,6 +183,12 @@ Snippet:
 
 *Figure 1: Example of the pattern of entities to be instantiated for referent nesting, along with other structures such as alignment nesting, spatial containment, geometric representation.*
 
+#### Referents Table
+
+| **Referent** | **Referent Type** | **Referent Name** | **Object Placement** | **Relative Placement Product** | **Relative Placement Product Type** | **Relative Placement Product Name** | **DistanceAlong** |
+|--------------|-------------------|-------------------|----------------------|--------------------------------|-------------------------------------|-------------------------------------|-------------------|
+| IfcReferent  | REFERENCEMARKER   | 0+000             | IfcLinearPlacement   | IfcAlignment                   | na                                  | Alignment 1_Primary route           | 0.000 m           |
+| IfcReferent  | REFERENCEMARKER   | 0+000             | IfcLinearPlacement   | IfcAlignment                   | na                                  | Alignment 2_Diverted route          | 0.000 m           |
 
 
 
@@ -230,13 +247,6 @@ The parameters contained in the following sections are meant to verify the **cor
 #### Notes on Pset usage for Linear Referencing Method and Stationing
 
 There are two Pset applicable to IfcReferent that can be used for this test.
-- `Pset_LinearReferencingMethod`: Describes the manner in which measurements are made along (and optionally offset from) a linear element.
-- `Pset_Stationing`: Specifies stationing parameters for IfcReferent.
-
-Below are some notes on the use of these Pset for `IfcReferent`. These are mainly note for a good use, **not to be considered as validation criteria to be passed**.
-
-For `Pset_LinearReferencingMethod`, you will want to check that: 
-- The property **LRMType** is set correctly. Example: in this test, being the referents placed at the origin point of each alignment to mark its initial stationing (i.e., 0+000), the the property value shall be set to **LRM_ABSOLUTE**
-
-For `Pset_Stationing`:
-- The **Station** property shall have a value consistent with the *DistanceAlong* value used to place teh referent (in this case, 0.000 m) 
+- `Pset_Stationing`: Specifies stationing parameters for IfcReferent;
+- `Pset_LinearReferencingMethod`: Describes the manner in which measurements are made along (and optionally offset from) a linear element;
+  - For `Pset_LinearReferencingMethod`, you might want to check that the property **LRMType** is set correctly. Example: in this test, being the referents placed at the origin point of each alignment to mark its initial stationing (i.e., 0+000), the the property value shall be set to **LRM_ABSOLUTE**
