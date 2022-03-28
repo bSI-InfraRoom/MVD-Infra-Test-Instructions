@@ -73,33 +73,6 @@ All validation criteria (and usages) of predecessors' tests shall be **verified 
 
 
 
-## Usages, Constraints & Logic 
-
-The following itemised restrictions and constraints shall be placed on IFC Entities & Concept Templates:
-
-<details><summary>Semantic Usages, Constraints & Logic</summary>
-
-The following itemised Usages, Constraints & Logic are normative entries within the AbRV MVD and MUST be satisfied to meet the defined validation criteria
-
-| ID       | CRITERIA                           | COMMENTS                                                                                                                                                       |
-|----------|------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| GROU_101 | Circular reference is not allowed  | Circular reference is not allowed, neither direct (if A includes B, B cannot includes A), nor indirect (if A includes B and B includes C, C cannot includes A) |
-| GROU_102 | Only direct inclusion is allowed   | Example: if A includes B and B includes C, A cannot includes C)                                                                                                |
-| GROU_103 | Same-level grouping is not allowed | If two or more Group are part of the same Group, they cannot include each others. Example: if A groups B and C, B cannot group C and vice versa)               |
-| GROU_104 | Group rooting                      | All Groups that do not have a parent Group must be linked to the IfcProject with an IfcRelDeclares relationship, as per Project Declaration template           |
-| GROU_105 | Group typing via ObjectType        | *All group types shall be expressed using the ObjectType (5<sup>th</sup> attribute) of each occurrence of IfcGroup                                             |
-| GROU_106 | Allowed entity types for groups    | IfcGroup must be associated (via `IfcRelAssignsToGroup`) only to IfcProduct or IfcGroup (and subtypes)                                                         |
-
-*: this is the only method to express group typing, due to the fact that: i) IfcGroup misses the PredefinedType attribute; and ii) object typing by instantiation of IfcTypeObject is discouraged from IFC4 onward.
-
-</details>
-
-<details><summary>Model Geometry</summary>
-The Test case does not require additional checks related to Model Geometry
-
-</details>
-
-
 
 ## Expected Results
 
@@ -115,86 +88,129 @@ For certification of capabilities the only source will be:
 
 ### General
 
-- All the concept templates must be correctly implemented as presented in the validation criteria
-- At least 1 instance of each entity listed in [Itemised Roots](#Itemised-Roots) is present in the file
-- All validation criteria of the pre-required tests shall apply here too
+### General
 
+| **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
+|-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
+| GENE_00     | All validation criteria of precondition's tests shall be verified |                       | na                         | na                         |
+| GENE_01     | All requested entities (and attributes) exist in file             | As per Entities Table | na                         | na                         |
 
-| **ID**  | **CRITERIA**                                      | **VALUE** | **COMMENT** |
-|---------|---------------------------------------------------|-----------|-------------|
-| ENAT_01 | Requested entities (and attributes) exist in file | See below |             |
+#### Entities Table
 
-<details><summary>Entities and attributes</summary>
+(12 `IfcGroup` instances)
 
-`IfcGroup` (12 occurrences)
-
-| #  | Name                   | Description                | ObjectType                    |
-|----|------------------------|----------------------------|-------------------------------|
-| 01 | LO1336-BC              | Binari di corsa di Foligno | Binari di corsa (Contenitore) |
-| 02 | LO1336-BC-BC01-DEV     | Deviatoi BC01              | Deviatoi                      |
-| 03 | LO1336-BC-BC01-ROT     | Rotaie BC01                | Rotaie                        |
-| 04 | LO1336-BC-BC01-MAS     | Massicciata BC01           | Massicciata                   |
-| 05 | LO1336-BC-BC01-TRA     | Traverse BC01              | Traverse                      |
-| 06 | LO1336-BC-BC02-ROT     | Rotaie BC02                | Rotaie                        |
-| 07 | LO1336-BC-BC02-MAS     | Massicciata BC02           | Massicciata                   |
-| 08 | LO1336-BC-BC02-TRA     | Traverse BC02              | Traverse                      |
-| 09 | LO1336-BC-BC01-ROT-R01 | Segmento di rotaia BC01    | Segmento di rotaia            |
-| 10 | LO1336-BC-BC02-ROT-R02 | Segmento di rotaia BC02    | Segmento di rotaia            |
-| 11 | LO1336-BC-BC01-TRA-T01 | Segmento di traverse BC01  | Segmento di traverse          |
-| 12 | LO1336-BC-BC02-TRA-T02 | Segmento di traverse BC02  | Segmento di traverse          |
-
-</details>
+| **Element** | **Attribute** | **Value**                     | **Notes** |
+|-------------|---------------|-------------------------------|-----------|
+| IfcGroup    | Name          | LO1336-BC                     |           |
+|             | Description   | Binari di corsa di Foligno    |           |
+|             | ObjectType    | Binari di corsa (Contenitore) |           |
+| IfcGroup    | Name          | LO1336-BC-BC01-DEV            |           |
+|             | Description   | Deviatoi BC01                 |           |
+|             | ObjectType    | Deviatoi                      |           |
+| IfcGroup    | Name          | LO1336-BC-BC01-ROT            |           |
+|             | Description   | Rotaie BC01                   |           |
+|             | ObjectType    | Rotaie                        |           |
+| IfcGroup    | Name          | LO1336-BC-BC01-MAS            |           |
+|             | Description   | Massicciata BC01              |           |
+|             | ObjectType    | Massicciata                   |           |
+| IfcGroup    | Name          | LO1336-BC-BC01-TRA            |           |
+|             | Description   | Traverse BC01                 |           |
+|             | ObjectType    | Traverse                      |           |
+| IfcGroup    | Name          | LO1336-BC-BC02-ROT            |           |
+|             | Description   | Rotaie BC02                   |           |
+|             | ObjectType    | Rotaie                        |           |
+| IfcGroup    | Name          | LO1336-BC-BC02-MAS            |           |
+|             | Description   | Massicciata BC02              |           |
+|             | ObjectType    | Massicciata                   |           |
+| IfcGroup    | Name          | LO1336-BC-BC02-TRA            |           |
+|             | Description   | Traverse BC02                 |           |
+|             | ObjectType    | Traverse                      |           |
+| IfcGroup    | Name          | LO1336-BC-BC01-ROT-R01        |           |
+|             | Description   | Segmento di rotaia BC01       |           |
+|             | ObjectType    | Segmento di rotaia            |           |
+| IfcGroup    | Name          | LO1336-BC-BC02-ROT-R02        |           |
+|             | Description   | Segmento di rotaia BC02       |           |
+|             | ObjectType    | Segmento di rotaia            |           |
+| IfcGroup    | Name          | LO1336-BC-BC01-TRA-T01        |           |
+|             | Description   | Segmento di traverse BC01     |           |
+|             | ObjectType    | Segmento di traverse          |           |
+| IfcGroup    | Name          | LO1336-BC-BC02-TRA-T02        |           |
+|             | Description   | Segmento di traverse BC02     |           |
+|             | ObjectType    | Segmento di traverse          |           |
 
 
 ### Object grouping
 
-> **Acceptance criteria**: For the **Object grouping** capability, the validation procedure must verify that a group of the requested type is grouping (via `IfcRelAssignsToGroup`) exactly a given number of objects of the requested type, no more and no less.
+| **RULE ID** | **CRITERIA**                                | **VALUE [examples]**                                                                                                                                          | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|------------------------|
+| GROU_00     | Mandatory objects are present in the groups | As per Groups Table                                                                                                                                           | na                         | na                     |
+| GROU_01     | Circular reference is not allowed           | Circular reference is not allowed, neither direct (if A includes B, B cannot includes A), nor indirect (if A includes B and B includes C, C cannot include A) | IfcGroup                   | Group Assignment       |
+| GROU_02     | Only direct inclusion is allowed            | Example: if A includes B and B includes C, A cannot includes C)                                                                                               | IfcGroup                   | Group Assignment       |
+| GROU_03     | Same-level grouping is not allowed          | If two or more Group are part of the same Group, they cannot include each others. Example: if A groups B and C, B cannot group C and vice versa)              | IfcGroup                   | Group Assignment       |
+| GROU_04     | Group rooting                               | All Groups that do not have a parent Group must be linked to the IfcProject with an IfcRelDeclares relationship, as per Project Declaration template          | IfcGroup                   | Project Declaration    |
+| GROU_05     | Group typing via ObjectType                 | *All group types shall be expressed using the ObjectType (5th attribute) of each occurrence of IfcGroup                                                       | IfcGroup                   | na                     |
+| GROU_06     | Allowed entity types for groups             | IfcGroup must be associated (via IfcRelAssignsToGroup) only to IfcProduct or IfcGroup (and subtypes)                                                          | IfcGroup                   | Group Assignment       |
 
-(See below the table for further specification of each criteria)
-| ID       | CRITERIA                                    | VALUE                                         |
-|----------|---------------------------------------------|-----------------------------------------------|
-| GROU_001 | Mandatory objects are present in the groups | See below the table for further specification |
+*: this is the only method to express group typing, due to the fact that: i) IfcGroup misses the PredefinedType attribute; and ii) object typing by instantiation of IfcTypeObject is discouraged from IFC4 onward.
 
+> **Acceptance criteria**: For the **GROU_00 rule**, the validation procedure must verify that a group of the requested type is grouping (via `IfcRelAssignsToGroup`) exactly a given number of objects of the requested type, no more and no less.
 
-GROU_001: Mandatory objects are present in the groups
-> - Given a set of groups taken from the [Test Case Group Table](#Test-Case-Group-Table)
-> - When the Group, and optionally the Group Type, exists
-> - Then the Group must group at least a number within [Minimum..Maximum] of the requested Object
->
-> NOTE:
-> - for typing of groups refer to the Validation criteria of the **Object typing** capability
-> - when **Minimum** and **Maximum** have the same value, it means exactly. Example: Minimum=Maximum=2, means that the group must group exactly 2 objects of the requested type.
-> - when **Maximum** is empty, it means unlimited. Example: Minimum=1; Maximum=empty, means that the group must group 1 or more elements of the requested type.
+<details><summary>GROU_00 details: Mandatory objects are present in the groups</summary>
+
+> - Given a set of groups taken from the [Groups Table](#Groups-Table)
+> - Then the Group, and optionally the Group Type, exists
+> - And the Group must group at least a number within [MinSize..MaxSize] of the requested Object
+
+</details>
     
 
-#### Test Case Group Table
+#### Groups Table
 
-| Group    | Group Type                    | Minimum | Maximum | Object             | Object Type          | COMMENT   | 
-|----------|-------------------------------|---------|---------|--------------------|----------------------|-----------|
-| IfcGroup | Binari di corsa (Contenitore) | 2       | 2       | IfcFacilityPart    | TRACKSTRUCTURE       | From AL22 |
-| IfcGroup | Deviatoi                      | 1       | 1       | IfcElementAssembly | TURNOUTPANEL         | From TP01 |
-| IfcGroup | Massicciata                   | 1       |         | IfcCourse          | BALLASTBED           | From SP01 |
-| IfcGroup | Traverse                      | 1       |         | IfcGroup           | Segmento di traverse |           |
-| IfcGroup | Segmento di traverse          | 1       |         | IfcTrackElement    | SLEEPER              | From SP01 |
-| IfcGroup | Rotaie                        | 1       | 1       | IfcGroup           | Segmento di rotaia   |           |
-| IfcGroup | Segmento di rotaia            | 2       | 2       | IfcRail            | RAIL                 | From SP01 |
+| **Group** | **Group Type**                | **MinSize** | **MaxSize** | **Object**         | **Object Type**      | **Notes** |
+|-----------|-------------------------------|-------------|-------------|--------------------|----------------------|-----------|
+| IfcGroup  | Binari di corsa (Contenitore) | 2           | 2           | IfcFacilityPart    | TRACKSTRUCTURE       | From AL22 |
+| IfcGroup  | Deviatoi                      | 1           | 1           | IfcElementAssembly | TURNOUTPANEL         | From TP01 |
+| IfcGroup  | Massicciata                   | 1           |             | IfcCourse          | BALLASTBED           | From SP01 |
+| IfcGroup  | Traverse                      | 1           |             | IfcGroup           | Segmento di traverse |           |
+| IfcGroup  | Segmento di traverse          | 1           |             | IfcTrackElement    | SLEEPER              | From SP01 |
+| IfcGroup  | Rotaie                        | 1           | 1           | IfcGroup           | Segmento di rotaia   |           |
+| IfcGroup  | Segmento di rotaia            | 2           | 2           | IfcRail            | RAIL                 | From SP01 |
 
 NOTE:
-- when **Minimum** and **Maximum** have the same value, it means exactly. Example: Minimum=Maximum=1, means that the group must groups exactly 1 object of that type.
-- when **Maximum is empty**, it means **unlimited**. Example: Minimum=1; Maximum=empty, means that the group must group 1 or more object of the requested type.
-- the **COMMENT** column indicates (when the object to be grouped is coming from a pre-requisite test) which is the mentioned test.
+- when **MinSize** and **MaxSize** have the same value, it means exactly. Example: MinSize=MaxSize=1, means that the group must groups exactly 1 object of that type.
+- when **MaxSize is empty**, it means **unlimited**. Example: MinSize=1; MaxSize=empty, means that the group must group 1 or more object of the requested type.
+- the **Notes** column indicates (when the object to be grouped is coming from a pre-requisite test) which is the mentioned test.
 
 
 ### Group Spatial Connectivity
 
+| **RULE ID** | **CRITERIA**                            | **VALUE [examples]**                     | **ENTITY (if applicable)** | **CT (if applicable)**     |
+|-------------|-----------------------------------------|------------------------------------------|----------------------------|----------------------------|
+| SREF_01     | Spatial reference of groups is verified | As per Groups Spatial Connectivity Table | IfcGroup                   | Group Spatial Connectivity |
+
 > **Acceptance criteria**: For the **Group Spatial Connectivity** capability, the validation procedure must verify that a Spatial Element of the requested type references (via `IfcRelReferencedInSpatialStructure`) exactly a given number of Groups of the requested type, no more and no less.
 
-| Spatial Element | Spatial Element Type | Minimum | Maximum | Product or Group | Product Type or Group Type    |
-|-----------------|----------------------|---------|---------|------------------|-------------------------------|
-| IfcRailway      | Località             | 1       | 1       | IfcGroup         | Binari di corsa (Contenitore) |
-| IfcFacilityPart | TRACKSTRUCTURE       | 1       | 1       | IfcGroup         | Deviatoi                      |
-| IfcFacilityPart | TRACKSTRUCTURE       | 1       | 1       | IfcGroup         | Massicciata                   |
-| IfcFacilityPart | TRACKSTRUCTURE       | 1       | 1       | IfcGroup         | Rotaie                        |
-| IfcFacilityPart | TRACKSTRUCTURE       | 1       | 1       | IfcGroup         | Traverse                      |
+<details><summary>SREF_01 details: Spatial reference of groups is verified</summary>
+
+> - Given a set of elements and groups taken from the [Group Spatial Connectivity Table](#Group-Spatial-Connectivity-Table)
+> - Then the Spatial Element, and optionally the Spatial Element Type, exists
+> - And the Spatial Element must reference at least a number within [MinSize..MaxSize] of the requested Group
+
+</details>
+
+#### Groups Spatial Connectivity Table
+
+| **Spatial Element** | **Spatial Element Type** | **MinSize** | **MaxSize** | **Group**            | **Group Type**                 |
+|---------------------|--------------------------|-------------|-------------|----------------------|--------------------------------|
+| IfcRailway          | Località                 | 1           | 1           | IfcGroup             | Binari di corsa (Contenitore)  |
+| IfcFacilityPart     | TRACKSTRUCTURE           | 1           | 1           | IfcGroup             | Deviatoi                       |
+| IfcFacilityPart     | TRACKSTRUCTURE           | 1           | 1           | IfcGroup             | Massicciata                    |
+| IfcFacilityPart     | TRACKSTRUCTURE           | 1           | 1           | IfcGroup             | Rotaie                         |
+| IfcFacilityPart     | TRACKSTRUCTURE           | 1           | 1           | IfcGroup             | Traverse                       |
+
+Examples:
+1. A spatial element `IfcRailway`, of type `Località`, must reference exactly 1 `IfcGroup` of type `Binari di corsa (Contenitore)`
+2. A spatial element `IfcFacilityPart`, of type `TRACKSTRUCTURE`, must reference exactly 1 `IfcGroup` of type `Deviatoi`
+
 
 **IMPORTANT**: the track turnout (`IfcElementAssembly.TURNOUT`) should be contained in one spatial structure element only (i.e., `IfcFacilityPart.TRACKSTRUCTURE` named BC01). This should be done in the test **TP01**. The IfcGroup named *Deviatoi* must be referenced to the same spatial structure element. If this is done correctly, a check on the second row of the table above should return an error - as the file will contain two `IfcFacilityPart.TRACKSTRUCTURE`.  
