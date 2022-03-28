@@ -64,13 +64,6 @@ All validation criteria (and usages) of predecessors' tests shall be **verified 
 
 
 
-## Usages, Constraints & Logic 
-
-Other than the logic embedded by the IFC Entities & Concept Templates required for this test, **and** the constraints captured in the *Usages, Constraints & Logic* section of of precondition tests, **no additional constraints are applied**
-
-
-
-
 ## Expected Results
 
 For certification of capabilities the only source will be:
@@ -85,8 +78,13 @@ For certification of capabilities the only source will be:
 
 ### General
 
-- All the concept templates must be correctly implemented as presented in the validation criteria
-- At least 1 instance of each entity listed in [Itemised Roots](#Itemised-Roots) is present in the file
+### General
+
+| **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
+|-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
+| GENE_00     | All validation criteria of precondition's tests shall be verified |                       | na                         | na                         |
+
+
 
 
 ### Object classification via external reference
