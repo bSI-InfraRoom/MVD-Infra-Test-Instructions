@@ -87,7 +87,7 @@ NOTE:
 
 > THE COLUMN "Property Value" IS OPTIONAL. FILL IT IN IF YOUR TEST REQUIRES A SPECIFIC VALUE FOR A GIVEN PROPERTY 
 
-| **Entity**      | **Entity Type**         | **PropertySet Name**         | **Property Name**            | **Property Value Type**     | **List Of Values**                                                                                 | **Value type**             | **Property Value** |
+| **Entity**      | **Entity Type**         | **PropertySet Name**         | **Property Name**            | **Property Value Type**     | **Enumerated Values**                                                                                 | **Value type**             | **Property Value** |
 |-----------------|-------------------------|------------------------------|------------------------------|-----------------------------|----------------------------------------------------------------------------------------------------|----------------------------|--------------------|
 | IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Binario                      | IfcLabel                    | Pari, Dispari, Unico                                                                               | IfcPropertyEnumeratedValue | Pari               |
 | IfcFacilityPart | TRACKSTRUCTURE          | RFI_S16000                   | Codice binario SAS           | IfcLabel                    |                                                                                                    | IfcPropertySingleValue     | 2 Ovest            |
