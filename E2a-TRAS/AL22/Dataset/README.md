@@ -80,33 +80,34 @@ The horizontal layout of the alignment (both for Alignment 1 and Alignment 2) is
 
 #### Alignment 1_Primary route
 
-| ID | PredefinedType | Start Point X | Start Point Y | Start Direction | Start Radius Of Curvature | End Radius Of Curvature | Segment Length |
-|----|----------------|---------------|---------------|-----------------|---------------------------|-------------------------|----------------|
-| 1  | LINE           | 452413.9199   | 4539456.4010  | 0.214271681     | 0                         | 0                       | 234.719412     |
-| 2  | CLOTHOID       | 452634.4150   | 4539536.8690  | 0.214271681     | 0                         | -1000                   | 40.000000      |
-| 3  | CIRCULARARC    | 452671.8980   | 4539550.8320  | 0.236493911     | -1000                     | -1000                   | 193.464471     |
-| 4  | CLOTHOID       | 452844.4075   | 4539637.7370  | 0.451454422     | -1000                     | 0                       | 40.000000      |
-| 5  | LINE           | 452877.9371   | 4539659.5480  | 0.473676652     | 0                         | 0                       | 38.981516      |
-| 6  | CLOTHOID       | 452910.4711   | 4539681.0210  | 0.473676652     | 0                         | 1000                    | 40.000000      |
-| 7  | CIRCULARARC    | 452944.0007   | 4539702.8310  | 0.451454422     | 1000                      | 1000                    | 109.431750     |
-| 8  | CLOTHOID       | 453039.5298   | 4539756.1000  | 0.329863598     | 1000                      | 0                       | 40.000000      |
-| 9  | LINE           | 453075.7086   | 4539773.1600  | 0.307641368     | 0                         | 0                       | 139.771059     |
+| Entity                        | PredefinedType | Name | Start Point X | Start Point Y | Start Direction | Start Radius Of Curvature | End Radius Of Curvature | Segment Length | Gravity Center Line Height |
+|-------------------------------|----------------|------|---------------|---------------|-----------------|---------------------------|-------------------------|----------------|----------------------------|
+| IfcAlignmentHorizontalSegment | LINE           | H1   | 452413.9199   | 4539456.401   | 0.214271681     | 0                         | 0                       | 234.719412     |                            |
+| IfcAlignmentHorizontalSegment | CLOTHOID       | H2   | 452634.415    | 4539536.869   | 0.214271681     | 0                         | -1000                   | 40             |                            |
+| IfcAlignmentHorizontalSegment | CIRCULARARC    | H3   | 452671.898    | 4539550.832   | 0.236493911     | -1000                     | -1000                   | 193.464471     |                            |
+| IfcAlignmentHorizontalSegment | CLOTHOID       | H4   | 452844.4075   | 4539637.737   | 0.451454422     | -1000                     | 0                       | 40             |                            |
+| IfcAlignmentHorizontalSegment | LINE           | H5   | 452877.9371   | 4539659.548   | 0.473676652     | 0                         | 0                       | 38.981516      |                            |
+| IfcAlignmentHorizontalSegment | CLOTHOID       | H6   | 452910.4711   | 4539681.021   | 0.473676652     | 0                         | 1000                    | 40             |                            |
+| IfcAlignmentHorizontalSegment | CIRCULARARC    | H7   | 452944.0007   | 4539702.831   | 0.451454422     | 1000                      | 1000                    | 109.43175      |                            |
+| IfcAlignmentHorizontalSegment | CLOTHOID       | H8   | 453039.5298   | 4539756.1     | 0.329863598     | 1000                      | 0                       | 40             |                            |
+| IfcAlignmentHorizontalSegment | LINE           | H9   | 453075.7086   | 4539773.16    | 0.307641368     | 0                         | 0                       | 139.771059     |                            |
+
 
 #### Alignment 2_Diverted route
 
-| ID | PredefinedType | Start Point X | Start Point Y | Start Direction | Start Radius Of Curvature | End Radius Of Curvature | Segment Length |
-|----|----------------|---------------|---------------|-----------------|---------------------------|-------------------------|----------------|
-| 1  | CIRCULARARC    | 452460.8898   | 4539473.5430  | 0.214271681     | 249.538                         | 249.538                 | 22.902068      |
-| 2  | LINE           | 452482.7338   | 4539480.3960  | 0.112296264     | 0                         | 0                       | 7.935500       |
-| 3  | LINE           | 452490.4064   | 4539482.4220  | 0.112296264     | 0                         | 0                       | 68.296941      |
-| 4  | CLOTHOID       | 452556.4403   | 4539499.8580  | 0.112296264     | 0                         | -1000                   | 40.000000      |
-| 5  | CIRCULARARC    | 452595.0453   | 4539510.3270  | 0.134518477     | -1000                     | -1000                   | 285.242348     |
-| 6  | CLOTHOID       | 452854.5258   | 4539626.4420  | 0.451454422     | -1000                     | 0                       | 40.000000      |
-| 7  | LINE           | 452888.0554   | 4539648.2530  | 0.473676652     | 0                         | 0                       | 36.908858      |
-| 8  | CLOTHOID       | 452918.8596   | 4539668.5850  | 0.473676652     | 0                         | 985                     | 39.698871      |
-| 9  | CIRCULARARC    | 452952.1378   | 4539690.2300  | 0.451285858     | 985                       | 985                     | 107.491403     |
-| 10 | CLOTHOID       | 453045.9733   | 4539742.5540  | 0.330032162     | 985                       | 0                       | 39.698871      |
-| 11 | LINE           | 453081.8789   | 4539759.4870  | 0.307641368     | 0                         | 0                       | 139.921625     |
+| Entity                        | PredefinedType | Name | Start Point X | Start Point Y | Start Direction | Start Radius Of Curvature | End Radius Of Curvature | Segment Length | Gravity Center Line Height |
+|-------------------------------|----------------|------|---------------|---------------|-----------------|---------------------------|-------------------------|----------------|----------------------------|
+| IfcAlignmentHorizontalSegment | CIRCULARARC    | H1   | 452460.8898   | 4539473.543   | 0.214271681     | 249.538                   | 249.538                 | 22.902068      |                            |
+| IfcAlignmentHorizontalSegment | LINE           | H2   | 452482.7338   | 4539480.396   | 0.112296264     | 0                         | 0                       | 7.9355         |                            |
+| IfcAlignmentHorizontalSegment | LINE           | H3   | 452490.4064   | 4539482.422   | 0.112296264     | 0                         | 0                       | 68.296941      |                            |
+| IfcAlignmentHorizontalSegment | CLOTHOID       | H4   | 452556.4403   | 4539499.858   | 0.112296264     | 0                         | -1000                   | 40             |                            |
+| IfcAlignmentHorizontalSegment | CIRCULARARC    | H5   | 452595.0453   | 4539510.327   | 0.134518477     | -1000                     | -1000                   | 285.242348     |                            |
+| IfcAlignmentHorizontalSegment | CLOTHOID       | H6   | 452854.5258   | 4539626.442   | 0.451454422     | -1000                     | 0                       | 40             |                            |
+| IfcAlignmentHorizontalSegment | LINE           | H7   | 452888.0554   | 4539648.253   | 0.473676652     | 0                         | 0                       | 36.908858      |                            |
+| IfcAlignmentHorizontalSegment | CLOTHOID       | H8   | 452918.8596   | 4539668.585   | 0.473676652     | 0                         | 985                     | 39.698871      |                            |
+| IfcAlignmentHorizontalSegment | CIRCULARARC    | H9   | 452952.1378   | 4539690.23    | 0.451285858     | 985                       | 985                     | 107.491403     |                            |
+| IfcAlignmentHorizontalSegment | CLOTHOID       | H10  | 453045.9733   | 4539742.554   | 0.330032162     | 985                       | 0                       | 39.698871      |                            |
+| IfcAlignmentHorizontalSegment | LINE           | H11  | 453081.8789   | 4539759.487   | 0.307641368     | 0                         | 0                       | 139.921625     |                            |
 
 **NOTE**:
 - All distances are in meters
@@ -132,23 +133,23 @@ The vertical layout of the alignment (both for Alignment 1 and Alignment 2) is d
 
 #### Alignment 1_Primary route
 
-| ID | PredefinedType   | Start Dist Along | Horizontal Length | Start Height | Start Gradient | End Gradient | RadiusOfCurvature |
-|----|------------------|------------------|-------------------|--------------|----------------|--------------|-------------------|
-| 1  | CONSTANTGRADIENT | 0                | 0                 | 5            | 0              | 0            |                   |
-| 2  | CIRCULARARC      | 325.0006         | 49.9975           | 5            | 0              | -0.01        | 5000              |
-| 3  | CONSTANTGRADIENT | 374.9981         | 250.0038          | 4.75         | -0.01          | -0.01        |                   |
-| 4  | CIRCULARARC      | 625.0019         | 49.9975           | 2.25         | -0.01          | 0            | -5000             |
-| 5  | CONSTANTGRADIENT | 674.9994         | 201.3688          | 2            | 0              | 0            |                   |
+| Entity                      | PredefinedType   | Name | Start Dist Along | Horizontal Length | Start Height | Start Gradient | End Gradient | RadiusOfCurvature |
+|-----------------------------|------------------|------|------------------|-------------------|--------------|----------------|--------------|-------------------|
+| IfcAlignmentVerticalSegment | CONSTANTGRADIENT | V1   | 0                | 0                 | 5            | 0              | 0            |                   |
+| IfcAlignmentVerticalSegment | CIRCULARARC      | V2   | 325.0006         | 49.9975           | 5            | 0              | -0.01        | 5000              |
+| IfcAlignmentVerticalSegment | CONSTANTGRADIENT | V3   | 374.9981         | 250.0038          | 4.75         | -0.01          | -0.01        |                   |
+| IfcAlignmentVerticalSegment | CIRCULARARC      | V4   | 625.0019         | 49.9975           | 2.25         | -0.01          | 0            | -5000             |
+| IfcAlignmentVerticalSegment | CONSTANTGRADIENT | V5   | 674.9994         | 201.3688          | 2            | 0              | 0            |                   |
 
 #### Alignment 2_Diverted route
 
-| ID | PredefinedType   | Start Dist Along | Horizontal Length | Start Height | Start Gradient | End Gradient | RadiusOfCurvature |
-|----|------------------|------------------|-------------------|--------------|----------------|--------------|-------------------|
-| 1  | CONSTANTGRADIENT | 0                | 0                 | 5            | 0              | 0            |                   |
-| 2  | CIRCULARARC      | 277.0671         | 49.8646           | 5            | 0              | -0.009973    | 5000              |
-| 3  | CONSTANTGRADIENT | 326.9317         | 250.9366          | 4.7513       | -0.009973      | -0.009973    |                   |
-| 4  | CIRCULARARC      | 577.8683         | 49.8646           | 2.2487       | -0.009973      | 0            | -5000             |
-| 5  | CONSTANTGRADIENT | 627.7329         | 200.3636          | 2            | 0              | 0            |                   |
+| Entity                      | PredefinedType   | Name | Start Dist Along | Horizontal Length | Start Height | Start Gradient | End Gradient | RadiusOfCurvature |
+|-----------------------------|------------------|------|------------------|-------------------|--------------|----------------|--------------|-------------------|
+| IfcAlignmentVerticalSegment | CONSTANTGRADIENT | V1   | 0                | 0                 | 5            | 0              | 0            |                   |
+| IfcAlignmentVerticalSegment | CIRCULARARC      | V2   | 277.0671         | 49.8646           | 5            | 0              | -0.009973    | 5000              |
+| IfcAlignmentVerticalSegment | CONSTANTGRADIENT | V3   | 326.9317         | 250.9366          | 4.7513       | -0.009973      | -0.009973    |                   |
+| IfcAlignmentVerticalSegment | CIRCULARARC      | V4   | 577.8683         | 49.8646           | 2.2487       | -0.009973      | 0            | -5000             |
+| IfcAlignmentVerticalSegment | CONSTANTGRADIENT | V5   | 627.7329         | 200.3636          | 2            | 0              | 0            |                   |
 
 **NOTE**:
 - All distances are in meters
