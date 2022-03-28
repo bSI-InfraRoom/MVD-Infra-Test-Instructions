@@ -64,13 +64,6 @@ All validation criteria (and usages) of predecessors' tests shall be **verified 
 
 
 
-## Usages, Constraints & Logic 
-
-Other than the logic embedded by the IFC Entities & Concept Templates required for this test, **and** the constraints captured in the *Usages, Constraints & Logic* section of of precondition tests, **no additional constraints are applied**
-
-
-
-
 ## Expected Results
 
 For certification of capabilities the only source will be:
@@ -85,9 +78,32 @@ For certification of capabilities the only source will be:
 
 ### General
 
-- All the concept templates must be correctly implemented as presented in the validation criteria
-- At least 1 instance of each entity listed in [Itemised Roots](#Itemised-Roots) is present in the file
-- All validation criteria of the pre-required tests shall apply here too
+| **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
+|-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
+| GENE_00     | All validation criteria of precondition's tests shall be verified |                       | na                         | na                         |
+| GENE_01     | All requested entities (and attributes) exist in file             | As per Entities Table | na                         | na                         |
+
+#### Entities Table
+
+| **Element**      | **Attribute**    | **Value**                                   | **Notes**                                     |
+|------------------|------------------|---------------------------------------------|-----------------------------------------------|
+| IfcMapConversion | SourceCRS        |                                             | Points to `IfcGeometricRepresentationContext` |
+|                  | TargetCRS        |                                             | Points to `IfcProjectedCRS` (see below)       |
+|                  | Eastings         | 0                                           |                                               |
+|                  | Northings        | 0                                           |                                               |
+|                  | OrthogonalHeight | 0                                           |                                               |
+|                  | XAxisAbscissa    | 1                                           |                                               |
+|                  | XAxisOrdinate    | 0                                           |                                               |
+|                  | Scale            | 1                                           |                                               |
+|                  | ScaleY           | 1                                           |                                               |
+|                  | ScaleZ           | 1                                           |                                               |
+| IfcProjectedCRS  | Name             | 'EPSG:3065, EPSG:5214'                      |                                               |
+|                  | Description      | 'Istituto Geografico Militare 1995 (IGM95)' |                                               |
+|                  | GeodeticDatum    | 'EPSG:6670'                                 |                                               |
+|                  | VerticalDatum    | 'EPSG:5214'                                 |                                               |
+|                  | MapProjection    | 'UTM'                                       |                                               |
+|                  | MapZone          | '33N'                                       |                                               |
+|                  | MapUnit          | Meters                                      |
 
 
 ### Global Positioning
@@ -96,41 +112,5 @@ For certification of capabilities the only source will be:
  For the **Global Positioning** capability, the validation procedure must verify that:
 > - `IfcMapConversion` entity is used to transform the local engineering coordinate system, often called world coordinate system (WCS), into the coordinate reference system of the underlying map.
 > - `IfcProjectedCRS` entity is used for representing the coordinate reference system of the map to which the map translation of the local engineering coordinate system of the engineering project relates.
->
-> If present, all criteria listed in [Usages, Constraints & Logic](#Usages,-Constraints-&-Logic), and in the same section of precondition tests, shall be verified too.
 
-
-| **ID**  | **CRITERIA**                                      | **VALUE** | **COMMENT** |
-|---------|---------------------------------------------------|-----------|-------------|
-| ENAT_01 | Requested entities (and attributes) exist in file | See below |             |
-
-<details><summary>Entities and attributes</summary>
-
-`IfcMapConversion`
-
-| #  | Attribute        | Value / Instructions                          |
-|----|------------------|-----------------------------------------------|
-| 1  | SourceCRS        | Points to `IfcGeometricRepresentationContext` |
-| 2  | TargetCRS        | Points to `IfcProjectedCRS` (see below)       |
-| 3  | Eastings         | 0                                             |
-| 4  | Northings        | 0                                             |
-| 5  | OrthogonalHeight | 0                                             |
-| 6  | XAxisAbscissa    | 1                                             |
-| 7  | XAxisOrdinate    | 0                                             |
-| 8  | Scale            | 1                                             |
-| 9  | ScaleY           | 1                                             |
-| 10 | ScaleZ           | 1                                             |
-
-`IfcProjectedCRS`
-
-| # | Attribute     | Value / Instructions                        |
-|---|---------------|---------------------------------------------|
-| 1 | Name          | 'EPSG:3065, EPSG:5214'                      |
-| 2 | Description   | 'Istituto Geografico Militare 1995 (IGM95)' |
-| 3 | GeodeticDatum | 'EPSG:6670'                                 |
-| 4 | VerticalDatum | 'EPSG:5214'                                 |
-| 5 | MapProjection | 'UTM'                                       |
-| 6 | MapZone       | '33N'                                       |
-| 7 | MapUnit       | Meters                                      |
-
-</details>
+See See [Entities Table](#Entities-Table)

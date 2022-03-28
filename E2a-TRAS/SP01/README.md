@@ -103,27 +103,6 @@ All validation criteria (and usages) of predecessors' tests shall be **verified 
 
 
 
-## Usages, Constraints & Logic 
-:construction: **under construction, miss Model Geometry usages for sweep** :construction:
-
-The following itemised restrictions and constraints shall be placed on IFC Entities & Concept Templates:
-
-<details><summary>Semantic Usages, Constraints & Logic</summary>
-
-- On Body SectionedSolidHorizontal ...
-
-</details>
-
-<details><summary>Model Geometry</summary>
-The Test case requires the following additional checks related to Model Geometry:
-
-- On sweep of IfcCourse: ...
-
-</details>
-
-
-
-
 ## Expected Results
 
 For certification of capabilities the only source will be:
@@ -138,139 +117,140 @@ For certification of capabilities the only source will be:
 
 ### General
 
-- All the concept templates must be correctly implemented as presented in the validation criteria
-- At least 1 instance of each entity listed in [Itemised Roots](#Itemised-Roots) is present in the file
-- All validation criteria of the pre-required tests shall apply here too
+| **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
+|-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
+| GENE_00     | All validation criteria of precondition's tests shall be verified |                       | na                         | na                         |
+| GENE_01     | All requested entities (and attributes) exist in file             | As per Entities Table | na                         | na                         |
 
-| **ID**  | **CRITERIA**                                      | **VALUE** | **COMMENT** |
-|---------|---------------------------------------------------|-----------|-------------|
-| ENAT_01 | Requested entities (and attributes) exist in file | See below |             |
+#### Entities Table
 
-<details><summary>Entities and attributes</summary>
-
-`IfcFacilityPart` (BC01)
-
-| Attribute      | Value                               |
-|----------------|-------------------------------------|
-| Name           | LO1336-BC-BC01                      |
-| Description    | Binario IV dispari - Orte Falconara |
-| ObjectType     | $                                   |
-| PredefinedType | TRACKSTRUCTURE                      |
-
-`IfcFacilityPart` (BC02)
-
-| Attribute      | Value                               |
-|----------------|-------------------------------------|
-| Name           | LO1336-BC-BC02                      |
-| Description    | Binario V dispari - Orte Falconara  |
-| ObjectType     | $                                   |
-| PredefinedType | TRACKSTRUCTURE                      |
-
-`IfcCourse` (BC01)
-
-| Attribute      | Value                        |
-|----------------|------------------------------|
-| Name           | LO1336-BC-BC01-MAS-M01       |
-| Description    | Segmento di massicciata M01  |
-| ObjectType     | $                            |
-| PredefinedType | BALLASTBED                   |
-
-NOTE: all IfcCourse entities are to be typed by the IfcCourseType entity below (via `IfcRelDefinesByType`). This is important because in a following test properties will be associated to the type, and are expected to be inherited by the IfcCourse occurrences.
-
-`IfcCourseType`
-
-| Attribute      | Value                        |
-|----------------|------------------------------|
-| Name           | Segmento di massicciata      |
-| Description    | $                            |
-| PredefinedType | BALLASTBED                   |
-
-`IfcRail` (BC01, DX)
-
-| Attribute      | Value          |
-|----------------|----------------|
-| Name           | Rotaia BC01 DX |
-| Description    | $              |
-| ObjectType     | $              |
-| PredefinedType | RAIL           |
-
-`IfcRail` (BC01, SX)
-
-| Attribute      | Value          |
-|----------------|----------------|
-| Name           | Rotaia BC01 SX |
-| Description    | $              |
-| ObjectType     | $              |
-| PredefinedType | RAIL           |
-
-NOTE: all IfcRail entities are to be typed by the IfcRailType entity below (via `IfcRelDefinesByType`). This is important because in this test materials will be associated to the type, and are expected to be inherited by the IfcRail occurrences.
-
-`IfcRailType`
-
-| Attribute      | Value       |
-|----------------|-------------|
-| Name           | Rotaia 60E1 |
-| Description    | Rail UIC 60 |
-| PredefinedType | RAIL        |
-
-`IfcTrackElement`
-
-| Attribute      | Value          |
-|----------------|----------------|
-| Name           | Traversa 0000  |
-| Description    | $              |
-| ObjectType     | $              |
-| PredefinedType | SLEEPER        |
-
-NOTE: 0000 indicates the progressive number of each sleeper (i.e., Traversa 0001, Traversa 0002, Traversa 0003, etc.)
-
-</details>
+| **Element**     | **Attribute**  | **Value**                           | **Notes**                                                                                                                                                                                                                                                           |
+|-----------------|----------------|-------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| IfcFacilityPart | Name           | LO1336-BC-BC01                      |                                                                                                                                                                                                                                                                     |
+|                 | Description    | Binario IV dispari - Orte Falconara |                                                                                                                                                                                                                                                                     |
+|                 | ObjectType     | $                                   |                                                                                                                                                                                                                                                                     |
+|                 | PredefinedType | TRACKSTRUCTURE                      |                                                                                                                                                                                                                                                                     |
+| IfcFacilityPart | Name           | LO1336-BC-BC02                      |                                                                                                                                                                                                                                                                     |
+|                 | Description    | Binario V dispari - Orte Falconara  |                                                                                                                                                                                                                                                                     |
+|                 | ObjectType     | $                                   |                                                                                                                                                                                                                                                                     |
+|                 | PredefinedType | TRACKSTRUCTURE                      |                                                                                                                                                                                                                                                                     |
+| IfcCourse       | Name           | LO1336-BC-BC01-MAS-M01              | NOTE: all IfcCourse entities are to be typed by the IfcCourseType entity below (via `IfcRelDefinesByType`). This is important because in a following test properties will be associated to the type, and are expected to be inherited by the IfcCourse occurrences. |
+|                 | Description    | Segmento di massicciata M01         |                                                                                                                                                                                                                                                                     |
+|                 | ObjectType     | $                                   |                                                                                                                                                                                                                                                                     |
+|                 | PredefinedType | BALLASTBED                          |                                                                                                                                                                                                                                                                     |
+| IfcCourseType   | Name           | Segmento di massicciata             |                                                                                                                                                                                                                                                                     |
+|                 | Description    | $                                   |                                                                                                                                                                                                                                                                     |
+|                 | PredefinedType | BALLASTBED                          |                                                                                                                                                                                                                                                                     |
+| IfcRail         | Name           | Rotaia BC01 DX                      | NOTE: all IfcRail entities are to be typed by the IfcRailType entity below (via `IfcRelDefinesByType`). This is important because in this test materials will be associated to the type, and are expected to be inherited by the IfcRail occurrences.               |
+|                 | Description    | $                                   |                                                                                                                                                                                                                                                                     |
+|                 | ObjectType     | $                                   |                                                                                                                                                                                                                                                                     |
+|                 | PredefinedType | RAIL                                |                                                                                                                                                                                                                                                                     |
+| IfcRail         | Name           | Rotaia BC01 SX                      |                                                                                                                                                                                                                                                                     |
+|                 | Description    | $                                   |                                                                                                                                                                                                                                                                     |
+|                 | ObjectType     | $                                   |                                                                                                                                                                                                                                                                     |
+|                 | PredefinedType | RAIL                                |                                                                                                                                                                                                                                                                     |
+| IfcRailType     | Name           | Rotaia 60E1                         |                                                                                                                                                                                                                                                                     |
+|                 | Description    | Rail UIC 60                         |                                                                                                                                                                                                                                                                     |
+|                 | PredefinedType | RAIL                                |                                                                                                                                                                                                                                                                     |
+| IfcTrackElement | Name           | Traversa 0000                       | NOTE: 0000 indicates the progressive number of each sleeper (i.e., Traversa 0001, Traversa 0002, Traversa 0003, etc.)                                                                                                                                               |
+|                 | Description    | $                                   |                                                                                                                                                                                                                                                                     |
+|                 | ObjectType     | $                                   |                                                                                                                                                                                                                                                                     |
+|                 | PredefinedType | SLEEPER                             |
 
 
 ### Object typing
 
+
+| **RULE ID** | **CRITERIA**              | **VALUE [examples]**      | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|---------------------------|---------------------------|----------------------------|------------------------|
+| OBTP_01     | Object types are verified | As per Object Types Table | na                         | Object Typing          |
+
 > **Acceptance criteria**: For the **Object typing** capability, the validation procedure must verify that an IFC entity type with the given Name is typing (via `IfcRelDefinesByType`) exactly a given number of objects of the requested Name, no more and no less.
->
-> If present, all criteria listed in [Usages, Constraints & Logic](#Usages,-Constraints-&-Logic), and in the same section of precondition tests, shall be verified too.
 
-| Entity Type   | Entity Type Name        | Minimum | Maximum | IfcObject | IfcObject Name              |
-|---------------|-------------------------|---------|---------|-----------|-----------------------------|
-| IfcCourseType | Segmento di massicciata | 1       |         | IfcCourse | Segmento di massicciata M01 |
-| IfcRailType   | Rotaia 60E1             | 1       |         | IfcRail   | Rotaia BC01 DX              |
-| IfcRailType   | Rotaia 60E1             | 1       |         | IfcRail   | Rotaia BC01 SX              |
+<details><summary>OBTP_01 details: Object types are verified</summary>
 
-NOTE:
+> - Given a set of types and objects taken from the [Object Types Table](#Object-Types-Table)
+> - Then the Entity Type, with the Entity Type Name, exists
+> - And the Entity Type must type exactly [MinSize..MaxSize] of the requested Object
+
+</details>
+
+#### Object Types Table
+
+| **Entity Type** | **Entity Type Name**    | **MinSize** | **MaxSize** | **IfcObject** | **IfcObject Name**          |
+|-----------------|-------------------------|-------------|-------------|---------------|-----------------------------|
+| IfcCourseType   | Segmento di massicciata | 1           |             | IfcCourse     | Segmento di massicciata M01 |
+| IfcRailType     | Rotaia 60E1             | 1           |             | IfcRail       | Rotaia BC01 DX              |
+| IfcRailType     | Rotaia 60E1             | 1           |             | IfcRail       | Rotaia BC01 SX              |
+
+**NOTE**:
 - when **Minimum** and **Maximum** have the same value, it means exactly. Example: Minimum=Maximum=1, means that the entity type must type exactly 1 object with that Name.
 - when **Maximum is empty**, it means **unlimited**. Example: Minimum=1; Maximum=empty, means that the Entity Type must type 1 or more Object of the requested name.
 
-### Spatial decomposition
+
+
+
+### Spatial (De)Composition
+
+
+| **RULE ID** | **CRITERIA**                      | **VALUE [examples]**                 | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|-----------------------------------|--------------------------------------|----------------------------|------------------------|
+| SDEC_01     | Spatial decomposition is verified | As per Spatial (De)Composition Table | na                         | Spatial Decomposition  |
 
 > **Acceptance criteria**: For the **Spatial decomposition** capability, the validation procedure must verify that a Parent Element of the requested type aggregates (via `IfcRelAggregates`) exactly a given number of Child Elements of the requested type, no more and no less.
 
-| Parent Element | Parent Element Type | Minimum | Maximum | Child Element   | Child Element Type |
-|----------------|---------------------|---------|---------|-----------------|--------------------|
-| IfcRailway     | Località            | 2       | 2       | IfcFacilityPart | TRACKSTRUCTURE     |
+<details><summary>SDEC_01 details: Spatial decomposition is verified</summary>
 
-#### Bullet point example:
+> - Given a set of elements taken from the [Spatial (De)Composition Table](#Spatial-(De)Composition-Table)
+> - Then the Parent Element, and optionally the Parent Element Type, exists
+> - And the Parent Element must aggregate at least a number within [MinSize..MaxSize] of the requested Child Element
+
+</details>
+
+#### Spatial (De)Composition Table
+
+| **Parent Element** | **Parent Element Type** | **MinSize** | **MaxSize** | **Child Element** | **Child Element Type** |
+|--------------------|-------------------------|-------------|-------------|-------------------|------------------------|
+| IfcRailway         | Località                | 2           | 2           | IfcFacilityPart   | TRACKSTRUCTURE         |
+
+**Bullet point example**:
 - IfcRailway *(Name: LO1336)*
   - IfcFacilityPart.TRACKSTRUCTURE *(Name: LO1336-BC-BC01)*
   - IfcFacilityPart.TRACKSTRUCTURE *(Name: LO1336-BC-BC02)*
 
-### Spatial containment
+
+
+
+### Spatial Containment
+
+| **RULE ID** | **CRITERIA**                    | **VALUE [examples]**             | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|---------------------------------|----------------------------------|----------------------------|------------------------|
+| SCON_01     | Spatial containment is verified | As per Spatial Containment Table | na                         | Spatial Containment    |
 
 > **Acceptance criteria**: For the **Spatial containment** capability, the validation procedure must verify that a Spatial Element of the requested type contains (via `IfcRelContainedInSpatialStructure`) exactly a given number of Elements of the requested type, no more and no less.
 
-| Spatial Element | Spatial Element Type | Minimum | Maximum | Element            | Element Type      |
-|-----------------|----------------------|---------|---------|--------------------|-------------------|
-| IfcFacilityPart | TRACKSTRUCTURE       | 1       |         | IfcCourse          | BALLASTBED        |
-| IfcFacilityPart | TRACKSTRUCTURE       | 2       |         | IfcRail            | RAIL              |
-| IfcFacilityPart | TRACKSTRUCTURE       | 1       |         | IfcTrackElement    | SLEEPER           |
+<details><summary>SCON_01 details: Spatial containment is verified</summary>
 
-NOTE:
-- when **Maximum is empty**, it means **unlimited**. Example: Minimum=1; Maximum=empty, means that the Spatial Element must contain 1 or more elements of the requested type.
+> - Given a set of elements taken from the [Spatial Containment Table](#Spatial-Containment-Table)
+> - Then the Spatial Element, and optionally the Spatial Element Type, exists
+> - And the Spatial Element must contain at least a number within [MinSize..MaxSize] of the requested Element
 
+</details>
 
-#### Bullet point example:
+#### Spatial Containment Table
+
+| **Spatial Element** | **Spatial Element Type** | **MinSize** | **MaxSize** | **Element**     | **Element Type** |
+|---------------------|--------------------------|-------------|-------------|-----------------|------------------|
+| IfcFacilityPart     | TRACKSTRUCTURE           | 1           |             | IfcCourse       | BALLASTBED       |
+| IfcFacilityPart     | TRACKSTRUCTURE           | 2           |             | IfcRail         | RAIL             |
+| IfcFacilityPart     | TRACKSTRUCTURE           | 1           |             | IfcTrackElement | SLEEPER          |
+
+**NOTE**:
+- when **MaxSize is empty**, it means **unlimited**. Example: MinSize=1; MaxSize=empty, means that the Spatial Element must contain 1 or more elements of the requested type.
+- when **MinSize** and **MaxSize** have the same value, it means exactly. Example: MinSize=MaxSize=1, means that the Spatial Element must contain exactly 1 Element with that Type (and Name).
+
+**Bullet point example**:
+
 - IfcRailway *(Name: LO1336)*
   - IfcFacilityPart.TRACKSTRUCTURE *(Name: LO1336-BC-BC01)*
     - `IfcCourse.BALLASTBED` *(Name: BC01)*
@@ -282,14 +262,30 @@ NOTE:
   - IfcFacilityPart.TRACKSTRUCTURE *(Name: LO1336-BC-BC02)*
 
 
+
+
 ### Material association
+
+| **RULE ID** | **CRITERIA**                     | **VALUE [examples]**              | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|----------------------------------|-----------------------------------|----------------------------|------------------------|
+| MATE_01     | Material association is verified | As per Material Association Table | na                         | Material Association   |
 
 > **Acceptance criteria**: For the **Material association** capability, the validation procedure must verify that an Object of the requested type is associated (via `IfcRelAssociatesMaterial`) to a material definition with the requested name.
 
-| Object         | Object Type | Material definition | Material name |
-|----------------|-------------|---------------------|---------------|
-| IfcCourseType  | BALLASTBED  | IfcMaterial         | Gravel        |
-| IfcRail        | RAIL        | IfcMaterialProfile  | 60E1          | 
-| IfcTrackElement| SLEEPER     | IfcMaterial         | Concrete      | 
+<details><summary>MATE_01 details: Material association is verified</summary>
+
+> - Given a set of objects and materials taken from the [Material Association Table](#Material-Association-Table)
+> - Then the Objects, and optionally the Object Type, exists
+> - And the Object must be associated to the requested Material
+
+</details>
+
+#### Material Association Table
+
+| **Object**      | **Object Type** | **Material Definition** | **Material Name** |
+|-----------------|-----------------|-------------------------|-------------------|
+| IfcCourseType   | BALLASTBED      | IfcMaterial             | Gravel            |
+| IfcRail         | RAIL            | IfcMaterialProfile      | 60E1              |
+| IfcTrackElement | SLEEPER         | IfcMaterial             | Concrete          |
 
 

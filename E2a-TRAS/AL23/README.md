@@ -93,12 +93,6 @@ All validation criteria (and usages) of predecessors' tests shall be **verified 
 
 
 
-## Usages, Constraints & Logic
-Other than the logic embedded by the IFC Entities & Concept Templates required for this test, **and** the constraints captured in the *Usages, Constraints & Logic* section of of precondition tests, **no additional constraints are applied**
-
-
-
-
 ## Expected Results
 
 For certification of capabilities the only source will be:
@@ -113,26 +107,60 @@ For certification of capabilities the only source will be:
 
 ### General
 
-- All the concept templates must be correctly implemented as presented in the validation criteria
-- At least 1 instance of each entity listed in [Itemised Roots](#Itemised-Roots) is present in the file
-- All validation criteria of the pre-required tests shall apply here too
+| **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
+|-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
+| GENE_00     | All validation criteria of precondition's tests shall be verified |                       | na                         | na                         |
+| GENE_01     | All requested entities (and attributes) exist in file             | As per Entities Table | na                         | na                         |
+
+#### Entities Table
+
+| **Element**            | **Attribute**   | **Value**                                               | **Notes** |
+|------------------------|-----------------|---------------------------------------------------------|-----------|
+| IfcAlignment           | Name            | Alignment 1_Primary route                               |           |
+|                        | ObjectType      | Railway track alignment                                 |           |
+|                        | PredefinedType  | USERDEFINED                                             |           |
+| IfcAlignment           | Name            | Alignment 2_Diverted route                              |           |
+|                        | ObjectType      | Railway track alignment                                 |           |
+|                        | PredefinedType  | USERDEFINED                                             |           |
+| IfcAlignmentCant       | Name            | AC1                                                     |           |
+| IfcAlignmentCant       | Name            | AC2                                                     |           |
+| IfcSite                | Name            | Sito                                                    |           |
+|                        | Description     | 'One of the many sites that can be present in the file' |           |
+| IfcRailway             | Name            | LO1336                                                  |           |
+|                        | Description     | Foligno                                                 |           |
+|                        | ObjectType      | Località                                                |           |
+|                        | PredefinedType  | USERDEFINED                                             |           |
+|                        | CompositionType | ELEMENT                                                 |           |
 
 
 ### Railway alignment (with cant)
 
 > **Acceptance criteria**: For the **Railway alignment (with cant)** capability, the validation procedure must verify that **all** the following validation criteria are satisfied.
->
-> If present, all criteria listed in [Usages, Constraints & Logic](#Usages,-Constraints-&-Logic), and in the same section of precondition tests, shall be verified too.
 
-<details open><summary>Railway alignment (with cant)</summary> 
+| **RULE ID** | **CRITERIA**                                             | **VALUE [examples]**                           | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|----------------------------------------------------------|------------------------------------------------|----------------------------|------------------------|
+| SITE_00     | All IfcAlignment shall always be contained in an IfcSite |                                                |                            | Spatial Containment    |
+| ALIG_00     | Alignment layout structure is verified                   | See steps                                      |                            | Alignment Layout       |
+| ALIG_01     | Number of alignments contained in file                   | [2]                                            |                            |                        |
+| ALIG_02     | Parameters of alignment segments are verified            | As per Alignment Table                         |                            |                        |
+| ALIG_03     | Alignment geometric compliance is verified               | As per Alignment geometric compliance document |                            |                        |
+| ALIG_04     | Value of the RailHeadDistance along the entire alignment | [1500 mm]                                      | IfcAlignmentCant           |                        |
 
-| **ID**  | **CRITERIA**                                                     | **VALUE**                                   | **COMMENT**                |
-|---------|------------------------------------------------------------------|---------------------------------------------|----------------------------|
-| ALIG_01 | Alignments contained in file                                     | 2                                           |                            |
-| ALIG_02 | Component for Alignment 1_Primary route                          | 1 horizontal, 1 vertical, 1 cant            |                            |
-| ALIG_03 | Component for Alignment 2_Diverted route                         | 1 horizontal, 1 vertical, 1 cant            |                            |
-| ALIG_04 | The horizontal (H) layout is made only by these type of segments | straight line, circular arc, clothoid       |                            |
-| ALIG_05 | The vertical (V) layout is made only by these type of segments   | straight line, circular arc                 |                            |
-| ALIG_06 | The cant (C) layout is made only by these type of segments       | constant straight line, linear transition   |                            |
+<details><summary>ALIG_00 steps</summary>
+
+| **STEP ID** | **STEP**                                                                                                                                           |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| ALIG_00.1   | Each IfcAlignment must nest exactly 1 IfcAlignmentHorizontal                                                                                       |
+| ALIG_00.2   | Each IfcAlignment must nest at most 1 IfcAlignmentVertical                                                                                         |
+| ALIG_00.3   | Each IfcAlignment must nest exactly 1 IfcAlignmentVertical                                                                                         |
+| ALIG_00.4   | Each IfcAlignment must nest at most 1 IfcAlignmentCant                                                                                             |
+| ALIG_00.5   | Each IfcAlignment must nest exactly 1 IfcAlignmentCant                                                                                             |
+| ALIG_00.6   | Each IfcAlignmentHorizontal must be nested only by 1 IfcAlignment                                                                                  |
+| ALIG_00.7   | Each IfcAlignmentVertical must be nested only by 1 IfcAlignment                                                                                    |
+| ALIG_00.8   | Each IfcAlignmentCant must be nested only by 1 IfcAlignment                                                                                        |
+| ALIG_00.9   | Each IfcAlignment must nest only the following entities: IfcAlignmentHorizontal, IfcAlignmentVertical, IfcAlignmentCant, IfcReferent, IfcAlignment |
+| ALIG_00.10  | Each IfcAlignmentHorizontal nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentHorizontalSegment         |
+| ALIG_00.11  | Each IfcAlignmentVertical nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentVerticalSegment             |
+| ALIG_00.12  | Each IfcAlignmentCant nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentCantSegment                     |
 
 </details>
