@@ -1,4 +1,4 @@
-# Test Instruction Template
+# Test Instructions
 
 | Documentation Code   | Title                                          | Exchange Code | Test Code | Author          | Data Owner | Version | Date       |
 |----------------------|------------------------------------------------|---------------|-----------| ----------------|------------|---------|------------|
@@ -14,15 +14,11 @@ The [Expected Results](#Expected-Results) section lists the material that will b
 :zap: **This is a test-driven process: refer to the [Validation Criteria](#Validation-Criteria) to understand what is required by the test** :zap:
 
 ## Itemised Roots
-*This section lists the primary entities and concept templates being validated by this test instruction, these are listed to understand the scope of the data entities being addressed. this is the documentation of the data placed within BIMQ*
-
 The Test instruction addresses the import and export of the following IFC Entities & Concept Templates:
-
-:construction: under construction :construction:
 
 <details><summary>IFC Entities</summary>
 
-These entities represent a test-specific subset of the wider AbRV_Ex exchange and the overall AbRV MVD. **The scope of the test shall not be used as a definitive scope of the exchange, or of the entire MVD.**
+These entities represent a test-specific subset of the wider AbRV_E2a exchange and the overall AbRV MVD. **The scope of the test shall not be used as a definitive scope of the exchange, or of the MVD**
 
 - Model setup
   - *IfcProject*
@@ -34,7 +30,7 @@ These entities represent a test-specific subset of the wider AbRV_Ex exchange an
   - *IfcGeometricRepresentationContext*
   - *IfcMapConversion*
   - *IfcProjectedCRS*
-- Alignment (Track)
+- Alignment
   - *IfcAlignment*
   - *IfcAlignmentHorizontal*
   - *IfcAlignmentVertical*
@@ -65,14 +61,13 @@ These entities represent a test-specific subset of the wider AbRV_Ex exchange an
 
 <details><summary>Concept Templates</summary>
 
-These concept templates represent a test-specific subset of the wider AbRV_Ex exchange and the overall AbRV MVD, that must be correctly exported to meet the validation criteria. **The scope of the test shall not be used as a definitive scope of the exchange, or of the entire MVD.**
+These concept templates represent a test-specific subset of the wider AbRV_Ex exchange and the overall AbRV MVD, that must be correctly exported to meet the validation criteria. **The scope of the test shall not be used as a definitive scope of the exchange, or of the MVD**
 
 - *Model setup*
   - *Project Units*
   - *Project Representation Context*
   - *Project Global Positioning*
 - *Spatial structure, spatial interference and spatial containment*
-  - *Spatial Composition*
   - *Spatial Decomposition*
   - *Spatial Interference*
   - *Spatial Container*
@@ -93,10 +88,13 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
 
 </details>
 
-## Test Case Imports
-Test instructions are defined with a modular approach to reduce repetition of validation criteria and test content, and improve vendors ability to solve issues and bugs. therefore this test instruction *imports/reuses* the following Test instructions and entities with the relevant associated validation criteria.
+## Model Dataset
 
-:construction: under construction :construction:
+This test case utilises the datasets collected in the Dataset folder. **For more details on each item and a specification and model structure see [Dataset description](Dataset/README.md).**
+
+## Test Case Imports
+
+Test instructions are defined with a modular approach to reduce repetition of validation criteria and test content, and improve vendors ability to solve issues and bugs. therefore this test instruction *imports/reuses* the following Test instructions and entities with the relevant associated validation criteria.
 
 <details><summary>Imports & Reuses</summary>
 
@@ -106,59 +104,9 @@ Test instructions are defined with a modular approach to reduce repetition of va
 
 </details>
 
-## Usages, Constraints & Logic
-The following itemised restrictions and constraints shall be placed on IFC Entities & Concept Templates:
-
-:construction: under construction :construction:
-
-<details><summary>Semantic Usages, Constraints & Logic</summary>
-The following itemised Usages, Constraints & Logic are normative entries within the AbRV MVD and MUST be satisfied to meet the defined validation criteria.
-
-| ID      | CRITERIA                                                     | Concept template                                             | COMMENT                                                      |
-| ------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| TSLC_01 | All Alignments shall be contained in a Site<br />All Physical Elements shall be directly or indirectly contained in a spatial structure element | Spatial Containment                                          | See [Validation Criteria](#Validation criteria)              |
-| TSLC_02 | Alignment layout structure is verified                       | Alignment Decomposition                                      | See below and [Validation Criteria](#Validation criteria) for further specification |
-| TSLC_03 | Spatial structure is verified                                | Spatial Composition<br />Spatial Decomposition<br />Spatial Interference | See [Validation Criteria](#Validation criteria)              |
-| TSLC_04 | Elements are aggregated as required                          | Element Composition                                          | See [Validation Criteria](#Validation criteria)              |
-| TSLC_05 | Elements are placed as required                              | Product Placement                                            | See [Validation Criteria](#Validation criteria)              |
-| TSLC_06 | Elements placed relative to the alignments use relative positioning as required | Product Relative Positioning                                 | See below and [Validation Criteria](#Validation criteria) for further specification |
-| TSLC_07 | Spatial interference is defined where spatial structure elements interfere | Spatial Interference (is this CT missing?)                   | See below and [Validation Criteria](#Validation criteria) for further specification |
-
-TSLC_02: Alignment layout structure is verified
-
-> 1. Each `IfcAlignment` must nest exactly 1 `IfcAlignmentHorizontal`
-> 2. Each `IfcAlignment` must nest at most 1 `IfcAlignmentVertical`
-> 3. Each `IfcAlignmentHorizontal` must be nested only by 1 `IfcAlignment`
-> 4. Each `IfcAlignmentVertical` must be nested only by 1 `IfcAlignment`
-> 5. Each `IfcAlignment` must nest only `IfcAlignmentHorizontal`, or `IfcAlignmentVertical`
-> 6. Each `IfcAlignmentHorizontal` must nest only `IfcAlignmentHorizontalSegment`
-> 7. Each `IfcAlignmentVertical` must nest only `IfcAlignmentVerticalSegment`
-
-TSLC_06: Element Relative Positioning
-
-> 1. All elements in the dataset having an associated IfcLinearPlacement and that are not nested into the IfcAlignment shall have a relative positioning relationship with the corresponding IfcAlignment according to CT Product Relative Positioning.
-
-TSLC_07: Spatial Interference
-
-> 1. Where two spatial structure elements interfere, there shall be one `IfcRelInterferesElements` instance specifying the interference relationship.
-
-</details>
-
-<details><summary>Model Geometry</summary>
-
-The Test case requires the following additional checks related to Model Geometry:
-
-| ID      | CRITERIA                                       | Concept template            | COMMENT                                         |
-| ------- | ---------------------------------------------- | --------------------------- | ----------------------------------------------- |
-| TSLC_08 | Alignment geometric representation is verified | Alignment Geometry Gradient | See [Validation Criteria](#Validation criteria) |
-
-</details>
-
 ## Expected Results
 
 For certification of capabilities the only source will be:
-
-:construction: under construction :construction:
 
 - n. 1 IFC file containing the information as requested. The file shall be named using the following syntax: `MVDCode`-`ExchangeCode`-`TestCode`-`SoftwareVendor`.`ifc` (Example: `IFC4.3_AbRV-E2b-ASTPC-AmazingSoft.ifc`)
 
@@ -171,44 +119,38 @@ Considering the aim of this test, other **optional** results, not subject to the
 ## Validation criteria
 :zap: For this test case to be considered passed **all capabilities** listed in this section shall be verified, with no exception. :zap:
 
-:construction: under construction :construction:
+### General
 
-### General & Imports
+| **RULE ID** | **CRITERIA**                                                 | **VALUE [examples]**                         | **ENTITY (if applicable)** | **CT (if applicable)** |
+| ----------- | ------------------------------------------------------------ | -------------------------------------------- | -------------------------- | ---------------------- |
+| GENE_00     | All validation criteria of precondition's tests shall be verified |                                              | na                         | na                     |
+| GENE_01     | All requested entities (and attributes) exist in file        | see [Dataset description](Dataset/README.md) | na                         | na                     |
 
-<details><summary>Click to expand</summary>
+### Project Setup
 
-- All the concept templates must be correctly implemented as presented in the validation criteria
-- At least 1 instance of each entity listed in [Itemised Roots](#Itemised-Roots) is present in the file.
+| **RULE ID** | **CRITERIA**                                    | **VALUE [examples]** | **ENTITY (if applicable)** | **CT (if applicable)**     |
+| ----------- | ----------------------------------------------- | -------------------- | -------------------------- | -------------------------- |
+| ORIG_01     | Origin of Coordinate System is set as requested | [(0., 0., 0.)]       |                            | Project Global Positioning |
+| ORIG_02     | True north is set as requested                  | [(0., 1., 0.)]       |                            | Project Global Positioning |
+| DIST_01     | Unit of measure for all distances               | [meter]              |                            | Project Units              |
+| ANGL_01     | Unit of measure all angles                      | [radian]             |                            | Project Units              |
+| DIST_02     | Required precision for distances                | [0,0001]             | all alignment segments     | na                         |
+| ANGL_02     | Required precision for angles and slope         | [0,000001]           |                            | na                         |
+
+### Spatial (De)Composition
+
+| **RULE ID** | **CRITERIA**                      | **VALUE [examples]**                         | **ENTITY (if applicable)** | **CT (if applicable)** |
+| ----------- | --------------------------------- | -------------------------------------------- | -------------------------- | ---------------------- |
+| SDEC_01     | Spatial decomposition is verified | See [Dataset description](Dataset/README.md) | na                         | Spatial Decomposition  |
+
+> **Acceptance criteria**: For the **Spatial decomposition** capability, the validation procedure must verify that a Parent Element of the requested type aggregates (via `IfcRelAggregates`) exactly a given number of Child Elements of the requested type, no more and no less.
+
+<details><summary>SDEC_01 details: Spatial decomposition is verified</summary>
 
 
-#### Imports
-| **TI Code**        | **Criteria Codes** | *COMMENT**                                         |
-|--------------------|--------------------|----------------------------------------------------|
-| IFC4.3AbRV_E0_MSTP | ALL CRITERIA       | As outlined in the dataset [Imported Entities Table](Dataset/README.md#Imported-Entities-Table) |
-
-
-#### General
-| **ID**  | **CRITERIA**                                        | **VALUE**                                     | **COMMENT** |
-|---------|-----------------------------------------------------|-----------------------------------------------|-------------|
-| GENE_01 | All requested entities are present in the IFC model | per [Entities Table](Dataset/README.md#Entities-Table) |    |
-
-</details>
-
-### Spatial decomposition
-
-<details><summary>Click to expand</summary>
-
-> **Acceptance criteria**: For the **Spatial decomposition** capability, the validation procedure must verify that a Spatial Element of the requested type is decomposed by (via `IfcRelAggregates`) exactly a given number of Spatial Elements of the requested type, no more and no less.
-
-| ID      | CRITERIA                                                     | VALUE                                                  | COMMENT |
-| ------- | ------------------------------------------------------------ | ------------------------------------------------------ | ------- |
-| SPAT_00 | The file contains exactly 1 IfcSite element                  | per [Entities Table](Dataset/README.md#Entities-Table) |         |
-| SPAT_01 | The IfcSite is composed of exactly 1 IfcRoad element         | per [Entities Table](Dataset/README.md#Entities-Table) |         |
-| SPAT_02 | The IfcSite is composed of exactly 1 IfcRailway element      | per [Entities Table](Dataset/README.md#Entities-Table) |         |
-| SPAT_03 | The IfcRoad is composed of Exactly 2 elements of type IfcFacilityPart/IfcRoadPartTypeEnum(ROADSEGMENT) | per [Entities Table](Dataset/README.md#Entities-Table) |         |
-| SPAT_04 | The IfcRoad is composed of Exactly 1 element of type IfcFacilityPart/IfcFacilityPartCommonTypeEnum(LEVELCROSSING) | per [Entities Table](Dataset/README.md#Entities-Table) |         |
-| SPAT_05 | The IfcRailway is composed of Exactly 2 elements of type IfcFacilityPart/IfcRailwayPartTypeEnum(TRACKSTRUCTURE) | per [Entities Table](Dataset/README.md#Entities-Table) |         |
-| SPAT_06 | The IfcRailway is composed of Exactly 1 element of type IfcFacilityPart/IfcFacilityPartCommonTypeEnum(LEVELCROSSING) | per [Entities Table](Dataset/README.md#Entities-Table) |         |
+> - Given a set of elements taken from the [Spatial (De)Composition Table](#Spatial-(De)Composition-Table)
+> - Then the Parent Element, and optionally the Parent Element Type, exists
+> - And the Parent Element must aggregate at least a number within [MinSize..MaxSize] of the requested Child Element
 
 </details>
 
@@ -224,91 +166,116 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 </details>
 
-### Alignment layout structure
+### Alignment
 
-<details><summary>Click to expand</summary>
+| **RULE ID** | **CRITERIA**                                             | **VALUE [examples]**                                         | **ENTITY (if applicable)** | **CT (if applicable)** |
+| ----------- | -------------------------------------------------------- | ------------------------------------------------------------ | -------------------------- | ---------------------- |
+| SITE_00     | All IfcAlignment shall always be contained in an IfcSite |                                                              |                            | Spatial Containment    |
+| ALIG_00     | Alignment layout structure is verified                   | See steps                                                    |                            | Alignment Layout       |
+| ALIG_01     | Number of alignments contained in file                   | [2]                                                          |                            |                        |
+| ALIG_02     | Parameters of alignment segments are verified            | As per Alignment Table. See [Dataset description](Dataset/README.md) |                            |                        |
+| ALIG_03     | Alignment geometric compliance is verified               | As per Alignment geometric compliance document               |                            |                        |
 
-| **ID**  | **CRITERIA**                                                 | **VALUE**                                              | **COMMENT** |
-| ------- | ------------------------------------------------------------ | ------------------------------------------------------ | ----------- |
-| ALIG_01 | The model contains exactly 2 IfcAlignment instances          | per [Entities Table](Dataset/README.md#Entities-Table) |             |
-| ALIG_02 | Each IfcAlignment nests exactly 1 IfcAlignmentHorizontal and exactly 1 IfcAlignmentVertical | per [Entities Table](Dataset/README.md#Entities-Table) |             |
-| ALIG_03 | Each IfcAlignmentHorizontal nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentHorizontalSegment | per [Entities Table](Dataset/README.md#Entities-Table) |             |
-| ALIG_04 | Each IfcAlignmentVertical nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentVerticalSegment | per [Entities Table](Dataset/README.md#Entities-Table) |             |
-| ALIG_05 | Parameters of alignment segments shall be defined according to the dataset description | per [Entities Table](Dataset/README.md#Entities-Table) |             |
+<details><summary>ALIG_00 steps</summary>
+
+
+| **STEP ID** | **STEP**                                                     |
+| ----------- | ------------------------------------------------------------ |
+| ALIG_00.1   | Each IfcAlignment must nest exactly 1 IfcAlignmentHorizontal |
+| ALIG_00.2   | Each IfcAlignment must nest at most 1 IfcAlignmentVertical   |
+| ALIG_00.3   | Each IfcAlignment must nest exactly 1 IfcAlignmentVertical   |
+| ALIG_00.6   | Each IfcAlignmentHorizontal must be nested only by 1 IfcAlignment |
+| ALIG_00.7   | Each IfcAlignmentVertical must be nested only by 1 IfcAlignment |
+| ALIG_00.8   | Each IfcAlignmentCant must be nested only by 1 IfcAlignment  |
+| ALIG_00.9   | Each IfcAlignment must nest only the following entities: IfcAlignmentHorizontal, IfcAlignmentVertical |
+| ALIG_00.10  | Each IfcAlignmentHorizontal nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentHorizontalSegment |
+| ALIG_00.11  | Each IfcAlignmentVertical nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentVerticalSegment |
 
 </details>
 
-### Alignment Geometry Gradient
+### Product geometric representation
 
-<details><summary>Click to expand</summary>
+| **RULE ID** | **CRITERIA**                                     | **VALUE [examples]**                                         | **ENTITY (if applicable)** | **CT (if applicable)**                                |
+| ----------- | ------------------------------------------------ | ------------------------------------------------------------ | -------------------------- | ----------------------------------------------------- |
+| PREP_01     | Geometric representation of products is verified | As per Product Geometric Representation Table. See [Dataset description](Dataset/README.md) |                            | Product Geometric Representation and its subtemplates |
 
-| **ID**  | **CRITERIA**                                                 | **VALUE**                                              | **COMMENT** |
-| ------- | ------------------------------------------------------------ | ------------------------------------------------------ | ----------- |
-| ALGG_00 | Each IfcAlignment shall have one Representation of type IfcProductShapeRepresentation having one Representation of type IfcShapeRepresentation having RepresentationIdentifier="Axis" and RepresentationType="Curve3D" and having one Item of type IfcGradientCurve. | per [Entities Table](Dataset/README.md#Entities-Table) |             |
-| ALGG_01 | Each IfcAlignmentHorizontal shall have one Representation of type IfcProductShapeRepresentation having one Representation of type IfcShapeRepresentation having RepresentationIdentifier="Axis" and RepresentationType="Curve2D" and having one Item of type IfcCompositeCurve. | per [Entities Table](Dataset/README.md#Entities-Table) |             |
-| ALGG_02 | Each IfcAlignmentVertical shall have one Representation of type IfcProductShapeRepresentation having one Representation of type IfcShapeRepresentation having RepresentationIdentifier="Axis" and RepresentationType="Curve3D" and having one Item of type IfcGradientCurve (same instance as referred to by IfcAlignment). | per [Entities Table](Dataset/README.md#Entities-Table) |             |
-| ALGG_03 | Each IfcGradientCurve shall have the corresponding IfcCompositeCurve as BaseCurve | per [Entities Table](Dataset/README.md#Entities-Table) |             |
-| ALGG_04 | Each IfcGradientCurve shall have Segments that exactly match the corresponding vertical segments in the IfcAlignmentVertical and in the same order | per [Entities Table](Dataset/README.md#Entities-Table) |             |
-| ALGG_05 | Each IfcCompositeCurve shall have Segments that exactly match the corresponding horizontal segments in the IfcAlignmentHorizontal and in the same order | per [Entities Table](Dataset/README.md#Entities-Table) |             |
+> **Acceptance criteria**: For the **Group Geometric Representation** capability, the validation procedure must verify that a Product of the requested type (and optionally a requested name) has an IfcShapeRepresentation with the requested Representation Identifier, Representation Type and Items.
+
+<details><summary>PREP_01 details:  Geometric representation of products is verified</summary>
+
+
+> - Given a set of products taken from the [Product Geometric Representation Table](#Product-Geometric-Representation-Table)
+> - Then the Product, and optionally the Product Type, exists
+> - And the Product must have an IfcShapeRepresentation (via IfcProductDefinitionShape) with the requested Representation Identifier, Representation Type and Items.
 
 </details>
 
 ### Spatial containment
 
-<details><summary>Click to expand</summary>
+| **RULE ID** | **CRITERIA**                    | **VALUE [examples]**                                         | **ENTITY (if applicable)** | **CT (if applicable)** |
+| ----------- | ------------------------------- | ------------------------------------------------------------ | -------------------------- | ---------------------- |
+| SCON_01     | Spatial containment is verified | As per Spatial Containment Table. See [Dataset description](Dataset/README.md) | na                         | Spatial Containment    |
 
 > **Acceptance criteria**: For the **Spatial containment** capability, the validation procedure must verify that a Spatial Element of the requested type contains (via `IfcRelContainedInSpatialStructure`) exactly a given number of Elements of the requested type, no more and no less.
 
-| **ID**  | **CRITERIA**                                                 | **VALUE**                                              | **COMMENT** |
-| ------- | ------------------------------------------------------------ | ------------------------------------------------------ | ----------- |
-| SPAC_00 | The IfcSite contains exactly 2 IfcAlignment instances        | per [Entities Table](Dataset/README.md#Entities-Table) |             |
-| SPAC_01 | The IfcRoad contains exactly one IfcElementAssembly/SIGNALASSEMBLY | per [Entities Table](Dataset/README.md#Entities-Table) |             |
-| SPAC_02 | The IfcFacilityPart/IfcFacilityPartCommonTypeEnum(LEVELCROSSING) that decomposes IfcRail contains exactly 2 IfcSensor/WHEELSENSOR | per [Entities Table](Dataset/README.md#Entities-Table) |             |
-| SPAC_03 | The IfcFacilityPart/IfcFacilityPartCommonTypeEnum(LEVELCROSSING) that decomposes IfcRail contains exactly 2 IfcJunctionBox/DATA | per [Entities Table](Dataset/README.md#Entities-Table) |             |
-| SPAC_04 | The IfcFacilityPart/IfcFacilityPartCommonTypeEnum(LEVELCROSSING) that decomposes IfcRail contains exactly 2 IfcDiscreteAccessory/RAIL_MECHANICAL_EQUIPMENT | per [Entities Table](Dataset/README.md#Entities-Table) |             |
+<details><summary>SCON_01 details: Spatial containment is verified</summary>
+
+
+> - Given a set of elements taken from the [Spatial Containment Table](#Spatial-Containment-Table)
+> - Then the Spatial Element, and optionally the Spatial Element Type, exists
+> - And the Spatial Element must contain at least a number within [MinSize..MaxSize] of the requested Element
 
 </details>
 
-### Element decomposition
+### Element (De)Composition (Assemblies)
 
-<details><summary>Click to expand</summary>
+| **RULE ID** | **CRITERIA**                                       | **VALUE [examples]**                                         | **ENTITY (if applicable)** | **CT (if applicable)**                      |
+| ----------- | -------------------------------------------------- | ------------------------------------------------------------ | -------------------------- | ------------------------------------------- |
+| ASSE_01     | Mandatory components are present in the assemblies | As per Element (De)Composition Table. See [Dataset description](Dataset/README.md) | na                         | Element Composition & Element Decomposition |
 
-> **Acceptance criteria**: For the **Element decomposition** capability, the validation procedure must verify that an Element of the requested type is decomposed by (via `IfcRelAggregates`) exactly a given number of Elements of the requested type, no more and no less.
+> **Acceptance criteria**: For the **ASSE_01 rule**, the validation procedure must verify that an assembly of the requested type (and name) aggregates (via `IfcRelAggregates`) at least a given number of elements of the requested type (and name).
 
-| **ID**  | **CRITERIA**                                                 | **VALUE**                                              | **COMMENT** |
-| ------- | ------------------------------------------------------------ | ------------------------------------------------------ | ----------- |
-| ELDC_00 | The top level IfcElementAssembly aggregates exactly 1 lower level IfcElementAssembly/SIGNALASSEMBLY | per [Entities Table](Dataset/README.md#Entities-Table) |             |
-| ELDS_01 | The top level IfcElementAssembly aggregates exactly 1 IfcDoor/BOOM_BARRIER | per [Entities Table](Dataset/README.md#Entities-Table) |             |
-| ELDS_02 | The top level IfcElementAssembly aggregates exactly 1 IfcFooting/PAD_FOOTING | per [Entities Table](Dataset/README.md#Entities-Table) |             |
-| ELDS_03 | The top level IfcElementAssembly aggregates exactly 1 IfcRailing/GUARDRAIL | per [Entities Table](Dataset/README.md#Entities-Table) |             |
-| ELDS_04 | The lower level level IfcElementAssembly aggregates exactly 1 IfcMember/POST | per [Entities Table](Dataset/README.md#Entities-Table) |             |
-| ELDS_05 | The lower level level IfcElementAssembly aggregates exactly 1 IfcSignal/VISUAL | per [Entities Table](Dataset/README.md#Entities-Table) |             |
-| ELDS_06 | The lower level level IfcElementAssembly aggregates exactly 1 IfcSignal/AUDIO | per [Entities Table](Dataset/README.md#Entities-Table) |             |
-| ELDS_07 | The lower level level IfcElementAssembly aggregates exactly 1 IfcSign/PICTORAL | per [Entities Table](Dataset/README.md#Entities-Table) |             |
+<details><summary>ASSE_01 details: Mandatory components are present in the assemblies</summary>
+
+
+> - Given a set of assemblies taken from the [Element (De)Composition Table](#Element-(De)Composition)
+> - Then the Assembly, and optionally the Assembly Type, exists
+> - And the Assembly must aggregate at least a number within [MinSize..MaxSize] of the requested Element
 
 </details>
 
-### Element placement
+### Product placement
 
-<details><summary>Click to expand</summary>
+| **RULE ID** | **CRITERIA**                                                 | **VALUE [examples]**           | **ENTITY (if applicable)** | **CT (if applicable)**         |
+| ----------- | ------------------------------------------------------------ | ------------------------------ | -------------------------- | ------------------------------ |
+| PPLA_01     | Placement of products is verified                            | As per Product Placement Table |                            | Product Placement subtemplates |
+| PPLA_02     | For a product that has ObjectPlacement as IfcLinearPlacement, the CartesianPosition of IfcLinearPlacement shall be available | depends on cases               |                            | Product Linear Placement       |
 
-> **Acceptance criteria**: For the **Element placement** capability, the validation procedure must verify that an Element of the requested type is placed according to the specified placement with the specified values.
+> **Acceptance criteria**: For the **Product Placement** capability, the validation procedure must verify that a Product of the requested type (and optionally a requested name) has the requested Object Placement, and optionally the Object Placement has PlacementRelTo reference to the Object Placement of Relative Placement Product with requested Relative Placement Product Type and Relative Placement Product Name.
 
-| **ID**  | **CRITERIA**                                                 | **VALUE**                                              | **COMMENT** |
-| ------- | ------------------------------------------------------------ | ------------------------------------------------------ | ----------- |
-| ELPL_00 | Elements are placed at the specified location using the specified ObjectPlacement | per [Entities Table](Dataset/README.md#Entities-Table) |             |
+<details><summary>PPLA_01 details:  Placement of products is verified</summary>
+
+
+> - Given a set of products taken from the [Product Geometric Representation Table](#Product-Geometric-Representation-Table)
+> - Then the Product with Product Type and Product Name, exists
+> - And the Product must have Object Placement, and the Object Placement has PlacementRelTo reference to the ObjectPlacement of Relative Placement Product with requested Relative Placement Product Type and Relative Placement Product Name.
 
 </details>
 
-### Element Relative Positioning
+### Product relative positioning
 
-<details><summary>Click to expand</summary>
+| **RULE ID** | **CRITERIA**                             | **VALUE [examples]**                      | **ENTITY (if applicable)** | **CT (if applicable)**                                 |
+| ----------- | ---------------------------------------- | ----------------------------------------- | -------------------------- | ------------------------------------------------------ |
+| PPOS_01     | Product relative positioning is verified | As per Product Relative Positioning Table | na                         | Product Relative Positioning, Product Span Positioning |
 
-> **Acceptance criteria**: For the **Element Relative Positioning** capability, the validation procedure must verify that an Element of the requested type has a position relative to the specified positioning element via IfcRelPositions.
+> **Acceptance criteria**: For the **Spatial relative positioning** capability, the validation procedure must verify that a Product of the requested type is positioned (via `IfcRelPositions`) exactly a given number of Positioning Elements of the requested type, no more and no less.
 
-| **ID**  | **CRITERIA**                                                 | **VALUE**                                              | **COMMENT** |
-| ------- | ------------------------------------------------------------ | ------------------------------------------------------ | ----------- |
-| ERPO_01 | Each element that is placed linearly using IfcLinearPlacement shall have an IfcRelPositions relationship with the corresponding IfcAlignment | per [Entities Table](Dataset/README.md#Entities-Table) |             |
+<details><summary>PPOS_01 details: Product relative positioning is verified</summary>
+
+
+> - Given a set of products taken from the [Product Relative Positioning Table](#Product-Relative-Positioning-Table)
+> - Then the Product, and optionally the Product Type, exists
+> - And the Product must be positioned on exactly [Size] of the requested Positioning Element
 
 </details>
 
