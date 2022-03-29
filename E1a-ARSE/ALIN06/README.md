@@ -115,7 +115,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 | **RULE ID** | **CRITERIA**                                                 | **VALUE [examples]**                                         | **ENTITY (if applicable)** | **CT (if applicable)** |
 | ----------- | ------------------------------------------------------------ | ------------------------------------------------------------ | -------------------------- | ---------------------- |
 | GENE_00     | All validation criteria of precondition's tests shall be verified |                                                              | na                         | na                     |
-| GENE_01     | All requested entities (and attributes) exist in file        | As per Entities Table. See [Dataset description](Dataset/Readme.md) | na                         | na                     |
+| GENE_01     | All requested entities (and attributes) exist in file        | As per Entities Table. See [Dataset description](Dataset/README.md) | na                         | na                     |
 
 ### Road alignment
 
@@ -150,7 +150,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 | **RULE ID** | **CRITERIA**                      | **VALUE [examples]**                                         | **ENTITY (if applicable)** | **CT (if applicable)** |
 | ----------- | --------------------------------- | ------------------------------------------------------------ | -------------------------- | ---------------------- |
-| SDEC_01     | Spatial decomposition is verified | As per Spatial (De)Composition Table. See [Dataset description](Dataset/Readme.md) | na                         | Spatial Decomposition  |
+| SDEC_01     | Spatial decomposition is verified | As per Spatial (De)Composition Table. See [Dataset description](Dataset/README.md) | na                         | Spatial Decomposition  |
 
 > **Acceptance criteria**: For the **Spatial decomposition** capability, the validation procedure must verify that a Parent Element of the requested type aggregates (via `IfcRelAggregates`) exactly a given number of Child Elements of the requested type, no more and no less.
 
