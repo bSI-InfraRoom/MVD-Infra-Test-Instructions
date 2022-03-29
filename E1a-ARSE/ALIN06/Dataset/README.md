@@ -1,12 +1,3 @@
-## Variations
-The Following occurrence variations need to be checked and certified in relation to the targeted entities and concept templates:
-
-- IfcAlignmentHorizontalSegment - *The test shall include linear and circular arc segments*
-- IfcAlignmentVerticalSegment - *The test shall include linear and circular arc segments*
-- Alignment Decomposition:
-  - The horizontal alignment shall be decomposed with element sequences containing lines and both clockwise and counter-clockwise turns
-  - The vertical alignment shall be decomposed with element sequences containing linear and circular arc segments including both clockwise and counter-clockwise turns
-
 ## Model Dataset
 
 This test case utilizes the following dataset.
@@ -14,8 +5,15 @@ This test case utilizes the following dataset.
 - One alignment layout including geometric representation
 - The alignment is composed of one horizontal alignment layout and one vertical alignment layout
 - The horizontal layout contains lines and circular arcs
-
 - The vertical layout contains lines and circular arcs
+
+The Following occurrence variations need to be checked and certified in relation to the targeted entities and concept templates:
+
+- IfcAlignmentHorizontalSegment - *The test shall include linear and circular arc segments*
+- IfcAlignmentVerticalSegment - *The test shall include linear and circular arc segments*
+- Alignment Decomposition:
+  - The horizontal alignment shall be decomposed with element sequences containing lines and both clockwise and counter-clockwise turns
+  - The vertical alignment shall be decomposed with element sequences containing linear and circular arc segments including both clockwise and counter-clockwise turns
 
 | Filename                                                     | Description                                   |
 | ------------------------------------------------------------ | --------------------------------------------- |
