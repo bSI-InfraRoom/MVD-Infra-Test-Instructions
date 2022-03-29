@@ -124,7 +124,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 | **RULE ID** | **CRITERIA**                                                 | **VALUE [examples]**                                         | **ENTITY (if applicable)** | **CT (if applicable)** |
 | ----------- | ------------------------------------------------------------ | ------------------------------------------------------------ | -------------------------- | ---------------------- |
 | GENE_00     | All validation criteria of precondition's tests shall be verified |                                                              | na                         | na                     |
-| GENE_01     | All requested entities (and attributes) exist in file        | As per Entities Table. See [Dataset specification](Dataset/Readme.md). | na                         | na                     |
+| GENE_01     | All requested entities (and attributes) exist in file        | As per Entities Table. See [Dataset specification](Dataset/README.md). | na                         | na                     |
 
 ### Superelevation & Width
 
@@ -132,11 +132,11 @@ Considering the aim of this test, other **optional** results, not subject to the
 | ------- | ---------------------------------------- | ------------------------------------------------------------ | --------------------------------- | ---------------------------- |
 | SEWI_00 | Superelevation representation verified   |                                                              | IfcAnnotation/SUPERELEVATIONEVENT |                              |
 | SEWI_01 | Width representation verified            |                                                              | IfcAnnotation/WIDTHEVENT          |                              |
-| SEWI_02 | Superelevation linear placement verified | As per Product placement table. See [Dataset specification](Dataset/Readme.md). |                                   | Product Linear Placement     |
-| SEWI_03 | Width linear placement verified          | As per Product placement table. See [Dataset specification](Dataset/Readme.md). |                                   |                              |
-| SEWI_04 | Superelevation properties verified       | As per Properties table. See [Dataset specification](Dataset/Readme.md). |                                   | Property sets for objects    |
-| SEWI_05 | Width properties verified                | As per Properties table. See [Dataset specification](Dataset/Readme.md). |                                   | Property sets for objects    |
-| SEWI_06 | Relative Positioning verified            | As per Product Relative Positioning table. See [Dataset specification](Dataset/Readme.md). |                                   | Product Relative Positioning |
+| SEWI_02 | Superelevation linear placement verified | As per Product placement table. See [Dataset specification](Dataset/README.md). |                                   | Product Linear Placement     |
+| SEWI_03 | Width linear placement verified          | As per Product placement table. See [Dataset specification](Dataset/README.md). |                                   |                              |
+| SEWI_04 | Superelevation properties verified       | As per Properties table. See [Dataset specification](Dataset/README.md). |                                   | Property sets for objects    |
+| SEWI_05 | Width properties verified                | As per Properties table. See [Dataset specification](Dataset/README.md). |                                   | Property sets for objects    |
+| SEWI_06 | Relative Positioning verified            | As per Product Relative Positioning table. See [Dataset specification](Dataset/README.md). |                                   | Product Relative Positioning |
 
 > **Acceptance criteria**: For the **Superelevation & Width** capability, the validation procedure must verify that **all** the above validation criteria are satisfied.
 
@@ -191,7 +191,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 | **RULE ID** | **CRITERIA**                             | **VALUE [examples]**                                         | **ENTITY (if applicable)** | **CT (if applicable)**                                 |
 | ----------- | ---------------------------------------- | ------------------------------------------------------------ | -------------------------- | ------------------------------------------------------ |
-| PPOS_01     | Product relative positioning is verified | As per Product Relative Positioning Table. See [Dataset specification](Dataset/Readme.md). | na                         | Product Relative Positioning, Product Span Positioning |
+| PPOS_01     | Product relative positioning is verified | As per Product Relative Positioning Table. See [Dataset specification](Dataset/README.md). | na                         | Product Relative Positioning, Product Span Positioning |
 
 > **Acceptance criteria**: For the **Spatial relative positioning** capability, the validation procedure must verify that a Product of the requested type is positioned (via `IfcRelPositions`) exactly a given number of Positioning Elements of the requested type, no more and no less.
 
@@ -208,11 +208,11 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 | **RULE ID** | **CRITERIA**                                             | **VALUE [examples]**                                         | **ENTITY (if applicable)** | **CT (if applicable)**                              |
 | ----------- | -------------------------------------------------------- | ------------------------------------------------------------ | -------------------------- | --------------------------------------------------- |
-| PSET_01     | The model does not contain unrequested property sets     | As per Properties Table. See [Dataset specification](Dataset/Readme.md). | na                         | Property Sets for Objects & Property Sets for Types |
-| PNAM_01     | The property set does not contain unrequested properties | As per Properties Table. See [Dataset specification](Dataset/Readme.md). | na                         | Property Sets for Objects & Property Sets for Types |
-| PTEX_01     | Property values belong to a list of values               | As per Properties Table. See [Dataset specification](Dataset/Readme.md). | na                         | Property Sets for Objects & Property Sets for Types |
-| PVAL_01     | Property values are not null and not empty               | As per Properties Table. See [Dataset specification](Dataset/Readme.md). | na                         | Property Sets for Objects & Property Sets for Types |
-| PVAL_02     | Requested property value types are found                 | As per Properties Table. See [Dataset specification](Dataset/Readme.md). | na                         | Property Sets for Objects & Property Sets for Types |
+| PSET_01     | The model does not contain unrequested property sets     | As per Properties Table. See [Dataset specification](Dataset/README.md). | na                         | Property Sets for Objects & Property Sets for Types |
+| PNAM_01     | The property set does not contain unrequested properties | As per Properties Table. See [Dataset specification](Dataset/README.md). | na                         | Property Sets for Objects & Property Sets for Types |
+| PTEX_01     | Property values belong to a list of values               | As per Properties Table. See [Dataset specification](Dataset/README.md). | na                         | Property Sets for Objects & Property Sets for Types |
+| PVAL_01     | Property values are not null and not empty               | As per Properties Table. See [Dataset specification](Dataset/README.md). | na                         | Property Sets for Objects & Property Sets for Types |
+| PVAL_02     | Requested property value types are found                 | As per Properties Table. See [Dataset specification](Dataset/README.md). | na                         | Property Sets for Objects & Property Sets for Types |
 
 > **Acceptance criteria**: For the **Properties for objects and object types** capability, the validation procedure must verify that both standard and custom property sets requested by the test case (including relative properties and values) are present in the IFC file.
 > See below for further specification of each rule.
@@ -270,7 +270,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 | **RULE ID** | **CRITERIA**                                                 | **VALUE [examples]**                                         | **ENTITY (if applicable)** | **CT (if applicable)**         |
 | ----------- | ------------------------------------------------------------ | ------------------------------------------------------------ | -------------------------- | ------------------------------ |
-| PPLA_01     | Placement of products is verified                            | As per Product Placement Table. See [Dataset specification](Dataset/Readme.md). |                            | Product Placement subtemplates |
+| PPLA_01     | Placement of products is verified                            | As per Product Placement Table. See [Dataset specification](Dataset/README.md). |                            | Product Placement subtemplates |
 | PPLA_02     | For a product that has ObjectPlacement as IfcLinearPlacement, the CartesianPosition of IfcLinearPlacement shall be available | depends on cases                                             |                            | Product Linear Placement       |
 
 > **Acceptance criteria**: For the **Product Placement** capability, the validation procedure must verify that a Product of the requested type (and optionally a requested name) has the requested Object Placement, and optionally the Object Placement has PlacementRelTo reference to the Object Placement of Relative Placement Product with requested Relative Placement Product Type and Relative Placement Product Name.
