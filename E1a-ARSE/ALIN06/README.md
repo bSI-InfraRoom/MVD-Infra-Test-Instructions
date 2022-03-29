@@ -29,6 +29,7 @@ The Test instruction addresses the import and export of the following IFC Entiti
 
 <details><summary>IFC Entities</summary>
 These entities represent a test-specific subset of the wider AbRV_Ex exchange and the overall AbRV MVD. **The scope of the test shall not be used as a definitive scope of the exchange, or of the entire MVD.**
+
 - Model setup
   - *IfcProject*
   - *IfcRepresentationContext*
