@@ -32,6 +32,7 @@ The data comes from, and is a simplified version of, the IFC Infra Unit Test [MC
 The Test instruction addresses the import and export of the following IFC Entities & Concept Templates:
 
 <details><summary>IFC Entities</summary>
+
 - Inherited from imported tests:
   - Model setup
     - IfcProject
