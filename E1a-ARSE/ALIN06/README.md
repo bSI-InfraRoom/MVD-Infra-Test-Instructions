@@ -155,7 +155,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 <details><summary>SDEC_01 details: Spatial decomposition is verified</summary>
 
 
-> - Given a set of elements taken from the [Spatial (De)Composition Table](#Spatial-(De)Composition-Table)
+> - Given a set of elements taken from the [Spatial (De)Composition Table](Dataset/README.md#Spatial-(De)Composition-Table)
 > - Then the Parent Element, and optionally the Parent Element Type, exists
 > - And the Parent Element must aggregate at least a number within [MinSize..MaxSize] of the requested Child Element
 
@@ -175,15 +175,6 @@ Considering the aim of this test, other **optional** results, not subject to the
 > - Given a set of elements taken from the [Spatial Containment Table](Dataset/README.md#Spatial-Containment-Table)
 > - Then the Spatial Element, and optionally the Spatial Element Type, exists
 > - And the Spatial Element must contain at least a number within [MinSize..MaxSize] of the requested Element
-
-</details>
-
-<details><summary>Click to expand</summary>
-> **Acceptance criteria**: For the **Spatial containment** capability, the validation procedure must verify that a Spatial Element of the requested type contains (via `IfcRelContainedInSpatialStructure`) exactly a given number of Elements of the requested type, no more and no less.
-
-| Spatial Element | Spatial Element Type | Minimum | Maximum | Element      | Element Type   |
-| --------------- | -------------------- | ------- | ------- | ------------ | -------------- |
-| IfcSite         |                      | 1       | 1       | IfcAlignment | Road alignment |
 
 </details>
 
