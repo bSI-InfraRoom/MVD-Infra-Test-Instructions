@@ -147,7 +147,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 
 
-> - Given a set of elements taken from the [Spatial (De)Composition Table](#Spatial-(De)Composition-Table)
+> - Given a set of elements taken from the [Spatial (De)Composition Table](Dataset/README.md#Dataset/README.md#spatial-decomposition-table)
 > - Then the Parent Element, and optionally the Parent Element Type, exists
 > - And the Parent Element must aggregate at least a number within [MinSize..MaxSize] of the requested Child Element
 
@@ -165,7 +165,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 
 
-> - Given a set of elements taken from the [Spatial Containment Table](#Spatial-Containment-Table)
+> - Given a set of elements taken from the [Spatial Containment Table](Dataset/README.md#Spatial-Containment-Table)
 > - Then the Spatial Element, and optionally the Spatial Element Type, exists
 > - And the Spatial Element must contain at least a number within [MinSize..MaxSize] of the requested Element
 
