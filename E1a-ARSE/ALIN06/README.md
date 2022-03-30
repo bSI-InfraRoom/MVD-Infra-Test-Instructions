@@ -97,8 +97,6 @@ No test cases are imported for this test case. All necessary data and criteria a
 
 For certification of capabilities the only source will be:
 
-:construction: under construction :construction:
-
 - n. 1 IFC file containing the information as requested. The file shall be named using the following syntax: `MVDCode`-`ExchangeCode`-`TestCode`-`SoftwareVendor`.`ifc` (Example: `IFC4.3_AbRV-E2b-ASTPC-AmazingSoft.ifc`)
 
 Considering the aim of this test, other **optional** results, not subject to the bSI certification process, yet usefull to illustrate test results are:
@@ -139,7 +137,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 | ALIG_00.3   | Each IfcAlignment must nest exactly 1 IfcAlignmentVertical   |
 | ALIG_00.6   | Each IfcAlignmentHorizontal must be nested only by 1 IfcAlignment |
 | ALIG_00.7   | Each IfcAlignmentVertical must be nested only by 1 IfcAlignment |
-| ALIG_00.9   | Each IfcAlignment must nest only the following entities: IfcAlignmentHorizontal, IfcAlignmentVertical, IfcAlignmentCant, IfcReferent, IfcAlignment |
+| ALIG_00.9   | Each IfcAlignment must nest only the following entities: IfcAlignmentHorizontal, IfcAlignmentVertical |
 | ALIG_00.10  | Each IfcAlignmentHorizontal nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentHorizontalSegment |
 | ALIG_00.11  | Each IfcAlignmentVertical nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentVerticalSegment |
 
@@ -186,6 +184,41 @@ Considering the aim of this test, other **optional** results, not subject to the
 | Spatial Element | Spatial Element Type | Minimum | Maximum | Element      | Element Type   |
 | --------------- | -------------------- | ------- | ------- | ------------ | -------------- |
 | IfcSite         |                      | 1       | 1       | IfcAlignment | Road alignment |
+
+</details>
+
+### Product geometric representation
+
+| **RULE ID** | **CRITERIA**                                     | **VALUE [examples]**                          | **ENTITY (if applicable)** | **CT (if applicable)**                                |
+| ----------- | ------------------------------------------------ | --------------------------------------------- | -------------------------- | ----------------------------------------------------- |
+| PREP_01     | Geometric representation of products is verified | As per Product Geometric Representation Table |                            | Product Geometric Representation and its subtemplates |
+
+> **Acceptance criteria**: For the **Group Geometric Representation** capability, the validation procedure must verify that a Product of the requested type (and optionally a requested name) has an IfcShapeRepresentation with the requested Representation Identifier, Representation Type and Items.
+
+<details><summary>PREP_01 details:  Geometric representation of products is verified</summary>
+
+
+> - Given a set of products taken from the [Product Geometric Representation Table](#Product-Geometric-Representation-Table)
+> - Then the Product, and optionally the Product Type, exists
+> - And the Product must have an IfcShapeRepresentation (via IfcProductDefinitionShape) with the requested Representation Identifier, Representation Type and Items.
+
+</details>
+
+### Product placement
+
+| **RULE ID** | **CRITERIA**                                                 | **VALUE [examples]**           | **ENTITY (if applicable)** | **CT (if applicable)**         |
+| ----------- | ------------------------------------------------------------ | ------------------------------ | -------------------------- | ------------------------------ |
+| PPLA_01     | Placement of products is verified                            | As per Product Placement Table |                            | Product Placement subtemplates |
+| PPLA_02     | For a product that has ObjectPlacement as IfcLinearPlacement, the CartesianPosition of IfcLinearPlacement shall be available | depends on cases               |                            | Product Linear Placement       |
+
+> **Acceptance criteria**: For the **Product Placement** capability, the validation procedure must verify that a Product of the requested type (and optionally a requested name) has the requested Object Placement, and optionally the Object Placement has PlacementRelTo reference to the Object Placement of Relative Placement Product with requested Relative Placement Product Type and Relative Placement Product Name.
+
+<details><summary>PPLA_01 details:  Placement of products is verified</summary>
+
+
+> - Given a set of products taken from the [Product Geometric Representation Table](#Product-Geometric-Representation-Table)
+> - Then the Product with Product Type and Product Name, exists
+> - And the Product must have Object Placement, and the Object Placement has PlacementRelTo reference to the ObjectPlacement of Relative Placement Product with requested Relative Placement Product Type and Relative Placement Product Name.
 
 </details>
 
