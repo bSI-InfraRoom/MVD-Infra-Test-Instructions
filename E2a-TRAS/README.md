@@ -32,7 +32,7 @@ Some tests are just referenced (hence reused entirely) from other Exchanges.
 | [**IFC4x3_AbRV-E1-AL24**](./AL24)  | (RFI) Mileage for two alignments             |        | AL23                    |
 | [**IFC4x3_AbRV-E2a-SB01**](./SB01) | (RFI) Track sub-structure for single track   |        | AL23                    |
 | [**IFC4x3_AbRV-E2a-SP01**](./SP01) | (RFI) Track super-structure for single track |        | AL23                    |
-| [**IFC4x3_AbRV-E2a-TSTP**](./TSTP) | Track Structures Turnout Panel               |        | AL23                    |
+| [**IFC4x3_AbRV-E2a-TSTP**](./TSTP) | Track Structures Turnout Panel               |        | AL22                    |
 | [**IFC4x3_AbRV-E2a-GR01**](./GR01) | (RFI) Group objects                          |        | SB01, SP01              |
 | [**IFC4x3_AbRV-E2a-CL01**](./CL01) | (RFI) Classify objects                       |        | SB01, SP01              |
 | [**IFC4x3_AbRV-E2a-PP01**](./PP01) | (RFI) Add properties                         |        | GR01                    |
