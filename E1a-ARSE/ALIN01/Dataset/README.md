@@ -87,6 +87,19 @@ Vertical segments nested into AV1 in the following order:
 | IfcAlignmentVerticalSegment | CIRCULARARC      | V16  | 1029,344877      | 52,56256394       | 35,76637241  | 0,023736122    | -0,028845118 | -1000             |
 | IfcAlignmentVerticalSegment | CONSTANTGRADIENT | V17  | 1081,907441      | 188,5015408       | 35,6321942   | -0,028845118   | -0,028845118 | 0                 |
 
+### Spatial (De)Composition table
+
+| **Parent Element** | **Parent Element Type** | **Parent Element Name** | **MinSize** | **MaxSize** | **Child Element** | **Child Element Type** | **Child Element Name** |
+| ------------------ | ----------------------- | ----------------------- | ----------- | ----------- | ----------------- | ---------------------- | ---------------------- |
+| IfcProject         |                         | Alin01                  | 1           | 1           | IfcSite           |                        | Alin01.Site            |
+| IfcSite            |                         | Alin01.Site             | 1           | 1           | IfcRoad           |                        | Allin01.Road           |
+
+### Spatial Containment table
+
+| **Spatial Element** | **Spatial Element Type** | **Spatial Element Name** | **MinSize** | **MaxSize** | **Element**  | **Element Type** | **Element Name** |
+| ------------------- | ------------------------ | ------------------------ | ----------- | ----------- | ------------ | ---------------- | ---------------- |
+| IfcSite             |                          | Alin01.Site              | 1           | 1           | IfcAlignment |                  | A1               |
+
 ## Drawings (Visualisations)
 
 The following Drawings and visualisations describe the test case dataset to be modelled and certified.

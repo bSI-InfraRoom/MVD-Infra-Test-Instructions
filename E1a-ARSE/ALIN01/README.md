@@ -171,16 +171,6 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 </details>
 
-<details><summary>Click to expand</summary>
-> **Acceptance criteria**: For the **Spatial containment** capability, the validation procedure must verify that a Spatial Element of the requested type contains (via `IfcRelContainedInSpatialStructure`) exactly a given number of Elements of the requested type, no more and no less.
-
-
-| Spatial Element | Spatial Element Type | Minimum | Maximum | Element      | Element Type   |
-| --------------- | -------------------- | ------- | ------- | ------------ | -------------- |
-| IfcSite         |                      | 1       | 1       | IfcAlignment | Road alignment |
-
-</details>
-
 ### Project Setup
 
 | **RULE ID** | **CRITERIA**                                    | **VALUE [examples]** | **ENTITY (if applicable)** | **CT (if applicable)**     |
