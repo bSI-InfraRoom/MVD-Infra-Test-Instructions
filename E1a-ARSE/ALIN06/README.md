@@ -155,7 +155,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 <details><summary>SDEC_01 details: Spatial decomposition is verified</summary>
 
 
-> - Given a set of elements taken from the [Spatial (De)Composition Table](Dataset/README.md#Spatial-(De)Composition-Table)
+> - Given a set of elements taken from the [Spatial (De)Composition Table](Dataset/README.md#Dataset/README.md#spatial-decomposition-table)
 > - Then the Parent Element, and optionally the Parent Element Type, exists
 > - And the Parent Element must aggregate at least a number within [MinSize..MaxSize] of the requested Child Element
 
