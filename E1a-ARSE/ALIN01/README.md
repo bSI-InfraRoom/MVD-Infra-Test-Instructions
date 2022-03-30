@@ -74,9 +74,9 @@ This test case utilises the dataset collected in the Dataset folder and summaris
 
 | Filename                                                     | Description                                   |
 | ------------------------------------------------------------ | --------------------------------------------- |
-| [HorizontalAlignmentParameters](./HorizontalAlignmentParameters.csv) | Parameters for the horizontal segments as csv |
-| [VerticalAlignmentParameters](./VerticalAlignmentParameters.csv) | Parameters for the vertical segments as csv   |
-| [LandXML](./Testi_101_ml.xml)                                | LandXML-file representing the alignment       |
+| [HorizontalAlignmentParameters](Dataset/HorizontalAlignmentParameters.csv) | Parameters for the horizontal segments as csv |
+| [VerticalAlignmentParameters](Dataset/VerticalAlignmentParameters.csv) | Parameters for the vertical segments as csv   |
+| [LandXML](Dataset/Testi_101_ml.xml)                          | LandXML-file representing the alignment       |
 
 ## Test Case Imports
 
