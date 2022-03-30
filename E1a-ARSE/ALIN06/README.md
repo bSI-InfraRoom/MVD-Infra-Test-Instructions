@@ -172,7 +172,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 <details><summary>SCON_01 details: Spatial containment is verified</summary>
 
 
-> - Given a set of elements taken from the [Spatial Containment Table](#Spatial-Containment-Table)
+> - Given a set of elements taken from the [Spatial Containment Table](Dataset/README.md#Spatial-Containment-Table)
 > - Then the Spatial Element, and optionally the Spatial Element Type, exists
 > - And the Spatial Element must contain at least a number within [MinSize..MaxSize] of the requested Element
 
@@ -198,7 +198,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 <details><summary>PREP_01 details:  Geometric representation of products is verified</summary>
 
 
-> - Given a set of products taken from the [Product Geometric Representation Table](#Product-Geometric-Representation-Table)
+> - Given a set of products taken from the [Product Geometric Representation Table](Dataset/README.md#Product-Geometric-Representation-Table)
 > - Then the Product, and optionally the Product Type, exists
 > - And the Product must have an IfcShapeRepresentation (via IfcProductDefinitionShape) with the requested Representation Identifier, Representation Type and Items.
 
