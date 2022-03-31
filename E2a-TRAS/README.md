@@ -2,21 +2,17 @@
 
 | Exchange Code       | Abbreviation | Exchange Name                       | Test Cases |
 |---------------------|--------------|-------------------------------------|------------|
-| **IFC4x3_AbRV-E2a** | TRAS         | Track Aggregate Structures Exchange | 12         |
+| **IFC4x3_AbRV-E2a** | TRAS         | Track Aggregate Structures Exchange | 13         |
 
 Exchange Lead: IFCRail
 
 ## Summary
 
-TBC
-
-...The Track Structures Exchange is an extension *superset* of the Aggregate Structures Exchange ([IFC4x3_AbRV-E2](../E2-AGST))...
+This Exchanges collects all Test Instructions related to the Railway Track Domain, covering the major capabilities requested to fulfil most of the domain's use cases. 
 
 ### Scope
 
 The Track Structures Exchange is an extension *superset* of the Aggregate Structures Exchange ([IFC4x3_AbRV-E2](../E2-AGST)). Therefore the scope of this exchange includes the scope and tests outlined by the Aggregate Structures Exchange.
-
-TBC
 
 ## Test Instructions
 The list below represent the scope of the Integration Test that shall be passed to fulfil the Track Aggregate Structures Exchange.
