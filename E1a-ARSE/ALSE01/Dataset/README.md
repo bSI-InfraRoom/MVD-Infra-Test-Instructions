@@ -50,63 +50,63 @@ The entities listed below are in addition to the entities listed for ALIN06.
 | **Entity**    | **Entity Type**     | Entity Name | **PropertySet Name** | **Property Name**        | **Property Value Type** | **Enumerated Values** | **Value type**             | **Property Value** |
 | ------------- | ------------------- | ----------- | -------------------- | ------------------------ | ----------------------- | --------------------- | -------------------------- | ------------------ |
 | IfcAnnotation | SUPERELEVATIONEVENT | SE0         | Pset_Superelevation  | Superelevation           | IfcRatioMeasure         |                       | IfcPropertySingleValue     | 0,00               |
-| IfcAnnotation | SUPERELEVATIONEVENT | SE0         | Pset_Superelevation  | Side                     | IfcLabel                |                       | IfcPropertyEnumeratedValue | BOTH               |
+|               |                     |             |                      | Side                     | IfcLabel                |                       | IfcPropertyEnumeratedValue | BOTH               |
 | IfcAnnotation | SUPERELEVATIONEVENT | SE1         | Pset_Superelevation  | Superelevation           | IfcRatioMeasure         |                       | IfcPropertySingleValue     | 0,00               |
-| IfcAnnotation | SUPERELEVATIONEVENT | SE1         | Pset_Superelevation  | Side                     | IfcLabel                |                       | IfcPropertyEnumeratedValue | BOTH               |
+|               |                     |             |                      | Side                     | IfcLabel                |                       | IfcPropertyEnumeratedValue | BOTH               |
 | IfcAnnotation | SUPERELEVATIONEVENT | SE2         | Pset_Superelevation  | Superelevation           | IfcRatioMeasure         |                       | IfcPropertySingleValue     | 0,03               |
-| IfcAnnotation | SUPERELEVATIONEVENT | SE2         | Pset_Superelevation  | Side                     | IfcLabel                |                       | IfcPropertyEnumeratedValue | LEFT               |
-| IfcAnnotation | SUPERELEVATIONEVENT | SE2         | Pset_Superelevation  | TransitionSuperelevation | IfcLabel                |                       | IfcPropertyEnumeratedValue | LINEAR             |
+|               |                     |             |                      | Side                     | IfcLabel                |                       | IfcPropertyEnumeratedValue | LEFT               |
+|               |                     |             |                      | TransitionSuperelevation | IfcLabel                |                       | IfcPropertyEnumeratedValue | LINEAR             |
 | IfcAnnotation | SUPERELEVATIONEVENT | SE3         | Pset_Superelevation  | Superelevation           | IfcRatioMeasure         |                       | IfcPropertySingleValue     | -0,03              |
-| IfcAnnotation | SUPERELEVATIONEVENT | SE3         | Pset_Superelevation  | Side                     | IfcLabel                |                       | IfcPropertyEnumeratedValue | RIGHT              |
-| IfcAnnotation | SUPERELEVATIONEVENT | SE3         | Pset_Superelevation  | TransitionSuperelevation | IfcLabel                |                       | IfcPropertyEnumeratedValue | LINEAR             |
+|               |                     |             |                      | Side                     | IfcLabel                |                       | IfcPropertyEnumeratedValue | RIGHT              |
+|               |                     |             |                      | TransitionSuperelevation | IfcLabel                |                       | IfcPropertyEnumeratedValue | LINEAR             |
 | IfcAnnotation | SUPERELEVATIONEVENT | SE4         | Pset_Superelevation  | Superelevation           | IfcRatioMeasure         |                       | IfcPropertySingleValue     | 0,03               |
-| IfcAnnotation | SUPERELEVATIONEVENT | SE4         | Pset_Superelevation  | Side                     | IfcLabel                |                       | IfcPropertyEnumeratedValue | LEFT               |
+|               |                     |             |                      | Side                     | IfcLabel                |                       | IfcPropertyEnumeratedValue | LEFT               |
 | IfcAnnotation | SUPERELEVATIONEVENT | SE5         | Pset_Superelevation  | Superelevation           | IfcRatioMeasure         |                       | IfcPropertySingleValue     | -0,03              |
-| IfcAnnotation | SUPERELEVATIONEVENT | SE5         | Pset_Superelevation  | Side                     | IfcLabel                |                       | IfcPropertyEnumeratedValue | RIGHT              |
+|               |                     |             |                      | Side                     | IfcLabel                |                       | IfcPropertyEnumeratedValue | RIGHT              |
 | IfcAnnotation | SUPERELEVATIONEVENT | SE6         | Pset_Superelevation  | Superelevation           | IfcRatioMeasure         |                       | IfcPropertySingleValue     | -0,03              |
-| IfcAnnotation | SUPERELEVATIONEVENT | SE6         | Pset_Superelevation  | Side                     | IfcLabel                |                       | IfcPropertyEnumeratedValue | LEFT               |
-| IfcAnnotation | SUPERELEVATIONEVENT | SE6         | Pset_Superelevation  | TransitionSuperelevation | IfcLabel                |                       | IfcPropertyEnumeratedValue | LINEAR             |
+|               |                     |             |                      | Side                     | IfcLabel                |                       | IfcPropertyEnumeratedValue | LEFT               |
+|               |                     |             |                      | TransitionSuperelevation | IfcLabel                |                       | IfcPropertyEnumeratedValue | LINEAR             |
 | IfcAnnotation | SUPERELEVATIONEVENT | SE7         | Pset_Superelevation  | Superelevation           | IfcRatioMeasure         |                       | IfcPropertySingleValue     | 0,03               |
-| IfcAnnotation | SUPERELEVATIONEVENT | SE7         | Pset_Superelevation  | Side                     | IfcLabel                |                       | IfcPropertyEnumeratedValue | RIGHT              |
-| IfcAnnotation | SUPERELEVATIONEVENT | SE7         | Pset_Superelevation  | TransitionSuperelevation | IfcLabel                |                       | IfcPropertyEnumeratedValue | LINEAR             |
+|               |                     |             |                      | Side                     | IfcLabel                |                       | IfcPropertyEnumeratedValue | RIGHT              |
+|               |                     |             |                      | TransitionSuperelevation | IfcLabel                |                       | IfcPropertyEnumeratedValue | LINEAR             |
 | IfcAnnotation | SUPERELEVATIONEVENT | SE8         | Pset_Superelevation  | Superelevation           | IfcRatioMeasure         |                       | IfcPropertySingleValue     | -0,03              |
-| IfcAnnotation | SUPERELEVATIONEVENT | SE8         | Pset_Superelevation  | Side                     | IfcLabel                |                       | IfcPropertyEnumeratedValue | LEFT               |
+|               |                     |             |                      | Side                     | IfcLabel                |                       | IfcPropertyEnumeratedValue | LEFT               |
 | IfcAnnotation | SUPERELEVATIONEVENT | SE9         | Pset_Superelevation  | Superelevation           | IfcRatioMeasure         |                       | IfcPropertySingleValue     | 0,03               |
-| IfcAnnotation | SUPERELEVATIONEVENT | SE9         | Pset_Superelevation  | Side                     | IfcLabel                |                       | IfcPropertyEnumeratedValue | RIGHT              |
+|               |                     |             |                      | Side                     | IfcLabel                |                       | IfcPropertyEnumeratedValue | RIGHT              |
 | IfcAnnotation | SUPERELEVATIONEVENT | SE10        | Pset_Superelevation  | Superelevation           | IfcRatioMeasure         |                       | IfcPropertySingleValue     | -0,03              |
-| IfcAnnotation | SUPERELEVATIONEVENT | SE10        | Pset_Superelevation  | Side                     | IfcLabel                |                       | IfcPropertyEnumeratedValue | LEFT               |
+|               |                     |             |                      | Side                     | IfcLabel                |                       | IfcPropertyEnumeratedValue | LEFT               |
 | IfcAnnotation | SUPERELEVATIONEVENT | SE11        | Pset_Superelevation  | Superelevation           | IfcRatioMeasure         |                       | IfcPropertySingleValue     | -0,03              |
-| IfcAnnotation | SUPERELEVATIONEVENT | SE11        | Pset_Superelevation  | Side                     | IfcLabel                |                       | IfcPropertyEnumeratedValue | RIGHT              |
-| IfcAnnotation | SUPERELEVATIONEVENT | SE11        | Pset_Superelevation  | TransitionSuperelevation | IfcLabel                |                       | IfcPropertyEnumeratedValue | LINEAR             |
+|               |                     |             |                      | Side                     | IfcLabel                |                       | IfcPropertyEnumeratedValue | RIGHT              |
+|               |                     |             |                      | TransitionSuperelevation | IfcLabel                |                       | IfcPropertyEnumeratedValue | LINEAR             |
 
 ### Spatial Containment table
 
-| **Spatial Element** | **Spatial Element Type** | **MinSize** | **MaxSize** | **Element**   | **Element Type** |
-| ------------------- | ------------------------ | ----------- | ----------- | ------------- | ---------------- |
-| IfcRoad             |                          | 12          | 12          | IfcAnnotation | SUPERELEVATION   |
+| **Spatial Element** | **Spatial Element Type** | **MinSize** | **MaxSize** | **Element**   | **Element Type**    |
+| ------------------- | ------------------------ | ----------- | ----------- | ------------- | ------------------- |
+| IfcRoad             |                          | 12          | 12          | IfcAnnotation | SUPERELEVATIONEVENT |
 
 ### Product Relative Positioning table
 
-| **Product**   | **Product Type** | **Size** | **Positioning Element** | **Positioning Element Type** |
-| ------------- | ---------------- | -------- | ----------------------- | ---------------------------- |
-| IfcAnnotation | SUPERELEVATION   | 12       | IfcAlignment            |                              |
+| **Product**   | **Product Type**    | **Size** | **Positioning Element** | **Positioning Element Type** |
+| ------------- | ------------------- | -------- | ----------------------- | ---------------------------- |
+| IfcAnnotation | SUPERELEVATIONEVENT | 12       | IfcAlignment            |                              |
 
 ### Product Placement table
 
-| **Product**   | **Product Type** | **Product Name** | **Object Placement**              | Relative Placement Product | Relative Placement Product Type | Relative Placement Product Name |
-| ------------- | ---------------- | ---------------- | --------------------------------- | -------------------------- | ------------------------------- | ------------------------------- |
-| IfcAnnotation | SUPERELEVATION   | SE0              | IfcLinearPlacement<br />at 298,82 | IfcAlignment               | na                              | A1 (from ALIN06)                |
-| IfcAnnotation | SUPERELEVATION   | SE1              | IfcLinearPlacement<br />at 301,82 | IfcAlignment               | na                              | A1 (from ALIN06)                |
-| IfcAnnotation | SUPERELEVATION   | SE2              | IfcLinearPlacement<br />at 331,82 | IfcAlignment               | na                              | A1 (from ALIN06)                |
-| IfcAnnotation | SUPERELEVATION   | SE3              | IfcLinearPlacement<br />at 331,82 | IfcAlignment               | na                              | A1 (from ALIN06)                |
-| IfcAnnotation | SUPERELEVATION   | SE4              | IfcLinearPlacement<br />at 443,00 | IfcAlignment               | na                              | A1 (from ALIN06)                |
-| IfcAnnotation | SUPERELEVATION   | SE5              | IfcLinearPlacement<br />at 443,00 | IfcAlignment               | na                              | A1 (from ALIN06)                |
-| IfcAnnotation | SUPERELEVATION   | SE6              | IfcLinearPlacement<br />at 503,00 | IfcAlignment               | na                              | A1 (from ALIN06)                |
-| IfcAnnotation | SUPERELEVATION   | SE7              | IfcLinearPlacement<br />at 503,00 | IfcAlignment               | na                              | A1 (from ALIN06)                |
-| IfcAnnotation | SUPERELEVATION   | SE8              | IfcLinearPlacement<br />at 513,00 | IfcAlignment               | na                              | A1 (from ALIN06)                |
-| IfcAnnotation | SUPERELEVATION   | SE9              | IfcLinearPlacement<br />at 513,00 | IfcAlignment               | na                              | A1 (from ALIN06)                |
-| IfcAnnotation | SUPERELEVATION   | SE10             | IfcLinearPlacement<br />at 573,00 | IfcAlignment               | na                              | A1 (from ALIN06)                |
-| IfcAnnotation | SUPERELEVATION   | SE11             | IfcLinearPlacement<br />at 573,00 | IfcAlignment               | na                              | A1 (from ALIN06)                |
+| **Product**   | **Product Type**    | **Product Name** | **Object Placement**              | Relative Placement Product | Relative Placement Product Type | Relative Placement Product Name |
+| ------------- | ------------------- | ---------------- | --------------------------------- | -------------------------- | ------------------------------- | ------------------------------- |
+| IfcAnnotation | SUPERELEVATIONEVENT | SE0              | IfcLinearPlacement<br />at 298,82 | IfcAlignment               | na                              | A1 (from ALIN06)                |
+| IfcAnnotation | SUPERELEVATIONEVENT | SE1              | IfcLinearPlacement<br />at 301,82 | IfcAlignment               | na                              | A1 (from ALIN06)                |
+| IfcAnnotation | SUPERELEVATIONEVENT | SE2              | IfcLinearPlacement<br />at 331,82 | IfcAlignment               | na                              | A1 (from ALIN06)                |
+| IfcAnnotation | SUPERELEVATIONEVENT | SE3              | IfcLinearPlacement<br />at 331,82 | IfcAlignment               | na                              | A1 (from ALIN06)                |
+| IfcAnnotation | SUPERELEVATIONEVENT | SE4              | IfcLinearPlacement<br />at 443,00 | IfcAlignment               | na                              | A1 (from ALIN06)                |
+| IfcAnnotation | SUPERELEVATIONEVENT | SE5              | IfcLinearPlacement<br />at 443,00 | IfcAlignment               | na                              | A1 (from ALIN06)                |
+| IfcAnnotation | SUPERELEVATIONEVENT | SE6              | IfcLinearPlacement<br />at 503,00 | IfcAlignment               | na                              | A1 (from ALIN06)                |
+| IfcAnnotation | SUPERELEVATIONEVENT | SE7              | IfcLinearPlacement<br />at 503,00 | IfcAlignment               | na                              | A1 (from ALIN06)                |
+| IfcAnnotation | SUPERELEVATIONEVENT | SE8              | IfcLinearPlacement<br />at 513,00 | IfcAlignment               | na                              | A1 (from ALIN06)                |
+| IfcAnnotation | SUPERELEVATIONEVENT | SE9              | IfcLinearPlacement<br />at 513,00 | IfcAlignment               | na                              | A1 (from ALIN06)                |
+| IfcAnnotation | SUPERELEVATIONEVENT | SE10             | IfcLinearPlacement<br />at 573,00 | IfcAlignment               | na                              | A1 (from ALIN06)                |
+| IfcAnnotation | SUPERELEVATIONEVENT | SE11             | IfcLinearPlacement<br />at 573,00 | IfcAlignment               | na                              | A1 (from ALIN06)                |
 
 ## Drawings (Visualisations)
 
