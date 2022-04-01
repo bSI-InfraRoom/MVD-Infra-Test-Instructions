@@ -18,105 +18,72 @@ With these instructions the infrastructure (e.g. Road) alignment exchange is est
 | Geometric representation     | No                                    |
 | IFC reference file available | Yes                                   |
 
-The [Expected Results](#Expected-Results) section lists the material that will be used to assess the fulfilment of capabilities.
+- Refer to [Test Case Imports](#Test-Case-Imports) to know the prerequisites for the present test.
 
-:zap: **This is a test-driven process: refer to the [Validation Criteria](#Validation-Criteria) to understand what is required by the test** :zap:
+- The [Expected Results](#Expected-Results) section lists the material that will be used to assess the fulfilment of capabilities.
+
+- :zap: This is a test-driven process: refer to the [Validation Criteria](#Validation-Criteria) to understand what is required by the test :zap:
 
 ## Itemised Roots
-*This section lists the primary entities and concept templates being validated by this test instruction, these are listed to understand the scope of the data entities being addressed. this is the documentation of the data placed within BIMQ*
-
 The Test instruction addresses the import and export of the following IFC Entities & Concept Templates:
 
-:construction: under construction :construction:
-
 <details><summary>IFC Entities</summary>
-
 These entities represent a test-specific subset of the wider AbRV_Ex exchange and the overall AbRV MVD. **The scope of the test shall not be used as a definitive scope of the exchange, or of the entire MVD.**
 
-- Inherited from imported tests
-  - Model setup
-    - *IfcProject*
-    - *IfcRepresentationContext*
-    - *IfcMapConversion*
-    - *IfcProjectedCRS*
-    - *IfcUnitAssignment*
-  - Spatial structure
-    - *IfcSite*
-    - *IfcRoad*
-- For this test instruction
-  - Alignment
-    - *IfcAlignment*
-    - *IfcAlignmentHorizontal*
-    - *IfcAlignmentVertical*
-    - *IfcAlignmentSegment*
-    - *IfcAlignmentHorizontalSegment*
-    - *IfcAlignmentVerticalSegment*
 
+
+- Model setup
+  - *IfcProject*
+  - *IfcRepresentationContext*
+  - *IfcMapConversion*
+  - *IfcProjectedCRS*
+  - *IfcUnitAssignment*
+- Spatial structure
+  - *IfcSite*
+  - *IfcRoad*
+- Alignment
+
+  - *IfcAlignment*
+  - *IfcAlignmentHorizontal*
+  - *IfcAlignmentVertical*
+  - *IfcAlignmentSegment*
+  - *IfcAlignmentHorizontalSegment*
+  - *IfcAlignmentVerticalSegment*
 
 </details>
 
 <details><summary>Concept Templates</summary>
 
+
 These concept templates represent a test-specific subset of the wider AbRV_Ex exchange and the overall AbRV MVD, that must be correctly exported to meet the validation criteria. **The scope of the test shall not be used as a definitive scope of the exchange, or of the entire MVD.**
 
-- Inherited from imported tests:
+- Project Context
   - *Project Units*
   - *Project Representation Context*
   - *Project Global Positioning*
-  - *Spatial Decomposition*
-  - *Spatial Composition*
-  - *Spatial Container*
-  - *Project Global Positioning*
-- For this test instruction
+- Object Composition
   - *Alignment Decomposition*
+  - *Spatial Decomposition*
+- Object Connectivity 
   - *Spatial Containment*
 
 </details>
 
+## Model Dataset
+
+This test case utilises the dataset collected in the Dataset folder and summarised in the table below. **For more details on each item see [Dataset description](Dataset/README.md).**
+
+| Filename                                                     | Description                                   |
+| ------------------------------------------------------------ | --------------------------------------------- |
+| [HorizontalAlignmentParameters](Dataset/HorizontalAlignmentParameters.csv) | Parameters for the horizontal segments as csv |
+| [VerticalAlignmentParameters](Dataset/VerticalAlignmentParameters.csv) | Parameters for the vertical segments as csv   |
+| [LandXML](Dataset/T616AAC0.ifc)                              | LandXML-file representing the alignment       |
+
 ## Test Case Imports
+
 Test instructions are defined with a modular approach to reduce repetition of validation criteria and test content, and improve vendors ability to solve issues and bugs. therefore this test instruction *imports/reuses* the following Test instructions and entities with the relevant associated validation criteria.
 
-:construction: under construction :construction:
-
-<details><summary>Imports & Reuses</summary>
-
-| TI Code                                  | Test Instruction Title  | Comments                                                     |
-| ---------------------------------------- | ----------------------- | ------------------------------------------------------------ |
-| [IFC4.3AbRV_E0_SSRD](../../E0-SSRD/SSRD) | Spatial Structures Road | Spatial structure for road incuding the dependencies (E0_SSSI, E0_MSTP) |
-
-</details>
-
-## Usages, Constraints & Logic
-The following itemised restrictions and constraints shall be placed on IFC Entities & Concept Templates:
-
-:construction: under construction :construction:
-
-<details><summary>Semantic Usages, Constraints & Logic</summary>
-The following itemised Usages, Constraints & Logic are normative entries within the AbRV MVD and MUST be satisfied to meet the defined validation criteria
-
-| **ID**  | **CRITERIA**                                  | **VALUE**                           | **COMMENT** |
-| ------- | --------------------------------------------- | ----------------------------------- | ----------- |
-| ALIG_00 | Alignment layout structure is verified        | See below for further specification |             |
-| SITE_00 | Alignment shall always be contained in a Site | na                                  |             |
-
-ALIG_00: Alignment layout structure is verified
-
-> 1. Each `IfcAlignment` must nest exactly 1 `IfcAlignmentHorizontal`
-> 2. Each `IfcAlignment` must nest at most 1 `IfcAlignmentVertical`
-> 3. Each `IfcAlignmentHorizontal` must be nested only by 1 `IfcAlignment`
-> 4. Each `IfcAlignmentVertical` must be nested only by 1 `IfcAlignment`
-> 5. Each `IfcAlignment` must nest only `IfcAlignmentHorizontal`, or `IfcAlignmentVertical`
-> 6. Each `IfcAlignmentHorizontal` must nest only `IfcAlignmentHorizontalSegment`
-> 7. Each `IfcAlignmentVertical` must nest only `IfcAlignmentVerticalSegment`
-> 8. Each `IfcAlignmentHorizontalSegment` must be nested only by 1 `IfcAlignmentHorizontal`
-> 9. Each `IfcAlignmentVerticalSegment` must be nested only by 1 `IfcAlignmentVertical`
-
-- </details>
-
-<details><summary>Model Geometry</summary>
-The Test case requires no additional checks related to Model Geometry
-
-</details>
+No test cases are imported for this test case. All necessary data and criteria are included.
 
 ## Expected Results
 
@@ -133,60 +100,97 @@ Considering the aim of this test, other **optional** results, not subject to the
 ---
 
 ## Validation criteria
-:zap: For this test case to be considered passed **all capabilities** listed in this section shall be verified, with no exception. :zap:
+## Validation criteria
 
-:construction: under construction :construction:
+:zap: For this test case to be considered passed **all capabilities listed in this section**, and **the ones of pre-required tests** shall be verified, with no exception. :zap:
 
-### General & Imports
+### General
 
-<details><summary>Click to expand</summary>
-
-- All the concept templates must be correctly implemented as presented in the validation criteria
-- At least 1 instance of each entity listed in [Itemised Roots](#Itemised-Roots) is present in the file.
-
-
-#### Imports
-| **TI Code**        | **Criteria Codes** | *COMMENT**                                         |
-|--------------------|--------------------|----------------------------------------------------|
-| IFC4.3AbRV_E0_MSTP | ALL CRITERIA       | As outlined in the dataset [Imported Entities Table](Dataset/README.md#Imported-Entities-Table) |
-
-
-#### General
-| **ID**  | **CRITERIA**                                        | **VALUE**                                     | **COMMENT** |
-|---------|-----------------------------------------------------|-----------------------------------------------|-------------|
-| GENE_01 | All requested entities are present in the IFC model | per [Entities Table](Dataset/README.md#Entities-Table) |    |
-
-</details>
+| **RULE ID** | **CRITERIA**                                                 | **VALUE [examples]**                                         | **ENTITY (if applicable)** | **CT (if applicable)** |
+| ----------- | ------------------------------------------------------------ | ------------------------------------------------------------ | -------------------------- | ---------------------- |
+| GENE_00     | All validation criteria of precondition's tests shall be verified |                                                              | na                         | na                     |
+| GENE_01     | All requested entities (and attributes) exist in file        | As per Entities Table. See [Dataset description](Dataset/README.md) | na                         | na                     |
 
 ### Road alignment
 
-<details><summary>Click to expand</summary>
+**Acceptance criteria**: For the **Railway alignment (without cant)** capability, the validation procedure must verify that **all** the following validation criteria are satisfied.
 
-| **ID**  | **CRITERIA**                                                 | **VALUE**                                      | **COMMENT** |
-| ------- | ------------------------------------------------------------ | ---------------------------------------------- | ----------- |
-| ALIG_01 | Alignments contained in file                                 | 1                                              |             |
-| ALIG_02 | Components for Alignment                                     | 1 horizontal, 1 vertical                       |             |
-| ALIG_03 | The horizontal (H) layout matches exactly the layout specified in the [Dataset description](./Dataset/README.md) | See [Dataset description](./Dataset/README.md) |             |
-| ALIG_04 | The vertical (V) layout matches exactly the layout specified in the [Dataset description](./Dataset/README.md) | See [Dataset description](./Dataset/README.md) |             |
+| **RULE ID** | **CRITERIA**                                             | **VALUE [examples]**   | **ENTITY (if applicable)** | **CT (if applicable)** |
+| ----------- | -------------------------------------------------------- | ---------------------- | -------------------------- | ---------------------- |
+| SITE_00     | All IfcAlignment shall always be contained in an IfcSite |                        |                            | Spatial Containment    |
+| ALIG_00     | Alignment layout structure is verified                   | See steps              |                            | Alignment Layout       |
+| ALIG_01     | Number of alignments contained in file                   | [1]                    |                            |                        |
+| ALIG_02     | Parameters of alignment segments are verified            | As per Alignment Table |                            |                        |
+
+<details><summary>ALIG_00 steps</summary>
+
+
+
+
+| **STEP ID** | **STEP**                                                     |
+| ----------- | ------------------------------------------------------------ |
+| ALIG_00.1   | Each IfcAlignment must nest exactly 1 IfcAlignmentHorizontal |
+| ALIG_00.2   | Each IfcAlignment must nest at most 1 IfcAlignmentVertical   |
+| ALIG_00.3   | Each IfcAlignment must nest exactly 1 IfcAlignmentVertical   |
+| ALIG_00.6   | Each IfcAlignmentHorizontal must be nested only by 1 IfcAlignment |
+| ALIG_00.7   | Each IfcAlignmentVertical must be nested only by 1 IfcAlignment |
+| ALIG_00.9   | Each IfcAlignment must nest only the following entities: IfcAlignmentHorizontal, IfcAlignmentVertical |
+| ALIG_00.10  | Each IfcAlignmentHorizontal nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentHorizontalSegment |
+| ALIG_00.11  | Each IfcAlignmentVertical nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentVerticalSegment |
 
 </details>
-### Spatial containment
 
-<details><summary>Click to expand</summary>
+### Spatial (De)Composition
+
+
+| **RULE ID** | **CRITERIA**                      | **VALUE [examples]**                                         | **ENTITY (if applicable)** | **CT (if applicable)** |
+| ----------- | --------------------------------- | ------------------------------------------------------------ | -------------------------- | ---------------------- |
+| SDEC_01     | Spatial decomposition is verified | As per Spatial (De)Composition Table. See [Dataset description](Dataset/README.md) | na                         | Spatial Decomposition  |
+
+> **Acceptance criteria**: For the **Spatial decomposition** capability, the validation procedure must verify that a Parent Element of the requested type aggregates (via `IfcRelAggregates`) exactly a given number of Child Elements of the requested type, no more and no less.
+
+<details><summary>SDEC_01 details: Spatial decomposition is verified</summary>
+
+
+
+
+> - Given a set of elements taken from the [Spatial (De)Composition Table](Dataset/README.md#Dataset/README.md#spatial-decomposition-table)
+> - Then the Parent Element, and optionally the Parent Element Type, exists
+> - And the Parent Element must aggregate at least a number within [MinSize..MaxSize] of the requested Child Element
+
+</details>
+
+### Spatial Containment
+
+| **RULE ID** | **CRITERIA**                    | **VALUE [examples]**             | **ENTITY (if applicable)** | **CT (if applicable)** |
+| ----------- | ------------------------------- | -------------------------------- | -------------------------- | ---------------------- |
+| SCON_01     | Spatial containment is verified | As per Spatial Containment Table | na                         | Spatial Containment    |
+
 > **Acceptance criteria**: For the **Spatial containment** capability, the validation procedure must verify that a Spatial Element of the requested type contains (via `IfcRelContainedInSpatialStructure`) exactly a given number of Elements of the requested type, no more and no less.
 
-| Spatial Element | Spatial Element Type | Minimum | Maximum | Element      | Element Type   |
-| --------------- | -------------------- | ------- | ------- | ------------ | -------------- |
-| IfcSite         |                      | 1       | 1       | IfcAlignment | Road alignment |
+<details><summary>SCON_01 details: Spatial containment is verified</summary>
+
+
+
+
+> - Given a set of elements taken from the [Spatial Containment Table](Dataset/README.md#Spatial-Containment-Table)
+> - Then the Spatial Element, and optionally the Spatial Element Type, exists
+> - And the Spatial Element must contain at least a number within [MinSize..MaxSize] of the requested Element
 
 </details>
 
+### Project Setup
+
+| **RULE ID** | **CRITERIA**                                    | **VALUE [examples]** | **ENTITY (if applicable)** | **CT (if applicable)**     |
+| ----------- | ----------------------------------------------- | -------------------- | -------------------------- | -------------------------- |
+| ORIG_01     | Origin of Coordinate System is set as requested | [(0., 0., 0.)]       |                            | Project Global Positioning |
+| ORIG_02     | True north is set as requested                  | [(0., 1., 0.)]       |                            | Project Global Positioning |
+| DIST_01     | Unit of measure for all distances               | [meter]              |                            | Project Units              |
+| ANGL_01     | Unit of measure all angles                      | [radian]             |                            | Project Units              |
+| DIST_02     | Required precision for distances                | [0,0001]             | all alignment segments     | na                         |
+| ANGL_02     | Required precision for angles and slope         | [0,000001]           |                            | na                         |
+
 ### Project global positioning
-
-<details><summary>Click to expand</summary>
-> **Acceptance criteria**: For the **Project global positioning** capability, the validation procedure must verify that there is an IfcMapConversion with the given parameters associated with the IfcGeometricRepresentationContext (via `HasCoordinateOperation`). Furthermore, the IfcMapConversion shall have an association with an IfcProjectedCRS (via `HasCoordinateOperation`) with the given parameters.
-
-
 
 | Element          | Attribute        | Value     | Comment |
 | ---------------- | ---------------- | --------- | ------- |
@@ -200,4 +204,3 @@ Considering the aim of this test, other **optional** results, not subject to the
 | IfcProjectedCRS  | GeodeticDatum    | EPSG:6619 |         |
 | IfcProjectedCRS  | VerticalDatum    | EPSG:5615 |         |
 
-</details>

@@ -18,9 +18,11 @@ With these instructions the infrastructure (e.g. Road) alignment exchange is est
 | Geometric representation     | IfcPolyline                 |
 | IFC reference file available | Yes                         |
 
-The [Expected Results](#Expected-Results) section lists the material that will be used to assess the fulfilment of capabilities.
+- Refer to [Test Case Imports](#Test-Case-Imports) to know the prerequisites for the present test.
 
-:zap: **This is a test-driven process: refer to the [Validation Criteria](#Validation-Criteria) to understand what is required by the test** :zap:
+- The [Expected Results](#Expected-Results) section lists the material that will be used to assess the fulfilment of capabilities.
+
+- :zap: This is a test-driven process: refer to the [Validation Criteria](#Validation-Criteria) to understand what is required by the test :zap:
 
 ## Itemised Roots
 *This section lists the primary entities and concept templates being validated by this test instruction, these are listed to understand the scope of the data entities being addressed. this is the documentation of the data placed within BIMQ*
@@ -32,29 +34,27 @@ The Test instruction addresses the import and export of the following IFC Entiti
 <details><summary>IFC Entities</summary>
 These entities represent a test-specific subset of the wider AbRV_Ex exchange and the overall AbRV MVD. **The scope of the test shall not be used as a definitive scope of the exchange, or of the entire MVD.**
 
-- Inherited from imported tests
 
-  - Model setup
-    - *IfcProject*
-    - *IfcRepresentationContext*
-    - *IfcMapConversion*
-    - *IfcProjectedCRS*
-    - *IfcUnitAssignment*
-  - Spatial structure
-    - *IfcSite*
-    - *IfcRoad*
-- For this test instruction
+- Model setup
+  - *IfcProject*
+  - *IfcRepresentationContext*
+  - *IfcMapConversion*
+  - *IfcProjectedCRS*
+  - *IfcUnitAssignment*
+- Spatial structure
+  - *IfcSite*
+  - *IfcRoad*
 
-  - Alignment
+- Alignment
 
-    - *IfcAlignment*
-    - *IfcAlignmentHorizontal*
-    - *IfcAlignmentVertical*
-    - *IfcAlignmentSegment*
-    - *IfcAlignmentHorizontalSegment*
-    - *IfcAlignmentVerticalSegment*
+  - *IfcAlignment*
+  - *IfcAlignmentHorizontal*
+  - *IfcAlignmentVertical*
+  - *IfcAlignmentSegment*
+  - *IfcAlignmentHorizontalSegment*
+  - *IfcAlignmentVerticalSegment*
 
-    - *IfcPolyline*
+  - *IfcPolyline*
 
 
 </details>
@@ -63,80 +63,37 @@ These entities represent a test-specific subset of the wider AbRV_Ex exchange an
 
 These concept templates represent a test-specific subset of the wider AbRV_Ex exchange and the overall AbRV MVD, that must be correctly exported to meet the validation criteria. **The scope of the test shall not be used as a definitive scope of the exchange, or of the entire MVD.**
 
-- Inherited from imported tests:
+- Project Context
   - *Project Units*
   - *Project Representation Context*
   - *Project Global Positioning*
+- Object Composition
   - *Spatial Decomposition*
-  - *Spatial Composition*
-  - *Spatial Container*
-  - *Project Global Positioning*
-- For this test instruction
   - *Alignment Decomposition*
-  - *Alignment Geometry*
+- Object Connectivity
+  - *Spatial Containment*
+
+- Product Shape
+  - Product Geometric Representation
+    - *Alignment Geometry*
 
 </details>
+
+## Model Dataset
+
+This test case utilises the dataset collected in the Dataset folder and summarised in the table below. **For more details on each item see [Dataset description](Dataset/README.md).**
+
+| Filename                                                     | Type (format)                                 | Description |
+| ------------------------------------------------------------ | --------------------------------------------- | ----------- |
+| [HorizontalAlignmentParameters](Dataset/HorizontalAlignmentParameters.csv) | Parameters for the horizontal segments as csv |             |
+| [VerticalAlignmentParameters](Dataset/VerticalAlignmentParameters.csv) | Parameters for the vertical segments as csv   |             |
+| [LandXML](Dataset/TOI-M14334-0000A.xml)                      | LandXML-file representing the alignment       |             |
 
 ## Test Case Imports
+
 Test instructions are defined with a modular approach to reduce repetition of validation criteria and test content, and improve vendors ability to solve issues and bugs. therefore this test instruction *imports/reuses* the following Test instructions and entities with the relevant associated validation criteria.
 
-:construction: under construction :construction:
-
-<details><summary>Imports & Reuses</summary>
-
-| TI Code                                  | Test Instruction Title  | Comments                                                     |
-| ---------------------------------------- | ----------------------- | ------------------------------------------------------------ |
-| [IFC4.3AbRV_E0_SSRD](../../E0-SSRD/SSRD) | Spatial Structures Road | Spatial structure for road incuding the dependencies (E0_SSSI, E0_MSTP) |
-
-</details>
-
-## Usages, Constraints & Logic
-The following itemised restrictions and constraints shall be placed on IFC Entities & Concept Templates:
-
-:construction: under construction :construction:
-
-<details><summary>Semantic Usages, Constraints & Logic</summary>
-The following itemised Usages, Constraints & Logic are normative entries within the AbRV MVD and MUST be satisfied to meet the defined validation criteria
-
-| **ID**  | **CRITERIA**                                  | **VALUE**                           | **COMMENT** |
-| ------- | --------------------------------------------- | ----------------------------------- | ----------- |
-| ALIG_00 | Alignment layout structure is verified        | See below for further specification |             |
-| SITE_00 | Alignment shall always be contained in a Site | na                                  |             |
-
-ALIG_00: Alignment layout structure is verified
-
-> 1. Each `IfcAlignment` must nest exactly 1 `IfcAlignmentHorizontal`
-> 2. Each `IfcAlignment` must nest at most 1 `IfcAlignmentVertical`
-> 3. Each `IfcAlignmentHorizontal` must be nested only by 1 `IfcAlignment`
-> 4. Each `IfcAlignmentVertical` must be nested only by 1 `IfcAlignment`
-> 5. Each `IfcAlignment` must nest only `IfcAlignmentHorizontal`, or `IfcAlignmentVertical`
-> 6. Each `IfcAlignmentHorizontal` must nest only `IfcAlignmentHorizontalSegment`
-> 7. Each `IfcAlignmentVertical` must nest only `IfcAlignmentVerticalSegment`
-> 8. Each `IfcAlignmentHorizontalSegment` must be nested only by 1 `IfcAlignmentHorizontal`
-> 9. Each `IfcAlignmentVerticalSegment` must be nested only by 1 `IfcAlignmentVertical`
-
-</details>
-
-<details><summary>Model Geometry</summary>
-The Test case requires the following additional checks related to Model Geometry:
-
-| **ID**  | **CRITERIA**                                   | **VALUE**                           | **COMMENT** |
-| ------- | ---------------------------------------------- | ----------------------------------- | ----------- |
-| ALIG_01 | Alignment geometric representation is verified | See below for further specification |             |
-
-
-> 1. Each `IfcAlignment` shall have one Representation with RepresentationIdentifier="Axis" and RepresentationType="Curve3D" referencing an `IfcPolyline`. The polyline may be generated as below:
->    1. Line segments: each as one segment in the polyline. Segment start and end points must match exactly the horizontal layout in the Dataset description. 
->    1. Curve segments: each as at least two equal length segments in the polyline. Segment start and end points must match exactly the curve start, end and intermediate point(s) according to the horizontal layout in the Dataset description. 
->    1. The z-value at each point shall match the z value according to the vertical layout in the Dataset description.
-> 1. Each `IfcAlignmentHorizontal` shall have one Representation with RepresentationIdentifier="Axis" and RepresentationType="Curve2D" referencing an `IfcPolyline`. The polyline may be generated as below:
->    1. Line segments: each as one segment in the polyline. Segment start and end points must match exactly the horizontal layout in the Dataset description.
->    1. Curve segments: each as at least two equal length segments in the polyline. Segment start and end points must match exactly the curve start, end and intermediate point(s) according to the horizontal layout in the Dataset description.
-
-
-- *Constraint*
-
-</details>
+No test cases are imported for this test case. All necessary data and criteria are included.
 
 ## Expected Results
 
@@ -154,64 +111,145 @@ Considering the aim of this test, other **optional** results, not subject to the
 ---
 
 ## Validation criteria
-:zap: For this test case to be considered passed **all capabilities** listed in this section shall be verified, with no exception. :zap:
 
-:construction: under construction :construction:
+:zap: For this test case to be considered passed **all capabilities listed in this section**, and **the ones of pre-required tests** shall be verified, with no exception. :zap:
 
-### General & Imports
+### General
 
-<details><summary>Click to expand</summary>
-
-- All the concept templates must be correctly implemented as presented in the validation criteria
-- At least 1 instance of each entity listed in [Itemised Roots](#Itemised-Roots) is present in the file.
-
-
-#### Imports
-| **TI Code**        | **Criteria Codes** | *COMMENT**                                         |
-|--------------------|--------------------|----------------------------------------------------|
-| IFC4.3AbRV_E0_MSTP | ALL CRITERIA       | As outlined in the dataset [Imported Entities Table](Dataset/README.md#Imported-Entities-Table) |
-
-
-#### General
-| **ID**  | **CRITERIA**                                        | **VALUE**                                     | **COMMENT** |
-|---------|-----------------------------------------------------|-----------------------------------------------|-------------|
-| GENE_01 | All requested entities are present in the IFC model | per [Entities Table](Dataset/README.md#Entities-Table) |    |
-
-</details>
+| **RULE ID** | **CRITERIA**                                                 | **VALUE [examples]**                                         | **ENTITY (if applicable)** | **CT (if applicable)** |
+| ----------- | ------------------------------------------------------------ | ------------------------------------------------------------ | -------------------------- | ---------------------- |
+| GENE_00     | All validation criteria of precondition's tests shall be verified |                                                              | na                         | na                     |
+| GENE_01     | All requested entities (and attributes) exist in file        | As per Entities Table. See [Dataset description](Dataset/README.md) | na                         | na                     |
 
 ### Road alignment
 
-<details><summary>Click to expand</summary>
+**Acceptance criteria**: For the **Railway alignment (without cant)** capability, the validation procedure must verify that **all** the following validation criteria are satisfied.
+
+| **RULE ID** | **CRITERIA**                                             | **VALUE [examples]**                           | **ENTITY (if applicable)** | **CT (if applicable)** |
+| ----------- | -------------------------------------------------------- | ---------------------------------------------- | -------------------------- | ---------------------- |
+| SITE_00     | All IfcAlignment shall always be contained in an IfcSite |                                                |                            | Spatial Containment    |
+| ALIG_00     | Alignment layout structure is verified                   | See steps                                      |                            | Alignment Layout       |
+| ALIG_01     | Number of alignments contained in file                   | [1]                                            |                            |                        |
+| ALIG_02     | Parameters of alignment segments are verified            | As per Alignment Table                         |                            |                        |
+| ALIG_03     | Alignment geometric compliance is verified               | As per Alignment geometric compliance document |                            |                        |
+
+<details><summary>ALIG_00 steps</summary>
 
 
-| **ID**  | **CRITERIA**                                                 | **VALUE**                                      | **COMMENT** |
-| ------- | ------------------------------------------------------------ | ---------------------------------------------- | ----------- |
-| ALIG_01 | Alignments contained in file                                 | 1                                              |             |
-| ALIG_02 | Components for Alignment                                     | 1 horizontal, 1 vertical                       |             |
-| ALIG_03 | The horizontal (H) layout matches exactly the layout specified in the [Dataset description](./Dataset/README.md) | See [Dataset description](./Dataset/README.md) |             |
-| ALIG_04 | The vertical (V) layout matches exactly the layout specified in the [Dataset description](./Dataset/README.md) | See [Dataset description](./Dataset/README.md) |             |
-| ALIG_05 | The IfcAlignment shall have one Representation of type IfcProductShapeRepresentation having one Representation of type IfcShapeRepresentation having RepresentationIdentifier="Axis" and RepresentationType="Curve3D" and having one Item of type IfcPolyline.<br />  Line segments: each as one segment in the polyline. Segment start and end points must match exactly the horizontal layout in the Dataset description.  <br />Curve segments: each as at least two equal length segments in the polyline. Segment start and end points must match exactly the curve start, end and intermediate point(s) according to the horizontal layout in the Dataset description.  The z-value at each point shall match the z value according to the vertical layout in the Dataset description. |                                                |             |
-| ALIG_06 | The IfcAlignmentHorizontal shall have one Representation of type IfcProductShapeRepresentation having one Representation of type IfcShapeRepresentation having RepresentationIdentifier="Axis" and RepresentationType="Curve2D" and having one Item of type IfcPolyline.<br />  Line segments: each as one segment in the polyline. Segment start and end points must match exactly the horizontal layout in the Dataset description. <br />Curve segments: each as at least two equal length segments in the polyline. Segment start and end points must match exactly the curve start, end and intermediate point(s) according to the horizontal layout in the Dataset description. |                                                |             |
+
+| **STEP ID** | **STEP**                                                     |
+| ----------- | ------------------------------------------------------------ |
+| ALIG_00.1   | Each IfcAlignment must nest exactly 1 IfcAlignmentHorizontal |
+| ALIG_00.2   | Each IfcAlignment must nest at most 1 IfcAlignmentVertical   |
+| ALIG_00.3   | Each IfcAlignment must nest exactly 1 IfcAlignmentVertical   |
+| ALIG_00.6   | Each IfcAlignmentHorizontal must be nested only by 1 IfcAlignment |
+| ALIG_00.7   | Each IfcAlignmentVertical must be nested only by 1 IfcAlignment |
+| ALIG_00.9   | Each IfcAlignment must nest only the following entities: IfcAlignmentHorizontal, IfcAlignmentVertical |
+| ALIG_00.10  | Each IfcAlignmentHorizontal nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentHorizontalSegment |
+| ALIG_00.11  | Each IfcAlignmentVertical nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentVerticalSegment |
 
 </details>
 
-### Spatial containment
+### Spatial (De)Composition
 
-<details><summary>Click to expand</summary>
+
+| **RULE ID** | **CRITERIA**                      | **VALUE [examples]**                                         | **ENTITY (if applicable)** | **CT (if applicable)** |
+| ----------- | --------------------------------- | ------------------------------------------------------------ | -------------------------- | ---------------------- |
+| SDEC_01     | Spatial decomposition is verified | As per Spatial (De)Composition Table. See [Dataset description](Dataset/README.md) | na                         | Spatial Decomposition  |
+
+> **Acceptance criteria**: For the **Spatial decomposition** capability, the validation procedure must verify that a Parent Element of the requested type aggregates (via `IfcRelAggregates`) exactly a given number of Child Elements of the requested type, no more and no less.
+
+<details><summary>SDEC_01 details: Spatial decomposition is verified</summary>
+
+
+
+> - Given a set of elements taken from the [Spatial (De)Composition Table](Dataset/README.md#Dataset/README.md#spatial-decomposition-table)
+> - Then the Parent Element, and optionally the Parent Element Type, exists
+> - And the Parent Element must aggregate at least a number within [MinSize..MaxSize] of the requested Child Element
+
+</details>
+
+### Spatial Containment
+
+| **RULE ID** | **CRITERIA**                    | **VALUE [examples]**             | **ENTITY (if applicable)** | **CT (if applicable)** |
+| ----------- | ------------------------------- | -------------------------------- | -------------------------- | ---------------------- |
+| SCON_01     | Spatial containment is verified | As per Spatial Containment Table | na                         | Spatial Containment    |
+
 > **Acceptance criteria**: For the **Spatial containment** capability, the validation procedure must verify that a Spatial Element of the requested type contains (via `IfcRelContainedInSpatialStructure`) exactly a given number of Elements of the requested type, no more and no less.
 
+<details><summary>SCON_01 details: Spatial containment is verified</summary>
 
-| Spatial Element | Spatial Element Type | Minimum | Maximum | Element      | Element Type   |
-| --------------- | -------------------- | ------- | ------- | ------------ | -------------- |
-| IfcSite         |                      | 1       | 1       | IfcAlignment | Road alignment |
+
+
+> - Given a set of elements taken from the [Spatial Containment Table](Dataset/README.md#Spatial-Containment-Table)
+> - Then the Spatial Element, and optionally the Spatial Element Type, exists
+> - And the Spatial Element must contain at least a number within [MinSize..MaxSize] of the requested Element
 
 </details>
 
+### Product geometric representation
+
+| **RULE ID** | **CRITERIA**                                     | **VALUE [examples]**                          | **ENTITY (if applicable)** | **CT (if applicable)**                                |
+| ----------- | ------------------------------------------------ | --------------------------------------------- | -------------------------- | ----------------------------------------------------- |
+| PREP_01     | Geometric representation of products is verified | As per Product Geometric Representation Table |                            | Product Geometric Representation and its subtemplates |
+
+> **Acceptance criteria**: For the **Group Geometric Representation** capability, the validation procedure must verify that a Product of the requested type (and optionally a requested name) has an IfcShapeRepresentation with the requested Representation Identifier, Representation Type and Items.
+
+<details><summary>PREP_01 details:  Geometric representation of products is verified</summary>
+
+
+
+> - Given a set of products taken from the [Product Geometric Representation Table](Dataset/README.md#Product-Geometric-Representation-Table)
+>
+> - Then the Product, and optionally the Product Type, exists
+>
+> - And the Product must have an IfcShapeRepresentation (via IfcProductDefinitionShape) with the requested Representation Identifier, Representation Type and Items.
+>
+> - 2D IfcPolyline for IfcAlignmentHorizontal:
+>
+>   Line segments: each as one segment in the polyline. Segment start and end points must match exactly the horizontal layout in the [Dataset description](Dataset/README.md).
+>
+>   Curve segments: each as at least two equal length segments in the polyline. Segment start and end  points must match exactly the curve start, end and intermediate point(s) according to the horizontal layout in the [Dataset description](Dataset/README.md).
+>
+>   (No clothoids in the Dataset, but the same is sufficient for clothoid segments…) 
+>
+> - 3D IfcPolyline for IfcAlignment:
+>
+>   Same as 2D IfcPolyline for IfcAlignmentHorizontal, but z-values at each polyline segment start and end point must match exactly the z-value according to the vertical layout in the Dataset description.
+
+</details>
+
+### Product placement
+
+| **RULE ID** | **CRITERIA**                                                 | **VALUE [examples]**           | **ENTITY (if applicable)** | **CT (if applicable)**         |
+| ----------- | ------------------------------------------------------------ | ------------------------------ | -------------------------- | ------------------------------ |
+| PPLA_01     | Placement of products is verified                            | As per Product Placement Table |                            | Product Placement subtemplates |
+| PPLA_02     | For a product that has ObjectPlacement as IfcLinearPlacement, the CartesianPosition of IfcLinearPlacement shall be available | depends on cases               |                            | Product Linear Placement       |
+
+> **Acceptance criteria**: For the **Product Placement** capability, the validation procedure must verify that a Product of the requested type (and optionally a requested name) has the requested Object Placement, and optionally the Object Placement has PlacementRelTo reference to the Object Placement of Relative Placement Product with requested Relative Placement Product Type and Relative Placement Product Name.
+
+<details><summary>PPLA_01 details:  Placement of products is verified</summary>
+
+
+
+> - Given a set of products taken from the [Product Geometric Representation Table](#Product-Geometric-Representation-Table)
+> - Then the Product with Product Type and Product Name, exists
+> - And the Product must have Object Placement, and the Object Placement has PlacementRelTo reference to the ObjectPlacement of Relative Placement Product with requested Relative Placement Product Type and Relative Placement Product Name.
+
+</details>
+
+### Project Setup
+
+| **RULE ID** | **CRITERIA**                                    | **VALUE [examples]** | **ENTITY (if applicable)** | **CT (if applicable)**     |
+| ----------- | ----------------------------------------------- | -------------------- | -------------------------- | -------------------------- |
+| ORIG_01     | Origin of Coordinate System is set as requested | [(0., 0., 0.)]       |                            | Project Global Positioning |
+| ORIG_02     | True north is set as requested                  | [(0., 1., 0.)]       |                            | Project Global Positioning |
+| DIST_01     | Unit of measure for all distances               | [meter]              |                            | Project Units              |
+| ANGL_01     | Unit of measure all angles                      | [radian]             |                            | Project Units              |
+| DIST_02     | Required precision for distances                | [0,0001]             | all alignment segments     | na                         |
+| ANGL_02     | Required precision for angles and slope         | [0,000001]           |                            | na                         |
+
 ### Project global positioning
-
-<details><summary>Click to expand</summary>
-> **Acceptance criteria**: For the **Project global positioning** capability, the validation procedure must verify that there is an IfcMapConversion with the given parameters associated with the IfcGeometricRepresentationContext (via `HasCoordinateOperation`). Furthermore, the IfcMapConversion shall have an association with an IfcProjectedCRS (via `HasCoordinateOperation`) with the given parameters.
-
 
 
 | Element          | Attribute        | Value     | Comment |
@@ -226,5 +264,5 @@ Considering the aim of this test, other **optional** results, not subject to the
 | IfcProjectedCRS  | GeodeticDatum    | EPSG:6258 |         |
 | IfcProjectedCRS  | VerticalDatum    | EPSG:3900 |         |
 
-</details>
+
 

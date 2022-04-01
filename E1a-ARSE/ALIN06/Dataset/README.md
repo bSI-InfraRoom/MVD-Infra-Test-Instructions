@@ -96,5 +96,3 @@ Vertical segments nested into AV1 in the following order:
 | **Product**  | **Product Type** | **Product Name** | **Object Placement** | Relative Placement Product | Relative Placement Product Type | Relative Placement Product Name |
 | ------------ | ---------------- | ---------------- | -------------------- | -------------------------- | ------------------------------- | ------------------------------- |
 | IfcAlignment |                  | A1               | IfcLocalPlacement    | IfcSite                    | na                              | Alin06.Site                     |
-
-## 
