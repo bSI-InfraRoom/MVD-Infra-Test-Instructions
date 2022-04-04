@@ -82,11 +82,11 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
 
 This test case utilises the dataset collected in the Dataset folder and summarised in the table below. **For more details on each item see [Dataset description](Dataset/README.md).**
 
-| Filename                      | Type (format) | Description                                  |
-| ----------------------------- | ------------- | -------------------------------------------- |
-| HorizontalAlignmentParameters | csv           | Alignment parameters for horizontal segments |
-| VerticalAlignmentParameters   | csv           | Alignment parameters for vertical segments   |
-| TOI-M14334-0000A              | xml           | LandXML representation of the alignment      |
+| Filename                                                     | Type (format) | Description                                  |
+| ------------------------------------------------------------ | ------------- | -------------------------------------------- |
+| [HorizontalAlignmentParameters](Dataset/HorizontalAlignmentParameters.csv) | csv           | Alignment parameters for horizontal segments |
+| [VerticalAlignmentParameters](Datsaset/VerticalAlignmentParameters.csv) | csv           | Alignment parameters for vertical segments   |
+| [TOI-M14334-0000A](Dataset/TOI-M14334-0000A.xml)             | xml           | LandXML representation of the alignment      |
 
 ## Test Case Imports
 Test instructions are defined with a modular approach to reduce repetition of validation criteria and test content, and improve vendors ability to solve issues and bugs. therefore this test instruction *imports/reuses* the following Test instructions and entities with the relevant associated validation criteria.
