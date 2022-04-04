@@ -93,9 +93,9 @@ This test case utilises the dataset collected in the Dataset folder and summaris
 
 | Filename                                                     | Type (format)                                 | Description |
 | ------------------------------------------------------------ | --------------------------------------------- | ----------- |
-| [HorizontalAlignmentParameters](./HorizontalAlignmentParameters.csv) | Parameters for the horizontal segments as csv |             |
-| [VerticalAlignmentParameters](./VerticalAlignmentParameters.csv) | Parameters for the vertical segments as csv   |             |
-| [LandXML](./TOI-M14334-0000A.xml)                            | LandXML-file representing the alignment       |             |
+| [HorizontalAlignmentParameters](Dataset/HorizontalAlignmentParameters.csv) | Parameters for the horizontal segments as csv |             |
+| [VerticalAlignmentParameters](Dataset/VerticalAlignmentParameters.csv) | Parameters for the vertical segments as csv   |             |
+| [LandXML](Dataset/TOI-M14334-0000A.xml)                      | LandXML-file representing the alignment       |             |
 
 ## Test Case Imports
 
