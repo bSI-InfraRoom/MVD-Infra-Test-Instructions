@@ -324,22 +324,23 @@ Examples:
 | ORIG_02     | True north is set as requested                                    | [(0., 1., 0.)]        |                            | Project Global Positioning |
 | DIST_01     | Unit of measure for all distances                                 | [meter]               |                            | Project Units              |
 | ANGL_01     | Unit of measure all angles                                        | [radian]              |                            | Project Units              |
-| DIST_02     | Required precision for distances                                  | [0,0001]              | all alignment segments     | na                         |
-| ANGL_02     | Required precision for angles and slope                           | [0,000001]            |                            | na                         |
+
 
 
 
 
 ### Alignment
 
-| **RULE ID** | **CRITERIA**                                             | **VALUE [examples]**                           | **ENTITY (if applicable)** | **CT (if applicable)** |
-|-------------|----------------------------------------------------------|------------------------------------------------|----------------------------|------------------------|
-| SITE_00     | All IfcAlignment shall always be contained in an IfcSite |                                                |                            | Spatial Containment    |
-| ALIG_00     | Alignment layout structure is verified                   | See steps                                      |                            | Alignment Layout       |
-| ALIG_01     | Number of alignments contained in file                   | [2]                                            |                            |                        |
-| ALIG_02     | Parameters of alignment segments are verified            | As per Alignment Table                         |                            |                        |
-| ALIG_03     | Alignment geometric compliance is verified               | As per Alignment geometric compliance document |                            |                        |
-| ALIG_04     | Value of the RailHeadDistance along the entire alignment | [1500 mm]                                      | IfcAlignmentCant           |                        |
+| **RULE ID** | **CRITERIA**                                                    | **VALUE [examples]**                           | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|-----------------------------------------------------------------|------------------------------------------------|----------------------------|------------------------|
+| SITE_00     | All IfcAlignment shall always be contained in an IfcSite        |                                                |                            | Spatial Containment    |
+| ALIG_00     | Alignment layout structure is verified                          | See steps                                      |                            | Alignment Layout       |
+| ALIG_01     | Number of alignments contained in file                          | [2]                                            |                            |                        |
+| ALIG_02     | Parameters of alignment segments are verified                   | As per Alignment Table                         |                            |                        |
+| ALIG_03     | Alignment geometric compliance is verified                      | As per Alignment geometric compliance document |                            |                        |
+| ALIG_04     | Value of the RailHeadDistance along the entire alignment        | [1500 mm]                                      | IfcAlignmentCant           |                        |
+| DIST_02     | Required precision for length of alignment's segments           | [0,0001] or [1.E-4]                            | all alignment segments     | na                     |
+| ANGL_02     | Required precision for angles and slope of alignment's segments | [0,000001] or [1.E-6]                          | all alignment segments     | na                     |
 
 <details><summary>ALIG_00 steps</summary>
 
@@ -357,6 +358,21 @@ Examples:
 | ALIG_00.10  | Each IfcAlignmentHorizontal nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentHorizontalSegment         |
 | ALIG_00.11  | Each IfcAlignmentVertical nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentVerticalSegment             |
 | ALIG_00.12  | Each IfcAlignmentCant nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentCantSegment                     |
+
+</details>
+
+<details><summary>Details for DIST_02 and ANGL_02</summary>
+
+Precision for length (DIST_002) applies to the values of the following attributes:
+- `IfcAlignmentHorizontalSegment`.StartPoint
+- `IfcAlignmentHorizontalSegment`.SegmentLength
+- `IfcAlignmentVerticalSegment`.StartDistAlong
+- `IfcAlignmentVerticalSegment`.HorizontalLength
+- `IfcAlignmentCantSegment`.StartDistAlong
+- `IfcAlignmentCantSegment`.HorizontalLength
+
+Precision for angles and slope (ANGL_002) applies to the values of the following attributes:
+- `IfcAlignmentHorizontalSegment`.StartDirection
 
 </details>
 
