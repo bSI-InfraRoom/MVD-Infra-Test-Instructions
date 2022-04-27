@@ -105,8 +105,6 @@ For certification of capabilities the only source will be:
 | ORIG_02     | True north is set as requested                                    | [(0., 1., 0.)]        |                            | Project Global Positioning |
 | DIST_01     | Unit of measure for all distances                                 | [meter]               |                            | Project Units              |
 | ANGL_01     | Unit of measure all angles                                        | [radian]              |                            | Project Units              |
-| DIST_02     | Required precision for distances                                  | [0,0001]              | all alignment segments     | na                         |
-| ANGL_02     | Required precision for angles and slope                           | [0,000001]            |                            | na                         |
 
 > **Acceptance criteria**
  For the **Project Setup** capability, the validation procedure must verify that:

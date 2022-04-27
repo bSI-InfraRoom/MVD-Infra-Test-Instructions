@@ -34,4 +34,3 @@ The sub-structure part (red) is not influenced by cant. So, it is expected to ha
 
 
 <img src="./TrackCrossSection.png" height="500"/>
-
