@@ -145,14 +145,15 @@ For certification of capabilities the only source will be:
 
 > **Acceptance criteria**: For the **Railway alignment (without cant)** capability, the validation procedure must verify that **all** the following validation criteria are satisfied.
 
-| **RULE ID** | **CRITERIA**                                             | **VALUE [examples]**                           | **ENTITY (if applicable)** | **CT (if applicable)** |
-|-------------|----------------------------------------------------------|------------------------------------------------|----------------------------|------------------------|
-| SITE_00     | All IfcAlignment shall always be contained in an IfcSite |                                                |                            | Spatial Containment    |
-| ALIG_00     | Alignment layout structure is verified                   | See steps                                      |                            | Alignment Layout       |
-| ALIG_01     | Number of alignments contained in file                   | [2]                                            |                            |                        |
-| ALIG_02     | Parameters of alignment segments are verified            | As per Alignment Table                         |                            |                        |
-| ALIG_03     | Alignment geometric compliance is verified               | As per Alignment geometric compliance document |                            |                        |
-| ALIG_04     | Value of the RailHeadDistance along the entire alignment | [1500 mm]                                      | IfcAlignmentCant           |                        |
+| **RULE ID** | **CRITERIA**                                                    | **VALUE [examples]**                           | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|-----------------------------------------------------------------|------------------------------------------------|----------------------------|------------------------|
+| SITE_00     | All IfcAlignment shall always be contained in an IfcSite        |                                                |                            | Spatial Containment    |
+| ALIG_00     | Alignment layout structure is verified                          | See steps                                      |                            | Alignment Layout       |
+| ALIG_01     | Number of alignments contained in file                          | [2]                                            |                            |                        |
+| ALIG_02     | Parameters of alignment segments are verified                   | As per Alignment Table                         |                            |                        |
+| ALIG_03     | Alignment geometric compliance is verified                      | As per Alignment geometric compliance document |                            |                        |
+| DIST_02     | Required precision for length of alignment's segments           | [0,0001] or [1.E-4]                            | all alignment segments     | na                     |
+| ANGL_02     | Required precision for angles and slope of alignment's segments | [0,000001] or [1.E-6]                          | all alignment segments     | na                     |
 
 <details><summary>ALIG_00 steps</summary>
 
@@ -169,11 +170,18 @@ For certification of capabilities the only source will be:
 
 </details>
 
-<details><summary>ALIG_04 details</summary>
+<details><summary>Details for DIST_02 and ANGL_02</summary>
 
-> The *RailHeadDistance* (blue line in the figure below) is a normalized value used to compute the angle of cant. RFI uses 1500 mm for a track gauge of 1435 mm
->
->   <img src="Dataset/CantFromLowerRail.png" height="300"/>
+Precision for length (DIST_002) applies to the values of the following attributes:
+- `IfcAlignmentHorizontalSegment`.StartPoint
+- `IfcAlignmentHorizontalSegment`.SegmentLength
+- `IfcAlignmentVerticalSegment`.StartDistAlong
+- `IfcAlignmentVerticalSegment`.HorizontalLength
+- `IfcAlignmentCantSegment`.StartDistAlong
+- `IfcAlignmentCantSegment`.HorizontalLength
+
+Precision for angles and slope (ANGL_002) applies to the values of the following attributes:
+- `IfcAlignmentHorizontalSegment`.StartDirection
 
 </details>
 
