@@ -103,7 +103,7 @@ For certification of capabilities the only source will be:
 
 `IfcClassification`
 
-| Example instance             | Source           | Edition       | EditionDate | Name       | Description | Location                                                      | ReferenceTokens |
+| Example instance             | Source           | Edition       | EditionDate | Name       | Description | Specification                                                 | ReferenceTokens |
 |------------------------------|------------------|---------------|-------------|------------|-------------|---------------------------------------------------------------|-----------------|
 | #45 = IFCCLASSIFICATION      | 'buildingSMART'    | '4.3rc4'        | $           | 'IFC'        | $           | http://identifier.buildingsmart.org/uri/buildingsmart/ifc-4.3 | $               |
 |                              | IFCLABEL         | IFCLABEL      | IFCDATE     | IFCLABEL   | IFCTEXT     | IFCURIREFERENCE                                               | IFCIDENTIFIER   |
