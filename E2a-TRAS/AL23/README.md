@@ -164,3 +164,11 @@ For certification of capabilities the only source will be:
 | ALIG_00.12  | Each IfcAlignmentCant nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentCantSegment                     |
 
 </details>
+
+<details><summary>ALIG_04 details</summary>
+
+> The *RailHeadDistance* (blue line in the figure below) is a normalized value used to compute the angle of cant. RFI uses 1500 mm for a track gauge of 1435 mm
+>
+>   <img src="Dataset/CantFromLowerRail.png" height="300"/>
+
+</details>
