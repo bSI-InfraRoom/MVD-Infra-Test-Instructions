@@ -192,11 +192,11 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 | **RULE ID** | **CRITERIA**                                             | **VALUE [examples]**                                         | **ENTITY (if applicable)** | **CT (if applicable)**                              |
 | ----------- | -------------------------------------------------------- | ------------------------------------------------------------ | -------------------------- | --------------------------------------------------- |
-| PSET_01     | The model does not contain unrequested property sets     | As per [Properties Table](Dataset/README-md#Properties-table) | na                         | Property Sets for Objects & Property Sets for Types |
-| PNAM_01     | The property set does not contain unrequested properties | As per [Properties Table](Dataset/README-md#Properties-table) | na                         | Property Sets for Objects & Property Sets for Types |
-| PTEX_01     | Property values belong to a list of values               | As per [Properties Table](Dataset/README-md#Properties-table) | na                         | Property Sets for Objects & Property Sets for Types |
-| PVAL_01     | Property values are not null and not empty               | As per [Properties Table](Dataset/README-md#Properties-table) | na                         | Property Sets for Objects & Property Sets for Types |
-| PVAL_02     | Requested property value types are found                 | As per [Properties Table](Dataset/README-md#Properties-table) | na                         | Property Sets for Objects & Property Sets for Types |
+| PSET_01     | The model does not contain unrequested property sets     | As per [Properties Table](Dataset/README.md#Properties-Table) | na                         | Property Sets for Objects & Property Sets for Types |
+| PNAM_01     | The property set does not contain unrequested properties | As per [Properties Table](Dataset/README.md#Properties-Table) | na                         | Property Sets for Objects & Property Sets for Types |
+| PTEX_01     | Property values belong to a list of values               | As per [Properties Table](Dataset/README.md#Properties-Table) | na                         | Property Sets for Objects & Property Sets for Types |
+| PVAL_01     | Property values are not null and not empty               | As per [Properties Table](Dataset/README.md#Properties-Table) | na                         | Property Sets for Objects & Property Sets for Types |
+| PVAL_02     | Requested property value types are found                 | As per [Properties Table](Dataset/README.md#Properties-Table) | na                         | Property Sets for Objects & Property Sets for Types |
 
 > **Acceptance criteria**: For the **Properties for objects and object types** capability, the validation procedure must verify that both standard and custom property sets requested by the test case (including relative properties and values) are present in the IFC file.
 > See below for further specification of each rule.
