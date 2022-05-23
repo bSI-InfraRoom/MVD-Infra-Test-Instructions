@@ -117,6 +117,10 @@ This test case utilises the dataset collected in the Dataset folder and summaris
 
 Test instructions are defined with a modular approach to reduce repetition of validation criteria and test content, and improve vendors ability to solve issues and bugs. therefore this test instruction *imports/reuses* the following Test instructions and entities with the relevant associated validation criteria.
 
+| TI Code                                                      | Test Instruction Title          | Comments |
+| ------------------------------------------------------------ | ------------------------------- | -------- |
+| [**IFC4x3_AbRV-E1a-ALIN06**](https://github.com/bSI-InfraRoom/MVD-Infra-Test-Instructions/blob/develop/E1a-ARSE/ALIN06) | Alignment Infrastructure Curves | na       |
+
 ## Expected Results
 
 For certification of capabilities the only source will be:
