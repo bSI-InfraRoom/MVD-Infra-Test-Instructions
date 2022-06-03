@@ -162,11 +162,51 @@ The vertical segments are defined in ALIN06.
 
 ### Product Geometric Representation table
 
-| **Product**            | **Product Type** | **Product Name** | **Representation Identifier** | **Representation Type** | **Items**           |
-| ---------------------- | ---------------- | ---------------- | ----------------------------- | ----------------------- | ------------------- |
-| IfcAlignment           | na               | A1               | Axis                          | Curve3D                 | 1 IfcGradientCurve  |
-| IfcAlignmentHorizontal | na               | AH1              | Axis                          | Curve2D                 | 1 IfcCompositeCurve |
-| IfcAlignmentVertical   | na               | AV1              | Axis                          | Curve2D                 | 1 IfcGradientCurve  |
+| **Product**            | **Product Type** | **Product Name** | **Representation Identifier** | **Representation Type** | **Items**                   |
+| ---------------------- | ---------------- | ---------------- | ----------------------------- | ----------------------- | --------------------------- |
+| IfcAlignment           | na               | A1               | Axis                          | Curve3D                 | 1 IfcGradientCurve          |
+| IfcAlignmentHorizontal | na               | AH1              | Axis                          | Curve2D                 | 1 IfcCompositeCurve         |
+| IfcAlignmentVertical   | na               | AV1              | Axis                          | Curve2D                 | 1 IfcGradientCurve          |
+| IfcCourse              |                  | All              | Axis                          | Curve3D                 | IfcIndexedPolyCurve         |
+| IfcCourse              |                  | All              | Axis                          | Curve3D                 | IfcOffsetCurveByDistances   |
+| IfcCourse              |                  | All              | Surface                       | Tesselation             | IfcTriangulatedFaceSet      |
+| IfcCourse              |                  | All              | Body                          | AdvancedSweptSolid      | IfcSectionedSolidHorizontal |
+
+The geometry of the different courses are specified in the following figures:
+
+![](C:\Users\lars\Documents\Projekt\IFCInfra\MVD-Infra-Test-Instructions\E2-AGST\ASAPC\Dataset\Cross section.PNG)
+
+![](C:\Users\lars\Documents\Projekt\IFCInfra\MVD-Infra-Test-Instructions\E2-AGST\ASAPC\Dataset\Courses.PNG)
+
+Note that the b alternatives are not used for this test.
+
+The geometric representation for the individual courses in the pavement can be represented in the following ways:
+
+**Axis/Curve3D alternative 1**
+
+
+
+lkfdsjslfdkj
+
+
+
+**Axis/Curve3D alternative 2**
+
+lkfdsjslfdkj
+
+
+
+**Surface/Tesselation**
+
+lkfdsjslfdkj
+
+
+
+**Body/AdvancedSweptSolid**
+
+lkfdsjslfdkj
+
+
 
 ### Product Placement table
 

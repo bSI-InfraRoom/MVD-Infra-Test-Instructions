@@ -1,8 +1,8 @@
 # Test Instruction
 
-| Documentation Code | Title                                                 | Exchange Code | Test Code | Author        | Data Owner | Version | Date       |
-| ------------------ | ----------------------------------------------------- | ------------- | --------- | ------------- | ---------- | ------- | ---------- |
-| IFC4.3AbRV_E2_ASPC | Aggregate structures on Alignment - Pavement & Course | E2            | ASPC      | Lars Wikström | FTIA       | 1.0     | 19.05.2022 |
+| Documentation Code  | Title                                                 | Exchange Code | Test Code | Author        | Data Owner | Version | Date       |
+| ------------------- | ----------------------------------------------------- | ------------- | --------- | ------------- | ---------- | ------- | ---------- |
+| IFC4.3AbRV_E2_ASAPC | Aggregate structures on Alignment - Pavement & Course | E2            | ASAPC     | Lars Wikström | FTIA       | 1.0     | 19.05.2022 |
 
 
 ## Summary (Intent)
@@ -70,7 +70,13 @@ These entities represent a test-specific subset of the wider AbRV_Ex exchange an
   - *IfcPropertySingleValue*
   - *IfcPropertyEnumeratedValue*
   - *IfcLinearPlacement*
-
+  - *IfcSectionedSolidHorizontal*
+  - *IfcTriangulatedFaceSet*
+  - *IfcIndexedPolyCurve*
+  - *IfcOffsetCurveByDistances*
+  - *IfcShapeAspect*
+  - *IfcClassification*
+  - *IfcClassificationReference*
 
 </details>
 
@@ -98,6 +104,9 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
   - *Material Single*
   - *Product Linear Placement*
   - *Property Sets for Objects*
+  - *Axis 3D Geometry*
+  - *Surface Tesselation Geometry*
+  - *Body SectionedSolidHorizontal*
 
 
 </details>
