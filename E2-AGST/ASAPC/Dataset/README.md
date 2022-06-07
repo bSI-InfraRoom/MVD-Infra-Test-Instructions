@@ -184,29 +184,19 @@ The geometric representation for the individual courses in the pavement can be r
 
 **Axis/Curve3D alternative 1**
 
-
-
 lkfdsjslfdkj
-
-
 
 **Axis/Curve3D alternative 2**
 
 lkfdsjslfdkj
 
-
-
 **Surface/Tesselation**
 
 lkfdsjslfdkj
 
-
-
 **Body/AdvancedSweptSolid**
 
 lkfdsjslfdkj
-
-
 
 ### Product Placement table
 
@@ -235,6 +225,7 @@ The following Drawings and visualisations describe the test case dataset to be m
 | Filename             | Description                                          |
 | -------------------- | ---------------------------------------------------- |
 | Pavement composition | ![image-20220221114609144](Pavement-composition.png) |
+| Superelevation       | [](./Superelevations-Widths.png)                     |
 
 
 ## Supporting files
