@@ -180,23 +180,37 @@ The geometry of the different courses are specified in the following figures:
 
 Note that the b alternatives are not used for this test.
 
-The geometric representation for the individual courses in the pavement can be represented in the following ways:
+The geometric representation for the individual courses in the pavement can be represented in the ways presented below. Please note the changes in superelevation and width according to this table:
+
+| DistAlong | Superelevation<br />Left | Superelevation<br />Right | Nominal Width | Structural slope    |
+| --------- | ------------------------ | ------------------------- | ------------- | ------------------- |
+| 315       | 0                        | 0                         | 6,8           | 1:1,5 (0,666666667) |
+| 331,82    | 0,03                     | -0,03                     | 7,4           | 1:1,5 (0,666666667) |
+| 358       | 0,03                     | -0,03                     | 7,4           | 1:1,5 (0,666666667) |
+
+There is a linear change in superelevation and width between 315 and 331,82
 
 **Axis/Curve3D alternative 1**
 
-lkfdsjslfdkj
+Each IfcCourse represented by as many lines (2 or 3) where each line represents a longitudinal breakline or edge. The lines are of type IfcIndexedPolyCurve. Each curve shall be assigned a classification reference using the following type of structure:
+
+![](C:\Users\lars\Documents\Projekt\IFCInfra\MVD-Infra-Test-Instructions\E2-AGST\ASAPC\Dataset\Stringline repr with classification.PNG)
+
+The following classification can be used for the lines:
+
+![](C:\Users\lars\Documents\Projekt\IFCInfra\MVD-Infra-Test-Instructions\E2-AGST\ASAPC\Dataset\Stringline-coding.png)
 
 **Axis/Curve3D alternative 2**
 
-lkfdsjslfdkj
+Same as alternative 1 except for using IfcOffsetCurveByDistances instead of IfcIndexedPolyCurve.
 
 **Surface/Tesselation**
 
-lkfdsjslfdkj
+The top face of each IfcCourse is represented by an IfcTriangulatedFaceSet.
 
 **Body/AdvancedSweptSolid**
 
-lkfdsjslfdkj
+Each IfcCourse is represented using an IfcSectionedSolidHorizontal. For this test instruction, that means that at least 3 cross profiles per course shall be defined according to the tables above and where the alignment constitutes the directrix.
 
 ### Product Placement table
 
@@ -205,18 +219,18 @@ lkfdsjslfdkj
 | IfcAlignment |                  | A1               | IfcLocalPlacement                 | IfcSite                    | na                              | Alin06.Site                     |
 | IfcPavement  | FLEXIBLE         | P1               | IfcLinearPlacement<br />at 315    | IfcAlignment               | na                              | A1                              |
 | IfcPavement  | FLEXIBLE         | P2               | IfcLinearPlacement<br />at 331,82 | IfcAlignment               | na                              | A1                              |
-| IfcCourse    | USERDEFINED      | C1               |                                   |                            |                                 |                                 |
-| IfcCourse    | USERDEFINED      | C2               |                                   |                            |                                 |                                 |
-| IfcCourse    | USERDEFINED      | C3               |                                   |                            |                                 |                                 |
-| IfcCourse    | USERDEFINED      | C4               |                                   |                            |                                 |                                 |
-| IfcCourse    | USERDEFINED      | C5               |                                   |                            |                                 |                                 |
-| IfcCourse    | USERDEFINED      | C6               |                                   |                            |                                 |                                 |
-| IfcCourse    | USERDEFINED      | C7               |                                   |                            |                                 |                                 |
-| IfcCourse    | USERDEFINED      | C8               |                                   |                            |                                 |                                 |
-| IfcCourse    | USERDEFINED      | C0               |                                   |                            |                                 |                                 |
-| IfcCourse    | USERDEFINED      | C10              |                                   |                            |                                 |                                 |
-| IfcCourse    | USERDEFINED      | C11              |                                   |                            |                                 |                                 |
-| IfcCourse    | USERDEFINED      | C12              |                                   |                            |                                 |                                 |
+| IfcCourse    | USERDEFINED      | C1               | ??                                |                            |                                 |                                 |
+| IfcCourse    | USERDEFINED      | C2               | ??                                |                            |                                 |                                 |
+| IfcCourse    | USERDEFINED      | C3               | ??                                |                            |                                 |                                 |
+| IfcCourse    | USERDEFINED      | C4               | ??                                |                            |                                 |                                 |
+| IfcCourse    | USERDEFINED      | C5               | ??                                |                            |                                 |                                 |
+| IfcCourse    | USERDEFINED      | C6               | ??                                |                            |                                 |                                 |
+| IfcCourse    | USERDEFINED      | C7               | ??                                |                            |                                 |                                 |
+| IfcCourse    | USERDEFINED      | C8               | ??                                |                            |                                 |                                 |
+| IfcCourse    | USERDEFINED      | C0               | ??                                |                            |                                 |                                 |
+| IfcCourse    | USERDEFINED      | C10              | ??                                |                            |                                 |                                 |
+| IfcCourse    | USERDEFINED      | C11              | ??                                |                            |                                 |                                 |
+| IfcCourse    | USERDEFINED      | C12              | ??                                |                            |                                 |                                 |
 
 ## Drawings (Visualisations)
 
@@ -225,7 +239,6 @@ The following Drawings and visualisations describe the test case dataset to be m
 | Filename             | Description                                          |
 | -------------------- | ---------------------------------------------------- |
 | Pavement composition | ![image-20220221114609144](Pavement-composition.png) |
-| Superelevation       | [](./Superelevations-Widths.png)                     |
 
 
 ## Supporting files
@@ -235,3 +248,5 @@ The following Drawings and visualisations describe the test case dataset to be m
 | [HorizontalAlignmentParameters](./HorizontalAlignmentParameters.csv) | Parameters for the horizontal segments as csv |
 | [VerticalAlignmentParameters](./VerticalAlignmentParameters.csv) | Parameters for the vertical segments as csv   |
 | [LandXML](./TOI-M14334-0000A.xml)                            | LandXML-file representing the alignment       |
+| [Courses](./Courses.PNG)                                     | Definition of the courses                     |
+| [Typical cross section](./Cross section.PNG)                 | Definition of the typical cross section       |
