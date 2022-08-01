@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LandXML xmlns="http://www.inframodel.fi/inframodel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.inframodel.fi/inframodel https://buildingsmart.fi/infra/schema/4.0.3/inframodel.xsd" language="Finnish" date="2022-02-04+03:00" time="08:56:23+03:00" version="1.2" readOnly="false">
+  <Project name="IFC testi" desc="IFC testi" state="proposed">
+    <Feature code="IM_codings" source="inframodel">
+      <Property label="infraCoding" value="InfraBIM"/>
+      <Property label="proprietaryInfraCoding" value="Novapoint"/>
+      <Property label="surfaceCoding" value="Tielaitos"/>
+      <Property label="terrainCoding" value="Tielaitos"/>
+    </Feature>
+  </Project>
+  <Application name="Novapoint" manufacturer="Trimble Solutions Sandvika AS" manufacturerURL="http://www.novapoint.com" version="Novapoint 21.10.FP4j (21.0.32695.6200)" timeStamp="2021-08-05T11:32:25">
+    <Author createdBy="Eemeli.Erkkila" createdByEmail="eemeli.erkkila@sitowise.com" company="Sitowise Oy" companyURL="www.sitowise.com"/>
+  </Application>
+  <FeatureDictionary name="inframodel" version="4.0.3">
+    <DocFileRef name="Finnish inframodel application documentation for LandXML 1.2" location="https://buildingsmart.fi/infra/inframodel/"/>
+  </FeatureDictionary>
+  <Units>
+    <Metric angularUnit="decimal degrees" areaUnit="squareMeter" diameterUnit="meter" directionUnit="decimal degrees" elevationUnit="meter" heightUnit="meter" linearUnit="meter" pressureUnit="mmHG" temperatureUnit="celsius" velocityUnit="kilometersPerHour" volumeUnit="cubicMeter" widthUnit="meter"/>
+  </Units>
+  <CoordinateSystem rotationAngle="0.000000" epsgCode="3878" horizontalDatum="EPSG:3878" verticalDatum="EPSG:3900"/>
+  <Alignments name="Geometriat">
+    <Alignment name="Testi" state="proposed" staStart="0.000000" length="1270.408982">
+      <CoordGeom>
+        <Line dir="49.193952" staStart="0.000000" length="193.423200">
+          <Start>6654918.750471 24474600.283714 0.000000</Start>
+          <End>6655045.152631 24474746.690778 0.000000</End>
+        </Line>
+        <Spiral spiType="clothoid" radiusStart="INF" radiusEnd="200.000000" constant="113.000000" theta="-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000" rot="ccw" dirStart="49.193952" dirEnd="40.048829" staStart="193.423200" length="63.845000">
+          <Start>6655045.152631 24474746.690778</Start>
+          <End>6655089.335669 24474792.677965</End>
+          <PI>6655073.005000 24474778.951172</PI>
+        </Spiral>
+        <Curve delta="-9.860771" radius="200.000000" rot="ccw" chord="34.378120" dirStart="40.048829" dirEnd="30.188058" staStart="257.268200" length="34.420584">
+          <Start>6655089.335669 24474792.677965</Start>
+          <End>6655117.455754 24474812.454617</End>
+          <Center>6655218.023713 24474639.578692</Center>
+        </Curve>
+        <Spiral spiType="clothoid" radiusStart="200.000000" radiusEnd="INF" constant="113.000000" theta="-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000" rot="ccw" dirStart="30.188058" dirEnd="21.042935" staStart="291.688784" length="63.845000">
+          <Start>6655117.455754 24474812.454617</Start>
+          <End>6655175.673937 24474838.485471</End>
+          <PI>6655135.895942 24474823.181919</PI>
+        </Spiral>
+        <Line dir="21.042935" staStart="355.533784" length="21.346852">
+          <Start>6655175.673937 24474838.485471 0.000000</Start>
+          <End>6655195.597202 24474846.150430 0.000000</End>
+        </Line>
+        <Spiral spiType="clothoid" radiusStart="INF" radiusEnd="200.000000" constant="113.000000" theta="-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000" rot="cw" dirStart="21.042935" dirEnd="30.188058" staStart="376.880636" length="63.845000">
+          <Start>6655195.597202 24474846.150430</Start>
+          <End>6655253.815386 24474872.181284</End>
+          <PI>6655235.375197 24474861.453982</PI>
+        </Spiral>
+        <Curve delta="24.452608" radius="200.000000" rot="cw" chord="84.709398" dirStart="30.188058" dirEnd="54.640666" staStart="440.725636" length="85.355704">
+          <Start>6655253.815386 24474872.181284</Start>
+          <End>6655316.355174 24474929.316712</End>
+          <Center>6655153.247426 24475045.057209</Center>
+        </Curve>
+        <Spiral spiType="clothoid" radiusStart="200.000000" radiusEnd="INF" constant="113.000000" theta="-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000" rot="cw" dirStart="54.640666" dirEnd="63.785789" staStart="526.081339" length="63.845000">
+          <Start>6655316.355174 24474929.316712</Start>
+          <End>6655347.527472 24474984.951684</End>
+          <PI>6655328.700888 24474946.714957</PI>
+        </Spiral>
+        <Line dir="63.785789" staStart="589.926339" length="192.323738">
+          <Start>6655347.527472 24474984.951684 0.000000</Start>
+          <End>6655432.482327 24475157.494701 0.000000</End>
+        </Line>
+        <Curve delta="-23.724504" radius="200.000000" rot="ccw" chord="82.223790" dirStart="63.785789" dirEnd="40.061284" staStart="782.250078" length="82.814142">
+          <Start>6655432.482327 24475157.494701</Start>
+          <End>6655483.190771 24475222.220317</End>
+          <Center>6655611.912094 24475069.149023</Center>
+        </Curve>
+        <Curve delta="28.681949" radius="200.000000" rot="cw" chord="99.076774" dirStart="40.061284" dirEnd="68.743234" staStart="865.064220" length="100.118890">
+          <Start>6655483.190771 24475222.220317</Start>
+          <End>6655540.862461 24475302.781991</End>
+          <Center>6655354.469449 24475375.291611</Center>
+        </Curve>
+        <Line dir="68.743234" staStart="965.183110" length="58.659577">
+          <Start>6655540.862461 24475302.781991 0.000000</Start>
+          <End>6655562.129379 24475357.450667 0.000000</End>
+        </Line>
+        <Curve delta="33.071406" radius="200.000000" rot="cw" chord="113.845105" dirStart="68.743234" dirEnd="101.814640" staStart="1023.842688" length="115.440984">
+          <Start>6655562.129379 24475357.450667</Start>
+          <End>6655571.499388 24475470.909519</End>
+          <Center>6655375.736367 24475429.960288</Center>
+        </Curve>
+        <Curve delta="-29.316842" radius="200.000000" rot="ccw" chord="101.222375" dirStart="101.814640" dirEnd="72.497798" staStart="1139.283672" length="102.335082">
+          <Start>6655571.499388 24475470.909519</Start>
+          <End>6655576.521331 24475572.007240</End>
+          <Center>6655767.262409 24475511.858750</Center>
+        </Curve>
+        <Line dir="72.497798" staStart="1241.618754" length="28.790227">
+          <Start>6655576.521331 24475572.007240 0.000000</Start>
+          <End>6655585.179774 24475599.464635 0.000000</End>
+        </Line>
+      </CoordGeom>
+      <Profile name="Testi" staStart="0.000000">
+        <ProfAlign name="Testi">
+          <PVI>0.000000 43.475329</PVI>
+          <CircCurve length="25.600322" radius="300.000000">80.774181 42.850613</CircCurve>
+          <CircCurve length="21.724048" radius="300.000000">124.744967 38.746467</CircCurve>
+          <CircCurve length="56.935039" radius="2000.000000">232.698531 36.516384</CircCurve>
+          <CircCurve length="101.948165" radius="2500.000000">358.596365 37.500000</CircCurve>
+          <CircCurve length="64.048561" radius="1000.000000">472.106409 43.020016</CircCurve>
+          <CircCurve length="55.908230" radius="1000.000000">735.667559 38.945922</CircCurve>
+          <CircCurve length="76.685653" radius="1000.000000">801.821767 34.216804</CircCurve>
+          <CircCurve length="36.821777" radius="2000.000000">1010.938652 35.329480</CircCurve>
+          <CircCurve length="52.568789" radius="1000.000000">1055.627923 36.390230</CircCurve>
+          <PVI>1270.408982 30.194845</PVI>
+        </ProfAlign>
+      </Profile>
+      <Feature code="IM_coding" source="inframodel">
+        <Property label="infraCoding" value="101"/>
+        <Property label="infraCodingDesc" value="Mittalinja"/>
+      </Feature>
+    </Alignment>
+  </Alignments>
+</LandXML>
