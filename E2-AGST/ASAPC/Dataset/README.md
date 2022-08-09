@@ -194,7 +194,7 @@ There is a linear change in superelevation and width between 315 and 331,82
 
 Each IfcCourse represented by as many lines (2 or 3) where each line represents a longitudinal breakline or edge. The lines are of type IfcIndexedPolyCurve. Each curve shall be assigned a classification reference using the following type of structure:
 
-![](C:\Users\lars\Documents\Projekt\IFCInfra\MVD-Infra-Test-Instructions\E2-AGST\ASAPC\Dataset\Stringline repr with classification.PNG)
+![](./Stringline%20repr%20with%20classification.PNG)
 
 The following classification can be used for the lines:
 
