@@ -174,7 +174,7 @@ The vertical segments are defined in ALIN06.
 
 The geometry of the different courses are specified in the following figures:
 
-![](./Cross section.PNG)
+![](./Cross-section.PNG)
 
 ![](./Courses.PNG)
 
