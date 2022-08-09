@@ -249,4 +249,4 @@ The following Drawings and visualisations describe the test case dataset to be m
 | [VerticalAlignmentParameters](./VerticalAlignmentParameters.csv) | Parameters for the vertical segments as csv   |
 | [LandXML](./TOI-M14334-0000A.xml)                            | LandXML-file representing the alignment       |
 | [Courses](./Courses.PNG)                                     | Definition of the courses                     |
-| [Typical cross section](./Cross section.PNG)                 | Definition of the typical cross section       |
+| [Typical cross section](./Cross%20section.PNG)                 | Definition of the typical cross section       |
