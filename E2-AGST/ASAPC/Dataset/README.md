@@ -174,9 +174,9 @@ The vertical segments are defined in ALIN06.
 
 The geometry of the different courses are specified in the following figures:
 
-![](C:\Users\lars\Documents\Projekt\IFCInfra\MVD-Infra-Test-Instructions\E2-AGST\ASAPC\Dataset\Cross section.PNG)
+![](./Cross section.PNG)
 
-![](C:\Users\lars\Documents\Projekt\IFCInfra\MVD-Infra-Test-Instructions\E2-AGST\ASAPC\Dataset\Courses.PNG)
+![](./Courses.PNG)
 
 Note that the b alternatives are not used for this test.
 
