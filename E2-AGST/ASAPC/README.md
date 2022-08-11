@@ -156,13 +156,13 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 | **RULE ID** | **CRITERIA**              | **VALUE [examples]**                                         | **ENTITY (if applicable)** | **CT (if applicable)** |
 | ----------- | ------------------------- | ------------------------------------------------------------ | -------------------------- | ---------------------- |
-| OBTP_01     | Object types are verified | As per [Object Types Table](Dataset/README.md#Object-Types-Table) | na                         | Object Typing          |
+| OBTP_01     | Object types are verified | As per [Object Types Table](Dataset/README.md#object-types-table) | na                         | Object Typing          |
 
 > **Acceptance criteria**: For the **Object typing** capability, the validation procedure must verify that an IFC entity type with the given Name is typing (via `IfcRelDefinesByType`) exactly a given number of objects of the requested Name, no more and no less.
 
 <details><summary>OBTP_01 details: Object types are verified</summary>
 
-> - Given a set of types and objects taken from the [Object Types Table](Dataset/README.md#Object-Types-Table)
+> - Given a set of types and objects taken from the [Object Types Table](Dataset/README.md#object-types-table)
 > - Then the Entity Type, with the Entity Type Name, exists
 > - And the Entity Type must type exactly [MinSize..MaxSize] of the requested Object
 
@@ -179,7 +179,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 <details><summary>MATE_01 details: Material association is verified</summary>
 
-> - Given a set of objects and materials taken from the [Material Association Table](Dataset/README.md#Material-Association-Table)
+> - Given a set of objects and materials taken from the [Material Association Table](Dataset/README.md#material-association-table)
 > - Then the Objects, and optionally the Object Type, exists
 > - And the Object must be associated to the requested Material
 
@@ -189,13 +189,13 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 | **RULE ID** | **CRITERIA**                                       | **VALUE [examples]**                                         | **ENTITY (if applicable)** | **CT (if applicable)**                      |
 | ----------- | -------------------------------------------------- | ------------------------------------------------------------ | -------------------------- | ------------------------------------------- |
-| ASSE_01     | Mandatory components are present in the assemblies | As per [Element (De)Composition Table](Dataset/README.md#Element-(De)Composition-Table) | na                         | Element Composition & Element Decomposition |
+| ASSE_01     | Mandatory components are present in the assemblies | As per [Element (De)Composition Table](Dataset/README.md#element-(de)composition-table) | na                         | Element Composition & Element Decomposition |
 
 > **Acceptance criteria**: For the **ASSE_01 rule**, the validation procedure must verify that an assembly of the requested type (and name) aggregates (via `IfcRelAggregates`) at least a given number of elements of the requested type (and name).
 
 <details><summary>ASSE_01 details: Mandatory components are present in the assemblies</summary>
 
-> - Given a set of assemblies taken from the [Element (De)Composition Table](Dataset/README.md#Element-(De)Composition)
+> - Given a set of assemblies taken from the [Element (De)Composition Table](Dataset/README.md#element-(de)composition-table)
 > - Then the Assembly, and optionally the Assembly Type, exists
 > - And the Assembly must aggregate at least a number within [MinSize..MaxSize] of the requested Element
 
@@ -205,25 +205,25 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 | **RULE ID** | **CRITERIA**                                             | **VALUE [examples]**                                         | **ENTITY (if applicable)** | **CT (if applicable)**                              |
 | ----------- | -------------------------------------------------------- | ------------------------------------------------------------ | -------------------------- | --------------------------------------------------- |
-| PSET_01     | The model does not contain unrequested property sets     | As per [Properties Table](Dataset/README.md#Properties-Table) | na                         | Property Sets for Objects & Property Sets for Types |
-| PNAM_01     | The property set does not contain unrequested properties | As per [Properties Table](Dataset/README.md#Properties-Table) | na                         | Property Sets for Objects & Property Sets for Types |
-| PTEX_01     | Property values belong to a list of values               | As per [Properties Table](Dataset/README.md#Properties-Table) | na                         | Property Sets for Objects & Property Sets for Types |
-| PVAL_01     | Property values are not null and not empty               | As per [Properties Table](Dataset/README.md#Properties-Table) | na                         | Property Sets for Objects & Property Sets for Types |
-| PVAL_02     | Requested property value types are found                 | As per [Properties Table](Dataset/README.md#Properties-Table) | na                         | Property Sets for Objects & Property Sets for Types |
+| PSET_01     | The model does not contain unrequested property sets     | As per [Properties Table](Dataset/README.md#properties-table) | na                         | Property Sets for Objects & Property Sets for Types |
+| PNAM_01     | The property set does not contain unrequested properties | As per [Properties Table](Dataset/README.md#properties-table) | na                         | Property Sets for Objects & Property Sets for Types |
+| PTEX_01     | Property values belong to a list of values               | As per [Properties Table](Dataset/README.md#properties-table) | na                         | Property Sets for Objects & Property Sets for Types |
+| PVAL_01     | Property values are not null and not empty               | As per [Properties Table](Dataset/README.md#properties-table) | na                         | Property Sets for Objects & Property Sets for Types |
+| PVAL_02     | Requested property value types are found                 | As per [Properties Table](Dataset/README.md#properties-table) | na                         | Property Sets for Objects & Property Sets for Types |
 
 > **Acceptance criteria**: For the **Properties for objects and object types** capability, the validation procedure must verify that both standard and custom property sets requested by the test case (including relative properties and values) are present in the IFC file.
 > See below for further specification of each rule.
 
 <details><summary>PSET_01: The model does not contain unrequested property sets</summary>
 
-> - Given a set of properties taken from the [Properties Table](Dataset/README.md#Properties-Table)
+> - Given a set of properties taken from the [Properties Table](Dataset/README.md#properties-table)
 > - When the IfcEntity, and optionally the Type, exists
 > - Then the IfcEntity is associated at most to the property set with the PropertySet Name
 </details>
 
 <details><summary>PNAM_01: The property set does not contain unrequested properties</summary>
 
-> - Given a set of properties taken from the [Properties Table](Dataset/README.md#Properties-Table)
+> - Given a set of properties taken from the [Properties Table](Dataset/README.md#properties-table)
 > - When the IfcEntity, and optionally the Type, exists
 > - And the IfcEntity is associated to a property set with the PropertySet Name
 > - Then the property set has at most the properties with the Property Name
@@ -231,7 +231,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 <details><summary>PTEX_01: Property values belong to a list of values</summary>
 
-> - Given a set of properties taken from the [Properties Table](Dataset/README.md#Properties-Table)
+> - Given a set of properties taken from the [Properties Table](Dataset/README.md#properties-table)
 > - When the IfcEntity, and optionally the Type, exists
 > - And the IfcEntity is associated to a property set with the PropertySet Name
 > - And the property set has a property with the Property Name
@@ -240,7 +240,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 <details><summary>PVAL_01: Property values are not null and not empty</summary>
 
-> - Given a set of properties taken from the [Properties Table](Dataset/README.md#Properties-Table)
+> - Given a set of properties taken from the [Properties Table](Dataset/README.md#properties-table)
 > - When the IfcEntity, and optionally the Type, exists
 > - And the IfcEntity is associated to a property set with the PropertySet Name
 > - And the property set has a property with the Property Name
@@ -250,7 +250,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 <details><summary>PVAL_02: Requested property value types are found</summary>
 
-> - Given a set of properties taken from the [Properties Table](Dataset/README.md#Properties-Table)
+> - Given a set of properties taken from the [Properties Table](Dataset/README.md#properties-table)
 > - When the IfcEntity, and optionally the Type, exists
 > - And the IfcEntity is associated to a property set with the PropertySet Name
 > - And the property set has a property with the Property Name
@@ -262,13 +262,13 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 | **RULE ID** | **CRITERIA**                    | **VALUE [examples]**                                         | **ENTITY (if applicable)** | **CT (if applicable)** |
 | ----------- | ------------------------------- | ------------------------------------------------------------ | -------------------------- | ---------------------- |
-| SCON_01     | Spatial containment is verified | As per [Spatial Containment Table](Dataset/README.md#Spatial-Containment-Table) | na                         | Spatial Containment    |
+| SCON_01     | Spatial containment is verified | As per [Spatial Containment Table](Dataset/README.md#spatial-containment-table) | na                         | Spatial Containment    |
 
 > **Acceptance criteria**: For the **Spatial containment** capability, the validation procedure must verify that a Spatial Element of the requested type contains (via `IfcRelContainedInSpatialStructure`) exactly a given number of Elements of the requested type, no more and no less.
 
 <details><summary>SCON_01 details: Spatial containment is verified</summary>
 
-> - Given a set of elements taken from the [Spatial Containment Table](Dataset/README.md#Spatial-Containment-Table)
+> - Given a set of elements taken from the [Spatial Containment Table](Dataset/README.md#spatial-containment-table)
 > - Then the Spatial Element, and optionally the Spatial Element Type, exists
 > - And the Spatial Element must contain at least a number within [MinSize..MaxSize] of the requested Element
 
@@ -278,13 +278,13 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 | **RULE ID** | **CRITERIA**                            | **VALUE [examples]**                     | **ENTITY (if applicable)** | **CT (if applicable)**     |
 |-------------|-----------------------------------------|------------------------------------------|----------------------------|----------------------------|
-| PREP_01     | Geometric representation of products is verified | As per [Product Geometric Representation Table](Dataset/README.md#Product-Geometric-Representation-Table) |                   | Product Geometric Representation and its subtemplates |
+| PREP_01     | Geometric representation of products is verified | As per [Product Geometric Representation Table](Dataset/README.md#product-geometric-representation-table) |                   | Product Geometric Representation and its subtemplates |
 
 > **Acceptance criteria**: For the **Group Geometric Representation** capability, the validation procedure must verify that a Product of the requested type (and optionally a requested name) has an IfcShapeRepresentation with the requested Representation Identifier, Representation Type and Items.
 
 <details><summary>PREP_01 details:  Geometric representation of products is verified</summary>
 
-> - Given a set of products taken from the [Product Geometric Representation Table](#Product-Geometric-Representation-Table)
+> - Given a set of products taken from the [Product Geometric Representation Table](#product-geometric-representation-table)
 > - Then the Product, and optionally the Product Type, exists
 > - And the Product must have an IfcShapeRepresentation (via IfcProductDefinitionShape) with the requested Representation Identifier, Representation Type and Items.
 
@@ -295,14 +295,14 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 | **RULE ID** | **CRITERIA**                            | **VALUE [examples]**                     | **ENTITY (if applicable)** | **CT (if applicable)**     |
 |-------------|-----------------------------------------|------------------------------------------|----------------------------|----------------------------|
-| PPLA_01     | Placement of products is verified | As per [Product Placement Table](Dataset/README.md#Product-Placement-Table) |                   | Product Placement subtemplates |
+| PPLA_01     | Placement of products is verified | As per [Product Placement Table](Dataset/README.md#product-placement-table) |                   | Product Placement subtemplates |
 | PPLA_02     | For a product that has ObjectPlacement as IfcLinearPlacement, the CartesianPosition of IfcLinearPlacement shall be available | depends on cases |                   | Product Linear Placement |
 
 > **Acceptance criteria**: For the **Product Placement** capability, the validation procedure must verify that a Product of the requested type (and optionally a requested name) has the requested Object Placement, and optionally the Object Placement has PlacementRelTo reference to the Object Placement of Relative Placement Product with requested Relative Placement Product Type and Relative Placement Product Name.
 
 <details><summary>PPLA_01 details:  Placement of products is verified</summary>
 
-> - Given a set of products taken from the [Product Placement Table](Dataset/README.md#Product-Placement-Table)
+> - Given a set of products taken from the [Product Placement Table](Dataset/README.md#product-placement-table)
 > - Then the Product with Product Type and Product Name, exists
 > - And the Product must have Object Placement, and the Object Placement has PlacementRelTo reference to the ObjectPlacement of Relative Placement Product with requested Relative Placement Product Type and Relative Placement Product Name.
 
