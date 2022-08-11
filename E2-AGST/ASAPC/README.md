@@ -173,7 +173,7 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 | **RULE ID** | **CRITERIA**                     | **VALUE [examples]**                                         | **ENTITY (if applicable)** | **CT (if applicable)** |
 | ----------- | -------------------------------- | ------------------------------------------------------------ | -------------------------- | ---------------------- |
-| MATE_01     | Material association is verified | As per [Material Association Table](Dataset/README.md#Material-Association-Table) | na                         | Material Association   |
+| MATE_01     | Material association is verified | As per [Material Association Table](Dataset/README.md#material-association-table) | na                         | Material Association   |
 
 > **Acceptance criteria**: For the **Material association** capability, the validation procedure must verify that an Object of the requested type is associated (via `IfcRelAssociatesMaterial`) to a material definition with the requested name.
 
