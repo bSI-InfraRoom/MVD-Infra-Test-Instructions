@@ -24,7 +24,7 @@ This test instruction imports the alignment definition from [ALIN06](../E1a-ARSE
 
 - The [Expected Results](#Expected-Results) section lists the material that will be used to assess the fulfilment of capabilities.
 
-- :zap: This is a test-driven process: refer to the [Validation Criteria](#Validation-Criteria) to understand what is required by the test :zap:
+- :zap: This is a test-driven process: refer to the [Validation Criteria](#validation-criteria) to understand what is required by the test :zap:
 
 ## Itemised Roots
 The Test instruction addresses the import and export of the following IFC Entities & Concept Templates:
