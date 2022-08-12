@@ -192,7 +192,7 @@ There is a linear change in superelevation and width between 315 and 331,82
 
 **Axis/Curve3D alternative 1**
 
-Each IfcCourse represented by as many lines (2 or 3) where each line represents a longitudinal breakline or edge. The lines are of type IfcIndexedPolyCurve. Each curve shall be assigned a classification reference using the following type of structure:
+Each IfcCourse represented by lines (2 or 3) where each line represents a longitudinal breakline or edge. The lines are of type IfcIndexedPolyCurve. Each curve shall be assigned a classification reference using the following type of structure:
 
 ![](./Stringline%20repr%20with%20classification.PNG)
 
@@ -210,27 +210,27 @@ The top face of each IfcCourse is represented by an IfcTriangulatedFaceSet.
 
 **Body/AdvancedSweptSolid**
 
-Each IfcCourse is represented using an IfcSectionedSolidHorizontal. For this test instruction, that means that at least 3 cross profiles per course shall be defined according to the tables above and where the alignment constitutes the directrix.
+Each IfcCourse is represented using an IfcSectionedSolidHorizontal. 
 
 ### Product Placement table
 
-| **Product**  | **Product Type** | **Product Name** | **Object Placement**              | Relative Placement Product | Relative Placement Product Type | Relative Placement Product Name |
-| ------------ | ---------------- | ---------------- | --------------------------------- | -------------------------- | ------------------------------- | ------------------------------- |
-| IfcAlignment |                  | A1               | IfcLocalPlacement                 | IfcSite                    | na                              | Alin06.Site                     |
-| IfcPavement  | FLEXIBLE         | P1               | IfcLinearPlacement<br />at 315    | IfcAlignment               | na                              | A1                              |
-| IfcPavement  | FLEXIBLE         | P2               | IfcLinearPlacement<br />at 331,82 | IfcAlignment               | na                              | A1                              |
-| IfcCourse    | USERDEFINED      | C1               | ??                                |                            |                                 |                                 |
-| IfcCourse    | USERDEFINED      | C2               | ??                                |                            |                                 |                                 |
-| IfcCourse    | USERDEFINED      | C3               | ??                                |                            |                                 |                                 |
-| IfcCourse    | USERDEFINED      | C4               | ??                                |                            |                                 |                                 |
-| IfcCourse    | USERDEFINED      | C5               | ??                                |                            |                                 |                                 |
-| IfcCourse    | USERDEFINED      | C6               | ??                                |                            |                                 |                                 |
-| IfcCourse    | USERDEFINED      | C7               | ??                                |                            |                                 |                                 |
-| IfcCourse    | USERDEFINED      | C8               | ??                                |                            |                                 |                                 |
-| IfcCourse    | USERDEFINED      | C0               | ??                                |                            |                                 |                                 |
-| IfcCourse    | USERDEFINED      | C10              | ??                                |                            |                                 |                                 |
-| IfcCourse    | USERDEFINED      | C11              | ??                                |                            |                                 |                                 |
-| IfcCourse    | USERDEFINED      | C12              | ??                                |                            |                                 |                                 |
+| **Product**  | **Product Type** | **Product Name** | **Object Placement**         | Relative Placement Product | Relative Placement Product Type | Relative Placement Product Name |
+| ------------ | ---------------- | ---------------- | ---------------------------- | -------------------------- | ------------------------------- | ------------------------------- |
+| IfcAlignment |                  | A1               | IfcLocalPlacement            | IfcSite                    | na                              | ASPC.Site                       |
+| IfcPavement  | FLEXIBLE         | P1               | IfcLinearPlacement at 315    | IfcAlignment               | na                              | A1                              |
+| IfcPavement  | FLEXIBLE         | P2               | IfcLinearPlacement at 331,82 | IfcAlignment               | na                              | A1                              |
+| IfcCourse    | USERDEFINED      | C1               | IfcLocalPlacement            | IfcPavement                | na                              | P1                              |
+| IfcCourse    | USERDEFINED      | C2               | IfcLocalPlacement            | IfcPavement                | na                              | P1                              |
+| IfcCourse    | USERDEFINED      | C3               | IfcLocalPlacement            | IfcPavement                | na                              | P1                              |
+| IfcCourse    | USERDEFINED      | C4               | IfcLocalPlacement            | IfcPavement                | na                              | P1                              |
+| IfcCourse    | USERDEFINED      | C5               | IfcLocalPlacement            | IfcPavement                | na                              | P1                              |
+| IfcCourse    | USERDEFINED      | C6               | IfcLocalPlacement            | IfcPavement                | na                              | P1                              |
+| IfcCourse    | USERDEFINED      | C7               | IfcLocalPlacement            | IfcPavement                | na                              | P2                              |
+| IfcCourse    | USERDEFINED      | C8               | IfcLocalPlacement            | IfcPavement                | na                              | P2                              |
+| IfcCourse    | USERDEFINED      | C9               | IfcLocalPlacement            | IfcPavement                | na                              | P2                              |
+| IfcCourse    | USERDEFINED      | C10              | IfcLocalPlacement            | IfcPavement                | na                              | P2                              |
+| IfcCourse    | USERDEFINED      | C11              | IfcLocalPlacement            | IfcPavement                | na                              | P2                              |
+| IfcCourse    | USERDEFINED      | C12              | IfcLocalPlacement            | IfcPavement                | na                              | P2                              |
 
 ## Drawings (Visualisations)
 
