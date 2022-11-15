@@ -65,7 +65,9 @@ These entities represent a test-specific subset of the wider AbRV_Ex exchange an
 - For this test instruction
 
   - *IfcPavement*
+  - *IfcPavementType*
   - *IfcCourse*
+  - *IfcCourseType*
   - *IfcPropertySet*
   - *IfcPropertySingleValue*
   - *IfcPropertyEnumeratedValue*
@@ -89,24 +91,27 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
     - *Project Units*
     - *Project Representation Context*
     - *Project Global Positioning*
-    - *Project Global Positioning*
-
   - Object Composition
-    - *Alignment Decomposition*
     - *Spatial Decomposition*
-
+  - Nesting
+    - *Alignment layout*
   - Object Connectivity 
     - *Spatial Containment*
-
 - For this test instruction
-  - *Object Typing*
-  - *Element Decomposition*
-  - *Material Single*
-  - *Product Linear Placement*
-  - *Property Sets for Objects*
-  - *Axis 3D Geometry*
-  - *Surface Tesselation Geometry*
-  - *Body SectionedSolidHorizontal*
+  - Object definition
+    - *Object typing*
+    - *Property sets for types*
+    - *Property Sets for Objects*
+  - Object association
+    - *Material Single*
+  - Object Composition
+    - *Element Decomposition*
+  - Product Shape
+    - *Product Linear Placement*
+    - *Axis 3D Geometry*
+    - *Surface Tesselation Geometry*
+    - *Body SectionedSolidHorizontal*
+
 
 
 </details>
@@ -256,6 +261,22 @@ Considering the aim of this test, other **optional** results, not subject to the
 > - And the property set has a property with the Property Name
 > - And the property value is not null
 > - Then the property type is equal to the Property Value Type
+</details>
+
+### Spatial (De)Composition
+
+| **RULE ID** | **CRITERIA**                      | **VALUE [examples]**                                         | **ENTITY (if applicable)** | **CT (if applicable)** |
+| ----------- | --------------------------------- | ------------------------------------------------------------ | -------------------------- | ---------------------- |
+| SDEC_01     | Spatial decomposition is verified | As per [Spatial (De)Composition Table](Dataset/README.md#spatial-(de)composition-table) | na                         | Spatial Decomposition  |
+
+> **Acceptance criteria**: For the **Spatial decomposition** capability, the validation procedure must verify that a Parent Element of the requested type aggregates (via `IfcRelAggregates`) exactly a given number of Child Elements of the requested type, no more and no less.
+
+<details><summary>SDEC_01 details: Spatial decomposition is verified</summary>
+
+> - Given a set of elements taken from the [Spatial (De)Composition Table](#Spatial-(De)Composition-Table)
+> - Then the Parent Element, and optionally the Parent Element Type, exists
+> - And the Parent Element must aggregate at least a number within [MinSize..MaxSize] of the requested Child Element
+
 </details>
 
 ## Spatial containment
