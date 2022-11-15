@@ -11,7 +11,7 @@ With these instructions the Aggregate structures on Alignment - Junctions exchan
 
 The test instruction specifies a dataset including two intersecting roads in a T junction (a secondary road ending at and joining a primary road).
 
-The test instruction includes the main alignments for the primary and the secondary roads and alignments for the pavement edges where the two roads meet. In addition to these, an alignment is defined to separate the pavaments belonging to the primary road from the pavements belonging to the secondary road.
+The test instruction includes the main alignments for the primary and the secondary roads and alignments for the pavement edges where the two roads meet. In addition to these, an alignment is defined to separate the pavements belonging to the primary road from the pavements belonging to the secondary road.
 
 For each road, the pavements aggregates of a couple of courses that are represented by IfcFacetedBrep. 
 
@@ -33,12 +33,10 @@ These entities represent a test-specific subset of the wider AbRV_Ex exchange an
   - *IfcMapConversion*
   - *IfcProjectedCRS*
   - *IfcUnitAssignment*
-
 - Spatial structure
 
   - *IfcSite*
   - *IfcRoad*
-
 - Alignment
 
   - *IfcAlignment*
@@ -52,19 +50,17 @@ These entities represent a test-specific subset of the wider AbRV_Ex exchange an
   - *IfcCurveSegment*
   - *IfcLine*
   - *IfcCircle*
-
 - Physical objects
 
   - *IfcPavement*
-  - *IfcPavementType*
   - *IfcCourse*
-  - *IfcCourseType*
 - Properties
   - *IfcPropertySet*
   - *IfcPropertySingleValue*
   - *IfcPropertyEnumeratedValue*
 - Product shape
   - *IfcLinearPlacement*
+  - *IfcLocalPlacement*
   - *IfcFacetedBrep*
 
 </details>
@@ -79,7 +75,6 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
   - *Project Global Positioning*
 - Nesting
   - *Alignment layout*
-
 - Object Composition
   - *Spatial Decomposition*
   - *Element Decomposition*
@@ -87,16 +82,16 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
   - *Spatial Containment*
 - Object definition
   - *Object typing*
-  - *Property sets for types*
-
+  - *Property sets for objects*
 - Object association
   - *Material Single*
 - Product shape
   - *Alignment Geometry Gradient*
   - *Product Linear Placement*
+  - *Product Local Placement*
   - *Body Brep Geometry*
-- Probably not
   - *Axis 3D Geometry*
+  - *Axis 2D Geometry*
 
 </details>
 
@@ -115,9 +110,9 @@ This test case utilises the dataset collected in the Dataset folder and summaris
 
 Test instructions are defined with a modular approach to reduce repetition of validation criteria and test content, and improve vendors ability to solve issues and bugs. therefore this test instruction *imports/reuses* the following Test instructions and entities with the relevant associated validation criteria.
 
-| TI Code                                                      | Test Instruction Title          | Comments |
-| ------------------------------------------------------------ | ------------------------------- | -------- |
-| [**IFC4x3_AbRV-E1a-ALIN06**](https://github.com/bSI-InfraRoom/MVD-Infra-Test-Instructions/blob/develop/E1a-ARSE/ALIN06) | Alignment Infrastructure Curves | na       |
+| TI Code | Test Instruction Title | Comments |
+| ------- | ---------------------- | -------- |
+| -       | -                      | na       |
 
 ## Expected Results
 
@@ -245,6 +240,22 @@ Considering the aim of this test, other **optional** results, not subject to the
 > - And the property set has a property with the Property Name
 > - And the property value is not null
 > - Then the property type is equal to the Property Value Type
+</details>
+
+### Spatial (De)Composition
+
+| **RULE ID** | **CRITERIA**                      | **VALUE [examples]**                 | **ENTITY (if applicable)** | **CT (if applicable)** |
+|-------------|-----------------------------------|--------------------------------------|----------------------------|------------------------|
+| SDEC_01     | Spatial decomposition is verified | As per Spatial (De)Composition Table | na                         | Spatial Decomposition  |
+
+> **Acceptance criteria**: For the **Spatial decomposition** capability, the validation procedure must verify that a Parent Element of the requested type aggregates (via `IfcRelAggregates`) exactly a given number of Child Elements of the requested type, no more and no less.
+
+<details><summary>SDEC_01 details: Spatial decomposition is verified</summary>
+
+> - Given a set of elements taken from the [Spatial (De)Composition Table](#Spatial-(De)Composition-Table)
+> - Then the Parent Element, and optionally the Parent Element Type, exists
+> - And the Parent Element must aggregate at least a number within [MinSize..MaxSize] of the requested Child Element
+
 </details>
 
 ## Spatial containment
