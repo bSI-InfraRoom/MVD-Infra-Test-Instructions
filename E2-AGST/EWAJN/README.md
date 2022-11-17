@@ -136,6 +136,79 @@ Considering the aim of this test, other **optional** results, not subject to the
 | GENE_00     | All validation criteria of precondition's tests shall be verified |                                                              | na                         | na                     |
 | GENE_01     | All requested entities (and attributes) exist in file        | As per Entities Table. See [Dataset description](Dataset/README.md) | na                         | na                     |
 
+### Project Setup
+
+| **RULE ID** | **CRITERIA**                                                      | **VALUE [examples]**  | **ENTITY (if applicable)** | **CT (if applicable)**     |
+|-------------|-------------------------------------------------------------------|-----------------------|----------------------------|----------------------------|
+| ORIG_01     | Origin of Coordinate System is set as requested                   | [(0., 0., 0.)]        |                            | Project Global Positioning |
+| ORIG_02     | True north is set as requested                                    | [(0., 1., 0.)]        |                            | Project Global Positioning |
+| DIST_01     | Unit of measure for all distances                                 | [meter]               |                            | Project Units              |
+| ANGL_01     | Unit of measure all angles                                        | [radian]              |                            | Project Units              |
+
+
+
+### Alignment
+
+| **RULE ID** | **CRITERIA**                                                 | **VALUE [examples]**                           | **ENTITY (if applicable)** | **CT (if applicable)** |
+| ----------- | ------------------------------------------------------------ | ---------------------------------------------- | -------------------------- | ---------------------- |
+| SITE_00     | All IfcAlignment shall always be contained in an IfcSite     |                                                |                            | Spatial Containment    |
+| ALIG_00     | Alignment layout structure is verified                       | See steps                                      |                            | Alignment Layout       |
+| ALIG_01     | Number of alignments contained in file                       | [5]                                            |                            |                        |
+| ALIG_02     | Parameters of alignment segments are verified                | As per Alignment Table                         |                            |                        |
+| ALIG_03     | Alignment geometric compliance is verified                   | As per Alignment geometric compliance document |                            |                        |
+| DIST_02     | Required precision for length of alignment's segments        | [0,0001] or [1.E-4]                            | all alignment segments     | na                     |
+| ANGL_02     | Required precision for angles and slope of alignment's segments | [0,000001] or [1.E-6]                          | all alignment segments     | na                     |
+
+<details><summary>ALIG_00 steps</summary>
+
+| **STEP ID** | **STEP**                                                     |
+| ----------- | ------------------------------------------------------------ |
+| ALIG_00.1   | Each IfcAlignment must nest exactly 1 IfcAlignmentHorizontal |
+| ALIG_00.3   | Each IfcAlignment must nest exactly 1 IfcAlignmentVertical   |
+| ALIG_00.6   | Each IfcAlignmentHorizontal must be nested only by 1 IfcAlignment |
+| ALIG_00.7   | Each IfcAlignmentVertical must be nested only by 1 IfcAlignment |
+| ALIG_00.9   | Each IfcAlignment must nest only the following entities: IfcAlignmentHorizontal, IfcAlignmentVertical, IfcReferent, IfcAlignment |
+| ALIG_00.10  | Each IfcAlignmentHorizontal nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentHorizontalSegment |
+| ALIG_00.11  | Each IfcAlignmentVertical nests a list of IfcAlignmentSegment, each of which has DesignParameters typed as IfcAlignmentVerticalSegment |
+
+</details>
+
+<details><summary>Details for DIST_02 and ANGL_02</summary>
+
+Precision for length (DIST_002) applies to the values of the following attributes:
+- `IfcAlignmentHorizontalSegment`.StartPoint
+- `IfcAlignmentHorizontalSegment`.SegmentLength
+- `IfcAlignmentVerticalSegment`.StartDistAlong
+- `IfcAlignmentVerticalSegment`.HorizontalLength
+
+Precision for angles and slope (ANGL_002) applies to the values of the following attributes:
+- `IfcAlignmentHorizontalSegment`.StartDirection
+
+</details>
+
+
+
+
+### Alignment (import verification)
+
+| **RULE ID** | **CRITERIA**                                                        | **VALUE (all examples)** |
+|-------------|---------------------------------------------------------------------|--------------------------|
+| ALIG_10     | Horizontal Starting point Mileage (pk)                              | 0+000                    |
+| ALIG_11     | Horizontal Starting point DistAlong                                 | 0                        |
+| ALIG_12     | Horizontal Starting point X                                         | 452413.9199              |
+| ALIG_13     | Horizontal Starting point Y                                         | 4539456.401              |
+| ALIG_14     | Vertical Starting point Mileage                                     | 0+000                    |
+| ALIG_15     | Vertical Starting point Z                                           | 5                        |
+| ALIG_16     | Horizontal Ending point Mileage (pk)                                | 0+876.3682               |
+| ALIG_17     | Horizontal Ending point DistAlong                                   | 876.3682                 |
+| ALIG_18     | Horizontal Ending point X                                           | 453202.5241              |
+| ALIG_19     | Horizontal Ending point Y                                           | 4539831.929              |
+| ALIG_20     | Vertical Ending point Mileage                                       | 0+876.3682               |
+| ALIG_21     | Vertical Ending point Z                                             | 2                        |
+| ALIG_22     | Total 2D length of alignment (horizontal projection)                | 876.3682                 |
+| ALIG_23     | Total 3D length of alignment                                        | 876.3819                 |
+| ALIG_24     | Height difference between start and end point of alignment 3D curve | -3                       |
+
 ### Object typing
 
 | **RULE ID** | **CRITERIA**              | **VALUE [examples]**                                         | **ENTITY (if applicable)** | **CT (if applicable)** |

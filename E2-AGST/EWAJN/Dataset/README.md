@@ -127,14 +127,89 @@ This test case utilizes the following dataset.
 | IfcCourse   | USERDEFINED     | Sekundärväg \| Bärlager 2    | Pset_CourseCommon    | NominalThickness    | IfcNonNegativeLengthMeasure |                       | IfcPropertySingleValue | 0,08               |
 | IfcCourse   | USERDEFINED     | Sekundärväg \| Först.lager 1 | Pset_CourseCommon    | NominalThickness    | IfcNonNegativeLengthMeasure |                       | IfcPropertySingleValue | 0,42               |
 
-
 ### Horizontal segments table
 
-ToDo
+#### CL Primärväg
+
+| Entity                        | PredefinedType | Name | Start Point X    | Start Point Y    | Start Direction   | Start Radius Of Curvature | End Radius Of Curvature | Segment Length   | Gravity Center Line Height |
+| ----------------------------- | -------------- | ---- | ---------------- | ---------------- | ----------------- | ------------------------- | ----------------------- | ---------------- | -------------------------- |
+| IfcAlignmentHorizontalSegment | LINE           | H1   | 139833.203261246 | 6469858.56013579 | 0.579675593256439 | 0                         | 0                       | 310.822584537187 |                            |
+
+#### CL Sekundärväg
+
+| Entity                        | PredefinedType | Name | Start Point X    | Start Point Y    | Start Direction | Start Radius Of Curvature | End Radius Of Curvature | Segment Length   | Gravity Center Line Height |
+| ----------------------------- | -------------- | ---- | ---------------- | ---------------- | --------------- | ------------------------- | ----------------------- | ---------------- | -------------------------- |
+| IfcAlignmentHorizontalSegment | LINE           | H1   | 139958.797789676 | 6469940.78736059 | -0.874043675285 | 0                         | 0                       | 56.6248338063507 |                            |
+| IfcAlignmentHorizontalSegment | CIRCULARARC    | H2   | 139995.135677443 | 6469897.36006829 | -0.874043675305 | 100                       | 100                     | 49.5402294334664 |                            |
+| IfcAlignmentHorizontalSegment | LINE           | H3   | 140034.862849863 | 6469868.61635507 | -0.378641380952 | 0                         | 0                       | 77.3984706373987 |                            |
+
+#### HVK
+
+| Entity                        | PredefinedType | Name | Start Point X    | Start Point Y    | Start Direction | Start Radius Of Curvature | End Radius Of Curvature | Segment Length   | Gravity Center Line Height |
+| ----------------------------- | -------------- | ---- | ---------------- | ---------------- | --------------- | ------------------------- | ----------------------- | ---------------- | -------------------------- |
+| IfcAlignmentHorizontalSegment | LINE           | H1   | 139935.654422533 | 6469921.15349706 | 0.579672188     | 0                         | 0                       | 17.134994187288  |                            |
+| IfcAlignmentHorizontalSegment | CIRCULARARC    | H2   | 139949.99028268  | 6469930.53918508 | 0.579672188     | -10                       | -10                     | 13.0724741123582 |                            |
+| IfcAlignmentHorizontalSegment | CIRCULARARC    | H3   | 139962.118387677 | 6469929.64065475 | -0.7275752223   | -150                      | -150                    | 21.9666509121467 |                            |
+| IfcAlignmentHorizontalSegment | LINE           | H4   | 139977.396469904 | 6469913.88463349 | -0.8740195618   | 0                         | 0                       | 8.08031568722803 |                            |
+
+#### VVK
+
+| Entity                        | PredefinedType | Name | Start Point X    | Start Point Y    | Start Direction | Start Radius Of Curvature | End Radius Of Curvature | Segment Length   | Gravity Center Line Height |
+| ----------------------------- | -------------- | ---- | ---------------- | ---------------- | --------------- | ------------------------- | ----------------------- | ---------------- | -------------------------- |
+| IfcAlignmentHorizontalSegment | LINE           | H1   | 140002.585502546 | 6469964.97271748 | -2.5619116706   | 0                         | 0                       | 11.361703499456  |                            |
+| IfcAlignmentHorizontalSegment | CIRCULARARC    | H2   | 139993.079876058 | 6469958.74926414 | -2.5619116706   | 150                       | 150                     | 25.3830089708276 |                            |
+| IfcAlignmentHorizontalSegment | CIRCULARARC    | H3   | 139973.118297448 | 6469943.1192765  | -2.3926916107   | 10                        | 10                      | 15.1862667100601 |                            |
+| IfcAlignmentHorizontalSegment | LINE           | H4   | 139972.257202024 | 6469929.37775854 | -0.87406493984  | 0                         | 0                       | 22.6120208199987 |                            |
+
+#### Avgränsning
+
+| Entity                        | PredefinedType | Name | Start Point X    | Start Point Y    | Start Direction | Start Radius Of Curvature | End Radius Of Curvature | Segment Length   | Gravity Center Line Height |
+| ----------------------------- | -------------- | ---- | ---------------- | ---------------- | --------------- | ------------------------- | ----------------------- | ---------------- | -------------------------- |
+| IfcAlignmentHorizontalSegment | LINE           | H1   | 139959.793067416 | 6469931.18896388 | 0.6967526514985 | 0                         | 0                       | 14.9519070168026 |                            |
 
 ### Vertical segments table
 
-ToDo
+#### CL Primärväg
+
+| Entity                      | PredefinedType   | Name | Start Dist Along | Horizontal Length | Start Height | Start Gradient | End Gradient | RadiusOfCurvature |
+|-----------------------------|------------------|------|------------------|-------------------|--------------|----------------|--------------|-------------------|
+| IfcAlignmentVerticalSegment | CONSTANTGRADIENT | V1   | -2.86918035354574 | 11.3362283677065 | 43.8287442117484 | 0.01768316987461 | 0.01768316987461 |                   |
+| IfcAlignmentVerticalSegment | CIRCULARARC      | V2   | 8.46704801416078 | 58.291426785537 | 44.029204663712 | 0.01768316987461 | -0.04064455142376 | 1000           |
+| IfcAlignmentVerticalSegment | CONSTANTGRADIENT | V3   | 66.7584747996978 | 245.375274687582 | 43.3605474566199 | -0.04064455142376 | -0.04064455142376 |                   |
+
+#### CL Sekundärväg
+
+| Entity                      | PredefinedType   | Name | Start Dist Along | Horizontal Length | Start Height     | Start Gradient    | End Gradient      | RadiusOfCurvature |
+| --------------------------- | ---------------- | ---- | ---------------- | ----------------- | ---------------- | ----------------- | ----------------- | ----------------- |
+| IfcAlignmentVerticalSegment | CONSTANTGRADIENT | V1   | 0                | 60.1176036877787  | 39.9724685152047 | -0.02957736251341 | -0.0295773625134  |                   |
+| IfcAlignmentVerticalSegment | CIRCULARARC      | V2   | 60.1176036877787 | 45.1196010683822  | 38.1943483574936 | -0.0295773625134  | -0.01452609884898 | 3000              |
+| IfcAlignmentVerticalSegment | CONSTANTGRADIENT | V3   | 105.237204756161 | 78.326329121072   | 37.199439385708  | -0.01452609884898 | -0.01452609884898 |                   |
+
+#### HVK
+
+| Entity                      | PredefinedType   | Name | Start Dist Along | Horizontal Length | Start Height     | Start Gradient   | End Gradient     | RadiusOfCurvature |
+| --------------------------- | ---------------- | ---- | ---------------- | ----------------- | ---------------- | ---------------- | ---------------- | ----------------- |
+| IfcAlignmentVerticalSegment | CONSTANTGRADIENT | V1   | 0                | 17.0093359641945  | 41.1028243446344 | -0.0406687282842 | -0.0406687282842 |                   |
+| IfcAlignmentVerticalSegment | CIRCULARARC      | V2   | 17.0093359641945 | 2.01953976349906  | 40.4110762820115 | -0.0406687282842 | -0.0609433962264 | 100               |
+| IfcAlignmentVerticalSegment | CONSTANTGRADIENT | V3   | 19.0288757276935 | 6.19984095334127  | 40.3084819350818 | -0.0609433962264 | -0.0609433962264 |                   |
+| IfcAlignmentVerticalSegment | CIRCULARARC      | V4   | 25.2287166810348 | 10.3938214493299  | 39.9306425713216 | -0.0609433962264 | -0.0261934451491 | 300               |
+| IfcAlignmentVerticalSegment | CONSTANTGRADIENT | V5   | 35.6225381303647 | 24.5837265955189  | 39.4779365943157 | -0.0261934451491 | -0.0261934451491 |                   |
+
+#### VVK
+
+| Entity                      | PredefinedType   | Name | Start Dist Along  | Horizontal Length | Start Height     | Start Gradient   | End Gradient     | RadiusOfCurvature |
+| --------------------------- | ---------------- | ---- | ----------------- | ----------------- | ---------------- | ---------------- | ---------------- | ----------------- |
+| IfcAlignmentVerticalSegment | CONSTANTGRADIENT | V1   | -1.39931742150553 | 39.7619971894627  | 37.8075452878682 | 0.0395168864245  | 0.0395168864245  |                   |
+| IfcAlignmentVerticalSegment | CIRCULARARC      | V2   | 38.3626797679572  | 11.7363124008115  | 39.3788156148173 | 0.0395168864245  | -0.0295639751476 | 170               |
+| IfcAlignmentVerticalSegment | CONSTANTGRADIENT | V3   | 50.0989921687687  | 24.8386046012662  | 39.4371512577256 | -0.0295639751476 | -0.0295639751476 |                   |
+
+#### Avgränsning
+
+| Entity                      | PredefinedType   | Name | Start Dist Along | Horizontal Length | Start Height     | Start Gradient   | End Gradient     | RadiusOfCurvature |
+| --------------------------- | ---------------- | ---- | ---------------- | ----------------- | ---------------- | ---------------- | ---------------- | ----------------- |
+| IfcAlignmentVerticalSegment | CONSTANTGRADIENT | V1   | -0.006910133504  | 5.30891707542168  | 39.8057259552131 | -0.0131041753938 | -0.0131041753938 |                   |
+| IfcAlignmentVerticalSegment | CIRCULARARC      | V2   | 5.3020069419174  | 0.19000873308445  | 39.7361569747054 | -0.0131041753938 | -0.0321204806718 | 10                |
+| IfcAlignmentVerticalSegment | CONSTANTGRADIENT | V3   | 5.49201567500192 | 9.47877199272593  | 39.7318608230988 | -0.0321204806718 | -0.0321204806718 |                   |
 
 ### Spatial (De)Composition table
 
