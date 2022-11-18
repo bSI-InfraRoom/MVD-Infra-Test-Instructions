@@ -99,12 +99,9 @@ These concept templates represent a test-specific subset of the wider AbRV_Ex ex
 
 This test case utilises the dataset collected in the Dataset folder and summarised in the table below. **For more details on each item see [Dataset description](Dataset/README.md).**
 
-| Filename                                                     | Description                                   |
-| ------------------------------------------------------------ | --------------------------------------------- |
-| [HorizontalAlignmentParameters](Dataset/HorizontalAlignmentParameters.csv) | Parameters for the horizontal segments as csv |
-| [VerticalAlignmentParameters](Dataset/VerticalAlignmentParameters.csv) | Parameters for the vertical segments as csv   |
-| [LandXML](Dataset/Testi_101_ml.xml)                          | LandXML-file representing the alignment       |
-| [Pavement composition](./Dataset/Pavement-composition.png)   | Image showing the pavement composition        |
+| Filename                              | Description                                                  |
+| ------------------------------------- | ------------------------------------------------------------ |
+| [IFC Reference file](Dataset/TRV.ifc) | IFC Reference file provided by Trimble Solutions<br/>*NOTE: The file contains objects such as breaklines (IfcAnnotation), cut (IfcEarthworksCut) and fill (IfcEarthworksFill) which are not mandatory for this test instruction.* |
 
 ## Test Case Imports
 
@@ -187,26 +184,20 @@ Precision for angles and slope (ANGL_002) applies to the values of the following
 </details>
 
 
+### Alignment (import verification - ToDo - 5 alignments)
 
-
-### Alignment (import verification)
-
-| **RULE ID** | **CRITERIA**                                                        | **VALUE (all examples)** |
-|-------------|---------------------------------------------------------------------|--------------------------|
-| ALIG_10     | Horizontal Starting point Mileage (pk)                              | 0+000                    |
-| ALIG_11     | Horizontal Starting point DistAlong                                 | 0                        |
-| ALIG_12     | Horizontal Starting point X                                         | 452413.9199              |
-| ALIG_13     | Horizontal Starting point Y                                         | 4539456.401              |
-| ALIG_14     | Vertical Starting point Mileage                                     | 0+000                    |
-| ALIG_15     | Vertical Starting point Z                                           | 5                        |
-| ALIG_16     | Horizontal Ending point Mileage (pk)                                | 0+876.3682               |
-| ALIG_17     | Horizontal Ending point DistAlong                                   | 876.3682                 |
-| ALIG_18     | Horizontal Ending point X                                           | 453202.5241              |
-| ALIG_19     | Horizontal Ending point Y                                           | 4539831.929              |
-| ALIG_20     | Vertical Ending point Mileage                                       | 0+876.3682               |
-| ALIG_21     | Vertical Ending point Z                                             | 2                        |
-| ALIG_22     | Total 2D length of alignment (horizontal projection)                | 876.3682                 |
-| ALIG_23     | Total 3D length of alignment                                        | 876.3819                 |
+| **RULE ID** | **CRITERIA**                                                 | **VALUE (all examples)** |
+| ----------- | ------------------------------------------------------------ | ------------------------ |
+| ALIG_11     | Horizontal Starting point DistAlong                          | 0                        |
+| ALIG_12     | Horizontal Starting point X                                  | 452413.9199              |
+| ALIG_13     | Horizontal Starting point Y                                  | 4539456.401              |
+| ALIG_15     | Vertical Starting point Z                                    | 5                        |
+| ALIG_17     | Horizontal Ending point DistAlong                            | 876.3682                 |
+| ALIG_18     | Horizontal Ending point X                                    | 453202.5241              |
+| ALIG_19     | Horizontal Ending point Y                                    | 4539831.929              |
+| ALIG_21     | Vertical Ending point Z                                      | 2                        |
+| ALIG_22     | Total 2D length of alignment (horizontal projection)         | 876.3682                 |
+| ALIG_23     | Total 3D length of alignment                                 | 876.3819                 |
 | ALIG_24     | Height difference between start and end point of alignment 3D curve | -3                       |
 
 ### Object typing
