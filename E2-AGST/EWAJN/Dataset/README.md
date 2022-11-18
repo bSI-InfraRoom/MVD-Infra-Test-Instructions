@@ -5,18 +5,69 @@ This test case utilizes the following dataset.
 - A dataset including two intersecting roads in a T junction (a secondary road ending at and joining a primary road).
 
 - The main alignments for the primary and the secondary roads
-- Alignments for the pavement edges where the two roads meet. 
-- An alignment is defined to separate the pavements belonging to the primary road from the pavements belonging to the secondary road.
-- For each road, the pavements aggregates of a couple of courses that are represented by IfcFacetedBrep. 
-  - These elements carry material and Psets
-- A spatial structure representing the breakdown of the junction project
 
-| Filename | Description |
-| -------- | ----------- |
-|          |             |
-|          |             |
-|          |             |
-|          |             |
+  ![Primary Road - Alignment](Primary Road - Alignment.png)
+  *Primary Road - Alignment (white)*
+
+  ![Secondary Road - Alignment](Secondary Road - Alignment.png)
+  *Primary Road - Alignment (white)*
+
+- Alignments for the pavement (roadway) edges where the two roads meet. 
+
+  ![Intersection - Alignment HVK](Intersection - Alignment HVK.png)
+  *Intersection - Alignment HVK (white)*
+
+  ![Intersection - Alignment VVK](Intersection - Alignment VVK.png)
+  *Intersection - Alignment VVK (white)*
+
+- An alignment is defined to separate the pavements belonging to the primary road from the pavements belonging to the secondary road.
+
+  ![Intersection - Alignment Avgransning](Intersection - Alignment Avgränsning.png)
+  *Intersection - Alignment Avgränsning (white)*
+
+- For each road and the intersection, the pavements aggregates of a couple of courses that are represented by IfcFacetedBrep. 
+  - These elements carry material and Psets
+
+  - The pavement for the intersection represents the part outside the  roadway including the verge, support strip and inner slope (excluding slope fill)
+
+    ![Primary Road - Pavement](Primary Road - Pavement.png)
+    *Primary Road - Pavement (Yellow)*
+
+    ![Secondary Road - Pavement](Secondary Road - Pavement.png)
+    *Secondary Road - Pavement (Yellow)*
+
+    ![Intersection - Pavement](Intersection - Pavement.png)
+    *Intersection - Pavement (Yellow)*
+
+- A spatial structure representing the breakdown of the junction project:
+
+  - IfcProject
+    - IfcSite
+      - IfcAlignment (4)
+
+      - IfcRoad (Primary Road)
+        - IfcRoadPart/ROADSEGMENT
+          - IfcPavement
+
+      - IfcRoad (Secondary Road)
+        - IfcRoadPart/INTERSECTION
+          - IfcPavement
+
+        - IfcRoadPart/ROADSEGMENT
+          - IfcPavement
+
+- The typical crossections for the roads have the following design:
+
+  - Primary road:
+    - ToDo
+
+  - Secondary road:
+    - ToDo
+
+
+| Filename           | Description                                                  |
+| ------------------ | ------------------------------------------------------------ |
+| [TRV.ifc](TRV.ifc) | IFC Reference file provided by Trimble Solutions<br />*NOTE: The file contains objects such as breaklines (IfcAnnotation), Cut (IfcEarthworksCut) and Fill (IfcEarthworksFill) which are not mandatory for this test instruction.* |
 
 ## Dataset specification
 
@@ -306,17 +357,20 @@ This test case utilizes the following dataset.
 
 The following Drawings and visualisations describe the test case dataset to be modelled and certified.
 
-| Filename | Description |
-| -------- | ----------- |
-|          |             |
+| Filename/Image                                               | Description                          |
+| ------------------------------------------------------------ | ------------------------------------ |
+| [Primary Road - Pavement.png](Primary Road - Pavement.png)   | Pavement - primary road              |
+| [Secondary Road - Pavement.png](Secondary Road - Pavement.png) | Pavement - Secondary Road            |
+| [Intersection - Pavement.png](Intersection - Pavement.png)   | Pavement - Intersection              |
+| [Primary Road - Alignment.png](Primary Road - Alignment.png) | Alignment - Primary road             |
+| [Secondary Road - Alignment.png](Secondary Road - Alignment.png) | Secondary road - alignment           |
+| [Intersection - Alignment HVK.png](Intersection - Alignment HVK.png) | Intersection - Alignment HVK         |
+| [Intersection - Alignment VVK.png](Intersection - Alignment VVK.png) | Intersection - Alignment VVK         |
+| [Intersection - Alignment Avgränsning.png](Intersection - Alignment Avgränsning.png) | Intersection - Alignment Avgränsning |
 
 
 ## Supporting files
 
-| Filename              | Description      |
-| --------------------- | ---------------- |
-| [IFC file](./trv.ifc) | Example IFC file |
-|                       |                  |
-|                       |                  |
-|                       |                  |
-|                       |                  |
+| Filename           | Description                                                  |
+| ------------------ | ------------------------------------------------------------ |
+| [TRV.ifc](TRV.ifc) | IFC Reference file provided by Trimble Solutions<br />*NOTE: The file contains objects such as breaklines (IfcAnnotation), cut (IfcEarthworksCut) and fill (IfcEarthworksFill) which are not mandatory for this test instruction.* |
