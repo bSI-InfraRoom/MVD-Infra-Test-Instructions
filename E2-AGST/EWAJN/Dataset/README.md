@@ -6,7 +6,7 @@ This test case utilizes the following dataset.
 
 - The main alignments for the primary and the secondary roads
 
-  ![Primary Road - Alignment](Primary Road - Alignment.png)
+  ![Primary Road - Alignment](./Primary Road - Alignment.png)
   *Primary Road - Alignment (white)*
 
   ![Secondary Road - Alignment](Secondary Road - Alignment.png)
