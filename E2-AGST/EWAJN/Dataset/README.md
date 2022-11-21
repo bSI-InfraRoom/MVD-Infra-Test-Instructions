@@ -26,19 +26,20 @@ This test case utilizes the following dataset.
   *Intersection - Alignment Avgränsning (white)*
 
 - For each road and the intersection, the pavements aggregates of a couple of courses that are represented by IfcFacetedBrep. 
+  
   - These elements carry material and Psets
-
+  
   - The pavement for the intersection represents the part outside the  roadway including the verge, support strip and inner slope (excluding slope fill)
-
+  
     ![Primary Road - Pavement](Primary Road - Pavement.png)
     *Primary Road - Pavement (Yellow)*
-
+  
     ![Secondary Road - Pavement](Secondary Road - Pavement.png)
     *Secondary Road - Pavement (Yellow)*
-
+  
     ![Intersection - Pavement](Intersection - Pavement.png)
     *Intersection - Pavement (Yellow)*
-
+  
 - A spatial structure representing the breakdown of the junction project:
 
   - IfcProject
@@ -59,15 +60,20 @@ This test case utilizes the following dataset.
 - The typical crossections for the roads have the following design:
 
   - Primary road:
-    - ToDo
-
+    
+    ![Primary Road - Typical cross section](Primary Road - Typical cross section.png)
+    *Primary Road - typical cross section*
+    
   - Secondary road:
-    - ToDo
+    
+    ![Secondary Road - Typical cross section](Secondary Road - Typical cross section.png)
+    *Secondary Road - typical cross section*
 
 
-| Filename           | Description                                                  |
-| ------------------ | ------------------------------------------------------------ |
-| [TRV.ifc](TRV.ifc) | IFC Reference file provided by Trimble Solutions<br />*NOTE: The file contains objects such as breaklines (IfcAnnotation), Cut (IfcEarthworksCut) and Fill (IfcEarthworksFill) which are not mandatory for this test instruction.* |
+| Filename                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [TRV.ifc](TRV.ifc)                                           | IFC Reference file provided by Trimble Solutions<br />*NOTE: The file contains objects such as breaklines (IfcAnnotation), Cut (IfcEarthworksCut) and Fill (IfcEarthworksFill) which are not mandatory for this test instruction.* |
+| [Typical cross section - primary & secondary roads](Typsektioner Primärväg och Sekundärväg.dwg) | DWG-file with typical cross section drawings                 |
 
 ## Dataset specification
 
@@ -129,7 +135,7 @@ This test case utilizes the following dataset.
 |                        | PredefinedType | 'USERDEFINED'                          |                                                              |
 |                        | ObjectType     | 'SUBBASECOURSE'                        |                                                              |
 | IfcPavement            | Name           | Slänt \| PAVEMENT                      | Pavement sight slope intersection                            |
-|                        | PredefinedType | FLEXIBLE                               |                                                              |
+|                        | PredefinedType | RIGID                                  |                                                              |
 | IfcCourse              | Name           | H slänt \| Först.lager 1               | Sub base course right slope intersection                     |
 |                        | PredefinedType | USERDEFINED                            |                                                              |
 |                        | ObjectType     | 'SUBBASECOURSE_RIGHT'                  |                                                              |
@@ -167,7 +173,7 @@ This test case utilizes the following dataset.
 |             |                 |                              |                      | NominalWidth        | IfcNonNegativeLengthMeasure |                       | IfcPropertySingleValue | 6                  |
 |             |                 |                              |                      | StructuralSlope     | IfcPositiveRatioMeasure     |                       | IfcPropertySingleValue |                    |
 |             |                 |                              |                      | StructuralSlopeType | IfcLabel                    |                       | IfcPropertySingleValue | EVEN               |
-| IfcPavement | FLEXIBLE        | Slänt\| PAVEMENT             | Pset_PavementCommon  | StructuralSlope     | IfcPositiveRatioMeasure     |                       | IfcPropertySingleValue | 0,3333 (-1:3)      |
+| IfcPavement | RIGID           | Slänt\| PAVEMENT             | Pset_PavementCommon  | StructuralSlope     | IfcPositiveRatioMeasure     |                       | IfcPropertySingleValue | 0,3333 (-1:3)      |
 |             |                 |                              |                      | StructuralSlopeType | IfcLabel                    |                       | IfcPropertySingleValue | EVEN               |
 | IfcCourse   | USERDEFINED     | Primärväg \| Slitlager       | Pset_CourseCommon    | NominalThickness    | IfcNonNegativeLengthMeasure |                       | IfcPropertySingleValue | 0,04               |
 | IfcCourse   | USERDEFINED     | Primärväg \| Bärlager 1      | Pset_CourseCommon    | NominalThickness    | IfcNonNegativeLengthMeasure |                       | IfcPropertySingleValue | 0,16               |
@@ -281,9 +287,9 @@ This test case utilizes the following dataset.
 | IfcSite             |                          | TRV                         | 1           | 1           | IfcAlignment |                  | HVK                     |
 | IfcSite             |                          | TRV                         | 1           | 1           | IfcAlignment |                  | VVK                     |
 | IfcSite             |                          | TRV                         | 1           | 1           | IfcAlignment |                  | Avgränsning             |
-| IfcRoadPart         |                          | Primärväg \| ROADSEGMENT    | 1           | 1           | IfcPavement  | RIGID            | Primärväg \| PAVEMENT   |
-| IfcRoadPart         |                          | Sekundärväg \| ROADSEGMENT  | 1           | 1           | IfcPavement  | RIGID            | Sekundärväg \| PAVEMENT |
-| IfcRoadPart         |                          | Sekundärväg \| INTERSECTION | 1           | 1           | IfcPavement  | FLEXIBLE         | Slänt \| PAVEMENT       |
+| IfcRoadPart         | ROADSEGMENT              | Primärväg \| ROADSEGMENT    | 1           | 1           | IfcPavement  | RIGID            | Primärväg \| PAVEMENT   |
+| IfcRoadPart         | ROADSEGMENT              | Sekundärväg \| ROADSEGMENT  | 1           | 1           | IfcPavement  | RIGID            | Sekundärväg \| PAVEMENT |
+| IfcRoadPart         | INTERSECTION             | Sekundärväg \| INTERSECTION | 1           | 1           | IfcPavement  | FLEXIBLE         | Slänt \| PAVEMENT       |
 
 ### Element (De)Composition Table
 
@@ -331,42 +337,58 @@ This test case utilizes the following dataset.
 | IfcAlignment           | na               | All              | Axis                          | Curve3D                 | IfcGradientCurve  |
 | IfcAlignmentHorizontal | na               | All              | Axis                          | Curve2D                 | IfcCompositeCurve |
 | IfcAlignmentVertical   | na               | All              | Axis                          | Curve2D                 | IfcGradientCurve  |
-| IfcCourse              |                  | All              | Body                          | Brep                    | IfcFacetedBrep    |
+| IfcCourse              | USERDEFINED      | All              | Body                          | Brep                    | IfcFacetedBrep    |
 
-### Product Placement table (ToDo)
+### Product Placement table 
 
-| **Product**  | **Product Type** | **Product Name** | **Object Placement**         | Relative Placement Product | Relative Placement Product Type | Relative Placement Product Name |
-| ------------ | ---------------- | ---------------- | ---------------------------- | -------------------------- | ------------------------------- | ------------------------------- |
-| IfcAlignment |                  | A1               | IfcLocalPlacement            | IfcSite                    | na                              | ASPC.Site                       |
-| IfcPavement  | FLEXIBLE         | P1               | IfcLinearPlacement at 315    | IfcAlignment               | na                              | A1                              |
-| IfcPavement  | FLEXIBLE         | P2               | IfcLinearPlacement at 331,82 | IfcAlignment               | na                              | A1                              |
-| IfcCourse    | USERDEFINED      | C1               | IfcLocalPlacement            | IfcPavement                | na                              | P1                              |
-| IfcCourse    | USERDEFINED      | C2               | IfcLocalPlacement            | IfcPavement                | na                              | P1                              |
-| IfcCourse    | USERDEFINED      | C3               | IfcLocalPlacement            | IfcPavement                | na                              | P1                              |
-| IfcCourse    | USERDEFINED      | C4               | IfcLocalPlacement            | IfcPavement                | na                              | P1                              |
-| IfcCourse    | USERDEFINED      | C5               | IfcLocalPlacement            | IfcPavement                | na                              | P1                              |
-| IfcCourse    | USERDEFINED      | C6               | IfcLocalPlacement            | IfcPavement                | na                              | P1                              |
-| IfcCourse    | USERDEFINED      | C7               | IfcLocalPlacement            | IfcPavement                | na                              | P2                              |
-| IfcCourse    | USERDEFINED      | C8               | IfcLocalPlacement            | IfcPavement                | na                              | P2                              |
-| IfcCourse    | USERDEFINED      | C9               | IfcLocalPlacement            | IfcPavement                | na                              | P2                              |
-| IfcCourse    | USERDEFINED      | C10              | IfcLocalPlacement            | IfcPavement                | na                              | P2                              |
-| IfcCourse    | USERDEFINED      | C11              | IfcLocalPlacement            | IfcPavement                | na                              | P2                              |
-| IfcCourse    | USERDEFINED      | C12              | IfcLocalPlacement            | IfcPavement                | na                              | P2                              |
+| **Product**  | **Product Type** | **Product Name**             | **Object Placement** | Relative Placement Product | Relative Placement Product Type | Relative Placement Product Name |
+| ------------ | ---------------- | ---------------------------- | -------------------- | -------------------------- | ------------------------------- | ------------------------------- |
+| IfcAlignment |                  | CL Primärväg                 | IfcLocalPlacement    | IfcSite                    | na                              | TRV                             |
+| IfcAlignment |                  | CL Sekundärväg               | IfcLocalPlacement    | IfcSite                    | na                              | TRV                             |
+| IfcAlignment |                  | HVK                          | IfcLocalPlacement    | IfcSite                    | na                              | TRV                             |
+| IfcAlignment |                  | VVK                          | IfcLocalPlacement    | IfcSite                    | na                              | TRV                             |
+| IfcAlignment |                  | Avgränsning                  | IfcLocalPlacement    | IfcSite                    | na                              | TRV                             |
+| IfcRoad      |                  | Primärväg                    | IfcLocalPlacement    | IfcSite                    | na                              | TRV                             |
+| IfcRoad      |                  | Sekundärväg                  | IfcLocalPlacement    | IfcSite                    | na                              | TRV                             |
+| IfcRoadPart  | ROADSEGMENT      | Primärväg \| ROADSEGMENT     | IfcLocalPlacement    | IfcRoad                    | na                              | Primärväg                       |
+| IfcRoadPart  | INTERSECTION     | Sekundärväg \| INTERSECTION  | IfcLocalPlacement    | IfcRoad                    | na                              | Sekundärväg                     |
+| IfcRoadPart  | ROADSEGMENT      | Sekundärväg \| ROADSEGMENT   | IfcLocalPlacement    | IfcRoad                    | na                              | Sekundärväg                     |
+| IfcPavement  | RIGID            | Primärväg \| PAVEMENT        | IfcLocalPlacement    | IfcRoadPart                | ROADSEGMENT                     | Primärväg \| ROADSEGMENT        |
+| IfcPavement  | RIGID            | Slänt \| PAVEMENT            | IfcLocalPlacement    | IfcRoadPart                | INTERSECTION                    | Sekundärväg \| INTERSECTION     |
+| IfcPavement  | RIGID            | Sekundärväg \| PAVEMENT      | IfcLocalPlacement    | IfcRoadPart                | ROADSEGMENT                     | Sekundärväg \| ROADSEGMENT      |
+| IfcCourse    | USERDEFINED      | Primärväg \| Slitlager       | IfcLocalPlacement    | IfcPavement                | RIGID                           | Primärväg \| PAVEMENT           |
+| IfcCourse    | USERDEFINED      | Primärväg \| Bärlager 1      | IfcLocalPlacement    | IfcPavement                | RIGID                           | Primärväg \| PAVEMENT           |
+| IfcCourse    | USERDEFINED      | Primärväg \| Bärlager 2      | IfcLocalPlacement    | IfcPavement                | RIGID                           | Primärväg \| PAVEMENT           |
+| IfcCourse    | USERDEFINED      | Primärväg \| Först.lager 1   | IfcLocalPlacement    | IfcPavement                | RIGID                           | Primärväg \| PAVEMENT           |
+| IfcCourse    | USERDEFINED      | H Slänt \| Slitlager         | IfcLocalPlacement    | IfcPavement                | RIGID                           | Slänt \| PAVEMENT               |
+| IfcCourse    | USERDEFINED      | H Slänt \| Bärlager 1        | IfcLocalPlacement    | IfcPavement                | RIGID                           | Slänt \| PAVEMENT               |
+| IfcCourse    | USERDEFINED      | H Slänt \| Bärlager 2        | IfcLocalPlacement    | IfcPavement                | RIGID                           | Slänt \| PAVEMENT               |
+| IfcCourse    | USERDEFINED      | H Slänt \| Först.lager 1     | IfcLocalPlacement    | IfcPavement                | RIGID                           | Slänt \| PAVEMENT               |
+| IfcCourse    | USERDEFINED      | V Slänt \| Slitlager         | IfcLocalPlacement    | IfcPavement                | RIGID                           | Slänt \| PAVEMENT               |
+| IfcCourse    | USERDEFINED      | V Slänt \| Bärlager 1        | IfcLocalPlacement    | IfcPavement                | RIGID                           | Slänt \| PAVEMENT               |
+| IfcCourse    | USERDEFINED      | V Slänt \| Bärlager 2        | IfcLocalPlacement    | IfcPavement                | RIGID                           | Slänt \| PAVEMENT               |
+| IfcCourse    | USERDEFINED      | V Slänt \| Först.lager 1     | IfcLocalPlacement    | IfcPavement                | RIGID                           | Slänt \| PAVEMENT               |
+| IfcCourse    | USERDEFINED      | Sekundärväg \| Slitlager     | IfcLocalPlacement    | IfcPavement                | RIGID                           | Sekundärväg \| PAVEMENT         |
+| IfcCourse    | USERDEFINED      | Sekundärväg \| Bärlager 1    | IfcLocalPlacement    | IfcPavement                | RIGID                           | Sekundärväg \| PAVEMENT         |
+| IfcCourse    | USERDEFINED      | Sekundärväg \| Bärlager 2    | IfcLocalPlacement    | IfcPavement                | RIGID                           | Sekundärväg \| PAVEMENT         |
+| IfcCourse    | USERDEFINED      | Sekundärväg \| Först.lager 1 | IfcLocalPlacement    | IfcPavement                | RIGID                           | Sekundärväg \| PAVEMENT         |
 
-## Drawings (Visualisations) (ToDo)
+## Drawings (Visualisations) 
 
 The following Drawings and visualisations describe the test case dataset to be modelled and certified.
 
-| Filename/Image                                               | Description                          |
-| ------------------------------------------------------------ | ------------------------------------ |
-| [Primary Road - Pavement.png](Primary Road - Pavement.png)   | Pavement - primary road              |
-| [Secondary Road - Pavement.png](Secondary Road - Pavement.png) | Pavement - Secondary Road            |
-| [Intersection - Pavement.png](Intersection - Pavement.png)   | Pavement - Intersection              |
-| [Primary Road - Alignment.png](Primary Road - Alignment.png) | Alignment - Primary road             |
-| [Secondary Road - Alignment.png](Secondary Road - Alignment.png) | Secondary road - alignment           |
-| [Intersection - Alignment HVK.png](Intersection - Alignment HVK.png) | Intersection - Alignment HVK         |
-| [Intersection - Alignment VVK.png](Intersection - Alignment VVK.png) | Intersection - Alignment VVK         |
-| [Intersection - Alignment Avgränsning.png](Intersection - Alignment Avgränsning.png) | Intersection - Alignment Avgränsning |
+| Filename/Image                                               | Description                            |
+| ------------------------------------------------------------ | -------------------------------------- |
+| [Primary Road - Pavement.png](Primary Road - Pavement.png)   | Pavement - primary road                |
+| [Secondary Road - Pavement.png](Secondary Road - Pavement.png) | Pavement - Secondary Road              |
+| [Intersection - Pavement.png](Intersection - Pavement.png)   | Pavement - Intersection                |
+| [Primary Road - Alignment.png](Primary Road - Alignment.png) | Alignment - Primary road               |
+| [Secondary Road - Alignment.png](Secondary Road - Alignment.png) | Secondary road - alignment             |
+| [Intersection - Alignment HVK.png](Intersection - Alignment HVK.png) | Intersection - Alignment HVK           |
+| [Intersection - Alignment VVK.png](Intersection - Alignment VVK.png) | Intersection - Alignment VVK           |
+| [Intersection - Alignment Avgränsning.png](Intersection - Alignment Avgränsning.png) | Intersection - Alignment Avgränsning   |
+| [Primary Road - Typical cross section.png](Primary Road - Typical cross section.png) | Typical cross section - Primary Road   |
+| [Secondary Road - Typical cross section.png](Secondary Road - Typical cross section.png) | Typical cross section - Secondary Road |
 
 
 ## Supporting files
