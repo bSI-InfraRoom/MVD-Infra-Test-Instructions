@@ -2,7 +2,7 @@
 
 This test case utilizes the following dataset.
 
-- A dataset including two intersecting roads in a T junction (a secondary road ending at and joining a primary road).
+- A dataset including two intersecting roads in a T junction (a secondary road starting at and joining a primary road).
 
 - The main alignments for the primary and the secondary roads
 
@@ -289,7 +289,7 @@ This test case utilizes the following dataset.
 | IfcSite             |                          | TRV                         | 1           | 1           | IfcAlignment |                  | Avgränsning             |
 | IfcRoadPart         | ROADSEGMENT              | Primärväg \| ROADSEGMENT    | 1           | 1           | IfcPavement  | RIGID            | Primärväg \| PAVEMENT   |
 | IfcRoadPart         | ROADSEGMENT              | Sekundärväg \| ROADSEGMENT  | 1           | 1           | IfcPavement  | RIGID            | Sekundärväg \| PAVEMENT |
-| IfcRoadPart         | INTERSECTION             | Sekundärväg \| INTERSECTION | 1           | 1           | IfcPavement  | FLEXIBLE         | Slänt \| PAVEMENT       |
+| IfcRoadPart         | INTERSECTION             | Sekundärväg \| INTERSECTION | 1           | 1           | IfcPavement  | RIGID            | Slänt \| PAVEMENT       |
 
 ### Element (De)Composition Table
 
@@ -303,14 +303,14 @@ This test case utilizes the following dataset.
 | IfcPavement          | RIGID             | Sekundärväg \| PAVEMENT | 1           | 1           | IfcCourse   |                  | Sekundärväg \| Bärlager 1    |
 | IfcPavement          | RIGID             | Sekundärväg \| PAVEMENT | 1           | 1           | IfcCourse   |                  | Sekundärväg \| Bärlager 2    |
 | IfcPavement          | RIGID             | Sekundärväg \| PAVEMENT | 1           | 1           | IfcCourse   |                  | Sekundärväg \| Först.lager 1 |
-| IfcPavement          | FLEXIBLE          | Slänt \| PAVEMENT       | 1           | 1           | IfcCourse   |                  | H slänt \| Slitlager         |
-| IfcPavement          | FLEXIBLE          | Slänt \| PAVEMENT       | 1           | 1           | IfcCourse   |                  | V slänt \| Slitlager         |
-| IfcPavement          | FLEXIBLE          | Slänt \| PAVEMENT       | 1           | 1           | IfcCourse   |                  | H slänt \| Bärlager 1        |
-| IfcPavement          | FLEXIBLE          | Slänt \| PAVEMENT       | 1           | 1           | IfcCourse   |                  | V slänt \| Bärlager 1        |
-| IfcPavement          | FLEXIBLE          | Slänt \| PAVEMENT       | 1           | 1           | IfcCourse   |                  | H slänt \| Bärlager 2        |
-| IfcPavement          | FLEXIBLE          | Slänt \| PAVEMENT       | 1           | 1           | IfcCourse   |                  | V slänt \| Bärlager 2        |
-| IfcPavement          | FLEXIBLE          | Slänt \| PAVEMENT       | 1           | 1           | IfcCourse   |                  | H slänt \| Först.lager 1     |
-| IfcPavement          | FLEXIBLE          | Slänt \| PAVEMENT       | 1           | 1           | IfcCourse   |                  | V slänt \| Först.lager 1     |
+| IfcPavement          | RIGID             | Slänt \| PAVEMENT       | 1           | 1           | IfcCourse   |                  | H slänt \| Slitlager         |
+| IfcPavement          | RIGID             | Slänt \| PAVEMENT       | 1           | 1           | IfcCourse   |                  | V slänt \| Slitlager         |
+| IfcPavement          | RIGID             | Slänt \| PAVEMENT       | 1           | 1           | IfcCourse   |                  | H slänt \| Bärlager 1        |
+| IfcPavement          | RIGID             | Slänt \| PAVEMENT       | 1           | 1           | IfcCourse   |                  | V slänt \| Bärlager 1        |
+| IfcPavement          | RIGID             | Slänt \| PAVEMENT       | 1           | 1           | IfcCourse   |                  | H slänt \| Bärlager 2        |
+| IfcPavement          | RIGID             | Slänt \| PAVEMENT       | 1           | 1           | IfcCourse   |                  | V slänt \| Bärlager 2        |
+| IfcPavement          | RIGID             | Slänt \| PAVEMENT       | 1           | 1           | IfcCourse   |                  | H slänt \| Först.lager 1     |
+| IfcPavement          | RIGID             | Slänt \| PAVEMENT       | 1           | 1           | IfcCourse   |                  | V slänt \| Först.lager 1     |
 
 **NOTE**:
 
@@ -393,6 +393,7 @@ The following Drawings and visualisations describe the test case dataset to be m
 
 ## Supporting files
 
-| Filename           | Description                                                  |
-| ------------------ | ------------------------------------------------------------ |
-| [TRV.ifc](TRV.ifc) | IFC Reference file provided by Trimble Solutions<br />*NOTE: The file contains objects such as breaklines (IfcAnnotation), cut (IfcEarthworksCut) and fill (IfcEarthworksFill) which are not mandatory for this test instruction.* |
+| Filename                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [TRV.ifc](TRV.ifc)                                           | IFC Reference file provided by Trimble Solutions<br />*NOTE 1: The file contains objects such as breaklines (IfcAnnotation), cut (IfcEarthworksCut) and fill (IfcEarthworksFill) which are not mandatory for this test instruction.*<br />*NOTE 2: The local placements of the spatial structure elements and the pavements/courses in the file does not follow the structure specified in this test instruction since they are not placed relative to the parent or containing element.* |
+| [Typsektioner primärväg och Sekundärväg](TypsektionerPrimärvägOchSekundärväg.dwg) | DWG file with drawings for the typical cross sections used for the primary and secondary roads. |
