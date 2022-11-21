@@ -379,16 +379,16 @@ The following Drawings and visualisations describe the test case dataset to be m
 
 | Filename/Image                                               | Description                            |
 | ------------------------------------------------------------ | -------------------------------------- |
-| [Primary Road - Pavement.png](Primary Road - Pavement.png)   | Pavement - primary road                |
-| [Secondary Road - Pavement.png](Secondary Road - Pavement.png) | Pavement - Secondary Road              |
-| [Intersection - Pavement.png](Intersection - Pavement.png)   | Pavement - Intersection                |
-| [Primary Road - Alignment.png](Primary Road - Alignment.png) | Alignment - Primary road               |
-| [Secondary Road - Alignment.png](Secondary Road - Alignment.png) | Secondary road - alignment             |
-| [Intersection - Alignment HVK.png](Intersection - Alignment HVK.png) | Intersection - Alignment HVK           |
-| [Intersection - Alignment VVK.png](Intersection - Alignment VVK.png) | Intersection - Alignment VVK           |
-| [Intersection - Alignment Avgränsning.png](Intersection - Alignment Avgränsning.png) | Intersection - Alignment Avgränsning   |
-| [Primary Road - Typical cross section.png](Primary Road - Typical cross section.png) | Typical cross section - Primary Road   |
-| [Secondary Road - Typical cross section.png](Secondary Road - Typical cross section.png) | Typical cross section - Secondary Road |
+| [Primary Road - Pavement](PrimaryRoad-Pavement.png)          | Pavement - primary road                |
+| [Secondary Road - Pavement](SecondaryRoad-Pavement.png)      | Pavement - Secondary Road              |
+| [Intersection - Pavement](Intersection-Pavement.png)         | Pavement - Intersection                |
+| [Primary Road - Alignment](PrimaryRoad-Alignment.png)        | Alignment - Primary road               |
+| [Secondary Road - Alignment](SecondaryRoad-Alignment.png)    | Secondary road - alignment             |
+| [Intersection - Alignment HVK](Intersection-AlignmentHVK.png) | Intersection - Alignment HVK           |
+| [Intersection - Alignment VVK](Intersection-AlignmentVVK.png) | Intersection - Alignment VVK           |
+| [Intersection - Alignment Avgränsning](Intersection-AlignmentAvgränsning.png) | Intersection - Alignment Avgränsning   |
+| [Primary Road - Typical cross section](PrimaryRoad-TypicalCrossSection.png) | Typical cross section - Primary Road   |
+| [Secondary Road - Typical cross section](SecondaryRoad-TypicalCrossSection.png) | Typical cross section - Secondary Road |
 
 
 ## Supporting files

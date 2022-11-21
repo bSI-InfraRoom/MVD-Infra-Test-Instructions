@@ -146,15 +146,15 @@ Considering the aim of this test, other **optional** results, not subject to the
 
 ### Alignment
 
-| **RULE ID** | **CRITERIA**                                                 | **VALUE [examples]**                           | **ENTITY (if applicable)** | **CT (if applicable)** |
-| ----------- | ------------------------------------------------------------ | ---------------------------------------------- | -------------------------- | ---------------------- |
-| SITE_00     | All IfcAlignment shall always be contained in an IfcSite     |                                                |                            | Spatial Containment    |
-| ALIG_00     | Alignment layout structure is verified                       | See steps                                      |                            | Alignment Layout       |
-| ALIG_01     | Number of alignments contained in file                       | [5]                                            |                            |                        |
-| ALIG_02     | Parameters of alignment segments are verified                | As per Alignment Table                         |                            |                        |
-| ALIG_03     | Alignment geometric compliance is verified                   | As per Alignment geometric compliance document |                            |                        |
-| DIST_02     | Required precision for length of alignment's segments        | [0,0001] or [1.E-4]                            | all alignment segments     | na                     |
-| ANGL_02     | Required precision for angles and slope of alignment's segments | [0,000001] or [1.E-6]                          | all alignment segments     | na                     |
+| **RULE ID** | **CRITERIA**                                                 | **VALUE [examples]**                                         | **ENTITY (if applicable)** | **CT (if applicable)** |
+| ----------- | ------------------------------------------------------------ | ------------------------------------------------------------ | -------------------------- | ---------------------- |
+| SITE_00     | All IfcAlignment shall always be contained in an IfcSite     |                                                              |                            | Spatial Containment    |
+| ALIG_00     | Alignment layout structure is verified                       | See steps                                                    |                            | Alignment Layout       |
+| ALIG_01     | Number of alignments contained in file                       | [5]                                                          |                            |                        |
+| ALIG_02     | Parameters of alignment segments are verified                | As per [Alignment Tables](Dataset/README.md#horizontal-segments-table) |                            |                        |
+| ALIG_03     | Alignment geometric compliance is verified                   | As per Alignment geometric compliance document               |                            |                        |
+| DIST_02     | Required precision for length of alignment's segments        | [0,0001] or [1.E-4]                                          | all alignment segments     | na                     |
+| ANGL_02     | Required precision for angles and slope of alignment's segments | [0,000001] or [1.E-6]                                        | all alignment segments     | na                     |
 
 <details><summary>ALIG_00 steps</summary>
 
@@ -186,35 +186,13 @@ Precision for angles and slope (ANGL_002) applies to the values of the following
 
 ### Alignment (import verification - ToDo - 5 alignments)
 
-| **RULE ID** | **CRITERIA**                                                 | **VALUE (all examples)** |
-| ----------- | ------------------------------------------------------------ | ------------------------ |
-| ALIG_11     | Horizontal Starting point DistAlong                          | 0                        |
-| ALIG_12     | Horizontal Starting point X                                  | 452413.9199              |
-| ALIG_13     | Horizontal Starting point Y                                  | 4539456.401              |
-| ALIG_15     | Vertical Starting point Z                                    | 5                        |
-| ALIG_17     | Horizontal Ending point DistAlong                            | 876.3682                 |
-| ALIG_18     | Horizontal Ending point X                                    | 453202.5241              |
-| ALIG_19     | Horizontal Ending point Y                                    | 4539831.929              |
-| ALIG_21     | Vertical Ending point Z                                      | 2                        |
-| ALIG_22     | Total 2D length of alignment (horizontal projection)         | 876.3682                 |
-| ALIG_23     | Total 3D length of alignment                                 | 876.3819                 |
-| ALIG_24     | Height difference between start and end point of alignment 3D curve | -3                       |
-
-### Object typing
-
-| **RULE ID** | **CRITERIA**              | **VALUE [examples]**                                         | **ENTITY (if applicable)** | **CT (if applicable)** |
-| ----------- | ------------------------- | ------------------------------------------------------------ | -------------------------- | ---------------------- |
-| OBTP_01     | Object types are verified | As per [Object Types Table](Dataset/README.md#object-types-table) | na                         | Object Typing          |
-
-> **Acceptance criteria**: For the **Object typing** capability, the validation procedure must verify that an IFC entity type with the given Name is typing (via `IfcRelDefinesByType`) exactly a given number of objects of the requested Name, no more and no less.
-
-<details><summary>OBTP_01 details: Object types are verified</summary>
-
-> - Given a set of types and objects taken from the [Object Types Table](Dataset/README.md#object-types-table)
-> - Then the Entity Type, with the Entity Type Name, exists
-> - And the Entity Type must type exactly [MinSize..MaxSize] of the requested Object
-
-</details>
+| **RULE ID** | **CRITERIA**                             | **VALUE (all examples)**                                     |
+| ----------- | ---------------------------------------- | ------------------------------------------------------------ |
+| ALIG_11     | Horizontal Starting point DistAlong      | See [Alignment Tables](Dataset/README.md#horizontal-segments-table) |
+| ALIG_12     | Horizontal Starting point X              | See [Alignment Tables](Dataset/README.md#horizontal-segments-table) |
+| ALIG_13     | Horizontal Starting point Y              | See [Alignment Tables](Dataset/README.md#horizontal-segments-table) |
+| ALIG_15     | Vertical Starting point Z                | See [Alignment Tables](Dataset/README.md#vertical-segments-table) |
+| ALIG_25     | Vertical Starting point Start Dist Along | See [Alignment Tables](Dataset/README.md#vertical-segments-table) |
 
 
 ### Material association
